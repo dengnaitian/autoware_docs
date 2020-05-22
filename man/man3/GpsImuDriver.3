@@ -1,0 +1,79 @@
+.TH "GpsImuDriver" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GpsImuDriver \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <garmin_gps_18x_lvc\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGpsImuDriver\fP ()"
+.br
+.RI "\fIOpen UDP port 8308 and listen on it\&. \fP"
+.ti -1c
+.RI "\fB~GpsImuDriver\fP ()"
+.br
+.RI "\fIDisconnect cleanly\&. \fP"
+.ti -1c
+.RI "bool \fBbind\fP (const int udp_port)"
+.br
+.ti -1c
+.RI "bool \fBisConnected\fP () const "
+.br
+.RI "\fIReturn connection status\&. \fP"
+.ti -1c
+.RI "void \fBdisconnect\fP ()"
+.br
+.RI "\fIDisconnect and cleanup\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 67 of file garmin_gps_18x_lvc\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GpsImuDriver::GpsImuDriver ()"
+
+.PP
+Open UDP port 8308 and listen on it\&. 
+.PP
+Definition at line 19 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "GpsImuDriver::~GpsImuDriver ()"
+
+.PP
+Disconnect cleanly\&. 
+.PP
+Definition at line 278 of file garmin_gps_18x_lvc\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool GpsImuDriver::bind (const int udp_port)"
+Bind socket to UDP Port, init IO thread 
+.PP
+\fBReturns:\fP
+.RS 4
+true on success, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "void GpsImuDriver::disconnect ()"
+
+.PP
+Disconnect and cleanup\&. 
+.PP
+Definition at line 260 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "bool GpsImuDriver::isConnected () const\fC [inline]\fP"
+
+.PP
+Return connection status\&. 
+.PP
+Definition at line 81 of file garmin_gps_18x_lvc\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

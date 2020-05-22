@@ -1,0 +1,63 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/lib/pos_db/util.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/lib/pos_db/util.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <net/if\&.h>\fP
+.br
+\fC#include <sys/ioctl\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <pos_db\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBmake_header\fP (int32_t sql_inst, int32_t sql_num)"
+.br
+.ti -1c
+.RI "int \fBprobe_mac_addr\fP (char *mac_addr)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBdevname\fP [] = {'eth0', 'eth1', 'eth2', 'wlan0', 'wlan1', 'wlan2'}"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::string make_header (int32_t sql_inst, int32_t sql_num)"
+
+.PP
+Definition at line 18 of file util\&.cpp\&.
+.SS "int probe_mac_addr (char * mac_addr)"
+
+.PP
+Definition at line 53 of file util\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const char* devname[] = {'eth0', 'eth1', 'eth2', 'wlan0', 'wlan1', 'wlan2'}"
+
+.PP
+Definition at line 52 of file util\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

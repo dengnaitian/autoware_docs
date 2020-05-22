@@ -1,0 +1,115 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/vehicle_socket/nodes/vehicle_receiver/vehicle_receiver.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/vehicle_socket/nodes/vehicle_receiver/vehicle_receiver.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <tablet_socket_msgs/mode_info\&.h>\fP
+.br
+\fC#include 'autoware_can_msgs/CANInfo\&.h'\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCAN_KEY_MODE\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_TIME\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_VELOC\fP   (2)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_ANGLE\fP   (3)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_TORQUE\fP   (4)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_ACCEL\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_BRAKE\fP   (6)"
+.br
+.ti -1c
+.RI "#define \fBCAN_KEY_SHIFT\fP   (7)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CAN_KEY_ACCEL   (5)"
+
+.PP
+Definition at line 39 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_ANGLE   (3)"
+
+.PP
+Definition at line 37 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_BRAKE   (6)"
+
+.PP
+Definition at line 40 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_MODE   (0)"
+
+.PP
+Definition at line 34 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_SHIFT   (7)"
+
+.PP
+Definition at line 41 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_TIME   (1)"
+
+.PP
+Definition at line 35 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_TORQUE   (4)"
+
+.PP
+Definition at line 38 of file vehicle_receiver\&.cpp\&.
+.SS "#define CAN_KEY_VELOC   (2)"
+
+.PP
+Definition at line 36 of file vehicle_receiver\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 253 of file vehicle_receiver\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

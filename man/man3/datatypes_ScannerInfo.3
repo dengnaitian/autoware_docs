@@ -1,0 +1,274 @@
+.TH "datatypes::ScannerInfo" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::ScannerInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ScannerInfo\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< std::pair< double, double > > \fBResolutionMap\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScannerInfo\fP ()"
+.br
+.RI "\fIEmpty constructor\&. \fP"
+.ti -1c
+.RI "\fB~ScannerInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBScannerInfo\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "\fBUINT8\fP \fBgetDeviceID\fP () const "
+.br
+.RI "\fIReturns the ID of the device that has recorded this scan\&. \fP"
+.ti -1c
+.RI "void \fBsetDeviceID\fP (\fBUINT8\fP v)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetScannerType\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetScannerType\fP (\fBUINT8\fP newScannerType)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetScanNumber\fP () const "
+.br
+.RI "\fIReturns the scan counter from scanner device\&. \fP"
+.ti -1c
+.RI "void \fBsetScanNumber\fP (\fBUINT16\fP v)"
+.br
+.ti -1c
+.RI "double \fBgetStartAngle\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetStartAngle\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetEndAngle\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetEndAngle\fP (double v)"
+.br
+.ti -1c
+.RI "const \fBTime\fP & \fBgetStartTimestamp\fP () const "
+.br
+.ti -1c
+.RI "const \fBTime\fP & \fBgetEndTimestamp\fP () const "
+.br
+.RI "\fIReturns the end timestamp of the scan (in terms of the host computer clock) \fP"
+.ti -1c
+.RI "void \fBsetTimestamps\fP (const \fBTime\fP &start, const \fBTime\fP &end)"
+.br
+.RI "\fISet the start and end timestamp of the scan received by this scanner (in terms of the host computer clock) \fP"
+.ti -1c
+.RI "double \fBgetScanFrequency\fP () const "
+.br
+.RI "\fIReturns the start timestamp of this scan as given by the measuring device (which most probably has a clock offset) \fP"
+.ti -1c
+.RI "void \fBsetScanFrequency\fP (double freq)"
+.br
+.RI "\fISet the scanner's scan frequency in [Hz]\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "void \fBsetProcessingFlags\fP (const \fBUINT16\fP processingFlags)"
+.br
+.ti -1c
+.RI "bool \fBisRearMirrorSide\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisFrontMirrorSide\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetBeamTilt\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBeamTilt\fP (double tilt)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetScanFlags\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetScanFlags\fP (\fBUINT32\fP flags)"
+.br
+.ti -1c
+.RI "const \fBPosition3D\fP & \fBgetMountingPosition\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMountingPosition\fP (const \fBPosition3D\fP &v)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBscannerTypeToString\fP (\fBUINT8\fP st)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file ScannerInfo\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<std::pair<double, double> > \fBdatatypes::ScannerInfo::ResolutionMap\fP"
+
+.PP
+Definition at line 39 of file ScannerInfo\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::ScannerInfo::ScannerInfo ()"
+
+.PP
+Empty constructor\&. 
+.PP
+Definition at line 18 of file ScannerInfo\&.cpp\&.
+.SS "datatypes::ScannerInfo::~ScannerInfo ()"
+
+.PP
+Definition at line 35 of file ScannerInfo\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double datatypes::ScannerInfo::getBeamTilt () const\fC [inline]\fP"
+
+.PP
+Definition at line 136 of file ScannerInfo\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScannerInfo::getDeviceID () const\fC [inline]\fP"
+
+.PP
+Returns the ID of the device that has recorded this scan\&. 
+.PP
+Definition at line 42 of file ScannerInfo\&.hpp\&.
+.SS "double datatypes::ScannerInfo::getEndAngle () const\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file ScannerInfo\&.hpp\&.
+.SS "const \fBTime\fP& datatypes::ScannerInfo::getEndTimestamp () const\fC [inline]\fP"
+
+.PP
+Returns the end timestamp of the scan (in terms of the host computer clock) 
+.PP
+Definition at line 76 of file ScannerInfo\&.hpp\&.
+.SS "const \fBPosition3D\fP& datatypes::ScannerInfo::getMountingPosition () const\fC [inline]\fP"
+
+.PP
+Definition at line 153 of file ScannerInfo\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::ScannerInfo::getScanFlags () const\fC [inline]\fP"
+
+.PP
+Definition at line 142 of file ScannerInfo\&.hpp\&.
+.SS "double datatypes::ScannerInfo::getScanFrequency () const\fC [inline]\fP"
+
+.PP
+Returns the start timestamp of this scan as given by the measuring device (which most probably has a clock offset) Returns the end timestamp of this scan as given by the measuring device (which most probably has a clock offset) Set the start and end timestamp of the scan as given by the measuring device (which most probably has a clock offset) Get the frequency this scanner is running at in [Hz]\&. 
+.PP
+Definition at line 92 of file ScannerInfo\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScannerInfo::getScannerType () const\fC [inline]\fP"
+
+.PP
+Definition at line 46 of file ScannerInfo\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::ScannerInfo::getScanNumber () const\fC [inline]\fP"
+
+.PP
+Returns the scan counter from scanner device\&. 
+.PP
+Definition at line 52 of file ScannerInfo\&.hpp\&.
+.SS "double datatypes::ScannerInfo::getStartAngle () const\fC [inline]\fP"
+
+.PP
+Definition at line 61 of file ScannerInfo\&.hpp\&.
+.SS "const \fBTime\fP& datatypes::ScannerInfo::getStartTimestamp () const\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file ScannerInfo\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::ScannerInfo::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 32 of file ScannerInfo\&.hpp\&.
+.SS "bool datatypes::ScannerInfo::isFrontMirrorSide ()"
+
+.PP
+Definition at line 88 of file ScannerInfo\&.cpp\&.
+.SS "bool datatypes::ScannerInfo::isRearMirrorSide ()"
+
+.PP
+Definition at line 78 of file ScannerInfo\&.cpp\&.
+.SS "bool datatypes::ScannerInfo::operator== (const \fBScannerInfo\fP & other) const"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 56 of file ScannerInfo\&.cpp\&.
+.SS "std::string datatypes::ScannerInfo::scannerTypeToString (\fBUINT8\fP st)\fC [static]\fP"
+
+.PP
+Definition at line 39 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setBeamTilt (double tilt)"
+
+.PP
+Definition at line 113 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setDeviceID (\fBUINT8\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file ScannerInfo\&.hpp\&.
+.SS "void datatypes::ScannerInfo::setEndAngle (double v)"
+
+.PP
+Definition at line 101 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setMountingPosition (const \fBPosition3D\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 154 of file ScannerInfo\&.hpp\&.
+.SS "void datatypes::ScannerInfo::setProcessingFlags (const \fBUINT16\fP processingFlags)"
+
+.PP
+Definition at line 73 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setScanFlags (\fBUINT32\fP flags)\fC [inline]\fP"
+
+.PP
+Definition at line 145 of file ScannerInfo\&.hpp\&.
+.SS "void datatypes::ScannerInfo::setScanFrequency (double freq)"
+
+.PP
+Set the scanner's scan frequency in [Hz]\&. Must be non-negative\&. The given start and end must not be not_a_date_time\&. The given end time must be greater than the start time\&. 
+.PP
+Definition at line 148 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setScannerType (\fBUINT8\fP newScannerType)"
+
+.PP
+Definition at line 108 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setScanNumber (\fBUINT16\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file ScannerInfo\&.hpp\&.
+.SS "void datatypes::ScannerInfo::setStartAngle (double v)"
+
+.PP
+Definition at line 94 of file ScannerInfo\&.cpp\&.
+.SS "void datatypes::ScannerInfo::setTimestamps (const \fBTime\fP & start, const \fBTime\fP & end)"
+
+.PP
+Set the start and end timestamp of the scan received by this scanner (in terms of the host computer clock) The given start and end must not be not_a_date_time\&. The given end time must be greater than the start time\&. 
+.PP
+Definition at line 124 of file ScannerInfo\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

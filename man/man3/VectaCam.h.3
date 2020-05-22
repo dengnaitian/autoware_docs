@@ -1,0 +1,118 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/vectacam/nodes/vectacam/VectaCam.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/vectacam/nodes/vectacam/VectaCam.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <boost/algorithm/string\&.hpp>\fP
+.br
+\fC#include 'opencv2/core/core\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBVectaCamCommand\fP"
+.br
+.ti -1c
+.RI "class \fBVectaCam\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBVECTACAM_CONFIG_PORT\fP   16385"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_DATA_PORT\fP   16386"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_NUM_CAMERAS\fP   8"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_FRAME_START\fP   (0x01000000)"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_FRAME_END\fP   (0x02000000)"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_DATA_OFFSET\fP   (16)"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_MAX_BUFFER\fP   1024*1024"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_IMG_WIDTH\fP   640"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_IMG_HEIGHT\fP   480"
+.br
+.ti -1c
+.RI "#define \fBVECTACAM_CAMERA_IP\fP   '10\&.0\&.0\&.1'"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define VECTACAM_CAMERA_IP   '10\&.0\&.0\&.1'"
+
+.PP
+Definition at line 31 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_CONFIG_PORT   16385"
+
+.PP
+Definition at line 17 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_DATA_OFFSET   (16)"
+
+.PP
+Definition at line 24 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_DATA_PORT   16386"
+
+.PP
+Definition at line 18 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_FRAME_END   (0x02000000)"
+
+.PP
+Definition at line 22 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_FRAME_START   (0x01000000)"
+
+.PP
+Definition at line 21 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_IMG_HEIGHT   480"
+
+.PP
+Definition at line 29 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_IMG_WIDTH   640"
+
+.PP
+Definition at line 28 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_MAX_BUFFER   1024*1024"
+
+.PP
+Definition at line 26 of file VectaCam\&.h\&.
+.SS "#define VECTACAM_NUM_CAMERAS   8"
+
+.PP
+Definition at line 19 of file VectaCam\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

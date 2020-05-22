@@ -1,0 +1,35 @@
+var classdatatypes_1_1_eval_case_result =
+[
+    [ "CaseResult", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0", [
+      [ "ECR_DONT_CARE", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0ac9c07e690db878fced99c80a820943c3", null ],
+      [ "ECR_LOW", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0a439decfabe4a60b4c08750109274a775", null ],
+      [ "ECR_HIGH", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0a5c53684b581026c59b996a111e5d2a3e", null ],
+      [ "ECR_DETECTING", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0adde8a8defa8cef8d7ca83b13aee07de8", null ],
+      [ "ECR_FALLING", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0a0d622f162b3191a8438943aa4c2bcfb8", null ],
+      [ "ECR_RAISING", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0ae570d2ccf545ea2d5c031361a0594d12", null ],
+      [ "ECR_INVALID", "classdatatypes_1_1_eval_case_result.html#a37a460000d695eb812ee2bf1447346e0ac7966658fee355b9a8ec76ff2dde5bc0", null ]
+    ] ],
+    [ "EvalCaseResult", "classdatatypes_1_1_eval_case_result.html#aba13d943a11b0e7aa127176e51c39b2f", null ],
+    [ "~EvalCaseResult", "classdatatypes_1_1_eval_case_result.html#a5ff4480b0c1b492b7d1a52bb9d1e045a", null ],
+    [ "getUsedMemory", "classdatatypes_1_1_eval_case_result.html#aa041071e434d574d0eaf39d4e2877344", null ],
+    [ "toString", "classdatatypes_1_1_eval_case_result.html#a039f7a31b2384634f65023b005f59dc5", null ],
+    [ "aTimeBlock", "classdatatypes_1_1_eval_case_result.html#a6487830066992c1b42004d7442a7aa07", null ],
+    [ "CaseHdr", "classdatatypes_1_1_eval_case_result.html#ad2ba7178aec1b965b402c0a66c2e28c7", null ],
+    [ "dDistScaleFactor", "classdatatypes_1_1_eval_case_result.html#a47031fb4c8faafa7ea0fd782deef7bc2", null ],
+    [ "dDistScaleOffset", "classdatatypes_1_1_eval_case_result.html#a8e9a2cb54be846a8795e4c9ea894bce7", null ],
+    [ "iAngleScaleOffset", "classdatatypes_1_1_eval_case_result.html#af3f0b44cb07bcb6613b4398f87759a33", null ],
+    [ "m_eCaseResult", "classdatatypes_1_1_eval_case_result.html#a027fc80a9e16f30394063441cbe534b6", null ],
+    [ "m_sCaseName", "classdatatypes_1_1_eval_case_result.html#a3fe96a60bab4667e640c467b2f56524b", null ],
+    [ "m_sComment", "classdatatypes_1_1_eval_case_result.html#aa1130bd9abaef9c390664f13de2b3e6f", null ],
+    [ "udiSysCount", "classdatatypes_1_1_eval_case_result.html#a76cb041b03c335a00326ed2487628d8d", null ],
+    [ "udiUSec", "classdatatypes_1_1_eval_case_result.html#a096181aeeae4ab84ce1f66d0bc1cce20", null ],
+    [ "uiAngleScaleFactor", "classdatatypes_1_1_eval_case_result.html#ab3d0767e213faaa624283929d7aaac46", null ],
+    [ "uiVersionNo", "classdatatypes_1_1_eval_case_result.html#ad9d506837d4ea652c1d2a217bb228d27", null ],
+    [ "uiYear", "classdatatypes_1_1_eval_case_result.html#ae742d10f7c2642bdb661c0175ff11c9e", null ],
+    [ "usiDay", "classdatatypes_1_1_eval_case_result.html#ad96bbb5539daf5e0c80718b6301721bc", null ],
+    [ "usiHour", "classdatatypes_1_1_eval_case_result.html#a7a1111a0b7123f675d64c7ce60fd160e", null ],
+    [ "usiMinute", "classdatatypes_1_1_eval_case_result.html#a439a830995f7deb2e79c95377e7beed1", null ],
+    [ "usiMonth", "classdatatypes_1_1_eval_case_result.html#a509dff4d460d8f4c8f0d50d1a4a205bb", null ],
+    [ "usiNumber", "classdatatypes_1_1_eval_case_result.html#ad677f18e821993ae2f038e189ac0f5eb", null ],
+    [ "usiSec", "classdatatypes_1_1_eval_case_result.html#a77e4c69d3716bbe94806dbf51f58bb3b", null ]
+];

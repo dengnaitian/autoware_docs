@@ -1,0 +1,100 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/common/libs/amathutils_lib/include/amathutils_lib/amathutils.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/common/libs/amathutils_lib/include/amathutils_lib/amathutils.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cmath>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <geometry_msgs/Point\&.h>\fP
+.br
+\fC#include <geometry_msgs/Pose\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBamathutils\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBG_MPSS\fP   9\&.80665"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBamathutils::rad2deg\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBamathutils::deg2rad\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBamathutils::mps2kmph\fP (double _mpsval)"
+.br
+.ti -1c
+.RI "double \fBamathutils::kmph2mps\fP (double _kmphval)"
+.br
+.ti -1c
+.RI "double \fBamathutils::getGravityAcceleration\fP (double _acceleration_mpss)"
+.br
+.ti -1c
+.RI "double \fBamathutils::getAcceleration\fP (double _v0, double _v, double _x)"
+.br
+.ti -1c
+.RI "double \fBamathutils::getTimefromAcceleration\fP (double _v0, double _v, double _a)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBamathutils::getNearPtOnLine\fP (const \fBgeometry_msgs::Point\fP &_p, const \fBgeometry_msgs::Point\fP &_a, const \fBgeometry_msgs::Point\fP &_b)"
+.br
+.ti -1c
+.RI "double \fBamathutils::find_distance\fP (const \fBgeometry_msgs::Point\fP &_from, const \fBgeometry_msgs::Point\fP &_to)"
+.br
+.ti -1c
+.RI "double \fBamathutils::find_distance\fP (const geometry_msgs::Pose &_from, const geometry_msgs::Pose &_to)"
+.br
+.ti -1c
+.RI "double \fBamathutils::find_angle\fP (const \fBgeometry_msgs::Point\fP &_from, const \fBgeometry_msgs::Point\fP &_to)"
+.br
+.ti -1c
+.RI "bool \fBamathutils::isIntersectLine\fP (const \fBgeometry_msgs::Point\fP &_l1_p1, const \fBgeometry_msgs::Point\fP &_l1_p2, const \fBgeometry_msgs::Point\fP &_l2_p1, const \fBgeometry_msgs::Point\fP &_l2_p2)"
+.br
+.ti -1c
+.RI "int \fBamathutils::isPointLeftFromLine\fP (const \fBgeometry_msgs::Point\fP &_target, const \fBgeometry_msgs::Point\fP &_line_p1, const \fBgeometry_msgs::Point\fP &_line_p2)"
+.br
+.ti -1c
+.RI "double \fBamathutils::getPoseYawAngle\fP (const geometry_msgs::Pose &_pose)"
+.br
+.ti -1c
+.RI "double \fBamathutils::calcPosesAngleDiffRaw\fP (const geometry_msgs::Pose &p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.ti -1c
+.RI "double \fBamathutils::radianNormalize\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBamathutils::calcPosesAngleDiffDeg\fP (const geometry_msgs::Pose &_p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.ti -1c
+.RI "double \fBamathutils::calcPosesAngleDiffRad\fP (const geometry_msgs::Pose &_p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define G_MPSS   9\&.80665"
+
+.PP
+Definition at line 16 of file amathutils\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

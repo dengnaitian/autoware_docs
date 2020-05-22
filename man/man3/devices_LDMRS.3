@@ -1,0 +1,217 @@
+.TH "devices::LDMRS" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::LDMRS \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LD_MRS\&.hpp>\fP
+.PP
+Inherits \fBdevices::BasicDevice\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLDMRS\fP (\fBManager\fP *manager)"
+.br
+.ti -1c
+.RI "\fB~LDMRS\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBinit\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBshutdown\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBrun\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBstop\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBisRunning\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetParameter\fP (\fBMrsParameterId\fP id, \fBUINT32\fP *value)"
+.br
+.ti -1c
+.RI "bool \fBsetParameter\fP (\fBMrsParameterId\fP id, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "bool \fBsetNtpTime\fP (\fBUINT32\fP seconds, \fBUINT32\fP fractionalSec)"
+.br
+.ti -1c
+.RI "bool \fBsetScanAngles\fP (double startAngle, double endAngle)"
+.br
+.ti -1c
+.RI "bool \fBsetSyncAngleOffset\fP (double syncAngle)"
+.br
+.ti -1c
+.RI "bool \fBsetScanFrequency\fP (double scanFreq)"
+.br
+.ti -1c
+.RI "std::string \fBgetIpAddress\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetIpAddress\fP (std::string ipAddress)"
+.br
+.ti -1c
+.RI "void \fBsetWeWantObjectData\fP (bool weWantObjectData)"
+.br
+.ti -1c
+.RI "std::string \fBgetSerialNumber\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetFirmwareVersion\fP ()"
+.br
+.ti -1c
+.RI "bool \fBwriteField\fP (\fBUINT16\fP fieldNum, const \fBFieldParameter\fP &para)"
+.br
+.ti -1c
+.RI "bool \fBwriteEvalCases\fP (const \fBEvalCases\fP &evalCases)"
+.br
+.ti -1c
+.RI "bool \fBflashSopasConfig\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdisconnectFunctionS\fP (void *obj)"
+.br
+.ti -1c
+.RI "static void \fBonScanReceivedS\fP (void *obj)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdisconnectFunction\fP ()"
+.br
+.ti -1c
+.RI "void \fBonScanReceived\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file LD_MRS\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::LDMRS::LDMRS (\fBManager\fP * manager)"
+
+.PP
+Definition at line 29 of file LD_MRS\&.cpp\&.
+.SS "devices::LDMRS::~LDMRS ()"
+
+.PP
+Definition at line 73 of file LD_MRS\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void devices::LDMRS::disconnectFunction ()\fC [protected]\fP"
+
+.PP
+Definition at line 198 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::disconnectFunctionS (void * obj)\fC [static]\fP"
+
+.PP
+Definition at line 181 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::flashSopasConfig ()"
+
+.PP
+Definition at line 279 of file LD_MRS\&.cpp\&.
+.SS "std::string devices::LDMRS::getFirmwareVersion ()"
+
+.PP
+Definition at line 443 of file LD_MRS\&.cpp\&.
+.SS "std::string devices::LDMRS::getIpAddress ()"
+
+.PP
+Definition at line 419 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::getParameter (\fBMrsParameterId\fP id, \fBUINT32\fP * value)"
+
+.PP
+Definition at line 588 of file LD_MRS\&.cpp\&.
+.SS "std::string devices::LDMRS::getSerialNumber ()"
+
+.PP
+Definition at line 433 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::init (void)\fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBdevices::BasicDevice\fP\&.
+.PP
+Definition at line 92 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::isRunning ()\fC [virtual]\fP"
+
+.PP
+Definition at line 557 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::onScanReceived ()\fC [protected]\fP"
+
+.PP
+Definition at line 580 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::onScanReceivedS (void * obj)\fC [static]\fP"
+
+.PP
+Definition at line 571 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::run (void)\fC [virtual]\fP"
+
+.PP
+Implements \fBdevices::BasicDevice\fP\&.
+.PP
+Definition at line 457 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::setIpAddress (std::string ipAddress)"
+
+.PP
+Definition at line 424 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::setNtpTime (\fBUINT32\fP seconds, \fBUINT32\fP fractionalSec)"
+
+.PP
+Definition at line 306 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::setParameter (\fBMrsParameterId\fP id, \fBUINT32\fP value)"
+
+.PP
+Definition at line 593 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::setScanAngles (double startAngle, double endAngle)"
+
+.PP
+Definition at line 335 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::setScanFrequency (double scanFreq)"
+
+.PP
+Definition at line 391 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::setSyncAngleOffset (double syncAngle)"
+
+.PP
+Definition at line 363 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::setWeWantObjectData (bool weWantObjectData)"
+
+.PP
+Definition at line 429 of file LD_MRS\&.cpp\&.
+.SS "void devices::LDMRS::shutdown ()\fC [virtual]\fP"
+
+.PP
+Definition at line 209 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::stop ()\fC [virtual]\fP"
+
+.PP
+Implements \fBdevices::BasicDevice\fP\&.
+.PP
+Definition at line 533 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::writeEvalCases (const \fBEvalCases\fP & evalCases)"
+
+.PP
+Definition at line 251 of file LD_MRS\&.cpp\&.
+.SS "bool devices::LDMRS::writeField (\fBUINT16\fP fieldNum, const \fBFieldParameter\fP & para)"
+
+.PP
+Definition at line 222 of file LD_MRS\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

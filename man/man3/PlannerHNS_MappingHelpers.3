@@ -1,0 +1,700 @@
+.TH "PlannerHNS::MappingHelpers" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::MappingHelpers \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MappingHelpers\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMappingHelpers\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~MappingHelpers\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBConstructRoadNetworkFromROSMessage\fP (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > &lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > &dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > &intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > &area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > &stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > &signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > &vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > &curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > &roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > &wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > &crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > &nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > &conn_data, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP, const bool &bSpecialFlag=false, const bool &bFindLaneChangeLanes=false, const bool &bFindCurbsAndWayArea=false)"
+.br
+.ti -1c
+.RI "static void \fBConstructRoadNetworkFromROSMessageV2\fP (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > &lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > &dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > &intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > &area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > &stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > &signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > &vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > &curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > &roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > &wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > &crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > &nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > &conn_data, \fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, \fBUtilityHNS::AisanLinesFileReader\fP *pLinedata, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP, const bool &bSpecialFlag=false, const bool &bFindLaneChangeLanes=false, const bool &bFindCurbsAndWayArea=false)"
+.br
+.ti -1c
+.RI "static void \fBConstructRoadNetworkFromROSMessageV2\fP (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > &lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > &dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > &intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > &area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > &stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > &signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > &vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > &curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > &roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > &wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > &crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > &nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > &conn_data, const std::vector< \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP > &white_line_data, \fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, \fBUtilityHNS::AisanLinesFileReader\fP *pLinedata, \fBUtilityHNS::AisanWhiteLinesFileReader\fP *pWhiteLineData, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP, const bool &bSpecialFlag=false, const bool &bFindLaneChangeLanes=false, const bool &bFindCurbsAndWayArea=false)"
+.br
+.ti -1c
+.RI "static void \fBCreateWhiteLines\fP (\fBUtilityHNS::AisanWhiteLinesFileReader\fP *pWhiteLineData, \fBUtilityHNS::AisanLinesFileReader\fP *pLinesData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, std::vector< \fBPlannerHNS::WhiteLine\fP > &white_line_data)"
+.br
+.ti -1c
+.RI "static void \fBGetWhiteLineStartPoints\fP (\fBUtilityHNS::AisanLinesFileReader\fP *pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader\fP *pWhiteLineData, std::vector< int > &start_white_lines)"
+.br
+.ti -1c
+.RI "static void \fBGetLanePoints\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, int lnID, \fBPlannerHNS::Lane\fP &out_lane, std::vector< \fBWhiteLine\fP > &whiteLines)"
+.br
+.ti -1c
+.RI "static void \fBCreateLanes\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, std::vector< \fBPlannerHNS::Lane\fP > &out_lanes, std::vector< \fBWhiteLine\fP > &whiteLines)"
+.br
+.ti -1c
+.RI "static void \fBCheckWaypointChangeLaneFlags\fP (\fBPlannerHNS::WayPoint\fP *wp, std::vector< \fBWhiteLine\fP > &white_lines)"
+.br
+.ti -1c
+.RI "static void \fBSetLanePointChangeFlags\fP (\fBPlannerHNS::Lane\fP *lane, std::vector< \fBPlannerHNS::WhiteLine\fP > &white_lines)"
+.br
+.ti -1c
+.RI "static bool \fBIsStartWhiteLinePoint\fP (\fBUtilityHNS::AisanLinesFileReader\fP *pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP *pL)"
+.br
+.ti -1c
+.RI "static bool \fBIsEndWhiteLinePoint\fP (\fBUtilityHNS::AisanLinesFileReader\fP *pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP *pL)"
+.br
+.ti -1c
+.RI "static void \fBConnectWhiteLines\fP (\fBUtilityHNS::AisanWhiteLinesFileReader\fP *pWhiteLineData, \fBUtilityHNS::AisanLinesFileReader\fP *pLineData, \fBUtilityHNS::AisanPointsFileReader\fP *pPoints, int index, \fBPlannerHNS::WhiteLine\fP &white_line)"
+.br
+.ti -1c
+.RI "static void \fBConstructRoadNetworkFromDataFiles\fP (const std::string vectoMapPath, \fBRoadNetwork\fP &\fBmap\fP, const bool &bZeroOrigin=false)"
+.br
+.ti -1c
+.RI "static void \fBUpdateMapWithOccupancyGrid\fP (\fBOccupancyToGridMap\fP &map_info, const std::vector< int > &\fBdata\fP, \fBRoadNetwork\fP &\fBmap\fP, std::vector< \fBWayPoint\fP * > &updated_list)"
+.br
+.ti -1c
+.RI "static bool \fBGetWayPoint\fP (const int &id, const int &laneID, const double &refVel, const int &did, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > &dtpoints, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points, const \fBGPSPoint\fP &origin, \fBWayPoint\fP &way_point)"
+.br
+.ti -1c
+.RI "static void \fBLoadKML\fP (const std::string &kmlMap, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static TiXmlElement * \fBGetHeadElement\fP (TiXmlElement *pMainElem)"
+.br
+.ti -1c
+.RI "static TiXmlElement * \fBGetDataFolder\fP (const std::string &folderName, TiXmlElement *pMainElem)"
+.br
+.ti -1c
+.RI "static \fBLane\fP * \fBGetClosestLaneFromMap\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=5\&.0, const bool bDirectionBased=true)"
+.br
+.ti -1c
+.RI "static std::vector< \fBLane\fP * > \fBGetClosestLanesListFromMap\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=2\&.0, const bool bDirectionBased=true)"
+.br
+.ti -1c
+.RI "static \fBLane\fP * \fBGetClosestLaneFromMapDirectionBased\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=5\&.0)"
+.br
+.ti -1c
+.RI "static std::vector< \fBLane\fP * > \fBGetClosestMultipleLanesFromMap\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=5\&.0)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBGetClosestWaypointFromMap\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const bool bDirectionBased=true)"
+.br
+.ti -1c
+.RI "static std::vector< \fBLane\fP * > \fBGetClosestLanesFast\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=10\&.0)"
+.br
+.ti -1c
+.RI "static std::vector< \fBWayPoint\fP * > \fBGetClosestWaypointsListFromMap\fP (const \fBWayPoint\fP &center, \fBRoadNetwork\fP &\fBmap\fP, const double &\fBdistance\fP=2\&.0, const bool bDirectionBased=true)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBGetClosestBackWaypointFromMap\fP (const \fBWayPoint\fP &pos, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBGetFirstWaypoint\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBGetLastWaypoint\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBFindAdjacentLanes\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBFindAdjacentLanesV2\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractSignalData\fP (const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > &signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > &vector_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractSignalDataV2\fP (const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > &signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > &vector_data, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractStopLinesData\fP (const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > &stop_line_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractStopLinesDataV2\fP (const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > &stop_line_data, \fBUtilityHNS::AisanLinesFileReader\fP *pLineData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointData, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractCurbData\fP (const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > &curb_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractCurbDataV2\fP (const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > &curb_data, \fBUtilityHNS::AisanLinesFileReader\fP *pLinedata, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractWayArea\fP (const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > &area_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > &wayarea_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > &line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > &points_data, const \fBGPSPoint\fP &origin, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBLinkMissingBranchingWayPoints\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBLinkMissingBranchingWayPointsV2\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBLinkTrafficLightsAndStopLinesConData\fP (const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > &conn_data, const std::vector< std::pair< int, int > > &id_replace_list, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBLinkTrafficLightsAndStopLines\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBLinkTrafficLightsAndStopLinesV2\fP (\fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBGetUniqueNextLanes\fP (const \fBLane\fP *l, const std::vector< \fBLane\fP * > &traversed_lanes, std::vector< \fBLane\fP * > &lanes_list)"
+.br
+.ti -1c
+.RI "static \fBGPSPoint\fP \fBGetTransformationOrigin\fP (const int &bToyotaCityMap=0)"
+.br
+.ti -1c
+.RI "static \fBLane\fP * \fBGetLaneFromPath\fP (const \fBWayPoint\fP &currPos, const std::vector< \fBWayPoint\fP > &currPath)"
+.br
+.ti -1c
+.RI "static \fBLane\fP * \fBGetLaneById\fP (const int &id, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static int \fBGetLaneIdByWaypointId\fP (const int &id, std::vector< \fBLane\fP > &lanes)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBFindWaypoint\fP (const int &id, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBFindWaypointV2\fP (const int &id, const int &l_id, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static std::vector< \fBCurb\fP > \fBGetCurbsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBBoundary\fP > \fBGetBoundariesList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBMarking\fP > \fBGetMarkingsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBCrossing\fP > \fBGetCrossingsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBTrafficSign\fP > \fBGetTrafficSignsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBTrafficLight\fP > \fBGetTrafficLightsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBStopLine\fP > \fBGetStopLinesList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBLane\fP > \fBGetLanesList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< \fBRoadSegment\fP > \fBGetRoadSegmentsList\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< int > \fBGetIDsFromPrefix\fP (const std::string &str, const std::string &prefix, const std::string &postfix)"
+.br
+.ti -1c
+.RI "static std::vector< double > \fBGetDoubleFromPrefix\fP (const std::string &str, const std::string &prefix, const std::string &postfix)"
+.br
+.ti -1c
+.RI "static std::pair< \fBACTION_TYPE\fP, double > \fBGetActionPairFromPrefix\fP (const std::string &str, const std::string &prefix, const std::string &postfix)"
+.br
+.ti -1c
+.RI "static std::vector< \fBWayPoint\fP > \fBGetCenterLaneData\fP (TiXmlElement *pElem, const int &currLaneID)"
+.br
+.ti -1c
+.RI "static std::vector< \fBWayPoint\fP > \fBGetCenterLaneDataVer0\fP (TiXmlElement *pElem, const int &currLaneID)"
+.br
+.ti -1c
+.RI "static std::vector< \fBGPSPoint\fP > \fBGetPointsData\fP (TiXmlElement *pElem)"
+.br
+.ti -1c
+.RI "static std::vector< std::string > \fBSplitString\fP (const std::string &str, const std::string &token)"
+.br
+.ti -1c
+.RI "static void \fBAssignActionCostToLane\fP (\fBLane\fP *pL, \fBACTION_TYPE\fP action, double cost)"
+.br
+.ti -1c
+.RI "static int \fBReplaceMyID\fP (int &id, const std::vector< std::pair< int, int > > &rep_list)"
+.br
+.ti -1c
+.RI "static void \fBGetLanesStartPoints\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, std::vector< int > &m_LanesStartIds)"
+.br
+.ti -1c
+.RI "static void \fBGetLanePoints\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, int lnID, \fBPlannerHNS::Lane\fP &out_lane)"
+.br
+.ti -1c
+.RI "static void \fBCreateLanes\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, std::vector< \fBPlannerHNS::Lane\fP > &out_lanes)"
+.br
+.ti -1c
+.RI "static void \fBConnectLanes\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, std::vector< \fBPlannerHNS::Lane\fP > &lanes)"
+.br
+.ti -1c
+.RI "static bool \fBGetPointFromDataList\fP (\fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, const int &pid, \fBWayPoint\fP &out_wp)"
+.br
+.ti -1c
+.RI "static int \fBGetBeginPointIdFromLaneNo\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, const int &LnID)"
+.br
+.ti -1c
+.RI "static int \fBGetEndPointIdFromLaneNo\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP *pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP *pNodesData, const int &LnID)"
+.br
+.ti -1c
+.RI "static bool \fBIsStartLanePoint\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP *pL)"
+.br
+.ti -1c
+.RI "static bool \fBIsEndLanePoint\fP (\fBUtilityHNS::AisanLanesFileReader\fP *pLaneData, \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP *pL)"
+.br
+.ti -1c
+.RI "static void \fBFixRedundantPointsLanes\fP (std::vector< \fBLane\fP > &lanes)"
+.br
+.ti -1c
+.RI "static void \fBFixTwoPointsLanes\fP (std::vector< \fBLane\fP > &lanes)"
+.br
+.ti -1c
+.RI "static void \fBFixTwoPointsLane\fP (\fBLane\fP &lanes)"
+.br
+.ti -1c
+.RI "static void \fBFixUnconnectedLanes\fP (std::vector< \fBLane\fP > &lanes)"
+.br
+.ti -1c
+.RI "static void \fBInsertWayPointToBackOfLane\fP (const \fBWayPoint\fP &wp, \fBLane\fP &lane, int &global_id)"
+.br
+.ti -1c
+.RI "static void \fBInsertWayPointToFrontOfLane\fP (const \fBWayPoint\fP &wp, \fBLane\fP &lane, int &global_id)"
+.br
+.ti -1c
+.RI "static void \fBLinkLanesPointers\fP (\fBPlannerHNS::RoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBGetMapMaxIds\fP (\fBPlannerHNS::RoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "static void \fBGetForwardWaypointSegInDistanceFromCurrent\fP (const \fBWayPoint\fP &curr_point, const double \fBdistance\fP, std::vector< \fBWayPoint\fP > &lane)"
+.br
+.ti -1c
+.RI "static void \fBGetBackwardWaypointSegInDistanceFromCurrent\fP (const \fBWayPoint\fP &curr_point, const double \fBdistance\fP, std::vector< \fBWayPoint\fP > &lane)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBGetForwardWaypointInDistanceFromCurrent\fP (const \fBWayPoint\fP &curr_point, const double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBFindFirstChangableWaypoint\fP (\fBWayPoint\fP *curr_point, int type)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static double \fBm_USING_VER_ZERO\fP = 0"
+.br
+.ti -1c
+.RI "static int \fBg_max_point_id\fP = 0"
+.br
+.ti -1c
+.RI "static int \fBg_max_lane_id\fP = 0"
+.br
+.ti -1c
+.RI "static int \fBg_max_stop_line_id\fP = 0"
+.br
+.ti -1c
+.RI "static int \fBg_max_traffic_light_id\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file MappingHelpers\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::MappingHelpers::MappingHelpers ()"
+
+.PP
+Definition at line 29 of file MappingHelpers\&.cpp\&.
+.SS "PlannerHNS::MappingHelpers::~MappingHelpers ()\fC [virtual]\fP"
+
+.PP
+Definition at line 33 of file MappingHelpers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::MappingHelpers::AssignActionCostToLane (\fBLane\fP * pL, \fBACTION_TYPE\fP action, double cost)\fC [static]\fP"
+
+.PP
+Definition at line 496 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::CheckWaypointChangeLaneFlags (\fBPlannerHNS::WayPoint\fP * wp, std::vector< \fBWhiteLine\fP > & white_lines)\fC [static]\fP"
+
+.PP
+Definition at line 3966 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConnectLanes (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, std::vector< \fBPlannerHNS::Lane\fP > & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2554 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConnectWhiteLines (\fBUtilityHNS::AisanWhiteLinesFileReader\fP * pWhiteLineData, \fBUtilityHNS::AisanLinesFileReader\fP * pLineData, \fBUtilityHNS::AisanPointsFileReader\fP * pPoints, int index, \fBPlannerHNS::WhiteLine\fP & white_line)\fC [static]\fP"
+
+.PP
+Definition at line 3730 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConstructRoadNetworkFromDataFiles (const std::string vectoMapPath, \fBRoadNetwork\fP & map, const bool & bZeroOrigin = \fCfalse\fP)\fC [static]\fP"
+Exporting the center lines
+.PP
+Definition at line 543 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConstructRoadNetworkFromROSMessage (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > & lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > & dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > & intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > & area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > & stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > & signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > & vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > & curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > & roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > & wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > & crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > & nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > & conn_data, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map, const bool & bSpecialFlag = \fCfalse\fP, const bool & bFindLaneChangeLanes = \fCfalse\fP, const bool & bFindCurbsAndWayArea = \fCfalse\fP)\fC [static]\fP"
+
+.PP
+Definition at line 92 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConstructRoadNetworkFromROSMessageV2 (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > & lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > & dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > & intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > & area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > & stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > & signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > & vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > & curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > & roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > & wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > & crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > & nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > & conn_data, \fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, \fBUtilityHNS::AisanLinesFileReader\fP * pLinedata, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map, const bool & bSpecialFlag = \fCfalse\fP, const bool & bFindLaneChangeLanes = \fCfalse\fP, const bool & bFindCurbsAndWayArea = \fCfalse\fP)\fC [static]\fP"
+
+.PP
+Definition at line 2327 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ConstructRoadNetworkFromROSMessageV2 (const std::vector< \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP > & lanes_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > & dt_data, const std::vector< \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP > & intersection_data, const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > & area_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > & stop_line_data, const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > & signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > & vector_data, const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > & curb_data, const std::vector< \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP > & roadedge_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > & wayarea_data, const std::vector< \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP > & crosswalk_data, const std::vector< \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP > & nodes_data, const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > & conn_data, const std::vector< \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP > & white_line_data, \fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, \fBUtilityHNS::AisanLinesFileReader\fP * pLinedata, \fBUtilityHNS::AisanWhiteLinesFileReader\fP * pWhiteLineData, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map, const bool & bSpecialFlag = \fCfalse\fP, const bool & bFindLaneChangeLanes = \fCfalse\fP, const bool & bFindCurbsAndWayArea = \fCfalse\fP)\fC [static]\fP"
+
+.PP
+Definition at line 3527 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::CreateLanes (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, std::vector< \fBPlannerHNS::Lane\fP > & out_lanes, std::vector< \fBWhiteLine\fP > & whiteLines)\fC [static]\fP"
+
+.PP
+Definition at line 3762 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::CreateLanes (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, std::vector< \fBPlannerHNS::Lane\fP > & out_lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2588 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::CreateWhiteLines (\fBUtilityHNS::AisanWhiteLinesFileReader\fP * pWhiteLineData, \fBUtilityHNS::AisanLinesFileReader\fP * pLinesData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, std::vector< \fBPlannerHNS::WhiteLine\fP > & white_line_data)\fC [static]\fP"
+
+.PP
+Definition at line 3661 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractCurbData (const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > & curb_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2042 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractCurbDataV2 (const std::vector< \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP > & curb_data, \fBUtilityHNS::AisanLinesFileReader\fP * pLinedata, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3261 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractSignalData (const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > & signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > & vector_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 1968 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractSignalDataV2 (const std::vector< \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP > & signal_data, const std::vector< \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP > & vector_data, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3298 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractStopLinesData (const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > & stop_line_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2004 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractStopLinesDataV2 (const std::vector< \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP > & stop_line_data, \fBUtilityHNS::AisanLinesFileReader\fP * pLineData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointData, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3331 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::ExtractWayArea (const std::vector< \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP > & area_data, const std::vector< \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP > & wayarea_data, const std::vector< \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP > & line_data, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points_data, const \fBGPSPoint\fP & origin, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2080 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FindAdjacentLanes (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 1897 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FindAdjacentLanesV2 (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3419 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::MappingHelpers::FindFirstChangableWaypoint (\fBWayPoint\fP * curr_point, int type)\fC [static]\fP"
+
+.PP
+Definition at line 4188 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::MappingHelpers::FindWaypoint (const int & id, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 505 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::MappingHelpers::FindWaypointV2 (const int & id, const int & l_id, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 522 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FixRedundantPointsLanes (std::vector< \fBLane\fP > & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2785 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FixTwoPointsLane (\fBLane\fP & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2817 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FixTwoPointsLanes (std::vector< \fBLane\fP > & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2847 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::FixUnconnectedLanes (std::vector< \fBLane\fP > & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 2923 of file MappingHelpers\&.cpp\&.
+.SS "pair< \fBACTION_TYPE\fP, double > PlannerHNS::MappingHelpers::GetActionPairFromPrefix (const std::string & str, const std::string & prefix, const std::string & postfix)\fC [static]\fP"
+
+.PP
+Definition at line 1844 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetBackwardWaypointSegInDistanceFromCurrent (const \fBWayPoint\fP & curr_point, const double distance, std::vector< \fBWayPoint\fP > & lane)\fC [static]\fP"
+
+.PP
+Definition at line 4136 of file MappingHelpers\&.cpp\&.
+.SS "int PlannerHNS::MappingHelpers::GetBeginPointIdFromLaneNo (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, const int & LnID)\fC [static]\fP"
+
+.PP
+Definition at line 2469 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBBoundary\fP > PlannerHNS::MappingHelpers::GetBoundariesList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1316 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBWayPoint\fP > PlannerHNS::MappingHelpers::GetCenterLaneData (TiXmlElement * pElem, const int & currLaneID)\fC [static]\fP"
+
+.PP
+Definition at line 1633 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBWayPoint\fP > PlannerHNS::MappingHelpers::GetCenterLaneDataVer0 (TiXmlElement * pElem, const int & currLaneID)\fC [static]\fP"
+
+.PP
+Definition at line 1717 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::MappingHelpers::GetClosestBackWaypointFromMap (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 983 of file MappingHelpers\&.cpp\&.
+.SS "\fBLane\fP * PlannerHNS::MappingHelpers::GetClosestLaneFromMap (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const double & distance = \fC5\&.0\fP, const bool bDirectionBased = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1030 of file MappingHelpers\&.cpp\&.
+.SS "\fBLane\fP * PlannerHNS::MappingHelpers::GetClosestLaneFromMapDirectionBased (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const double & distance = \fC5\&.0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1133 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBLane\fP * > PlannerHNS::MappingHelpers::GetClosestLanesFast (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const double & distance = \fC10\&.0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1008 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBLane\fP * > PlannerHNS::MappingHelpers::GetClosestLanesListFromMap (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const double & distance = \fC2\&.0\fP, const bool bDirectionBased = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1083 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBLane\fP * > PlannerHNS::MappingHelpers::GetClosestMultipleLanesFromMap (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const double & distance = \fC5\&.0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1186 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::MappingHelpers::GetClosestWaypointFromMap (const \fBWayPoint\fP & pos, \fBRoadNetwork\fP & map, const bool bDirectionBased = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 941 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBWayPoint\fP * > PlannerHNS::MappingHelpers::GetClosestWaypointsListFromMap (const \fBWayPoint\fP & center, \fBRoadNetwork\fP & map, const double & distance = \fC2\&.0\fP, const bool bDirectionBased = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 961 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBCrossing\fP > PlannerHNS::MappingHelpers::GetCrossingsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1385 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBCurb\fP > PlannerHNS::MappingHelpers::GetCurbsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1285 of file MappingHelpers\&.cpp\&.
+.SS "TiXmlElement * PlannerHNS::MappingHelpers::GetDataFolder (const std::string & folderName, TiXmlElement * pMainElem)\fC [static]\fP"
+
+.PP
+Definition at line 922 of file MappingHelpers\&.cpp\&.
+.SS "vector< double > PlannerHNS::MappingHelpers::GetDoubleFromPrefix (const std::string & str, const std::string & prefix, const std::string & postfix)\fC [static]\fP"
+
+.PP
+Definition at line 1819 of file MappingHelpers\&.cpp\&.
+.SS "int PlannerHNS::MappingHelpers::GetEndPointIdFromLaneNo (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, const int & LnID)\fC [static]\fP"
+
+.PP
+Definition at line 2488 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::MappingHelpers::GetFirstWaypoint (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 1226 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::MappingHelpers::GetForwardWaypointInDistanceFromCurrent (const \fBWayPoint\fP & curr_point, const double distance)\fC [static]\fP"
+
+.PP
+Definition at line 4162 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetForwardWaypointSegInDistanceFromCurrent (const \fBWayPoint\fP & curr_point, const double distance, std::vector< \fBWayPoint\fP > & lane)\fC [static]\fP"
+
+.PP
+Definition at line 4112 of file MappingHelpers\&.cpp\&.
+.SS "TiXmlElement * PlannerHNS::MappingHelpers::GetHeadElement (TiXmlElement * pMainElem)\fC [static]\fP"
+
+.PP
+Definition at line 905 of file MappingHelpers\&.cpp\&.
+.SS "vector< int > PlannerHNS::MappingHelpers::GetIDsFromPrefix (const std::string & str, const std::string & prefix, const std::string & postfix)\fC [static]\fP"
+
+.PP
+Definition at line 1794 of file MappingHelpers\&.cpp\&.
+.SS "\fBLane\fP * PlannerHNS::MappingHelpers::GetLaneById (const int & id, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 48 of file MappingHelpers\&.cpp\&.
+.SS "\fBLane\fP * PlannerHNS::MappingHelpers::GetLaneFromPath (const \fBWayPoint\fP & currPos, const std::vector< \fBWayPoint\fP > & currPath)\fC [static]\fP"
+
+.PP
+Definition at line 1275 of file MappingHelpers\&.cpp\&.
+.SS "int PlannerHNS::MappingHelpers::GetLaneIdByWaypointId (const int & id, std::vector< \fBLane\fP > & lanes)\fC [static]\fP"
+
+.PP
+Definition at line 62 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetLanePoints (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, int lnID, \fBPlannerHNS::Lane\fP & out_lane, std::vector< \fBWhiteLine\fP > & whiteLines)\fC [static]\fP"
+
+.PP
+Definition at line 3780 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetLanePoints (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, \fBUtilityHNS::AisanNodesFileReader\fP * pNodesData, int lnID, \fBPlannerHNS::Lane\fP & out_lane)\fC [static]\fP"
+
+.PP
+Definition at line 2605 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBLane\fP > PlannerHNS::MappingHelpers::GetLanesList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1534 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetLanesStartPoints (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, std::vector< int > & m_LanesStartIds)\fC [static]\fP"
+
+.PP
+Definition at line 2532 of file MappingHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::MappingHelpers::GetLastWaypoint (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 1243 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetMapMaxIds (\fBPlannerHNS::RoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3492 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBMarking\fP > PlannerHNS::MappingHelpers::GetMarkingsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1346 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::GetPointFromDataList (\fBUtilityHNS::AisanPointsFileReader\fP * pPointsData, const int & pid, \fBWayPoint\fP & out_wp)\fC [static]\fP"
+
+.PP
+Definition at line 2449 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBGPSPoint\fP > PlannerHNS::MappingHelpers::GetPointsData (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1594 of file MappingHelpers\&.cpp\&.
+.SS "vector< \fBRoadSegment\fP > PlannerHNS::MappingHelpers::GetRoadSegmentsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1570 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBStopLine\fP > PlannerHNS::MappingHelpers::GetStopLinesList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1468 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBTrafficLight\fP > PlannerHNS::MappingHelpers::GetTrafficLightsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1502 of file MappingHelpers\&.cpp\&.
+.SS "std::vector< \fBTrafficSign\fP > PlannerHNS::MappingHelpers::GetTrafficSignsList (TiXmlElement * pElem)\fC [static]\fP"
+
+.PP
+Definition at line 1416 of file MappingHelpers\&.cpp\&.
+.SS "\fBGPSPoint\fP PlannerHNS::MappingHelpers::GetTransformationOrigin (const int & bToyotaCityMap = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 37 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetUniqueNextLanes (const \fBLane\fP * l, const std::vector< \fBLane\fP * > & traversed_lanes, std::vector< \fBLane\fP * > & lanes_list)\fC [static]\fP"
+
+.PP
+Definition at line 1255 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::GetWayPoint (const int & id, const int & laneID, const double & refVel, const int & did, const std::vector< \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP > & dtpoints, const std::vector< \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP > & points, const \fBGPSPoint\fP & origin, \fBWayPoint\fP & way_point)\fC [static]\fP"
+
+.PP
+Definition at line 642 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::GetWhiteLineStartPoints (\fBUtilityHNS::AisanLinesFileReader\fP * pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader\fP * pWhiteLineData, std::vector< int > & start_white_lines)\fC [static]\fP"
+
+.PP
+Definition at line 3687 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::InsertWayPointToBackOfLane (const \fBWayPoint\fP & wp, \fBLane\fP & lane, int & global_id)\fC [static]\fP"
+
+.PP
+Definition at line 2867 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::InsertWayPointToFrontOfLane (const \fBWayPoint\fP & wp, \fBLane\fP & lane, int & global_id)\fC [static]\fP"
+
+.PP
+Definition at line 2895 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::IsEndLanePoint (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 2521 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::IsEndWhiteLinePoint (\fBUtilityHNS::AisanLinesFileReader\fP * pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 3720 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::IsStartLanePoint (\fBUtilityHNS::AisanLanesFileReader\fP * pLaneData, \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 2505 of file MappingHelpers\&.cpp\&.
+.SS "bool PlannerHNS::MappingHelpers::IsStartWhiteLinePoint (\fBUtilityHNS::AisanLinesFileReader\fP * pLineData, \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 3711 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkLanesPointers (\fBPlannerHNS::RoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3223 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkMissingBranchingWayPoints (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2120 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkMissingBranchingWayPointsV2 (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2138 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkTrafficLightsAndStopLines (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2176 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkTrafficLightsAndStopLinesConData (const std::vector< \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP > & conn_data, const std::vector< std::pair< int, int > > & id_replace_list, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 2231 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LinkTrafficLightsAndStopLinesV2 (\fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 3364 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::LoadKML (const std::string & kmlMap, \fBRoadNetwork\fP & map)\fC [static]\fP"
+
+.PP
+Definition at line 689 of file MappingHelpers\&.cpp\&.
+.SS "int PlannerHNS::MappingHelpers::ReplaceMyID (int & id, const std::vector< std::pair< int, int > > & rep_list)\fC [static]\fP"
+
+.PP
+Definition at line 78 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::SetLanePointChangeFlags (\fBPlannerHNS::Lane\fP * lane, std::vector< \fBPlannerHNS::WhiteLine\fP > & white_lines)\fC [static]\fP"
+
+.PP
+Definition at line 4057 of file MappingHelpers\&.cpp\&.
+.SS "vector< string > PlannerHNS::MappingHelpers::SplitString (const std::string & str, const std::string & token)\fC [static]\fP"
+
+.PP
+Definition at line 1873 of file MappingHelpers\&.cpp\&.
+.SS "void PlannerHNS::MappingHelpers::UpdateMapWithOccupancyGrid (\fBOccupancyToGridMap\fP & map_info, const std::vector< int > & data, \fBRoadNetwork\fP & map, std::vector< \fBWayPoint\fP * > & updated_list)\fC [static]\fP"
+
+.PP
+Definition at line 2282 of file MappingHelpers\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int PlannerHNS::MappingHelpers::g_max_lane_id = 0\fC [static]\fP"
+
+.PP
+Definition at line 282 of file MappingHelpers\&.h\&.
+.SS "int PlannerHNS::MappingHelpers::g_max_point_id = 0\fC [static]\fP"
+
+.PP
+Definition at line 281 of file MappingHelpers\&.h\&.
+.SS "int PlannerHNS::MappingHelpers::g_max_stop_line_id = 0\fC [static]\fP"
+
+.PP
+Definition at line 283 of file MappingHelpers\&.h\&.
+.SS "int PlannerHNS::MappingHelpers::g_max_traffic_light_id = 0\fC [static]\fP"
+
+.PP
+Definition at line 284 of file MappingHelpers\&.h\&.
+.SS "double PlannerHNS::MappingHelpers::m_USING_VER_ZERO = 0\fC [static]\fP"
+
+.PP
+Definition at line 279 of file MappingHelpers\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

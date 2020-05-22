@@ -1,0 +1,27 @@
+var class_hev_comm =
+[
+    [ "HevComm", "class_hev_comm.html#ad1a795f3c52480a9b847242a93e6102a", null ],
+    [ "~HevComm", "class_hev_comm.html#aa192b29e0b018ab104b475d8695d6d79", null ],
+    [ "CloseComm", "class_hev_comm.html#ae9050598ab9db0af2949013bce77d769", null ],
+    [ "GetCurrentBrakeValue", "class_hev_comm.html#a672995ef09653ec0cef7e3fcd01a4f6f", null ],
+    [ "GetCurrentShift", "class_hev_comm.html#ad51487b23282255ac72a95fbe9253bce", null ],
+    [ "GetCurrentSpeed", "class_hev_comm.html#ab1507eec678419c914b659ecb3ea2b1f", null ],
+    [ "GetCurrentSteerAngle", "class_hev_comm.html#aaae9dd08397b61af8fb56bb7bf6a80a6", null ],
+    [ "GetDriveMotorStatus", "class_hev_comm.html#a0a12248c7605a16861dc402fb99c30b2", null ],
+    [ "GetGeneralCorrectShift", "class_hev_comm.html#a0229b5a6aa0ecc2da11a870b3d4194f7", null ],
+    [ "GetHevCorrectShift", "class_hev_comm.html#aaa6a7b761859d059c6c876332f5f3bc6", null ],
+    [ "GetSteerMotorStatus", "class_hev_comm.html#ac790b7359e9405eb44c3967bafe36b32", null ],
+    [ "GoLive", "class_hev_comm.html#a21684d5ad9690a63e5d39273e883d2b0", null ],
+    [ "InitializeComm", "class_hev_comm.html#a1521b97691fcd0c4d7e6870103f002c1", null ],
+    [ "IsAuto", "class_hev_comm.html#a9ad933f2c9aa5b6fcd4eb5b6eae859b9", null ],
+    [ "IsAutoDrive", "class_hev_comm.html#a9b10be1d6993fa4335f2c895e618aef0", null ],
+    [ "IsAutoSteer", "class_hev_comm.html#a6e56aa8a3476dc0f3adf4f8e8a432640", null ],
+    [ "SetBrakeValue", "class_hev_comm.html#af6839be832059a2b3109a91bd8d3f9e4", null ],
+    [ "SetDriveMotorStatus", "class_hev_comm.html#a2b92e6baec50adbb044b14a712bd104e", null ],
+    [ "SetNormalizedSpeed", "class_hev_comm.html#afc69fc9fbb9e0cd0560efc6d134963d2", null ],
+    [ "SetNormalizedSteeringAngle", "class_hev_comm.html#ac2d719c82526e69f8de97b295cc61050", null ],
+    [ "SetShift", "class_hev_comm.html#ab77c6af1db91ea648843e99ac954ca18", null ],
+    [ "SetSteerMotorStatus", "class_hev_comm.html#ab945229a223df3e8da07df075a2abde3", null ],
+    [ "StartComm", "class_hev_comm.html#ac137bffa69167d14af44353d088a8797", null ],
+    [ "m_CarInfo", "class_hev_comm.html#aee09b428620a276897d9b7a0832a0204", null ]
+];

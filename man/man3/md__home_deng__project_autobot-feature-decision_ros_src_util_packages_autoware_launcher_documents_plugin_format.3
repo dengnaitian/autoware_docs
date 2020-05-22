@@ -1,0 +1,54 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_launcher_documents_plugin_format" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_launcher_documents_plugin_format \- Autoware Launcher Plugin \fBFile\fP Format 
+The plugin file is yaml file\&. Currently, there are the following versions\&.
+.IP "\(bu" 2
+Plugin Version 0\&.1 (experimental)
+.PP
+.PP
+.SH "Plugin Version 0\&.1"
+.PP
+.PP
+.SS "Plugin \fBFile\fP"
+.PP
+The file is the following dictionary\&.
+.PP
+.SS "Node Type"
+.PP
+Key Type Value/Comment  format string Fixed value: Autoware Launcher Plugin Version 0\&.1 exts \fCExtended Data List\fP Extended Data Definitions rules \fCChildren Rule List\fP Children Rule Definitions 
+.SS "Leaf Type"
+.PP
+Key Type Value/Comment  format string Fixed value: Autoware Launcher Plugin Version 0\&.1 rosxml string Path to roslaunch xml file exts \fCExtended Data List\fP Extended Data Definitions args \fCArgument Data List\fP Argument Data Definitions 
+.PP
+.SS "Argument Data / Extended Data"
+.PP
+dictionary
+.PP
+Key Type Value/Comment  name string Data name type string Data type (Enum: [str, int, real, bool]) list string / null List format: (Enum: [null, space, yaml]) default Default value 
+.SS "Children Rule"
+.PP
+dictionary
+.PP
+Key Type Value/Comment  name string Child node name list bool Is multiple node plugin \fCReference Rule\fP Child type 
+.SS "Reference Rule"
+.PP
+list (If a type other than the list is specified, it is converted to a list with 1 element\&.)
+.PP
+Each element of the list must be:
+.IP "\(bu" 2
+Path Type
+.IP "\(bu" 2
+Scan Type
+.PP
+.PP
+.SS "Path Type"
+.PP
+Type is string\&. Specify the path to the plugin file\&.
+.PP
+.SS "Scan Type"
+.PP
+Type is dictionary\&. Scan all plugin files from the specified root path\&.
+.PP
+Key Type Value/Comment  scan string Scan root path 

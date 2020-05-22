@@ -1,0 +1,42 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_detector_packages_vision_segment_enet_detect__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_detector_packages_vision_segment_enet_detect__r_e_a_d_m_e \- How to Install Caffe for ENet 
+
+.IP "1." 4
+Complete the \fCpre-requisites\fP\&.
+.IP "2." 4
+Clone ENet: 
+.PP
+.nf
+1 cd ~
+2 git clone --recursive https://github\&.com/TimoSaemann/ENet\&.git
+3 cd ENet/caffe-enet
+
+.fi
+.PP
+
+.IP "3." 4
+Compile the ENet fork of Caffe using \fBMake\fP *(Don't use CMake to compile Caffe)*\&. Create \fCMakefile\&.config\fP from \fCMakefile\&.config\&.example\fP and setup your paths as indicated in http://caffe.berkeleyvision.org/installation.html#compilation\&. 
+.PP
+.nf
+1 make && make distribute
+
+.fi
+.PP
+
+.IP "4." 4
+Download pre-trained models as provided in https://github.com/TimoSaemann/ENet/tree/master/Tutorial#kick-start, or use your own\&.
+.PP
+.PP
+If you didn't install ENet Caffe in \fCENet\fP in your home directory for some reason, modify the Autoware ENet's node \fCCMakeLists\&.txt\fP and point the paths to match your system\&.
+.PP
+Once compiled, run from the terminal: 
+.PP
+.nf
+1 % roslaunch image_segmenter image_segmenter_enet\&.launch
+
+.fi
+.PP
+ Remember to modify the launch file located at \fCcomputing/perception/detection/packages/image_segmenter/launch/image_segmenter_enet\&.launch\fP and configure the network configuration file, the pre-trained models, and the LUT file\&. 

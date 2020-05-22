@@ -1,0 +1,102 @@
+.TH "autoware_health_checker::NodeStatusPublisher" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_health_checker::NodeStatusPublisher \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <node_status_publisher\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNodeStatusPublisher\fP (ros::NodeHandle nh, ros::NodeHandle pnh)"
+.br
+.ti -1c
+.RI "\fB~NodeStatusPublisher\fP ()"
+.br
+.ti -1c
+.RI "void \fBENABLE\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBCHECK_MIN_VALUE\fP (std::string key, double value, double warn_value, double error_value, double fatal_value, std::string description)"
+.br
+.ti -1c
+.RI "uint8_t \fBCHECK_MAX_VALUE\fP (std::string key, double value, double warn_value, double error_value, double fatal_value, std::string description)"
+.br
+.ti -1c
+.RI "uint8_t \fBCHECK_RANGE\fP (std::string key, double value, std::pair< double, double > warn_value, std::pair< double, double > error_value, std::pair< double, double > fatal_value, std::string description)"
+.br
+.ti -1c
+.RI "template<class T > uint8_t \fBCHECK_VALUE\fP (std::string key, T value, std::function< uint8_t(T value)> check_func, std::function< boost::property_tree::ptree(T value)> value_json_func, std::string description)"
+.br
+.ti -1c
+.RI "void \fBCHECK_RATE\fP (std::string key, double warn_rate, double error_rate, double fatal_rate, std::string description)"
+.br
+.ti -1c
+.RI "void \fBNODE_ACTIVATE\fP ()"
+.br
+.ti -1c
+.RI "void \fBNODE_DEACTIVATE\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetNodeStatus\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 47 of file node_status_publisher\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "autoware_health_checker::NodeStatusPublisher::NodeStatusPublisher (ros::NodeHandle nh, ros::NodeHandle pnh)"
+
+.PP
+Definition at line 23 of file node_status_publisher\&.cpp\&.
+.SS "autoware_health_checker::NodeStatusPublisher::~NodeStatusPublisher ()"
+
+.PP
+Definition at line 33 of file node_status_publisher\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint8_t autoware_health_checker::NodeStatusPublisher::CHECK_MAX_VALUE (std::string key, double value, double warn_value, double error_value, double fatal_value, std::string description)"
+
+.PP
+Definition at line 152 of file node_status_publisher\&.cpp\&.
+.SS "uint8_t autoware_health_checker::NodeStatusPublisher::CHECK_MIN_VALUE (std::string key, double value, double warn_value, double error_value, double fatal_value, std::string description)"
+
+.PP
+Definition at line 127 of file node_status_publisher\&.cpp\&.
+.SS "uint8_t autoware_health_checker::NodeStatusPublisher::CHECK_RANGE (std::string key, double value, std::pair< double, double > warn_value, std::pair< double, double > error_value, std::pair< double, double > fatal_value, std::string description)"
+
+.PP
+Definition at line 177 of file node_status_publisher\&.cpp\&.
+.SS "void autoware_health_checker::NodeStatusPublisher::CHECK_RATE (std::string key, double warn_rate, double error_rate, double fatal_rate, std::string description)"
+
+.PP
+Definition at line 202 of file node_status_publisher\&.cpp\&.
+.SS "template<class T > uint8_t autoware_health_checker::NodeStatusPublisher::CHECK_VALUE (std::string key, T value, std::function< uint8_t(T value)> check_func, std::function< boost::property_tree::ptree(T value)> value_json_func, std::string description)\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file node_status_publisher\&.h\&.
+.SS "void autoware_health_checker::NodeStatusPublisher::ENABLE ()"
+
+.PP
+Definition at line 76 of file node_status_publisher\&.cpp\&.
+.SS "bool autoware_health_checker::NodeStatusPublisher::getNodeStatus ()\fC [inline]\fP"
+
+.PP
+Definition at line 95 of file node_status_publisher\&.h\&.
+.SS "void autoware_health_checker::NodeStatusPublisher::NODE_ACTIVATE ()\fC [inline]\fP"
+
+.PP
+Definition at line 87 of file node_status_publisher\&.h\&.
+.SS "void autoware_health_checker::NodeStatusPublisher::NODE_DEACTIVATE ()\fC [inline]\fP"
+
+.PP
+Definition at line 91 of file node_status_publisher\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

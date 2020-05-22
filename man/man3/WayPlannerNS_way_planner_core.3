@@ -1,0 +1,315 @@
+.TH "WayPlannerNS::way_planner_core" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WayPlannerNS::way_planner_core \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <way_planner_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBway_planner_core\fP ()"
+.br
+.ti -1c
+.RI "\fB~way_planner_core\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlannerMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateRoadMap\fP (const \fBAutowareRoadNetwork\fP &src_map, \fBPlannerHNS::RoadNetwork\fP &out_map)"
+.br
+.ti -1c
+.RI "bool \fBGenerateGlobalPlan\fP (\fBPlannerHNS::WayPoint\fP &startPoint, \fBPlannerHNS::WayPoint\fP &goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &generatedTotalPaths)"
+.br
+.ti -1c
+.RI "void \fBVisualizeAndSend\fP (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > generatedTotalPaths)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBWayPlannerParams\fP \fBm_params\fP"
+.br
+.ti -1c
+.RI "\fBAutowareRoadNetwork\fP \fBm_AwMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPose\fP"
+.br
+.ti -1c
+.RI "int \fBm_iCurrentGoalIndex\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_GoalsPos\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleState\fP"
+.br
+.ti -1c
+.RI "std::vector< geometry_msgs::PoseStamped > \fBm_NodesList\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_MapRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_Paths\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PathsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrafficInfo\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrafficInfoRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_StartPointRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_GoalPointRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_NodesListRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_start_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_goal_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes_list\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_nodes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_stop_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dtlanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bKmlMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlannerH\fP \fBm_PlannerH\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GeneratedTotalPaths\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 123 of file way_planner_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WayPlannerNS::way_planner_core::way_planner_core ()"
+
+.PP
+\fBTodo\fP
+.RS 4
+To achieve perfection , you need to start sometime 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file way_planner_core\&.cpp\&.
+.SS "WayPlannerNS::way_planner_core::~way_planner_core ()"
+
+.PP
+Definition at line 137 of file way_planner_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool WayPlannerNS::way_planner_core::GenerateGlobalPlan (\fBPlannerHNS::WayPoint\fP & startPoint, \fBPlannerHNS::WayPoint\fP & goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & generatedTotalPaths)\fC [protected]\fP"
+
+.PP
+Definition at line 362 of file way_planner_core\&.cpp\&.
+.SS "void WayPlannerNS::way_planner_core::PlannerMainLoop ()"
+
+.PP
+Definition at line 653 of file way_planner_core\&.cpp\&.
+.SS "void WayPlannerNS::way_planner_core::UpdateRoadMap (const \fBAutowareRoadNetwork\fP & src_map, \fBPlannerHNS::RoadNetwork\fP & out_map)\fC [protected]\fP"
+
+.PP
+Definition at line 259 of file way_planner_core\&.cpp\&.
+.SS "void WayPlannerNS::way_planner_core::VisualizeAndSend (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > generatedTotalPaths)\fC [protected]\fP"
+
+.PP
+Definition at line 428 of file way_planner_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAutowareRoadNetwork\fP WayPlannerNS::way_planner_core::m_AwMap\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file way_planner_core\&.h\&.
+.SS "bool WayPlannerNS::way_planner_core::m_bKmlMap\fC [protected]\fP"
+
+.PP
+Definition at line 192 of file way_planner_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP WayPlannerNS::way_planner_core::m_CurrentPose\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file way_planner_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > WayPlannerNS::way_planner_core::m_GeneratedTotalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 194 of file way_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> WayPlannerNS::way_planner_core::m_GoalsPos\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file way_planner_core\&.h\&.
+.SS "int WayPlannerNS::way_planner_core::m_iCurrentGoalIndex\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file way_planner_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP WayPlannerNS::way_planner_core::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 191 of file way_planner_core\&.h\&.
+.SS "std::vector<geometry_msgs::PoseStamped> WayPlannerNS::way_planner_core::m_NodesList\fC [protected]\fP"
+
+.PP
+Definition at line 140 of file way_planner_core\&.h\&.
+.SS "geometry_msgs::Pose WayPlannerNS::way_planner_core::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file way_planner_core\&.h\&.
+.SS "\fBWayPlannerParams\fP WayPlannerNS::way_planner_core::m_params\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file way_planner_core\&.h\&.
+.SS "\fBPlannerHNS::PlannerH\fP WayPlannerNS::way_planner_core::m_PlannerH\fC [protected]\fP"
+
+.PP
+Definition at line 193 of file way_planner_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP WayPlannerNS::way_planner_core::m_VehicleState\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file way_planner_core\&.h\&.
+.SS "ros::NodeHandle WayPlannerNS::way_planner_core::nh\fC [protected]\fP"
+
+.PP
+Definition at line 142 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_GoalPointRviz\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_MapRviz\fC [protected]\fP"
+
+.PP
+Definition at line 144 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_NodesListRviz\fC [protected]\fP"
+
+.PP
+Definition at line 151 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_Paths\fC [protected]\fP"
+
+.PP
+Definition at line 145 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_PathsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 146 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_StartPointRviz\fC [protected]\fP"
+
+.PP
+Definition at line 149 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_TrafficInfo\fC [protected]\fP"
+
+.PP
+Definition at line 147 of file way_planner_core\&.h\&.
+.SS "ros::Publisher WayPlannerNS::way_planner_core::pub_TrafficInfoRviz\fC [protected]\fP"
+
+.PP
+Definition at line 148 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 164 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 156 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 157 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_dtlanes\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_goal_pose\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_map_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_map_nodes\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_map_points\fC [protected]\fP"
+
+.PP
+Definition at line 159 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_nodes_list\fC [protected]\fP"
+
+.PP
+Definition at line 158 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 153 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sub_start_pose\fC [protected]\fP"
+
+.PP
+Definition at line 154 of file way_planner_core\&.h\&.
+.SS "ros::Subscriber WayPlannerNS::way_planner_core::sup_stop_lines\fC [protected]\fP"
+
+.PP
+Definition at line 162 of file way_planner_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

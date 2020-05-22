@@ -1,0 +1,123 @@
+.TH "devices::BasicDevice" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::BasicDevice \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BasicDevice\&.hpp>\fP
+.PP
+Inherited by \fBdevices::LDMRS\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicDevice\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicDevice\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetDevicetype\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetSourceId\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSourceId\fP (\fBUINT16\fP deviceId)"
+.br
+.ti -1c
+.RI "void \fBsetDeviceName\fP (std::string name)"
+.br
+.ti -1c
+.RI "std::string \fBgetDeviceName\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBinit\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBrun\fP ()=0"
+.br
+.ti -1c
+.RI "virtual bool \fBstop\fP ()=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetDevicetype\fP (\fBUINT16\fP devicetype)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_beVerbose\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file BasicDevice\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::BasicDevice::BasicDevice ()"
+
+.PP
+Definition at line 14 of file BasicDevice\&.cpp\&.
+.SS "devices::BasicDevice::~BasicDevice ()\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file BasicDevice\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string devices::BasicDevice::getDeviceName ()"
+
+.PP
+Definition at line 74 of file BasicDevice\&.cpp\&.
+.SS "\fBUINT16\fP devices::BasicDevice::getDevicetype ()"
+Der Typ des Devices, als Zahl\&. 
+.PP
+Definition at line 34 of file BasicDevice\&.cpp\&.
+.SS "\fBUINT16\fP devices::BasicDevice::getSourceId ()"
+Die eindeutige ID des Devices, als Zahl\&. 
+.PP
+Definition at line 50 of file BasicDevice\&.cpp\&.
+.SS "virtual bool devices::BasicDevice::init (void)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBdevices::LDMRS\fP\&.
+.PP
+Definition at line 29 of file BasicDevice\&.hpp\&.
+.SS "virtual bool devices::BasicDevice::run ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBdevices::LDMRS\fP\&.
+.SS "void devices::BasicDevice::setDeviceName (std::string name)"
+
+.PP
+Definition at line 66 of file BasicDevice\&.cpp\&.
+.SS "void devices::BasicDevice::setDevicetype (\fBUINT16\fP devicetype)\fC [protected]\fP"
+Der Typ des Devices, als Zahl\&. 
+.PP
+Definition at line 42 of file BasicDevice\&.cpp\&.
+.SS "void devices::BasicDevice::setSourceId (\fBUINT16\fP sourceId)"
+Die eindeutige ID des Devices, als Zahl\&. 
+.PP
+Definition at line 58 of file BasicDevice\&.cpp\&.
+.SS "virtual bool devices::BasicDevice::stop ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBdevices::LDMRS\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool devices::BasicDevice::m_beVerbose\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file BasicDevice\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

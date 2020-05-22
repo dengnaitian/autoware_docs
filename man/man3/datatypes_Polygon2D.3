@@ -1,0 +1,521 @@
+.TH "datatypes::Polygon2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Polygon2D \- A polygon of 2D-points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Polygon2D\&.hpp>\fP
+.PP
+Inherits vector< Point2D >, and \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBPoint2D\fP > \fBbase_class\fP"
+.br
+.RI "\fIThe base type\&. (Naming according to boost convention\&.) \fP"
+.ti -1c
+.RI "typedef \fBPoint2D::value_type\fP \fBfloatingpoint_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygon2D\fP ()"
+.br
+.RI "\fIConstructor for an empty polygon\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBPoint2D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with one \fBPoint\fP\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with two Points\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with three Points\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &, const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with four Points\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBLine2D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with the two points of a line\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const \fBbase_class\fP &)"
+.br
+.RI "\fICopy constructor from a std::vector\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP (const std::string &polygonAsString)"
+.br
+.RI "\fIConstructor for reading from a string using \fBfromString()\fP \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.RI "\fIText output for debugging\&. \fP"
+.in -1c
+.PP
+.RI "\fBSet functions\fP"
+.br
+
+.PP
+\fBSee also:\fP
+.RS 4
+base_class::push_back, base_class::insert 
+.RE
+.PP
+
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBPolygon2D\fP & \fBappend\fP (const \fBPolygon2D\fP &other)"
+.br
+.RI "\fIAppends the points of the \fCother\fP polygon to this polygon\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP & \fBappend\fP (const \fBPoint2D\fP &point)"
+.br
+.RI "\fIAppends one point \fCpoint\fP to this polygon\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP & \fBappend\fP (\fBfloatingpoint_type\fP x, \fBfloatingpoint_type\fP y)"
+.br
+.RI "\fIAppends one point with coordinates \fCx\fP and \fCy\fP to this polygon\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this polygon\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBisClosed\fP () const "
+.br
+.RI "\fIReturns true if this is explicitly a closed polygon\&. \fP"
+.ti -1c
+.RI "double \fBgetArea\fP () const "
+.br
+.RI "\fIReturns the area enclosed by this polygon\&. \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBgetCenterOfGravity\fP () const "
+.br
+.RI "\fIReturns the center of gravity of this polygon\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP \fBgetSimplified\fP () const "
+.br
+.RI "\fIReturns a polygon with potentially less edge points\&. \fP"
+.ti -1c
+.RI "\fBBox2D\fP \fBgetBoundingBox\fP () const "
+.br
+.RI "\fIReturns a Box in parallel to the coordinate system that bounds this polygon\&. \fP"
+.ti -1c
+.RI "std::pair< \fBfloatingpoint_type\fP, \fBfloatingpoint_type\fP > \fBgetBoundingAngles\fP () const "
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBGeometrical relations to other objects\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBcontainsPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns true if the given \fBPoint2D\fP is inside this polygon\&. \fP"
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBdistanceToPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns the distance of a point to this polyon\&. \fP"
+.ti -1c
+.RI "bool \fBisColliding\fP (const \fBPolygon2D\fP &p2) const "
+.br
+.RI "\fIReturns true if the given polygon collides with this polygon\&. \fP"
+.ti -1c
+.RI "\fBbase_class\fP \fBisIntersecting\fP (const \fBLine2D\fP &other) const "
+.br
+.RI "\fICalculates all intersection points between a line and this polygon\&. \fP"
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBgetSeparatorCharacters\fP ()"
+.br
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBfromCircle\fP (const \fBPoint2D\fP &center, const \fBfloatingpoint_type\fP radius, const \fBUINT32\fP samplingPoints=32)"
+.br
+.RI "\fIStatic function to get \fBPolygon2D\fP from circle parameters\&. \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBfromEllipse\fP (const \fBPoint2D\fP &center, const \fBfloatingpoint_type\fP a, const \fBfloatingpoint_type\fP \fBb\fP, const \fBfloatingpoint_type\fP angle, const \fBUINT32\fP samplingPoints=32)"
+.br
+.RI "\fIStatic function to create a \fBPolygon2D\fP from ellipse parameters\&. \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBfromEllipse\fP (const \fBEllipse2D\fP &ellipse, const \fBUINT32\fP samplingPoints=32)"
+.br
+.RI "\fIStatic function to create a \fBPolygon2D\fP from ellipse parameters\&. \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBfromArc\fP (const \fBEllipse2D\fP &ellipse, const \fBfloatingpoint_type\fP startAngle, const \fBfloatingpoint_type\fP endAngle, const \fBUINT32\fP samplingPoints, const bool clockwise)"
+.br
+.RI "\fI(DEPRECATED) Create a \fBPolygon2D\fP approximation of the arc of an ellipse \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBfromArc\fP (const \fBEllipse2D\fP &ellipse, const \fBfloatingpoint_type\fP startAngle, const \fBfloatingpoint_type\fP endAngle, const \fBUINT32\fP samplingPoints=32)"
+.br
+.RI "\fICreate a \fBPolygon2D\fP approximation of the arc of an ellipse\&. \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBrhombus\fP (const \fBPoint2D\fP &center, const \fBfloatingpoint_type\fP radius)"
+.br
+.RI "\fIStatic function to create a rhombus\&. \fP"
+.ti -1c
+.RI "static \fBPolygon2D\fP \fBcreateRectangle\fP (const \fBPoint2D\fP &lowerLeft, const \fBPoint2D\fP &upperRight)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A polygon of 2D-points\&. 
+
+The points can be accessed through the std::vector interface\&. Basic information available through the std::vector base class include:
+.PP
+.IP "\(bu" 2
+empty() returns true if the polygon contains zero points
+.IP "\(bu" 2
+\fBsize()\fP returns the number of points in the polygon
+.IP "\(bu" 2
+front() returns a reference to the first point in a non-empty polygon
+.IP "\(bu" 2
+back() returns a reference to the last point
+.PP
+.PP
+To access all points, use operator[]() or begin() and end() with a Polygon2D::const_iterator or Polygon2D::iterator\&.
+.PP
+The polygon can be interpreted as closed polygon either implicitly or explicitly\&. For explicitly closed polygons, the final \fBPoint2D\fP is identical to the first one and \fBisClosed()\fP returns true\&. On the other hand, several use cases of the \fBPolygon2D\fP assume the polygon to be closed without the explicit final point identical to the first one, so even without the additional final point the polygon is probably fine most of the time\&. 
+.PP
+Definition at line 43 of file Polygon2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBPoint2D\fP> \fBdatatypes::Polygon2D::base_class\fP"
+
+.PP
+The base type\&. (Naming according to boost convention\&.) 
+.PP
+Definition at line 48 of file Polygon2D\&.hpp\&.
+.SS "typedef \fBPoint2D::value_type\fP \fBdatatypes::Polygon2D::floatingpoint_type\fP"
+The type of the stored x, y coordinates of each of the points in this polygon\&. 
+.PP
+Definition at line 52 of file Polygon2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Polygon2D::Polygon2D ()"
+
+.PP
+Constructor for an empty polygon\&. 
+.PP
+Definition at line 23 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const \fBPoint2D\fP & p1)"
+
+.PP
+Convenience constructor for a polygon with one \fBPoint\fP\&. 
+.PP
+Definition at line 27 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)"
+
+.PP
+Convenience constructor for a polygon with two Points\&. 
+.PP
+Definition at line 32 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2, const \fBPoint2D\fP & p3)"
+
+.PP
+Convenience constructor for a polygon with three Points\&. 
+.PP
+Definition at line 37 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2, const \fBPoint2D\fP & p3, const \fBPoint2D\fP & p4)"
+
+.PP
+Convenience constructor for a polygon with four Points\&. 
+.PP
+Definition at line 44 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const \fBLine2D\fP &)"
+
+.PP
+Convenience constructor for a polygon with the two points of a line\&. 
+.SS "datatypes::Polygon2D::Polygon2D (const \fBbase_class\fP & other_vector)"
+
+.PP
+Copy constructor from a std::vector\&. 
+.PP
+Definition at line 60 of file Polygon2D\&.cpp\&.
+.SS "datatypes::Polygon2D::Polygon2D (const std::string & polygonAsString)"
+
+.PP
+Constructor for reading from a string using \fBfromString()\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPolygon2D\fP & datatypes::Polygon2D::append (const \fBPolygon2D\fP & other)"
+
+.PP
+Appends the points of the \fCother\fP polygon to this polygon\&. This is identical to the std::vector method p\&.insert(p\&.end(),other\&.begin(),other\&.end());
+.PP
+\fBSee also:\fP
+.RS 4
+base_class::push_back, base_class::insert 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP & datatypes::Polygon2D::append (const \fBPoint2D\fP & point)"
+
+.PP
+Appends one point \fCpoint\fP to this polygon\&. This is identical to the std::vector method push_back() but returns a reference to this\&.
+.PP
+\fBSee also:\fP
+.RS 4
+base_class::push_back 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP & datatypes::Polygon2D::append (\fBfloatingpoint_type\fP x, \fBfloatingpoint_type\fP y)"
+
+.PP
+Appends one point with coordinates \fCx\fP and \fCy\fP to this polygon\&. This is a shortcut for creating a new point with the coordinates x and y and using std::vector's method push_back() to append the point\&.
+.PP
+\fBSee also:\fP
+.RS 4
+base_class::push_back 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file Polygon2D\&.cpp\&.
+.SS "bool datatypes::Polygon2D::containsPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns true if the given \fBPoint2D\fP is inside this polygon\&. This is a Point-in-polygon test using ray-casting algorithm (Jordan curve theorem)\&. It is really fast and also works for non-convex and self-intersecting polygons\&.
+.PP
+However, Points which are directly on one boundary are classified as either inside or outside, depending on which edge of the polygon this is\&. In other words, this method cannot be used to find points which are exactly on the edge of a polygon! (Citation from the URL below: "If you want to know when a point is exactly on the boundary, you need another program\&. This is only one of many functions that PNPOLY lacks; it also doesn't predict tomorrow's weather\&. You are free to extend PNPOLY's source code\&.")
+.PP
+Algorithm: From the test point a semi-finite ray is run through the polygon\&. While doing so the number of edge crossings are counted\&. If the number of crossings is even, the test point is located outside of the polygon\&. If the number is odd, the point is inside\&. (Jordan curve theorem)
+.PP
+The polygon may be closed explicitly or implicitly, both will work\&. I\&.e\&., if the polygon contains an additional final point identical to the first one, this algorithms works correctly, but it also works correctly without such an additional final point\&.
+.PP
+As for multiple components and holes:
+.PP
+.IP "\(bu" 2
+The polygon may contain multiple separate components, and/or holes, provided that you separate the components and holes with a (0,0) point, as follows\&.
+.IP "  1." 6
+First, include a (0,0) point\&.
+.IP "  2." 6
+Then include the first component' points, repeating its first point after the last point\&.
+.IP "  3." 6
+Include another (0,0) point\&.
+.IP "  4." 6
+Include another component or hole, repeating its first point after the last point\&.
+.IP "  5." 6
+Repeat the above two steps for each component and hole\&.
+.IP "  6." 6
+Include a final (0,0) point\&.
+.PP
+
+.IP "\(bu" 2
+Each component or hole's points may be listed either clockwise or counter-clockwise\&.
+.IP "\(bu" 2
+If there is only one connected component, then it is optional to repeat the first point at the end\&. It's also optional to surround the component with zero points\&.
+.PP
+.PP
+C-Code was borrowed from: http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html See there for further explanation of the border cases\&. 
+.PP
+Definition at line 420 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::createRectangle (const \fBPoint2D\fP & lowerLeft, const \fBPoint2D\fP & upperRight)\fC [static]\fP"
+Static function to create a four-point rectangle from a lower left and an upper right point\&.
+.PP
+Note: The returned polygon contains the four points of the rectangle\&. This means \fBisClosed()\fP does not return true\&. To be closed in the sense of \fBisClosed()\fP, the polygon manually needs to have the first point added as the last (fifth) point as well\&. On the other hand, several use cases of the \fBPolygon2D\fP assume the polygon to be closed without the explicit final point identical to the first one, so this four-point rectangle is probably fine most of the time\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A polygon with four points representing the edge points of a rectangle\&. 
+.RE
+.PP
+
+.PP
+Definition at line 248 of file Polygon2D\&.cpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Polygon2D::distanceToPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns the distance of a point to this polyon\&. For each line segment of this polygon, this function calculates three distances: The distances to both end points of the segment and the distance of the point to its projection onto the line segment\&. The overall minimum distance over these three possibilities and over all line segments will be returned\&.
+.PP
+Internally, this will use \fBLine2D::distanceFromLineSegment()\fP for one segment and return the minimum of that over all segments\&. 
+.PP
+Definition at line 535 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::fromArc (const \fBEllipse2D\fP & ellipse, const \fBfloatingpoint_type\fP startAngle, const \fBfloatingpoint_type\fP endAngle, const \fBUINT32\fP samplingPoints, const bool clockwise)\fC [static]\fP"
+
+.PP
+(DEPRECATED) Create a \fBPolygon2D\fP approximation of the arc of an ellipse DEPRECATED: Use the other \fBfromArc()\fP function instead, because the 'direction' argument is difficult to understand correctly\&.
+.PP
+Function starts at startAngle and moves to endAngle in a selectable direction\&.
+.PP
+The number of sampling points must be at least 2 (one at the start, one at the end), otherwise an empty Polygon will be returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIellipse\fP The ellipse center, axis length, and rotation
+.br
+\fIstartAngle\fP The start angle from which the arc will be drawn
+.br
+\fIendAngle\fP The end angle until which the arc will be drawn
+.br
+\fIsamplingPoints\fP Number of points which the resulting polygon will contain\&. If less then 2, an empty \fBPolygon2D\fP will be returned\&.
+.br
+\fIclockwise\fP If true, the arc should be plotted from the startAngle in clockwise direction to the endAngle (mathematically negative)\&. If false, the arc is plotted from the start angle in counter-clockwise direction to the end angle (mathematically positive)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 162 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::fromArc (const \fBEllipse2D\fP & ellipse, const \fBfloatingpoint_type\fP startAngle, const \fBfloatingpoint_type\fP endAngle, const \fBUINT32\fP samplingPoints = \fC32\fP)\fC [static]\fP"
+
+.PP
+Create a \fBPolygon2D\fP approximation of the arc of an ellipse\&. The function starts at startAngle and calculates sampling points on the way to the endAngle in mathematically positive direction (counter-clockwise), where the startAngle is lesser than the endAngle\&.
+.PP
+When an arc in the other direction is needed, simply specify a startAngle greater than the endAngle, which will result in an arc in mathematically negative direction (clockwise)\&.
+.PP
+The resulting polygon is explicitly closed (except for rounding errors), that is, the first sampling point will be located exactly at startAngle and the last sampling point exactly at endAngle\&. If the angles are 0 and 2*pi, the last point will be approximately identical to the first one except for rounding errors, which means the polygon is appoximately closed but \fBisClosed()\fP might not be true\&.
+.PP
+(Successor of the other \fBfromArc()\fP function because the 'direction' argument is difficult to understand correctly\&.)
+.PP
+The number of sampling points must be at least 2 (one at the start, one at the end), otherwise an empty Polygon will be returned\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIellipse\fP The ellipse center, axis length, and rotation
+.br
+\fIstartAngle\fP The start angle from which the arc will be drawn
+.br
+\fIendAngle\fP The end angle until which the arc will be drawn\&. For an arc in mathematically positive direction (counter-clockwise), this angle needs to be greater than the startAngle, otherwise lesser\&. The absolute difference between start and end angle must be at most 2*pi, otherwise an exception will be thrown\&.
+.br
+\fIsamplingPoints\fP Number of points which the resulting polygon will contain\&. If less then 2, an empty \fBPolygon2D\fP will be returned\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An approximation polygon of the arc of an ellipse\&. 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::fromCircle (const \fBPoint2D\fP & center, const \fBfloatingpoint_type\fP radius, const \fBUINT32\fP samplingPoints = \fC32\fP)\fC [static]\fP"
+
+.PP
+Static function to get \fBPolygon2D\fP from circle parameters\&. 
+.PP
+Definition at line 138 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::fromEllipse (const \fBPoint2D\fP & center, const \fBfloatingpoint_type\fP a, const \fBfloatingpoint_type\fP b, const \fBfloatingpoint_type\fP angle, const \fBUINT32\fP samplingPoints = \fC32\fP)\fC [static]\fP"
+
+.PP
+Static function to create a \fBPolygon2D\fP from ellipse parameters\&. 
+.PP
+Definition at line 144 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::fromEllipse (const \fBEllipse2D\fP & ellipse, const \fBUINT32\fP samplingPoints = \fC32\fP)\fC [static]\fP"
+
+.PP
+Static function to create a \fBPolygon2D\fP from ellipse parameters\&. 
+.PP
+Definition at line 150 of file Polygon2D\&.cpp\&.
+.SS "double datatypes::Polygon2D::getArea () const"
+
+.PP
+Returns the area enclosed by this polygon\&. Note: The polyon must be a non-self-intersecting polygon, i\&.e\&. a simple polygon\&. 
+.PP
+Definition at line 90 of file Polygon2D\&.cpp\&.
+.SS "std::pair< \fBPolygon2D::floatingpoint_type\fP, \fBPolygon2D::floatingpoint_type\fP > datatypes::Polygon2D::getBoundingAngles () const"
+This function calculates a low and a high boundary angle for all edges of the given polygon\&. The returned FloatPair has the component 'first' for the lower bounding angle, and 'second' for the upper bounding angle\&.
+.PP
+(Note: This ordering is swapped compared to the scan point ordering!) 
+.PP
+Definition at line 306 of file Polygon2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Polygon2D::getBoundingBox () const"
+
+.PP
+Returns a Box in parallel to the coordinate system that bounds this polygon\&. This function calculates a bounding box to the given polygon\&. The returned box will have zero rotation and will be in parallel to the coordinate system\&. 
+.PP
+Definition at line 277 of file Polygon2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Polygon2D::getCenterOfGravity () const"
+
+.PP
+Returns the center of gravity of this polygon\&. Based on the edges of this polygon, this function returns the center of gravity\&. (The returned value is simply the arithmetic mean of all edges\&.) 
+.PP
+Definition at line 108 of file Polygon2D\&.cpp\&.
+.SS "const char * datatypes::Polygon2D::getSeparatorCharacters ()\fC [static]\fP"
+Returns a string containing a list of separator characters that is accepted when parsing a string in \fBfromString()\fP\&. 
+.PP
+Definition at line 231 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::getSimplified () const"
+
+.PP
+Returns a polygon with potentially less edge points\&. This method checks the polygon for 'unnecessary' edges and returns a polygon with those edges removed\&. For each edge, it is checked whether they are located directly on the connection line between the edge before and after the middle edge\&. If this is the case, the middle edge can be removed without changing the shape of the polygon\&. 
+.PP
+Definition at line 552 of file Polygon2D\&.cpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Polygon2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 79 of file Polygon2D\&.hpp\&.
+.SS "bool datatypes::Polygon2D::isClosed () const"
+
+.PP
+Returns true if this is explicitly a closed polygon\&. This simply means the last point back() is equal to the first point front() of the polygon\&.
+.PP
+On the other hand, several use cases of the \fBPolygon2D\fP assume the polygon to be closed even without the explicit final point identical to the first one, so polygons with the return value false here are probably still fine most of the time\&.
+.PP
+An empty polygon (where empty() returns true) is not closed by definition and \fBisClosed()\fP will return false\&. 
+.PP
+Definition at line 127 of file Polygon2D\&.cpp\&.
+.SS "bool datatypes::Polygon2D::isColliding (const \fBPolygon2D\fP & p2) const"
+
+.PP
+Returns true if the given polygon collides with this polygon\&. In other words, there exists an intersection region or at least one intersecting point between these two polygons\&.
+.PP
+Note: This might only work for convex polygons! 
+.PP
+Definition at line 492 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D::base_class\fP datatypes::Polygon2D::isIntersecting (const \fBLine2D\fP & other) const"
+
+.PP
+Calculates all intersection points between a line and this polygon\&. A line can have zero, one, or up to \fBsize()\fP intersection points with this polygon\&. The returned list of points contains all those intersection points between the given line and all line segments of this polygon\&.
+.PP
+In contrast to \fBLine2D::isIntersecting()\fP this method considers and returns only those intersection points which are within the line segments\&. 
+.PP
+Definition at line 517 of file Polygon2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Polygon2D::rhombus (const \fBPoint2D\fP & center, const \fBfloatingpoint_type\fP radius)\fC [static]\fP"
+
+.PP
+Static function to create a rhombus\&. 
+.PP
+Definition at line 236 of file Polygon2D\&.cpp\&.
+.SS "std::string datatypes::Polygon2D::toString () const"
+
+.PP
+Text output for debugging\&. This string can be parsed into a polygon again by using \fBfromString()\fP\&. 
+.PP
+Definition at line 584 of file Polygon2D\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

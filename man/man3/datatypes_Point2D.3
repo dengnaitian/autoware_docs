@@ -1,0 +1,450 @@
+.TH "datatypes::Point2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Point2D \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Point2D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef double \fBvalue_type\fP"
+.br
+.RI "\fIThe type of the stored x and y coordinates\&. \fP"
+.ti -1c
+.RI "typedef \fBvalue_type\fP \fBfloatingpoint_type\fP"
+.br
+.RI "\fIThe type of the stored x and y coordinates\&. An alias for value_type\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint2D\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (\fBvalue_type\fP x, \fBvalue_type\fP y)"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this point\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBisZero\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetX\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetY\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBdist\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetDist\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBlength\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBangle\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetAngle\fP () const "
+.br
+.ti -1c
+.RI "void \fBtoPolar\fP (\fBvalue_type\fP &\fBdist\fP, \fBvalue_type\fP &\fBangle\fP) const "
+.br
+.ti -1c
+.RI "std::pair< \fBvalue_type\fP, \fBvalue_type\fP > \fBtoPolar\fP () const "
+.br
+.ti -1c
+.RI "\fBPoint2D\fP \fBnormalized\fP () const "
+.br
+.ti -1c
+.RI "\fBPoint2D\fP \fBrotated\fP (\fBvalue_type\fP angle_rad) const "
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBSetter methods for changing this point\fP"
+.br
+Returns the x/y components of this class, converted into a \fBPoint3D\fP object with zero z-component\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetX\fP (\fBvalue_type\fP x)"
+.br
+.ti -1c
+.RI "void \fBsetY\fP (\fBvalue_type\fP y)"
+.br
+.ti -1c
+.RI "void \fBsetXY\fP (\fBvalue_type\fP x, \fBvalue_type\fP y)"
+.br
+.ti -1c
+.RI "void \fBnormalize\fP ()"
+.br
+.ti -1c
+.RI "void \fBrotate\fP (\fBvalue_type\fP \fBangle\fP)"
+.br
+.ti -1c
+.RI "void \fBsetPolar\fP (\fBvalue_type\fP \fBdist\fP, \fBvalue_type\fP \fBangle\fP)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP & \fBoperator*=\fP (\fBvalue_type\fP factor)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP & \fBoperator+=\fP (const \fBPoint2D\fP &point)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP & \fBoperator\-=\fP (const \fBPoint2D\fP &point)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP & \fBoperator/=\fP (\fBvalue_type\fP divisor)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBGeometrical relations to other objects\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBvalue_type\fP \fBdist\fP (const \fBPoint2D\fP &point) const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBdistSquare\fP (const \fBPoint2D\fP &point) const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBangle\fP (const \fBPoint2D\fP &point) const "
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBSerialization\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "std::istream & \fBread\fP (std::istream &is, \fBUINT32\fP version)"
+.br
+.RI "\fIReads a \fBPoint2D\fP from an input stream\&. \fP"
+.ti -1c
+.RI "void \fBread\fP (const \fBBYTE\fP *&buf, \fBUINT32\fP version)"
+.br
+.RI "\fIReads a \fBPoint2D\fP from a memory buffer and increments the buffer pointer\&. \fP"
+.ti -1c
+.RI "std::ostream & \fBwrite\fP (std::ostream &os, \fBUINT32\fP version) const "
+.br
+.RI "\fIWrites a \fBPoint2D\fP to an output stream\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBBYTE\fP *&buf, \fBUINT32\fP version) const "
+.br
+.RI "\fIWrites a \fBPoint2D\fP to a memory buffer and increments the buffer pointer\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP (\fBUINT16\fP digits=2) const "
+.br
+.RI "\fIText output for debugging\&. \fP"
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBPoint2D\fP \fBfromPolar\fP (\fBvalue_type\fP \fBdist\fP, \fBvalue_type\fP \fBangle\fP)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator+\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator\-\fP (const \fBPoint2D\fP &, const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator*\fP (\fBvalue_type\fP, const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator*\fP (const \fBPoint2D\fP &, \fBvalue_type\fP)"
+.br
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBoperator*\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator\-\fP (const \fBPoint2D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator/\fP (const \fBPoint2D\fP &, \fBvalue_type\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file Point2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBvalue_type\fP \fBdatatypes::Point2D::floatingpoint_type\fP"
+
+.PP
+The type of the stored x and y coordinates\&. An alias for value_type\&. 
+.PP
+Definition at line 34 of file Point2D\&.hpp\&.
+.SS "typedef double \fBdatatypes::Point2D::value_type\fP"
+
+.PP
+The type of the stored x and y coordinates\&. 
+.PP
+Definition at line 31 of file Point2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Point2D::Point2D ()\fC [inline]\fP"
+Constructs a null point, i\&.e\&. with coordinates (0\&.0, 0\&.0) 
+.PP
+Definition at line 41 of file Point2D\&.hpp\&.
+.SS "datatypes::Point2D::Point2D (\fBvalue_type\fP x, \fBvalue_type\fP y)\fC [inline]\fP"
+Constructs a point with the given coordinates (x, y)\&. 
+.PP
+Definition at line 47 of file Point2D\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPoint2D::value_type\fP datatypes::Point2D::angle () const\fC [inline]\fP"
+Returns the polar angle of this point, which is the angle from the x-axis to this point\&. An alias for \fBgetAngle()\fP\&. 
+.PP
+Definition at line 358 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Point2D::angle (const \fBPoint2D\fP & point) const\fC [inline]\fP"
+Returns the angle between this and another vector 
+.PP
+Definition at line 363 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Point2D::dist () const\fC [inline]\fP"
+Returns the Euclidian distance to the origin, sqrt(x^2+y^2)\&. An alias for \fBgetDist()\fP\&. 
+.PP
+Definition at line 353 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Point2D::dist (const \fBPoint2D\fP & point) const"
+Returns the Euclidian distance to the given point, sqrt( (x_1-x_2)^2 + (y_1-y_2)^2 )\&. 
+.PP
+Definition at line 13 of file Point2D\&.cpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Point2D::distSquare (const \fBPoint2D\fP & point) const"
+Returns the Euclidian distance to the given point, sqrt( (x_1-x_2)^2 + (y_1-y_2)^2 )\&. Returns the square of the Euclidian distance to the given \fBPoint\fP, (x_1-x_2)^2 + (y_1-y_2)^2\&. 
+.PP
+Definition at line 18 of file Point2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Point2D::fromPolar (\fBvalue_type\fP dist, \fBvalue_type\fP angle)\fC [static]\fP"
+Returns a newly constructed \fBPoint2D\fP that is a cartesian representation of the given polar coordinates\&. 
+.PP
+Definition at line 25 of file Point2D\&.cpp\&.
+.SS "\fBvalue_type\fP datatypes::Point2D::getAngle () const\fC [inline]\fP"
+Returns the polar angle of this point, which is the angle from the x-axis to this point\&. 
+.PP
+Definition at line 92 of file Point2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Point2D::getDist () const\fC [inline]\fP"
+Returns the Euclidian distance to the origin, sqrt(x^2+y^2)\&. 
+.PP
+Definition at line 81 of file Point2D\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Point2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+Constructs a point from the given \fBScanPoint\fP Constructs a point from the given \fBPoint3D\fP\&. Its z-coordinate will be ignored\&. 
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 59 of file Point2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Point2D::getX () const\fC [inline]\fP"
+Returns the x-coordinate of this point\&. 
+.PP
+Definition at line 70 of file Point2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Point2D::getY () const\fC [inline]\fP"
+Returns the y-coordinate of this point\&. 
+.PP
+Definition at line 73 of file Point2D\&.hpp\&.
+.SS "bool datatypes::Point2D::isZero () const\fC [inline]\fP"
+Returns true if this point is zero in terms of the machine precision, that is, its value is exactly zero or 'almost
+zero'\&. 
+.PP
+Definition at line 296 of file Point2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Point2D::length () const\fC [inline]\fP"
+Same as \fBdist()\fP 
+.PP
+Definition at line 84 of file Point2D\&.hpp\&.
+.SS "void datatypes::Point2D::normalize ()"
+Normalizes this vector (point is treated as a vector here) to length 1\&.0\&. If the vector has zero length (\fBisZero()\fP returns true), it will be left unchanged\&. 
+.PP
+Definition at line 53 of file Point2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Point2D::normalized () const"
+Calculates the normalized form of this vector (point is considered as a vector here) and returns it\&. If the vector has zero length (\fBisZero()\fP returns true), it will be left unchanged\&. 
+.PP
+Definition at line 46 of file Point2D\&.cpp\&.
+.SS "\fBPoint2D\fP & datatypes::Point2D::operator*= (\fBvalue_type\fP factor)\fC [inline]\fP"
+Multiplies this point's coordinates by the given factor, and returns a reference to this point\&. 
+.PP
+Definition at line 267 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D\fP & datatypes::Point2D::operator+= (const \fBPoint2D\fP & point)\fC [inline]\fP"
+Adds the given point to this point and returns a reference to this point\&. 
+.PP
+Definition at line 274 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D\fP & datatypes::Point2D::operator\-= (const \fBPoint2D\fP & point)\fC [inline]\fP"
+Subtracts the given point from this point and returns a reference to this point\&. 
+.PP
+Definition at line 281 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D\fP & datatypes::Point2D::operator/= (\fBvalue_type\fP divisor)\fC [inline]\fP"
+Divides both x and y by the given divisor, and returns a reference to this point\&. 
+.PP
+Definition at line 288 of file Point2D\&.hpp\&.
+.SS "std::istream& datatypes::Point2D::read (std::istream & is, \fBUINT32\fP version)"
+
+.PP
+Reads a \fBPoint2D\fP from an input stream\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP The input stream 
+.br
+\fIversion\fP 1 == compressed meter values, 4 bytes total; 2 == float values, 8 bytes total 
+.RE
+.PP
+
+.SS "void datatypes::Point2D::read (const \fBBYTE\fP *& buf, \fBUINT32\fP version)"
+
+.PP
+Reads a \fBPoint2D\fP from a memory buffer and increments the buffer pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP The memory buffer 
+.br
+\fIversion\fP 1 == compressed meter values, 4 bytes total; 2 == float values, 8 bytes total 
+.RE
+.PP
+
+.SS "void datatypes::Point2D::rotate (\fBvalue_type\fP angle)"
+Rotates this point around the orign (0,0) Same as rotated, but modifies the content\&. 
+.PP
+Definition at line 33 of file Point2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Point2D::rotated (\fBvalue_type\fP angle_rad) const"
+Rotate the given point by the given angle around (0,0) and returns the rotated point\&.
+.PP
+This method implements an 'active rotation matrix'\&.
+.PP
+In other words: A positive rotation of the point (1,0) by the angle +pi/2 results in the point (0,1)\&. Watch out: If the rotation is defined differently, another point (0,-1) might have been expected, but this function is implemented to return (0,1) here\&. 
+.PP
+Definition at line 38 of file Point2D\&.cpp\&.
+.SS "void datatypes::Point2D::setPolar (\fBvalue_type\fP dist, \fBvalue_type\fP angle)\fC [inline]\fP"
+Sets the coordinates of this point from the given polar coordinates\&. 
+.PP
+Definition at line 261 of file Point2D\&.hpp\&.
+.SS "void datatypes::Point2D::setX (\fBvalue_type\fP x)\fC [inline]\fP"
+Sets the x-coordinate of this point to the given x coordinate\&. 
+.PP
+Definition at line 140 of file Point2D\&.hpp\&.
+.SS "void datatypes::Point2D::setXY (\fBvalue_type\fP x, \fBvalue_type\fP y)\fC [inline]\fP"
+Sets the x- and y-coordinates of this point to the given coordinates\&. 
+.PP
+Definition at line 147 of file Point2D\&.hpp\&.
+.SS "void datatypes::Point2D::setY (\fBvalue_type\fP y)\fC [inline]\fP"
+Sets the y-coordinate of this point to the given y coordinate\&. 
+.PP
+Definition at line 143 of file Point2D\&.hpp\&.
+.SS "void datatypes::Point2D::toPolar (\fBPoint2D::value_type\fP & r, \fBPoint2D::value_type\fP & psi) const\fC [inline]\fP"
+Calculates the polar coordinates of this point and writes them to the given arguments\&. dist will contain the distance of this point to the origin, and angle will contain the polar angle from the x-axis to this point\&. 
+.PP
+Definition at line 371 of file Point2D\&.hpp\&.
+.SS "std::pair< \fBPoint2D::value_type\fP, \fBPoint2D::value_type\fP > datatypes::Point2D::toPolar () const\fC [inline]\fP"
+Returns the polar coordinates of this point as a pair of distance and angle\&. The returned value's component 'first' is the distance of this point to the origin, and the returned value's component 'second' is the polar angle from the x-axis to this point\&. You can use this as follows:
+.PP
+std::pair<value_type,value_type> x = p\&.toPolar(); cout << 'Distance=' << x\&.first << '; Angle=' << x\&.second; 
+.PP
+Definition at line 377 of file Point2D\&.hpp\&.
+.SS "std::string datatypes::Point2D::toString (\fBUINT16\fP digits = \fC2\fP) const"
+
+.PP
+Text output for debugging\&. Wandlung in einen String\&. digits = Anzahl der Nachkommastellen\&. 
+.PP
+Definition at line 75 of file Point2D\&.cpp\&.
+.SS "std::ostream& datatypes::Point2D::write (std::ostream & os, \fBUINT32\fP version) const"
+
+.PP
+Writes a \fBPoint2D\fP to an output stream\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIos\fP The output stream 
+.br
+\fIversion\fP 1 == compressed meter values, 4 bytes total; 2 == float values, 8 bytes total 
+.RE
+.PP
+
+.SS "void datatypes::Point2D::write (\fBBYTE\fP *& buf, \fBUINT32\fP version) const"
+
+.PP
+Writes a \fBPoint2D\fP to a memory buffer and increments the buffer pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP The memory buffer 
+.br
+\fIversion\fP 1 == compressed meter values, 4 bytes total; 2 == float values, 8 bytes total 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 311 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator* (\fBPoint2D::value_type\fP factor, const \fBPoint2D\fP & p)\fC [friend]\fP"
+
+.PP
+Definition at line 331 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator* (const \fBPoint2D\fP & p, \fBPoint2D::value_type\fP factor)\fC [friend]\fP"
+
+.PP
+Definition at line 326 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D::value_type\fP operator* (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 336 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator+ (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 316 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator\- (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 321 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator\- (const \fBPoint2D\fP & p)\fC [friend]\fP"
+
+.PP
+Definition at line 341 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP operator/ (const \fBPoint2D\fP & p, \fBPoint2D::value_type\fP divisor)\fC [friend]\fP"
+
+.PP
+Definition at line 346 of file Point2D\&.hpp\&.
+.SS "bool operator== (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 303 of file Point2D\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

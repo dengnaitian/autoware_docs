@@ -1,0 +1,66 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/crop_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/crop_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'crop_layer\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBimage\fP \fBget_crop_image\fP (\fBcrop_layer\fP l)"
+.br
+.ti -1c
+.RI "void \fBbackward_crop_layer\fP (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_crop_layer_gpu\fP (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "\fBcrop_layer\fP \fBmake_crop_layer\fP (int batch, int h, int w, int \fBc\fP, int crop_height, int crop_width, int flip, float angle, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "void \fBresize_crop_layer\fP (\fBlayer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_crop_layer\fP (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_crop_layer (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 13 of file crop_layer\&.c\&.
+.SS "void backward_crop_layer_gpu (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 14 of file crop_layer\&.c\&.
+.SS "void forward_crop_layer (const \fBcrop_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 67 of file crop_layer\&.c\&.
+.SS "\fBimage\fP get_crop_image (\fBcrop_layer\fP l)"
+
+.PP
+Definition at line 5 of file crop_layer\&.c\&.
+.SS "\fBcrop_layer\fP make_crop_layer (int batch, int h, int w, int c, int crop_height, int crop_width, int flip, float angle, float saturation, float exposure)"
+
+.PP
+Definition at line 16 of file crop_layer\&.c\&.
+.SS "void resize_crop_layer (\fBlayer\fP * l, int w, int h)"
+
+.PP
+Definition at line 48 of file crop_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

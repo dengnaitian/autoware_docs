@@ -1,0 +1,75 @@
+.TH "gpu::MatrixHost" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::MatrixHost \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MatrixHost\&.h>\fP
+.PP
+Inherits \fBgpu::Matrix\fP\&.
+.PP
+Inherited by \fBgpu::SquareMatrixHost\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrixHost\fP ()"
+.br
+.ti -1c
+.RI "\fBMatrixHost\fP (int \fBrows\fP, int \fBcols\fP)"
+.br
+.ti -1c
+.RI "\fBMatrixHost\fP (int \fBrows\fP, int \fBcols\fP, int \fBoffset\fP, double *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBMatrixHost\fP (const \fBMatrixHost\fP &other)"
+.br
+.ti -1c
+.RI "bool \fBmoveToGpu\fP (\fBMatrixDevice\fP output)"
+.br
+.ti -1c
+.RI "bool \fBmoveToHost\fP (\fBMatrixDevice\fP input)"
+.br
+.ti -1c
+.RI "\fBMatrixHost\fP & \fBoperator=\fP (const \fBMatrixHost\fP &other)"
+.br
+.ti -1c
+.RI "void \fBdebug\fP ()"
+.br
+.ti -1c
+.RI "\fB~MatrixHost\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file MatrixHost\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "gpu::MatrixHost::MatrixHost ()"
+
+.SS "gpu::MatrixHost::MatrixHost (int rows, int cols)"
+
+.SS "gpu::MatrixHost::MatrixHost (int rows, int cols, int offset, double * buffer)"
+
+.SS "gpu::MatrixHost::MatrixHost (const \fBMatrixHost\fP & other)"
+
+.SS "gpu::MatrixHost::~MatrixHost ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void gpu::MatrixHost::debug ()"
+
+.SS "bool gpu::MatrixHost::moveToGpu (\fBMatrixDevice\fP output)"
+
+.SS "bool gpu::MatrixHost::moveToHost (\fBMatrixDevice\fP input)"
+
+.SS "\fBMatrixHost\fP& gpu::MatrixHost::operator= (const \fBMatrixHost\fP & other)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

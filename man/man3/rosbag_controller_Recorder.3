@@ -1,0 +1,74 @@
+.TH "rosbag_controller::Recorder" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rosbag_controller::Recorder \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <recorder\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRecorder\fP (\fBRecorderOptions\fP const &\fBoptions\fP)"
+.br
+.ti -1c
+.RI "\fB~Recorder\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoTrigger\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisSubscribed\fP (std::string const &topic) const "
+.br
+.ti -1c
+.RI "boost::shared_ptr< ros::Subscriber > \fBsubscribe\fP (std::string const &topic)"
+.br
+.ti -1c
+.RI "int \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 138 of file recorder\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "rosbag_controller::Recorder::Recorder (\fBRecorderOptions\fP const & options)"
+
+.PP
+Definition at line 136 of file recorder\&.cpp\&.
+.SS "rosbag_controller::Recorder::~Recorder ()"
+
+.PP
+Definition at line 148 of file recorder\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void rosbag_controller::Recorder::doTrigger ()"
+
+.PP
+Definition at line 629 of file recorder\&.cpp\&.
+.SS "bool rosbag_controller::Recorder::isSubscribed (std::string const & topic) const"
+
+.PP
+Definition at line 257 of file recorder\&.cpp\&.
+.SS "int rosbag_controller::Recorder::start ()"
+
+.PP
+Definition at line 155 of file recorder\&.cpp\&.
+.SS "void rosbag_controller::Recorder::stop ()"
+
+.PP
+Definition at line 207 of file recorder\&.cpp\&.
+.SS "shared_ptr< ros::Subscriber > rosbag_controller::Recorder::subscribe (std::string const & topic)"
+
+.PP
+Definition at line 230 of file recorder\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

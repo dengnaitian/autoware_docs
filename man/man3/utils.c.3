@@ -1,0 +1,458 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/utils.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/utils.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <float\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBwhat_time_is_it_now\fP ()"
+.br
+.ti -1c
+.RI "int * \fBread_intlist\fP (char *gpu_list, int *ngpus, int d)"
+.br
+.ti -1c
+.RI "int * \fBread_map\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBsorta_shuffle\fP (void *arr, size_t n, size_t size, size_t sections)"
+.br
+.ti -1c
+.RI "void \fBshuffle\fP (void *arr, size_t n, size_t size)"
+.br
+.ti -1c
+.RI "int * \fBrandom_index_order\fP (int min, int max)"
+.br
+.ti -1c
+.RI "void \fBdel_arg\fP (int argc, char **argv, int index)"
+.br
+.ti -1c
+.RI "int \fBfind_arg\fP (int argc, char *argv[], char *arg)"
+.br
+.ti -1c
+.RI "int \fBfind_int_arg\fP (int argc, char **argv, char *arg, int def)"
+.br
+.ti -1c
+.RI "float \fBfind_float_arg\fP (int argc, char **argv, char *arg, float def)"
+.br
+.ti -1c
+.RI "char * \fBfind_char_arg\fP (int argc, char **argv, char *arg, char *def)"
+.br
+.ti -1c
+.RI "char * \fBbasecfg\fP (char *cfgfile)"
+.br
+.ti -1c
+.RI "int \fBalphanum_to_int\fP (char \fBc\fP)"
+.br
+.ti -1c
+.RI "char \fBint_to_alphanum\fP (int \fBi\fP)"
+.br
+.ti -1c
+.RI "void \fBpm\fP (int M, int N, float *A)"
+.br
+.ti -1c
+.RI "void \fBfind_replace\fP (char *str, char *orig, char *rep, char *output)"
+.br
+.ti -1c
+.RI "float \fBsec\fP (clock_t clocks)"
+.br
+.ti -1c
+.RI "void \fBtop_k\fP (float *a, int n, int \fBk\fP, int *index)"
+.br
+.ti -1c
+.RI "void \fBerror\fP (const char *s)"
+.br
+.ti -1c
+.RI "unsigned char * \fBread_file\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBmalloc_error\fP ()"
+.br
+.ti -1c
+.RI "void \fBfile_error\fP (char *s)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBsplit_str\fP (char *s, char delim)"
+.br
+.ti -1c
+.RI "void \fBstrip\fP (char *s)"
+.br
+.ti -1c
+.RI "void \fBstrip_char\fP (char *s, char bad)"
+.br
+.ti -1c
+.RI "void \fBfree_ptrs\fP (void **ptrs, int n)"
+.br
+.ti -1c
+.RI "char * \fBfgetl\fP (FILE *fp)"
+.br
+.ti -1c
+.RI "int \fBread_int\fP (int fd)"
+.br
+.ti -1c
+.RI "void \fBwrite_int\fP (int fd, int n)"
+.br
+.ti -1c
+.RI "int \fBread_all_fail\fP (int fd, char *buffer, size_t bytes)"
+.br
+.ti -1c
+.RI "int \fBwrite_all_fail\fP (int fd, char *buffer, size_t bytes)"
+.br
+.ti -1c
+.RI "void \fBread_all\fP (int fd, char *buffer, size_t bytes)"
+.br
+.ti -1c
+.RI "void \fBwrite_all\fP (int fd, char *buffer, size_t bytes)"
+.br
+.ti -1c
+.RI "char * \fBcopy_string\fP (char *s)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBparse_csv_line\fP (char *line)"
+.br
+.ti -1c
+.RI "int \fBcount_fields\fP (char *line)"
+.br
+.ti -1c
+.RI "float * \fBparse_fields\fP (char *line, int n)"
+.br
+.ti -1c
+.RI "float \fBsum_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "float \fBmean_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBmean_arrays\fP (float **a, int n, int els, float *avg)"
+.br
+.ti -1c
+.RI "void \fBprint_statistics\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "float \fBvariance_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int \fBconstrain_int\fP (int a, int min, int max)"
+.br
+.ti -1c
+.RI "float \fBconstrain\fP (float min, float max, float a)"
+.br
+.ti -1c
+.RI "float \fBdist_array\fP (float *a, float *\fBb\fP, int n, int sub)"
+.br
+.ti -1c
+.RI "float \fBmse_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBnormalize_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBtranslate_array\fP (float *a, int n, float s)"
+.br
+.ti -1c
+.RI "float \fBmag_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBscale_array\fP (float *a, int n, float s)"
+.br
+.ti -1c
+.RI "int \fBsample_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int \fBmax_int_index\fP (int *a, int n)"
+.br
+.ti -1c
+.RI "int \fBmax_index\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int \fBint_index\fP (int *a, int val, int n)"
+.br
+.ti -1c
+.RI "int \fBrand_int\fP (int min, int max)"
+.br
+.ti -1c
+.RI "float \fBrand_normal\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBrand_size_t\fP ()"
+.br
+.ti -1c
+.RI "float \fBrand_uniform\fP (float min, float max)"
+.br
+.ti -1c
+.RI "float \fBrand_scale\fP (float s)"
+.br
+.ti -1c
+.RI "float ** \fBone_hot_encode\fP (float *a, int n, int \fBk\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int alphanum_to_int (char c)"
+
+.PP
+Definition at line 190 of file utils\&.c\&.
+.SS "char* basecfg (char * cfgfile)"
+
+.PP
+Definition at line 176 of file utils\&.c\&.
+.SS "float constrain (float min, float max, float a)"
+
+.PP
+Definition at line 528 of file utils\&.c\&.
+.SS "int constrain_int (int a, int min, int max)"
+
+.PP
+Definition at line 521 of file utils\&.c\&.
+.SS "char* copy_string (char * s)"
+
+.PP
+Definition at line 420 of file utils\&.c\&.
+.SS "int count_fields (char * line)"
+
+.PP
+Definition at line 444 of file utils\&.c\&.
+.SS "void del_arg (int argc, char ** argv, int index)"
+
+.PP
+Definition at line 110 of file utils\&.c\&.
+.SS "float dist_array (float * a, float * b, int n, int sub)"
+
+.PP
+Definition at line 535 of file utils\&.c\&.
+.SS "void error (const char * s)"
+
+.PP
+Definition at line 250 of file utils\&.c\&.
+.SS "char* fgetl (FILE * fp)"
+
+.PP
+Definition at line 332 of file utils\&.c\&.
+.SS "void file_error (char * s)"
+
+.PP
+Definition at line 278 of file utils\&.c\&.
+.SS "int find_arg (int argc, char * argv[], char * arg)"
+
+.PP
+Definition at line 117 of file utils\&.c\&.
+.SS "char* find_char_arg (int argc, char ** argv, char * arg, char * def)"
+
+.PP
+Definition at line 160 of file utils\&.c\&.
+.SS "float find_float_arg (int argc, char ** argv, char * arg, float def)"
+
+.PP
+Definition at line 145 of file utils\&.c\&.
+.SS "int find_int_arg (int argc, char ** argv, char * arg, int def)"
+
+.PP
+Definition at line 130 of file utils\&.c\&.
+.SS "void find_replace (char * str, char * orig, char * rep, char * output)"
+
+.PP
+Definition at line 213 of file utils\&.c\&.
+.SS "void free_ptrs (void ** ptrs, int n)"
+
+.PP
+Definition at line 325 of file utils\&.c\&.
+.SS "int int_index (int * a, int val, int n)"
+
+.PP
+Definition at line 630 of file utils\&.c\&.
+.SS "char int_to_alphanum (int i)"
+
+.PP
+Definition at line 194 of file utils\&.c\&.
+.SS "float mag_array (float * a, int n)"
+
+.PP
+Definition at line 571 of file utils\&.c\&.
+.SS "void malloc_error ()"
+
+.PP
+Definition at line 272 of file utils\&.c\&.
+.SS "int max_index (float * a, int n)"
+
+.PP
+Definition at line 616 of file utils\&.c\&.
+.SS "int max_int_index (int * a, int n)"
+
+.PP
+Definition at line 602 of file utils\&.c\&.
+.SS "float mean_array (float * a, int n)"
+
+.PP
+Definition at line 484 of file utils\&.c\&.
+.SS "void mean_arrays (float ** a, int n, int els, float * avg)"
+
+.PP
+Definition at line 489 of file utils\&.c\&.
+.SS "float mse_array (float * a, int n)"
+
+.PP
+Definition at line 543 of file utils\&.c\&.
+.SS "void normalize_array (float * a, int n)"
+
+.PP
+Definition at line 551 of file utils\&.c\&.
+.SS "float** one_hot_encode (float * a, int n, int k)"
+
+.PP
+Definition at line 712 of file utils\&.c\&.
+.SS "\fBlist\fP* parse_csv_line (char * line)"
+
+.PP
+Definition at line 427 of file utils\&.c\&.
+.SS "float* parse_fields (char * line, int n)"
+
+.PP
+Definition at line 456 of file utils\&.c\&.
+.SS "void pm (int M, int N, float * A)"
+
+.PP
+Definition at line 200 of file utils\&.c\&.
+.SS "void print_statistics (float * a, int n)"
+
+.PP
+Definition at line 504 of file utils\&.c\&.
+.SS "int rand_int (int min, int max)"
+
+.PP
+Definition at line 639 of file utils\&.c\&.
+.SS "float rand_normal ()"
+
+.PP
+Definition at line 651 of file utils\&.c\&.
+.SS "float rand_scale (float s)"
+
+.PP
+Definition at line 705 of file utils\&.c\&.
+.SS "size_t rand_size_t ()"
+
+.PP
+Definition at line 683 of file utils\&.c\&.
+.SS "float rand_uniform (float min, float max)"
+
+.PP
+Definition at line 695 of file utils\&.c\&.
+.SS "int* random_index_order (int min, int max)"
+
+.PP
+Definition at line 94 of file utils\&.c\&.
+.SS "void read_all (int fd, char * buffer, size_t bytes)"
+
+.PP
+Definition at line 399 of file utils\&.c\&.
+.SS "int read_all_fail (int fd, char * buffer, size_t bytes)"
+
+.PP
+Definition at line 377 of file utils\&.c\&.
+.SS "unsigned char* read_file (char * filename)"
+
+.PP
+Definition at line 257 of file utils\&.c\&.
+.SS "int read_int (int fd)"
+
+.PP
+Definition at line 363 of file utils\&.c\&.
+.SS "int* read_intlist (char * gpu_list, int * ngpus, int d)"
+
+.PP
+Definition at line 33 of file utils\&.c\&.
+.SS "int* read_map (char * filename)"
+
+.PP
+Definition at line 56 of file utils\&.c\&.
+.SS "int sample_array (float * a, int n)"
+
+.PP
+Definition at line 589 of file utils\&.c\&.
+.SS "void scale_array (float * a, int n, float s)"
+
+.PP
+Definition at line 581 of file utils\&.c\&.
+.SS "float sec (clock_t clocks)"
+
+.PP
+Definition at line 229 of file utils\&.c\&.
+.SS "void shuffle (void * arr, size_t n, size_t size)"
+
+.PP
+Definition at line 82 of file utils\&.c\&.
+.SS "void sorta_shuffle (void * arr, size_t n, size_t size, size_t sections)"
+
+.PP
+Definition at line 71 of file utils\&.c\&.
+.SS "\fBlist\fP* split_str (char * s, char delim)"
+
+.PP
+Definition at line 284 of file utils\&.c\&.
+.SS "void strip (char * s)"
+
+.PP
+Definition at line 299 of file utils\&.c\&.
+.SS "void strip_char (char * s, char bad)"
+
+.PP
+Definition at line 312 of file utils\&.c\&.
+.SS "float sum_array (float * a, int n)"
+
+.PP
+Definition at line 476 of file utils\&.c\&.
+.SS "void top_k (float * a, int n, int k, int * index)"
+
+.PP
+Definition at line 234 of file utils\&.c\&.
+.SS "void translate_array (float * a, int n, float s)"
+
+.PP
+Definition at line 563 of file utils\&.c\&.
+.SS "float variance_array (float * a, int n)"
+
+.PP
+Definition at line 511 of file utils\&.c\&.
+.SS "double what_time_is_it_now ()"
+
+.PP
+Definition at line 26 of file utils\&.c\&.
+.SS "void write_all (int fd, char * buffer, size_t bytes)"
+
+.PP
+Definition at line 409 of file utils\&.c\&.
+.SS "int write_all_fail (int fd, char * buffer, size_t bytes)"
+
+.PP
+Definition at line 388 of file utils\&.c\&.
+.SS "void write_int (int fd, int n)"
+
+.PP
+Definition at line 371 of file utils\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

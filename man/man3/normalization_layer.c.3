@@ -1,0 +1,52 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/normalization_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/normalization_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'normalization_layer\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_normalization_layer\fP (int batch, int w, int h, int \fBc\fP, int size, float alpha, float beta, float kappa)"
+.br
+.ti -1c
+.RI "void \fBresize_normalization_layer\fP (\fBlayer\fP *\fBlayer\fP, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_normalization_layer\fP (const \fBlayer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_normalization_layer\fP (const \fBlayer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_normalization_layer (const \fBlayer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 97 of file normalization_layer\&.c\&.
+.SS "void forward_normalization_layer (const \fBlayer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 66 of file normalization_layer\&.c\&.
+.SS "\fBlayer\fP make_normalization_layer (int batch, int w, int h, int c, int size, float alpha, float beta, float kappa)"
+
+.PP
+Definition at line 6 of file normalization_layer\&.c\&.
+.SS "void resize_normalization_layer (\fBlayer\fP * layer, int w, int h)"
+
+.PP
+Definition at line 40 of file normalization_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

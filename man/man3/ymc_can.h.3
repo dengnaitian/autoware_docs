@@ -1,0 +1,48 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/actuation/vehicles/packages/ymc/include/can_utils/ymc_can.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/actuation/vehicles/packages/ymc/include/can_utils/ymc_can.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <vector>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBymc\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRET_NO_PUBLISH\fP   (double)\-1\&.0"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBymc::setCanData\fP (unsigned char *\fBdata\fP, unsigned char d1, unsigned char d2, uint16_t d3, int16_t d4, unsigned char d5, unsigned char d6)"
+.br
+.ti -1c
+.RI "double \fBymc::translateCanData\fP (const int id, const std::vector< std::string > &\fBdata\fP, int *mode)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define RET_NO_PUBLISH   (double)\-1\&.0"
+
+.PP
+Definition at line 24 of file ymc_can\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,208 @@
+.TH "datatypes::SensorStateInfo" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::SensorStateInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SensorStateInfo\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBIOState\fP { \fBOFF\fP = 0, \fBON\fP = 1, \fBPASSIVE\fP = 2 }"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBIOState\fP > \fBStateVector\fP"
+.br
+.ti -1c
+.RI "typedef \fBstd::map\fP< std::string, bool > \fBStateMap\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSensorStateInfo\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SensorStateInfo\fP ()"
+.br
+.ti -1c
+.RI "const \fBEvalCases\fP & \fBgetEvalCases\fP () const "
+.br
+.ti -1c
+.RI "const \fBFields\fP & \fBgetFields\fP () const "
+.br
+.ti -1c
+.RI "const \fBStateVector\fP & \fBgetInputStates\fP () const "
+.br
+.ti -1c
+.RI "const \fBMeasurementList\fP & \fBgetMeasurementList\fP () const "
+.br
+.ti -1c
+.RI "const \fBStateVector\fP & \fBgetOutputStates\fP () const "
+.br
+.ti -1c
+.RI "const \fBStateMap\fP & \fBgetStateMap\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetDeviceID\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetEvalCases\fP (const \fBEvalCases\fP &evalCases)"
+.br
+.ti -1c
+.RI "void \fBsetFields\fP (const \fBFields\fP &fields)"
+.br
+.ti -1c
+.RI "void \fBsetInputStates\fP (const \fBStateVector\fP &m_inputStates)"
+.br
+.ti -1c
+.RI "void \fBsetMeasurementList\fP (const \fBMeasurementList\fP &m_measurementList)"
+.br
+.ti -1c
+.RI "void \fBsetOutputStates\fP (const \fBStateVector\fP &m_outputStates)"
+.br
+.ti -1c
+.RI "void \fBsetStateMap\fP (const \fBStateMap\fP &stateMap)"
+.br
+.ti -1c
+.RI "void \fBsetDeviceID\fP (\fBUINT32\fP deviceID)"
+.br
+.ti -1c
+.RI "void \fBsetLastKnownEvalCaseResults\fP (const \fBEvalCaseResults\fP &evalCaseResults)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBioStateToString\fP (\fBIOState\fP state)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file SensorStateInfo\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBstd::map\fP<std::string, bool> \fBdatatypes::SensorStateInfo::StateMap\fP"
+
+.PP
+Definition at line 49 of file SensorStateInfo\&.hpp\&.
+.SS "typedef std::vector<\fBIOState\fP> \fBdatatypes::SensorStateInfo::StateVector\fP"
+
+.PP
+Definition at line 48 of file SensorStateInfo\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::SensorStateInfo::IOState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOFF \fP\fP
+.TP
+\fB\fION \fP\fP
+.TP
+\fB\fIPASSIVE \fP\fP
+.PP
+Definition at line 27 of file SensorStateInfo\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::SensorStateInfo::SensorStateInfo ()"
+
+.PP
+Definition at line 16 of file SensorStateInfo\&.cpp\&.
+.SS "datatypes::SensorStateInfo::~SensorStateInfo ()\fC [virtual]\fP"
+
+.PP
+Definition at line 22 of file SensorStateInfo\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUINT32\fP datatypes::SensorStateInfo::getDeviceID () const"
+
+.SS "const \fBEvalCases\fP & datatypes::SensorStateInfo::getEvalCases () const"
+
+.PP
+Definition at line 41 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBFields\fP & datatypes::SensorStateInfo::getFields () const"
+
+.PP
+Definition at line 46 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBSensorStateInfo::StateVector\fP & datatypes::SensorStateInfo::getInputStates () const"
+
+.PP
+Definition at line 51 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBMeasurementList\fP & datatypes::SensorStateInfo::getMeasurementList () const"
+
+.PP
+Definition at line 56 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBSensorStateInfo::StateVector\fP & datatypes::SensorStateInfo::getOutputStates () const"
+
+.PP
+Definition at line 61 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBSensorStateInfo::StateMap\fP & datatypes::SensorStateInfo::getStateMap () const"
+
+.PP
+Definition at line 91 of file SensorStateInfo\&.cpp\&.
+.SS "const \fBUINT32\fP datatypes::SensorStateInfo::getUsedMemory () const\fC [virtual]\fP"
+Returns an estimation of the current memory usage of this object\&. The correct count is \fIvery\fP difficult to get because of the 1001 different configuration options\&.\&.\&. 
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 31 of file SensorStateInfo\&.cpp\&.
+.SS "static std::string datatypes::SensorStateInfo::ioStateToString (\fBIOState\fP state)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 34 of file SensorStateInfo\&.hpp\&.
+.SS "void datatypes::SensorStateInfo::setDeviceID (\fBUINT32\fP deviceID)"
+
+.SS "void datatypes::SensorStateInfo::setEvalCases (const \fBEvalCases\fP & evalCases)"
+
+.PP
+Definition at line 66 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setFields (const \fBFields\fP & fields)"
+
+.PP
+Definition at line 71 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setInputStates (const \fBStateVector\fP & m_inputStates)"
+
+.PP
+Definition at line 76 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setLastKnownEvalCaseResults (const \fBEvalCaseResults\fP & evalCaseResults)"
+
+.PP
+Definition at line 226 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setMeasurementList (const \fBMeasurementList\fP & m_measurementList)"
+
+.PP
+Definition at line 81 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setOutputStates (const \fBStateVector\fP & m_outputStates)"
+
+.PP
+Definition at line 86 of file SensorStateInfo\&.cpp\&.
+.SS "void datatypes::SensorStateInfo::setStateMap (const \fBStateMap\fP & stateMap)"
+
+.PP
+Definition at line 96 of file SensorStateInfo\&.cpp\&.
+.SS "std::string datatypes::SensorStateInfo::toString () const"
+
+.PP
+Definition at line 114 of file SensorStateInfo\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

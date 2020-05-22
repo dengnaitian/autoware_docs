@@ -1,0 +1,4 @@
+<map id="autoware_camera_calibration.calibrator.ImageDrawable" name="autoware_camera_calibration.calibrator.ImageDrawable">
+<area shape="rect" id="node3" href="$classautoware__camera__calibration_1_1calibrator_1_1_mono_drawable.html" title="autoware_camera_calibration.calibrator.\lMonoDrawable" alt="" coords="411,5,663,47"/>
+<area shape="rect" id="node4" href="$classautoware__camera__calibration_1_1calibrator_1_1_stereo_drawable.html" title="autoware_camera_calibration.calibrator.\lStereoDrawable" alt="" coords="411,71,663,112"/>
+</map>

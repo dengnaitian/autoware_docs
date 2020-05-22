@@ -1,0 +1,106 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_all_layer_assembler.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_all_layer_assembler.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <tf/message_filter\&.h>\fP
+.br
+\fC#include <message_filters/subscriber\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <sick_ldmrs_msgs/sick_ldmrs_point_type\&.h>\fP
+.br
+\fC#include <pcl/point_cloud\&.h>\fP
+.br
+\fC#include <pcl_ros/transforms\&.h>\fP
+.br
+\fC#include <pcl_ros/impl/transforms\&.hpp>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< \fBPointT\fP > \fBPointCloudT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallback\fP (const sensor_msgs::PointCloud2::ConstPtr &pc)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "tf::TransformListener * \fBtf_\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_\fP"
+.br
+.ti -1c
+.RI "std::string \fBfixed_frame_\fP"
+.br
+.ti -1c
+.RI "PointCloudT::Ptr \fBcloud_lower_\fP = boost::make_shared<\fBPointCloudT\fP>()"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBpcl::PointCloud\fP<\fBPointT\fP> \fBPointCloudT\fP"
+
+.PP
+Definition at line 51 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SS "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+
+.PP
+Definition at line 50 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void callback (const sensor_msgs::PointCloud2::ConstPtr & pc)"
+
+.PP
+Definition at line 60 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 112 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "PointCloudT::Ptr cloud_lower_ = boost::make_shared<\fBPointCloudT\fP>()"
+
+.PP
+Definition at line 58 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SS "std::string fixed_frame_"
+
+.PP
+Definition at line 56 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SS "ros::Publisher pub_"
+
+.PP
+Definition at line 54 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SS "tf::TransformListener* tf_"
+
+.PP
+Definition at line 53 of file sick_ldmrs_all_layer_assembler\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

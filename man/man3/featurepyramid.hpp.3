@@ -1,0 +1,52 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/featurepyramid.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/featurepyramid.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+\fC#include 'MODEL_info\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int * \fBgpu_init_featsize\fP (\fBModel_info\fP *MI)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP * \fBgpu_init_scales\fP (\fBModel_info\fP *MI, IplImage *IM, int X, int Y)"
+.br
+.ti -1c
+.RI "void \fBgpu_free_features\fP (\fBFLOAT\fP **features, \fBModel_info\fP *MI)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP ** \fBgpu_calc_f_pyramid\fP (IplImage *Image, \fBModel_info\fP *MI, int *FTSIZE, \fBFLOAT\fP *scale)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBFLOAT\fP** gpu_calc_f_pyramid (IplImage * Image, \fBModel_info\fP * MI, int * FTSIZE, \fBFLOAT\fP * scale)"
+
+.PP
+Definition at line 837 of file featurepyramid\&.cpp\&.
+.SS "void gpu_free_features (\fBFLOAT\fP ** features, \fBModel_info\fP * MI)"
+
+.PP
+Definition at line 1466 of file featurepyramid\&.cpp\&.
+.SS "int* gpu_init_featsize (\fBModel_info\fP * MI)"
+
+.PP
+Definition at line 167 of file featurepyramid\&.cpp\&.
+.SS "\fBFLOAT\fP* gpu_init_scales (\fBModel_info\fP * MI, IplImage * IM, int X, int Y)"
+
+.PP
+Definition at line 99 of file featurepyramid\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

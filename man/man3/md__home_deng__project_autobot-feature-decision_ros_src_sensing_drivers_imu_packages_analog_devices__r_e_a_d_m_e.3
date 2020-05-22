@@ -1,0 +1,136 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_imu_packages_analog_devices__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_imu_packages_analog_devices__r_e_a_d_m_e \- Autoware's adi_driver Subtree 
+This directory is part of a subtree fetched from https://github.com/CPFL/adi_driver on the \fBAutoware\fP branch, a fork from the original https://github.com/ros-drivers/velodyne
+.PP
+This repo adds specific functions for Autoware\&. If you need to modify \fBany\fP file inside this folder structure, please use the following commands to either push or fetch changes from the subtree\&. All the commands written here will suppose you're in the root of Autoware path\&.
+.PP
+.SS "Pulling in commits from the repository subtree"
+.PP
+Bring latest commits from https://github.com/CPFL/adi_driver
+.PP
+\fCgit subtree pull --prefix ros/src/sensing/drivers/imu/packages/analog_devices https://github.com/CPFL/adi_driver Autoware --squash\fP
+.PP
+.SS "Pushing changes to the repository subtree"
+.PP
+If you made any modification to the subtree you are encouraged to commit and publish your changes to the fork\&. You can do with the following command\&.
+.PP
+\fCgit subtree push --prefix ros/src/sensing/drivers/imu/packages/analog_devices https://github.com/CPFL/adi_driver Autoware\fP
+.PP
+\fBOriginal README below\fP
+.PP
+.SH "adi_driver \fC\fP"
+.PP
+.PP
+This package contains ROS driver nodes for Analog Devices(ADI) sensor products mainly communicate by SPI(Serial Periferal Interface)\&.
+.PP
+Currently supported devices are:
+.PP
+.IP "\(bu" 2
+\fCADIS16470\fP
+.IP "  \(bu" 4
+Wide Dynamic Range Mini MEMS IMU
+.PP
+
+.IP "\(bu" 2
+\fCADXL345\fP:
+.IP "  \(bu" 4
+3-Axis, ±2 g/±4 g/±8 g/±16 g Digital Accelerometer
+.IP "  \(bu" 4
+The support for this device is experimental
+.PP
+
+.PP
+.PP
+You need a SPI interface on your PC to communicate with device\&. This package supports \fCDevantech's USB-IIS\fP as the USB-SPI converter\&.
+.PP
+.SS "USB-IIS"
+.PP
+.SS "Overview"
+.PP
+  
+.PP
+\fCUSB-IIS\fP is a USB to Serial/I2C/SPI converter, simple, small and easy to use\&. You don't need any extra library like libusb or libftdi\&. The device is available on /dev/ttyACM* as modem device\&.
+.PP
+Please consult the \fCproduct information\fP and \fCSPI documentation\fP for the detail\&.
+.PP
+.SS "Tips"
+.PP
+You need to remove the jumper block on \fCPower link\fP pins to provide 3\&.3V for the device\&.
+.PP
+You need to add your user to dialout group to acces /dev/ttyACM* \&.
+.PP
+.PP
+.nf
+1 If it takes several seconds until /dev/ttyACM* available, you need to
+2 uninstall modemmanager as:
+3 
+4 ``` $ sudo apt remove modemmanager
+.fi
+.PP
+.PP
+.SS "ADIS16470"
+.PP
+.SS "Overview"
+.PP
+\fCADIS16470\fP is a complete inertial system that includes a triaxis gyroscope and a triaxis accelerometer\&.
+.PP
+  
+.PP
+You can use \fCBreakout board\fP for easy use\&.
+.PP
+.SS "Connection"
+.PP
+  
+.PP
+You need to build a flat cable to connect the USB-ISS and the ADIS16470 breakout board\&. The picture shows a implementation\&.
+.PP
+Very simple schematic is here\&. J1 is the USB-ISS pin and J2 is the 2mm pin headers on the ADIS16470 breakout board\&.
+.PP
+  
+.PP
+Note: you only need to connect one of the power-line(3\&.3V and GND)\&. They are connected in the breakout board\&.
+.PP
+.SS "BOM"
+.PP
+.IP "\(bu" 2
+J1: 2550 Connector 6pin
+.IP "  \(bu" 4
+Available at \fCAkiduki\fP
+.PP
+
+.IP "\(bu" 2
+J2: FCI Connector for 1\&.0mm pitch ribon cables
+.IP "  \(bu" 4
+Available at \fCRS Components\fP
+.PP
+
+.IP "\(bu" 2
+1\&.0 mm pitch ribon cable
+.IP "  \(bu" 4
+Available at \fCAitendo\fP
+.PP
+
+.PP
+.PP
+.SS "Quick start"
+.PP
+Connect your sensor to USB port\&. Run the launch file as:
+.PP
+\fC$ roslaunch adi_driver adis16470\&.launch\fP
+.PP
+You can see the model of ADIS16470 breakout board in rviz panel\&.
+.PP
+  
+.PP
+.SS "ADXL345"
+.PP
+.SS "Overview"
+.PP
+  
+.PP
+  
+.PP
+The ADXL345 is a small, thin, low power, 3-axis accelerometer with high resolution (13-bit) measurement at up to ±16g\&. At this moment, support for this device is experimental\&. 

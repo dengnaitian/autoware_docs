@@ -1,0 +1,65 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/mqtt_socket/nodes/mqtt_receiver/mqtt_pose_receiver.py" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/mqtt_socket/nodes/mqtt_receiver/mqtt_pose_receiver.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBmqtt_pose_receiver\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmqtt_pose_receiver\&.publish_current_pose\fP (msg)"
+.br
+.ti -1c
+.RI "def \fBmqtt_pose_receiver\&.publish_tf\fP (current_pose)"
+.br
+.ti -1c
+.RI "def \fBmqtt_pose_receiver\&.on_connect\fP (client, userdata, flags, respons_code)"
+.br
+.ti -1c
+.RI "def \fBmqtt_pose_receiver\&.on_message\fP (client, userdata, msg)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.mqtt_publisher\fP = None;"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.mqtt_config\fP = None;"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.config_file_path\fP = os\&.path\&.normpath(os\&.path\&.join(os\&.path\&.dirname(os\&.path\&.abspath(__file__)), '\&.\&./\&.\&./mqtt_config\&.yml'))"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.f\fP = open(config_file_path, 'r+')"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.client\fP = mqtt\&.Client(protocol=mqtt\&.MQTTv311)"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.on_connect\fP"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.on_message\fP"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.port\fP"
+.br
+.ti -1c
+.RI "\fBmqtt_pose_receiver\&.keepalive\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

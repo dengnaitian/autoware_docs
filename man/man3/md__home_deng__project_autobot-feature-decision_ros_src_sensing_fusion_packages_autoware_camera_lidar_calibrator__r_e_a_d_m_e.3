@@ -1,0 +1,126 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_autoware_camera_lidar_calibrator__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_autoware_camera_lidar_calibrator__r_e_a_d_m_e \- Autoware Camera-LiDAR Calibration Package 
+
+.SS "How to calibrate"
+.PP
+Camera-LiDAR calibration is performed in two steps:
+.IP "1." 4
+Obtain camera intrinsics
+.PP
+.IP "1." 4
+Obtain camera-LiDAR extrinsics
+.PP
+.PP
+.SS "Camera intrinsic calibration"
+.PP
+The intrinsics are obtained using the \fC\fBautoware_camera_calibration\fP\fP script, which is a fork of the official ROS calibration tool\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "1." 4
+In a sourced terminal:\\ \fCrosrun \fBautoware_camera_lidar_calibrator\fP \fBcameracalibrator\&.py\fP --square SQUARE_SIZE --size MxN image:=/image_topic\fP
+.PP
+.IP "1." 4
+Play a rosbag or stream from a camera in the selected topic name\&.
+.PP
+.IP "1." 4
+Move the checkerboard around within the field of view of the camera until the bars turn green\&.
+.PP
+.IP "1." 4
+Press the \fCCALIBRATE\fP button\&.
+.PP
+.IP "1." 4
+The output and result of the calibration will be shown in the terminal\&.
+.PP
+.IP "1." 4
+Press the \fCSAVE\fP button\&.
+.PP
+.IP "1." 4
+A file will be saved in your home directory with the name \fCYYYYmmdd_HHMM_autoware_camera_calibration\&.yaml\fP\&.
+.PP
+.PP
+This file will contain the intrinsic calibration to rectify the image\&.
+.PP
+.SS "\fBParameters\fP available"
+.PP
+FlagParameterTypeDescription  --square\fCSQUARE_SIZE\fP*double* Defines the size of the checkerboard square in meters\&. --size\fCMxN\fP*string* Defines the layout size of the checkerboard (inner size)\&. image:=\fCimage\fP*string* Topic name of the camera image source topic in \fCraw\fP format (color or b&w)\&. --min_samples\fCmin_samples\fP*integer* Defines the minimum number of samples required to allow calibration\&. --detection\fCengine\fP*string*Chessboard detection engine, default \fCcv2\fP or \fCmatlab\fP For extra details please visit: http://www.ros.org/wiki/camera_calibration
+.PP
+.SS "Matlab checkerboard detection engine (beta)"
+.PP
+This node additionally supports the Matlab engine for chessboard detection, which is faster and more robust than the OpenCV implementation\&.
+.PP
+.IP "1." 4
+Go to the Matlab python setup path \fC/PATH/TO/MATLAB/R201XY/extern/engines/python\fP\&.
+.PP
+.IP "1." 4
+Run \fCpython setup\&.py install\fP to setup Matlab bindings\&.
+.PP
+.PP
+To use this engine, add \fC--detection matlab\fP to the list of arguments, i\&.e\&.\\ \fCrosrun \fBautoware_camera_lidar_calibrator\fP \fBcameracalibrator\&.py\fP --detection matlab --square SQUARE_SIZE --size MxN image:=/image_topic\fP
+.PP
+ 
+.PP
+.PP
+.SS "Camera-LiDAR extrinsic calibration"
+.PP
+Camera-LiDAR extrinsic calibration is performed by clicking on corresponding points in the image and the point cloud\&.
+.PP
+This node uses \fCclicked_point\fP and \fCscreenpoint\fP from the \fCrviz\fP and \fCimage_view2\fP packages respectively\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "1." 4
+Perform the intrinsic camera calibration using camera intrinsic calibration tool described above (resulting in the file \fCYYYYmmdd_HHMM_autoware_camera_calibration\&.yaml\fP)\&.
+.PP
+.IP "1." 4
+In a sourced terminal:\\ \fCroslaunch \fBautoware_camera_lidar_calibrator\fP camera_lidar_calibration\&.launch intrinsics_file:=/PATH/TO/YYYYmmdd_HHMM_autoware_camera_calibration\&.yaml image_src:=/image\fP
+.PP
+.IP "1." 4
+An image viewer will be displayed\&.
+.PP
+.IP "1." 4
+Open Rviz and show the point cloud and the correct fixed frame\&.
+.PP
+.IP "1." 4
+Observe the image and the point cloud simultaneously\&.
+.PP
+.IP "1." 4
+Find a point within the image that you can match to a corresponding point within the point cloud\&.
+.PP
+.IP "1." 4
+Click on the pixel of the point in the image\&.
+.PP
+.IP "1." 4
+Click on the corresponding 3D point in Rviz using the \fIPublish \fBPoint\fP\fP tool\&.
+.PP
+.IP "1." 4
+Repeat this with at least 9 different points\&.
+.PP
+.IP "1." 4
+Once finished, a file will be saved in your home directory with the name \fCYYYYmmdd_HHMM_autoware_lidar_camera_calibration\&.yaml\fP\&.
+.PP
+.PP
+This file can be used with Autoware's Calibration Publisher to publish and register the transformation between the LiDAR and camera\&. The file contains both the intrinsic and extrinsic parameters\&.
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCimage_src\fP*string* Topic name of the camera image source topic\&. Default: \fC/image_raw\fP\&. \fCcamera_id\fP*string* If working with more than one camera, set this to the correct camera namespace, i\&.e\&. \fC/camera0\fP\&. \fCintrinsics_file\fP*string* Topic name of the camera image source topic in \fCraw\fP format (color or b&w)\&. \fCcompressed_stream\fP*bool* If set to true, a node to convert the image from a compressed stream to an uncompressed one will be launched\&. 
+.SS "Camera-LiDAR calibration example"
+.PP
+To test the calibration results, the generated yaml file can be used in the \fCCalibration Publisher\fP and then the \fCPoints Image\fP in the \fBSensing\fP tab\&.
+.PP
+.PP
+.SS "Notes"
+.PP
+This calibration tool assumes that the Velodyne is installed with the default order of axes for the Velodyne sensor\&.
+.IP "\(bu" 2
+X axis points to the front
+.IP "\(bu" 2
+Y axis points to the left
+.IP "\(bu" 2
+Z axis points upwards 
+.PP
+

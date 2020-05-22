@@ -1,0 +1,46 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/nodes/lane_select/lane_select_core.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/nodes/lane_select/lane_select_core.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'lane_select_core\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBlane_planner\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBlane_planner::getTwoDimensionalDistance\fP (const \fBgeometry_msgs::Point\fP &target1, const \fBgeometry_msgs::Point\fP &target2)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBlane_planner::convertPointIntoRelativeCoordinate\fP (const \fBgeometry_msgs::Point\fP &input_point, const geometry_msgs::Pose &\fBpose\fP)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBlane_planner::convertPointIntoWorldCoordinate\fP (const \fBgeometry_msgs::Point\fP &input_point, const geometry_msgs::Pose &\fBpose\fP)"
+.br
+.ti -1c
+.RI "double \fBlane_planner::getRelativeAngle\fP (const geometry_msgs::Pose &waypoint_pose, const geometry_msgs::Pose &current_pose)"
+.br
+.ti -1c
+.RI "int32_t \fBlane_planner::getClosestWaypointNumber\fP (const autoware_msgs::Lane &current_lane, const geometry_msgs::Pose &current_pose, const geometry_msgs::Twist &current_velocity, const int32_t previous_number, const double distance_threshold)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::getLinearEquation\fP (\fBgeometry_msgs::Point\fP start, \fBgeometry_msgs::Point\fP end, double *a, double *\fBb\fP, double *\fBc\fP)"
+.br
+.ti -1c
+.RI "double \fBlane_planner::getDistanceBetweenLineAndPoint\fP (\fBgeometry_msgs::Point\fP point, double sa, double \fBb\fP, double \fBc\fP)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

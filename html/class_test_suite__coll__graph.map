@@ -1,0 +1,6 @@
+<map id="TestSuite" name="TestSuite">
+<area shape="rect" id="node3" href="$class_test_class.html" title="TestClass" alt="" coords="186,95,269,121"/>
+<area shape="rect" id="node4" href="$class_objects_to_costmap.html" title="ObjectsToCostmap" alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node5" href="$class_points_to_costmap.html" title="PointsToCostmap" alt="" coords="164,5,291,32"/>
+<area shape="rect" id="node6" href="$class_astar_search.html" title="AstarSearch" alt="" coords="315,5,409,32"/>
+</map>

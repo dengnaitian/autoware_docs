@@ -1,0 +1,156 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/MathToolbox.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/MathToolbox.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include '\&.\&./BasicDatatypes\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBhypot\fP (double x, double y, double z)"
+.br
+.ti -1c
+.RI "bool \fBfuzzyCompare\fP (double a, double \fBb\fP)"
+.br
+.RI "\fITests if two \fCdouble\fP values are nearly equal\&. \fP"
+.ti -1c
+.RI "double \fBsqr\fP (double val)"
+.br
+.ti -1c
+.RI "bool \fBfuzzyCompare\fP (float a, float \fBb\fP)"
+.br
+.RI "\fITests if two \fCfloat\fP values are nearly equal\&. \fP"
+.ti -1c
+.RI "double \fBnormalizeRadians\fP (double radians)"
+.br
+.ti -1c
+.RI "template<typename floatT > bool \fBisNaN\fP (floatT x)"
+.br
+.RI "\fIChecks if a floating point value is Not-a-Number (NaN) \fP"
+.ti -1c
+.RI "template<typename IntT > IntT \fBround_to_int\fP (float floatValue)"
+.br
+.RI "\fIRound to the closest integer\&. \fP"
+.ti -1c
+.RI "template<typename IntT > IntT \fBround_to_int\fP (double floatValue)"
+.br
+.RI "\fIRound to the closest integer\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBNaN_double\fP"
+.br
+.RI "\fINot-a-Number in double precision\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool fuzzyCompare (double a, double b)\fC [inline]\fP"
+
+.PP
+Tests if two \fCdouble\fP values are nearly equal\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if the two \fCdouble\fP numbers are equal in terms of the machine precision, which means their difference must be less than 1E-11\&. 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file MathToolbox\&.hpp\&.
+.SS "bool fuzzyCompare (float a, float b)\fC [inline]\fP"
+
+.PP
+Tests if two \fCfloat\fP values are nearly equal\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fCtrue\fP if the two \fCfloat\fP numbers are equal in terms of the machine precision, which means their difference must be less than 1E-6\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file MathToolbox\&.hpp\&.
+.SS "double hypot (double x, double y, double z)"
+Berechne die Laenge der Hypothenuse 
+.PP
+Definition at line 19 of file MathToolbox\&.cpp\&.
+.SS "template<typename floatT > bool isNaN (floatT x)\fC [inline]\fP"
+
+.PP
+Checks if a floating point value is Not-a-Number (NaN) The floating-point standard IEC 559 (a\&.k\&.a\&. IEEE 754) specifies that a floating-point value \fIx\fP represents NaN if \fIx\fP != \fIx\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+NaN, \fBNaN_double\fP, http://en.wikipedia.org/wiki/IEC_559 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file MathToolbox\&.hpp\&.
+.SS "double normalizeRadians (double radians)"
+Normalizes an angle given in radians by adding or subtracting an integer multiple of 2*pi so that the resulting angle is in the half-open interval [-pi,+pi)\&. The current implementation takes O(1) time, i\&.e\&. the time of execution has a fixed upper boundary independend from the angle\&. 
+.PP
+Definition at line 31 of file MathToolbox\&.cpp\&.
+.SS "template<typename IntT > IntT round_to_int (float floatValue)\fC [inline]\fP"
+
+.PP
+Round to the closest integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfloatValue\fP The float value that shall be rounded 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fIfloatValue\fP rounded to the closest integer 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file MathToolbox\&.hpp\&.
+.SS "template<typename IntT > IntT round_to_int (double floatValue)\fC [inline]\fP"
+
+.PP
+Round to the closest integer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfloatValue\fP The float value that shall be rounded 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fIfloatValue\fP rounded to the closest integer 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file MathToolbox\&.hpp\&.
+.SS "double sqr (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 36 of file MathToolbox\&.hpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const double NaN_double"
+
+.PP
+Not-a-Number in double precision\&. 
+.PP
+Definition at line 13 of file MathToolbox\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

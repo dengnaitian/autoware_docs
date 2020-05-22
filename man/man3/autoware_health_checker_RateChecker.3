@@ -1,0 +1,80 @@
+.TH "autoware_health_checker::RateChecker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_health_checker::RateChecker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rate_checker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRateChecker\fP (double buffer_length, double warn_rate, double error_rate, double fatal_rate, std::string \fBdescription\fP)"
+.br
+.ti -1c
+.RI "\fB~RateChecker\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheck\fP ()"
+.br
+.ti -1c
+.RI "std::pair< uint8_t, double > \fBgetErrorLevelAndRate\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBgetErrorLevel\fP ()"
+.br
+.ti -1c
+.RI "boost::optional< double > \fBgetRate\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBdescription\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file rate_checker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "autoware_health_checker::RateChecker::RateChecker (double buffer_length, double warn_rate, double error_rate, double fatal_rate, std::string description)"
+
+.PP
+Definition at line 23 of file rate_checker\&.cpp\&.
+.SS "autoware_health_checker::RateChecker::~RateChecker ()"
+
+.PP
+Definition at line 32 of file rate_checker\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void autoware_health_checker::RateChecker::check ()"
+
+.PP
+Definition at line 68 of file rate_checker\&.cpp\&.
+.SS "uint8_t autoware_health_checker::RateChecker::getErrorLevel ()"
+
+.PP
+Definition at line 51 of file rate_checker\&.cpp\&.
+.SS "std::pair< uint8_t, double > autoware_health_checker::RateChecker::getErrorLevelAndRate ()"
+
+.PP
+Definition at line 34 of file rate_checker\&.cpp\&.
+.SS "boost::optional< double > autoware_health_checker::RateChecker::getRate ()"
+
+.PP
+Definition at line 88 of file rate_checker\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string autoware_health_checker::RateChecker::description"
+
+.PP
+Definition at line 46 of file rate_checker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

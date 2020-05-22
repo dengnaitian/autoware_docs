@@ -1,0 +1,543 @@
+.TH "mtdef.MID" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mtdef.MID \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBError\fP = 0x42"
+.br
+.RI "\fIError message, 1 data byte\&. \fP"
+.ti -1c
+.RI "dictionary \fBErrorCodes\fP"
+.br
+.ti -1c
+.RI "int \fBWakeUp\fP = 0x3E"
+.br
+.RI "\fIWake up procedure\&. \fP"
+.ti -1c
+.RI "int \fBGoToConfig\fP = 0x30"
+.br
+.RI "\fISwitch to config state\&. \fP"
+.ti -1c
+.RI "int \fBGoToMeasurement\fP = 0x10"
+.br
+.RI "\fISwitch to measurement state\&. \fP"
+.ti -1c
+.RI "int \fBReset\fP = 0x40"
+.br
+.RI "\fIReset device\&. \fP"
+.ti -1c
+.RI "int \fBReqDID\fP = 0x00"
+.br
+.RI "\fIRequest device id\&. \fP"
+.ti -1c
+.RI "int \fBDeviceID\fP = 0x01"
+.br
+.RI "\fIDeviceID, 4 bytes: HH HL LH LL\&. \fP"
+.ti -1c
+.RI "int \fBInitMT\fP = 0x02"
+.br
+.RI "\fICompatibility for XBus Master users\&. \fP"
+.ti -1c
+.RI "int \fBInitMTResults\fP = 0x03"
+.br
+.ti -1c
+.RI "int \fBReqProductCode\fP = 0x1C"
+.br
+.RI "\fIRequest product code in plain text\&. \fP"
+.ti -1c
+.RI "int \fBProductCode\fP = 0x1D"
+.br
+.RI "\fIProduct code (max 20 bytes data) \fP"
+.ti -1c
+.RI "int \fBReqFWRev\fP = 0x12"
+.br
+.RI "\fIRequest firmware revision\&. \fP"
+.ti -1c
+.RI "int \fBFirmwareRev\fP = 0x13"
+.br
+.RI "\fIFirmware revision, 3 bytes: major minor rev\&. \fP"
+.ti -1c
+.RI "int \fBReqDataLength\fP = 0x0A"
+.br
+.RI "\fIRequest data length according to current configuration\&. \fP"
+.ti -1c
+.RI "int \fBDataLength\fP = 0x0B"
+.br
+.RI "\fIData Length, 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBReqGPSStatus\fP = 0xA6"
+.br
+.RI "\fIRequest GPS status (MTi-G only) \fP"
+.ti -1c
+.RI "int \fBGPSStatus\fP = 0xA7"
+.br
+.RI "\fIGPS status (MTi-G only) \fP"
+.ti -1c
+.RI "int \fBSetBaudrate\fP = 0x18"
+.br
+.RI "\fIBaudrate, 1 byte\&. \fP"
+.ti -1c
+.RI "int \fBSetErrorMode\fP = 0xDA"
+.br
+.RI "\fIError mode, 2 bytes, 0000, 0001, 0002, 0003 (default 0001) \fP"
+.ti -1c
+.RI "int \fBSetLocationID\fP = 0x84"
+.br
+.RI "\fILocation ID, 2 bytes, arbitrary, default is 0\&. \fP"
+.ti -1c
+.RI "int \fBRestoreFactoryDef\fP = 0x0E"
+.br
+.RI "\fIRestore factory defaults\&. \fP"
+.ti -1c
+.RI "int \fBSetTransmitDelay\fP = 0xDC"
+.br
+.RI "\fITransmit delay (RS485), 2 bytes, number of clock ticks (1/29\&.4912 MHz) \fP"
+.ti -1c
+.RI "int \fBSetSyncSettings\fP = 0x2C"
+.br
+.RI "\fISynchronization settings (MTi-10/100 series only), N*12 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetSyncInSettings\fP = 0xD6"
+.br
+.RI "\fISyncIn setting (MTi only), (1+) 2 or 4 bytes depending on request\&. \fP"
+.ti -1c
+.RI "int \fBSetSyncOutSettings\fP = 0xD8"
+.br
+.RI "\fISyncOut setting (MTi/MTi-G only), (1+) 2 or 4 bytes depending on request\&. \fP"
+.ti -1c
+.RI "int \fBReqConfiguration\fP = 0x0C"
+.br
+.RI "\fIRequest configuration\&. \fP"
+.ti -1c
+.RI "int \fBConfiguration\fP = 0x0D"
+.br
+.RI "\fIConfiguration, 118 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetOutputConfiguration\fP = 0xC0"
+.br
+.RI "\fIOutput configuration (MTi-10/100 series only), N*4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetPeriod\fP = 0x04"
+.br
+.RI "\fISampling period (MTi/MTi-G only), 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetOutputSkipFactor\fP = 0xD4"
+.br
+.RI "\fISkip factor (MTi/MTi-G only), 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetObjectAlignment\fP = 0xE0"
+.br
+.RI "\fIObject alignment matrix, 9*4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetOutputMode\fP = 0xD0"
+.br
+.RI "\fIOutput mode (MTi/MTi-G only), 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetOutputSettings\fP = 0xD2"
+.br
+.RI "\fIOutput settings (MTi/MTi-G only), 4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBReqData\fP = 0x34"
+.br
+.RI "\fIRequest MTData message (for 65535 skip factor) \fP"
+.ti -1c
+.RI "int \fBMTData\fP = 0x32"
+.br
+.RI "\fILegacy data packet\&. \fP"
+.ti -1c
+.RI "int \fBMTData2\fP = 0x36"
+.br
+.RI "\fINewer data packet (MTi-10/100 series only) \fP"
+.ti -1c
+.RI "int \fBSetHeading\fP = 0x82"
+.br
+.RI "\fIHeading (MTi only), 4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBResetOrientation\fP = 0xA4"
+.br
+.RI "\fIReset orientation, 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBReqUTCTime\fP = 0x60"
+.br
+.RI "\fIRequest UTC time from sensor (MTI-G and MTi-10/100 series) \fP"
+.ti -1c
+.RI "int \fBUTCTime\fP = 0x61"
+.br
+.RI "\fIUTC \fBTime\fP (MTI-G and MTi-10/100 series), 12 bytes\&. \fP"
+.ti -1c
+.RI "int \fBReqAvailableScenarios\fP = 0x62"
+.br
+.RI "\fIRequest the available XKF scenarios on the device\&. \fP"
+.ti -1c
+.RI "int \fBAvailableScenarios\fP = 0x63"
+.br
+.RI "\fIAvailable Scenarios\&. \fP"
+.ti -1c
+.RI "int \fBSetCurrentScenario\fP = 0x64"
+.br
+.RI "\fICurrent XKF scenario, 2 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetGravityMagnitude\fP = 0x66"
+.br
+.RI "\fIMagnitude of the gravity used for the sensor fusion mechanism, 4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetLeverArmGPS\fP = 0x68"
+.br
+.RI "\fILever arm of the GPSin sensor coordinates (MTi-G and MTi-700 only), 3*4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetMagneticDeclination\fP = 0x6A"
+.br
+.RI "\fIMagnetic declination (MTi-G only), 4 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetLatLonAlt\fP = 0x6E"
+.br
+.RI "\fILatitude, Longitude and Altitude for local declination and gravity (MTi-10/100 series only), 24 bytes\&. \fP"
+.ti -1c
+.RI "int \fBSetProcessingFlags\fP = 0x20"
+.br
+.RI "\fIProcessing flags (not on firmware 2\&.2 or lower for MTi/MTi-g), 1 byte\&. \fP"
+.ti -1c
+.RI "int \fBSetNoRotation\fP = 0x22"
+.br
+.RI "\fIInitiate No Rotation procedure (not on MTi-G), 2 bytes\&. \fP"
+.ti -1c
+.RI "float \fBadditionalTimeOutOffset\fP = 0\&.010"
+.br
+.RI "\fISome timeout related stuff\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Values for the message id (MID)
+.fi
+.PP
+ 
+.PP
+Definition at line 4 of file mtdef\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float mtdef\&.MID\&.additionalTimeOutOffset = 0\&.010\fC [static]\fP"
+
+.PP
+Some timeout related stuff\&. 
+.PP
+Definition at line 127 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.AvailableScenarios = 0x63\fC [static]\fP"
+
+.PP
+Available Scenarios\&. 
+.PP
+Definition at line 109 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.Configuration = 0x0D\fC [static]\fP"
+
+.PP
+Configuration, 118 bytes\&. 
+.PP
+Definition at line 75 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.DataLength = 0x0B\fC [static]\fP"
+
+.PP
+Data Length, 2 bytes\&. 
+.PP
+Definition at line 45 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.DeviceID = 0x01\fC [static]\fP"
+
+.PP
+DeviceID, 4 bytes: HH HL LH LL\&. 
+.PP
+Definition at line 30 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.Error = 0x42\fC [static]\fP"
+
+.PP
+Error message, 1 data byte\&. 
+.PP
+Definition at line 7 of file mtdef\&.py\&.
+.SS "dictionary mtdef\&.MID\&.ErrorCodes\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2         0x03: "Invalid period",
+3         0x04: "Invalid message",
+4         0x1E: "Timer overflow",
+5         0x20: "Invalid baudrate",
+6         0x21: "Invalid parameter"
+7     }
+.fi
+.PP
+Definition at line 8 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.FirmwareRev = 0x13\fC [static]\fP"
+
+.PP
+Firmware revision, 3 bytes: major minor rev\&. 
+.PP
+Definition at line 41 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.GoToConfig = 0x30\fC [static]\fP"
+
+.PP
+Switch to config state\&. 
+.PP
+Definition at line 20 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.GoToMeasurement = 0x10\fC [static]\fP"
+
+.PP
+Switch to measurement state\&. 
+.PP
+Definition at line 22 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.GPSStatus = 0xA7\fC [static]\fP"
+
+.PP
+GPS status (MTi-G only) 
+.PP
+Definition at line 49 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.InitMT = 0x02\fC [static]\fP"
+
+.PP
+Compatibility for XBus Master users\&. 
+.PP
+Definition at line 32 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.InitMTResults = 0x03\fC [static]\fP"
+
+.PP
+Definition at line 33 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.MTData = 0x32\fC [static]\fP"
+
+.PP
+Legacy data packet\&. 
+.PP
+Definition at line 93 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.MTData2 = 0x36\fC [static]\fP"
+
+.PP
+Newer data packet (MTi-10/100 series only) 
+.PP
+Definition at line 95 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ProductCode = 0x1D\fC [static]\fP"
+
+.PP
+Product code (max 20 bytes data) 
+.PP
+Definition at line 37 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqAvailableScenarios = 0x62\fC [static]\fP"
+
+.PP
+Request the available XKF scenarios on the device\&. 
+.PP
+Definition at line 107 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqConfiguration = 0x0C\fC [static]\fP"
+
+.PP
+Request configuration\&. 
+.PP
+Definition at line 73 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqData = 0x34\fC [static]\fP"
+
+.PP
+Request MTData message (for 65535 skip factor) 
+.PP
+Definition at line 91 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqDataLength = 0x0A\fC [static]\fP"
+
+.PP
+Request data length according to current configuration\&. 
+.PP
+Definition at line 43 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqDID = 0x00\fC [static]\fP"
+
+.PP
+Request device id\&. 
+.PP
+Definition at line 28 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqFWRev = 0x12\fC [static]\fP"
+
+.PP
+Request firmware revision\&. 
+.PP
+Definition at line 39 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqGPSStatus = 0xA6\fC [static]\fP"
+
+.PP
+Request GPS status (MTi-G only) 
+.PP
+Definition at line 47 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqProductCode = 0x1C\fC [static]\fP"
+
+.PP
+Request product code in plain text\&. 
+.PP
+Definition at line 35 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ReqUTCTime = 0x60\fC [static]\fP"
+
+.PP
+Request UTC time from sensor (MTI-G and MTi-10/100 series) 
+.PP
+Definition at line 103 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.Reset = 0x40\fC [static]\fP"
+
+.PP
+Reset device\&. 
+.PP
+Definition at line 24 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.ResetOrientation = 0xA4\fC [static]\fP"
+
+.PP
+Reset orientation, 2 bytes\&. 
+.PP
+Definition at line 101 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.RestoreFactoryDef = 0x0E\fC [static]\fP"
+
+.PP
+Restore factory defaults\&. 
+.PP
+Definition at line 59 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetBaudrate = 0x18\fC [static]\fP"
+
+.PP
+Baudrate, 1 byte\&. 
+.PP
+Definition at line 53 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetCurrentScenario = 0x64\fC [static]\fP"
+
+.PP
+Current XKF scenario, 2 bytes\&. 
+.PP
+Definition at line 111 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetErrorMode = 0xDA\fC [static]\fP"
+
+.PP
+Error mode, 2 bytes, 0000, 0001, 0002, 0003 (default 0001) 
+.PP
+Definition at line 55 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetGravityMagnitude = 0x66\fC [static]\fP"
+
+.PP
+Magnitude of the gravity used for the sensor fusion mechanism, 4 bytes\&. 
+.PP
+Definition at line 113 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetHeading = 0x82\fC [static]\fP"
+
+.PP
+Heading (MTi only), 4 bytes\&. 
+.PP
+Definition at line 99 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetLatLonAlt = 0x6E\fC [static]\fP"
+
+.PP
+Latitude, Longitude and Altitude for local declination and gravity (MTi-10/100 series only), 24 bytes\&. 
+.PP
+Definition at line 120 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetLeverArmGPS = 0x68\fC [static]\fP"
+
+.PP
+Lever arm of the GPSin sensor coordinates (MTi-G and MTi-700 only), 3*4 bytes\&. 
+.PP
+Definition at line 115 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetLocationID = 0x84\fC [static]\fP"
+
+.PP
+Location ID, 2 bytes, arbitrary, default is 0\&. 
+.PP
+Definition at line 57 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetMagneticDeclination = 0x6A\fC [static]\fP"
+
+.PP
+Magnetic declination (MTi-G only), 4 bytes\&. 
+.PP
+Definition at line 117 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetNoRotation = 0x22\fC [static]\fP"
+
+.PP
+Initiate No Rotation procedure (not on MTi-G), 2 bytes\&. 
+.PP
+Definition at line 124 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetObjectAlignment = 0xE0\fC [static]\fP"
+
+.PP
+Object alignment matrix, 9*4 bytes\&. 
+.PP
+Definition at line 83 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetOutputConfiguration = 0xC0\fC [static]\fP"
+
+.PP
+Output configuration (MTi-10/100 series only), N*4 bytes\&. 
+.PP
+Definition at line 77 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetOutputMode = 0xD0\fC [static]\fP"
+
+.PP
+Output mode (MTi/MTi-G only), 2 bytes\&. 
+.PP
+Definition at line 85 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetOutputSettings = 0xD2\fC [static]\fP"
+
+.PP
+Output settings (MTi/MTi-G only), 4 bytes\&. 
+.PP
+Definition at line 87 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetOutputSkipFactor = 0xD4\fC [static]\fP"
+
+.PP
+Skip factor (MTi/MTi-G only), 2 bytes\&. 
+.PP
+Definition at line 81 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetPeriod = 0x04\fC [static]\fP"
+
+.PP
+Sampling period (MTi/MTi-G only), 2 bytes\&. 
+.PP
+Definition at line 79 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetProcessingFlags = 0x20\fC [static]\fP"
+
+.PP
+Processing flags (not on firmware 2\&.2 or lower for MTi/MTi-g), 1 byte\&. 
+.PP
+Definition at line 122 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetSyncInSettings = 0xD6\fC [static]\fP"
+
+.PP
+SyncIn setting (MTi only), (1+) 2 or 4 bytes depending on request\&. 
+.PP
+Definition at line 67 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetSyncOutSettings = 0xD8\fC [static]\fP"
+
+.PP
+SyncOut setting (MTi/MTi-G only), (1+) 2 or 4 bytes depending on request\&. 
+.PP
+Definition at line 69 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetSyncSettings = 0x2C\fC [static]\fP"
+
+.PP
+Synchronization settings (MTi-10/100 series only), N*12 bytes\&. 
+.PP
+Definition at line 65 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.SetTransmitDelay = 0xDC\fC [static]\fP"
+
+.PP
+Transmit delay (RS485), 2 bytes, number of clock ticks (1/29\&.4912 MHz) 
+.PP
+Definition at line 61 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.UTCTime = 0x61\fC [static]\fP"
+
+.PP
+UTC \fBTime\fP (MTI-G and MTi-10/100 series), 12 bytes\&. 
+.PP
+Definition at line 105 of file mtdef\&.py\&.
+.SS "int mtdef\&.MID\&.WakeUp = 0x3E\fC [static]\fP"
+
+.PP
+Wake up procedure\&. 
+.PP
+Definition at line 18 of file mtdef\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

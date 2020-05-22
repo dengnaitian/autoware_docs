@@ -1,0 +1,193 @@
+.TH "VelocitySetInfo" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VelocitySetInfo \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <velocity_set_info\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVelocitySetInfo\fP ()"
+.br
+.ti -1c
+.RI "\fB~VelocitySetInfo\fP ()"
+.br
+.ti -1c
+.RI "void \fBconfigCallback\fP (const autoware_config_msgs::ConfigVelocitySetConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBpointsCallback\fP (const sensor_msgs::PointCloud2ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcontrolPoseCallback\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBlocalizerPoseCallback\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBdetectionCallback\fP (const std_msgs::Int32 &msg)"
+.br
+.ti -1c
+.RI "void \fBclearPoints\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetDetectionResultByOtherNodes\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetStopRange\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDecelerationRange\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetPointsThreshold\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetDetectionHeightTop\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetDetectionHeightBottom\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetStopDistanceObstacle\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetStopDistanceStopline\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDecelerationObstacle\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDecelerationStopline\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetVelocityChangeLimit\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetTemporalWaypointsSize\fP () const "
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZ > \fBgetPoints\fP () const "
+.br
+.ti -1c
+.RI "geometry_msgs::PoseStamped \fBgetControlPose\fP () const "
+.br
+.ti -1c
+.RI "geometry_msgs::PoseStamped \fBgetLocalizerPose\fP () const "
+.br
+.ti -1c
+.RI "bool \fBgetSetPose\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file velocity_set_info\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VelocitySetInfo::VelocitySetInfo ()"
+
+.PP
+Definition at line 27 of file velocity_set_info\&.cpp\&.
+.SS "VelocitySetInfo::~VelocitySetInfo ()"
+
+.PP
+Definition at line 49 of file velocity_set_info\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void VelocitySetInfo::clearPoints ()"
+
+.PP
+Definition at line 53 of file velocity_set_info\&.cpp\&.
+.SS "void VelocitySetInfo::configCallback (const autoware_config_msgs::ConfigVelocitySetConstPtr & config)"
+Comments by hui Set thresholds 
+.PP
+Definition at line 62 of file velocity_set_info\&.cpp\&.
+.SS "void VelocitySetInfo::controlPoseCallback (const geometry_msgs::PoseStampedConstPtr & msg)"
+Comments by hui Store control pose into 'set_pose_' 
+.PP
+Definition at line 115 of file velocity_set_info\&.cpp\&.
+.SS "void VelocitySetInfo::detectionCallback (const std_msgs::Int32 & msg)"
+
+.PP
+Definition at line 106 of file velocity_set_info\&.cpp\&.
+.SS "geometry_msgs::PoseStamped VelocitySetInfo::getControlPose () const\fC [inline]\fP"
+
+.PP
+Definition at line 136 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getDecelerationObstacle () const\fC [inline]\fP"
+
+.PP
+Definition at line 111 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getDecelerationRange () const\fC [inline]\fP"
+
+.PP
+Definition at line 81 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getDecelerationStopline () const\fC [inline]\fP"
+
+.PP
+Definition at line 116 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getDetectionHeightBottom () const\fC [inline]\fP"
+
+.PP
+Definition at line 96 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getDetectionHeightTop () const\fC [inline]\fP"
+
+.PP
+Definition at line 91 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getDetectionResultByOtherNodes () const\fC [inline]\fP"
+
+.PP
+Definition at line 71 of file velocity_set_info\&.h\&.
+.SS "geometry_msgs::PoseStamped VelocitySetInfo::getLocalizerPose () const\fC [inline]\fP"
+
+.PP
+Definition at line 141 of file velocity_set_info\&.h\&.
+.SS "\fBpcl::PointCloud\fP<pcl::PointXYZ> VelocitySetInfo::getPoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 131 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getPointsThreshold () const\fC [inline]\fP"
+
+.PP
+Definition at line 86 of file velocity_set_info\&.h\&.
+.SS "bool VelocitySetInfo::getSetPose () const\fC [inline]\fP"
+
+.PP
+Definition at line 146 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getStopDistanceObstacle () const\fC [inline]\fP"
+
+.PP
+Definition at line 101 of file velocity_set_info\&.h\&.
+.SS "int VelocitySetInfo::getStopDistanceStopline () const\fC [inline]\fP"
+
+.PP
+Definition at line 106 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getStopRange () const\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getTemporalWaypointsSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 126 of file velocity_set_info\&.h\&.
+.SS "double VelocitySetInfo::getVelocityChangeLimit () const\fC [inline]\fP"
+
+.PP
+Definition at line 121 of file velocity_set_info\&.h\&.
+.SS "void VelocitySetInfo::localizerPoseCallback (const geometry_msgs::PoseStampedConstPtr & msg)"
+Comments by hui Store current pose into 'localizer_pose_' 
+.PP
+Definition at line 127 of file velocity_set_info\&.cpp\&.
+.SS "void VelocitySetInfo::pointsCallback (const sensor_msgs::PointCloud2ConstPtr & msg)"
+Comments by hui Remove points whose z values are out of range, and these who are close to the vehicle Store the filtered points into 'points_' varable 
+.PP
+Definition at line 82 of file velocity_set_info\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,53 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/log_tools/scripts/autologger/recorder.py" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/log_tools/scripts/autologger/recorder.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBrecorder\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBrecorder\&.getargs\fP ()"
+.br
+.ti -1c
+.RI "def \fBrecorder\&.sigterm\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBrecorder\&.logger\fP = \fBcommon\&.genlogger\fP()"
+.br
+.ti -1c
+.RI "bool \fBrecorder\&.is_shutdown\fP = False"
+.br
+.ti -1c
+.RI "\fBrecorder\&.args\fP = getargs()"
+.br
+.ti -1c
+.RI "string \fBrecorder\&.topics\fP = '\-\-all'"
+.br
+.ti -1c
+.RI "string \fBrecorder\&.prefix\fP = '{}/{}'"
+.br
+.ti -1c
+.RI "string \fBrecorder\&.cmd\fP = 'rosbag record \-\-\fBsplit\fP \-\-size {} \-o {} {}'"
+.br
+.ti -1c
+.RI "\fBrecorder\&.pid\fP = \fBcommon\&.execmd\fP(cmd, blocking=False)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

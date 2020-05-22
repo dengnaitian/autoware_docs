@@ -1,0 +1,143 @@
+.TH "autoware_camera_calibration.camera_calibrator.CalibrationNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.camera_calibrator.CalibrationNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBautoware_camera_calibration\&.camera_calibrator\&.OpenCVCalibrationNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, boards, service_check=True, synchronizer=message_filters\&.TimeSynchronizer, flags=0, pattern=\fBPatterns\&.Chessboard\fP, camera_name='', \fBdetection\fP='cv2', output='yaml', checkerboard_flags=0, min_good_enough=40)"
+.br
+.ti -1c
+.RI "def \fBredraw_stereo\fP (self, args)"
+.br
+.ti -1c
+.RI "def \fBredraw_monocular\fP (self, args)"
+.br
+.ti -1c
+.RI "def \fBqueue_monocular\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBqueue_stereo\fP (self, lmsg, rmsg)"
+.br
+.ti -1c
+.RI "def \fBhandle_monocular\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBhandle_stereo\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBcheck_set_camera_info\fP (self, response)"
+.br
+.ti -1c
+.RI "def \fBdo_upload\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBset_camera_info_service\fP"
+.br
+.ti -1c
+.RI "\fBset_left_camera_info_service\fP"
+.br
+.ti -1c
+.RI "\fBset_right_camera_info_service\fP"
+.br
+.ti -1c
+.RI "\fBq_mono\fP"
+.br
+.ti -1c
+.RI "\fBq_stereo\fP"
+.br
+.ti -1c
+.RI "\fBc\fP"
+.br
+.ti -1c
+.RI "\fBdisplaywidth\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 110 of file camera_calibrator\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.__init__ ( self,  boards,  service_check = \fCTrue\fP,  synchronizer = \fCmessage_filters\&.TimeSynchronizer\fP,  flags = \fC0\fP,  pattern = \fC\fBPatterns\&.Chessboard\fP\fP,  camera_name = \fC''\fP,  detection = \fC'cv2'\fP,  output = \fC'yaml'\fP,  checkerboard_flags = \fC0\fP,  min_good_enough = \fC40\fP)"
+
+.PP
+Definition at line 113 of file camera_calibrator\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.check_set_camera_info ( self,  response)"
+
+.PP
+Definition at line 211 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.do_upload ( self)"
+
+.PP
+Definition at line 226 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.handle_monocular ( self,  msg)"
+
+.PP
+Definition at line 177 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.handle_stereo ( self,  msg)"
+
+.PP
+Definition at line 194 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.queue_monocular ( self,  msg)"
+
+.PP
+Definition at line 171 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.queue_stereo ( self,  lmsg,  rmsg)"
+
+.PP
+Definition at line 174 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.redraw_monocular ( self,  args)"
+
+.PP
+Definition at line 168 of file camera_calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.redraw_stereo ( self,  args)"
+
+.PP
+Definition at line 166 of file camera_calibrator\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.c"
+
+.PP
+Definition at line 156 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.displaywidth"
+
+.PP
+Definition at line 191 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.q_mono"
+
+.PP
+Definition at line 153 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.q_stereo"
+
+.PP
+Definition at line 154 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.set_camera_info_service"
+
+.PP
+Definition at line 146 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.set_left_camera_info_service"
+
+.PP
+Definition at line 148 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.CalibrationNode\&.set_right_camera_info_service"
+
+.PP
+Definition at line 150 of file camera_calibrator\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

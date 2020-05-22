@@ -1,0 +1,208 @@
+.TH "datatypes::Polygon3D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Polygon3D \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Polygon3D\&.hpp>\fP
+.PP
+Inherits vector< Point3D >, and \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBPoint3D\fP > \fBbase_class\fP"
+.br
+.RI "\fIThe base type\&. (Naming according to boost convention\&.) \fP"
+.ti -1c
+.RI "typedef \fBPoint3D::floatingpoint_type\fP \fBfloatingpoint_type\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygon3D\fP ()"
+.br
+.RI "\fIConstructor for an empty polygon\&. \fP"
+.ti -1c
+.RI "\fBPolygon3D\fP (const \fBPoint3D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with one \fBPoint\fP\&. \fP"
+.ti -1c
+.RI "\fBPolygon3D\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with two Points\&. \fP"
+.ti -1c
+.RI "\fBPolygon3D\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.RI "\fIConvenience constructor for a polygon with three Points\&. \fP"
+.ti -1c
+.RI "\fBPolygon3D\fP (const \fBbase_class\fP &)"
+.br
+.RI "\fICopy constructor from a std::vector\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "void \fBsortForAngleXYPlane\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPolygon3D\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "\fBPolygon3D\fP \fBgetMovedPath\fP (double dist) const "
+.br
+.in -1c
+.PP
+.RI "\fBSerialization\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "std::istream & \fBread\fP (std::istream &is, \fBUINT32\fP version)"
+.br
+.RI "\fIReads this object from an input stream\&. \fP"
+.ti -1c
+.RI "void \fBread\fP (const \fBBYTE\fP *&buf, \fBUINT32\fP version)"
+.br
+.RI "\fIReads this object from a memory buffer\&. \fP"
+.ti -1c
+.RI "std::ostream & \fBwrite\fP (std::ostream &os, \fBUINT32\fP version) const "
+.br
+.RI "\fIWrites this object to an output stream\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBBYTE\fP *&buf, \fBUINT32\fP version) const "
+.br
+.RI "\fIWrites this object to a memory buffer and increments the buffer pointer\&. \fP"
+.ti -1c
+.RI "std::streamsize \fBgetSerializedSize\fP (\fBUINT32\fP version) const "
+.br
+.RI "\fIReturns the number of bytes this object needs in serialized form\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.RI "\fIText output for debugging; opposite of \fBfromString()\fP\&. \fP"
+.ti -1c
+.RI "void \fBfromString\fP (const std::string &polyString)"
+.br
+.RI "\fIFill this \fBPolygon3D\fP by parsing the given string and extracting a list of points from the string\&. \fP"
+.in -1c
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file Polygon3D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBPoint3D\fP> \fBdatatypes::Polygon3D::base_class\fP"
+
+.PP
+The base type\&. (Naming according to boost convention\&.) 
+.PP
+Definition at line 28 of file Polygon3D\&.hpp\&.
+.SS "typedef \fBPoint3D::floatingpoint_type\fP \fBdatatypes::Polygon3D::floatingpoint_type\fP"
+The type of the stored x, y coordinates of each of the points in this polygon\&. 
+.PP
+Definition at line 32 of file Polygon3D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Polygon3D::Polygon3D ()"
+
+.PP
+Constructor for an empty polygon\&. 
+.PP
+Definition at line 19 of file Polygon3D\&.cpp\&.
+.SS "datatypes::Polygon3D::Polygon3D (const \fBPoint3D\fP & p1)"
+
+.PP
+Convenience constructor for a polygon with one \fBPoint\fP\&. 
+.PP
+Definition at line 23 of file Polygon3D\&.cpp\&.
+.SS "datatypes::Polygon3D::Polygon3D (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)"
+
+.PP
+Convenience constructor for a polygon with two Points\&. 
+.PP
+Definition at line 28 of file Polygon3D\&.cpp\&.
+.SS "datatypes::Polygon3D::Polygon3D (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2, const \fBPoint3D\fP & p3)"
+
+.PP
+Convenience constructor for a polygon with three Points\&. 
+.PP
+Definition at line 33 of file Polygon3D\&.cpp\&.
+.SS "datatypes::Polygon3D::Polygon3D (const \fBbase_class\fP & other_vector)"
+
+.PP
+Copy constructor from a std::vector\&. 
+.PP
+Definition at line 43 of file Polygon3D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::Polygon3D::fromString (const std::string & polyString)"
+
+.PP
+Fill this \fBPolygon3D\fP by parsing the given string and extracting a list of points from the string\&. This is the opposite of \fBtoString()\fP\&.
+.PP
+Syntax example: (0\&.0 -2\&.0 0) (10 -1 0) (10 1 0) (0\&.0 2\&.0 0) (0\&.0 -2\&.0 0)
+.PP
+This results in a polygon with five points where the last is identical to the first so that the polygon is a closed polygon\&.
+.PP
+Internal syntax rules: The polygon is parsed from a list of floating point literals, separated by any of the following characters: " [ ( , ; ) ] as given by \fBPolygon2D::getSeparatorCharacters()\fP\&. If the number of floating point literals is not divisible by three, a std::runtime_error is thrown\&. 
+.SS "\fBPolygon3D\fP datatypes::Polygon3D::getMovedPath (double dist) const"
+DEPRECATED - the semantics of this function is very very unclear and it will be removed soon\&.
+.PP
+Get a polygon which has a constant distance to this polygon\&. This function is intended to create a path with a more or less constant width\&. The polygon should not have succeeding points with reversing direction (zick-zack)\&. This function operates in the x-y-plane only\&. 
+.PP
+Definition at line 115 of file Polygon3D\&.cpp\&.
+.SS "std::streamsize datatypes::Polygon3D::getSerializedSize (\fBUINT32\fP version) const"
+
+.PP
+Returns the number of bytes this object needs in serialized form\&. 
+.SS "virtual const \fBUINT32\fP datatypes::Polygon3D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 50 of file Polygon3D\&.hpp\&.
+.SS "bool datatypes::Polygon3D::operator== (const \fBPolygon3D\fP & other) const\fC [inline]\fP"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 55 of file Polygon3D\&.hpp\&.
+.SS "std::istream& datatypes::Polygon3D::read (std::istream & is, \fBUINT32\fP version)"
+
+.PP
+Reads this object from an input stream\&. 
+.SS "void datatypes::Polygon3D::read (const \fBBYTE\fP *& buf, \fBUINT32\fP version)"
+
+.PP
+Reads this object from a memory buffer\&. 
+.SS "void datatypes::Polygon3D::sortForAngleXYPlane ()"
+Sort the points for incrementing angles of the projection to the X-Y plane Result is a list soted from left to right\&. 
+.PP
+Definition at line 91 of file Polygon3D\&.cpp\&.
+.SS "std::string datatypes::Polygon3D::toString () const"
+
+.PP
+Text output for debugging; opposite of \fBfromString()\fP\&. Conversion to string for debugging\&. 
+.PP
+Definition at line 74 of file Polygon3D\&.cpp\&.
+.SS "std::ostream& datatypes::Polygon3D::write (std::ostream & os, \fBUINT32\fP version) const"
+
+.PP
+Writes this object to an output stream\&. 
+.SS "void datatypes::Polygon3D::write (\fBBYTE\fP *& buf, \fBUINT32\fP version) const"
+
+.PP
+Writes this object to a memory buffer and increments the buffer pointer\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

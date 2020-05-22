@@ -1,0 +1,446 @@
+.TH "PlannerHNS::DecisionMaker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::DecisionMaker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DecisionMaker\&.h>\fP
+.PP
+Inherited by \fBPlannerHNS::SimuDecisionMaker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitBehaviorStates\fP ()"
+.br
+.ti -1c
+.RI "\fBDecisionMaker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DecisionMaker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const \fBControllerParams\fP &ctrlParams, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo)"
+.br
+.ti -1c
+.RI "void \fBCalculateImportantParameterForDecisionMaking\fP (const \fBVehicleState\fP &car_state, const int &goalID, const bool &bEmergencyStop, const std::vector< \fBTrafficLight\fP > &detectedLights, const \fBTrajectoryCost\fP &bestTrajectory)"
+.br
+.ti -1c
+.RI "void \fBCalculateImportantParameterForDecisionMaking\fP (const \fBVehicleState\fP &car_state, const int &goalID, const bool &bEmergencyStop, const std::vector< \fBTrafficLight\fP > &detectedLights, const \fBTrajectoryCost\fP &bestTrajectory, bool &bOvertake, \fBPlannerHNS::BehaviorState\fP &\fBbeh\fP)"
+.br
+.ti -1c
+.RI "void \fBSetNewGlobalPath\fP (const std::vector< std::vector< \fBWayPoint\fP > > &globalPath)"
+.br
+.ti -1c
+.RI "void \fBDoOneStepNew\fP (const double &dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP &vehicleState, const int &goalID, const std::vector< \fBTrafficLight\fP > &trafficLight, const \fBTrajectoryCost\fP &tc, const bool &bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP &forceCMD, \fBPlannerHNS::BehaviorState\fP &\fBbeh\fP)"
+.br
+.ti -1c
+.RI "\fBBehaviorState\fP \fBDoOneStep\fP (const double &dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP &vehicleState, const int &goalID, const std::vector< \fBTrafficLight\fP > &trafficLight, const \fBTrajectoryCost\fP &tc, const bool &bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP &forceCMD, \fBPlannerHNS::BehaviorState\fP &\fBbeh\fP)"
+.br
+.ti -1c
+.RI "\fBBehaviorState\fP \fBDoOneStep\fP (const double &dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP &vehicleState, const int &goalID, const std::vector< \fBTrafficLight\fP > &trafficLight, const \fBTrajectoryCost\fP &tc, const bool &bEmergencyStop)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBWayPoint\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBCAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBControllerParams\fP \fBm_ControlParams\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBm_Path\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBbeh\fP"
+.br
+.ti -1c
+.RI "double \fBm_MaxLaneSearchDistance\fP"
+.br
+.ti -1c
+.RI "int \fBm_iCurrentTotalPathId\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBm_RollOuts\fP"
+.br
+.ti -1c
+.RI "\fBLane\fP * \fBpLane\fP"
+.br
+.ti -1c
+.RI "\fBBehaviorStateMachine\fP * \fBm_pCurrentBehaviorState\fP"
+.br
+.ti -1c
+.RI "\fBStopState\fP * \fBm_pStopState\fP"
+.br
+.ti -1c
+.RI "\fBWaitState\fP * \fBm_pWaitState\fP"
+.br
+.ti -1c
+.RI "\fBSwerveStateII\fP * \fBm_pAvoidObstacleState\fP"
+.br
+.ti -1c
+.RI "\fBTrafficLightStopStateII\fP * \fBm_pTrafficLightStopState\fP"
+.br
+.ti -1c
+.RI "\fBTrafficLightWaitStateII\fP * \fBm_pTrafficLightWaitState\fP"
+.br
+.ti -1c
+.RI "\fBForwardStateII\fP * \fBm_pGoToGoalState\fP"
+.br
+.ti -1c
+.RI "\fBInitStateII\fP * \fBm_pInitState\fP"
+.br
+.ti -1c
+.RI "\fBMissionAccomplishedStateII\fP * \fBm_pMissionCompleteState\fP"
+.br
+.ti -1c
+.RI "\fBGoalStateII\fP * \fBm_pGoalState\fP"
+.br
+.ti -1c
+.RI "\fBFollowStateII\fP * \fBm_pFollowState\fP"
+.br
+.ti -1c
+.RI "\fBStopSignStopStateII\fP * \fBm_pStopSignStopState\fP"
+.br
+.ti -1c
+.RI "\fBStopSignWaitStateII\fP * \fBm_pStopSignWaitState\fP"
+.br
+.ti -1c
+.RI "\fBLaneChangeLeftStateII\fP * \fBm_pLaneChangeLeftState\fP"
+.br
+.ti -1c
+.RI "\fBStopLineStopStateII\fP * \fBm_pStopLineStopState\fP"
+.br
+.ti -1c
+.RI "\fBStopLineWaitStateII\fP * \fBm_pStopLineWaitState\fP"
+.br
+.ti -1c
+.RI "\fBLaneChangeRightStateII\fP * \fBm_pLaneChangeRightState\fP"
+.br
+.ti -1c
+.RI "\fBParkInLaneStateII\fP * \fBm_pParkInLaneState\fP"
+.br
+.ti -1c
+.RI "\fBParkOnSideStateII\fP * \fBm_pParkOnSideState\fP"
+.br
+.ti -1c
+.RI "\fBMergeStateII\fP * \fBm_pMergeState\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::OVERTAKE_PROC\fP \fBm_Overtaking_proc\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bOvertaking\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bOvertakeGoalAchieved\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::LIGHT_INDICATOR\fP \fBm_lightindicator\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::PIDController\fP \fBm_pidVelocity\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::PIDController\fP \fBm_pidStopping\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::PIDController\fP \fBm_pidFollowing\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBGetNextTrafficLight\fP (const int &prevTrafficLightId, const std::vector< \fBTrafficLight\fP > &trafficLights, \fBTrafficLight\fP &trafficL)"
+.br
+.ti -1c
+.RI "void \fBUpdateCurrentLane\fP (const double &search_distance)"
+.br
+.ti -1c
+.RI "bool \fBSelectSafeTrajectory\fP ()"
+.br
+.ti -1c
+.RI "void \fBGenerateBehaviorState\fP (const \fBVehicleState\fP &vehicleState, \fBPlannerHNS::BehaviorState\fP &\fBbeh\fP)"
+.br
+.ti -1c
+.RI "double \fBUpdateVelocityDirectlyToTrajectory\fP (const \fBBehaviorState\fP &\fBbeh\fP, const \fBVehicleState\fP &CurrStatus, const double &dt)"
+.br
+.ti -1c
+.RI "bool \fBReachEndOfGlobalPath\fP (const double &min_distance, const int &iGlobalPathIndex)"
+.br
+.ti -1c
+.RI "bool \fBCheckChangeLaneTargetLaneSafe\fP ()"
+.br
+.ti -1c
+.RI "void \fBCreateManualPathForOverTake\fP (const \fBPlannerHNS::WayPoint\fP &currPose, const \fBPlannerHNS::WayPoint\fP &targetPos, const \fBPlannerHNS::OVERTAKE_PROC\fP &proc)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBt_centerTrajectorySmoothed\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBm_TotalOriginalPath\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBm_TotalPath\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_params\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file DecisionMaker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::DecisionMaker::DecisionMaker ()"
+
+.PP
+Definition at line 18 of file DecisionMaker\&.cpp\&.
+.SS "PlannerHNS::DecisionMaker::~DecisionMaker ()\fC [virtual]\fP"
+
+.PP
+Definition at line 53 of file DecisionMaker\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::DecisionMaker::CalculateImportantParameterForDecisionMaking (const \fBVehicleState\fP & car_state, const int & goalID, const bool & bEmergencyStop, const std::vector< \fBTrafficLight\fP > & detectedLights, const \fBTrajectoryCost\fP & bestTrajectory)"
+
+.PP
+Definition at line 198 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::CalculateImportantParameterForDecisionMaking (const \fBVehicleState\fP & car_state, const int & goalID, const bool & bEmergencyStop, const std::vector< \fBTrafficLight\fP > & detectedLights, const \fBTrajectoryCost\fP & bestTrajectory, bool & bOvertake, \fBPlannerHNS::BehaviorState\fP & beh)"
+
+.PP
+Definition at line 297 of file DecisionMaker\&.cpp\&.
+.SS "bool PlannerHNS::DecisionMaker::CheckChangeLaneTargetLaneSafe ()\fC [protected]\fP"
+
+.SS "void PlannerHNS::DecisionMaker::CreateManualPathForOverTake (const \fBPlannerHNS::WayPoint\fP & currPose, const \fBPlannerHNS::WayPoint\fP & targetPos, const \fBPlannerHNS::OVERTAKE_PROC\fP & proc)\fC [protected]\fP"
+
+.SS "\fBBehaviorState\fP PlannerHNS::DecisionMaker::DoOneStep (const double & dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP & vehicleState, const int & goalID, const std::vector< \fBTrafficLight\fP > & trafficLight, const \fBTrajectoryCost\fP & tc, const bool & bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP & forceCMD, \fBPlannerHNS::BehaviorState\fP & beh)"
+
+.SS "\fBBehaviorState\fP PlannerHNS::DecisionMaker::DoOneStep (const double & dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP & vehicleState, const int & goalID, const std::vector< \fBTrafficLight\fP > & trafficLight, const \fBTrajectoryCost\fP & tc, const bool & bEmergencyStop)"
+
+.SS "void PlannerHNS::DecisionMaker::DoOneStepNew (const double & dt, const \fBPlannerHNS::WayPoint\fP currPose, const \fBPlannerHNS::VehicleState\fP & vehicleState, const int & goalID, const std::vector< \fBTrafficLight\fP > & trafficLight, const \fBTrajectoryCost\fP & tc, const bool & bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP & forceCMD, \fBPlannerHNS::BehaviorState\fP & beh)"
+
+.PP
+Definition at line 783 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::GenerateBehaviorState (const \fBVehicleState\fP & vehicleState, \fBPlannerHNS::BehaviorState\fP & beh)\fC [protected]\fP"
+
+.PP
+Definition at line 570 of file DecisionMaker\&.cpp\&.
+.SS "bool PlannerHNS::DecisionMaker::GetNextTrafficLight (const int & prevTrafficLightId, const std::vector< \fBTrafficLight\fP > & trafficLights, \fBPlannerHNS::TrafficLight\fP & trafficL)\fC [protected]\fP"
+
+.PP
+Definition at line 176 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::Init (const \fBControllerParams\fP & ctrlParams, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo)"
+
+.PP
+Definition at line 74 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::InitBehaviorStates ()"
+
+.PP
+Definition at line 96 of file DecisionMaker\&.cpp\&.
+.SS "bool PlannerHNS::DecisionMaker::ReachEndOfGlobalPath (const double & min_distance, const int & iGlobalPathIndex)\fC [protected]\fP"
+
+.PP
+Definition at line 512 of file DecisionMaker\&.cpp\&.
+.SS "bool PlannerHNS::DecisionMaker::SelectSafeTrajectory ()\fC [protected]\fP"
+
+.PP
+Definition at line 539 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::SetNewGlobalPath (const std::vector< std::vector< \fBWayPoint\fP > > & globalPath)"
+
+.PP
+Definition at line 530 of file DecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::DecisionMaker::UpdateCurrentLane (const double & search_distance)\fC [protected]\fP"
+
+.PP
+Definition at line 493 of file DecisionMaker\&.cpp\&.
+.SS "double PlannerHNS::DecisionMaker::UpdateVelocityDirectlyToTrajectory (const \fBBehaviorState\fP & beh, const \fBVehicleState\fP & CurrStatus, const double & dt)\fC [protected]\fP"
+
+.PP
+Definition at line 619 of file DecisionMaker\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerHNS::DecisionMaker::beh"
+
+.PP
+Definition at line 26 of file DecisionMaker\&.h\&.
+.SS "bool PlannerHNS::DecisionMaker::m_bOvertakeGoalAchieved"
+
+.PP
+Definition at line 58 of file DecisionMaker\&.h\&.
+.SS "bool PlannerHNS::DecisionMaker::m_bOvertaking"
+
+.PP
+Definition at line 57 of file DecisionMaker\&.h\&.
+.SS "\fBCAR_BASIC_INFO\fP PlannerHNS::DecisionMaker::m_CarInfo"
+
+.PP
+Definition at line 22 of file DecisionMaker\&.h\&.
+.SS "\fBControllerParams\fP PlannerHNS::DecisionMaker::m_ControlParams"
+
+.PP
+Definition at line 23 of file DecisionMaker\&.h\&.
+.SS "int PlannerHNS::DecisionMaker::m_iCurrentTotalPathId"
+
+.PP
+Definition at line 29 of file DecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::LIGHT_INDICATOR\fP PlannerHNS::DecisionMaker::m_lightindicator"
+
+.PP
+Definition at line 59 of file DecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP PlannerHNS::DecisionMaker::m_Map"
+
+.PP
+Definition at line 25 of file DecisionMaker\&.h\&.
+.SS "double PlannerHNS::DecisionMaker::m_MaxLaneSearchDistance"
+
+.PP
+Definition at line 28 of file DecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::OVERTAKE_PROC\fP PlannerHNS::DecisionMaker::m_Overtaking_proc"
+
+.PP
+Definition at line 56 of file DecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP PlannerHNS::DecisionMaker::m_params\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file DecisionMaker\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::DecisionMaker::m_Path"
+
+.PP
+Definition at line 24 of file DecisionMaker\&.h\&.
+.SS "\fBSwerveStateII\fP* PlannerHNS::DecisionMaker::m_pAvoidObstacleState"
+
+.PP
+Definition at line 36 of file DecisionMaker\&.h\&.
+.SS "\fBBehaviorStateMachine\fP* PlannerHNS::DecisionMaker::m_pCurrentBehaviorState"
+
+.PP
+Definition at line 33 of file DecisionMaker\&.h\&.
+.SS "\fBFollowStateII\fP* PlannerHNS::DecisionMaker::m_pFollowState"
+
+.PP
+Definition at line 44 of file DecisionMaker\&.h\&.
+.SS "\fBGoalStateII\fP* PlannerHNS::DecisionMaker::m_pGoalState"
+
+.PP
+Definition at line 43 of file DecisionMaker\&.h\&.
+.SS "\fBForwardStateII\fP* PlannerHNS::DecisionMaker::m_pGoToGoalState"
+
+.PP
+Definition at line 40 of file DecisionMaker\&.h\&.
+.SS "\fBUtilityHNS::PIDController\fP PlannerHNS::DecisionMaker::m_pidFollowing"
+
+.PP
+Definition at line 66 of file DecisionMaker\&.h\&.
+.SS "\fBUtilityHNS::PIDController\fP PlannerHNS::DecisionMaker::m_pidStopping"
+
+.PP
+Definition at line 65 of file DecisionMaker\&.h\&.
+.SS "\fBUtilityHNS::PIDController\fP PlannerHNS::DecisionMaker::m_pidVelocity"
+
+.PP
+Definition at line 64 of file DecisionMaker\&.h\&.
+.SS "\fBInitStateII\fP* PlannerHNS::DecisionMaker::m_pInitState"
+
+.PP
+Definition at line 40 of file DecisionMaker\&.h\&.
+.SS "\fBLaneChangeLeftStateII\fP* PlannerHNS::DecisionMaker::m_pLaneChangeLeftState"
+
+.PP
+Definition at line 48 of file DecisionMaker\&.h\&.
+.SS "\fBLaneChangeRightStateII\fP* PlannerHNS::DecisionMaker::m_pLaneChangeRightState"
+
+.PP
+Definition at line 51 of file DecisionMaker\&.h\&.
+.SS "\fBMergeStateII\fP* PlannerHNS::DecisionMaker::m_pMergeState"
+
+.PP
+Definition at line 54 of file DecisionMaker\&.h\&.
+.SS "\fBMissionAccomplishedStateII\fP* PlannerHNS::DecisionMaker::m_pMissionCompleteState"
+
+.PP
+Definition at line 42 of file DecisionMaker\&.h\&.
+.SS "\fBParkInLaneStateII\fP* PlannerHNS::DecisionMaker::m_pParkInLaneState"
+
+.PP
+Definition at line 52 of file DecisionMaker\&.h\&.
+.SS "\fBParkOnSideStateII\fP* PlannerHNS::DecisionMaker::m_pParkOnSideState"
+
+.PP
+Definition at line 53 of file DecisionMaker\&.h\&.
+.SS "\fBStopLineStopStateII\fP* PlannerHNS::DecisionMaker::m_pStopLineStopState"
+
+.PP
+Definition at line 49 of file DecisionMaker\&.h\&.
+.SS "\fBStopLineWaitStateII\fP* PlannerHNS::DecisionMaker::m_pStopLineWaitState"
+
+.PP
+Definition at line 50 of file DecisionMaker\&.h\&.
+.SS "\fBStopSignStopStateII\fP* PlannerHNS::DecisionMaker::m_pStopSignStopState"
+
+.PP
+Definition at line 45 of file DecisionMaker\&.h\&.
+.SS "\fBStopSignWaitStateII\fP* PlannerHNS::DecisionMaker::m_pStopSignWaitState"
+
+.PP
+Definition at line 46 of file DecisionMaker\&.h\&.
+.SS "\fBStopState\fP* PlannerHNS::DecisionMaker::m_pStopState"
+
+.PP
+Definition at line 34 of file DecisionMaker\&.h\&.
+.SS "\fBTrafficLightStopStateII\fP* PlannerHNS::DecisionMaker::m_pTrafficLightStopState"
+
+.PP
+Definition at line 37 of file DecisionMaker\&.h\&.
+.SS "\fBTrafficLightWaitStateII\fP* PlannerHNS::DecisionMaker::m_pTrafficLightWaitState"
+
+.PP
+Definition at line 38 of file DecisionMaker\&.h\&.
+.SS "\fBWaitState\fP* PlannerHNS::DecisionMaker::m_pWaitState"
+
+.PP
+Definition at line 35 of file DecisionMaker\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::DecisionMaker::m_RollOuts"
+
+.PP
+Definition at line 30 of file DecisionMaker\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::DecisionMaker::m_TotalOriginalPath\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file DecisionMaker\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::DecisionMaker::m_TotalPath\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file DecisionMaker\&.h\&.
+.SS "\fBLane\fP* PlannerHNS::DecisionMaker::pLane"
+
+.PP
+Definition at line 31 of file DecisionMaker\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::DecisionMaker::state"
+
+.PP
+Definition at line 21 of file DecisionMaker\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> PlannerHNS::DecisionMaker::t_centerTrajectorySmoothed\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file DecisionMaker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

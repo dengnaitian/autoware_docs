@@ -1,0 +1,28 @@
+var classdatatypes_1_1_polygon2_d =
+[
+    [ "base_class", "classdatatypes_1_1_polygon2_d.html#ac77826b8f1b42fb1ef3d775d89b9f726", null ],
+    [ "floatingpoint_type", "classdatatypes_1_1_polygon2_d.html#a16c1bf4cbb269a34750756c9a9dba919", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a96550ebda5855ab081620b9c088b5c26", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a2b3f398cad349582c9cce482dc3dc2f5", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#acd95bffd387114304c66a0d123baae9b", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a8c80051b1f3c5f1a3f6e9d73fc42c01a", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a7848c00a299552f8126a775497589fce", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a176d2415b21c979bf6b495297aed1812", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a68d945b0a4336b721a2b594397dcee5d", null ],
+    [ "Polygon2D", "classdatatypes_1_1_polygon2_d.html#a893e4ef61d5564915b2c976e33439aa9", null ],
+    [ "append", "classdatatypes_1_1_polygon2_d.html#a3cc38114896c537d66e5bfdbe8037967", null ],
+    [ "append", "classdatatypes_1_1_polygon2_d.html#ae07a0b0ee4e2a37270718c7dc537ce64", null ],
+    [ "append", "classdatatypes_1_1_polygon2_d.html#acfe10d2452c78470d766789cfca45bf6", null ],
+    [ "containsPoint", "classdatatypes_1_1_polygon2_d.html#aae51fc093e61f59f11feb03b9afe479e", null ],
+    [ "distanceToPoint", "classdatatypes_1_1_polygon2_d.html#ab4385c04c7fd89201c15571f2ccb8400", null ],
+    [ "getArea", "classdatatypes_1_1_polygon2_d.html#aad56a43e871280f944f652e64be6f2de", null ],
+    [ "getBoundingAngles", "classdatatypes_1_1_polygon2_d.html#afedd0c233b7879ecefbf2b1e77806b4a", null ],
+    [ "getBoundingBox", "classdatatypes_1_1_polygon2_d.html#a89097b3d0f421d2dd84a376761b6b3c9", null ],
+    [ "getCenterOfGravity", "classdatatypes_1_1_polygon2_d.html#adf0695ba305576087d4c6a40eecc347b", null ],
+    [ "getSimplified", "classdatatypes_1_1_polygon2_d.html#a29e8ff5e72e056ca10912012293913fe", null ],
+    [ "getUsedMemory", "classdatatypes_1_1_polygon2_d.html#a08c3af6b3c19bfd6a1761d6e594c4d13", null ],
+    [ "isClosed", "classdatatypes_1_1_polygon2_d.html#acf757492070efaf3c68e9cc4922ca5e6", null ],
+    [ "isColliding", "classdatatypes_1_1_polygon2_d.html#ae07dd9adf1e5adb274716c727b65884a", null ],
+    [ "isIntersecting", "classdatatypes_1_1_polygon2_d.html#af4808369df432c192fe3fad83edf88cc", null ],
+    [ "toString", "classdatatypes_1_1_polygon2_d.html#a2a0bb5890f2da9ffb6937af79414c2ab", null ]
+];

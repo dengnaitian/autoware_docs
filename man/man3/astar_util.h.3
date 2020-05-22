@@ -1,0 +1,109 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/astar_search/include/astar_search/astar_util.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/astar_search/include/astar_search/astar_util.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <tf/tf\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAstarNode\fP"
+.br
+.ti -1c
+.RI "struct \fBWaveFrontNode\fP"
+.br
+.ti -1c
+.RI "struct \fBNodeUpdate\fP"
+.br
+.ti -1c
+.RI "struct \fBSimpleNode\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSTATUS\fP : uint8_t { \fBSTATUS::NONE\fP, \fBSTATUS::OPEN\fP, \fBSTATUS::CLOSED\fP, \fBSTATUS::OBS\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBcalcDistance\fP (double x1, double y1, double x2, double y2)"
+.br
+.ti -1c
+.RI "double \fBmodifyTheta\fP (double theta)"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBtransformPose\fP (const geometry_msgs::Pose &\fBpose\fP, const tf::Transform &tf)"
+.br
+.ti -1c
+.RI "\fBWaveFrontNode\fP \fBgetWaveFrontNode\fP (int x, int y, double cost)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcalcRelativeCoordinate\fP (geometry_msgs::Pose \fBpose\fP, \fBtf::Point\fP point)"
+.br
+.ti -1c
+.RI "double \fBcalcDiffOfRadian\fP (double a, double \fBb\fP)"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBxytToPoseMsg\fP (double x, double y, double theta)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSTATUS\fP : uint8_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIOPEN \fP\fP
+.TP
+\fB\fICLOSED \fP\fP
+.TP
+\fB\fIOBS \fP\fP
+.PP
+Definition at line 22 of file astar_util\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "double calcDiffOfRadian (double a, double b)\fC [inline]\fP"
+
+.PP
+Definition at line 130 of file astar_util\&.h\&.
+.SS "double calcDistance (double x1, double y1, double x2, double y2)\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file astar_util\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP calcRelativeCoordinate (geometry_msgs::Pose pose, \fBtf::Point\fP point)\fC [inline]\fP"
+
+.PP
+Definition at line 117 of file astar_util\&.h\&.
+.SS "\fBWaveFrontNode\fP getWaveFrontNode (int x, int y, double cost)\fC [inline]\fP"
+
+.PP
+Definition at line 110 of file astar_util\&.h\&.
+.SS "double modifyTheta (double theta)\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file astar_util\&.h\&.
+.SS "geometry_msgs::Pose transformPose (const geometry_msgs::Pose & pose, const tf::Transform & tf)\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file astar_util\&.h\&.
+.SS "geometry_msgs::Pose xytToPoseMsg (double x, double y, double theta)\fC [inline]\fP"
+
+.PP
+Definition at line 139 of file astar_util\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,168 @@
+.TH "Context" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Context \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Context\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContext\fP ()"
+.br
+.ti -1c
+.RI "\fBContext\fP (\fBcv::Point\fP aRedCenter, \fBcv::Point\fP aYellowCenter, \fBcv::Point\fP aGreenCenter, int aLampRadius, \fBcv::Point\fP aTopLeft, \fBcv::Point\fP aBotRight)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBSetContexts\fP (std::vector< \fBContext\fP > &out_contexts, const autoware_msgs::Signals::ConstPtr &in_extracted_pos, const int in_image_height, const int in_image_width)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcv::Point\fP \fBredCenter\fP"
+.br
+.ti -1c
+.RI "\fBcv::Point\fP \fByellowCenter\fP"
+.br
+.ti -1c
+.RI "\fBcv::Point\fP \fBgreenCenter\fP"
+.br
+.ti -1c
+.RI "cv::Point3d \fBredCenter3d\fP"
+.br
+.ti -1c
+.RI "cv::Point3d \fByellowCenter3d\fP"
+.br
+.ti -1c
+.RI "cv::Point3d \fBgreenCenter3d\fP"
+.br
+.ti -1c
+.RI "int \fBlampRadius\fP"
+.br
+.ti -1c
+.RI "\fBcv::Point\fP \fBtopLeft\fP"
+.br
+.ti -1c
+.RI "\fBcv::Point\fP \fBbotRight\fP"
+.br
+.ti -1c
+.RI "\fBLightState\fP \fBlightState\fP"
+.br
+.ti -1c
+.RI "\fBLightState\fP \fBnewCandidateLightState\fP"
+.br
+.ti -1c
+.RI "int \fBsignalID\fP"
+.br
+.ti -1c
+.RI "int \fBstateJudgeCount\fP"
+.br
+.ti -1c
+.RI "bool \fBleftTurnSignal\fP"
+.br
+.ti -1c
+.RI "bool \fBrightTurnSignal\fP"
+.br
+.ti -1c
+.RI "int \fBclosestLaneId\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file Context\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Context::Context ()\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file Context\&.h\&.
+.SS "Context::Context (\fBcv::Point\fP aRedCenter, \fBcv::Point\fP aYellowCenter, \fBcv::Point\fP aGreenCenter, int aLampRadius, \fBcv::Point\fP aTopLeft, \fBcv::Point\fP aBotRight)"
+
+.PP
+Definition at line 3 of file Context\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Context::SetContexts (std::vector< \fBContext\fP > & out_contexts, const autoware_msgs::Signals::ConstPtr & in_extracted_pos, const int in_image_height, const int in_image_width)\fC [static]\fP"
+
+.PP
+Definition at line 29 of file Context\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBcv::Point\fP Context::botRight"
+
+.PP
+Definition at line 37 of file Context\&.h\&.
+.SS "int Context::closestLaneId"
+
+.PP
+Definition at line 44 of file Context\&.h\&.
+.SS "\fBcv::Point\fP Context::greenCenter"
+
+.PP
+Definition at line 31 of file Context\&.h\&.
+.SS "cv::Point3d Context::greenCenter3d"
+
+.PP
+Definition at line 34 of file Context\&.h\&.
+.SS "int Context::lampRadius"
+
+.PP
+Definition at line 35 of file Context\&.h\&.
+.SS "bool Context::leftTurnSignal"
+
+.PP
+Definition at line 42 of file Context\&.h\&.
+.SS "\fBLightState\fP Context::lightState"
+
+.PP
+Definition at line 38 of file Context\&.h\&.
+.SS "\fBLightState\fP Context::newCandidateLightState"
+
+.PP
+Definition at line 39 of file Context\&.h\&.
+.SS "\fBcv::Point\fP Context::redCenter"
+
+.PP
+Definition at line 29 of file Context\&.h\&.
+.SS "cv::Point3d Context::redCenter3d"
+
+.PP
+Definition at line 32 of file Context\&.h\&.
+.SS "bool Context::rightTurnSignal"
+
+.PP
+Definition at line 43 of file Context\&.h\&.
+.SS "int Context::signalID"
+
+.PP
+Definition at line 40 of file Context\&.h\&.
+.SS "int Context::stateJudgeCount"
+
+.PP
+Definition at line 41 of file Context\&.h\&.
+.SS "\fBcv::Point\fP Context::topLeft"
+
+.PP
+Definition at line 36 of file Context\&.h\&.
+.SS "\fBcv::Point\fP Context::yellowCenter"
+
+.PP
+Definition at line 30 of file Context\&.h\&.
+.SS "cv::Point3d Context::yellowCenter3d"
+
+.PP
+Definition at line 33 of file Context\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

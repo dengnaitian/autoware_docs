@@ -1,0 +1,62 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/udon_socket/include/udon_socket/udon.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/udon_socket/include/udon_socket/udon.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdint>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBudon_socket::udon::Location\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBudon_socket\fP"
+.br
+.ti -1c
+.RI " \fBudon_socket::udon\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "ssize_t \fBudon_socket::udon::send_request\fP (int fd)"
+.br
+.ti -1c
+.RI "ssize_t \fBudon_socket::udon::send_response\fP (int fd)"
+.br
+.ti -1c
+.RI "ssize_t \fBudon_socket::udon::send_mode\fP (int fd, std::int32_t mode)"
+.br
+.ti -1c
+.RI "ssize_t \fBudon_socket::udon::send_location\fP (int fd, const Location &location)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr std::int32_t \fBudon_socket::udon::MODE_NORMAL\fP = 0"
+.br
+.ti -1c
+.RI "constexpr std::int32_t \fBudon_socket::udon::MODE_AUTO\fP = 1"
+.br
+.ti -1c
+.RI "constexpr std::int32_t \fBudon_socket::udon::MODE_ERROR\fP = 2"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

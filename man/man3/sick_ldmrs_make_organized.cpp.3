@@ -1,0 +1,96 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_make_organized.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_make_organized.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <sick_ldmrs_msgs/sick_ldmrs_point_type\&.h>\fP
+.br
+\fC#include <pcl/point_cloud\&.h>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< \fBPointT\fP > \fBPointCloudT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallback\fP (const sensor_msgs::PointCloud2::ConstPtr &pc)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "ros::Publisher \fBpub\fP"
+.br
+.ti -1c
+.RI "double \fBstart_angle_\fP"
+.br
+.ti -1c
+.RI "double \fBend_angle_\fP"
+.br
+.ti -1c
+.RI "double \fBangular_resolution_\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBpcl::PointCloud\fP<\fBPointT\fP> \fBPointCloudT\fP"
+
+.PP
+Definition at line 44 of file sick_ldmrs_make_organized\&.cpp\&.
+.SS "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+
+.PP
+Definition at line 43 of file sick_ldmrs_make_organized\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void callback (const sensor_msgs::PointCloud2::ConstPtr & pc)"
+
+.PP
+Definition at line 52 of file sick_ldmrs_make_organized\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 86 of file sick_ldmrs_make_organized\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "double angular_resolution_"
+
+.PP
+Definition at line 50 of file sick_ldmrs_make_organized\&.cpp\&.
+.SS "double end_angle_"
+
+.PP
+Definition at line 49 of file sick_ldmrs_make_organized\&.cpp\&.
+.SS "ros::Publisher pub"
+
+.PP
+Definition at line 46 of file sick_ldmrs_make_organized\&.cpp\&.
+.SS "double start_angle_"
+
+.PP
+Definition at line 48 of file sick_ldmrs_make_organized\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

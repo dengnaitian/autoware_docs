@@ -1,0 +1,6 @@
+<map id="gpu::Matrix" name="gpu::Matrix">
+<area shape="rect" id="node2" href="$classgpu_1_1_matrix_device.html" title="gpu::MatrixDevice" alt="" coords="37,80,165,107"/>
+<area shape="rect" id="node4" href="$classgpu_1_1_matrix_host.html" title="gpu::MatrixHost" alt="" coords="209,80,323,107"/>
+<area shape="rect" id="node3" href="$classgpu_1_1_square_matrix_device.html" title="gpu::SquareMatrixDevice" alt="" coords="5,155,175,181"/>
+<area shape="rect" id="node5" href="$classgpu_1_1_square_matrix_host.html" title="gpu::SquareMatrixHost" alt="" coords="199,155,355,181"/>
+</map>

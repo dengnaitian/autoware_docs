@@ -1,0 +1,1623 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_3dm.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_3dm.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk_3dm\&.h'\fP
+.br
+\fC#include 'mip_sdk_user_functions\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_poll_ahrs\fP (\fBmip_interface\fP *device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP *descriptor_list)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_poll_gps\fP (\fBmip_interface\fP *device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP *descriptor_list)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_poll_filter\fP (\fBmip_interface\fP *device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP *descriptor_list)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_get_ahrs_base_rate\fP (\fBmip_interface\fP *device_interface, \fBu16\fP *base_rate)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_get_gps_base_rate\fP (\fBmip_interface\fP *device_interface, \fBu16\fP *base_rate)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_get_filter_base_rate\fP (\fBmip_interface\fP *device_interface, \fBu16\fP *base_rate)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_ahrs_message_format\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *num_entries, \fBu8\fP *descriptors, \fBu16\fP *decimation)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_gps_message_format\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *num_entries, \fBu8\fP *descriptors, \fBu16\fP *decimation)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_filter_message_format\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *num_entries, \fBu8\fP *descriptors, \fBu16\fP *decimation)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_continuous_data_stream\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP *enable)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_gps_dynamics_mode\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *dynamics_mode)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_gps_advanced_settings\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_ahrs_signal_conditioning\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_ahrs_signal_settings\fP *settings)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_ahrs_timestamp\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *time_selector, \fBu32\fP *time)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_startup_settings\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_uart_baudrate\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu32\fP *baudrate)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_datastream_format\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP *format)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_power_state\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP *power_state)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_device_status\fP (\fBmip_interface\fP *device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP *response_buffer, \fBu16\fP *response_size)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_low_pass_filter_settings\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_low_pass_filter_settings\fP *filter_settings)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_accel_bias\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float *bias_vector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_gyro_bias\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float *bias_vector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_coning_sculling_compensation\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *enable)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_capture_gyro_bias\fP (\fBmip_interface\fP *device_interface, \fBu16\fP duration_ms, float *bias_vector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_hard_iron\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float *vector)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_soft_iron\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float *\fBmatrix\fP)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_sensor2vehicle_tranformation\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float euler_angles[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_complementary_filter_settings\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_complementary_filter_settings\fP *settings)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_rtcm_23_message\fP (\fBmip_interface\fP *device_interface, \fBu8\fP *raw_data, \fBu16\fP num_bytes)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_3dm\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBu16\fP mip_3dm_cmd_accel_bias (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float * bias_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set Accelerometer x, y, z bias vector\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *bias_vector - pointer to array containing input bias vector on write commands or to contain output bias vector on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 1670 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_ahrs_message_format (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * num_entries, \fBu8\fP * descriptors, \fBu16\fP * decimation)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the current AHRS message format\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *num_entries - The number of descriptors provided or the number read back from the device\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *descriptors - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *decimation - A decimation list containing \fCnum_descriptors\fP decimation values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the AHRS packet using the callback function for the AHRS data class\&.
+.PP
+Possible \fCfunction_selector\fP values:
+.br
+
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCnum_entries\fP may be 0, descriptors = NULL, and decimation = NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - Use New Settings (will clear the current format) 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings 
+.PP
+
+.PP
+Definition at line 447 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_ahrs_signal_conditioning (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_ahrs_signal_settings\fP * settings)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the AHRS signal conditioning settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fImip_ahrs_signal_settings\fP *settings - The AHRS signal conditioning settings structure\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+This function only affects inertial and orientation values on the AHRS datastream\&. If the NAV datastream is available, the values remain unaffected\&. Please reference the device DCP for further information\&. 
+.PP
+Definition at line 1042 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_ahrs_timestamp (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * time_selector, \fBu32\fP * time)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the AHRS signal conditioning settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *time_selector - The selection for the format of the time value\&. 
+.br
+\fIu32\fP *time - The current time value\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings
+.PP
+
+.br
+ Possible \fCtime_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Beacon Timestamp (Seconds) 
+.IP "\(bu" 2
+0x02 - Beacon Timestamp (Nanoseconds) 
+.IP "\(bu" 2
+0x02 - AHRS Internal Tick Counter 
+.PP
+
+.PP
+Definition at line 1136 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_capture_gyro_bias (\fBmip_interface\fP * device_interface, \fBu16\fP duration_ms, float * bias_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set Accelerometer x, y, z bias vector\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *bias_vector - Pointer to array containing input bias vector on write commands or to contain output bias vector on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 1906 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_complementary_filter_settings (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_complementary_filter_settings\fP * settings)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set complementary filter settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fImip_complementary_filter_settings\fP *settings - structure for the complementary filter parameters\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 2214 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_coning_sculling_compensation (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * enable)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read setting of coning and sculling compensation enable\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *enable - the enable/disable flag\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCenable\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+
+.br
+ Possible \fCenable\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - Disable Coning and Sculling compensation 
+.IP "\(bu" 2
+0x01 - Enable Coning and Sculling compensation 
+.PP
+
+.PP
+Definition at line 1845 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_continuous_data_stream (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP * enable)"
+
+.SH "DESCRIPTION"
+.PP
+Control the streaming of AHRS, GPS, and NAV data packets\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP device_selector - Selects which device is affected\&. 
+.br
+\fIu8\fP *enable - the enable/disable flag\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCenable\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+
+.br
+ Possible \fCdevice_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - AHRS 
+.IP "\(bu" 2
+0x02 - GPS 
+.IP "\(bu" 2
+0x03 - NAV
+.PP
+
+.br
+ Possible \fCenable\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - Disable the datastream 
+.IP "\(bu" 2
+0x01 - Enable the datastream 
+.PP
+
+.PP
+Definition at line 842 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_datastream_format (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP * format)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the datastream format on a particular datastream\&. Valid on the GX3-35 only\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP device_selector - Selects which device is affected\&. 
+.br
+\fIu8\fP *format - The selected format of the data\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCformat\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCPossible\fP \fCdevice_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - AHRS 
+.IP "\(bu" 2
+0x02 - GPS
+.PP
+\fCPossible\fP \fCformat\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - Standard MIP (default) 
+.IP "\(bu" 2
+0x02 - Wrapped Raw (MIP wrapper around raw sensor data) 
+.PP
+
+.PP
+Definition at line 1361 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_device_status (\fBmip_interface\fP * device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP * response_buffer, \fBu16\fP * response_size)"
+
+.SH "DESCRIPTION"
+.PP
+Get the current device status\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu16\fP model_number - The model number of the device\&. 
+.br
+\fIu8\fP status_selector - The type of status desired\&. 
+.br
+\fIu8\fP *response_buffer - A buffer to hold the response\&. 
+.br
+\fIu16\fP *response_size - On entry, the size of the buffer\&. On exit, the size of the returned status message\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Due to the variable response from the device, this function \fBDOES\fP \fBNOT\fP byteswap the output\&. This is the responsibility of the developer\&.
+.PP
+
+.br
+ Possible \fCstatus_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Basic \fBStatus\fP 
+.IP "\(bu" 2
+0x02 - Diagnostic \fBStatus\fP
+.PP
+Please see the device DCP for valid status selector values and the format of the returned status message\&. 
+.PP
+Definition at line 1524 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_filter_message_format (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * num_entries, \fBu8\fP * descriptors, \fBu16\fP * decimation)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the current NAV message format\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *num_entries - The number of descriptors provided or the number read back from the device\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *descriptors - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *decimation - A decimation list containing \fCnum_descriptors\fP decimation values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the NAV packet using the callback function for the NAV data class\&.
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCnum_entries\fP may be 0, descriptors = NULL, and decimation = NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - Use New Settings (will clear the current format) 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings 
+.PP
+
+.PP
+Definition at line 707 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_get_ahrs_base_rate (\fBmip_interface\fP * device_interface, \fBu16\fP * base_rate)"
+
+.SH "DESCRIPTION"
+.PP
+Request the base rate of the AHRS data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu16\fP *base_rate - buffer for the returned base rate\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fBRate\fP is reported in Hz\&. 
+.PP
+Definition at line 257 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_get_filter_base_rate (\fBmip_interface\fP * device_interface, \fBu16\fP * base_rate)"
+
+.SH "DESCRIPTION"
+.PP
+Request the base rate of the NAV data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu16\fP *base_rate - buffer for the returned base rate\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fBRate\fP is reported in Hz\&. 
+.PP
+Definition at line 372 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_get_gps_base_rate (\fBmip_interface\fP * device_interface, \fBu16\fP * base_rate)"
+
+.SH "DESCRIPTION"
+.PP
+Request the base rate of the GPS data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu16\fP *base_rate - buffer for the returned base rate\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fBRate\fP is reported in Hz\&. 
+.PP
+Definition at line 315 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_gps_advanced_settings (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector)"
+
+.SH "DESCRIPTION"
+.PP
+Save, Load, or Restore the advanced GPS settings on the GX3-35\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings 
+.PP
+
+.PP
+Definition at line 993 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_gps_dynamics_mode (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * dynamics_mode)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the GPS Dynamics Mode on the GX3-35\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *dynamics_mode - The dynamics mode\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCdynamics_mode\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+
+.br
+ Possible \fCdynamics_mode\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - Portable 
+.IP "\(bu" 2
+0x02 - Stationary 
+.IP "\(bu" 2
+0x03 - Pedestrian 
+.IP "\(bu" 2
+0x04 - Automotive 
+.IP "\(bu" 2
+0x05 - Sea 
+.IP "\(bu" 2
+0x06 - Airborne < 1G 
+.IP "\(bu" 2
+0x07 - Airborne < 2G 
+.IP "\(bu" 2
+0x08 - Airborne < 4G 
+.PP
+
+.PP
+Definition at line 928 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_gps_message_format (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * num_entries, \fBu8\fP * descriptors, \fBu16\fP * decimation)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the current GPS message format\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *num_entries - The number of descriptors provided/available or the number read back from the device\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *descriptors - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIu8\fP *decimation - A decimation list containing \fCnum_descriptors\fP decimation values\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the GPS packet using the callback function for the GPS data class\&.
+.PP
+Possible \fCfunction_selector\fP values:
+.br
+
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCnum_entries\fP may be 0, descriptors = NULL, and decimation = NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - Use New Settings (will clear the current format) 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings 
+.PP
+
+.PP
+Definition at line 577 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_gyro_bias (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float * bias_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set Accelerometer x, y, z bias vector\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *bias_vector - pointer to array containing input bias vector on write commands or to contain output bias vector on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 1750 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_hard_iron (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float * vector)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set the Hard Iron x, y, z vector\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *vector - Pointer to array containing input hard iron vector on write commands or to contain output hard iron vector on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 1974 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_low_pass_filter_settings (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_low_pass_filter_settings\fP * filter_settings)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set low pass filter settings for scaled data quantities\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fImip_low_pass_filter_settings\fP *filter_settings - structure specifying the data type to be filtered and the filter parameters\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 1596 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_poll_ahrs (\fBmip_interface\fP * device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP * descriptor_list)"
+
+.SH "DESCRIPTION"
+.PP
+Poll for an AHRS data packet given the provided descriptor format\&. If no format is provided (i\&.e\&. num_descriptors = 0 and descriptor_list = NULL) the device will output the AHRS packet given the current format stored in the device\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP option_selector - ACK/NACK packet generation option\&. 
+.br
+\fIu8\fP num_descriptors - The number of descriptors provided\&. 
+.br
+\fIu8\fP *descriptor_list - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the AHRS packet using the callback function for the AHRS data class\&.
+.PP
+Possible \fCoption_selector\fP values:
+.br
+
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - normal ACK/NACK reply
+.br
+ 
+.IP "\(bu" 2
+0x01 - Suppress the ACK/NACK reply
+.br
+
+.br
+
+.PP
+
+.PP
+Definition at line 75 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_poll_filter (\fBmip_interface\fP * device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP * descriptor_list)"
+
+.SH "DESCRIPTION"
+.PP
+Poll for a NAV data packet given the provided descriptor format\&. If no format is provided (i\&.e\&. num_descriptors = 0 and descriptor_list = NULL) the device will output the NAV packet given the current format stored in the device\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP option_selector - ACK/NACK packet generation option\&. 
+.br
+\fIu8\fP num_descriptors - The number of descriptors provided\&. 
+.br
+\fIu8\fP *descriptor_list - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the NAV packet using the callback function for the NAV data class\&.
+.PP
+Possible \fCoption_selector\fP values:
+.br
+
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - normal ACK/NACK reply
+.br
+ 
+.IP "\(bu" 2
+0x01 - Suppress the ACK/NACK reply
+.br
+
+.br
+ 
+.PP
+
+.PP
+Definition at line 203 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_poll_gps (\fBmip_interface\fP * device_interface, \fBu8\fP option_selector, \fBu8\fP num_descriptors, \fBu8\fP * descriptor_list)"
+
+.SH "DESCRIPTION"
+.PP
+Poll for a GPS data packet given the provided descriptor format\&. If no format is provided (i\&.e\&. num_descriptors = 0 and descriptor_list = NULL) the device will output the AHRS packet given the current format stored in the device\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP option_selector - ACK/NACK packet generation option\&. 
+.br
+\fIu8\fP num_descriptors - The number of descriptors provided\&. 
+.br
+\fIu8\fP *descriptor_list - A descriptor list containing \fCnum_descriptors\fP descriptor values\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user receives the GPS packet using the callback function for the GPS data class\&.
+.PP
+Possible \fCoption_selector\fP values:
+.br
+
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x00 - normal ACK/NACK reply
+.br
+ 
+.IP "\(bu" 2
+0x01 - Suppress the ACK/NACK reply
+.br
+
+.br
+
+.PP
+
+.PP
+Definition at line 139 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_power_state (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP device_selector, \fBu8\fP * power_state)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the power state on a particular datastream\&. Valid on the GX3-25 and GX3-35 only\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP device_selector - Selects which device is affected\&. 
+.br
+\fIu8\fP *power_state - The selected power state\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCpower_state\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCPossible\fP \fCdevice_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - AHRS 
+.IP "\(bu" 2
+0x02 - GPS
+.PP
+\fCPossible\fP \fCformat\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x01 - On (full performance) 
+.IP "\(bu" 2
+0x02 - On (low power mode) 
+.IP "\(bu" 2
+0x03 - Sleep (very low power, fast startup) 
+.IP "\(bu" 2
+0x04 - Off/Deep Sleep
+.PP
+Please see the device DCP for valid parameter combinations\&. 
+.PP
+Definition at line 1450 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_rtcm_23_message (\fBmip_interface\fP * device_interface, \fBu8\fP * raw_data, \fBu16\fP num_bytes)"
+
+.SH "DESCRIPTION"
+.PP
+Send a raw RTCM 2\&.3 Message to the device 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8*\fP raw_data - Buffer containing 'num_bytes' of a RTCM 2\&.3 message\&. 
+.br
+\fIu16\fP num_bytes - Size of the RTCM message\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This function will send multiple commands when the number of bytes in 'raw_data'
+.br
+is larger than MIP_MAX_PAYLOAD_DATA_SIZE\&. 
+.PP
+Definition at line 2295 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_soft_iron (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float * matrix)"
+
+.SH "DESCRIPTION"
+.PP
+Get or set the Soft Iron 3x3 matrix\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *vector - Pointer to array containing input soft iron 3x3 matrix on write commands or to contain output soft iron 3x3 matrix on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 2054 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_startup_settings (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the device startup settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The affected startup settings are listed in each device's DCP\&. 
+.PP
+Definition at line 1218 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_cmd_uart_baudrate (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu32\fP * baudrate)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the primary com port baudrate\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu32\fP *baudrate - The baudrate value\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCbaudrate\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The valid baudrates are listed in each device's DCP\&. 
+.PP
+Definition at line 1262 of file mip_sdk_3dm\&.c\&.
+.SS "\fBu16\fP mip_3dm_sensor2vehicle_tranformation (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float euler_angles[3])"
+
+.SH "DESCRIPTION"
+.PP
+Get or set the sensor-to-vehicle transformation in Euler angle format\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - The model number of the device\&. 
+.br
+\fIfloat\fP *vector - Pointer to array containing input Euler angles on write commands or to contain output Euler angles on read commands\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Please see the device DCP for valid status selector values and the format of the returned message\&. 
+.PP
+Definition at line 2134 of file mip_sdk_3dm\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

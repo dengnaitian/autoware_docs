@@ -1,0 +1,59 @@
+\form#0:$ x $
+\form#1:$ \vec{p} $
+\form#2:$ p $
+\form#3:$ \delta \vec{p} $
+\form#4:$ \alpha_0 $
+\form#5:$ \alpha_max $
+\form#6:$ \alpha_min $
+\form#7:$ f(x + \alpha p) $
+\form#8:$ score $
+\form#9:$ f'(x + \alpha p) $
+\form#10:$ \vec{g} $
+\form#11:$ f''(x + \alpha p) $
+\form#12:$ H $
+\form#13:$ X $
+\form#14:$ T(\vec{p},\vec{x}) $
+\form#15:$ I $
+\form#16:$ \psi(\alpha_k) \leq 0 $
+\form#17:$ \phi'(\alpha_k) \geq 0 $
+\form#18:$ \alpha_l $
+\form#19:$ f_l $
+\form#20:$ \psi(\alpha_l) $
+\form#21:$ \phi(\alpha_l) $
+\form#22:$ g_l $
+\form#23:$ \psi'(\alpha_l) $
+\form#24:$ \phi'(\alpha_l) $
+\form#25:$ \alpha_u $
+\form#26:$ f_u $
+\form#27:$ \psi(\alpha_u) $
+\form#28:$ \phi(\alpha_u) $
+\form#29:$ g_u $
+\form#30:$ \psi'(\alpha_u) $
+\form#31:$ \phi'(\alpha_u) $
+\form#32:$ \alpha_t $
+\form#33:$ f_t $
+\form#34:$ \psi(\alpha_t) $
+\form#35:$ \phi(\alpha_t) $
+\form#36:$ g_t $
+\form#37:$ \psi'(\alpha_t) $
+\form#38:$ \phi'(\alpha_t) $
+\form#39:$ \psi(\alpha_k) $
+\form#40:$ f_k $
+\form#41:$ g_k $
+\form#42:$ \phi(\alpha_k) $
+\form#43:$ \psi(\alpha) $
+\form#44:$ \alpha $
+\form#45:$ \phi(\alpha) $
+\form#46:$ \phi(0) $
+\form#47:$ \phi'(0) $
+\form#48:$ \mu $
+\form#49:$ \psi'(\alpha) $
+\form#50:$ \phi'(\alpha) $
+\form#51:$ J_E $
+\form#52:$ H_E $
+\form#53:$\psi$
+\form#54:$v_h$
+\form#55:$\beta$
+\form#56:$\nu$
+\form#57:$\nu=\psi+\beta$
+\form#58:$\nu=\psi$

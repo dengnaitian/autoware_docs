@@ -1,0 +1,63 @@
+.TH "UtilityHNS::LocalizationPathReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::LocalizationPathReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBLocalizationWayPoint\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLocalizationPathReader\fP (const std::string &fileName, const char &separator)"
+.br
+.ti -1c
+.RI "\fB~LocalizationPathReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBLocalizationWayPoint\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBLocalizationWayPoint\fP > &data_list)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 149 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::LocalizationPathReader::LocalizationPathReader (const std::string & fileName, const char & separator)\fC [inline]\fP"
+
+.PP
+Definition at line 162 of file DataRW\&.h\&.
+.SS "UtilityHNS::LocalizationPathReader::~LocalizationPathReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 163 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int UtilityHNS::LocalizationPathReader::ReadAllData (std::vector< \fBLocalizationWayPoint\fP > & data_list)"
+
+.PP
+Definition at line 443 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::LocalizationPathReader::ReadNextLine (\fBLocalizationWayPoint\fP & data)"
+
+.PP
+Definition at line 421 of file DataRW\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

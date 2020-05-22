@@ -1,0 +1,118 @@
+.TH "autoware_rviz_debug::DecisionMakerPanel" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_rviz_debug::DecisionMakerPanel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <decision_maker_panel\&.h>\fP
+.PP
+Inherits Panel\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendTopic\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBsendEmergency\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDecisionMakerPanel\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "virtual void \fBload\fP (const rviz::Config &config)"
+.br
+.ti -1c
+.RI "virtual void \fBsave\fP (rviz::Config config) const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QWidget * \fBwindow_vehicle\fP"
+.br
+.ti -1c
+.RI "QWidget * \fBwindow_mission\fP"
+.br
+.ti -1c
+.RI "QWidget * \fBwindow_drive\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::Publisher \fBstatecmd_publisher_\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBemergency_publisher_\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file decision_maker_panel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "autoware_rviz_debug::DecisionMakerPanel::DecisionMakerPanel (QWidget * parent = \fC0\fP)"
+
+.PP
+Definition at line 74 of file decision_maker_panel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void autoware_rviz_debug::DecisionMakerPanel::load (const rviz::Config & config)\fC [virtual]\fP"
+
+.PP
+Definition at line 320 of file decision_maker_panel\&.cpp\&.
+.SS "void autoware_rviz_debug::DecisionMakerPanel::save (rviz::Config config) const\fC [virtual]\fP"
+
+.PP
+Definition at line 315 of file decision_maker_panel\&.cpp\&.
+.SS "void autoware_rviz_debug::DecisionMakerPanel::sendEmergency ()\fC [slot]\fP"
+
+.PP
+Definition at line 304 of file decision_maker_panel\&.cpp\&.
+.SS "void autoware_rviz_debug::DecisionMakerPanel::sendTopic (const QString & text)\fC [slot]\fP"
+
+.PP
+Definition at line 290 of file decision_maker_panel\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ros::Publisher autoware_rviz_debug::DecisionMakerPanel::emergency_publisher_\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file decision_maker_panel\&.h\&.
+.SS "ros::NodeHandle autoware_rviz_debug::DecisionMakerPanel::nh_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file decision_maker_panel\&.h\&.
+.SS "ros::Publisher autoware_rviz_debug::DecisionMakerPanel::statecmd_publisher_\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file decision_maker_panel\&.h\&.
+.SS "QWidget * autoware_rviz_debug::DecisionMakerPanel::window_drive"
+
+.PP
+Definition at line 47 of file decision_maker_panel\&.h\&.
+.SS "QWidget * autoware_rviz_debug::DecisionMakerPanel::window_mission"
+
+.PP
+Definition at line 47 of file decision_maker_panel\&.h\&.
+.SS "QWidget* autoware_rviz_debug::DecisionMakerPanel::window_vehicle"
+
+.PP
+Definition at line 47 of file decision_maker_panel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

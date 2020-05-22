@@ -1,0 +1,81 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/devices/LuxBase.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/devices/LuxBase.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./BasicDatatypes\&.hpp'\fP
+.br
+\fC#include '\&.\&./manager\&.hpp'\fP
+.br
+\fC#include '\&.\&./interfaces/tcp\&.hpp'\fP
+.br
+\fC#include '\&.\&./interfaces/file\&.hpp'\fP
+.br
+\fC#include '\&.\&./tools/SickThread\&.hpp'\fP
+.br
+\fC#include '\&.\&./datatypes/Position3D\&.hpp'\fP
+.br
+\fC#include '\&.\&./datatypes/Point2D\&.hpp'\fP
+.br
+\fC#include '\&.\&./datatypes/Scan\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBdevices::LuxBase\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdevices\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMRS_INPUTBUFFERSIZE\fP   65536"
+.br
+.ti -1c
+.RI "#define \fBMRS_CMDREPLYBUFFERSIZE\fP   8192"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBdevices::MrsCommandId\fP { \fBdevices::CmdMrsReset\fP = 0x0000, \fBdevices::CmdMrsGetStatus\fP = 0x0001, \fBdevices::CmdMrsSetMode\fP = 0x0002, \fBdevices::CmdMrsSetConfig\fP = 0x0003, \fBdevices::CmdMrsSaveConfig\fP = 0x0004, \fBdevices::CmdMrsReadConfig\fP = 0x0005, \fBdevices::CmdMrsFlashFirmware\fP = 0x0006, \fBdevices::CmdMrsSetParameter\fP = 0x0010, \fBdevices::CmdMrsGetParameter\fP = 0x0011, \fBdevices::CmdMrsResetDefaultParameters\fP = 0x001A, \fBdevices::CmdMrsStartMeasure\fP = 0x0020, \fBdevices::CmdMrsStopMeasure\fP = 0x0021, \fBdevices::CmdMrsSetNTPTimestampSec\fP = 0x0030, \fBdevices::CmdMrsSetNTPTimestampFracSec\fP = 0x0031 }"
+.br
+.ti -1c
+.RI "enum \fBdevices::MrsParameterId\fP { \fBdevices::ParaDataOutputFlag\fP = 0x1012, \fBdevices::ParaContourPointDensity\fP = 0x1014, \fBdevices::ParaMinimumObjectAge\fP = 0x1017, \fBdevices::ParaMaximumPredictionAge\fP = 0x1018, \fBdevices::ParaScanFrequency\fP = 0x1102, \fBdevices::ParaStartAngle\fP = 0x1100, \fBdevices::ParaEndAngle\fP = 0x1101, \fBdevices::ParaSyncAngleOffset\fP = 0x1103, \fBdevices::ParaAngularResolutionType\fP = 0x1104, \fBdevices::ParaRangeReduction\fP = 0x1108, \fBdevices::ParaUpsideDownMode\fP = 0x1109, \fBdevices::ParaIgnoreNearRange\fP = 0x110A, \fBdevices::ParaSensitivityControl\fP = 0x110B, \fBdevices::ParaMountingX\fP = 0x1200, \fBdevices::ParaMountingY\fP = 0x1201, \fBdevices::ParaMountingZ\fP = 0x1202, \fBdevices::ParaMountingYaw\fP = 0x1203, \fBdevices::ParaMountingPitch\fP = 0x1204, \fBdevices::ParaMountingRoll\fP = 0x1205, \fBdevices::ParaBeamTilt\fP = 0x3302, \fBdevices::ParaNumSectors\fP = 0x4000, \fBdevices::ParaSector1StartAngle\fP = 0x4001, \fBdevices::ParaSector2StartAngle\fP = 0x4002, \fBdevices::ParaSector3StartAngle\fP = 0x4003, \fBdevices::ParaSector4StartAngle\fP = 0x4004, \fBdevices::ParaSector5StartAngle\fP = 0x4005, \fBdevices::ParaSector6StartAngle\fP = 0x4006, \fBdevices::ParaSector7StartAngle\fP = 0x4007, \fBdevices::ParaSector8StartAngle\fP = 0x4008, \fBdevices::ParaSector1Resolution\fP = 0x4009, \fBdevices::ParaSector2Resolution\fP = 0x400A, \fBdevices::ParaSector3Resolution\fP = 0x400B, \fBdevices::ParaSector4Resolution\fP = 0x400C, \fBdevices::ParaSector5Resolution\fP = 0x400D, \fBdevices::ParaSector6Resolution\fP = 0x400E, \fBdevices::ParaSector7Resolution\fP = 0x400F, \fBdevices::ParaSector8Resolution\fP = 0x4010, \fBdevices::ParaOperatingMinutes\fP = 0x3500, \fBdevices::ParaDetailedError\fP = 0x7000 }"
+.br
+.ti -1c
+.RI "enum \fBdevices::DetailedErrorNumber\fP { \fBdevices::ErrFlexResNumShotsInvalid\fP = 0x006C, \fBdevices::ErrFlexResSizeOneEighthSectorInvalid\fP = 0x006D, \fBdevices::ErrFlexResFreqInvalid\fP = 0x006E, \fBdevices::ErrFlexResSectorsOverlapping\fP = 0x006F, \fBdevices::ErrFlexResScannerNotIdle\fP = 0x0070, \fBdevices::ErrFlexResResolutionInvalid\fP = 0x0071, \fBdevices::ErrFlexResNumSectorsInvalid\fP = 0x0072 }"
+.br
+.ti -1c
+.RI "enum \fBdevices::MrsObjectClasses\fP { \fBdevices::ClassUnclassified\fP = 0, \fBdevices::ClassUnknownSmall\fP = 1, \fBdevices::ClassUnknownBig\fP = 2, \fBdevices::ClassPedestrian\fP = 3, \fBdevices::ClassBike\fP = 4, \fBdevices::ClassCar\fP = 5, \fBdevices::ClassTruck\fP = 6 }"
+.br
+.ti -1c
+.RI "enum \fBdevices::AngularResolutionType\fP { \fBdevices::ResolutionTypeFocused\fP = 0, \fBdevices::ResolutionTypeConstant\fP = 1, \fBdevices::ResolutionTypeFlexRes\fP = 2 }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MRS_CMDREPLYBUFFERSIZE   8192"
+
+.PP
+Definition at line 25 of file LuxBase\&.hpp\&.
+.SS "#define MRS_INPUTBUFFERSIZE   65536"
+
+.PP
+Definition at line 24 of file LuxBase\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

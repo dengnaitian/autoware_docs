@@ -1,0 +1,88 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/multithreading.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/multithreading.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pthread\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCUT_THREADPROC\fP   void"
+.br
+.ti -1c
+.RI "#define \fBCUT_THREADEND\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef pthread_t \fBCUTThread\fP"
+.br
+.ti -1c
+.RI "typedef void *(* \fBCUT_THREADROUTINE\fP) (void *)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCUTThread\fP \fBcutStartThread\fP (\fBCUT_THREADROUTINE\fP, void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBcutEndThread\fP (\fBCUTThread\fP \fBthread\fP)"
+.br
+.ti -1c
+.RI "void \fBcutDestroyThread\fP (\fBCUTThread\fP \fBthread\fP)"
+.br
+.ti -1c
+.RI "void \fBcutWaitForThreads\fP (const \fBCUTThread\fP *threads, int num)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CUT_THREADEND"
+
+.PP
+Definition at line 47 of file multithreading\&.h\&.
+.SS "#define CUT_THREADPROC   void"
+
+.PP
+Definition at line 46 of file multithreading\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void*(* CUT_THREADROUTINE) (void *)"
+
+.PP
+Definition at line 44 of file multithreading\&.h\&.
+.SS "typedef pthread_t \fBCUTThread\fP"
+
+.PP
+Definition at line 43 of file multithreading\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void cutDestroyThread (\fBCUTThread\fP thread)"
+
+.PP
+Definition at line 30 of file multithreading\&.cpp\&.
+.SS "void cutEndThread (\fBCUTThread\fP thread)"
+
+.PP
+Definition at line 25 of file multithreading\&.cpp\&.
+.SS "\fBCUTThread\fP cutStartThread (\fBCUT_THREADROUTINE\fP, void * data)"
+
+.PP
+Definition at line 18 of file multithreading\&.cpp\&.
+.SS "void cutWaitForThreads (const \fBCUTThread\fP * threads, int num)"
+
+.PP
+Definition at line 35 of file multithreading\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

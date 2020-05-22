@@ -1,0 +1,95 @@
+.TH "UtilityHNS::PIDController" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::PIDController \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UtilityH\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPIDController\fP ()"
+.br
+.ti -1c
+.RI "\fBPIDController\fP (const double &kp, const double &ki, const double &kd)"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const double &kp, const double &ki, const double &kd)"
+.br
+.ti -1c
+.RI "void \fBSetlimit\fP (const double &upper, const double &lower)"
+.br
+.ti -1c
+.RI "double \fBgetPID\fP (const double &currValue, const double &targetValue)"
+.br
+.ti -1c
+.RI "double \fBgetPID\fP (const double &e)"
+.br
+.ti -1c
+.RI "void \fBResetD\fP ()"
+.br
+.ti -1c
+.RI "void \fBResetI\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBToString\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBToStringHeader\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 52 of file UtilityH\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::PIDController::PIDController ()"
+
+.PP
+Definition at line 235 of file UtilityH\&.cpp\&.
+.SS "UtilityHNS::PIDController::PIDController (const double & kp, const double & ki, const double & kd)"
+
+.PP
+Definition at line 249 of file UtilityH\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double UtilityHNS::PIDController::getPID (const double & currValue, const double & targetValue)"
+
+.PP
+Definition at line 268 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::PIDController::getPID (const double & e)"
+
+.PP
+Definition at line 274 of file UtilityH\&.cpp\&.
+.SS "void UtilityHNS::PIDController::Init (const double & kp, const double & ki, const double & kd)"
+
+.PP
+Definition at line 351 of file UtilityH\&.cpp\&.
+.SS "void UtilityHNS::PIDController::ResetD ()"
+
+.PP
+Definition at line 341 of file UtilityH\&.cpp\&.
+.SS "void UtilityHNS::PIDController::ResetI ()"
+
+.PP
+Definition at line 346 of file UtilityH\&.cpp\&.
+.SS "void UtilityHNS::PIDController::Setlimit (const double & upper, const double & lower)"
+
+.PP
+Definition at line 261 of file UtilityH\&.cpp\&.
+.SS "std::string UtilityHNS::PIDController::ToString ()"
+
+.PP
+Definition at line 329 of file UtilityH\&.cpp\&.
+.SS "std::string UtilityHNS::PIDController::ToStringHeader ()"
+
+.PP
+Definition at line 321 of file UtilityH\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

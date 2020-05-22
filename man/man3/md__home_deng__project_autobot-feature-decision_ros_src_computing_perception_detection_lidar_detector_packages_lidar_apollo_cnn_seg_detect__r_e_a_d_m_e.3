@@ -1,0 +1,67 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_apollo_cnn_seg_detect__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_apollo_cnn_seg_detect__r_e_a_d_m_e \- CNN LiDAR Baidu Object Segmenter 
+Autoware package based on Baidu's object segmenter\&.
+.PP
+.SS "Pre requisites"
+.PP
+Caffe distributable installed in your home (\fC~/caffe/distribute\fP)\&.
+.PP
+.PP
+.nf
+1 $ cd
+2 $ git clone https://github\&.com/BVLC/caffe
+3 $ cd caffe
+.fi
+.PP
+ Follow instructions from \fCInstalling Caffe from source\fP\&.
+.PP
+.IP "\(bu" 2
+\fBUse offical Make compilation procedure\fP\&.
+.IP "\(bu" 2
+Do not use thirdparty CMake setup\&.
+.PP
+.PP
+Compile and create distributable: 
+.PP
+.nf
+1 $ make
+2 $ make distribute
+
+.fi
+.PP
+.PP
+\fBRecompile Autoware to build the node\&.\fP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+Using rosrun: \fCrosrun lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect _network_definition_file:=/PATH/TO/FILE\&.prototxt _pretrained_model_file:=/PATH/TO/WEIGHTS\&.caffemodel _points_src:=/points_raw\fP
+.PP
+Using launch file: \fCroslaunch lidar_apollo_cnn_seg_detect lidar_apollo_cnn_seg_detect\&.launch network_definition_file:=/PATH/TO/FILE\&.prototxt pretrained_model_file:=/PATH/TO/WEIGHTS\&.caffemodel points_src:=/points_raw\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Detection/ lidar_detector -> \fClidar_cnn_baidu_detect\fP\&. Configure parameters using the \fC[app]\fP button\&.
+.PP
+.SS "\fBParameters\fP"
+.PP
+ParameterTypeDescriptionDefault  \fCnetwork_definition_file\fP*String*Path to the network definition file (prototxt) \fCpretrained_model_file\fP*String* Path to the Pretrained model (weights) \fCpoints_src\fP*String*Input topic Pointcloud\&. Default\&.\fC/points_raw\fP \fCscore_threshold\fP*Double*Minimum score required as given by the network to include the result (0\&.-1\&.)0\&.6 \fCuse_gpu\fP*Bool*Whether ot not to use a GPU device\fCtrue\fP \fCgpu_device_id\fP*Int*GPU ID\fC0\fP 
+.SS "Outputs"
+.PP
+TopicTypeDescription  \fC/detection/lidar_detector/points_cluster\fP\fCsensor_msgs/PointCloud2\fPColored PointCloud of the resulting detected objects \fC/detection/lidar_detector/objects\fP\fCautoware_msgs/DetectedObjetArray\fPArray of Detected Objects in Autoware format 
+.SS "Notes"
+.PP
+.IP "\(bu" 2
+To display the results in Rviz \fCobjects_visualizer\fP is required\&. (\fBLaunch\fP file launches automatically this node)\&.
+.IP "\(bu" 2
+Pre trained models can be downloaded from the Apollo project repository\&. 
+.PP
+

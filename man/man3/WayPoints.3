@@ -1,0 +1,106 @@
+.TH "WayPoints" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WayPoints \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <libwaypoint_follower\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetPath\fP (const autoware_msgs::Lane &waypoints)"
+.br
+.ti -1c
+.RI "int \fBgetSize\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisEmpty\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetInterval\fP () const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetWaypointPosition\fP (int waypoint) const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Quaternion\fP \fBgetWaypointOrientation\fP (int waypoint) const "
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBgetWaypointPose\fP (int waypoint) const "
+.br
+.ti -1c
+.RI "double \fBgetWaypointVelocityMPS\fP (int waypoint) const "
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBgetCurrentWaypoints\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisFront\fP (int waypoint, geometry_msgs::Pose current_pose) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "autoware_msgs::Lane \fBcurrent_waypoints_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file libwaypoint_follower\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "autoware_msgs::Lane WayPoints::getCurrentWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file libwaypoint_follower\&.h\&.
+.SS "double WayPoints::getInterval () const"
+
+.PP
+Definition at line 27 of file libwaypoint_follower\&.cpp\&.
+.SS "int WayPoints::getSize () const"
+
+.PP
+Definition at line 19 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBgeometry_msgs::Quaternion\fP WayPoints::getWaypointOrientation (int waypoint) const"
+
+.PP
+Definition at line 51 of file libwaypoint_follower\&.cpp\&.
+.SS "geometry_msgs::Pose WayPoints::getWaypointPose (int waypoint) const"
+
+.PP
+Definition at line 61 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP WayPoints::getWaypointPosition (int waypoint) const"
+
+.PP
+Definition at line 41 of file libwaypoint_follower\&.cpp\&.
+.SS "double WayPoints::getWaypointVelocityMPS (int waypoint) const"
+
+.PP
+Definition at line 71 of file libwaypoint_follower\&.cpp\&.
+.SS "bool WayPoints::isEmpty () const\fC [inline]\fP"
+
+.PP
+Definition at line 41 of file libwaypoint_follower\&.h\&.
+.SS "bool WayPoints::isFront (int waypoint, geometry_msgs::Pose current_pose) const"
+
+.PP
+Definition at line 79 of file libwaypoint_follower\&.cpp\&.
+.SS "void WayPoints::setPath (const autoware_msgs::Lane & waypoints)\fC [inline]\fP"
+
+.PP
+Definition at line 36 of file libwaypoint_follower\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_msgs::Lane WayPoints::current_waypoints_\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file libwaypoint_follower\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

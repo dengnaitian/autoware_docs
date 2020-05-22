@@ -1,0 +1,26 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_calibration_publisher__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_calibration_publisher__r_e_a_d_m_e \- Calibration Publisher 
+This nodes publishes the camera intrinsics, extrinsics and registers the TF between the camera and LiDAR sensors\&. The data is read from an Autoware compatible calibration file\&.
+.PP
+.SS "Publications"
+.PP
+.IP "\(bu" 2
+\fCsensor_msgs/CameraInfo\fP, default topic name \fC/NAMESPACE/camera_info\fP\&.
+.IP "\(bu" 2
+\fCautoware_msgs/projection_matrix\fP, default topic name \fC/NAMESPACE/camera_info\fP
+.PP
+.PP
+\fCNAMESPACE\fP if any\&.
+.PP
+.SS "Subscriptions"
+.PP
+.IP "\(bu" 2
+\fCsensor_msgs/Image\fP, default topic name \fC/image_raw\fP
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+Parameter Type Description Default Value  \fCcalibration_file\fP StringPath to the Autoware calibration file \fCregister_lidar2camera_tf\fPBool Whether or not to register TF between camera and lidar\fCTrue\fP \fCpublish_extrinsic_mat\fP Bool Whether or not to publish extrinsic_matrix topic \fCTrue\fP \fCpublish_camera_info\fP Bool Whether or not to publish camera_info topic \fCTrue\fP \fCcamera_frame\fP StringCamera frame to be included in the header \fCcamera\fP \fCtarget_frame\fP StringTarget LiDAR frame to register in the TF \fCvelodyne\fP \fCimage_topic_src\fP StringImage source topic to synchronize CameraInfo \fC/image_raw\fP \fCcamera_info_topic\fP StringCamera info topic name to publish intrinsics \fC/camera_info\fP \fCprojection_matrix_topic\fP StringTopic name on which to publish Extrinsics \fC/projection_matrix\fP 

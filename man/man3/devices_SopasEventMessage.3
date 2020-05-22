@@ -1,0 +1,151 @@
+.TH "devices::SopasEventMessage" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::SopasEventMessage \- Class that represents a message that was sent by a sensor\&. (Event message)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SopasBase\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSopasEventMessage\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fB~SopasEventMessage\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "\fBSopasEventMessage\fP (\fBBYTE\fP *buffer, \fBSopasBase::SopasProtocol\fP protocol, \fBUINT32\fP frameLength)"
+.br
+.RI "\fIConstructor\&. This class will only store a pointer to the byte buffer\&. It will not deallocate the memory\&. Please make sure that the buffer is not deallocated while you are working with this class\&. \fP"
+.ti -1c
+.RI "\fBSopasBase::SopasProtocol\fP \fBgetProtocolType\fP () const "
+.br
+.ti -1c
+.RI "\fBSopasBase::SopasEncoding\fP \fBgetEncodingType\fP () const "
+.br
+.ti -1c
+.RI "\fBSopasBase::SopasMessageType\fP \fBgetMessageType\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBsize\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetPayLoadLength\fP () const "
+.br
+.RI "\fIcontains 's' + command string(2 byte) + content(payload length - 3) \fP"
+.ti -1c
+.RI "std::string \fBgetCommandString\fP () const "
+.br
+.ti -1c
+.RI "\fBBYTE\fP * \fBgetPayLoad\fP ()"
+.br
+.RI "\fIcontains 's' + command string(2 byte) + content(payload length - 3) \fP"
+.ti -1c
+.RI "\fBINT32\fP \fBgetVariableIndex\fP ()"
+.br
+.RI "\fIReturns the index of a variable (answer to read variable by index)\&. In case of error a negative value will be returned\&. \fP"
+.ti -1c
+.RI "std::string \fBgetVariableName\fP ()"
+.br
+.RI "\fIReturns the name of a variable (answer to read variable by name)\&. In case of error an empty value will be returned\&. \fP"
+.ti -1c
+.RI "bool \fBisValid\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that represents a message that was sent by a sensor\&. (Event message) 
+.PP
+Definition at line 416 of file SopasBase\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::SopasEventMessage::SopasEventMessage ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 2158 of file SopasBase\&.cpp\&.
+.SS "devices::SopasEventMessage::~SopasEventMessage ()\fC [inline]\fP"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 423 of file SopasBase\&.hpp\&.
+.SS "devices::SopasEventMessage::SopasEventMessage (\fBBYTE\fP * buffer, \fBSopasBase::SopasProtocol\fP protocol, \fBUINT32\fP frameLength)"
+
+.PP
+Constructor\&. This class will only store a pointer to the byte buffer\&. It will not deallocate the memory\&. Please make sure that the buffer is not deallocated while you are working with this class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP byte buffer with the message (Sopas frame) 
+.br
+\fIprotocol\fP type of protocol (Cola-A, Cola-B) 
+.br
+\fIframeLength\fP length of the frame 
+.RE
+.PP
+
+.PP
+Definition at line 2165 of file SopasBase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string devices::SopasEventMessage::getCommandString () const"
+
+.PP
+Definition at line 2192 of file SopasBase\&.cpp\&.
+.SS "\fBSopasBase::SopasEncoding\fP devices::SopasEventMessage::getEncodingType () const\fC [inline]\fP"
+
+.PP
+Definition at line 439 of file SopasBase\&.hpp\&.
+.SS "\fBSopasBase::SopasMessageType\fP devices::SopasEventMessage::getMessageType () const\fC [inline]\fP"
+
+.PP
+Definition at line 444 of file SopasBase\&.hpp\&.
+.SS "\fBBYTE\fP * devices::SopasEventMessage::getPayLoad ()"
+
+.PP
+contains 's' + command string(2 byte) + content(payload length - 3) 
+.PP
+Definition at line 2214 of file SopasBase\&.cpp\&.
+.SS "\fBUINT32\fP devices::SopasEventMessage::getPayLoadLength () const"
+
+.PP
+contains 's' + command string(2 byte) + content(payload length - 3) 
+.PP
+Definition at line 2174 of file SopasBase\&.cpp\&.
+.SS "\fBSopasBase::SopasProtocol\fP devices::SopasEventMessage::getProtocolType () const\fC [inline]\fP"
+
+.PP
+Definition at line 434 of file SopasBase\&.hpp\&.
+.SS "\fBINT32\fP devices::SopasEventMessage::getVariableIndex ()"
+
+.PP
+Returns the index of a variable (answer to read variable by index)\&. In case of error a negative value will be returned\&. 
+.PP
+Definition at line 2233 of file SopasBase\&.cpp\&.
+.SS "std::string devices::SopasEventMessage::getVariableName ()"
+
+.PP
+Returns the name of a variable (answer to read variable by name)\&. In case of error an empty value will be returned\&. 
+.PP
+Definition at line 2263 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasEventMessage::isValid () const\fC [inline]\fP"
+
+.PP
+Definition at line 468 of file SopasBase\&.hpp\&.
+.SS "\fBUINT32\fP devices::SopasEventMessage::size () const\fC [inline]\fP"
+
+.PP
+Definition at line 449 of file SopasBase\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,86 @@
+.TH "hokuyo3d_node" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hokuyo3d_node \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcbPoint_field\fP (const \fBvssp::header\fP &header, const \fBvssp::range_header\fP &range_header, const \fBvssp::range_index\fP &range_index, const boost::shared_array< \fBvssp::xyzi\fP > &points, const std::chrono::microseconds &delayRead, const \fBvssp::data_range_size\fP &data_range_size)"
+.br
+.ti -1c
+.RI "void \fBcbPoint_frame\fP (const \fBvssp::header\fP &header, const \fBvssp::range_header\fP &range_header, const \fBvssp::range_index\fP &range_index, const boost::shared_array< \fBvssp::xyzi\fP > &points, const std::chrono::microseconds &delayRead, const \fBvssp::data_range_size\fP &data_range_size)"
+.br
+.ti -1c
+.RI "void \fBcbPing\fP (const \fBvssp::header\fP &header, const std::chrono::microseconds &delayRead)"
+.br
+.ti -1c
+.RI "void \fBcbAux\fP (const \fBvssp::header\fP &header, const \fBvssp::aux_header\fP &aux_header, const boost::shared_array< \fBvssp::aux\fP > &auxs, const std::chrono::microseconds &delayRead)"
+.br
+.ti -1c
+.RI "void \fBcbConnect\fP (bool success)"
+.br
+.ti -1c
+.RI "\fBhokuyo3d_node\fP ()"
+.br
+.ti -1c
+.RI "\fB~hokuyo3d_node\fP ()"
+.br
+.ti -1c
+.RI "bool \fBpoll\fP ()"
+.br
+.ti -1c
+.RI "void \fBping\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file hokuyo_3d\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "hokuyo3d_node::hokuyo3d_node ()\fC [inline]\fP"
+
+.PP
+Definition at line 222 of file hokuyo_3d\&.cpp\&.
+.SS "hokuyo3d_node::~hokuyo3d_node ()\fC [inline]\fP"
+
+.PP
+Definition at line 275 of file hokuyo_3d\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void hokuyo3d_node::cbAux (const \fBvssp::header\fP & header, const \fBvssp::aux_header\fP & aux_header, const boost::shared_array< \fBvssp::aux\fP > & auxs, const std::chrono::microseconds & delayRead)\fC [inline]\fP"
+
+.PP
+Definition at line 162 of file hokuyo_3d\&.cpp\&.
+.SS "void hokuyo3d_node::cbConnect (bool success)\fC [inline]\fP"
+
+.PP
+Definition at line 203 of file hokuyo_3d\&.cpp\&.
+.SS "void hokuyo3d_node::cbPing (const \fBvssp::header\fP & header, const std::chrono::microseconds & delayRead)\fC [inline]\fP"
+
+.PP
+Definition at line 153 of file hokuyo_3d\&.cpp\&.
+.SS "void hokuyo3d_node::cbPoint_field (const \fBvssp::header\fP & header, const \fBvssp::range_header\fP & range_header, const \fBvssp::range_index\fP & range_index, const boost::shared_array< \fBvssp::xyzi\fP > & points, const std::chrono::microseconds & delayRead, const \fBvssp::data_range_size\fP & data_range_size)\fC [inline]\fP"
+
+.PP
+Definition at line 44 of file hokuyo_3d\&.cpp\&.
+.SS "void hokuyo3d_node::cbPoint_frame (const \fBvssp::header\fP & header, const \fBvssp::range_header\fP & range_header, const \fBvssp::range_index\fP & range_index, const boost::shared_array< \fBvssp::xyzi\fP > & points, const std::chrono::microseconds & delayRead, const \fBvssp::data_range_size\fP & data_range_size)\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file hokuyo_3d\&.cpp\&.
+.SS "void hokuyo3d_node::ping ()\fC [inline]\fP"
+
+.PP
+Definition at line 292 of file hokuyo_3d\&.cpp\&.
+.SS "bool hokuyo3d_node::poll ()\fC [inline]\fP"
+
+.PP
+Definition at line 283 of file hokuyo_3d\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

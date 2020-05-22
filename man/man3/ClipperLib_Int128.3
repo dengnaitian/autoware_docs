@@ -1,0 +1,155 @@
+.TH "ClipperLib::Int128" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib::Int128 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInt128\fP (\fBlong64\fP _lo=0)"
+.br
+.ti -1c
+.RI "\fBInt128\fP (const \fBInt128\fP &val)"
+.br
+.ti -1c
+.RI "\fBInt128\fP (const \fBlong64\fP &_hi, const \fBulong64\fP &_lo)"
+.br
+.ti -1c
+.RI "\fBInt128\fP & \fBoperator=\fP (const \fBlong64\fP &val)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBInt128\fP &val) const "
+.br
+.ti -1c
+.RI "\fBInt128\fP & \fBoperator+=\fP (const \fBInt128\fP &rhs)"
+.br
+.ti -1c
+.RI "\fBInt128\fP \fBoperator+\fP (const \fBInt128\fP &rhs) const "
+.br
+.ti -1c
+.RI "\fBInt128\fP & \fBoperator\-=\fP (const \fBInt128\fP &rhs)"
+.br
+.ti -1c
+.RI "\fBInt128\fP \fBoperator\-\fP (const \fBInt128\fP &rhs) const "
+.br
+.ti -1c
+.RI "\fBInt128\fP \fBoperator\-\fP () const "
+.br
+.ti -1c
+.RI "\fBoperator double\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBulong64\fP \fBlo\fP"
+.br
+.ti -1c
+.RI "\fBlong64\fP \fBhi\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 264 of file clipper\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClipperLib::Int128::Int128 (\fBlong64\fP _lo = \fC0\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 270 of file clipper\&.cpp\&.
+.SS "ClipperLib::Int128::Int128 (const \fBInt128\fP & val)\fC [inline]\fP"
+
+.PP
+Definition at line 280 of file clipper\&.cpp\&.
+.SS "ClipperLib::Int128::Int128 (const \fBlong64\fP & _hi, const \fBulong64\fP & _lo)\fC [inline]\fP"
+
+.PP
+Definition at line 284 of file clipper\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "ClipperLib::Int128::operator double () const\fC [inline]\fP"
+
+.PP
+Definition at line 371 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator!= (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 303 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP ClipperLib::Int128::operator+ (const \fBInt128\fP & rhs) const\fC [inline]\fP"
+
+.PP
+Definition at line 343 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP& ClipperLib::Int128::operator+= (const \fBInt128\fP & rhs)\fC [inline]\fP"
+
+.PP
+Definition at line 334 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP ClipperLib::Int128::operator\- (const \fBInt128\fP & rhs) const\fC [inline]\fP"
+
+.PP
+Definition at line 356 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP ClipperLib::Int128::operator\- () const\fC [inline]\fP"
+
+.PP
+Definition at line 363 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP& ClipperLib::Int128::operator\-= (const \fBInt128\fP & rhs)\fC [inline]\fP"
+
+.PP
+Definition at line 350 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator< (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 316 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator<= (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 329 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP& ClipperLib::Int128::operator= (const \fBlong64\fP & val)\fC [inline]\fP"
+
+.PP
+Definition at line 288 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator== (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 298 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator> (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 308 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Int128::operator>= (const \fBInt128\fP & val) const\fC [inline]\fP"
+
+.PP
+Definition at line 324 of file clipper\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBlong64\fP ClipperLib::Int128::hi"
+
+.PP
+Definition at line 268 of file clipper\&.cpp\&.
+.SS "\fBulong64\fP ClipperLib::Int128::lo"
+
+.PP
+Definition at line 267 of file clipper\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

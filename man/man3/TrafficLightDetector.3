@@ -1,0 +1,59 @@
+.TH "TrafficLightDetector" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TrafficLightDetector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TrafficLightDetector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrafficLightDetector\fP ()"
+.br
+.ti -1c
+.RI "void \fBbrightnessDetect\fP (const cv::Mat &input)"
+.br
+.ti -1c
+.RI "void \fBcolorDetect\fP (const cv::Mat &input, cv::Mat &output, const cv::Rect coords, int Hmin, int Hmax)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBContext\fP > \fBcontexts\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file TrafficLightDetector\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TrafficLightDetector::TrafficLightDetector ()"
+
+.PP
+Definition at line 354 of file TrafficLightDetector\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TrafficLightDetector::brightnessDetect (const cv::Mat & input)"
+
+.PP
+Definition at line 357 of file TrafficLightDetector\&.cpp\&.
+.SS "void TrafficLightDetector::colorDetect (const cv::Mat & input, cv::Mat & output, const cv::Rect coords, int Hmin, int Hmax)"
+
+.PP
+Definition at line 512 of file TrafficLightDetector\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBContext\fP> TrafficLightDetector::contexts"
+
+.PP
+Definition at line 35 of file TrafficLightDetector\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

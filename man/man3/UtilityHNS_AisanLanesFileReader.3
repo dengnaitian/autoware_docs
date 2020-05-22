@@ -1,0 +1,97 @@
+.TH "UtilityHNS::AisanLanesFileReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::AisanLanesFileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAisanLane\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAisanLanesFileReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fBAisanLanesFileReader\fP (const vector_map_msgs::LaneArray &_lanes)"
+.br
+.ti -1c
+.RI "\fB~AisanLanesFileReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBAisanLane\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBAisanLane\fP > &data_list)"
+.br
+.ti -1c
+.RI "void \fBParseNextLine\fP (const vector_map_msgs::Lane &_rec, \fBAisanLane\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBAisanLane\fP * \fBGetDataRowById\fP (int _lnid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBAisanLane\fP > \fBm_data_list\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 359 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::AisanLanesFileReader::AisanLanesFileReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 395 of file DataRW\&.h\&.
+.SS "UtilityHNS::AisanLanesFileReader::AisanLanesFileReader (const vector_map_msgs::LaneArray & _lanes)"
+
+.PP
+Definition at line 904 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::AisanLanesFileReader::~AisanLanesFileReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 400 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAisanLanesFileReader::AisanLane\fP * UtilityHNS::AisanLanesFileReader::GetDataRowById (int _lnid)"
+
+.PP
+Definition at line 966 of file DataRW\&.cpp\&.
+.SS "void UtilityHNS::AisanLanesFileReader::ParseNextLine (const vector_map_msgs::Lane & _rec, \fBAisanLane\fP & data)"
+
+.PP
+Definition at line 933 of file DataRW\&.cpp\&.
+.SS "int UtilityHNS::AisanLanesFileReader::ReadAllData (std::vector< \fBAisanLane\fP > & data_list)"
+
+.PP
+Definition at line 1047 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::AisanLanesFileReader::ReadNextLine (\fBAisanLane\fP & data)"
+
+.PP
+Definition at line 989 of file DataRW\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBAisanLane\fP> UtilityHNS::AisanLanesFileReader::m_data_list"
+
+.PP
+Definition at line 406 of file DataRW\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

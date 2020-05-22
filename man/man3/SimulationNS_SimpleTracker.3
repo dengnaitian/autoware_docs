@@ -1,0 +1,206 @@
+.TH "SimulationNS::SimpleTracker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SimulationNS::SimpleTracker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleTracker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDoOneStep\fP (const \fBPlannerHNS::WayPoint\fP &currPose, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const \fBTRACKING_TYPE\fP &type=\fBSIMPLE_TRACKER\fP)"
+.br
+.ti -1c
+.RI "\fBSimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitSimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitializeInterestRegions\fP (std::vector< \fBInterestCircle\fP * > &regions)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBCostRecordSet\fP > \fBm_CostsLists\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBInterestCircle\fP * > \fBm_InterestRegions\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBKFTrackV\fP * > \fBm_Tracks\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBKFTrackV\fP > \fBm_TrackSimply\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_TrackTimer\fP"
+.br
+.ti -1c
+.RI "long \fBiTracksNumber\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_PrevState\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_StateDiff\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_PrevDetectedObjects\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_DetectedObjects\fP"
+.br
+.ti -1c
+.RI "double \fBm_dt\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_DISTANCE\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bUseCenterOnly\fP"
+.br
+.ti -1c
+.RI "double \fBm_MaxKeepTime\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bFirstCall\fP"
+.br
+.ti -1c
+.RI "int \fBm_nMinTrustAppearances\fP"
+.br
+.ti -1c
+.RI "double \fBm_Horizon\fP"
+.br
+.ti -1c
+.RI "double \fBm_CirclesResolution\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_SIZE_DIFF\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_ANGLE_DIFF\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 459 of file SimpleTracker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SimulationNS::SimpleTracker::SimpleTracker ()"
+
+.PP
+Definition at line 23 of file SimpleTracker\&.cpp\&.
+.SS "SimulationNS::SimpleTracker::~SimpleTracker ()\fC [virtual]\fP"
+
+.PP
+Definition at line 45 of file SimpleTracker\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SimulationNS::SimpleTracker::DoOneStep (const \fBPlannerHNS::WayPoint\fP & currPose, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const \fBTRACKING_TYPE\fP & type = \fC\fBSIMPLE_TRACKER\fP\fP)"
+
+.PP
+Definition at line 97 of file SimpleTracker\&.cpp\&.
+.SS "void SimulationNS::SimpleTracker::InitializeInterestRegions (std::vector< \fBInterestCircle\fP * > & regions)"
+
+.PP
+Definition at line 61 of file SimpleTracker\&.cpp\&.
+.SS "void SimulationNS::SimpleTracker::InitSimpleTracker ()"
+
+.PP
+Definition at line 39 of file SimpleTracker\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "long SimulationNS::SimpleTracker::iTracksNumber"
+
+.PP
+Definition at line 467 of file SimpleTracker\&.h\&.
+.SS "bool SimulationNS::SimpleTracker::m_bFirstCall"
+
+.PP
+Definition at line 485 of file SimpleTracker\&.h\&.
+.SS "bool SimulationNS::SimpleTracker::m_bUseCenterOnly"
+
+.PP
+Definition at line 483 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_CirclesResolution"
+
+.PP
+Definition at line 488 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBCostRecordSet\fP> SimulationNS::SimpleTracker::m_CostsLists"
+
+.PP
+Definition at line 462 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> SimulationNS::SimpleTracker::m_DetectedObjects"
+
+.PP
+Definition at line 471 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_dt"
+
+.PP
+Definition at line 481 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_Horizon"
+
+.PP
+Definition at line 487 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBInterestCircle\fP*> SimulationNS::SimpleTracker::m_InterestRegions"
+
+.PP
+Definition at line 463 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_MAX_ASSOCIATION_ANGLE_DIFF"
+
+.PP
+Definition at line 490 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_MAX_ASSOCIATION_DISTANCE"
+
+.PP
+Definition at line 482 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_MAX_ASSOCIATION_SIZE_DIFF"
+
+.PP
+Definition at line 489 of file SimpleTracker\&.h\&.
+.SS "double SimulationNS::SimpleTracker::m_MaxKeepTime"
+
+.PP
+Definition at line 484 of file SimpleTracker\&.h\&.
+.SS "int SimulationNS::SimpleTracker::m_nMinTrustAppearances"
+
+.PP
+Definition at line 486 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> SimulationNS::SimpleTracker::m_PrevDetectedObjects"
+
+.PP
+Definition at line 470 of file SimpleTracker\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP SimulationNS::SimpleTracker::m_PrevState"
+
+.PP
+Definition at line 468 of file SimpleTracker\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP SimulationNS::SimpleTracker::m_StateDiff"
+
+.PP
+Definition at line 469 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBKFTrackV\fP*> SimulationNS::SimpleTracker::m_Tracks"
+
+.PP
+Definition at line 464 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBKFTrackV\fP> SimulationNS::SimpleTracker::m_TrackSimply"
+
+.PP
+Definition at line 465 of file SimpleTracker\&.h\&.
+.SS "timespec SimulationNS::SimpleTracker::m_TrackTimer"
+
+.PP
+Definition at line 466 of file SimpleTracker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

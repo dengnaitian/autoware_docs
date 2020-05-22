@@ -1,0 +1,91 @@
+.TH "PointPillars" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PointPillars \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <point_pillars\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPointPillars\fP (const bool reproduce_result_mode, const float score_threshold, const float nms_overlap_threshold, const std::string pfe_onnx_file, const std::string rpn_onnx_file)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "\fB~PointPillars\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoInference\fP (const float *in_points_array, const int in_num_points, std::vector< float > &out_detections)"
+.br
+.RI "\fICall \fBPointPillars\fP for the inference\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 86 of file point_pillars\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PointPillars::PointPillars (const bool reproduce_result_mode, const float score_threshold, const float nms_overlap_threshold, const std::string pfe_onnx_file, const std::string rpn_onnx_file)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreproduce_result_mode\fP Boolean, if true, the output is reproducible for the same input 
+.br
+\fIscore_threshold\fP Score threshold for filtering output 
+.br
+\fInms_overlap_threshold\fP IOU threshold for NMS 
+.br
+\fIpfe_onnx_file\fP Pillar Feature Extractor ONNX file path 
+.br
+\fIrpn_onnx_file\fP Region Proposal Network ONNX file path
+.RE
+.PP
+Variables could be chaned through rosparam 
+.PP
+Definition at line 25 of file point_pillars\&.cpp\&.
+.SS "PointPillars::~PointPillars ()"
+
+.PP
+Definition at line 98 of file point_pillars\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PointPillars::doInference (const float * in_points_array, const int in_num_points, std::vector< float > & out_detections)"
+
+.PP
+Call \fBPointPillars\fP for the inference\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_points_array\fP Pointcloud array 
+.br
+\fIin_num_points\fP Number of points 
+.br
+\fIout_detections\fP Network output bounding box
+.RE
+.PP
+This is an interface for the algorithm 
+.PP
+Definition at line 549 of file point_pillars\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 89 of file point_pillars\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

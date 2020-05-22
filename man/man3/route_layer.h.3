@@ -1,0 +1,63 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/route_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/route_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'network\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBroute_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBroute_layer\fP \fBmake_route_layer\fP (int batch, int n, int *input_layers, int *input_size)"
+.br
+.ti -1c
+.RI "void \fBforward_route_layer\fP (const \fBroute_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_route_layer\fP (const \fBroute_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBresize_route_layer\fP (\fBroute_layer\fP *l, \fBnetwork\fP *net)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBroute_layer\fP"
+
+.PP
+Definition at line 6 of file route_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_route_layer (const \fBroute_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 89 of file route_layer\&.c\&.
+.SS "void forward_route_layer (const \fBroute_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 74 of file route_layer\&.c\&.
+.SS "\fBroute_layer\fP make_route_layer (int batch, int n, int * input_layers, int * input_size)"
+
+.PP
+Definition at line 7 of file route_layer\&.c\&.
+.SS "void resize_route_layer (\fBroute_layer\fP * l, \fBnetwork\fP * net)"
+
+.PP
+Definition at line 40 of file route_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

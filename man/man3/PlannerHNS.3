@@ -1,0 +1,892 @@
+.TH "PlannerHNS" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAutowareBehaviorState\fP"
+.br
+.ti -1c
+.RI "class \fBAutowarePlanningParams\fP"
+.br
+.ti -1c
+.RI "class \fBAutowareRoadNetwork\fP"
+.br
+.ti -1c
+.RI "class \fBAutowareVehicleState\fP"
+.br
+.ti -1c
+.RI "class \fBBehaviorPrediction\fP"
+.br
+.ti -1c
+.RI "class \fBBehaviorState\fP"
+.br
+.ti -1c
+.RI "class \fBBehaviorStateMachine\fP"
+.br
+.ti -1c
+.RI "class \fBBoundary\fP"
+.br
+.ti -1c
+.RI "class \fBCAR_BASIC_INFO\fP"
+.br
+.ti -1c
+.RI "class \fBControllerParams\fP"
+.br
+.ti -1c
+.RI "class \fBCrossing\fP"
+.br
+.ti -1c
+.RI "class \fBCurb\fP"
+.br
+.ti -1c
+.RI "class \fBDecisionMaker\fP"
+.br
+.ti -1c
+.RI "class \fBDetectedObject\fP"
+.br
+.ti -1c
+.RI "class \fBDrivableArea\fP"
+.br
+.ti -1c
+.RI "class \fBFollowState\fP"
+.br
+.ti -1c
+.RI "class \fBFollowStateII\fP"
+.br
+.ti -1c
+.RI "class \fBForwardState\fP"
+.br
+.ti -1c
+.RI "class \fBForwardStateII\fP"
+.br
+.ti -1c
+.RI "class \fBGoalState\fP"
+.br
+.ti -1c
+.RI "class \fBGoalStateII\fP"
+.br
+.ti -1c
+.RI "class \fBGPSPoint\fP"
+.br
+.ti -1c
+.RI "class \fBHMIPreCalculatedConditions\fP"
+.br
+.ti -1c
+.RI "class \fBInitState\fP"
+.br
+.ti -1c
+.RI "class \fBInitStateII\fP"
+.br
+.ti -1c
+.RI "class \fBLane\fP"
+.br
+.ti -1c
+.RI "class \fBLaneChangeLeftStateII\fP"
+.br
+.ti -1c
+.RI "class \fBLaneChangeRightStateII\fP"
+.br
+.ti -1c
+.RI "class \fBLaneChangeStateII\fP"
+.br
+.ti -1c
+.RI "class \fBLocalPlannerH\fP"
+.br
+.ti -1c
+.RI "class \fBMapItem\fP"
+.br
+.ti -1c
+.RI "class \fBMappingHelpers\fP"
+.br
+.ti -1c
+.RI "class \fBMarking\fP"
+.br
+.ti -1c
+.RI "class \fBMat3\fP"
+.br
+.ti -1c
+.RI "class \fBMergeStateII\fP"
+.br
+.ti -1c
+.RI "class \fBMissionAccomplishedState\fP"
+.br
+.ti -1c
+.RI "class \fBMissionAccomplishedStateII\fP"
+.br
+.ti -1c
+.RI "class \fBObjParticles\fP"
+.br
+.ti -1c
+.RI "class \fBObjTimeStamp\fP"
+.br
+.ti -1c
+.RI "class \fBObstacle\fP"
+.br
+.ti -1c
+.RI "class \fBOccupancyToGridMap\fP"
+.br
+.ti -1c
+.RI "class \fBParkInLaneStateII\fP"
+.br
+.ti -1c
+.RI "class \fBParkOnSideStateII\fP"
+.br
+.ti -1c
+.RI "class \fBParticle\fP"
+.br
+.ti -1c
+.RI "class \fBParticleInfo\fP"
+.br
+.ti -1c
+.RI "class \fBPassiveDecisionMaker\fP"
+.br
+.ti -1c
+.RI "class \fBPID_CONST\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerH\fP"
+.br
+.ti -1c
+.RI "class \fBPlanningHelpers\fP"
+.br
+.ti -1c
+.RI "class \fBPlanningParams\fP"
+.br
+.ti -1c
+.RI "class \fBPolygonGenerator\fP"
+.br
+.ti -1c
+.RI "class \fBPolygonShape\fP"
+.br
+.ti -1c
+.RI "class \fBPreCalculatedConditions\fP"
+.br
+.ti -1c
+.RI "class \fBQuarterView\fP"
+.br
+.ti -1c
+.RI "class \fBRECTANGLE\fP"
+.br
+.ti -1c
+.RI "class \fBRelativeInfo\fP"
+.br
+.ti -1c
+.RI "class \fBRoadNetwork\fP"
+.br
+.ti -1c
+.RI "class \fBRoadSegment\fP"
+.br
+.ti -1c
+.RI "class \fBROSHelpers\fP"
+.br
+.ti -1c
+.RI "class \fBRotation\fP"
+.br
+.ti -1c
+.RI "class \fBSimuDecisionMaker\fP"
+.br
+.ti -1c
+.RI "class \fBStopLine\fP"
+.br
+.ti -1c
+.RI "class \fBStopLineStopStateII\fP"
+.br
+.ti -1c
+.RI "class \fBStopLineWaitStateII\fP"
+.br
+.ti -1c
+.RI "class \fBStopSignStopState\fP"
+.br
+.ti -1c
+.RI "class \fBStopSignStopStateII\fP"
+.br
+.ti -1c
+.RI "class \fBStopSignWaitState\fP"
+.br
+.ti -1c
+.RI "class \fBStopSignWaitStateII\fP"
+.br
+.ti -1c
+.RI "class \fBStopState\fP"
+.br
+.ti -1c
+.RI "class \fBSwerveState\fP"
+.br
+.ti -1c
+.RI "class \fBSwerveStateII\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficLight\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficLightStopState\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficLightStopStateII\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficLightWaitState\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficLightWaitStateII\fP"
+.br
+.ti -1c
+.RI "class \fBTrafficSign\fP"
+.br
+.ti -1c
+.RI "class \fBTrajectoryCost\fP"
+.br
+.ti -1c
+.RI "class \fBTrajectoryCosts\fP"
+.br
+.ti -1c
+.RI "class \fBTrajectoryDynamicCosts\fP"
+.br
+.ti -1c
+.RI "class \fBTrajectoryTracker\fP"
+.br
+.ti -1c
+.RI "class \fBVehicleState\fP"
+.br
+.ti -1c
+.RI "class \fBWaitingLine\fP"
+.br
+.ti -1c
+.RI "class \fBWaitState\fP"
+.br
+.ti -1c
+.RI "class \fBWayPoint\fP"
+.br
+.ti -1c
+.RI "class \fBWhiteLine\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::mt19937 \fBENG\fP"
+.br
+.ti -1c
+.RI "typedef boost::normal_distribution< double > \fBNormalDIST\fP"
+.br
+.ti -1c
+.RI "typedef boost::variate_generator< \fBENG\fP, \fBNormalDIST\fP > \fBVariatGEN\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMAP_SOURCE_TYPE\fP { \fBMAP_AUTOWARE\fP, \fBMAP_FOLDER\fP, \fBMAP_KML_FILE\fP, \fBMAP_ONE_CSV_FILE\fP, \fBMAP_LANES_CSV_FILES\fP }"
+.br
+.ti -1c
+.RI "enum \fBCAR_TYPE\fP { \fBMv2Car\fP, \fBPHVCar\fP, \fBHVCar\fP, \fBRoboCar\fP, \fBSimulationCar\fP }"
+.br
+.ti -1c
+.RI "enum \fBPLANDIRECTION\fP { \fBMOVE_FORWARD_ONLY\fP, \fBMOVE_BACKWARD_ONLY\fP, \fBMOVE_FREE\fP }"
+.br
+.ti -1c
+.RI "enum \fBHeuristicConstrains\fP { \fBEUCLIDEAN\fP, \fBNEIGBORHOOD\fP, \fBDIRECTION\fP }"
+.br
+.ti -1c
+.RI "enum \fBDIRECTION_TYPE\fP { \fBFORWARD_DIR\fP, \fBFORWARD_LEFT_DIR\fP, \fBFORWARD_RIGHT_DIR\fP, \fBBACKWARD_DIR\fP, \fBBACKWARD_LEFT_DIR\fP, \fBBACKWARD_RIGHT_DIR\fP, \fBSTANDSTILL_DIR\fP }"
+.br
+.ti -1c
+.RI "enum \fBOBSTACLE_TYPE\fP { \fBSIDEWALK\fP, \fBTREE\fP, \fBCAR\fP, \fBTRUCK\fP, \fBHOUSE\fP, \fBPEDESTRIAN\fP, \fBCYCLIST\fP, \fBGENERAL_OBSTACLE\fP }"
+.br
+.ti -1c
+.RI "enum \fBDRIVABLE_TYPE\fP { \fBDIRT\fP, \fBTARMAC\fP, \fBPARKINGAREA\fP, \fBINDOOR\fP, \fBGENERAL_AREA\fP }"
+.br
+.ti -1c
+.RI "enum \fBGLOBAL_STATE_TYPE\fP { \fBG_WAITING_STATE\fP, \fBG_PLANING_STATE\fP, \fBG_FORWARD_STATE\fP, \fBG_BRANCHING_STATE\fP, \fBG_FINISH_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBSTATE_TYPE\fP { \fBINITIAL_STATE\fP, \fBWAITING_STATE\fP, \fBFORWARD_STATE\fP, \fBSTOPPING_STATE\fP, \fBEMERGENCY_STATE\fP, \fBTRAFFIC_LIGHT_STOP_STATE\fP, \fBTRAFFIC_LIGHT_WAIT_STATE\fP, \fBSTOP_SIGN_STOP_STATE\fP, \fBSTOP_SIGN_WAIT_STATE\fP, \fBFOLLOW_STATE\fP, \fBLANE_CHANGE_STATE\fP, \fBOBSTACLE_AVOIDANCE_STATE\fP, \fBGOAL_STATE\fP, \fBFINISH_STATE\fP, \fBYIELDING_STATE\fP, \fBBRANCH_LEFT_STATE\fP, \fBBRANCH_RIGHT_STATE\fP, \fBSTOP_LINE_STOP_STATE\fP, \fBSTOP_LINE_WAIT_STATE\fP, \fBLANE_CHANGE_LEFT_STATE\fP, \fBLANE_CHANGE_RIGHT_STATE\fP, \fBPARK_IN_LANE_STATE\fP, \fBPARK_ON_SIDE_STATE\fP, \fBMERGE_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBLIGHT_INDICATOR\fP { \fBINDICATOR_LEFT\fP, \fBINDICATOR_RIGHT\fP, \fBINDICATOR_BOTH\fP, \fBINDICATOR_NONE\fP }"
+.br
+.ti -1c
+.RI "enum \fBSHIFT_POS\fP { \fBSHIFT_POS_PP\fP = 0x60, \fBSHIFT_POS_RR\fP = 0x40, \fBSHIFT_POS_NN\fP = 0x20, \fBSHIFT_POS_DD\fP = 0x10, \fBSHIFT_POS_BB\fP = 0xA0, \fBSHIFT_POS_SS\fP = 0x0f, \fBSHIFT_POS_UU\fP = 0xff }"
+.br
+.ti -1c
+.RI "enum \fBACTION_TYPE\fP { \fBFORWARD_ACTION\fP, \fBBACKWARD_ACTION\fP, \fBSTOP_ACTION\fP, \fBLEFT_TURN_ACTION\fP, \fBRIGHT_TURN_ACTION\fP, \fBU_TURN_ACTION\fP, \fBSWERVE_ACTION\fP, \fBOVERTACK_ACTION\fP, \fBSTART_ACTION\fP, \fBSLOWDOWN_ACTION\fP, \fBCHANGE_DESTINATION\fP, \fBWAITING_ACTION\fP, \fBDESTINATION_REACHED\fP, \fBUNKOWN_ACTION\fP }"
+.br
+.ti -1c
+.RI "enum \fBBEH_STATE_TYPE\fP { \fBBEH_FORWARD_STATE\fP =0, \fBBEH_STOPPING_STATE\fP =1, \fBBEH_BRANCH_LEFT_STATE\fP =2, \fBBEH_BRANCH_RIGHT_STATE\fP =3, \fBBEH_YIELDING_STATE\fP =4, \fBBEH_ACCELERATING_STATE\fP =5, \fBBEH_SLOWDOWN_STATE\fP =6 }"
+.br
+.ti -1c
+.RI "enum \fBSEGMENT_TYPE\fP { \fBNORMAL_ROAD_SEG\fP, \fBINTERSECTION_ROAD_SEG\fP, \fBUTURN_ROAD_SEG\fP, \fBEXIT_ROAD_SEG\fP, \fBMERGE_ROAD_SEG\fP, \fBHIGHWAY_ROAD_SEG\fP }"
+.br
+.ti -1c
+.RI "enum \fBRoadSegmentType\fP { \fBNORMAL_ROAD\fP, \fBINTERSECTION_ROAD\fP, \fBUTURN_ROAD\fP, \fBEXIT_ROAD\fP, \fBMERGE_ROAD\fP, \fBHIGHWAY_ROAD\fP }"
+.br
+.ti -1c
+.RI "enum \fBMARKING_TYPE\fP { \fBUNKNOWN_MARK\fP, \fBTEXT_MARK\fP, \fBAF_MARK\fP, \fBAL_MARK\fP, \fBAR_MARK\fP, \fBAFL_MARK\fP, \fBAFR_MARK\fP, \fBALR_MARK\fP, \fBUTURN_MARK\fP, \fBNOUTURN_MARK\fP }"
+.br
+.ti -1c
+.RI "enum \fBTrafficSignTypes\fP { \fBUNKNOWN_SIGN\fP, \fBSTOP_SIGN\fP, \fBMAX_SPEED_SIGN\fP, \fBMIN_SPEED_SIGN\fP }"
+.br
+.ti -1c
+.RI "enum \fBForceCmdTypes\fP { \fBUNKNOWN_CMD_TYPE\fP, \fBParkOnSide\fP, \fBParkInLane\fP, \fBOverTake\fP, \fBMergeNoVehicle\fP, \fBMergeWithVechile\fP }"
+.br
+.ti -1c
+.RI "enum \fBOVERTAKE_PROC\fP { \fBUNKNOWN_PROC\fP, \fBABOUT_TO_LEFT\fP, \fBCHANGING_LEFT\fP, \fBCHANGING_RIGHT\fP, \fBOVERTAKE_FORWARD\fP }"
+.br
+.ti -1c
+.RI "enum \fBTrafficLightState\fP { \fBUNKNOWN_LIGHT\fP, \fBRED_LIGHT\fP, \fBGREEN_LIGHT\fP, \fBYELLOW_LIGHT\fP, \fBLEFT_GREEN\fP, \fBFORWARD_GREEN\fP, \fBRIGHT_GREEN\fP, \fBFLASH_YELLOW\fP, \fBFLASH_RED\fP }"
+.br
+.ti -1c
+.RI "enum \fBLaneType\fP { \fBNORMAL_LANE\fP, \fBMERGE_LANE\fP, \fBEXIT_LANE\fP, \fBBUS_LANE\fP, \fBBUS_STOP_LANE\fP, \fBEMERGENCY_LANE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_STATE_TYPE\fP { \fBAW_INITIAL_STATE\fP, \fBAW_WAITING_STATE\fP, \fBAW_FORWARD_STATE\fP, \fBAW_STOPPING_STATE\fP, \fBAW_EMERGENCY_STATE\fP, \fBAW_TRAFFIC_LIGHT_STOP_STATE\fP, \fBAW_STOP_SIGN_STOP_STATE\fP, \fBAW_FOLLOW_STATE\fP, \fBAW_LANE_CHANGE_STATE\fP, \fBAW_OBSTACLE_AVOIDANCE_STATE\fP, \fBAW_FINISH_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_LIGHT_INDICATOR\fP { \fBAW_INDICATOR_LEFT\fP, \fBAW_INDICATOR_RIGHT\fP, \fBAW_INDICATOR_BOTH\fP, \fBAW_INDICATOR_NONE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_SHIFT_POS\fP { \fBAW_SHIFT_POS_PP\fP = 0x60, \fBAW_SHIFT_POS_RR\fP = 0x40, \fBAW_SHIFT_POS_NN\fP = 0x20, \fBAW_SHIFT_POS_DD\fP = 0x10, \fBAW_SHIFT_POS_BB\fP = 0xA0, \fBAW_SHIFT_POS_SS\fP = 0x0f, \fBAW_SHIFT_POS_UU\fP = 0xff }"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::mt19937 \fBPlannerHNS::ENG\fP"
+
+.PP
+Definition at line 54 of file BehaviorPrediction\&.h\&.
+.SS "typedef boost::normal_distribution<double> \fBPlannerHNS::NormalDIST\fP"
+
+.PP
+Definition at line 55 of file BehaviorPrediction\&.h\&.
+.SS "typedef boost::variate_generator<\fBENG\fP, \fBNormalDIST\fP> \fBPlannerHNS::VariatGEN\fP"
+
+.PP
+Definition at line 56 of file BehaviorPrediction\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBPlannerHNS::ACTION_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFORWARD_ACTION \fP\fP
+.TP
+\fB\fIBACKWARD_ACTION \fP\fP
+.TP
+\fB\fISTOP_ACTION \fP\fP
+.TP
+\fB\fILEFT_TURN_ACTION \fP\fP
+.TP
+\fB\fIRIGHT_TURN_ACTION \fP\fP
+.TP
+\fB\fIU_TURN_ACTION \fP\fP
+.TP
+\fB\fISWERVE_ACTION \fP\fP
+.TP
+\fB\fIOVERTACK_ACTION \fP\fP
+.TP
+\fB\fISTART_ACTION \fP\fP
+.TP
+\fB\fISLOWDOWN_ACTION \fP\fP
+.TP
+\fB\fICHANGE_DESTINATION \fP\fP
+.TP
+\fB\fIWAITING_ACTION \fP\fP
+.TP
+\fB\fIDESTINATION_REACHED \fP\fP
+.TP
+\fB\fIUNKOWN_ACTION \fP\fP
+.PP
+Definition at line 43 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::AUTOWARE_LIGHT_INDICATOR\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_INDICATOR_LEFT \fP\fP
+.TP
+\fB\fIAW_INDICATOR_RIGHT \fP\fP
+.TP
+\fB\fIAW_INDICATOR_BOTH \fP\fP
+.TP
+\fB\fIAW_INDICATOR_NONE \fP\fP
+.PP
+Definition at line 77 of file op_ROSHelpers\&.h\&.
+.SS "enum \fBPlannerHNS::AUTOWARE_SHIFT_POS\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_SHIFT_POS_PP \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_RR \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_NN \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_DD \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_BB \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_SS \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_UU \fP\fP
+.PP
+Definition at line 78 of file op_ROSHelpers\&.h\&.
+.SS "enum \fBPlannerHNS::AUTOWARE_STATE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_INITIAL_STATE \fP\fP
+.TP
+\fB\fIAW_WAITING_STATE \fP\fP
+.TP
+\fB\fIAW_FORWARD_STATE \fP\fP
+.TP
+\fB\fIAW_STOPPING_STATE \fP\fP
+.TP
+\fB\fIAW_EMERGENCY_STATE \fP\fP
+.TP
+\fB\fIAW_TRAFFIC_LIGHT_STOP_STATE \fP\fP
+.TP
+\fB\fIAW_STOP_SIGN_STOP_STATE \fP\fP
+.TP
+\fB\fIAW_FOLLOW_STATE \fP\fP
+.TP
+\fB\fIAW_LANE_CHANGE_STATE \fP\fP
+.TP
+\fB\fIAW_OBSTACLE_AVOIDANCE_STATE \fP\fP
+.TP
+\fB\fIAW_FINISH_STATE \fP\fP
+.PP
+Definition at line 75 of file op_ROSHelpers\&.h\&.
+.SS "enum \fBPlannerHNS::BEH_STATE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBEH_FORWARD_STATE \fP\fP
+.TP
+\fB\fIBEH_STOPPING_STATE \fP\fP
+.TP
+\fB\fIBEH_BRANCH_LEFT_STATE \fP\fP
+.TP
+\fB\fIBEH_BRANCH_RIGHT_STATE \fP\fP
+.TP
+\fB\fIBEH_YIELDING_STATE \fP\fP
+.TP
+\fB\fIBEH_ACCELERATING_STATE \fP\fP
+.TP
+\fB\fIBEH_SLOWDOWN_STATE \fP\fP
+.PP
+Definition at line 46 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::CAR_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMv2Car \fP\fP
+Mv2Car\&. 
+.TP
+\fB\fIPHVCar \fP\fP
+PHVCar\&. 
+.TP
+\fB\fIHVCar \fP\fP
+HVCar\&. 
+.TP
+\fB\fIRoboCar \fP\fP
+RoboCar\&. 
+.TP
+\fB\fISimulationCar \fP\fP
+.PP
+Definition at line 26 of file PlannerCommonDef\&.h\&.
+.SS "enum \fBPlannerHNS::DIRECTION_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFORWARD_DIR \fP\fP
+.TP
+\fB\fIFORWARD_LEFT_DIR \fP\fP
+.TP
+\fB\fIFORWARD_RIGHT_DIR \fP\fP
+.TP
+\fB\fIBACKWARD_DIR \fP\fP
+.TP
+\fB\fIBACKWARD_LEFT_DIR \fP\fP
+.TP
+\fB\fIBACKWARD_RIGHT_DIR \fP\fP
+.TP
+\fB\fISTANDSTILL_DIR \fP\fP
+.PP
+Definition at line 22 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::DRIVABLE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDIRT \fP\fP
+.TP
+\fB\fITARMAC \fP\fP
+.TP
+\fB\fIPARKINGAREA \fP\fP
+.TP
+\fB\fIINDOOR \fP\fP
+.TP
+\fB\fIGENERAL_AREA \fP\fP
+.PP
+Definition at line 27 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::ForceCmdTypes\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_CMD_TYPE \fP\fP
+.TP
+\fB\fIParkOnSide \fP\fP
+.TP
+\fB\fIParkInLane \fP\fP
+.TP
+\fB\fIOverTake \fP\fP
+.TP
+\fB\fIMergeNoVehicle \fP\fP
+.TP
+\fB\fIMergeWithVechile \fP\fP
+.PP
+Definition at line 56 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::GLOBAL_STATE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIG_WAITING_STATE \fP\fP
+.TP
+\fB\fIG_PLANING_STATE \fP\fP
+.TP
+\fB\fIG_FORWARD_STATE \fP\fP
+.TP
+\fB\fIG_BRANCHING_STATE \fP\fP
+.TP
+\fB\fIG_FINISH_STATE \fP\fP
+.PP
+Definition at line 29 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::HeuristicConstrains\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIEUCLIDEAN \fP\fP
+.TP
+\fB\fINEIGBORHOOD \fP\fP
+.TP
+\fB\fIDIRECTION \fP\fP
+.PP
+Definition at line 18 of file PlannerH\&.h\&.
+.SS "enum \fBPlannerHNS::LaneType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINORMAL_LANE \fP\fP
+.TP
+\fB\fIMERGE_LANE \fP\fP
+.TP
+\fB\fIEXIT_LANE \fP\fP
+.TP
+\fB\fIBUS_LANE \fP\fP
+.TP
+\fB\fIBUS_STOP_LANE \fP\fP
+.TP
+\fB\fIEMERGENCY_LANE \fP\fP
+.PP
+Definition at line 748 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::LIGHT_INDICATOR\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIINDICATOR_LEFT \fP\fP
+.TP
+\fB\fIINDICATOR_RIGHT \fP\fP
+.TP
+\fB\fIINDICATOR_BOTH \fP\fP
+.TP
+\fB\fIINDICATOR_NONE \fP\fP
+.PP
+Definition at line 38 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::MAP_SOURCE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMAP_AUTOWARE \fP\fP
+.TP
+\fB\fIMAP_FOLDER \fP\fP
+.TP
+\fB\fIMAP_KML_FILE \fP\fP
+.TP
+\fB\fIMAP_ONE_CSV_FILE \fP\fP
+.TP
+\fB\fIMAP_LANES_CSV_FILES \fP\fP
+.PP
+Definition at line 17 of file PlannerCommonDef\&.h\&.
+.SS "enum \fBPlannerHNS::MARKING_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_MARK \fP\fP
+.TP
+\fB\fITEXT_MARK \fP\fP
+.TP
+\fB\fIAF_MARK \fP\fP
+.TP
+\fB\fIAL_MARK \fP\fP
+.TP
+\fB\fIAR_MARK \fP\fP
+.TP
+\fB\fIAFL_MARK \fP\fP
+.TP
+\fB\fIAFR_MARK \fP\fP
+.TP
+\fB\fIALR_MARK \fP\fP
+.TP
+\fB\fIUTURN_MARK \fP\fP
+.TP
+\fB\fINOUTURN_MARK \fP\fP
+.PP
+Definition at line 51 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::OBSTACLE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISIDEWALK \fP\fP
+.TP
+\fB\fITREE \fP\fP
+.TP
+\fB\fICAR \fP\fP
+.TP
+\fB\fITRUCK \fP\fP
+.TP
+\fB\fIHOUSE \fP\fP
+.TP
+\fB\fIPEDESTRIAN \fP\fP
+.TP
+\fB\fICYCLIST \fP\fP
+.TP
+\fB\fIGENERAL_OBSTACLE \fP\fP
+.PP
+Definition at line 25 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::OVERTAKE_PROC\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_PROC \fP\fP
+.TP
+\fB\fIABOUT_TO_LEFT \fP\fP
+.TP
+\fB\fICHANGING_LEFT \fP\fP
+.TP
+\fB\fICHANGING_RIGHT \fP\fP
+.TP
+\fB\fIOVERTAKE_FORWARD \fP\fP
+.PP
+Definition at line 58 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::PLANDIRECTION\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMOVE_FORWARD_ONLY \fP\fP
+.TP
+\fB\fIMOVE_BACKWARD_ONLY \fP\fP
+.TP
+\fB\fIMOVE_FREE \fP\fP
+.PP
+Definition at line 17 of file PlannerH\&.h\&.
+.SS "enum \fBPlannerHNS::RoadSegmentType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINORMAL_ROAD \fP\fP
+.TP
+\fB\fIINTERSECTION_ROAD \fP\fP
+.TP
+\fB\fIUTURN_ROAD \fP\fP
+.TP
+\fB\fIEXIT_ROAD \fP\fP
+.TP
+\fB\fIMERGE_ROAD \fP\fP
+.TP
+\fB\fIHIGHWAY_ROAD \fP\fP
+.PP
+Definition at line 49 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::SEGMENT_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINORMAL_ROAD_SEG \fP\fP
+.TP
+\fB\fIINTERSECTION_ROAD_SEG \fP\fP
+.TP
+\fB\fIUTURN_ROAD_SEG \fP\fP
+.TP
+\fB\fIEXIT_ROAD_SEG \fP\fP
+.TP
+\fB\fIMERGE_ROAD_SEG \fP\fP
+.TP
+\fB\fIHIGHWAY_ROAD_SEG \fP\fP
+.PP
+Definition at line 48 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::SHIFT_POS\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISHIFT_POS_PP \fP\fP
+.TP
+\fB\fISHIFT_POS_RR \fP\fP
+.TP
+\fB\fISHIFT_POS_NN \fP\fP
+.TP
+\fB\fISHIFT_POS_DD \fP\fP
+.TP
+\fB\fISHIFT_POS_BB \fP\fP
+.TP
+\fB\fISHIFT_POS_SS \fP\fP
+.TP
+\fB\fISHIFT_POS_UU \fP\fP
+.PP
+Definition at line 40 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::STATE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIINITIAL_STATE \fP\fP
+.TP
+\fB\fIWAITING_STATE \fP\fP
+.TP
+\fB\fIFORWARD_STATE \fP\fP
+.TP
+\fB\fISTOPPING_STATE \fP\fP
+.TP
+\fB\fIEMERGENCY_STATE \fP\fP
+.TP
+\fB\fITRAFFIC_LIGHT_STOP_STATE \fP\fP
+.TP
+\fB\fITRAFFIC_LIGHT_WAIT_STATE \fP\fP
+.TP
+\fB\fISTOP_SIGN_STOP_STATE \fP\fP
+.TP
+\fB\fISTOP_SIGN_WAIT_STATE \fP\fP
+.TP
+\fB\fIFOLLOW_STATE \fP\fP
+.TP
+\fB\fILANE_CHANGE_STATE \fP\fP
+.TP
+\fB\fIOBSTACLE_AVOIDANCE_STATE \fP\fP
+.TP
+\fB\fIGOAL_STATE \fP\fP
+.TP
+\fB\fIFINISH_STATE \fP\fP
+.TP
+\fB\fIYIELDING_STATE \fP\fP
+.TP
+\fB\fIBRANCH_LEFT_STATE \fP\fP
+.TP
+\fB\fIBRANCH_RIGHT_STATE \fP\fP
+.TP
+\fB\fISTOP_LINE_STOP_STATE \fP\fP
+.TP
+\fB\fISTOP_LINE_WAIT_STATE \fP\fP
+.TP
+\fB\fILANE_CHANGE_LEFT_STATE \fP\fP
+.TP
+\fB\fILANE_CHANGE_RIGHT_STATE \fP\fP
+.TP
+\fB\fIPARK_IN_LANE_STATE \fP\fP
+.TP
+\fB\fIPARK_ON_SIDE_STATE \fP\fP
+.TP
+\fB\fIMERGE_STATE \fP\fP
+.PP
+Definition at line 32 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::TrafficLightState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_LIGHT \fP\fP
+.TP
+\fB\fIRED_LIGHT \fP\fP
+.TP
+\fB\fIGREEN_LIGHT \fP\fP
+.TP
+\fB\fIYELLOW_LIGHT \fP\fP
+.TP
+\fB\fILEFT_GREEN \fP\fP
+.TP
+\fB\fIFORWARD_GREEN \fP\fP
+.TP
+\fB\fIRIGHT_GREEN \fP\fP
+.TP
+\fB\fIFLASH_YELLOW \fP\fP
+.TP
+\fB\fIFLASH_RED \fP\fP
+.PP
+Definition at line 665 of file RoadNetwork\&.h\&.
+.SS "enum \fBPlannerHNS::TrafficSignTypes\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN_SIGN \fP\fP
+.TP
+\fB\fISTOP_SIGN \fP\fP
+.TP
+\fB\fIMAX_SPEED_SIGN \fP\fP
+.TP
+\fB\fIMIN_SPEED_SIGN \fP\fP
+.PP
+Definition at line 53 of file RoadNetwork\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,376 @@
+.TH "datatypes::Line2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Line2D \- A line in the two-dimensional plane, composed out of two points\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Line2D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBIntersectingType\fP { \fBNotIntersecting\fP, \fBLineIntersecting\fP, \fBOutsideIntersecting\fP }
+.RI "\fIDescribes how two lines can be intersecting\&. \fP""
+.br
+.ti -1c
+.RI "typedef \fBPoint2D\fP \fBvalue_type\fP"
+.br
+.RI "\fITypedef for STL compatibility\&. \fP"
+.ti -1c
+.RI "typedef \fBPoint2D\fP \fBfirst_type\fP"
+.br
+.RI "\fITypedef for STL std::pair compatibility\&. \fP"
+.ti -1c
+.RI "typedef \fBPoint2D\fP \fBsecond_type\fP"
+.br
+.RI "\fITypedef for STL std::pair compatibility\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLine2D\fP ()"
+.br
+.RI "\fIEmpty constructor\&. \fP"
+.ti -1c
+.RI "\fBLine2D\fP (const \fBPoint2D\fP &a, const \fBPoint2D\fP &\fBb\fP)"
+.br
+.RI "\fIConstructor with two points\&. \fP"
+.ti -1c
+.RI "\fBLine2D\fP (float x1, float y1, float x2, float y2)"
+.br
+.RI "\fIConstructor with x/y coordinates of the two points given explicitly\&. \fP"
+.ti -1c
+.RI "\fBLine2D\fP (const std::pair< \fBPoint2D\fP, \fBPoint2D\fP > &\fBp\fP)"
+.br
+.RI "\fIConstructor from a std::pair\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP ()"
+.br
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this line\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBisZero\fP () const "
+.br
+.RI "\fIReturns true if both points are zero\&. \fP"
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetP1\fP () const "
+.br
+.RI "\fIReturns the first point\&. \fP"
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetP2\fP () const "
+.br
+.RI "\fIReturns the second point\&. \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBgetCenterPoint\fP () const "
+.br
+.RI "\fIReturns the point in the middle between first and second point\&. \fP"
+.ti -1c
+.RI "double \fBgetLength\fP () const "
+.br
+.ti -1c
+.RI "double \fBlength\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetInclination\fP () const "
+.br
+.ti -1c
+.RI "double \fBinclination\fP () const "
+.br
+.ti -1c
+.RI "\fBPoint2D\fP \fBgetDiff\fP () const "
+.br
+.RI "\fIReturns the difference between line end and line start as a \fBPoint2D\fP\&. \fP"
+.ti -1c
+.RI "\fBLine2D\fP \fBgetUnitVector\fP () const "
+.br
+.RI "\fIReturns a unit vector for this line\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP \fBtoPolygon2D\fP () const "
+.br
+.RI "\fIConversion to \fBPolygon2D\fP\&. \fP"
+.ti -1c
+.RI "\fBPolygon2D\fP \fBtoPolygon2D\fP (unsigned samplePoints) const "
+.br
+.RI "\fIConversion to \fBPolygon2D\fP with more than 2 sampling points\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBSetter methods for changing this line\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetP1\fP (const \fBPoint2D\fP &p1)"
+.br
+.RI "\fISets the first point\&. \fP"
+.ti -1c
+.RI "void \fBsetP2\fP (const \fBPoint2D\fP &p2)"
+.br
+.RI "\fISets the second point\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBGeometrical relations to other objects\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "double \fBdistanceToPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns the distance of the given point to its orthogonal projection onto this line\&. \fP"
+.ti -1c
+.RI "double \fBdistanceFromLineSegment\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns the distance of a point to this line segment\&. \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBprojectOntoLine\fP (const \fBPoint2D\fP &point) const "
+.br
+.ti -1c
+.RI "bool \fBcontainsPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns true if this line 'contains' the given point\&. \fP"
+.ti -1c
+.RI "\fBIntersectingType\fP \fBisIntersecting\fP (const \fBLine2D\fP &other, \fBPoint2D\fP *intersectingPoint=NULL) const "
+.br
+.RI "\fICalculates the intersection point between two lines\&. \fP"
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBLine2D\fP \fBfromLinearRegression\fP (const \fBPolygon2D\fP &points)"
+.br
+.RI "\fIReturns a \fBLine2D\fP from several points using linear regression\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A line in the two-dimensional plane, composed out of two points\&. 
+
+This class is a line composed out of two points and offers some helper methods for simple geometrical calculations\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBPoint2D\fP, \fBPolygon2D\fP 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file Line2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBPoint2D\fP \fBdatatypes::Line2D::first_type\fP"
+
+.PP
+Typedef for STL std::pair compatibility\&. 
+.PP
+Definition at line 30 of file Line2D\&.hpp\&.
+.SS "typedef \fBPoint2D\fP \fBdatatypes::Line2D::second_type\fP"
+
+.PP
+Typedef for STL std::pair compatibility\&. 
+.PP
+Definition at line 32 of file Line2D\&.hpp\&.
+.SS "typedef \fBPoint2D\fP \fBdatatypes::Line2D::value_type\fP"
+
+.PP
+Typedef for STL compatibility\&. 
+.PP
+Definition at line 28 of file Line2D\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::Line2D::IntersectingType\fP"
+
+.PP
+Describes how two lines can be intersecting\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisIntersecting()\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINotIntersecting \fP\fP
+The lines are not intersecting, i\&.e\&. they are parallel or zero\&. 
+.TP
+\fB\fILineIntersecting \fP\fP
+The lines are intersecting within their line segments\&. 
+.TP
+\fB\fIOutsideIntersecting \fP\fP
+The lines are intersecting, but outside of their line segments\&. 
+.PP
+Definition at line 35 of file Line2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Line2D::Line2D ()\fC [inline]\fP"
+
+.PP
+Empty constructor\&. 
+.PP
+Definition at line 44 of file Line2D\&.hpp\&.
+.SS "datatypes::Line2D::Line2D (const \fBPoint2D\fP & a, const \fBPoint2D\fP & b)\fC [inline]\fP"
+
+.PP
+Constructor with two points\&. 
+.PP
+Definition at line 50 of file Line2D\&.hpp\&.
+.SS "datatypes::Line2D::Line2D (float x1, float y1, float x2, float y2)\fC [inline]\fP"
+
+.PP
+Constructor with x/y coordinates of the two points given explicitly\&. 
+.PP
+Definition at line 56 of file Line2D\&.hpp\&.
+.SS "datatypes::Line2D::Line2D (const std::pair< \fBPoint2D\fP, \fBPoint2D\fP > & p)\fC [inline]\fP"
+
+.PP
+Constructor from a std::pair\&. 
+.PP
+Definition at line 62 of file Line2D\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool datatypes::Line2D::containsPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns true if this line 'contains' the given point\&. Computes the distance from the point to the line, and if it is zero, the point lies on the line and this method returns true\&. 
+.PP
+Definition at line 75 of file Line2D\&.cpp\&.
+.SS "double datatypes::Line2D::distanceFromLineSegment (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns the distance of a point to this line segment\&. If the point's projection onto the line is between the end points of this line, the distance to the projected point is returnd\&. If the projection is not on the line segment, the distance to the closest end point is returned\&. Alternatively, \fBdistanceToPoint()\fP returns the distance to the point's projection in all cases\&. 
+.PP
+Definition at line 110 of file Line2D\&.cpp\&.
+.SS "double datatypes::Line2D::distanceToPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns the distance of the given point to its orthogonal projection onto this line\&. The calculated distance is always the distance from the point to the point's projection onto the line, even if the point's projection is not between the end points of the line\&. Alternatively, \fBdistanceFromLineSegment()\fP returns the distance to the line's end point in that case\&. 
+.PP
+Definition at line 81 of file Line2D\&.cpp\&.
+.SS "\fBLine2D\fP datatypes::Line2D::fromLinearRegression (const \fBPolygon2D\fP & points)\fC [static]\fP"
+
+.PP
+Returns a \fBLine2D\fP from several points using linear regression\&. 
+.PP
+Definition at line 309 of file Line2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Line2D::getCenterPoint () const"
+
+.PP
+Returns the point in the middle between first and second point\&. 
+.PP
+Definition at line 339 of file Line2D\&.cpp\&.
+.SS "\fBPoint2D\fP datatypes::Line2D::getDiff () const\fC [inline]\fP"
+
+.PP
+Returns the difference between line end and line start as a \fBPoint2D\fP\&. 
+.PP
+Definition at line 109 of file Line2D\&.hpp\&.
+.SS "double datatypes::Line2D::getInclination () const"
+Calculates the rising angle of a line: the inclination angle\&. Returns a value in [-PI,PI] in radians\&. 
+.PP
+Definition at line 42 of file Line2D\&.cpp\&.
+.SS "double datatypes::Line2D::getLength () const\fC [inline]\fP"
+Returns the length of this line, i\&.e\&. the distance of the two points\&. 
+.PP
+Definition at line 93 of file Line2D\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Line2D::getP1 () const\fC [inline]\fP"
+
+.PP
+Returns the first point\&. 
+.PP
+Definition at line 83 of file Line2D\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Line2D::getP2 () const\fC [inline]\fP"
+
+.PP
+Returns the second point\&. 
+.PP
+Definition at line 86 of file Line2D\&.hpp\&.
+.SS "\fBLine2D\fP datatypes::Line2D::getUnitVector () const"
+
+.PP
+Returns a unit vector for this line\&. The returned unit vector has the same starting point as this line (which is \fBgetP1()\fP) and it has a length of 1\&.0\&. 
+.PP
+Definition at line 56 of file Line2D\&.cpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Line2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 68 of file Line2D\&.hpp\&.
+.SS "double datatypes::Line2D::inclination () const\fC [inline]\fP"
+Deprecated\&. Calculates the rising angle of a line: the inclination angle\&. Returns a value in [-PI,PI] in radians\&. 
+.PP
+Definition at line 105 of file Line2D\&.hpp\&.
+.SS "\fBLine2D::IntersectingType\fP datatypes::Line2D::isIntersecting (const \fBLine2D\fP & other, \fBPoint2D\fP * intersectingPoint = \fCNULL\fP) const"
+
+.PP
+Calculates the intersection point between two lines\&. The returned value describes whether the two lines intersect within their line segments, or outside of their line segments, or not at all\&. The actual intersection point is written to intersectingPoint if that pointer is non-NULL\&. 
+.PP
+Definition at line 258 of file Line2D\&.cpp\&.
+.SS "bool datatypes::Line2D::isZero () const\fC [inline]\fP"
+
+.PP
+Returns true if both points are zero\&. 
+.PP
+Definition at line 80 of file Line2D\&.hpp\&.
+.SS "double datatypes::Line2D::length () const\fC [inline]\fP"
+Deprecated\&. Returns the length of this line, i\&.e\&. the distance of the two points\&. 
+.PP
+Definition at line 97 of file Line2D\&.hpp\&.
+.SS "\fBPoint2D\fP datatypes::Line2D::projectOntoLine (const \fBPoint2D\fP & point) const"
+Calculates and returns the point that results when projecting the given point onto this line orthogonally\&. 
+.PP
+Definition at line 91 of file Line2D\&.cpp\&.
+.SS "void datatypes::Line2D::setP1 (const \fBPoint2D\fP & p1)\fC [inline]\fP"
+
+.PP
+Sets the first point\&. 
+.PP
+Definition at line 131 of file Line2D\&.hpp\&.
+.SS "void datatypes::Line2D::setP2 (const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Sets the second point\&. 
+.PP
+Definition at line 134 of file Line2D\&.hpp\&.
+.SS "\fBPolygon2D\fP datatypes::Line2D::toPolygon2D () const"
+
+.PP
+Conversion to \fBPolygon2D\fP\&. 
+.PP
+Definition at line 17 of file Line2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Line2D::toPolygon2D (unsigned samplePoints) const"
+
+.PP
+Conversion to \fBPolygon2D\fP with more than 2 sampling points\&. 
+.PP
+Definition at line 22 of file Line2D\&.cpp\&.
+.SS "std::string datatypes::Line2D::toString ()"
+
+.PP
+Definition at line 66 of file Line2D\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

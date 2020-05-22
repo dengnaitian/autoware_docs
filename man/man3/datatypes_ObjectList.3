@@ -1,0 +1,103 @@
+.TH "datatypes::ObjectList" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::ObjectList \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Object\&.hpp>\fP
+.PP
+Inherits vector< Object >, and \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBObject\fP > \fBbase_class\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectList\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBObjectList\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "const \fBTime\fP & \fBgetTimestamp\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTimestamp\fP (const \fBTime\fP &timestamp)"
+.br
+.ti -1c
+.RI "void \fBincrementObjectAge\fP ()"
+.br
+.RI "\fIJust increment objectAge of all objects by one\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTime\fP \fBm_timestamp\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 518 of file Object\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBObject\fP> \fBdatatypes::ObjectList::base_class\fP"
+
+.PP
+Definition at line 523 of file Object\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::ObjectList::ObjectList ()"
+
+.PP
+Definition at line 451 of file Object\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBTime\fP& datatypes::ObjectList::getTimestamp () const\fC [inline]\fP"
+
+.PP
+Definition at line 534 of file Object\&.hpp\&.
+.SS "const \fBUINT32\fP datatypes::ObjectList::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 531 of file Object\&.hpp\&.
+.SS "void datatypes::ObjectList::incrementObjectAge ()"
+
+.PP
+Just increment objectAge of all objects by one\&. 
+.PP
+Definition at line 485 of file Object\&.cpp\&.
+.SS "bool datatypes::ObjectList::operator== (const \fBObjectList\fP & other) const"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 458 of file Object\&.cpp\&.
+.SS "void datatypes::ObjectList::setTimestamp (const \fBTime\fP & timestamp)"
+
+.PP
+Definition at line 466 of file Object\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBTime\fP datatypes::ObjectList::m_timestamp\fC [protected]\fP"
+
+.PP
+Definition at line 545 of file Object\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

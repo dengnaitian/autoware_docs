@@ -1,0 +1,101 @@
+.TH "ContourTrackerNS::KFTrackV" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ContourTrackerNS::KFTrackV \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleTracker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBGetTrackID\fP ()"
+.br
+.ti -1c
+.RI "\fBKFTrackV\fP (double x, double y, double a, long id, double _dt, int _MinAppearanceCount=1)"
+.br
+.ti -1c
+.RI "void \fBUpdateTracking\fP (double _dt, const \fBPlannerHNS::DetectedObject\fP &oldObj, \fBPlannerHNS::DetectedObject\fP &predObj)"
+.br
+.ti -1c
+.RI "void \fBUpdateAssociateOnly\fP (double _dt, const \fBPlannerHNS::DetectedObject\fP &oldObj, \fBPlannerHNS::DetectedObject\fP &predObj)"
+.br
+.ti -1c
+.RI "virtual \fB~KFTrackV\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_bUpdated\fP"
+.br
+.ti -1c
+.RI "int \fBregion_id\fP"
+.br
+.ti -1c
+.RI "double \fBforget_time\fP"
+.br
+.ti -1c
+.RI "int \fBm_iLife\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::DetectedObject\fP \fBobj\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 82 of file SimpleTracker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ContourTrackerNS::KFTrackV::KFTrackV (double x, double y, double a, long id, double _dt, int _MinAppearanceCount = \fC1\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 107 of file SimpleTracker\&.h\&.
+.SS "virtual ContourTrackerNS::KFTrackV::~KFTrackV ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 340 of file SimpleTracker\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "long ContourTrackerNS::KFTrackV::GetTrackID ()\fC [inline]\fP"
+
+.PP
+Definition at line 102 of file SimpleTracker\&.h\&.
+.SS "void ContourTrackerNS::KFTrackV::UpdateAssociateOnly (double _dt, const \fBPlannerHNS::DetectedObject\fP & oldObj, \fBPlannerHNS::DetectedObject\fP & predObj)\fC [inline]\fP"
+
+.PP
+Definition at line 294 of file SimpleTracker\&.h\&.
+.SS "void ContourTrackerNS::KFTrackV::UpdateTracking (double _dt, const \fBPlannerHNS::DetectedObject\fP & oldObj, \fBPlannerHNS::DetectedObject\fP & predObj)\fC [inline]\fP"
+
+.PP
+Definition at line 163 of file SimpleTracker\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double ContourTrackerNS::KFTrackV::forget_time"
+
+.PP
+Definition at line 98 of file SimpleTracker\&.h\&.
+.SS "int ContourTrackerNS::KFTrackV::m_bUpdated"
+
+.PP
+Definition at line 96 of file SimpleTracker\&.h\&.
+.SS "int ContourTrackerNS::KFTrackV::m_iLife"
+
+.PP
+Definition at line 99 of file SimpleTracker\&.h\&.
+.SS "\fBPlannerHNS::DetectedObject\fP ContourTrackerNS::KFTrackV::obj"
+
+.PP
+Definition at line 100 of file SimpleTracker\&.h\&.
+.SS "int ContourTrackerNS::KFTrackV::region_id"
+
+.PP
+Definition at line 97 of file SimpleTracker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,79 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/ff_waypoint_follower/include/ff_waypoint_follower_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/ff_waypoint_follower/include/ff_waypoint_follower_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <geometry_msgs/Vector3Stamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <std_msgs/Int8\&.h>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+\fC#include 'autoware_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'op_simu/TrajectoryFollower\&.h'\fP
+.br
+\fC#include 'op_planner/LocalPlannerH\&.h'\fP
+.br
+\fC#include 'op_planner/PlannerH\&.h'\fP
+.br
+\fC#include 'op_planner/MappingHelpers\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFFSteerControlNS::ControlCommandParams\fP"
+.br
+.ti -1c
+.RI "class \fBFFSteerControlNS::FFSteerControl\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBFFSteerControlNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_ENABLE_ZMP_LIBRARY_LINK\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFFSteerControlNS::STATUS_TYPE\fP { \fBFFSteerControlNS::CONTROL_BOX_STATUS\fP, \fBFFSteerControlNS::ROBOT_STATUS\fP, \fBFFSteerControlNS::SIMULATION_STATUS\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _ENABLE_ZMP_LIBRARY_LINK"
+
+.PP
+Definition at line 20 of file ff_waypoint_follower_core\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,140 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/graph_tools/scripts/yaml2dot.py" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/graph_tools/scripts/yaml2dot.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fByaml2dot\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fByaml2dot\&.get_rospack\fP ()"
+.br
+.ti -1c
+.RI "def \fByaml2dot\&.get_cluster\fP (name, clusters)"
+.br
+.ti -1c
+.RI "def \fByaml2dot\&.check_topics\fP (topics, pkg, \fBdata\fP)"
+.br
+.ti -1c
+.RI "def \fByaml2dot\&.get_topic_info\fP (conf)"
+.br
+.ti -1c
+.RI "def \fByaml2dot\&.is_inner_topic\fP (topic, topics)"
+.br
+.ti -1c
+.RI "def \fByaml2dot\&.is_one_leaf\fP (topic, topics)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fByaml2dot\&.parser\fP = argparse\&.ArgumentParser(description='Convert YAML into DOT')"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.nargs\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.type\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.help\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.default\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.ofile\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.const\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.True\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.False\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.args\fP = parser\&.parse_args()"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.pkgs\fP = get_rospack()"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.fargs\fP = pkgs\&.keys()"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.graph0\fP = pygraphviz\&.AGraph(directed=True, rankdir='LR', compound=True)"
+.br
+.ti -1c
+.RI "int \fByaml2dot\&.graph_nr\fP = 0"
+.br
+.ti -1c
+.RI "int \fByaml2dot\&.node_nr\fP = 0"
+.br
+.ti -1c
+.RI "dictionary \fByaml2dot\&.conf\fP = {}"
+.br
+.ti -1c
+.RI "string \fByaml2dot\&.cname\fP = 'cluster%d'"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.pkg\fP = pkgs[rfile]ifrfileinpkgselsecname"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.nodes\fP = yaml\&.load(file(rfile))"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.topics\fP = get_topic_info(conf)"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.rfile\fP = pkg['file']"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.graph\fP = graph0\&.add_subgraph(name=cname)"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.n0\fP = None"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.shape\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.pub\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.ltail\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.sub\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.lhead\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.path\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.output\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.format\fP"
+.br
+.ti -1c
+.RI "\fByaml2dot\&.prog\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

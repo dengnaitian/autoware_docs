@@ -1,0 +1,46 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_prediction_motion_predictor_packages_naive_motion_predict__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_prediction_motion_predictor_packages_naive_motion_predict__r_e_a_d_m_e \- Naive Motion Prediction 
+Autoware package for motion prediction\&.
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch naive_motion_predict naive_motion_predict\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Prediction/ Motion Predictor -> \fCnaive_motion_predict\fP
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+\fCray_ground_filter\fP node\&.
+.IP "\(bu" 2
+\fCeucledian_cluster\fP node\&.
+.IP "\(bu" 2
+\fC/tf\fP topic\&. \fCvelodyne\fP to \fCworld\fP\&.
+.IP "\(bu" 2
+\fCimm_ukf_pda_tracker\fP node\&.
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters for \fCnaive_motion_predict\fP
+.PP
+ParameterTypeDescription  \fCinput topic\fP*String* Input topic(type: autoware_msgs::DetectedObjectArray)\&. Default \fC/detection/lidar_tracker/objects\fP\&. \fCinterval_sec\fP*Double*Interval second for prediction\&. Default \fC9\&.22\fP\&. \fCnum_prediction\fP*Int*The number of prediction this node will make\&. Default \fC0\&.99\fP\&. \fCsensor_height\fP*Double*Uses sensor height for visualized path's height\&. Default \fC0\&.9\fP\&. |
+.PP
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/detection/lidar_tracker/objects\fP\fCautoware_msgs::DetectedObjectArray\fPThe result topic from Autoware Detection stack 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/prediction/objects\fP\fCautoware_msgs::DetectedObjectArray\fPAdded predicted objects to input data\&.\&. \fC/prediction/motion_predictor/path_markers\fP\fCvisualization_msgs::MarkerArray\fPVisualzing predicted path in ros marker array 
+.SS "Video"
+.PP
+\fC\fP 

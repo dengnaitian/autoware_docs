@@ -1,0 +1,54 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/reorg_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/reorg_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'reorg_layer\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_reorg_layer\fP (int batch, int w, int h, int \fBc\fP, int stride, int reverse, int \fBflatten\fP, int extra)"
+.br
+.ti -1c
+.RI "void \fBresize_reorg_layer\fP (\fBlayer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_reorg_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_reorg_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_reorg_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 112 of file reorg_layer\&.c\&.
+.SS "void forward_reorg_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 91 of file reorg_layer\&.c\&.
+.SS "\fBlayer\fP make_reorg_layer (int batch, int w, int h, int c, int stride, int reverse, int flatten, int extra)"
+
+.PP
+Definition at line 8 of file reorg_layer\&.c\&.
+.SS "void resize_reorg_layer (\fBlayer\fP * l, int w, int h)"
+
+.PP
+Definition at line 58 of file reorg_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

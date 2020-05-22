@@ -1,0 +1,136 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/region_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/region_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'region_layer\&.h'\fP
+.br
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'box\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_region_layer\fP (int batch, int w, int h, int n, int classes, int coords)"
+.br
+.ti -1c
+.RI "void \fBresize_region_layer\fP (\fBlayer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "\fBbox\fP \fBget_region_box\fP (float *x, float *biases, int n, int index, int \fBi\fP, int j, int w, int h, int stride)"
+.br
+.ti -1c
+.RI "float \fBdelta_region_box\fP (\fBbox\fP truth, float *x, float *biases, int n, int index, int \fBi\fP, int j, int w, int h, float *delta, float scale, int stride)"
+.br
+.ti -1c
+.RI "void \fBdelta_region_mask\fP (float *truth, float *x, int n, int index, float *delta, int stride, int scale)"
+.br
+.ti -1c
+.RI "void \fBdelta_region_class\fP (float *output, float *delta, int index, int class, int classes, \fBtree\fP *hier, float scale, int stride, float *avg_cat, int tag)"
+.br
+.ti -1c
+.RI "float \fBlogit\fP (float x)"
+.br
+.ti -1c
+.RI "float \fBtisnan\fP (float x)"
+.br
+.ti -1c
+.RI "int \fBentry_index\fP (\fBlayer\fP l, int batch, int location, int entry)"
+.br
+.ti -1c
+.RI "void \fBforward_region_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_region_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBcorrect_region_boxes\fP (\fBdetection\fP *dets, int n, int w, int h, int netw, int neth, int relative)"
+.br
+.ti -1c
+.RI "void \fBget_region_detections\fP (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int *\fBmap\fP, float tree_thresh, int relative, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "void \fBzero_objectness\fP (\fBlayer\fP l)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_region_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 323 of file region_layer\&.c\&.
+.SS "void correct_region_boxes (\fBdetection\fP * dets, int n, int w, int h, int netw, int neth, int relative)"
+
+.PP
+Definition at line 336 of file region_layer\&.c\&.
+.SS "float delta_region_box (\fBbox\fP truth, float * x, float * biases, int n, int index, int i, int j, int w, int h, float * delta, float scale, int stride)"
+
+.PP
+Definition at line 86 of file region_layer\&.c\&.
+.SS "void delta_region_class (float * output, float * delta, int index, int class, int classes, \fBtree\fP * hier, float scale, int stride, float * avg_cat, int tag)"
+
+.PP
+Definition at line 112 of file region_layer\&.c\&.
+.SS "void delta_region_mask (float * truth, float * x, int n, int index, float * delta, int stride, int scale)"
+
+.PP
+Definition at line 103 of file region_layer\&.c\&.
+.SS "int entry_index (\fBlayer\fP l, int batch, int location, int entry)"
+
+.PP
+Definition at line 151 of file region_layer\&.c\&.
+.SS "void forward_region_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 158 of file region_layer\&.c\&.
+.SS "\fBbox\fP get_region_box (float * x, float * biases, int n, int index, int i, int j, int w, int h, int stride)"
+
+.PP
+Definition at line 76 of file region_layer\&.c\&.
+.SS "void get_region_detections (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int * map, float tree_thresh, int relative, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 364 of file region_layer\&.c\&.
+.SS "float logit (float x)"
+
+.PP
+Definition at line 141 of file region_layer\&.c\&.
+.SS "\fBlayer\fP make_region_layer (int batch, int w, int h, int n, int classes, int coords)"
+
+.PP
+Definition at line 13 of file region_layer\&.c\&.
+.SS "void resize_region_layer (\fBlayer\fP * l, int w, int h)"
+
+.PP
+Definition at line 56 of file region_layer\&.c\&.
+.SS "float tisnan (float x)"
+
+.PP
+Definition at line 146 of file region_layer\&.c\&.
+.SS "void zero_objectness (\fBlayer\fP l)"
+
+.PP
+Definition at line 497 of file region_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

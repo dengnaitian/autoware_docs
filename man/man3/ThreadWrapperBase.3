@@ -1,0 +1,95 @@
+.TH "ThreadWrapperBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ThreadWrapperBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickThread\&.hpp>\fP
+.PP
+Inherited by \fBSickThread< T, M >\fP, \fBSickThread< application::LdmrsFieldApp,&application::LdmrsFieldApp::changeThreadFunction >\fP, \fBSickThread< application::LdmrsNtpTimeApp,&application::LdmrsNtpTimeApp::changeThreadFunction >\fP, \fBSickThread< application::LdmrsSectorChangeApp,&application::LdmrsSectorChangeApp::changeThreadFunction >\fP, \fBSickThread< devices::LuxBase,&devices::LuxBase::updateThreadFunction >\fP, \fBSickThread< File,&File::readThreadFunction >\fP, \fBSickThread< Manager,&Manager::sourceThreadFunction >\fP, and \fBSickThread< Tcp,&Tcp::readThreadFunction >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBThreadWrapperBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ThreadWrapperBase\fP ()"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void *classptr)"
+.br
+.ti -1c
+.RI "bool \fBisRunning\fP ()"
+.br
+.ti -1c
+.RI "void \fBjoin\fP ()"
+.br
+.ti -1c
+.RI "pthread_t * \fBget_thread_id\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBpthis\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "void * \fBwrapper_prerun\fP (void *)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file SickThread\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ThreadWrapperBase::ThreadWrapperBase ()\fC [inline]\fP"
+
+.PP
+Definition at line 23 of file SickThread\&.hpp\&.
+.SS "virtual ThreadWrapperBase::~ThreadWrapperBase ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file SickThread\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pthread_t* ThreadWrapperBase::get_thread_id ()\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file SickThread\&.hpp\&.
+.SS "bool ThreadWrapperBase::isRunning ()\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file SickThread\&.hpp\&.
+.SS "void ThreadWrapperBase::join ()\fC [inline]\fP"
+
+.PP
+Definition at line 45 of file SickThread\&.hpp\&.
+.SS "void ThreadWrapperBase::run (void * classptr)\fC [inline]\fP"
+
+.PP
+Definition at line 26 of file SickThread\&.hpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "void* wrapper_prerun (void *)\fC [friend]\fP"
+
+.PP
+Definition at line 7 of file SickThread\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "void* ThreadWrapperBase::pthis\fC [protected]\fP"
+
+.PP
+Definition at line 20 of file SickThread\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

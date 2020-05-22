@@ -1,0 +1,155 @@
+.TH "lane_planner" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lane_planner \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBvmap\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBElement2D\fP"
+.br
+.ti -1c
+.RI "class \fBLaneSelectNode\fP"
+.br
+.ti -1c
+.RI "class \fBLaneSelectTestClass\fP"
+.br
+.ti -1c
+.RI "class \fBLaneSelectTestSuite\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBChangeFlag\fP : int32_t { \fBChangeFlag::straight\fP, \fBChangeFlag::right\fP, \fBChangeFlag::left\fP, \fBChangeFlag::unknown\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBElement2D\fP > \fBgenerateHermiteCurve\fP (const \fBElement2D\fP &p0, const \fBElement2D\fP &v0, const \fBElement2D\fP &p1, const \fBElement2D\fP &v1, const double vlength=20)"
+.br
+.ti -1c
+.RI "std::vector< autoware_msgs::Waypoint > \fBgenerateHermiteCurveForROS\fP (const geometry_msgs::Pose &start, const geometry_msgs::Pose &end, const double velocity, const double vlength)"
+.br
+.ti -1c
+.RI "void \fBcreateVectorFromPose\fP (const geometry_msgs::Pose &\fBp\fP, \fBtf::Vector3\fP *v)"
+.br
+.ti -1c
+.RI "template<class T > std::underlying_type< T >::type \fBenumToInteger\fP (T \fBt\fP)"
+.br
+.ti -1c
+.RI "int32_t \fBgetClosestWaypointNumber\fP (const autoware_msgs::Lane &current_lane, const geometry_msgs::Pose &current_pose, const geometry_msgs::Twist &current_velocity, const int32_t previous_number, const double distance_threshold)"
+.br
+.ti -1c
+.RI "double \fBgetTwoDimensionalDistance\fP (const \fBgeometry_msgs::Point\fP &target1, const \fBgeometry_msgs::Point\fP &target2)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBconvertPointIntoRelativeCoordinate\fP (const \fBgeometry_msgs::Point\fP &input_point, const geometry_msgs::Pose &\fBpose\fP)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBconvertPointIntoWorldCoordinate\fP (const \fBgeometry_msgs::Point\fP &input_point, const geometry_msgs::Pose &\fBpose\fP)"
+.br
+.ti -1c
+.RI "double \fBgetRelativeAngle\fP (const geometry_msgs::Pose &waypoint_pose, const geometry_msgs::Pose &current_pose)"
+.br
+.ti -1c
+.RI "bool \fBgetLinearEquation\fP (\fBgeometry_msgs::Point\fP start, \fBgeometry_msgs::Point\fP end, double *a, double *\fBb\fP, double *\fBc\fP)"
+.br
+.ti -1c
+.RI "double \fBgetDistanceBetweenLineAndPoint\fP (\fBgeometry_msgs::Point\fP point, double sa, double \fBb\fP, double \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBgetPointAndVectorFromPose\fP (const geometry_msgs::Pose &\fBpose\fP, \fBElement2D\fP *point, \fBElement2D\fP *vector)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBLaneSelectTestSuite\fP, publishVehicleLocation)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBlane_planner::ChangeFlag\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIstraight \fP\fP
+.TP
+\fB\fIright \fP\fP
+.TP
+\fB\fIleft \fP\fP
+.TP
+\fB\fIunknown \fP\fP
+.PP
+Definition at line 42 of file lane_select_core\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBgeometry_msgs::Point\fP lane_planner::convertPointIntoRelativeCoordinate (const \fBgeometry_msgs::Point\fP & input_point, const geometry_msgs::Pose & pose)"
+
+.PP
+Definition at line 729 of file lane_select_core\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP lane_planner::convertPointIntoWorldCoordinate (const \fBgeometry_msgs::Point\fP & input_point, const geometry_msgs::Pose & pose)"
+
+.PP
+Definition at line 744 of file lane_select_core\&.cpp\&.
+.SS "void lane_planner::createVectorFromPose (const geometry_msgs::Pose & p, \fBtf::Vector3\fP * v)"
+
+.PP
+Definition at line 21 of file hermite_curve\&.cpp\&.
+.SS "template<class T > std::underlying_type<T>::type lane_planner::enumToInteger (T t)"
+
+.PP
+Definition at line 52 of file lane_select_core\&.h\&.
+.SS "std::vector< \fBElement2D\fP > lane_planner::generateHermiteCurve (const \fBElement2D\fP & p0, const \fBElement2D\fP & v0, const \fBElement2D\fP & p1, const \fBElement2D\fP & v1, const double vlength = \fC20\fP)"
+
+.PP
+Definition at line 79 of file hermite_curve\&.cpp\&.
+.SS "std::vector< autoware_msgs::Waypoint > lane_planner::generateHermiteCurveForROS (const geometry_msgs::Pose & start, const geometry_msgs::Pose & end, const double velocity, const double vlength)"
+
+.PP
+Definition at line 38 of file hermite_curve\&.cpp\&.
+.SS "int32_t lane_planner::getClosestWaypointNumber (const autoware_msgs::Lane & current_lane, const geometry_msgs::Pose & current_pose, const geometry_msgs::Twist & current_velocity, const int32_t previous_number, const double distance_threshold)"
+
+.PP
+Definition at line 773 of file lane_select_core\&.cpp\&.
+.SS "double lane_planner::getDistanceBetweenLineAndPoint (\fBgeometry_msgs::Point\fP point, double sa, double b, double c)"
+
+.PP
+Definition at line 856 of file lane_select_core\&.cpp\&.
+.SS "bool lane_planner::getLinearEquation (\fBgeometry_msgs::Point\fP start, \fBgeometry_msgs::Point\fP end, double * a, double * b, double * c)"
+
+.PP
+Definition at line 837 of file lane_select_core\&.cpp\&.
+.SS "void lane_planner::getPointAndVectorFromPose (const geometry_msgs::Pose & pose, \fBElement2D\fP * point, \fBElement2D\fP * vector)"
+
+.PP
+Definition at line 29 of file hermite_curve\&.cpp\&.
+.SS "double lane_planner::getRelativeAngle (const geometry_msgs::Pose & waypoint_pose, const geometry_msgs::Pose & current_pose)"
+
+.PP
+Definition at line 759 of file lane_select_core\&.cpp\&.
+.SS "double lane_planner::getTwoDimensionalDistance (const \fBgeometry_msgs::Point\fP & target1, const \fBgeometry_msgs::Point\fP & target2)"
+
+.PP
+Definition at line 723 of file lane_select_core\&.cpp\&.
+.SS "lane_planner::TEST_F (\fBLaneSelectTestSuite\fP, publishVehicleLocation)"
+
+.PP
+Definition at line 36 of file test_lane_select\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

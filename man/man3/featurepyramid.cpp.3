@@ -1,0 +1,175 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/featurepyramid.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/featurepyramid.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include <opencv/highgui\&.h>\fP
+.br
+\fC#include <opencv/cxcore\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <cuda\&.h>\fP
+.br
+\fC#include 'MODEL_info\&.h'\fP
+.br
+\fC#include 'common\&.hpp'\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+\fC#include 'switch_release\&.h'\fP
+.br
+\fC#include 'drvapi_error_string\&.h'\fP
+.br
+\fC#include 'resize_GPU\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBthread_data\fP"
+.br
+.ti -1c
+.RI "struct \fBthread_data_forGPU\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBeps\fP   0\&.0001"
+.br
+.ti -1c
+.RI "#define \fBMY_CUDA_CHECK\fP(res,  text)"
+.br
+.ti -1c
+.RI "#define \fBUSE_STREAM\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFLOAT\fP * \fBresize\fP (\fBFLOAT\fP *src, int *sdims, int *odims, \fBFLOAT\fP scale)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP * \fBgpu_init_scales\fP (\fBModel_info\fP *MI, IplImage *IM, int X, int Y)"
+.br
+.ti -1c
+.RI "int * \fBgpu_init_featsize\fP (\fBModel_info\fP *MI)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP * \fBIpl_to_FLOAT\fP (IplImage *Input)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP ** \fBgpu_calc_f_pyramid\fP (IplImage *Image, \fBModel_info\fP *MI, int *FTSIZE, \fBFLOAT\fP *scale)"
+.br
+.ti -1c
+.RI "void \fBgpu_free_features\fP (\fBFLOAT\fP **features, \fBModel_info\fP *MI)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "CUcontext * \fBctx\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_hist\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_norm\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_feat\fP"
+.br
+.ti -1c
+.RI "CUmodule * \fBmodule\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define eps   0\&.0001"
+
+.PP
+Definition at line 37 of file featurepyramid\&.cpp\&.
+.SS "#define MY_CUDA_CHECK(res, text)"
+\fBValue:\fP
+.PP
+.nf
+if ((res) != CUDA_SUCCESS) {                  \
+    printf("%s failed: res = %d\n->%s\n", (text), (res), getCudaDrvErrorString((res))); \
+  exit(1);                                      \
+  }
+.fi
+.PP
+Definition at line 413 of file featurepyramid\&.cpp\&.
+.SS "#define USE_STREAM"
+
+.PP
+Definition at line 419 of file featurepyramid\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBFLOAT\fP** gpu_calc_f_pyramid (IplImage * Image, \fBModel_info\fP * MI, int * FTSIZE, \fBFLOAT\fP * scale)"
+
+.PP
+Definition at line 837 of file featurepyramid\&.cpp\&.
+.SS "void gpu_free_features (\fBFLOAT\fP ** features, \fBModel_info\fP * MI)"
+
+.PP
+Definition at line 1466 of file featurepyramid\&.cpp\&.
+.SS "int* gpu_init_featsize (\fBModel_info\fP * MI)"
+
+.PP
+Definition at line 167 of file featurepyramid\&.cpp\&.
+.SS "\fBFLOAT\fP* gpu_init_scales (\fBModel_info\fP * MI, IplImage * IM, int X, int Y)"
+
+.PP
+Definition at line 99 of file featurepyramid\&.cpp\&.
+.SS "\fBFLOAT\fP* Ipl_to_FLOAT (IplImage * Input)"
+
+.PP
+Definition at line 715 of file featurepyramid\&.cpp\&.
+.SS "\fBFLOAT\fP* resize (\fBFLOAT\fP * src, int * sdims, int * odims, \fBFLOAT\fP scale)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "CUcontext* ctx"
+
+.PP
+Definition at line 49 of file GPU_init\&.cpp\&.
+.SS "CUfunction* func_calc_feat"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction* func_calc_hist"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction* func_calc_norm"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUmodule* module"
+
+.PP
+Definition at line 51 of file GPU_init\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

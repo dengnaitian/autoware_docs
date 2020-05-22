@@ -1,0 +1,1482 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/darknet.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/darknet.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBmetadata\fP"
+.br
+.ti -1c
+.RI "struct \fBtree\fP"
+.br
+.ti -1c
+.RI "struct \fBupdate_args\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP"
+.br
+.ti -1c
+.RI "struct \fBnetwork\fP"
+.br
+.ti -1c
+.RI "struct \fBaugment_args\fP"
+.br
+.ti -1c
+.RI "struct \fBimage\fP"
+.br
+.ti -1c
+.RI "struct \fBbox\fP"
+.br
+.ti -1c
+.RI "struct \fBdetection\fP"
+.br
+.ti -1c
+.RI "struct \fBmatrix\fP"
+.br
+.ti -1c
+.RI "struct \fBdata\fP"
+.br
+.ti -1c
+.RI "struct \fBload_args\fP"
+.br
+.ti -1c
+.RI "struct \fBbox_label\fP"
+.br
+.ti -1c
+.RI "struct \fBnode\fP"
+.br
+.ti -1c
+.RI "struct \fBlist\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSECRET_NUM\fP   \-1234"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBnetwork\fP \fBnetwork\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBlayer\fP \fBlayer\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBdetection\fP \fBdetection\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBmatrix\fP \fBmatrix\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBload_args\fP \fBload_args\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBnode\fP \fBnode\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBlist\fP \fBlist\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBACTIVATION\fP { \fBLOGISTIC\fP, \fBRELU\fP, \fBRELIE\fP, \fBLINEAR\fP, \fBRAMP\fP, \fBTANH\fP, \fBPLSE\fP, \fBLEAKY\fP, \fBELU\fP, \fBLOGGY\fP, \fBSTAIR\fP, \fBHARDTAN\fP, \fBLHTAN\fP }"
+.br
+.ti -1c
+.RI "enum \fBBINARY_ACTIVATION\fP { \fBMULT\fP, \fBADD\fP, \fBSUB\fP, \fBDIV\fP }"
+.br
+.ti -1c
+.RI "enum \fBLAYER_TYPE\fP { \fBCONVOLUTIONAL\fP, \fBDECONVOLUTIONAL\fP, \fBCONNECTED\fP, \fBMAXPOOL\fP, \fBSOFTMAX\fP, \fBDETECTION\fP, \fBDROPOUT\fP, \fBCROP\fP, \fBROUTE\fP, \fBCOST\fP, \fBNORMALIZATION\fP, \fBAVGPOOL\fP, \fBLOCAL\fP, \fBSHORTCUT\fP, \fBACTIVE\fP, \fBRNN\fP, \fBGRU\fP, \fBLSTM\fP, \fBCRNN\fP, \fBBATCHNORM\fP, \fBNETWORK\fP, \fBXNOR\fP, \fBREGION\fP, \fBYOLO\fP, \fBREORG\fP, \fBUPSAMPLE\fP, \fBLOGXENT\fP, \fBL2NORM\fP, \fBBLANK\fP }"
+.br
+.ti -1c
+.RI "enum \fBCOST_TYPE\fP { \fBSSE\fP, \fBMASKED\fP, \fBL1\fP, \fBSEG\fP, \fBSMOOTH\fP, \fBWGAN\fP }"
+.br
+.ti -1c
+.RI "enum \fBlearning_rate_policy\fP { \fBCONSTANT\fP, \fBSTEP\fP, \fBEXP\fP, \fBPOLY\fP, \fBSTEPS\fP, \fBSIG\fP, \fBRANDOM\fP }"
+.br
+.ti -1c
+.RI "enum \fBdata_type\fP { \fBCLASSIFICATION_DATA\fP, \fBDETECTION_DATA\fP, \fBCAPTCHA_DATA\fP, \fBREGION_DATA\fP, \fBIMAGE_DATA\fP, \fBCOMPARE_DATA\fP, \fBWRITING_DATA\fP, \fBSWAG_DATA\fP, \fBTAG_DATA\fP, \fBOLD_CLASSIFICATION_DATA\fP, \fBSTUDY_DATA\fP, \fBDET_DATA\fP, \fBSUPER_DATA\fP, \fBLETTERBOX_DATA\fP, \fBREGRESSION_DATA\fP, \fBSEGMENTATION_DATA\fP, \fBINSTANCE_DATA\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmetadata\fP \fBget_metadata\fP (char *file)"
+.br
+.ti -1c
+.RI "\fBtree\fP * \fBread_tree\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBfree_layer\fP (\fBlayer\fP)"
+.br
+.ti -1c
+.RI "\fBnetwork\fP * \fBload_network\fP (char *cfg, char *weights, int clear)"
+.br
+.ti -1c
+.RI "\fBload_args\fP \fBget_base_args\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBfree_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "pthread_t \fBload_data\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBread_data_cfg\fP (char *filename)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBread_cfg\fP (char *filename)"
+.br
+.ti -1c
+.RI "unsigned char * \fBread_file\fP (char *filename)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBresize_data\fP (\fBdata\fP orig, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP * \fBtile_data\fP (\fBdata\fP orig, int divs, int size)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBselect_data\fP (\fBdata\fP *orig, int *inds)"
+.br
+.ti -1c
+.RI "void \fBforward_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBbackward_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBupdate_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float \fBdot_cpu\fP (int N, float *X, int INCX, float *Y, int INCY)"
+.br
+.ti -1c
+.RI "void \fBaxpy_cpu\fP (int N, float ALPHA, float *X, int INCX, float *Y, int INCY)"
+.br
+.ti -1c
+.RI "void \fBcopy_cpu\fP (int N, float *X, int INCX, float *Y, int INCY)"
+.br
+.ti -1c
+.RI "void \fBscal_cpu\fP (int N, float ALPHA, float *X, int INCX)"
+.br
+.ti -1c
+.RI "void \fBfill_cpu\fP (int N, float ALPHA, float *X, int INCX)"
+.br
+.ti -1c
+.RI "void \fBnormalize_cpu\fP (float *x, float *mean, float *variance, int batch, int filters, int spatial)"
+.br
+.ti -1c
+.RI "void \fBsoftmax\fP (float *input, int n, float temp, int stride, float *output)"
+.br
+.ti -1c
+.RI "int \fBbest_3d_shift_r\fP (\fBimage\fP a, \fBimage\fP \fBb\fP, int min, int max)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_label\fP (\fBimage\fP **characters, char *string, int size)"
+.br
+.ti -1c
+.RI "void \fBdraw_label\fP (\fBimage\fP a, int r, int \fBc\fP, \fBimage\fP label, const float *rgb)"
+.br
+.ti -1c
+.RI "void \fBsave_image_png\fP (\fBimage\fP im, const char *name)"
+.br
+.ti -1c
+.RI "void \fBget_next_batch\fP (\fBdata\fP d, int n, int offset, float *X, float *y)"
+.br
+.ti -1c
+.RI "void \fBgrayscale_image_3c\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBnormalize_image\fP (\fBimage\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBmatrix_to_csv\fP (\fBmatrix\fP m)"
+.br
+.ti -1c
+.RI "float \fBtrain_network_sgd\fP (\fBnetwork\fP *net, \fBdata\fP d, int n)"
+.br
+.ti -1c
+.RI "void \fBrgbgr_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBcopy_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBconcat_data\fP (\fBdata\fP d1, \fBdata\fP d2)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_cifar10_data\fP (char *filename)"
+.br
+.ti -1c
+.RI "float \fBmatrix_topk_accuracy\fP (\fBmatrix\fP truth, \fBmatrix\fP guess, int \fBk\fP)"
+.br
+.ti -1c
+.RI "void \fBmatrix_add_matrix\fP (\fBmatrix\fP from, \fBmatrix\fP to)"
+.br
+.ti -1c
+.RI "void \fBscale_matrix\fP (\fBmatrix\fP m, float scale)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBcsv_to_matrix\fP (char *filename)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_accuracies\fP (\fBnetwork\fP *net, \fBdata\fP d, int n)"
+.br
+.ti -1c
+.RI "float \fBtrain_network_datum\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_random_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBdenormalize_connected_layer\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBdenormalize_convolutional_layer\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBstatistics_connected_layer\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBrescale_weights\fP (\fBlayer\fP l, float scale, float trans)"
+.br
+.ti -1c
+.RI "void \fBrgbgr_weights\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "\fBimage\fP * \fBget_weights\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBdemo\fP (char *cfgfile, char *weightfile, float thresh, int cam_index, const char *filename, char **names, int classes, int frame_skip, char *prefix, int avg, float hier_thresh, int w, int h, int fps, int fullscreen)"
+.br
+.ti -1c
+.RI "void \fBget_detection_detections\fP (\fBlayer\fP l, int w, int h, float thresh, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "char * \fBoption_find_str\fP (\fBlist\fP *l, char *key, char *def)"
+.br
+.ti -1c
+.RI "int \fBoption_find_int\fP (\fBlist\fP *l, char *key, int def)"
+.br
+.ti -1c
+.RI "int \fBoption_find_int_quiet\fP (\fBlist\fP *l, char *key, int def)"
+.br
+.ti -1c
+.RI "\fBnetwork\fP * \fBparse_network_cfg\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBsave_weights\fP (\fBnetwork\fP *net, char *filename)"
+.br
+.ti -1c
+.RI "void \fBload_weights\fP (\fBnetwork\fP *net, char *filename)"
+.br
+.ti -1c
+.RI "void \fBsave_weights_upto\fP (\fBnetwork\fP *net, char *filename, int cutoff)"
+.br
+.ti -1c
+.RI "void \fBload_weights_upto\fP (\fBnetwork\fP *net, char *filename, int start, int cutoff)"
+.br
+.ti -1c
+.RI "void \fBzero_objectness\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBget_region_detections\fP (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int *\fBmap\fP, float tree_thresh, int relative, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "int \fBget_yolo_detections\fP (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int *\fBmap\fP, int relative, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "void \fBfree_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBset_batch_network\fP (\fBnetwork\fP *net, int \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBset_temp_network\fP (\fBnetwork\fP *net, float \fBt\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBload_image\fP (char *filename, int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBload_image_color\fP (char *filename, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBcensor_image\fP (\fBimage\fP im, int dx, int dy, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBletterbox_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcrop_image\fP (\fBimage\fP im, int dx, int dy, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcenter_crop_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_min\fP (\fBimage\fP im, int min)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_max\fP (\fBimage\fP im, int max)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBthreshold_image\fP (\fBimage\fP im, float thresh)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmask_to_rgb\fP (\fBimage\fP mask)"
+.br
+.ti -1c
+.RI "int \fBresize_network\fP (\fBnetwork\fP *net, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBfree_matrix\fP (\fBmatrix\fP m)"
+.br
+.ti -1c
+.RI "void \fBtest_resize\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBsave_image\fP (\fBimage\fP \fBp\fP, const char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_image\fP (\fBimage\fP \fBp\fP, const char *name)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcopy_image\fP (\fBimage\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBdraw_box_width\fP (\fBimage\fP a, int x1, int y1, int x2, int y2, int w, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "float \fBget_current_rate\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBcomposite_3d\fP (char *f1, char *f2, char *out, int delta)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_old\fP (char **paths, int n, int m, char **labels, int \fBk\fP, int w, int h)"
+.br
+.ti -1c
+.RI "size_t \fBget_current_batch\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBconstrain_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_network_image_layer\fP (\fBnetwork\fP *net, int \fBi\fP)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBget_network_output_layer\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBtop_predictions\fP (\fBnetwork\fP *net, int n, int *index)"
+.br
+.ti -1c
+.RI "void \fBflip_image\fP (\fBimage\fP a)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBfloat_to_image\fP (int w, int h, int \fBc\fP, float *\fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBghost_image\fP (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+.br
+.ti -1c
+.RI "float \fBnetwork_accuracy\fP (\fBnetwork\fP *net, \fBdata\fP d)"
+.br
+.ti -1c
+.RI "void \fBrandom_distort_image\fP (\fBimage\fP im, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "void \fBfill_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBgrayscale_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBrotate_image_cw\fP (\fBimage\fP im, int times)"
+.br
+.ti -1c
+.RI "double \fBwhat_time_is_it_now\fP ()"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrotate_image\fP (\fBimage\fP m, float rad)"
+.br
+.ti -1c
+.RI "void \fBvisualize_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float \fBbox_iou\fP (\fBbox\fP a, \fBbox\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_all_cifar10\fP ()"
+.br
+.ti -1c
+.RI "\fBbox_label\fP * \fBread_boxes\fP (char *filename, int *n)"
+.br
+.ti -1c
+.RI "\fBbox\fP \fBfloat_to_box\fP (float *f, int stride)"
+.br
+.ti -1c
+.RI "void \fBdraw_detections\fP (\fBimage\fP im, \fBdetection\fP *dets, int num, float thresh, char **names, \fBimage\fP **alphabet, int classes)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBnetwork_predict_data\fP (\fBnetwork\fP *net, \fBdata\fP test)"
+.br
+.ti -1c
+.RI "\fBimage\fP ** \fBload_alphabet\fP ()"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_network_image\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_predict\fP (\fBnetwork\fP *net, float *input)"
+.br
+.ti -1c
+.RI "int \fBnetwork_width\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "int \fBnetwork_height\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_predict_image\fP (\fBnetwork\fP *net, \fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBnetwork_detect\fP (\fBnetwork\fP *net, \fBimage\fP im, float thresh, float hier_thresh, float \fBnms\fP, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "\fBdetection\fP * \fBget_network_boxes\fP (\fBnetwork\fP *net, int w, int h, float thresh, float hier, int *\fBmap\fP, int relative, int *num)"
+.br
+.ti -1c
+.RI "void \fBfree_detections\fP (\fBdetection\fP *dets, int n)"
+.br
+.ti -1c
+.RI "void \fBreset_network_state\fP (\fBnetwork\fP *net, int \fBb\fP)"
+.br
+.ti -1c
+.RI "char ** \fBget_labels\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBdo_nms_obj\fP (\fBdetection\fP *dets, int total, int classes, float thresh)"
+.br
+.ti -1c
+.RI "void \fBdo_nms_sort\fP (\fBdetection\fP *dets, int total, int classes, float thresh)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBmake_matrix\fP (int rows, int cols)"
+.br
+.ti -1c
+.RI "void \fBfree_image\fP (\fBimage\fP m)"
+.br
+.ti -1c
+.RI "float \fBtrain_network\fP (\fBnetwork\fP *net, \fBdata\fP d)"
+.br
+.ti -1c
+.RI "pthread_t \fBload_data_in_thread\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "void \fBload_data_blocking\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "\fBlist\fP * \fBget_paths\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBhierarchy_predictions\fP (float *predictions, int n, \fBtree\fP *hier, int only_leaves, int stride)"
+.br
+.ti -1c
+.RI "void \fBchange_leaves\fP (\fBtree\fP *\fBt\fP, char *leaf_list)"
+.br
+.ti -1c
+.RI "int \fBfind_int_arg\fP (int argc, char **argv, char *arg, int def)"
+.br
+.ti -1c
+.RI "float \fBfind_float_arg\fP (int argc, char **argv, char *arg, float def)"
+.br
+.ti -1c
+.RI "int \fBfind_arg\fP (int argc, char *argv[], char *arg)"
+.br
+.ti -1c
+.RI "char * \fBfind_char_arg\fP (int argc, char **argv, char *arg, char *def)"
+.br
+.ti -1c
+.RI "char * \fBbasecfg\fP (char *cfgfile)"
+.br
+.ti -1c
+.RI "void \fBfind_replace\fP (char *str, char *orig, char *rep, char *output)"
+.br
+.ti -1c
+.RI "void \fBfree_ptrs\fP (void **ptrs, int n)"
+.br
+.ti -1c
+.RI "char * \fBfgetl\fP (FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBstrip\fP (char *s)"
+.br
+.ti -1c
+.RI "float \fBsec\fP (clock_t clocks)"
+.br
+.ti -1c
+.RI "void ** \fBlist_to_array\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "void \fBtop_k\fP (float *a, int n, int \fBk\fP, int *index)"
+.br
+.ti -1c
+.RI "int * \fBread_map\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBerror\fP (const char *s)"
+.br
+.ti -1c
+.RI "int \fBmax_index\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int \fBmax_int_index\fP (int *a, int n)"
+.br
+.ti -1c
+.RI "int \fBsample_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int * \fBrandom_index_order\fP (int min, int max)"
+.br
+.ti -1c
+.RI "void \fBfree_list\fP (\fBlist\fP *l)"
+.br
+.ti -1c
+.RI "float \fBmse_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "float \fBvariance_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "float \fBmag_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBscale_array\fP (float *a, int n, float s)"
+.br
+.ti -1c
+.RI "float \fBmean_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "float \fBsum_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "void \fBnormalize_array\fP (float *a, int n)"
+.br
+.ti -1c
+.RI "int * \fBread_intlist\fP (char *s, int *n, int d)"
+.br
+.ti -1c
+.RI "size_t \fBrand_size_t\fP ()"
+.br
+.ti -1c
+.RI "float \fBrand_normal\fP ()"
+.br
+.ti -1c
+.RI "float \fBrand_uniform\fP (float min, float max)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBgpu_index\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SECRET_NUM   \-1234"
+
+.PP
+Definition at line 8 of file darknet\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBdetection\fP  \fBdetection\fP"
+
+.SS "typedef struct \fBlayer\fP \fBlayer\fP"
+
+.PP
+Definition at line 116 of file darknet\&.h\&.
+.SS "typedef struct \fBlist\fP  \fBlist\fP"
+
+.SS "typedef struct \fBload_args\fP  \fBload_args\fP"
+
+.SS "typedef struct \fBmatrix\fP  \fBmatrix\fP"
+
+.SS "typedef struct \fBnetwork\fP \fBnetwork\fP"
+
+.PP
+Definition at line 113 of file darknet\&.h\&.
+.SS "typedef struct \fBnode\fP  \fBnode\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBACTIVATION\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILOGISTIC \fP\fP
+.TP
+\fB\fIRELU \fP\fP
+.TP
+\fB\fIRELIE \fP\fP
+.TP
+\fB\fILINEAR \fP\fP
+.TP
+\fB\fIRAMP \fP\fP
+.TP
+\fB\fITANH \fP\fP
+.TP
+\fB\fIPLSE \fP\fP
+.TP
+\fB\fILEAKY \fP\fP
+.TP
+\fB\fIELU \fP\fP
+.TP
+\fB\fILOGGY \fP\fP
+.TP
+\fB\fISTAIR \fP\fP
+.TP
+\fB\fIHARDTAN \fP\fP
+.TP
+\fB\fILHTAN \fP\fP
+.PP
+Definition at line 56 of file darknet\&.h\&.
+.SS "enum \fBBINARY_ACTIVATION\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMULT \fP\fP
+.TP
+\fB\fIADD \fP\fP
+.TP
+\fB\fISUB \fP\fP
+.TP
+\fB\fIDIV \fP\fP
+.PP
+Definition at line 60 of file darknet\&.h\&.
+.SS "enum \fBCOST_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISSE \fP\fP
+.TP
+\fB\fIMASKED \fP\fP
+.TP
+\fB\fIL1 \fP\fP
+.TP
+\fB\fISEG \fP\fP
+.TP
+\fB\fISMOOTH \fP\fP
+.TP
+\fB\fIWGAN \fP\fP
+.PP
+Definition at line 96 of file darknet\&.h\&.
+.SS "enum \fBdata_type\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICLASSIFICATION_DATA \fP\fP
+.TP
+\fB\fIDETECTION_DATA \fP\fP
+.TP
+\fB\fICAPTCHA_DATA \fP\fP
+.TP
+\fB\fIREGION_DATA \fP\fP
+.TP
+\fB\fIIMAGE_DATA \fP\fP
+.TP
+\fB\fICOMPARE_DATA \fP\fP
+.TP
+\fB\fIWRITING_DATA \fP\fP
+.TP
+\fB\fISWAG_DATA \fP\fP
+.TP
+\fB\fITAG_DATA \fP\fP
+.TP
+\fB\fIOLD_CLASSIFICATION_DATA \fP\fP
+.TP
+\fB\fISTUDY_DATA \fP\fP
+.TP
+\fB\fIDET_DATA \fP\fP
+.TP
+\fB\fISUPER_DATA \fP\fP
+.TP
+\fB\fILETTERBOX_DATA \fP\fP
+.TP
+\fB\fIREGRESSION_DATA \fP\fP
+.TP
+\fB\fISEGMENTATION_DATA \fP\fP
+.TP
+\fB\fIINSTANCE_DATA \fP\fP
+.PP
+Definition at line 542 of file darknet\&.h\&.
+.SS "enum \fBLAYER_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICONVOLUTIONAL \fP\fP
+.TP
+\fB\fIDECONVOLUTIONAL \fP\fP
+.TP
+\fB\fICONNECTED \fP\fP
+.TP
+\fB\fIMAXPOOL \fP\fP
+.TP
+\fB\fISOFTMAX \fP\fP
+.TP
+\fB\fIDETECTION \fP\fP
+.TP
+\fB\fIDROPOUT \fP\fP
+.TP
+\fB\fICROP \fP\fP
+.TP
+\fB\fIROUTE \fP\fP
+.TP
+\fB\fICOST \fP\fP
+.TP
+\fB\fINORMALIZATION \fP\fP
+.TP
+\fB\fIAVGPOOL \fP\fP
+.TP
+\fB\fILOCAL \fP\fP
+.TP
+\fB\fISHORTCUT \fP\fP
+.TP
+\fB\fIACTIVE \fP\fP
+.TP
+\fB\fIRNN \fP\fP
+.TP
+\fB\fIGRU \fP\fP
+.TP
+\fB\fILSTM \fP\fP
+.TP
+\fB\fICRNN \fP\fP
+.TP
+\fB\fIBATCHNORM \fP\fP
+.TP
+\fB\fINETWORK \fP\fP
+.TP
+\fB\fIXNOR \fP\fP
+.TP
+\fB\fIREGION \fP\fP
+.TP
+\fB\fIYOLO \fP\fP
+.TP
+\fB\fIREORG \fP\fP
+.TP
+\fB\fIUPSAMPLE \fP\fP
+.TP
+\fB\fILOGXENT \fP\fP
+.TP
+\fB\fIL2NORM \fP\fP
+.TP
+\fB\fIBLANK \fP\fP
+.PP
+Definition at line 64 of file darknet\&.h\&.
+.SS "enum \fBlearning_rate_policy\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICONSTANT \fP\fP
+.TP
+\fB\fISTEP \fP\fP
+.TP
+\fB\fIEXP \fP\fP
+.TP
+\fB\fIPOLY \fP\fP
+.TP
+\fB\fISTEPS \fP\fP
+.TP
+\fB\fISIG \fP\fP
+.TP
+\fB\fIRANDOM \fP\fP
+.PP
+Definition at line 425 of file darknet\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void axpy_cpu (int N, float ALPHA, float * X, int INCX, float * Y, int INCY)"
+
+.PP
+Definition at line 178 of file blas\&.c\&.
+.SS "void backward_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 263 of file network\&.c\&.
+.SS "char* basecfg (char * cfgfile)"
+
+.PP
+Definition at line 176 of file utils\&.c\&.
+.SS "int best_3d_shift_r (\fBimage\fP a, \fBimage\fP b, int min, int max)"
+
+.PP
+Definition at line 877 of file image\&.c\&.
+.SS "float box_iou (\fBbox\fP a, \fBbox\fP b)"
+
+.PP
+Definition at line 179 of file box\&.c\&.
+.SS "void censor_image (\fBimage\fP im, int dx, int dy, int w, int h)"
+
+.PP
+Definition at line 411 of file image\&.c\&.
+.SS "\fBimage\fP center_crop_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 792 of file image\&.c\&.
+.SS "void change_leaves (\fBtree\fP * t, char * leaf_list)"
+
+.PP
+Definition at line 7 of file tree\&.c\&.
+.SS "void composite_3d (char * f1, char * f2, char * out, int delta)"
+
+.PP
+Definition at line 909 of file image\&.c\&.
+.SS "\fBdata\fP concat_data (\fBdata\fP d1, \fBdata\fP d2)"
+
+.PP
+Definition at line 1300 of file data\&.c\&.
+.SS "void constrain_image (\fBimage\fP im)"
+
+.PP
+Definition at line 456 of file image\&.c\&.
+.SS "void copy_cpu (int N, float * X, int INCX, float * Y, int INCY)"
+
+.PP
+Definition at line 226 of file blas\&.c\&.
+.SS "\fBdata\fP copy_data (\fBdata\fP d)"
+
+.PP
+Definition at line 1510 of file data\&.c\&.
+.SS "\fBimage\fP copy_image (\fBimage\fP p)"
+
+.PP
+Definition at line 519 of file image\&.c\&.
+.SS "\fBimage\fP crop_image (\fBimage\fP im, int dx, int dy, int w, int h)"
+
+.PP
+Definition at line 857 of file image\&.c\&.
+.SS "\fBmatrix\fP csv_to_matrix (char * filename)"
+
+.PP
+Definition at line 133 of file matrix\&.c\&.
+.SS "void demo (char * cfgfile, char * weightfile, float thresh, int cam_index, const char * filename, char ** names, int classes, int frame_skip, char * prefix, int avg, float hier_thresh, int w, int h, int fps, int fullscreen)"
+
+.PP
+Definition at line 359 of file demo\&.c\&.
+.SS "void denormalize_connected_layer (\fBlayer\fP l)"
+
+.PP
+Definition at line 199 of file connected_layer\&.c\&.
+.SS "void denormalize_convolutional_layer (\fBlayer\fP l)"
+
+.PP
+Definition at line 330 of file convolutional_layer\&.c\&.
+.SS "void do_nms_obj (\fBdetection\fP * dets, int total, int classes, float thresh)"
+
+.PP
+Definition at line 21 of file box\&.c\&.
+.SS "void do_nms_sort (\fBdetection\fP * dets, int total, int classes, float thresh)"
+
+.PP
+Definition at line 58 of file box\&.c\&.
+.SS "float dot_cpu (int N, float * X, int INCX, float * Y, int INCY)"
+
+.PP
+Definition at line 297 of file blas\&.c\&.
+.SS "void draw_box_width (\fBimage\fP a, int x1, int y1, int x2, int y2, int w, float r, float g, float b)"
+
+.PP
+Definition at line 202 of file image\&.c\&.
+.SS "void draw_detections (\fBimage\fP im, \fBdetection\fP * dets, int num, float thresh, char ** names, \fBimage\fP ** alphabet, int classes)"
+
+.PP
+Definition at line 239 of file image\&.c\&.
+.SS "void draw_label (\fBimage\fP a, int r, int c, \fBimage\fP label, const float * rgb)"
+
+.PP
+Definition at line 149 of file image\&.c\&.
+.SS "void error (const char * s)"
+
+.PP
+Definition at line 250 of file utils\&.c\&.
+.SS "char* fgetl (FILE * fp)"
+
+.PP
+Definition at line 332 of file utils\&.c\&.
+.SS "void fill_cpu (int N, float ALPHA, float * X, int INCX)"
+
+.PP
+Definition at line 190 of file blas\&.c\&.
+.SS "void fill_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 839 of file image\&.c\&.
+.SS "int find_arg (int argc, char * argv[], char * arg)"
+
+.PP
+Definition at line 117 of file utils\&.c\&.
+.SS "char* find_char_arg (int argc, char ** argv, char * arg, char * def)"
+
+.PP
+Definition at line 160 of file utils\&.c\&.
+.SS "float find_float_arg (int argc, char ** argv, char * arg, float def)"
+
+.PP
+Definition at line 145 of file utils\&.c\&.
+.SS "int find_int_arg (int argc, char ** argv, char * arg, int def)"
+
+.PP
+Definition at line 130 of file utils\&.c\&.
+.SS "void find_replace (char * str, char * orig, char * rep, char * output)"
+
+.PP
+Definition at line 213 of file utils\&.c\&.
+.SS "void flip_image (\fBimage\fP a)"
+
+.PP
+Definition at line 349 of file image\&.c\&.
+.SS "\fBbox\fP float_to_box (float * f, int stride)"
+
+.PP
+Definition at line 91 of file box\&.c\&.
+.SS "\fBimage\fP float_to_image (int w, int h, int c, float * data)"
+
+.PP
+Definition at line 770 of file image\&.c\&.
+.SS "void forward_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 188 of file network\&.c\&.
+.SS "void free_data (\fBdata\fP d)"
+
+.PP
+Definition at line 626 of file data\&.c\&.
+.SS "void free_detections (\fBdetection\fP * dets, int n)"
+
+.PP
+Definition at line 569 of file network\&.c\&.
+.SS "void free_image (\fBimage\fP m)"
+
+.PP
+Definition at line 1610 of file image\&.c\&.
+.SS "void free_layer (\fBlayer\fP)"
+
+.PP
+Definition at line 6 of file layer\&.c\&.
+.SS "void free_list (\fBlist\fP * l)"
+
+.PP
+Definition at line 67 of file list\&.c\&.
+.SS "void free_matrix (\fBmatrix\fP m)"
+
+.PP
+Definition at line 10 of file matrix\&.c\&.
+.SS "void free_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 716 of file network\&.c\&.
+.SS "void free_ptrs (void ** ptrs, int n)"
+
+.PP
+Definition at line 325 of file utils\&.c\&.
+.SS "\fBload_args\fP get_base_args (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 35 of file network\&.c\&.
+.SS "size_t get_current_batch (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 63 of file network\&.c\&.
+.SS "float get_current_rate (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 90 of file network\&.c\&.
+.SS "void get_detection_detections (\fBlayer\fP l, int w, int h, float thresh, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 225 of file detection_layer\&.c\&.
+.SS "\fBimage\fP get_label (\fBimage\fP ** characters, char * string, int size)"
+
+.PP
+Definition at line 132 of file image\&.c\&.
+.SS "char** get_labels (char * filename)"
+
+.PP
+Definition at line 618 of file data\&.c\&.
+.SS "\fBmetadata\fP get_metadata (char * file)"
+
+.PP
+Definition at line 35 of file option_list\&.c\&.
+.SS "\fBdetection\fP* get_network_boxes (\fBnetwork\fP * net, int w, int h, float thresh, float hier, int * map, int relative, int * num)"
+
+.PP
+Definition at line 562 of file network\&.c\&.
+.SS "\fBimage\fP get_network_image (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 466 of file network\&.c\&.
+.SS "\fBimage\fP get_network_image_layer (\fBnetwork\fP * net, int i)"
+
+.PP
+Definition at line 453 of file network\&.c\&.
+.SS "\fBlayer\fP get_network_output_layer (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 699 of file network\&.c\&.
+.SS "void get_next_batch (\fBdata\fP d, int n, int offset, float * X, float * y)"
+
+.PP
+Definition at line 1377 of file data\&.c\&.
+.SS "\fBlist\fP* get_paths (char * filename)"
+
+.PP
+Definition at line 12 of file data\&.c\&.
+.SS "void get_region_detections (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int * map, float tree_thresh, int relative, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 364 of file region_layer\&.c\&.
+.SS "\fBimage\fP* get_weights (\fBlayer\fP l)"
+
+.PP
+Definition at line 577 of file convolutional_layer\&.c\&.
+.SS "int get_yolo_detections (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int * map, int relative, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 316 of file yolo_layer\&.c\&.
+.SS "void ghost_image (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+
+.PP
+Definition at line 380 of file image\&.c\&.
+.SS "\fBimage\fP grayscale_image (\fBimage\fP im)"
+
+.PP
+Definition at line 1208 of file image\&.c\&.
+.SS "void grayscale_image_3c (\fBimage\fP im)"
+
+.PP
+Definition at line 1190 of file image\&.c\&.
+.SS "void hierarchy_predictions (float * predictions, int n, \fBtree\fP * hier, int only_leaves, int stride)"
+
+.PP
+Definition at line 37 of file tree\&.c\&.
+.SS "\fBimage\fP letterbox_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 960 of file image\&.c\&.
+.SS "void** list_to_array (\fBlist\fP * l)"
+
+.PP
+Definition at line 82 of file list\&.c\&.
+.SS "\fBdata\fP load_all_cifar10 ()"
+
+.PP
+Definition at line 1399 of file data\&.c\&.
+.SS "\fBimage\fP** load_alphabet ()"
+
+.PP
+Definition at line 223 of file image\&.c\&.
+.SS "\fBdata\fP load_cifar10_data (char * filename)"
+
+.PP
+Definition at line 1340 of file data\&.c\&.
+.SS "pthread_t load_data (\fBload_args\fP args)"
+
+.PP
+Definition at line 1098 of file data\&.c\&.
+.SS "void load_data_blocking (\fBload_args\fP args)"
+
+.PP
+Definition at line 1091 of file data\&.c\&.
+.SS "pthread_t load_data_in_thread (\fBload_args\fP args)"
+
+.PP
+Definition at line 1053 of file data\&.c\&.
+.SS "\fBdata\fP load_data_old (char ** paths, int n, int m, char ** labels, int k, int w, int h)"
+
+.PP
+Definition at line 1122 of file data\&.c\&.
+.SS "\fBimage\fP load_image (char * filename, int w, int h, int c)"
+
+.PP
+Definition at line 1466 of file image\&.c\&.
+.SS "\fBimage\fP load_image_color (char * filename, int w, int h)"
+
+.PP
+Definition at line 1482 of file image\&.c\&.
+.SS "\fBnetwork\fP* load_network (char * cfg, char * weights, int clear)"
+
+.PP
+Definition at line 53 of file network\&.c\&.
+.SS "void load_weights (\fBnetwork\fP * net, char * filename)"
+
+.PP
+Definition at line 1292 of file parser\&.c\&.
+.SS "void load_weights_upto (\fBnetwork\fP * net, char * filename, int start, int cutoff)"
+
+.PP
+Definition at line 1202 of file parser\&.c\&.
+.SS "float mag_array (float * a, int n)"
+
+.PP
+Definition at line 571 of file utils\&.c\&.
+.SS "\fBimage\fP make_image (int w, int h, int c)"
+
+.PP
+Definition at line 752 of file image\&.c\&.
+.SS "\fBmatrix\fP make_matrix (int rows, int cols)"
+
+.PP
+Definition at line 91 of file matrix\&.c\&.
+.SS "\fBimage\fP make_random_image (int w, int h, int c)"
+
+.PP
+Definition at line 759 of file image\&.c\&.
+.SS "\fBimage\fP mask_to_rgb (\fBimage\fP mask)"
+
+.PP
+Definition at line 28 of file image\&.c\&.
+.SS "void matrix_add_matrix (\fBmatrix\fP from, \fBmatrix\fP to)"
+
+.PP
+Definition at line 66 of file matrix\&.c\&.
+.SS "void matrix_to_csv (\fBmatrix\fP m)"
+
+.PP
+Definition at line 161 of file matrix\&.c\&.
+.SS "float matrix_topk_accuracy (\fBmatrix\fP truth, \fBmatrix\fP guess, int k)"
+
+.PP
+Definition at line 17 of file matrix\&.c\&.
+.SS "int max_index (float * a, int n)"
+
+.PP
+Definition at line 616 of file utils\&.c\&.
+.SS "int max_int_index (int * a, int n)"
+
+.PP
+Definition at line 602 of file utils\&.c\&.
+.SS "float mean_array (float * a, int n)"
+
+.PP
+Definition at line 484 of file utils\&.c\&.
+.SS "float mse_array (float * a, int n)"
+
+.PP
+Definition at line 543 of file utils\&.c\&.
+.SS "float* network_accuracies (\fBnetwork\fP * net, \fBdata\fP d, int n)"
+
+.PP
+Definition at line 689 of file network\&.c\&.
+.SS "float network_accuracy (\fBnetwork\fP * net, \fBdata\fP d)"
+
+.PP
+Definition at line 681 of file network\&.c\&.
+.SS "void network_detect (\fBnetwork\fP * net, \fBimage\fP im, float thresh, float hier_thresh, float nms, \fBdetection\fP * dets)"
+
+.SS "int network_height (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 589 of file network\&.c\&.
+.SS "float* network_predict (\fBnetwork\fP * net, float * input)"
+
+.PP
+Definition at line 497 of file network\&.c\&.
+.SS "\fBmatrix\fP network_predict_data (\fBnetwork\fP * net, \fBdata\fP test)"
+
+.PP
+Definition at line 616 of file network\&.c\&.
+.SS "float* network_predict_image (\fBnetwork\fP * net, \fBimage\fP im)"
+
+.PP
+Definition at line 579 of file network\&.c\&.
+.SS "int network_width (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 588 of file network\&.c\&.
+.SS "void normalize_array (float * a, int n)"
+
+.PP
+Definition at line 551 of file utils\&.c\&.
+.SS "void normalize_cpu (float * x, float * mean, float * variance, int batch, int filters, int spatial)"
+
+.PP
+Definition at line 147 of file blas\&.c\&.
+.SS "void normalize_image (\fBimage\fP p)"
+
+.PP
+Definition at line 465 of file image\&.c\&.
+.SS "int option_find_int (\fBlist\fP * l, char * key, int def)"
+
+.PP
+Definition at line 112 of file option_list\&.c\&.
+.SS "int option_find_int_quiet (\fBlist\fP * l, char * key, int def)"
+
+.PP
+Definition at line 120 of file option_list\&.c\&.
+.SS "char* option_find_str (\fBlist\fP * l, char * key, char * def)"
+
+.PP
+Definition at line 104 of file option_list\&.c\&.
+.SS "\fBnetwork\fP* parse_network_cfg (char * filename)"
+
+.PP
+Definition at line 730 of file parser\&.c\&.
+.SS "float rand_normal ()"
+
+.PP
+Definition at line 651 of file utils\&.c\&.
+.SS "size_t rand_size_t ()"
+
+.PP
+Definition at line 683 of file utils\&.c\&.
+.SS "float rand_uniform (float min, float max)"
+
+.PP
+Definition at line 695 of file utils\&.c\&.
+.SS "void random_distort_image (\fBimage\fP im, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1330 of file image\&.c\&.
+.SS "int* random_index_order (int min, int max)"
+
+.PP
+Definition at line 94 of file utils\&.c\&.
+.SS "\fBbox_label\fP* read_boxes (char * filename, int * n)"
+
+.PP
+Definition at line 138 of file data\&.c\&.
+.SS "\fBlist\fP * read_cfg (char * filename)"
+
+.PP
+Definition at line 876 of file parser\&.c\&.
+.SS "\fBlist\fP* read_data_cfg (char * filename)"
+
+.PP
+Definition at line 7 of file option_list\&.c\&.
+.SS "unsigned char* read_file (char * filename)"
+
+.PP
+Definition at line 257 of file utils\&.c\&.
+.SS "int* read_intlist (char * s, int * n, int d)"
+
+.PP
+Definition at line 33 of file utils\&.c\&.
+.SS "int* read_map (char * filename)"
+
+.PP
+Definition at line 56 of file utils\&.c\&.
+.SS "\fBtree\fP* read_tree (char * filename)"
+
+.PP
+Definition at line 83 of file tree\&.c\&.
+.SS "void rescale_weights (\fBlayer\fP l, float scale, float trans)"
+
+.PP
+Definition at line 564 of file convolutional_layer\&.c\&.
+.SS "void reset_network_state (\fBnetwork\fP * net, int b)"
+
+.PP
+Definition at line 69 of file network\&.c\&.
+.SS "\fBdata\fP resize_data (\fBdata\fP orig, int w, int h)"
+
+.PP
+Definition at line 1238 of file data\&.c\&.
+.SS "\fBimage\fP resize_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 1347 of file image\&.c\&.
+.SS "\fBimage\fP resize_max (\fBimage\fP im, int max)"
+
+.PP
+Definition at line 981 of file image\&.c\&.
+.SS "\fBimage\fP resize_min (\fBimage\fP im, int min)"
+
+.PP
+Definition at line 997 of file image\&.c\&.
+.SS "int resize_network (\fBnetwork\fP * net, int w, int h)"
+
+.PP
+Definition at line 358 of file network\&.c\&.
+.SS "void rgbgr_image (\fBimage\fP im)"
+
+.PP
+Definition at line 527 of file image\&.c\&.
+.SS "void rgbgr_weights (\fBlayer\fP l)"
+
+.PP
+Definition at line 553 of file convolutional_layer\&.c\&.
+.SS "\fBimage\fP rotate_image (\fBimage\fP m, float rad)"
+
+.PP
+Definition at line 820 of file image\&.c\&.
+.SS "void rotate_image_cw (\fBimage\fP im, int times)"
+
+.PP
+Definition at line 328 of file image\&.c\&.
+.SS "int sample_array (float * a, int n)"
+
+.PP
+Definition at line 589 of file utils\&.c\&.
+.SS "void save_image (\fBimage\fP p, const char * name)"
+
+.PP
+Definition at line 713 of file image\&.c\&.
+.SS "void save_image_png (\fBimage\fP im, const char * name)"
+
+.PP
+Definition at line 696 of file image\&.c\&.
+.SS "void save_weights (\fBnetwork\fP * net, char * filename)"
+
+.PP
+Definition at line 1065 of file parser\&.c\&.
+.SS "void save_weights_upto (\fBnetwork\fP * net, char * filename, int cutoff)"
+
+.PP
+Definition at line 992 of file parser\&.c\&.
+.SS "void scal_cpu (int N, float ALPHA, float * X, int INCX)"
+
+.PP
+Definition at line 184 of file blas\&.c\&.
+.SS "void scale_array (float * a, int n, float s)"
+
+.PP
+Definition at line 581 of file utils\&.c\&.
+.SS "void scale_matrix (\fBmatrix\fP m, float scale)"
+
+.PP
+Definition at line 37 of file matrix\&.c\&.
+.SS "float sec (clock_t clocks)"
+
+.PP
+Definition at line 229 of file utils\&.c\&.
+.SS "\fBdata\fP select_data (\fBdata\fP * orig, int * inds)"
+
+.PP
+Definition at line 1188 of file data\&.c\&.
+.SS "void set_batch_network (\fBnetwork\fP * net, int b)"
+
+.PP
+Definition at line 339 of file network\&.c\&.
+.SS "void set_temp_network (\fBnetwork\fP * net, float t)"
+
+.PP
+Definition at line 330 of file network\&.c\&.
+.SS "void show_image (\fBimage\fP p, const char * name)"
+
+.PP
+Definition at line 575 of file image\&.c\&.
+.SS "void softmax (float * input, int n, float temp, int stride, float * output)"
+
+.PP
+Definition at line 305 of file blas\&.c\&.
+.SS "void statistics_connected_layer (\fBlayer\fP l)"
+
+.PP
+Definition at line 215 of file connected_layer\&.c\&.
+.SS "void strip (char * s)"
+
+.PP
+Definition at line 299 of file utils\&.c\&.
+.SS "float sum_array (float * a, int n)"
+
+.PP
+Definition at line 476 of file utils\&.c\&.
+.SS "void test_resize (char * filename)"
+
+.PP
+Definition at line 1392 of file image\&.c\&.
+.SS "\fBimage\fP threshold_image (\fBimage\fP im, float thresh)"
+
+.PP
+Definition at line 1224 of file image\&.c\&.
+.SS "\fBdata\fP* tile_data (\fBdata\fP orig, int divs, int size)"
+
+.PP
+Definition at line 1211 of file data\&.c\&.
+.SS "void top_k (float * a, int n, int k, int * index)"
+
+.PP
+Definition at line 234 of file utils\&.c\&.
+.SS "void top_predictions (\fBnetwork\fP * net, int n, int * index)"
+
+.PP
+Definition at line 491 of file network\&.c\&.
+.SS "float train_network (\fBnetwork\fP * net, \fBdata\fP d)"
+
+.PP
+Definition at line 314 of file network\&.c\&.
+.SS "float train_network_datum (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 289 of file network\&.c\&.
+.SS "float train_network_sgd (\fBnetwork\fP * net, \fBdata\fP d, int n)"
+
+.PP
+Definition at line 300 of file network\&.c\&.
+.SS "void update_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 213 of file network\&.c\&.
+.SS "float variance_array (float * a, int n)"
+
+.PP
+Definition at line 511 of file utils\&.c\&.
+.SS "void visualize_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 477 of file network\&.c\&.
+.SS "double what_time_is_it_now ()"
+
+.PP
+Definition at line 26 of file utils\&.c\&.
+.SS "void zero_objectness (\fBlayer\fP l)"
+
+.PP
+Definition at line 497 of file region_layer\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int gpu_index"
+
+.PP
+Definition at line 1 of file cuda\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

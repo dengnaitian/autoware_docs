@@ -1,0 +1,700 @@
+.TH "CarSimulatorNS::OpenPlannerCarSimulator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CarSimulatorNS::OpenPlannerCarSimulator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_car_simulator_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOpenPlannerCarSimulator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~OpenPlannerCarSimulator\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetTransformFromTF\fP (const std::string parent_frame, const std::string child_frame, tf::StampedTransform &\fBtransform\fP)"
+.br
+.ti -1c
+.RI "void \fBReadParamFromLaunchFile\fP (\fBPlannerHNS::CAR_BASIC_INFO\fP &\fBm_CarInfo\fP, \fBPlannerHNS::ControllerParams\fP &\fBm_ControlParams\fP)"
+.br
+.ti -1c
+.RI "void \fBdisplayFollowingInfo\fP (const std::vector< \fBPlannerHNS::GPSPoint\fP > &safety_rect, \fBPlannerHNS::WayPoint\fP &curr_pose)"
+.br
+.ti -1c
+.RI "void \fBvisualizePath\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "void \fBvisualizeBehaviors\fP ()"
+.br
+.ti -1c
+.RI "void \fBSaveSimulationData\fP ()"
+.br
+.ti -1c
+.RI "int \fBLoadSimulationData\fP (\fBPlannerHNS::WayPoint\fP &start_p, \fBPlannerHNS::WayPoint\fP &goal_p)"
+.br
+.ti -1c
+.RI "void \fBInitializeSimuCar\fP (\fBPlannerHNS::WayPoint\fP start_pose)"
+.br
+.ti -1c
+.RI "void \fBPublishSpecialTF\fP (const \fBPlannerHNS::WayPoint\fP &\fBpose\fP)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetInitPose\fP (const geometry_msgs::PoseWithCovarianceStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetGoalPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetPredictedObjects\fP (const autoware_msgs::DetectedObjectArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTrafficLightSignals\fP (const autoware_msgs::Signals &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetStepForwardSignals\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCloudClusters\fP (const autoware_msgs::CloudClusterArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetJoyStickInfo\fP (const sensor_msgs::JoyConstPtr &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "timespec \fBm_PlanningTimer\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_BaseLinkFrameID\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_VelodyneFrameID\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bStepByStep\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bSimulatedVelodyne\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bGoNextStep\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlannerH\fP \fBm_GlobalPlanner\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::SimuDecisionMaker\fP * \fBm_LocalPlanner\fP"
+.br
+.ti -1c
+.RI "\fBSimulationNS::TrajectoryFollower\fP \fBm_PredControl\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_PredictedObjects\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPaths\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_JoyDesiredStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbPredictedObjects\fP"
+.br
+.ti -1c
+.RI "bool \fBbInitPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbGoalPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbUseWheelController\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewLightSignal\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::TrafficLight\fP > \fBm_CurrTrafficLight\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::TrafficLight\fP > \fBm_PrevTrafficLight\fP"
+.br
+.ti -1c
+.RI "\fBSimuCommandParams\fP \fBm_SimParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ControllerParams\fP \fBm_ControlParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_CurrBehavior\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "tf::TransformListener \fBm_Listener\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SafetyBorderRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuBoxPose\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_CurrPoseRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalTrajectoriesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_BehaviorStateRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PointerBehaviorStateRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_InternalInfoRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimulatedVelodyne\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_CurrentLocalPath\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_initialpose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_goalpose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_predicted_objects\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_TrafficLightSignals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_StepSignal\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cloud_clusters\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_joystick\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 103 of file op_car_simulator_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CarSimulatorNS::OpenPlannerCarSimulator::OpenPlannerCarSimulator ()"
+
+.PP
+Definition at line 33 of file op_car_simulator_core\&.cpp\&.
+.SS "CarSimulatorNS::OpenPlannerCarSimulator::~OpenPlannerCarSimulator ()\fC [virtual]\fP"
+
+.PP
+Definition at line 250 of file op_car_simulator_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetCloudClusters (const autoware_msgs::CloudClusterArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 277 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetGoalPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 338 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetInitPose (const geometry_msgs::PoseWithCovarianceStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 315 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetJoyStickInfo (const sensor_msgs::JoyConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 256 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetPredictedObjects (const autoware_msgs::DetectedObjectArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 381 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetStepForwardSignals (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 307 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetTrafficLightSignals (const autoware_msgs::Signals & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 495 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)"
+
+.PP
+Definition at line 1043 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)"
+
+.PP
+Definition at line 1099 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)"
+
+.PP
+Definition at line 1078 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)"
+
+.PP
+Definition at line 1029 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)"
+
+.PP
+Definition at line 1036 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)"
+
+.PP
+Definition at line 1015 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMLines (const vector_map_msgs::LineArray & msg)"
+
+.PP
+Definition at line 1050 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)"
+
+.PP
+Definition at line 1106 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)"
+
+.PP
+Definition at line 1022 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)"
+
+.PP
+Definition at line 1085 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)"
+
+.PP
+Definition at line 1064 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)"
+
+.PP
+Definition at line 1057 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)"
+
+.PP
+Definition at line 1071 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)"
+
+.PP
+Definition at line 1092 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::displayFollowingInfo (const std::vector< \fBPlannerHNS::GPSPoint\fP > & safety_rect, \fBPlannerHNS::WayPoint\fP & curr_pose)"
+
+.PP
+Definition at line 402 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::GetTransformFromTF (const std::string parent_frame, const std::string child_frame, tf::StampedTransform & transform)"
+
+.PP
+Definition at line 362 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::InitializeSimuCar (\fBPlannerHNS::WayPoint\fP start_pose)"
+
+.PP
+Definition at line 356 of file op_car_simulator_core\&.cpp\&.
+.SS "int CarSimulatorNS::OpenPlannerCarSimulator::LoadSimulationData (\fBPlannerHNS::WayPoint\fP & start_p, \fBPlannerHNS::WayPoint\fP & goal_p)"
+
+.PP
+Definition at line 713 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::MainLoop ()"
+Local Planning
+.PP
+Localization, Odometry Simulation and Update
+.PP
+Control, Path Following
+.PP
+Local Planning
+.PP
+Localization, Odometry Simulation and Update
+.PP
+Control, Path Following
+.PP
+Definition at line 770 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::PublishSpecialTF (const \fBPlannerHNS::WayPoint\fP & pose)"
+
+.PP
+Definition at line 741 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::ReadParamFromLaunchFile (\fBPlannerHNS::CAR_BASIC_INFO\fP & m_CarInfo, \fBPlannerHNS::ControllerParams\fP & m_ControlParams)"
+
+.PP
+Definition at line 161 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::SaveSimulationData ()"
+
+.PP
+Definition at line 682 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::visualizeBehaviors ()"
+
+.PP
+Definition at line 544 of file op_car_simulator_core\&.cpp\&.
+.SS "void CarSimulatorNS::OpenPlannerCarSimulator::visualizePath (const std::vector< \fBPlannerHNS::WayPoint\fP > & path)"
+
+.PP
+Definition at line 454 of file op_car_simulator_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::bGoalPos\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::bInitPos\fC [protected]\fP"
+
+.PP
+Definition at line 126 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::bNewLightSignal\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::bPredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::bUseWheelController\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file op_car_simulator_core\&.h\&.
+.SS "std::string CarSimulatorNS::OpenPlannerCarSimulator::m_BaseLinkFrameID\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::m_bGoNextStep\fC [protected]\fP"
+
+.PP
+Definition at line 115 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::m_bMap\fC [protected]\fP"
+
+.PP
+Definition at line 116 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::m_bSimulatedVelodyne\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file op_car_simulator_core\&.h\&.
+.SS "bool CarSimulatorNS::OpenPlannerCarSimulator::m_bStepByStep\fC [protected]\fP"
+
+.PP
+Definition at line 113 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP CarSimulatorNS::OpenPlannerCarSimulator::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::ControllerParams\fP CarSimulatorNS::OpenPlannerCarSimulator::m_ControlParams\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP CarSimulatorNS::OpenPlannerCarSimulator::m_CurrBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 138 of file op_car_simulator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::TrafficLight\fP> CarSimulatorNS::OpenPlannerCarSimulator::m_CurrTrafficLight\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file op_car_simulator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > CarSimulatorNS::OpenPlannerCarSimulator::m_GlobalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 122 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::PlannerH\fP CarSimulatorNS::OpenPlannerCarSimulator::m_GlobalPlanner\fC [protected]\fP"
+
+.PP
+Definition at line 118 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP CarSimulatorNS::OpenPlannerCarSimulator::m_JoyDesiredStatus\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file op_car_simulator_core\&.h\&.
+.SS "tf::TransformListener CarSimulatorNS::OpenPlannerCarSimulator::m_Listener\fC [protected]\fP"
+
+.PP
+Definition at line 142 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::SimuDecisionMaker\fP* CarSimulatorNS::OpenPlannerCarSimulator::m_LocalPlanner\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP CarSimulatorNS::OpenPlannerCarSimulator::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 117 of file op_car_simulator_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP CarSimulatorNS::OpenPlannerCarSimulator::m_MapRaw"
+
+.PP
+Definition at line 197 of file op_car_simulator_core\&.h\&.
+.SS "geometry_msgs::Pose CarSimulatorNS::OpenPlannerCarSimulator::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file op_car_simulator_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP CarSimulatorNS::OpenPlannerCarSimulator::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file op_car_simulator_core\&.h\&.
+.SS "timespec CarSimulatorNS::OpenPlannerCarSimulator::m_PlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file op_car_simulator_core\&.h\&.
+.SS "\fBSimulationNS::TrajectoryFollower\fP CarSimulatorNS::OpenPlannerCarSimulator::m_PredControl\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file op_car_simulator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> CarSimulatorNS::OpenPlannerCarSimulator::m_PredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file op_car_simulator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::TrafficLight\fP> CarSimulatorNS::OpenPlannerCarSimulator::m_PrevTrafficLight\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file op_car_simulator_core\&.h\&.
+.SS "\fBSimuCommandParams\fP CarSimulatorNS::OpenPlannerCarSimulator::m_SimParams\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file op_car_simulator_core\&.h\&.
+.SS "std::string CarSimulatorNS::OpenPlannerCarSimulator::m_VelodyneFrameID\fC [protected]\fP"
+
+.PP
+Definition at line 111 of file op_car_simulator_core\&.h\&.
+.SS "ros::NodeHandle CarSimulatorNS::OpenPlannerCarSimulator::nh\fC [protected]\fP"
+
+.PP
+Definition at line 140 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_BehaviorStateRviz\fC [protected]\fP"
+
+.PP
+Definition at line 148 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_CurrentLocalPath\fC [protected]\fP"
+
+.PP
+Definition at line 152 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_CurrPoseRviz\fC [protected]\fP"
+
+.PP
+Definition at line 146 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_InternalInfoRviz\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_LocalTrajectoriesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 147 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_PointerBehaviorStateRviz\fC [protected]\fP"
+
+.PP
+Definition at line 149 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_SafetyBorderRviz\fC [protected]\fP"
+
+.PP
+Definition at line 144 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_SimuBoxPose\fC [protected]\fP"
+
+.PP
+Definition at line 145 of file op_car_simulator_core\&.h\&.
+.SS "ros::Publisher CarSimulatorNS::OpenPlannerCarSimulator::pub_SimulatedVelodyne\fC [protected]\fP"
+
+.PP
+Definition at line 151 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_cloud_clusters\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_cross_walk"
+
+.PP
+Definition at line 211 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_curbs"
+
+.PP
+Definition at line 208 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_dt_lanes"
+
+.PP
+Definition at line 201 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_edges"
+
+.PP
+Definition at line 209 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_goalpose\fC [protected]\fP"
+
+.PP
+Definition at line 156 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_initialpose\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_intersect"
+
+.PP
+Definition at line 202 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_joystick\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_lanes"
+
+.PP
+Definition at line 199 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_lines"
+
+.PP
+Definition at line 204 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_nodes"
+
+.PP
+Definition at line 212 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_points"
+
+.PP
+Definition at line 200 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_predicted_objects\fC [protected]\fP"
+
+.PP
+Definition at line 157 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_signals"
+
+.PP
+Definition at line 206 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_StepSignal\fC [protected]\fP"
+
+.PP
+Definition at line 159 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_stop_line"
+
+.PP
+Definition at line 205 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_TrafficLightSignals\fC [protected]\fP"
+
+.PP
+Definition at line 158 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_vectors"
+
+.PP
+Definition at line 207 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sub_way_areas"
+
+.PP
+Definition at line 210 of file op_car_simulator_core\&.h\&.
+.SS "ros::Subscriber CarSimulatorNS::OpenPlannerCarSimulator::sup_area"
+
+.PP
+Definition at line 203 of file op_car_simulator_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

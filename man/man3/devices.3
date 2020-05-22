@@ -1,0 +1,308 @@
+.TH "devices" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBasicDevice\fP"
+.br
+.ti -1c
+.RI "class \fBLDMRS\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsSopasLayer\fP"
+.br
+.ti -1c
+.RI "class \fBLuxBase\fP"
+.br
+.ti -1c
+.RI "class \fBSopasAnswer\fP"
+.br
+.RI "\fIClass that encapsulates a buffer that was sent as return to a sync call\&. (variable / method) \fP"
+.ti -1c
+.RI "class \fBSopasBase\fP"
+.br
+.ti -1c
+.RI "class \fBSopasEventMessage\fP"
+.br
+.RI "\fIClass that represents a message that was sent by a sensor\&. (Event message) \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMrsCommandId\fP { \fBCmdMrsReset\fP = 0x0000, \fBCmdMrsGetStatus\fP = 0x0001, \fBCmdMrsSetMode\fP = 0x0002, \fBCmdMrsSetConfig\fP = 0x0003, \fBCmdMrsSaveConfig\fP = 0x0004, \fBCmdMrsReadConfig\fP = 0x0005, \fBCmdMrsFlashFirmware\fP = 0x0006, \fBCmdMrsSetParameter\fP = 0x0010, \fBCmdMrsGetParameter\fP = 0x0011, \fBCmdMrsResetDefaultParameters\fP = 0x001A, \fBCmdMrsStartMeasure\fP = 0x0020, \fBCmdMrsStopMeasure\fP = 0x0021, \fBCmdMrsSetNTPTimestampSec\fP = 0x0030, \fBCmdMrsSetNTPTimestampFracSec\fP = 0x0031 }"
+.br
+.ti -1c
+.RI "enum \fBMrsParameterId\fP { \fBParaDataOutputFlag\fP = 0x1012, \fBParaContourPointDensity\fP = 0x1014, \fBParaMinimumObjectAge\fP = 0x1017, \fBParaMaximumPredictionAge\fP = 0x1018, \fBParaScanFrequency\fP = 0x1102, \fBParaStartAngle\fP = 0x1100, \fBParaEndAngle\fP = 0x1101, \fBParaSyncAngleOffset\fP = 0x1103, \fBParaAngularResolutionType\fP = 0x1104, \fBParaRangeReduction\fP = 0x1108, \fBParaUpsideDownMode\fP = 0x1109, \fBParaIgnoreNearRange\fP = 0x110A, \fBParaSensitivityControl\fP = 0x110B, \fBParaMountingX\fP = 0x1200, \fBParaMountingY\fP = 0x1201, \fBParaMountingZ\fP = 0x1202, \fBParaMountingYaw\fP = 0x1203, \fBParaMountingPitch\fP = 0x1204, \fBParaMountingRoll\fP = 0x1205, \fBParaBeamTilt\fP = 0x3302, \fBParaNumSectors\fP = 0x4000, \fBParaSector1StartAngle\fP = 0x4001, \fBParaSector2StartAngle\fP = 0x4002, \fBParaSector3StartAngle\fP = 0x4003, \fBParaSector4StartAngle\fP = 0x4004, \fBParaSector5StartAngle\fP = 0x4005, \fBParaSector6StartAngle\fP = 0x4006, \fBParaSector7StartAngle\fP = 0x4007, \fBParaSector8StartAngle\fP = 0x4008, \fBParaSector1Resolution\fP = 0x4009, \fBParaSector2Resolution\fP = 0x400A, \fBParaSector3Resolution\fP = 0x400B, \fBParaSector4Resolution\fP = 0x400C, \fBParaSector5Resolution\fP = 0x400D, \fBParaSector6Resolution\fP = 0x400E, \fBParaSector7Resolution\fP = 0x400F, \fBParaSector8Resolution\fP = 0x4010, \fBParaOperatingMinutes\fP = 0x3500, \fBParaDetailedError\fP = 0x7000 }"
+.br
+.ti -1c
+.RI "enum \fBDetailedErrorNumber\fP { \fBErrFlexResNumShotsInvalid\fP = 0x006C, \fBErrFlexResSizeOneEighthSectorInvalid\fP = 0x006D, \fBErrFlexResFreqInvalid\fP = 0x006E, \fBErrFlexResSectorsOverlapping\fP = 0x006F, \fBErrFlexResScannerNotIdle\fP = 0x0070, \fBErrFlexResResolutionInvalid\fP = 0x0071, \fBErrFlexResNumSectorsInvalid\fP = 0x0072 }"
+.br
+.ti -1c
+.RI "enum \fBMrsObjectClasses\fP { \fBClassUnclassified\fP = 0, \fBClassUnknownSmall\fP = 1, \fBClassUnknownBig\fP = 2, \fBClassPedestrian\fP = 3, \fBClassBike\fP = 4, \fBClassCar\fP = 5, \fBClassTruck\fP = 6 }"
+.br
+.ti -1c
+.RI "enum \fBAngularResolutionType\fP { \fBResolutionTypeFocused\fP = 0, \fBResolutionTypeConstant\fP = 1, \fBResolutionTypeFlexRes\fP = 2 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBcelsius2Int\fP (double celsius)"
+.br
+.RI "\fIConverts degree Celsius to raw data\&. \fP"
+.ti -1c
+.RI "double \fBint2Celsius\fP (double intValue)"
+.br
+.RI "\fIConverts raw data to degree Celsius\&. \fP"
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBdevices::AngularResolutionType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIResolutionTypeFocused \fP\fP
+.TP
+\fB\fIResolutionTypeConstant \fP\fP
+.TP
+\fB\fIResolutionTypeFlexRes \fP\fP
+.PP
+Definition at line 118 of file LuxBase\&.hpp\&.
+.SS "enum \fBdevices::DetailedErrorNumber\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIErrFlexResNumShotsInvalid \fP\fP
+.TP
+\fB\fIErrFlexResSizeOneEighthSectorInvalid \fP\fP
+.TP
+\fB\fIErrFlexResFreqInvalid \fP\fP
+.TP
+\fB\fIErrFlexResSectorsOverlapping \fP\fP
+.TP
+\fB\fIErrFlexResScannerNotIdle \fP\fP
+.TP
+\fB\fIErrFlexResResolutionInvalid \fP\fP
+.TP
+\fB\fIErrFlexResNumSectorsInvalid \fP\fP
+.PP
+Definition at line 95 of file LuxBase\&.hpp\&.
+.SS "enum \fBdevices::MrsCommandId\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICmdMrsReset \fP\fP
+0x0000 = ID of the Reset command 
+.TP
+\fB\fICmdMrsGetStatus \fP\fP
+0x0001 = ID of the GetStatus command 
+.TP
+\fB\fICmdMrsSetMode \fP\fP
+0x0002 = ID of the SetMode command 
+.TP
+\fB\fICmdMrsSetConfig \fP\fP
+0x0003 = ID of the SetConfig command 
+.TP
+\fB\fICmdMrsSaveConfig \fP\fP
+0x0004 = ID of the SaveConfig command 
+.TP
+\fB\fICmdMrsReadConfig \fP\fP
+0x0005 = ID of the ReadConfig command 
+.TP
+\fB\fICmdMrsFlashFirmware \fP\fP
+0x0006 = ID of the FlashFirmware command 
+.TP
+\fB\fICmdMrsSetParameter \fP\fP
+0x0010 = sets a parameter in the sensor 
+.TP
+\fB\fICmdMrsGetParameter \fP\fP
+0x0011 = reads a parameter from the sensor 
+.TP
+\fB\fICmdMrsResetDefaultParameters \fP\fP
+0x001A = resets all parameters to the factory defaults 
+.TP
+\fB\fICmdMrsStartMeasure \fP\fP
+0x0020 = starts the measurement with the currenly configured settings 
+.TP
+\fB\fICmdMrsStopMeasure \fP\fP
+0x0021 = stops the measurement 
+.TP
+\fB\fICmdMrsSetNTPTimestampSec \fP\fP
+0x0030 = sets NTP seconds 
+.TP
+\fB\fICmdMrsSetNTPTimestampFracSec \fP\fP
+0x0031 = sets NTP fractional seconds 
+.PP
+Definition at line 29 of file LuxBase\&.hpp\&.
+.SS "enum \fBdevices::MrsObjectClasses\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIClassUnclassified \fP\fP
+.TP
+\fB\fIClassUnknownSmall \fP\fP
+.TP
+\fB\fIClassUnknownBig \fP\fP
+.TP
+\fB\fIClassPedestrian \fP\fP
+.TP
+\fB\fIClassBike \fP\fP
+.TP
+\fB\fIClassCar \fP\fP
+.TP
+\fB\fIClassTruck \fP\fP
+.PP
+Definition at line 107 of file LuxBase\&.hpp\&.
+.SS "enum \fBdevices::MrsParameterId\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIParaDataOutputFlag \fP\fP
+.TP
+\fB\fIParaContourPointDensity \fP\fP
+.TP
+\fB\fIParaMinimumObjectAge \fP\fP
+.TP
+\fB\fIParaMaximumPredictionAge \fP\fP
+.TP
+\fB\fIParaScanFrequency \fP\fP
+.TP
+\fB\fIParaStartAngle \fP\fP
+.TP
+\fB\fIParaEndAngle \fP\fP
+.TP
+\fB\fIParaSyncAngleOffset \fP\fP
+.TP
+\fB\fIParaAngularResolutionType \fP\fP
+.TP
+\fB\fIParaRangeReduction \fP\fP
+.TP
+\fB\fIParaUpsideDownMode \fP\fP
+.TP
+\fB\fIParaIgnoreNearRange \fP\fP
+.TP
+\fB\fIParaSensitivityControl \fP\fP
+.TP
+\fB\fIParaMountingX \fP\fP
+.TP
+\fB\fIParaMountingY \fP\fP
+.TP
+\fB\fIParaMountingZ \fP\fP
+.TP
+\fB\fIParaMountingYaw \fP\fP
+.TP
+\fB\fIParaMountingPitch \fP\fP
+.TP
+\fB\fIParaMountingRoll \fP\fP
+.TP
+\fB\fIParaBeamTilt \fP\fP
+.TP
+\fB\fIParaNumSectors \fP\fP
+.TP
+\fB\fIParaSector1StartAngle \fP\fP
+.TP
+\fB\fIParaSector2StartAngle \fP\fP
+.TP
+\fB\fIParaSector3StartAngle \fP\fP
+.TP
+\fB\fIParaSector4StartAngle \fP\fP
+.TP
+\fB\fIParaSector5StartAngle \fP\fP
+.TP
+\fB\fIParaSector6StartAngle \fP\fP
+.TP
+\fB\fIParaSector7StartAngle \fP\fP
+.TP
+\fB\fIParaSector8StartAngle \fP\fP
+.TP
+\fB\fIParaSector1Resolution \fP\fP
+.TP
+\fB\fIParaSector2Resolution \fP\fP
+.TP
+\fB\fIParaSector3Resolution \fP\fP
+.TP
+\fB\fIParaSector4Resolution \fP\fP
+.TP
+\fB\fIParaSector5Resolution \fP\fP
+.TP
+\fB\fIParaSector6Resolution \fP\fP
+.TP
+\fB\fIParaSector7Resolution \fP\fP
+.TP
+\fB\fIParaSector8Resolution \fP\fP
+.TP
+\fB\fIParaOperatingMinutes \fP\fP
+.TP
+\fB\fIParaDetailedError \fP\fP
+.PP
+Definition at line 51 of file LuxBase\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBUINT16\fP devices::celsius2Int (double celsius)"
+
+.PP
+Converts degree Celsius to raw data\&. Conversion from degree Celsius to raw temperature data\&. The raw data is a 10-bit value as is returned from the internal temperature sensor of the LUX\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcelsius\fP The temperature value in degree Celsius 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The temperature converted to raw data\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBint2Celsius()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1112 of file LuxBase\&.cpp\&.
+.SS "double devices::int2Celsius (double intValue)"
+
+.PP
+Converts raw data to degree Celsius\&. This is the inverse function to \fBcelsius2Int()\fP, see there\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIintValue\fP The raw temperature value\&. Although raw data is integer, here a double argument is passed to support the exact conversion of \fIaveraged\fP temperature raw data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The temperature converted to degree Celsius\&. 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcelsius2Int()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1135 of file LuxBase\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

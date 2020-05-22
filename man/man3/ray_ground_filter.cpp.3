@@ -1,0 +1,44 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/filters/packages/points_preprocessor/nodes/ray_ground_filter/ray_ground_filter.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/filters/packages/points_preprocessor/nodes/ray_ground_filter/ray_ground_filter.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <pcl_ros/point_cloud\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <pcl/features/normal_3d\&.h>\fP
+.br
+\fC#include <pcl/features/normal_3d_omp\&.h>\fP
+.br
+\fC#include <pcl/filters/extract_indices\&.h>\fP
+.br
+\fC#include <velodyne_pointcloud/point_types\&.h>\fP
+.br
+\fC#include 'autoware_config_msgs/ConfigRayGroundFilter\&.h'\fP
+.br
+\fC#include <opencv2/core/version\&.hpp>\fP
+.br
+\fC#include <opencv2/contrib/contrib\&.hpp>\fP
+.br
+\fC#include 'ray_ground_filter\&.h'\fP
+.br
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

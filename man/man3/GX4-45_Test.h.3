@@ -1,0 +1,120 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/include/microstrain_driver/GX4-45_Test.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/include/microstrain_driver/GX4-45_Test.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+\fC#include 'mip_gx4_imu\&.h'\fP
+.br
+\fC#include 'mip_gx4_45\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMIP_SDK_GX4_45_IMU_STANDARD_MODE\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_SDK_GX4_45_IMU_DIRECT_MODE\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBNUM_COMMAND_LINE_ARGUMENTS\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PACKET_TIMEOUT_MS\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBSleep\fP(x)   usleep(x*1000\&.0)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprint_header\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint_command_line_usage\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint_packet_stats\fP ()"
+.br
+.ti -1c
+.RI "void \fBfilter_packet_callback\fP (void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+.br
+.ti -1c
+.RI "void \fBahrs_packet_callback\fP (void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+.br
+.ti -1c
+.RI "void \fBgps_packet_callback\fP (void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_hw_specific_device_status\fP (\fBmip_interface\fP *device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP *response_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_3dm_cmd_hw_specific_imu_device_status\fP (\fBmip_interface\fP *device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP *response_buffer)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULT_PACKET_TIMEOUT_MS   1000"
+
+.PP
+Definition at line 60 of file GX4\-45_Test\&.h\&.
+.SS "#define MIP_SDK_GX4_45_IMU_DIRECT_MODE   0x02"
+
+.PP
+Definition at line 56 of file GX4\-45_Test\&.h\&.
+.SS "#define MIP_SDK_GX4_45_IMU_STANDARD_MODE   0x01"
+
+.PP
+\fBCopyright:\fP
+.RS 4
+2014 Lord \fBMicrostrain\fP Sensing Systems\&. 
+.RE
+.PP
+.SH "CHANGES"
+.PP
+THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME\&. AS A \fBRESULT\fP, LORD MICROSTRAIN SENSING SYSTEMS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS\&. 
+.PP
+Definition at line 55 of file GX4\-45_Test\&.h\&.
+.SS "#define NUM_COMMAND_LINE_ARGUMENTS   3"
+
+.PP
+Definition at line 58 of file GX4\-45_Test\&.h\&.
+.SS "#define Sleep(x)   usleep(x*1000\&.0)"
+
+.PP
+Definition at line 63 of file GX4\-45_Test\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void ahrs_packet_callback (void * user_ptr, \fBu8\fP * packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+
+.SS "void filter_packet_callback (void * user_ptr, \fBu8\fP * packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+
+.SS "void gps_packet_callback (void * user_ptr, \fBu8\fP * packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+
+.SS "\fBu16\fP mip_3dm_cmd_hw_specific_device_status (\fBmip_interface\fP * device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP * response_buffer)"
+
+.SS "\fBu16\fP mip_3dm_cmd_hw_specific_imu_device_status (\fBmip_interface\fP * device_interface, \fBu16\fP model_number, \fBu8\fP status_selector, \fBu8\fP * response_buffer)"
+
+.SS "void print_command_line_usage ()"
+
+.SS "void print_header ()"
+
+.SS "void print_packet_stats ()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

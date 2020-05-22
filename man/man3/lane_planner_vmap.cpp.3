@@ -1,0 +1,95 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/lib/lane_planner/lane_planner_vmap.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/lib/lane_planner/lane_planner_vmap.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fstream>\fP
+.br
+\fC#include <tuple>\fP
+.br
+\fC#include <ros/console\&.h>\fP
+.br
+\fC#include <tablet_socket_msgs/Waypoint\&.h>\fP
+.br
+\fC#include <gnss/geo_pos_conv\&.hpp>\fP
+.br
+\fC#include <lane_planner/lane_planner_vmap\&.hpp>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBlane_planner\fP"
+.br
+.ti -1c
+.RI " \fBlane_planner::vmap\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBlane_planner::vmap::write_waypoints\fP (const std::vector< \fBvector_map::Point\fP > &points, double velocity, const std::string &path)"
+.br
+.ti -1c
+.RI "double \fBlane_planner::vmap::compute_reduction\fP (const vector_map::DTLane &d, double w)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::vmap::is_straight_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::vmap::is_curve_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::vmap::is_crossroad_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::vmap::is_clothoid_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBlane_planner::vmap::is_connection_dtlane\fP (const \fBVectorMap\fP &fine_vmap, int index)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBlane_planner::vmap::create_geometry_msgs_point\fP (const \fBvector_map::Point\fP &vp)"
+.br
+.ti -1c
+.RI "\fBvector_map::Point\fP \fBlane_planner::vmap::create_vector_map_point\fP (const \fBgeometry_msgs::Point\fP &gp)"
+.br
+.ti -1c
+.RI "autoware_msgs::DTLane \fBlane_planner::vmap::create_waypoint_follower_dtlane\fP (const vector_map::DTLane &vd)"
+.br
+.ti -1c
+.RI "vector_map::DTLane \fBlane_planner::vmap::create_vector_map_dtlane\fP (const autoware_msgs::DTLane &wd)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBlane_planner::vmap::create_lane_vmap\fP (const \fBVectorMap\fP &vmap, int lno)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBlane_planner::vmap::create_coarse_vmap_from_lane\fP (const autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBlane_planner::vmap::create_coarse_vmap_from_route\fP (const tablet_socket_msgs::route_cmd &route)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBlane_planner::vmap::create_fine_vmap\fP (const \fBVectorMap\fP &lane_vmap, int lno, const \fBVectorMap\fP &coarse_vmap, double search_radius, int waypoint_max)"
+.br
+.ti -1c
+.RI "std::vector< \fBvector_map::Point\fP > \fBlane_planner::vmap::create_branching_points\fP (const \fBVectorMap\fP &vmap)"
+.br
+.ti -1c
+.RI "std::vector< \fBvector_map::Point\fP > \fBlane_planner::vmap::create_merging_points\fP (const \fBVectorMap\fP &vmap)"
+.br
+.ti -1c
+.RI "void \fBlane_planner::vmap::publish_add_marker\fP (const ros::Publisher &\fBpub\fP, const visualization_msgs::Marker &marker, const std::vector< \fBvector_map::Point\fP > &points)"
+.br
+.ti -1c
+.RI "void \fBlane_planner::vmap::publish_delete_marker\fP (const ros::Publisher &\fBpub\fP, const visualization_msgs::Marker &marker)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

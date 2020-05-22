@@ -1,0 +1,170 @@
+.TH "MainWindow" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mainwindow\&.h>\fP
+.PP
+Inherits QMainWindow, and QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBgenerateVirtualScanSlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowMatrixSlot\fP (int beamid)"
+.br
+.ti -1c
+.RI "void \fBrecalculateSlot\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.ti -1c
+.RI "\fBMainWindow\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QPointF \fBconvert2RealPoint\fP (QPoint point)"
+.br
+.ti -1c
+.RI "QPoint \fBconvert2ImagePoint\fP (QPointF point)"
+.br
+.ti -1c
+.RI "void \fBdrawGrid\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawBeam\fP (int beamid)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBROSSub\fP< sensor_msgs::PointCloud2ConstPtr > * \fBvelodyne\fP"
+.br
+.ti -1c
+.RI "\fBROSPub\fP< sensor_msgs::PointCloud2 > * \fBvsros\fP"
+.br
+.ti -1c
+.RI "\fBROSPub\fP< sensor_msgs::LaserScan > * \fBscanros\fP"
+.br
+.ti -1c
+.RI "\fBFastVirtualScan\fP \fBvirtualscan\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBbeams\fP"
+.br
+.ti -1c
+.RI "QVector< double > \fBheights\fP"
+.br
+.ti -1c
+.RI "QImage \fBimage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file mainwindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 8 of file mainwindow\&.cpp\&.
+.SS "MainWindow::~MainWindow ()"
+
+.PP
+Definition at line 17 of file mainwindow\&.cpp\&.
+.SS "MainWindow::MainWindow (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.SS "MainWindow::~MainWindow ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "QPoint MainWindow::convert2ImagePoint (QPointF point)\fC [protected]\fP"
+
+.PP
+Definition at line 230 of file mainwindow\&.cpp\&.
+.SS "QPointF MainWindow::convert2RealPoint (QPoint point)\fC [protected]\fP"
+
+.PP
+Definition at line 219 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::drawBeam (int beamid)\fC [protected]\fP"
+
+.PP
+Definition at line 276 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::drawGrid ()\fC [protected]\fP"
+
+.PP
+Definition at line 241 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::drawPoints ()\fC [protected]\fP"
+
+.PP
+Definition at line 258 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::generateVirtualScanSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 99 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::recalculateSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 136 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::showMatrixSlot (int beamid)\fC [slot]\fP"
+
+.PP
+Definition at line 105 of file mainwindow\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector<double> MainWindow::beams\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file mainwindow\&.h\&.
+.SS "QVector<double> MainWindow::heights\fC [protected]\fP"
+
+.PP
+Definition at line 38 of file mainwindow\&.h\&.
+.SS "QImage MainWindow::image\fC [protected]\fP"
+
+.PP
+Definition at line 39 of file mainwindow\&.h\&.
+.SS "\fBROSPub\fP<sensor_msgs::LaserScan>* MainWindow::scanros\fC [protected]\fP"
+
+.PP
+Definition at line 35 of file mainwindow\&.h\&.
+.SS "\fBROSSub\fP<sensor_msgs::PointCloud2ConstPtr>* MainWindow::velodyne\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file mainwindow\&.h\&.
+.SS "\fBFastVirtualScan\fP MainWindow::virtualscan\fC [protected]\fP"
+
+.PP
+Definition at line 36 of file mainwindow\&.h\&.
+.SS "\fBROSPub\fP<sensor_msgs::PointCloud2>* MainWindow::vsros\fC [protected]\fP"
+
+.PP
+Definition at line 34 of file mainwindow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,111 @@
+.TH "decision_maker::DecisionMakerNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+decision_maker::DecisionMakerNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <decision_maker_node\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDecisionMakerNode\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (void)"
+.br
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBisSubscriberRegistered\fP (\fBcstring_t\fP &topic_name)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBgeometry_msgs::Point\fP \fBVMPoint2GeoPoint\fP (const \fBvector_map_msgs::Point\fP &vp)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstate_machine::StateContext\fP * \fBctx_vehicle\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine::StateContext\fP * \fBctx_mission\fP"
+.br
+.ti -1c
+.RI "\fBstate_machine::StateContext\fP * \fBctx_drive\fP"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBg_vmap\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 113 of file decision_maker_node\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "decision_maker::DecisionMakerNode::DecisionMakerNode (int argc, char ** argv)\fC [inline]\fP"
+
+.PP
+Definition at line 327 of file decision_maker_node\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void decision_maker::DecisionMakerNode::init (void)"
+
+.PP
+Definition at line 5 of file decision_maker_node_init\&.cpp\&.
+.SS "bool decision_maker::DecisionMakerNode::isSubscriberRegistered (\fBcstring_t\fP & topic_name)\fC [inline]\fP"
+
+.PP
+Definition at line 371 of file decision_maker_node\&.hpp\&.
+.SS "void decision_maker::DecisionMakerNode::run (void)"
+
+.PP
+Definition at line 44 of file decision_maker_node_core\&.cpp\&.
+.SS "static \fBgeometry_msgs::Point\fP decision_maker::DecisionMakerNode::VMPoint2GeoPoint (const \fBvector_map_msgs::Point\fP & vp)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 376 of file decision_maker_node\&.hpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 115 of file decision_maker_node\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstate_machine::StateContext\fP* decision_maker::DecisionMakerNode::ctx_drive"
+
+.PP
+Definition at line 324 of file decision_maker_node\&.hpp\&.
+.SS "\fBstate_machine::StateContext\fP* decision_maker::DecisionMakerNode::ctx_mission"
+
+.PP
+Definition at line 323 of file decision_maker_node\&.hpp\&.
+.SS "\fBstate_machine::StateContext\fP* decision_maker::DecisionMakerNode::ctx_vehicle"
+
+.PP
+Definition at line 322 of file decision_maker_node\&.hpp\&.
+.SS "\fBVectorMap\fP decision_maker::DecisionMakerNode::g_vmap"
+
+.PP
+Definition at line 325 of file decision_maker_node\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

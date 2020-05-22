@@ -1,0 +1,1071 @@
+.TH "devices::SopasBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::SopasBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SopasBase\&.hpp>\fP
+.PP
+Inherited by \fBdevices::LdmrsSopasLayer\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSopasProtocol\fP { \fBCoLa_A\fP, \fBCoLa_B\fP }"
+.br
+.ti -1c
+.RI "enum \fBSopasEncoding\fP { \fBByName\fP, \fBByIndex\fP }"
+.br
+.ti -1c
+.RI "enum \fBSopasMessageType\fP { \fBMSG_UNKNOWN\fP, \fBMSG_SEND_EVENT\fP, \fBMSG_READ_VARIABLE_ANSWER\fP, \fBMSG_WRITE_VARIABLE_ANSWER\fP, \fBMSG_INVOKE_METHOD_ANSWER\fP, \fBMSG_METHOD_RESULT_ANSWER\fP, \fBMSG_REGISTER_EVENT_ANSWER\fP, \fBMSG_EVENT_ACKNOWLEDGE\fP, \fBMSG_ERROR\fP }
+.RI "\fItypes of answers of the sensor \fP""
+.br
+.ti -1c
+.RI "typedef void(* \fBDecoderFunction\fP) (\fBSopasEventMessage\fP &frame)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSopasBase\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~SopasBase\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "virtual bool \fBinit\fP (\fBSopasProtocol\fP protocol, std::string ipAddress, \fBUINT16\fP portNumber, bool weWantScanData, bool weWantFieldData, bool readOnlyMode, \fBTcp::DisconnectFunction\fP disconnectFunction, void *obj)"
+.br
+.RI "\fIInitialization\&. \fP"
+.ti -1c
+.RI "bool \fBconnect\fP ()"
+.br
+.RI "\fIConnects to a sensor via tcp and reads the device name\&. \fP"
+.ti -1c
+.RI "bool \fBisConnected\fP ()"
+.br
+.RI "\fIReturns true if the tcp connection is established\&. \fP"
+.ti -1c
+.RI "bool \fBdisconnect\fP ()"
+.br
+.RI "\fICloses the connection to the LMS\&. This is the opposite of \fBinit()\fP\&. \fP"
+.ti -1c
+.RI "bool \fBaction_getScannerTypeAndVersion\fP ()"
+.br
+.RI "\fIReads the scanner type and version variable from the sensor and stores it in the member variables\&. This is done always by name\&. \fP"
+.ti -1c
+.RI "void \fBsetReadOnlyMode\fP (bool mode)"
+.br
+.ti -1c
+.RI "bool \fBisReadOnly\fP ()"
+.br
+.ti -1c
+.RI "bool \fBinvokeMethod\fP (const std::string &methodeName, \fBBYTE\fP *parameters, \fBUINT16\fP parametersLength, \fBSopasAnswer\fP *&answer)"
+.br
+.RI "\fIInvoke a method on the sensor\&. \fP"
+.ti -1c
+.RI "bool \fBinvokeMethod\fP (\fBUINT16\fP index, \fBBYTE\fP *parameters, \fBUINT16\fP parametersLength, \fBSopasAnswer\fP *&answer)"
+.br
+.RI "\fIInvoke a method on the sensor\&. \fP"
+.ti -1c
+.RI "bool \fBreadVariable\fP (const std::string &variableName, \fBSopasAnswer\fP *&answer)"
+.br
+.RI "\fIReads a variable from the sensor by name\&. \fP"
+.ti -1c
+.RI "bool \fBreadVariable\fP (\fBUINT16\fP index, \fBSopasAnswer\fP *&answer)"
+.br
+.RI "\fIReads a variable from the sensor by index\&. \fP"
+.ti -1c
+.RI "bool \fBwriteVariable\fP (const std::string &variableName, \fBBYTE\fP *parameters, \fBUINT16\fP parametersLength)"
+.br
+.RI "\fIWrite a variable to the sensor by name\&. \fP"
+.ti -1c
+.RI "bool \fBwriteVariable\fP (\fBUINT16\fP index, \fBBYTE\fP *parameters, \fBUINT16\fP parametersLength)"
+.br
+.RI "\fIWrite a variable to the sensor by index\&. \fP"
+.ti -1c
+.RI "bool \fBregisterEvent\fP (const std::string &eventName)"
+.br
+.RI "\fIRegisters an event by name\&. \fP"
+.ti -1c
+.RI "bool \fBregisterEvent\fP (\fBUINT16\fP index)"
+.br
+.RI "\fIRegisters an event by index\&. \fP"
+.ti -1c
+.RI "bool \fBunregisterEvent\fP (const std::string &eventName)"
+.br
+.RI "\fIUnregisters an event by name\&. \fP"
+.ti -1c
+.RI "bool \fBunregisterEvent\fP (\fBUINT16\fP index)"
+.br
+.RI "\fIUnregisters an event by index\&. \fP"
+.ti -1c
+.RI "void \fBsetEventCallbackFunction\fP (\fBDecoderFunction\fP decoderFunction, const std::string &eventName)"
+.br
+.ti -1c
+.RI "void \fBsetEventCallbackFunction\fP (\fBDecoderFunction\fP decoderFunction, \fBUINT16\fP eventIndex)"
+.br
+.ti -1c
+.RI "double \fBmakeAngleValid\fP (double angle)"
+.br
+.ti -1c
+.RI "const std::string & \fBgetScannerName\fP () const "
+.br
+.ti -1c
+.RI "const std::string & \fBgetScannerVersion\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBconvertSopasErrorCodeToText\fP (\fBUINT16\fP errorCode)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBEVENTNAME_SUBSCRIBE_EVALCASES\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBEVENTNAME_SUBSCRIBE_SCANS\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBMETHODNAME_LOGIN\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBMETHODNAME_LOGOUT\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBMETHODNAME_SET_SCANCONFIG\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBMETHODNAME_START_MEASURE\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBMETHODNAME_STOP_MEASURE\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBVARIABLENAME_DEVICEIDENT\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBVARIABLENAME_SCANCONFIG\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBVARIABLENAME_DATAOUTPUTRANGE\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBVARIABLENAME_SCANDATACONFIG\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Read_Variable_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Write_Variable_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Invoke_Method_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Method_Result_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Register_Event_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Send_Event_ByIndex\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Read_Variable_Answer\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Write_Variable_Answer\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Invoke_Method_Answer\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Method_Result_Answer\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Register_Event_Answer\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Event_Acknowledge\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Read_Variable_ByName\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Write_Variable_ByName\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Invoke_Method_ByName\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Method_Result_ByName\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Register_Event_ByName\fP"
+.br
+.ti -1c
+.RI "static const std::string \fBCOMMAND_Send_Event_ByName\fP"
+.br
+.ti -1c
+.RI "static const \fBUINT16\fP \fBINDEX_DEVICE_IDENT\fP = 0"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSopasCommand\fP { \fBCMD_UNKNOWN\fP = 0, \fBRI\fP = 1, \fBWI\fP = 2, \fBMI\fP = 3, \fBAI\fP = 4, \fBEI\fP = 5, \fBSI\fP = 6, \fBRA\fP = 7, \fBWA\fP = 8, \fBMA\fP = 9, \fBAA\fP = 10, \fBEA\fP = 11, \fBSA\fP = 12, \fBRN\fP = 20, \fBAN\fP = 21, \fBSN\fP = 22, \fBFA\fP = 50 }"
+.br
+.ti -1c
+.RI "enum \fBState\fP { \fBCONSTRUCTED\fP, \fBCONNECTED\fP }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBreceiveAnswer\fP (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.RI "\fITake answer from read thread and decode it\&. Waits for a certain answer by name\&. Event data (scans) are filtered and processed by read thread\&. \fP"
+.ti -1c
+.RI "bool \fBreceiveAnswer_CoLa_A\fP (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.ti -1c
+.RI "bool \fBreceiveAnswer_CoLa_B\fP (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.ti -1c
+.RI "bool \fBreceiveAnswer\fP (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.ti -1c
+.RI "bool \fBreceiveAnswer_CoLa_A\fP (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.ti -1c
+.RI "bool \fBreceiveAnswer_CoLa_B\fP (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *&answer)"
+.br
+.ti -1c
+.RI "void \fBsendCommandBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP len)"
+.br
+.RI "\fISends the content of the buffer via TCP to the sensor\&. \fP"
+.ti -1c
+.RI "\fBSopasCommand\fP \fBcolaA_decodeCommand\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBSopasCommand\fP \fBstringToSopasCommand\fP (const std::string &cmdString)"
+.br
+.RI "\fIConverts strings in sopas answer buffer to SopasCommand enum\&. \fP"
+.ti -1c
+.RI "std::string \fBsopasCommandToString\fP (\fBSopasCommand\fP cmd)"
+.br
+.ti -1c
+.RI "virtual void \fBevalCaseResultDecoder\fP (\fBSopasEventMessage\fP &msg)=0"
+.br
+.ti -1c
+.RI "virtual void \fBscanDataDecoder\fP (\fBSopasEventMessage\fP &msg)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_scanEventIsRegistered\fP"
+.br
+.ti -1c
+.RI "bool \fBm_fieldEventIsRegistered\fP"
+.br
+.ti -1c
+.RI "bool \fBm_weWantScanData\fP"
+.br
+.RI "\fIFlag to enable/disable scan data reception\&. \fP"
+.ti -1c
+.RI "bool \fBm_weWantFieldData\fP"
+.br
+.RI "\fIFlag to enable/disable protection field data reception\&. \fP"
+.ti -1c
+.RI "\fBState\fP \fBm_state\fP"
+.br
+.RI "\fIDevice info\&. \fP"
+.ti -1c
+.RI "std::string \fBm_scannerName\fP"
+.br
+.RI "\fIRead from scanner\&. \fP"
+.ti -1c
+.RI "std::string \fBm_scannerVersion\fP"
+.br
+.RI "\fIRead from scanner\&. \fP"
+.ti -1c
+.RI "bool \fBm_beVerbose\fP"
+.br
+.ti -1c
+.RI "bool \fBm_isLoggedIn\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class \fBSopasBase\fP encapsuls the communication to a sensor via SopasProtocol\&. It offers the functions: 
+.IP "\(bu" 2
+invokeMethode
+.br
+
+.IP "\(bu" 2
+readVariable
+.br
+
+.IP "\(bu" 2
+writeVariable
+.br
+
+.IP "\(bu" 2
+(un)registerEvent
+.br
+
+.PP
+.PP
+Callback functions are used to inform you about incoming events (scans or eval cases)\&. 
+.PP
+Definition at line 35 of file SopasBase\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef void(* devices::SopasBase::DecoderFunction) (\fBSopasEventMessage\fP &frame)"
+
+.PP
+Definition at line 106 of file SopasBase\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdevices::SopasBase::SopasCommand\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICMD_UNKNOWN \fP\fP
+Unknown command\&. 
+.TP
+\fB\fIRI \fP\fP
+Read Variable\&. 
+.TP
+\fB\fIWI \fP\fP
+Write Variable\&. 
+.TP
+\fB\fIMI \fP\fP
+Invoke Method\&. 
+.TP
+\fB\fIAI \fP\fP
+Method Result\&. 
+.TP
+\fB\fIEI \fP\fP
+Register Event\&. 
+.TP
+\fB\fISI \fP\fP
+Send Event\&. 
+.TP
+\fB\fIRA \fP\fP
+Read Variable Answer\&. 
+.TP
+\fB\fIWA \fP\fP
+Write Variable Answer\&. 
+.TP
+\fB\fIMA \fP\fP
+Invoke Method Answer\&. 
+.TP
+\fB\fIAA \fP\fP
+Method Result Answer\&. 
+.TP
+\fB\fIEA \fP\fP
+Register Event Answer\&. 
+.TP
+\fB\fISA \fP\fP
+Event Acknowledge\&. 
+.TP
+\fB\fIRN \fP\fP
+Read Variable (by name) 
+.TP
+\fB\fIAN \fP\fP
+Method Result (ny name) 
+.TP
+\fB\fISN \fP\fP
+Send Event (by name, receive) 
+.TP
+\fB\fIFA \fP\fP
+Error\&. 
+.PP
+Definition at line 276 of file SopasBase\&.hpp\&.
+.SS "enum \fBdevices::SopasBase::SopasEncoding\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIByName \fP\fP
+read/write variable, invoke methods by name 
+.TP
+\fB\fIByIndex \fP\fP
+read/write variable, invoke methods by index (indexes will be generated !!!) 
+.PP
+Definition at line 80 of file SopasBase\&.hpp\&.
+.SS "enum \fBdevices::SopasBase::SopasMessageType\fP"
+
+.PP
+types of answers of the sensor 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMSG_UNKNOWN \fP\fP
+Unknown message\&. 
+.TP
+\fB\fIMSG_SEND_EVENT \fP\fP
+Send Event\&. 
+.TP
+\fB\fIMSG_READ_VARIABLE_ANSWER \fP\fP
+Read Variable Answer\&. 
+.TP
+\fB\fIMSG_WRITE_VARIABLE_ANSWER \fP\fP
+Write Variable Answer\&. 
+.TP
+\fB\fIMSG_INVOKE_METHOD_ANSWER \fP\fP
+Invoke Method Answer\&. 
+.TP
+\fB\fIMSG_METHOD_RESULT_ANSWER \fP\fP
+Method Result Answer\&. 
+.TP
+\fB\fIMSG_REGISTER_EVENT_ANSWER \fP\fP
+Register Event Answer\&. 
+.TP
+\fB\fIMSG_EVENT_ACKNOWLEDGE \fP\fP
+Event Acknowledge -Answer to register event\&. 
+.TP
+\fB\fIMSG_ERROR \fP\fP
+Error\&. 
+.PP
+Definition at line 87 of file SopasBase\&.hpp\&.
+.SS "enum \fBdevices::SopasBase::SopasProtocol\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICoLa_A \fP\fP
+\fBCommand\fP Language ASCI\&. 
+.TP
+\fB\fICoLa_B \fP\fP
+\fBCommand\fP Language binary\&. 
+.PP
+Definition at line 74 of file SopasBase\&.hpp\&.
+.SS "enum \fBdevices::SopasBase::State\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICONSTRUCTED \fP\fP
+Object has been constructed\&. Use \fBinit()\fP to go into CONNECTED state\&. Object is now connected\&. Use \fBrun()\fP to go into RUNNING state, or \fBdisconnect()\fP to go back into CONSTRUCTED state\&. 
+.TP
+\fB\fICONNECTED \fP\fP
+Object is connected and emitting data\&. Use stop() to go back into CONNECTED, or \fBdisconnect()\fP to go back into CONSTRUCTED state\&. 
+.PP
+Definition at line 298 of file SopasBase\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::SopasBase::SopasBase ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 59 of file SopasBase\&.cpp\&.
+.SS "devices::SopasBase::~SopasBase ()\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 69 of file SopasBase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool devices::SopasBase::action_getScannerTypeAndVersion ()"
+
+.PP
+Reads the scanner type and version variable from the sensor and stores it in the member variables\&. This is done always by name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&.
+.RE
+.PP
+Get scanner type and version string Also used as connection check\&.
+.PP
+true: Information was read, false if an error occured 
+.PP
+Definition at line 1550 of file SopasBase\&.cpp\&.
+.SS "\fBSopasBase::SopasCommand\fP devices::SopasBase::colaA_decodeCommand (std::string * rxData)\fC [protected]\fP"
+Read command bytes from buffer (2 bytes followed by space) and convert string to enum value accordingly\&. The command string is removed from input\&. 
+.PP
+Definition at line 1370 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::connect ()"
+
+.PP
+Connects to a sensor via tcp and reads the device name\&. 
+.PP
+Definition at line 124 of file SopasBase\&.cpp\&.
+.SS "std::string devices::SopasBase::convertSopasErrorCodeToText (\fBUINT16\fP errorCode)\fC [static]\fP"
+
+.PP
+Definition at line 918 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::disconnect ()"
+
+.PP
+Closes the connection to the LMS\&. This is the opposite of \fBinit()\fP\&. Switches this device from the CONNECTED state back in the CONSTRUCTED state\&.
+.PP
+\fBReturns:\fP
+.RS 4
+True if the device is now in the CONSTRUCTED state 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file SopasBase\&.cpp\&.
+.SS "virtual void devices::SopasBase::evalCaseResultDecoder (\fBSopasEventMessage\fP & msg)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "const std::string& devices::SopasBase::getScannerName () const\fC [inline]\fP"
+
+.PP
+Definition at line 268 of file SopasBase\&.hpp\&.
+.SS "const std::string& devices::SopasBase::getScannerVersion () const\fC [inline]\fP"
+
+.PP
+Definition at line 269 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::init (\fBSopasProtocol\fP protocol, std::string ipAddress, \fBUINT16\fP portNumber, bool weWantScanData, bool weWantFieldData, bool readOnlyMode, \fBTcp::DisconnectFunction\fP disconnectFunction, void * obj)\fC [virtual]\fP"
+
+.PP
+Initialization\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprotocol\fP 
+.br
+\fIipAddress\fP 
+.br
+\fIportNumber\fP 
+.br
+\fIweWantScanData\fP 
+.br
+\fIweWantFieldData\fP 
+.br
+\fIreadOnlyMode\fP 
+.br
+\fIdisconnectFunction\fP Function to be called on disconnect events\&. obj = pointer to the object that holds the disconnectFunction 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 96 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::invokeMethod (const std::string & methodeName, \fBBYTE\fP * parameters, \fBUINT16\fP parametersLength, \fBSopasAnswer\fP *& answer)"
+
+.PP
+Invoke a method on the sensor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImethodeName\fP name of the method to call 
+.br
+\fIparameters\fP byte buffer with parameter (NOTE: you have to fill this buffer with the correct protocol - cola-a or cola-b) 
+.br
+\fIparametersLength\fP length of the byte buffer 
+.br
+\fIanswer\fP pointer to an answer message (NOTE: memory for this object will be allocated - free this after usage !!!) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1650 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::invokeMethod (\fBUINT16\fP index, \fBBYTE\fP * parameters, \fBUINT16\fP parametersLength, \fBSopasAnswer\fP *& answer)"
+
+.PP
+Invoke a method on the sensor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP index of the method to call 
+.br
+\fIparameters\fP byte buffer with parameter (NOTE: you have to fill this buffer with the correct protocol - cola-a or cola-b) 
+.br
+\fIparametersLength\fP length of the byte buffer 
+.br
+\fIanswer\fP pointer to an answer message (NOTE: memory for this object will be allocated - free this after usage !!!) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1707 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::isConnected ()"
+
+.PP
+Returns true if the tcp connection is established\&. 
+.PP
+Definition at line 179 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::isReadOnly ()"
+
+.PP
+Definition at line 209 of file SopasBase\&.cpp\&.
+.SS "double devices::SopasBase::makeAngleValid (double angle)"
+Map angle to range ]PI\&.\&.-PI] 
+.PP
+Definition at line 2148 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::readVariable (const std::string & variableName, \fBSopasAnswer\fP *& answer)"
+
+.PP
+Reads a variable from the sensor by name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvariableName\fP name of the variable 
+.br
+\fIanswer\fP pointer to an answer message (NOTE: memory for this object will be allocated - free this after usage !!!) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1756 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::readVariable (\fBUINT16\fP index, \fBSopasAnswer\fP *& answer)"
+
+.PP
+Reads a variable from the sensor by index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP of the variable 
+.br
+\fIanswer\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1798 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+
+.PP
+Take answer from read thread and decode it\&. Waits for a certain answer by name\&. Event data (scans) are filtered and processed by read thread\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcmd\fP Waits for the answer to this command\&. 
+.br
+\fIname\fP name of the method/variable\&. 
+.br
+\fItimeout\fP in [ms] 
+.br
+\fIanswer\fP Pointer to answer\&. Will be filled if answer contains parameter\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no error occurred\&.
+.RE
+.PP
+Take answer from read thread and decode it\&. Waits for a certain answer by name\&. Event data (scans) are filtered and processed by read thread\&.
+.PP
+By Name: name = '<Name>' timeout: Number of cycles to check for an answer (approx\&. 1ms per cycle) 
+.PP
+Definition at line 541 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+Take answer from read thread and decode it\&. Waits for a certain answer by index\&. Event data (scans) are filtered and processed by read thread\&.
+.PP
+By Name: index = '<Index>' timeout: Number of cycles to check for an answer (approx\&. 1ms per cycle) 
+.PP
+Definition at line 568 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer_CoLa_A (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+
+.PP
+Definition at line 687 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer_CoLa_A (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+
+.PP
+Definition at line 589 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer_CoLa_B (\fBSopasCommand\fP cmd, std::string name, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+
+.PP
+Definition at line 783 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::receiveAnswer_CoLa_B (\fBSopasCommand\fP cmd, \fBUINT16\fP index, \fBUINT32\fP timeout, \fBSopasAnswer\fP *& answer)\fC [protected]\fP"
+
+.PP
+Definition at line 986 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::registerEvent (const std::string & eventName)"
+
+.PP
+Registers an event by name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeventName\fP name of the event 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1963 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::registerEvent (\fBUINT16\fP index)"
+
+.PP
+Registers an event by index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP of the event\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2007 of file SopasBase\&.cpp\&.
+.SS "virtual void devices::SopasBase::scanDataDecoder (\fBSopasEventMessage\fP & msg)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.SS "void devices::SopasBase::sendCommandBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP len)\fC [protected]\fP"
+
+.PP
+Sends the content of the buffer via TCP to the sensor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP pointer to the buffer 
+.br
+\fIlen\fP length of buffer to be sent\&.
+.RE
+.PP
+Send contents of buffer to scanner using according framing\&.
+.PP
+Send buffer is limited to 1024 byte! 
+.PP
+Definition at line 507 of file SopasBase\&.cpp\&.
+.SS "void devices::SopasBase::setEventCallbackFunction (\fBDecoderFunction\fP decoderFunction, const std::string & eventName)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdecoderFunction\fP 
+.br
+\fIeventName\fP 
+.RE
+.PP
+
+.PP
+Definition at line 250 of file SopasBase\&.hpp\&.
+.SS "void devices::SopasBase::setEventCallbackFunction (\fBDecoderFunction\fP decoderFunction, \fBUINT16\fP eventIndex)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdecoderFunction\fP 
+.br
+\fIeventIndex\fP 
+.RE
+.PP
+
+.PP
+Definition at line 260 of file SopasBase\&.hpp\&.
+.SS "void devices::SopasBase::setReadOnlyMode (bool mode)"
+
+.PP
+Definition at line 202 of file SopasBase\&.cpp\&.
+.SS "std::string devices::SopasBase::sopasCommandToString (\fBSopasCommand\fP cmd)\fC [protected]\fP"
+
+.PP
+Definition at line 1462 of file SopasBase\&.cpp\&.
+.SS "\fBSopasBase::SopasCommand\fP devices::SopasBase::stringToSopasCommand (const std::string & cmdString)\fC [protected]\fP"
+
+.PP
+Converts strings in sopas answer buffer to SopasCommand enum\&. 
+.PP
+Definition at line 1377 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::unregisterEvent (const std::string & eventName)"
+
+.PP
+Unregisters an event by name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeventName\fP name of the event 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2104 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::unregisterEvent (\fBUINT16\fP index)"
+
+.PP
+Unregisters an event by index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP of the event 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2055 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::writeVariable (const std::string & variableName, \fBBYTE\fP * parameters, \fBUINT16\fP parametersLength)"
+
+.PP
+Write a variable to the sensor by name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvariableName\fP name of the variable\&. 
+.br
+\fIparameters\fP byte buffer with parameter (NOTE: you have to fill this buffer with the correct protocol - cola-a or cola-b) 
+.br
+\fIparametersLength\fP length of the byte buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1836 of file SopasBase\&.cpp\&.
+.SS "bool devices::SopasBase::writeVariable (\fBUINT16\fP index, \fBBYTE\fP * parameters, \fBUINT16\fP parametersLength)"
+
+.PP
+Write a variable to the sensor by index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP of the variable 
+.br
+\fIparameters\fP byte buffer with parameter (NOTE: you have to fill this buffer with the correct protocol - cola-a or cola-b) 
+.br
+\fIparametersLength\fP length of the byte buffer 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if no errors occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1907 of file SopasBase\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string devices::SopasBase::COMMAND_Event_Acknowledge\fC [static]\fP"
+
+.PP
+Definition at line 63 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Invoke_Method_Answer\fC [static]\fP"
+
+.PP
+Definition at line 60 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Invoke_Method_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 53 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Invoke_Method_ByName\fC [static]\fP"
+
+.PP
+Definition at line 67 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Method_Result_Answer\fC [static]\fP"
+
+.PP
+Definition at line 61 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Method_Result_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 54 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Method_Result_ByName\fC [static]\fP"
+
+.PP
+Definition at line 68 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Read_Variable_Answer\fC [static]\fP"
+
+.PP
+Definition at line 58 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Read_Variable_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 51 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Read_Variable_ByName\fC [static]\fP"
+
+.PP
+Definition at line 65 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Register_Event_Answer\fC [static]\fP"
+
+.PP
+Definition at line 62 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Register_Event_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 55 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Register_Event_ByName\fC [static]\fP"
+
+.PP
+Definition at line 69 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Send_Event_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 56 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Send_Event_ByName\fC [static]\fP"
+
+.PP
+Definition at line 70 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Write_Variable_Answer\fC [static]\fP"
+
+.PP
+Definition at line 59 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Write_Variable_ByIndex\fC [static]\fP"
+
+.PP
+Definition at line 52 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::COMMAND_Write_Variable_ByName\fC [static]\fP"
+
+.PP
+Definition at line 66 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::EVENTNAME_SUBSCRIBE_EVALCASES\fC [static]\fP"
+
+.PP
+Definition at line 38 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::EVENTNAME_SUBSCRIBE_SCANS\fC [static]\fP"
+
+.PP
+Definition at line 39 of file SopasBase\&.hpp\&.
+.SS "const \fBUINT16\fP devices::SopasBase::INDEX_DEVICE_IDENT = 0\fC [static]\fP"
+
+.PP
+Definition at line 72 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_beVerbose\fC [protected]\fP"
+
+.PP
+Definition at line 356 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_fieldEventIsRegistered\fC [protected]\fP"
+
+.PP
+Definition at line 347 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_isLoggedIn\fC [protected]\fP"
+
+.PP
+Definition at line 358 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_scanEventIsRegistered\fC [protected]\fP"
+
+.PP
+Definition at line 346 of file SopasBase\&.hpp\&.
+.SS "std::string devices::SopasBase::m_scannerName\fC [protected]\fP"
+
+.PP
+Read from scanner\&. 
+.PP
+Definition at line 353 of file SopasBase\&.hpp\&.
+.SS "std::string devices::SopasBase::m_scannerVersion\fC [protected]\fP"
+
+.PP
+Read from scanner\&. 
+.PP
+Definition at line 354 of file SopasBase\&.hpp\&.
+.SS "\fBState\fP devices::SopasBase::m_state\fC [protected]\fP"
+
+.PP
+Device info\&. 
+.PP
+Definition at line 352 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_weWantFieldData\fC [protected]\fP"
+
+.PP
+Flag to enable/disable protection field data reception\&. 
+.PP
+Definition at line 349 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasBase::m_weWantScanData\fC [protected]\fP"
+
+.PP
+Flag to enable/disable scan data reception\&. 
+.PP
+Definition at line 348 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::METHODNAME_LOGIN\fC [static]\fP"
+
+.PP
+Definition at line 40 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::METHODNAME_LOGOUT\fC [static]\fP"
+
+.PP
+Definition at line 41 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::METHODNAME_SET_SCANCONFIG\fC [static]\fP"
+
+.PP
+Definition at line 42 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::METHODNAME_START_MEASURE\fC [static]\fP"
+
+.PP
+Definition at line 43 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::METHODNAME_STOP_MEASURE\fC [static]\fP"
+
+.PP
+Definition at line 44 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::VARIABLENAME_DATAOUTPUTRANGE\fC [static]\fP"
+
+.PP
+Definition at line 47 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::VARIABLENAME_DEVICEIDENT\fC [static]\fP"
+
+.PP
+Definition at line 45 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::VARIABLENAME_SCANCONFIG\fC [static]\fP"
+
+.PP
+Definition at line 46 of file SopasBase\&.hpp\&.
+.SS "const std::string devices::SopasBase::VARIABLENAME_SCANDATACONFIG\fC [static]\fP"
+
+.PP
+Definition at line 48 of file SopasBase\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

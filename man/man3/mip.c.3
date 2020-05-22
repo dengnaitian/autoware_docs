@@ -1,0 +1,476 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBu16\fP \fBmip_init\fP (\fBu8\fP *mip_buffer, \fBu16\fP buffer_size, \fBu8\fP descriptor_set)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_is_initialized\fP (\fBu8\fP *mip_buffer, \fBu8\fP descriptor_set)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_add_field\fP (\fBu8\fP *mip_buffer, \fBu16\fP buffer_size, void *field_data, \fBu16\fP data_size, \fBu16\fP data_descriptor)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_add_formatted_field\fP (\fBu8\fP *mip_buffer, \fBu16\fP buffer_size, void *field)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_finalize\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_is_mip_packet\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_get_packet_size\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_get_first_field\fP (\fBu8\fP *mip_buffer, \fBmip_field_header\fP **field_header, \fBu8\fP **field_data, \fBu16\fP *field_offset)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_get_next_field\fP (\fBu8\fP *mip_buffer, \fBmip_field_header\fP **field_header, \fBu8\fP **field_data, \fBu16\fP *field_offset)"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBmip_get_packet_descriptor_set\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBmip_get_payload_size\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu8\fP * \fBmip_get_payload_ptr\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_is_checksum_valid\fP (\fBu8\fP *mip_buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_calculate_checksum\fP (\fBu8\fP *mip_buffer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBu16\fP mip_add_field (\fBu8\fP * mip_buffer, \fBu16\fP buffer_size, void * field_data, \fBu16\fP data_size, \fBu16\fP data_descriptor)"
+
+.SH "DESCRIPTION"
+.PP
+Adds a field to an initialized MIP packet buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory used to construct the mip packet\&. 
+.br
+\fIu16\fP buffer_size - size of the mip mempory buffer\&. 
+.br
+\fIvoid\fP *field_data - buffer containing the field data\&. 
+.br
+\fIu8\fP u16 data_size - size of the field data (exlcuding the field header)\&. 
+.br
+\fIu8\fP u16 data_descriptor - the data descriptor for the field\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - field added to MIP packet\&.
+.br
+.br
+\fIMIP_ERROR\fP - A pointer is NULL\&.
+.br
+.br
+\fIMIP_MEMORY_ERROR\fP - Not enough room in the mip buffer to add the field or
+.br
+ the packet will be too large for a MIP\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 157 of file mip\&.c\&.
+.SS "\fBu16\fP mip_add_formatted_field (\fBu8\fP * mip_buffer, \fBu16\fP buffer_size, void * field)"
+
+.SH "DESCRIPTION"
+.PP
+Adds a pre-formatted field (header and data already assembled) to an initialized MIP packet buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory used to construct the mip packet\&. 
+.br
+\fIu16\fP buffer_size - size of the mip mempory buffer\&. 
+.br
+\fIvoid\fP *field - buffer containing the field (must have header and data already assembled)\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - field added to MIP packet\&.
+.br
+.br
+\fIMIP_ERROR\fP - A pointer is NULL\&.
+.br
+.br
+\fIMIP_MEMORY_ERROR\fP - Not enough room in the mip buffer to add the field or
+.br
+ the packet will be too large for a MIP\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 225 of file mip\&.c\&.
+.SS "\fBu16\fP mip_calculate_checksum (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Calculates the 16-bit Fletcher checksum for the MIP packet\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The MIP packet checksum, if mip_buffer contains a valid MIP packet\&.
+.br
+ 0x00 otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 669 of file mip\&.c\&.
+.SS "\fBu16\fP mip_finalize (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Calculates the MIP checksum and updates the checksum field in the buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory used to construct the mip packet\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Size of the MIP Packet in bytes\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 280 of file mip\&.c\&.
+.SS "\fBu16\fP mip_get_first_field (\fBu8\fP * mip_buffer, \fBmip_field_header\fP ** field_header, \fBu8\fP ** field_data, \fBu16\fP * field_offset)"
+
+.SH "DESCRIPTION"
+.PP
+Gets the first MIP field (a wrapper for mip_get_next_field that makes it easier to use)\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.br
+\fImip_field_header\fP **field_header - pointer to the first field header\&. 
+.br
+\fIu8\fP **field_data - pointer to the first field data\&. 
+.br
+\fIu16\fP *field_offset - integer offset from start of packet payload of first field\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+See mip_get_next_field definition\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 407 of file mip\&.c\&.
+.SS "\fBu16\fP mip_get_next_field (\fBu8\fP * mip_buffer, \fBmip_field_header\fP ** field_header, \fBu8\fP ** field_data, \fBu16\fP * field_offset)"
+
+.SH "DESCRIPTION"
+.PP
+Gets the next data field at \fCfield_offset\fP\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.br
+\fImip_field_header\fP **field_header - pointer to the current field header\&. 
+.br
+\fIu8\fP **field_data - pointer to the current field data\&. 
+.br
+\fIu16\fP *field_offset - integer offset from start of packet payload of next field\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - c\\ field_header and \fCfield_data\fP contain the parsed information\&.
+.br
+.br
+\fIMIP_ERROR\fP - A pointer is NULL\&.
+.br
+.br
+\fIMIP_INVALID_PACKET\fP - The buffer does not contain a valid MIP packet\&. 
+.br
+\fIMIP_FIELD_NOT_AVAILABLE\fP - The requested field does not exist\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 449 of file mip\&.c\&.
+.SS "\fBu8\fP mip_get_packet_descriptor_set (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns the MIP packet descriptor set\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The MIP descriptor set byte if the buffer points to a valid packet\&.
+.br
+ 0x00 otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 504 of file mip\&.c\&.
+.SS "\fBu16\fP mip_get_packet_size (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Gets the size of the MIP packet\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 - An error occurred
+.br
+ Size of the MIP packet, otherwise 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 369 of file mip\&.c\&.
+.SS "\fBu8\fP* mip_get_payload_ptr (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns a pointer to the start of the MIP payload data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the MIP payload data\&.
+.br
+ NULL otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 580 of file mip\&.c\&.
+.SS "\fBu8\fP mip_get_payload_size (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns the MIP payload size\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The MIP payload size if the buffer points to a valid packet\&.
+.br
+ 0x00 otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 542 of file mip\&.c\&.
+.SS "\fBu16\fP mip_init (\fBu8\fP * mip_buffer, \fBu16\fP buffer_size, \fBu8\fP descriptor_set)"
+
+.SH "DESCRIPTION"
+.PP
+Initialize a MIP packet header\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory used to construct the mip packet\&. 
+.br
+\fIu16\fP buffer_size - size of the mip memory buffer\&. 
+.br
+\fIu8\fP descriptor_set - descriptor set field value\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - MIP packet initialized\&.
+.br
+.br
+\fIMIP_ERROR\fP - The pointer is NULL\&.
+.br
+.br
+\fIMIP_MEMORY_ERROR\fP - Not enough room in the mip buffer\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 66 of file mip\&.c\&.
+.SS "\fBu16\fP mip_is_checksum_valid (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns the state of the MIP packet checksum\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - The checksum is valid\&.
+.br
+.br
+\fIMIP_ERROR\fP - The pointer is NULL\&.
+.br
+.br
+\fIMIP_INVALID_PACKET\fP - The buffer does not contain a valid MIP packet\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 617 of file mip\&.c\&.
+.SS "\fBu16\fP mip_is_initialized (\fBu8\fP * mip_buffer, \fBu8\fP descriptor_set)"
+
+.SH "DESCRIPTION"
+.PP
+Check if a MIP packet is initialized\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory used to construct the mip packet\&. 
+.br
+\fIu8\fP descriptor_set - expected descriptor set field value\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - MIP packet initialized\&.
+.br
+.br
+\fIMIP_ERROR\fP - The pointer is NULL or the MIP packet is not intialized\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 111 of file mip\&.c\&.
+.SS "\fBu16\fP mip_is_mip_packet (\fBu8\fP * mip_buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Checks if the buffer contains a valid MIP header\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu8\fP *mip_buffer - pointer to memory containing the mip packet\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_OK\fP - Header is valid\&.
+.br
+.br
+\fIMIP_ERROR\fP - The pointer is NULL\&.
+.br
+.br
+\fIMIP_MEMORY_ERROR\fP - The buffer does not contain a valid MIP packet header\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 329 of file mip\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

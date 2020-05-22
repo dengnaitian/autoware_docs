@@ -1,0 +1,225 @@
+.TH "cpu::Registration< PointSourceType, PointTargetType >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cpu::Registration< PointSourceType, PointTargetType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Registration\&.h>\fP
+.PP
+Inherited by \fBcpu::NormalDistributionsTransform< PointSourceType, PointTargetType >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegistration\fP ()"
+.br
+.ti -1c
+.RI "void \fBalign\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.ti -1c
+.RI "void \fBalign\fP (typename \fBpcl::PointCloud\fP< PointSourceType > &output, const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.ti -1c
+.RI "void \fBsetTransformationEpsilon\fP (double trans_eps)"
+.br
+.ti -1c
+.RI "double \fBgetTransformationEpsilon\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMaximumIterations\fP (int max_itr)"
+.br
+.ti -1c
+.RI "int \fBgetMaximumIterations\fP () const "
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBgetFinalTransformation\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetInputSource\fP (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr input)"
+.br
+.ti -1c
+.RI "int \fBgetFinalNumIteration\fP () const "
+.br
+.ti -1c
+.RI "bool \fBhasConverged\fP () const "
+.br
+.ti -1c
+.RI "void \fBupdateInputTarget\fP (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr new_cloud)"
+.br
+.ti -1c
+.RI "virtual \fB~Registration\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcomputeTransformation\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBtransformation_epsilon_\fP"
+.br
+.ti -1c
+.RI "int \fBmax_iterations_\fP"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< PointSourceType >::Ptr \fBsource_cloud_\fP"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< PointSourceType > \fBtrans_cloud_\fP"
+.br
+.ti -1c
+.RI "bool \fBconverged_\fP"
+.br
+.ti -1c
+.RI "int \fBnr_iterations_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBfinal_transformation_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBtransformation_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBprevious_transformation_\fP"
+.br
+.ti -1c
+.RI "bool \fBtarget_cloud_updated_\fP"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< PointTargetType >::Ptr \fBtarget_cloud_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSourceType, typename PointTargetType>
+.br
+class cpu::Registration< PointSourceType, PointTargetType >"
+
+.PP
+Definition at line 12 of file Registration\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSourceType , typename PointTargetType > \fBcpu::Registration\fP< PointSourceType, PointTargetType >::\fBRegistration\fP ()"
+
+.PP
+Definition at line 8 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > \fBcpu::Registration\fP< PointSourceType, PointTargetType >::~\fBRegistration\fP ()\fC [virtual]\fP"
+
+.PP
+Definition at line 22 of file Registration\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::align (const Eigen::Matrix< float, 4, 4 > & guess)"
+
+.PP
+Definition at line 84 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::align (typename \fBpcl::PointCloud\fP< PointSourceType > & output, const Eigen::Matrix< float, 4, 4 > & guess)"
+
+.PP
+Definition at line 100 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::computeTransformation (const Eigen::Matrix< float, 4, 4 > & guess)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBcpu::NormalDistributionsTransform< PointSourceType, PointTargetType >\fP\&.
+.PP
+Definition at line 106 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > int \fBcpu::Registration\fP< PointSourceType, PointTargetType >::getFinalNumIteration () const"
+
+.PP
+Definition at line 58 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > Eigen::Matrix< float, 4, 4 > \fBcpu::Registration\fP< PointSourceType, PointTargetType >::getFinalTransformation () const"
+
+.PP
+Definition at line 52 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > int \fBcpu::Registration\fP< PointSourceType, PointTargetType >::getMaximumIterations () const"
+
+.PP
+Definition at line 46 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::Registration\fP< PointSourceType, PointTargetType >::getTransformationEpsilon () const"
+
+.PP
+Definition at line 34 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > bool \fBcpu::Registration\fP< PointSourceType, PointTargetType >::hasConverged () const"
+
+.PP
+Definition at line 64 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::setInputSource (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr input)"
+
+.PP
+Definition at line 70 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::setInputTarget (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr input)"
+
+.PP
+Definition at line 78 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::setMaximumIterations (int max_itr)"
+
+.PP
+Definition at line 40 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::setTransformationEpsilon (double trans_eps)"
+
+.PP
+Definition at line 28 of file Registration\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::Registration\fP< PointSourceType, PointTargetType >::updateInputTarget (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr new_cloud)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename PointSourceType , typename PointTargetType > bool \fBcpu::Registration\fP< PointSourceType, PointTargetType >::converged_\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > Eigen::Matrix<float, 4, 4> \fBcpu::Registration\fP< PointSourceType, PointTargetType >::final_transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > int \fBcpu::Registration\fP< PointSourceType, PointTargetType >::max_iterations_\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > int \fBcpu::Registration\fP< PointSourceType, PointTargetType >::nr_iterations_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > Eigen::Matrix<float, 4, 4> \fBcpu::Registration\fP< PointSourceType, PointTargetType >::previous_transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > \fBpcl::PointCloud\fP<PointSourceType>::Ptr \fBcpu::Registration\fP< PointSourceType, PointTargetType >::source_cloud_\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > \fBpcl::PointCloud\fP<PointTargetType>::Ptr \fBcpu::Registration\fP< PointSourceType, PointTargetType >::target_cloud_\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > bool \fBcpu::Registration\fP< PointSourceType, PointTargetType >::target_cloud_updated_\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > \fBpcl::PointCloud\fP<PointSourceType> \fBcpu::Registration\fP< PointSourceType, PointTargetType >::trans_cloud_\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > Eigen::Matrix<float, 4, 4> \fBcpu::Registration\fP< PointSourceType, PointTargetType >::transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file Registration\&.h\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::Registration\fP< PointSourceType, PointTargetType >::transformation_epsilon_\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file Registration\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

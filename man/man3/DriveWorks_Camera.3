@@ -1,0 +1,93 @@
+.TH "DriveWorks::Camera" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DriveWorks::Camera \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DriveWorksApi\&.hpp>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "dwSensorHandle_t \fBsensor\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBnumSiblings\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBwidth\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBheight\fP"
+.br
+.ti -1c
+.RI "dwImageStreamerHandle_t \fBstreamer\fP"
+.br
+.ti -1c
+.RI "dwImageFormatConverterHandle_t \fByuv2rgba\fP"
+.br
+.ti -1c
+.RI "std::queue< dwImageNvMedia * > \fBrgbaPool\fP"
+.br
+.ti -1c
+.RI "std::vector< dwImageNvMedia > \fBframeRGBA\fP"
+.br
+.ti -1c
+.RI "std::queue< uint8_t * > \fBjpegPool\fP"
+.br
+.ti -1c
+.RI "std::vector< NvMediaIJPE * > \fBjpegEncoders\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 89 of file DriveWorksApi\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<dwImageNvMedia> DriveWorks::Camera::frameRGBA"
+
+.PP
+Definition at line 97 of file DriveWorksApi\&.hpp\&.
+.SS "uint32_t DriveWorks::Camera::height"
+
+.PP
+Definition at line 93 of file DriveWorksApi\&.hpp\&.
+.SS "std::vector<NvMediaIJPE *> DriveWorks::Camera::jpegEncoders"
+
+.PP
+Definition at line 99 of file DriveWorksApi\&.hpp\&.
+.SS "std::queue<uint8_t*> DriveWorks::Camera::jpegPool"
+
+.PP
+Definition at line 98 of file DriveWorksApi\&.hpp\&.
+.SS "uint32_t DriveWorks::Camera::numSiblings"
+
+.PP
+Definition at line 91 of file DriveWorksApi\&.hpp\&.
+.SS "std::queue<dwImageNvMedia *> DriveWorks::Camera::rgbaPool"
+
+.PP
+Definition at line 96 of file DriveWorksApi\&.hpp\&.
+.SS "dwSensorHandle_t DriveWorks::Camera::sensor"
+
+.PP
+Definition at line 90 of file DriveWorksApi\&.hpp\&.
+.SS "dwImageStreamerHandle_t DriveWorks::Camera::streamer"
+
+.PP
+Definition at line 94 of file DriveWorksApi\&.hpp\&.
+.SS "uint32_t DriveWorks::Camera::width"
+
+.PP
+Definition at line 92 of file DriveWorksApi\&.hpp\&.
+.SS "dwImageFormatConverterHandle_t DriveWorks::Camera::yuv2rgba"
+
+.PP
+Definition at line 95 of file DriveWorksApi\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,415 @@
+.TH "insidedesign.InsideDesign" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+insidedesign.InsideDesign \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbaseframe\&.BaseFrame\fP\&.
+.PP
+Inherited by \fBdata_preprocessor\&.Final\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, args, kwds)"
+.br
+.ti -1c
+.RI "def \fBOnLaunchKill\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnSetupLocalizer\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnCalibrationPublisher\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnLamp\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnIndi\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnGear\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnQuery\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnROSbagPlay\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnROSbagPlay2\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnRviz\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnFtrace\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnEcho\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnRefreshTopics\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnGetConfirmTopics\fP (self, event)"
+.br
+.ti -1c
+.RI "def \fBOnConfirmDepth\fP (self, event)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBnotebook_1\fP"
+.br
+.ti -1c
+.RI "\fBtab_simulation\fP"
+.br
+.ti -1c
+.RI "\fBpanel_rosbag_play\fP"
+.br
+.RI "\fIref area \fP"
+.ti -1c
+.RI "\fBsizer_79_staticbox\fP"
+.br
+.ti -1c
+.RI "\fBbutton_confirm_topics\fP"
+.br
+.ti -1c
+.RI "\fBbutton_rviz\fP"
+.br
+.ti -1c
+.RI "\fBpanel_5\fP"
+.br
+.RI "\fIscroll module \fP"
+.ti -1c
+.RI "\fBlabel_rosbag_info\fP"
+.br
+.ti -1c
+.RI "\fBbitmap_logo\fP"
+.br
+.ti -1c
+.RI "\fBtab_select\fP"
+.br
+.RI "\fIFor Select Tab\&. \fP"
+.ti -1c
+.RI "\fBsizer_select_box\fP"
+.br
+.ti -1c
+.RI "\fBsizer_select_topics\fP"
+.br
+.ti -1c
+.RI "\fBselect_scroll\fP"
+.br
+.ti -1c
+.RI "\fBtab_depth\fP"
+.br
+.RI "\fIFor Depth Tab\&. \fP"
+.ti -1c
+.RI "\fBsizer_depth_box\fP"
+.br
+.ti -1c
+.RI "\fBsizer_depth_topics\fP"
+.br
+.ti -1c
+.RI "\fBdepth_scroll\fP"
+.br
+.ti -1c
+.RI "\fBbutton_play_rosbag_play\fP"
+.br
+.RI "\fIplay stop pause bar area \fP"
+.ti -1c
+.RI "\fBbutton_stop_rosbag_play\fP"
+.br
+.ti -1c
+.RI "\fBbutton_pause_rosbag_play\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_bar\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_pos\fP"
+.br
+.ti -1c
+.RI "\fBstatic_line_3\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_total\fP"
+.br
+.ti -1c
+.RI "\fBbutton_confirm_depth\fP"
+.br
+.ti -1c
+.RI "\fBbutton_play_rosbag_play2\fP"
+.br
+.ti -1c
+.RI "\fBbutton_stop_rosbag_play2\fP"
+.br
+.ti -1c
+.RI "\fBbutton_pause_rosbag_play2\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_bar2\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_pos2\fP"
+.br
+.ti -1c
+.RI "\fBstatic_line_2\fP"
+.br
+.ti -1c
+.RI "\fBlabel_rosbag_play_total2\fP"
+.br
+.ti -1c
+.RI "\fBsizer_1\fP"
+.br
+.ti -1c
+.RI "\fBtab_status\fP"
+.br
+.RI "\fI3 大きい中の枠組みの定義 \fP"
+.ti -1c
+.RI "\fBpanel_3\fP"
+.br
+.ti -1c
+.RI "\fBlabel_top_cmd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file insidedesign\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def insidedesign\&.InsideDesign\&.__init__ ( self,  args,  kwds)"
+
+.PP
+Definition at line 9 of file insidedesign\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def insidedesign\&.InsideDesign\&.OnCalibrationPublisher ( self,  event)"
+
+.PP
+Definition at line 196 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnConfirmDepth ( self,  event)"
+
+.PP
+Definition at line 244 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnEcho ( self,  event)"
+
+.PP
+Definition at line 232 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnFtrace ( self,  event)"
+
+.PP
+Definition at line 228 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnGear ( self,  event)"
+
+.PP
+Definition at line 208 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnGetConfirmTopics ( self,  event)"
+
+.PP
+Definition at line 240 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnIndi ( self,  event)"
+
+.PP
+Definition at line 204 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnLamp ( self,  event)"
+
+.PP
+Definition at line 200 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnLaunchKill ( self,  event)"
+
+.PP
+Definition at line 188 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnQuery ( self,  event)"
+
+.PP
+Definition at line 212 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnRefreshTopics ( self,  event)"
+
+.PP
+Definition at line 236 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnROSbagPlay ( self,  event)"
+
+.PP
+Definition at line 216 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnROSbagPlay2 ( self,  event)"
+
+.PP
+Definition at line 220 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnRviz ( self,  event)"
+
+.PP
+Definition at line 224 of file insidedesign\&.py\&.
+.SS "def insidedesign\&.InsideDesign\&.OnSetupLocalizer ( self,  event)"
+
+.PP
+Definition at line 192 of file insidedesign\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "insidedesign\&.InsideDesign\&.bitmap_logo"
+
+.PP
+Definition at line 29 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_confirm_depth"
+
+.PP
+Definition at line 67 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_confirm_topics"
+
+.PP
+Definition at line 20 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_pause_rosbag_play"
+
+.PP
+Definition at line 52 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_pause_rosbag_play2"
+
+.PP
+Definition at line 70 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_play_rosbag_play"
+
+.PP
+play stop pause bar area 
+.PP
+Definition at line 50 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_play_rosbag_play2"
+
+.PP
+Definition at line 68 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_rviz"
+
+.PP
+Definition at line 21 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_stop_rosbag_play"
+
+.PP
+Definition at line 51 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.button_stop_rosbag_play2"
+
+.PP
+Definition at line 69 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.depth_scroll"
+
+.PP
+Definition at line 45 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_info"
+
+.PP
+Definition at line 28 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_bar"
+
+.PP
+Definition at line 53 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_bar2"
+
+.PP
+Definition at line 71 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_pos"
+
+.PP
+Definition at line 54 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_pos2"
+
+.PP
+Definition at line 72 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_total"
+
+.PP
+Definition at line 56 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_rosbag_play_total2"
+
+.PP
+Definition at line 74 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.label_top_cmd"
+
+.PP
+Definition at line 168 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.notebook_1"
+
+.PP
+Definition at line 12 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.panel_3"
+
+.PP
+Definition at line 167 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.panel_5"
+
+.PP
+scroll module 
+.PP
+Definition at line 27 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.panel_rosbag_play"
+
+.PP
+ref area 
+.PP
+Definition at line 18 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.select_scroll"
+
+.PP
+Definition at line 37 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_1"
+
+.PP
+Definition at line 99 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_79_staticbox"
+
+.PP
+Definition at line 19 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_depth_box"
+
+.PP
+Definition at line 43 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_depth_topics"
+
+.PP
+Definition at line 44 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_select_box"
+
+.PP
+Definition at line 35 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.sizer_select_topics"
+
+.PP
+Definition at line 36 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.static_line_2"
+
+.PP
+Definition at line 73 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.static_line_3"
+
+.PP
+Definition at line 55 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.tab_depth"
+
+.PP
+For Depth Tab\&. 
+.PP
+Definition at line 42 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.tab_select"
+
+.PP
+For Select Tab\&. 
+.PP
+Definition at line 34 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.tab_simulation"
+
+.PP
+Definition at line 13 of file insidedesign\&.py\&.
+.SS "insidedesign\&.InsideDesign\&.tab_status"
+
+.PP
+3 大きい中の枠組みの定義 3 sizer_80 play, stop pause 3 only scroll window self\&.panel_5 
+.PP
+Definition at line 166 of file insidedesign\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

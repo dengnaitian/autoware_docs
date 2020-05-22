@@ -1,0 +1,133 @@
+.TH "client" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetargs\fP ()"
+.br
+.ti -1c
+.RI "def \fBstatus\fP (\fBurl\fP)"
+.br
+.ti -1c
+.RI "def \fBupload\fP (\fBurl\fP, \fBpath\fP)"
+.br
+.ti -1c
+.RI "def \fBworker\fP (\fBurl\fP, \fBpath\fP, retry=\-1, wait=1, rename=False, rnfmt='{}\&.uploaded')"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = \fBcommon\&.genlogger\fP()"
+.br
+.ti -1c
+.RI "\fBargs\fP = \fBgetargs\fP()"
+.br
+.ti -1c
+.RI "string \fBurl\fP = 'http://{}:{}'"
+.br
+.ti -1c
+.RI "string \fBurlup\fP = '{}/upload'"
+.br
+.ti -1c
+.RI "string \fBurlst\fP = '{}/status'"
+.br
+.ti -1c
+.RI "\fBres\fP = \fBstatus\fP(\fBurlst\fP)"
+.br
+.ti -1c
+.RI "dictionary \fBqueue\fP = {}"
+.br
+.ti -1c
+.RI "\fBpaths\fP = glob\&.glob('{}/{}'\&.format(args\&.dir, '*\&.bag'))"
+.br
+.ti -1c
+.RI "\fBpath\fP = \fBcommon\&.normpath\fP(path)"
+.br
+.ti -1c
+.RI "\fBprocess\fP"
+.br
+.ti -1c
+.RI "\fBexeq\fP = queue\&.items()[:args\&.threads]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def client\&.getargs ()"
+
+.PP
+Definition at line 10 of file client\&.py\&.
+.SS "def client\&.status ( url)"
+
+.PP
+Definition at line 23 of file client\&.py\&.
+.SS "def client\&.upload ( url,  path)"
+
+.PP
+Definition at line 26 of file client\&.py\&.
+.SS "def client\&.worker ( url,  path,  retry = \fC\-1\fP,  wait = \fC1\fP,  rename = \fCFalse\fP,  rnfmt = \fC'{}\&.uploaded'\fP)"
+
+.PP
+Definition at line 38 of file client\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "client\&.args = \fBgetargs\fP()"
+
+.PP
+Definition at line 59 of file client\&.py\&.
+.SS "client\&.exeq = queue\&.items()[:args\&.threads]"
+
+.PP
+Definition at line 92 of file client\&.py\&.
+.SS "client\&.logger = \fBcommon\&.genlogger\fP()"
+
+.PP
+Definition at line 8 of file client\&.py\&.
+.SS "client\&.path = \fBcommon\&.normpath\fP(path)"
+
+.PP
+Definition at line 86 of file client\&.py\&.
+.SS "client\&.paths = glob\&.glob('{}/{}'\&.format(args\&.dir, '*\&.bag'))"
+
+.PP
+Definition at line 80 of file client\&.py\&.
+.SS "client\&.process"
+\fBInitial value:\fP
+.PP
+.nf
+1 = multiprocessing\&.Process(target=worker,
+2                     args=(urlup, path, args\&.retry, args\&.wait, args\&.rename,))
+.fi
+.PP
+Definition at line 88 of file client\&.py\&.
+.SS "dictionary client\&.queue = {}"
+
+.PP
+Definition at line 76 of file client\&.py\&.
+.SS "client\&.res = \fBstatus\fP(\fBurlst\fP)"
+
+.PP
+Definition at line 69 of file client\&.py\&.
+.SS "string client\&.url = 'http://{}:{}'"
+
+.PP
+Definition at line 60 of file client\&.py\&.
+.SS "string client\&.urlst = '{}/status'"
+
+.PP
+Definition at line 62 of file client\&.py\&.
+.SS "string client\&.urlup = '{}/upload'"
+
+.PP
+Definition at line 61 of file client\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,166 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/src/newton.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/src/newton.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include 'algebra\&.h'\fP
+.br
+\fC#include 'ndt\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBE_THETA\fP   0\&.0001"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBset_sincos\fP (double a, double \fBb\fP, double g, double sc_d[3][3][3])"
+.br
+.ti -1c
+.RI "void \fBset_sincos2\fP (double a, double \fBb\fP, double g, double sc[3][3])"
+.br
+.ti -1c
+.RI "int \fBcheck_Hessian\fP (double H[3][3])"
+.br
+.ti -1c
+.RI "void \fBsave_data\fP (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP \fBpose\fP)"
+.br
+.ti -1c
+.RI "void \fBdepth\fP (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP \fBpose\fP)"
+.br
+.ti -1c
+.RI "double \fBcalc_summand3d\fP (\fBPointPtr\fP \fBp\fP, \fBNDPtr\fP nd, \fBPosturePtr\fP \fBpose\fP, double *g, double H[6][6], double qd3_d[6][3], double dist)"
+.br
+.ti -1c
+.RI "void \fBscan_transrate\fP (\fBPointPtr\fP src, \fBPointPtr\fP dst, \fBPosturePtr\fP \fBpose\fP, int num)"
+.br
+.ti -1c
+.RI "double \fBadjust3d\fP (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP initial, int target)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBpoint_num\fP"
+.br
+.ti -1c
+.RI "\fBNDMapPtr\fP \fBNDmap\fP"
+.br
+.ti -1c
+.RI "int \fBlayer_select\fP"
+.br
+.ti -1c
+.RI "double \fBscan_points_weight\fP []"
+.br
+.ti -1c
+.RI "double \fBscan_points_totalweight\fP"
+.br
+.ti -1c
+.RI "double \fBqdd\fP [3][3][2]"
+.br
+.ti -1c
+.RI "double \fBqd\fP [3][2]"
+.br
+.ti -1c
+.RI "double \fBqd3\fP [6][3]"
+.br
+.ti -1c
+.RI "double \fBqdd3\fP [6][6][3]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define E_THETA   0\&.0001"
+
+.PP
+Definition at line 9 of file newton\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "double adjust3d (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP initial, int target)"
+
+.PP
+Definition at line 179 of file newton\&.cpp\&.
+.SS "double calc_summand3d (\fBPointPtr\fP p, \fBNDPtr\fP nd, \fBPosturePtr\fP pose, double * g, double H[6][6], double qd3_d[6][3], double dist)"
+
+.PP
+Definition at line 29 of file newton\&.cpp\&.
+.SS "int check_Hessian (double H[3][3])"
+
+.PP
+Definition at line 95 of file newton\&.cpp\&.
+.SS "void depth (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP pose)"
+
+.PP
+Definition at line 159 of file newton\&.cpp\&.
+.SS "void save_data (\fBPointPtr\fP scan, int num, \fBPosturePtr\fP pose)"
+
+.PP
+Definition at line 109 of file newton\&.cpp\&.
+.SS "void scan_transrate (\fBPointPtr\fP src, \fBPointPtr\fP dst, \fBPosturePtr\fP pose, int num)"
+
+.PP
+Definition at line 133 of file newton\&.cpp\&.
+.SS "void set_sincos (double a, double b, double g, double sc_d[3][3][3])"
+
+.PP
+Definition at line 410 of file newton\&.cpp\&.
+.SS "void set_sincos2 (double a, double b, double g, double sc[3][3])"
+
+.PP
+Definition at line 363 of file newton\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int layer_select"
+
+.PP
+Definition at line 59 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBNDMapPtr\fP NDmap"
+
+.PP
+Definition at line 9 of file manage_ND\&.cpp\&.
+.SS "int point_num"
+
+.SS "double qd[3][2]"
+
+.PP
+Definition at line 19 of file newton\&.cpp\&.
+.SS "double qd3[6][3]"
+
+.PP
+Definition at line 20 of file newton\&.cpp\&.
+.SS "double qdd[3][3][2]"
+
+.PP
+Definition at line 18 of file newton\&.cpp\&.
+.SS "double qdd3[6][6][3]"
+
+.PP
+Definition at line 21 of file newton\&.cpp\&.
+.SS "double scan_points_totalweight"
+
+.PP
+Definition at line 54 of file ndt_mapping_tku\&.cpp\&.
+.SS "double scan_points_weight[]"
+
+.PP
+Definition at line 53 of file ndt_mapping_tku\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

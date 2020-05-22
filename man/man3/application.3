@@ -1,0 +1,82 @@
+.TH "application" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+application \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBasicApplication\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsApp\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsFieldApp\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsNtpTimeApp\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsScanpointCoordinateApp\fP"
+.br
+.ti -1c
+.RI "class \fBLdmrsSectorChangeApp\fP"
+.br
+.ti -1c
+.RI "struct \fBntp_time_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBsectorToString\fP (const \fBScannerInfo::ResolutionMap\fP &sector)"
+.br
+.ti -1c
+.RI "\fBScan::const_iterator\fP \fBgetNextPointInSameLayer\fP (\fBScan::const_iterator\fP iter, const \fBScan\fP &scan)"
+.br
+.ti -1c
+.RI "\fBScan::const_iterator\fP \fBgetNextPoint\fP (\fBScan::const_iterator\fP iter, const \fBScan\fP &scan)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBradian2Int\fP (float radAngle)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBScan::const_iterator\fP application::getNextPoint (\fBScan::const_iterator\fP iter, const \fBScan\fP & scan)"
+
+.PP
+Definition at line 87 of file LdmrsSectorChangeApp\&.cpp\&.
+.SS "\fBScan::const_iterator\fP application::getNextPointInSameLayer (\fBScan::const_iterator\fP iter, const \fBScan\fP & scan)"
+
+.PP
+Definition at line 72 of file LdmrsSectorChangeApp\&.cpp\&.
+.SS "\fBINT16\fP application::radian2Int (float radAngle)"
+Convert an angle from radians to code-wheel ticks\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIradAngle\fP angle in radians
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The angle \fIradAngle\fP as raw data\&. 
+.RE
+.PP
+
+.PP
+Definition at line 191 of file LdmrsSectorChangeApp\&.cpp\&.
+.SS "std::string application::sectorToString (const \fBScannerInfo::ResolutionMap\fP & sector)"
+
+.PP
+Definition at line 57 of file LdmrsSectorChangeApp\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

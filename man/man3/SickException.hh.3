@@ -1,0 +1,68 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickException.hh" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickException.hh \- Contains some simple exception classes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <exception>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSickToolbox::SickException\fP"
+.br
+.RI "\fIProvides a base exception class from which to derive other Sick exceptions\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickTimeoutException\fP"
+.br
+.RI "\fIMakes handling timeouts much easier\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickIOException\fP"
+.br
+.RI "\fIThrown instance where the driver can't read,write,drain,flush,\&.\&.\&. the buffers\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickBadChecksumException\fP"
+.br
+.RI "\fIThrown when a received message has an invalid checksum\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickThreadException\fP"
+.br
+.RI "\fIThrown when error occurs during thread initialization, and uninitialization\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickConfigException\fP"
+.br
+.RI "\fIThrown when the driver detects (or the Sick reports) an invalid config\&. \fP"
+.ti -1c
+.RI "class \fBSickToolbox::SickErrorException\fP"
+.br
+.RI "\fIThrown when Sick returns an error code or an unexpected response\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBSickToolbox\fP"
+.br
+.RI "\fIEncapsulates the Sick LIDAR Matlab/C++ toolbox\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains some simple exception classes\&. 
+
+Code by Jason C\&. Derenick and Thomas H\&. Miller\&. Contact derenick(at)lehigh(dot)edu
+.PP
+The Sick LIDAR Matlab/C++ Toolbox Copyright (c) 2008, Jason C\&. Derenick and Thomas H\&. Miller All rights reserved\&.
+.PP
+This software is released under a BSD Open-Source License\&. See http://sicktoolbox.sourceforge.net 
+.PP
+Definition in file \fBSickException\&.hh\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

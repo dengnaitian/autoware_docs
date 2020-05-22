@@ -1,0 +1,52 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/MathToolbox.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/MathToolbox.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MathToolbox\&.hpp'\fP
+.br
+\fC#include <limits>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBhypot\fP (double x, double y, double z)"
+.br
+.ti -1c
+.RI "double \fBnormalizeRadians\fP (double radians)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBNaN_double\fP = std::numeric_limits<double>::quiet_NaN()"
+.br
+.RI "\fINot-a-Number in double precision\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double hypot (double x, double y, double z)"
+Berechne die Laenge der Hypothenuse 
+.PP
+Definition at line 19 of file MathToolbox\&.cpp\&.
+.SS "double normalizeRadians (double radians)"
+Normalizes an angle given in radians by adding or subtracting an integer multiple of 2*pi so that the resulting angle is in the half-open interval [-pi,+pi)\&. The current implementation takes O(1) time, i\&.e\&. the time of execution has a fixed upper boundary independend from the angle\&. 
+.PP
+Definition at line 31 of file MathToolbox\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const double NaN_double = std::numeric_limits<double>::quiet_NaN()"
+
+.PP
+Not-a-Number in double precision\&. 
+.PP
+Definition at line 13 of file MathToolbox\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

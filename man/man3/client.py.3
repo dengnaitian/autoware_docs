@@ -1,0 +1,71 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/log_tools/scripts/autologger/client.py" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/log_tools/scripts/autologger/client.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBclient\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBclient\&.getargs\fP ()"
+.br
+.ti -1c
+.RI "def \fBclient\&.status\fP (url)"
+.br
+.ti -1c
+.RI "def \fBclient\&.upload\fP (url, path)"
+.br
+.ti -1c
+.RI "def \fBclient\&.worker\fP (url, path, retry=\-1, wait=1, rename=False, rnfmt='{}\&.uploaded')"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBclient\&.logger\fP = \fBcommon\&.genlogger\fP()"
+.br
+.ti -1c
+.RI "\fBclient\&.args\fP = getargs()"
+.br
+.ti -1c
+.RI "string \fBclient\&.url\fP = 'http://{}:{}'"
+.br
+.ti -1c
+.RI "string \fBclient\&.urlup\fP = '{}/upload'"
+.br
+.ti -1c
+.RI "string \fBclient\&.urlst\fP = '{}/status'"
+.br
+.ti -1c
+.RI "\fBclient\&.res\fP = status(urlst)"
+.br
+.ti -1c
+.RI "dictionary \fBclient\&.queue\fP = {}"
+.br
+.ti -1c
+.RI "\fBclient\&.paths\fP = glob\&.glob('{}/{}'\&.format(args\&.dir, '*\&.bag'))"
+.br
+.ti -1c
+.RI "\fBclient\&.path\fP = \fBcommon\&.normpath\fP(path)"
+.br
+.ti -1c
+.RI "\fBclient\&.process\fP"
+.br
+.ti -1c
+.RI "\fBclient\&.exeq\fP = queue\&.items()[:args\&.threads]"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

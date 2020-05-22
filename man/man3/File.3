@@ -1,0 +1,92 @@
+.TH "File" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+File \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBReadFunction\fP) (void *obj, \fBUINT8\fP *inputBuffer, \fBUINT32\fP &numBytes)"
+.br
+.ti -1c
+.RI "typedef void(* \fBDisconnectFunction\fP) (void *obj)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFile\fP ()"
+.br
+.ti -1c
+.RI "\fB~File\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetFilename\fP ()"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (std::string inputFileName, bool beVerbose=false)"
+.br
+.ti -1c
+.RI "void \fBsetReadCallbackFunction\fP (\fBReadFunction\fP readFunction, void *obj)"
+.br
+.ti -1c
+.RI "void \fBsetDisconnectCallbackFunction\fP (\fBDisconnectFunction\fP discFunction, void *obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 31 of file file\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef void(* File::DisconnectFunction) (void *obj)"
+
+.PP
+Definition at line 46 of file file\&.hpp\&.
+.SS "typedef void(* File::ReadFunction) (void *obj, \fBUINT8\fP *inputBuffer, \fBUINT32\fP &numBytes)"
+
+.PP
+Definition at line 42 of file file\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "File::File ()"
+
+.PP
+Definition at line 14 of file file\&.cpp\&.
+.SS "File::~File (void)"
+
+.PP
+Definition at line 30 of file file\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void File::close ()"
+
+.PP
+Definition at line 66 of file file\&.cpp\&.
+.SS "std::string File::getFilename ()"
+
+.SS "bool File::open (std::string inputFileName, bool beVerbose = \fCfalse\fP)"
+
+.PP
+Definition at line 39 of file file\&.cpp\&.
+.SS "void File::setDisconnectCallbackFunction (\fBDisconnectFunction\fP discFunction, void * obj)"
+
+.PP
+Definition at line 205 of file file\&.cpp\&.
+.SS "void File::setReadCallbackFunction (\fBFile::ReadFunction\fP readFunction, void * obj)"
+
+.PP
+Definition at line 78 of file file\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,52 @@
+.TH "setup" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+setup \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBd\fP"
+.br
+.ti -1c
+.RI "\fBsetup_args\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "setup\&.d"
+\fBInitial value:\fP
+.PP
+.nf
+1 = generate_distutils_setup(
+2     packages=['libjavad_navsat_driver'],
+3     package_dir={'': 'lib'}
+4 )
+.fi
+.PP
+Definition at line 4 of file setup\&.py\&.
+.SS "setup\&.setup_args"
+\fBInitial value:\fP
+.PP
+.nf
+1 = generate_distutils_setup(
+2     package_dir={"autoware_launcher": "src/autoware_launcher"},
+3     packages=[
+4         "autoware_launcher",
+5         "autoware_launcher\&.tool",
+6         "autoware_launcher\&.core",
+7         "autoware_launcher\&.gui",
+8         "autoware_launcher\&.gui\&.simulation",
+9         "autoware_launcher\&.gui\&.plugins",
+10     ],
+11 )
+.fi
+.PP
+Definition at line 4 of file setup\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

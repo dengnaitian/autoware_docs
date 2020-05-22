@@ -1,0 +1,28 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_tl_switch__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_tl_switch__r_e_a_d_m_e \- tl_switch 
+
+.SS "Introduction"
+.PP
+The node uses traffic signal obtained by image recognition and that recieved from external systems, for example AMS, and switch traffic signals safely\&. If either is red, it turns red\&. Also, timeout is set for external system information\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+\fCroslaunch trafficlight_recognizer traffic_light_recognition\&.launch\fP
+.IP "\(bu" 2
+From Runtime manager:
+.PP
+Computing Tab -> region_tlr
+.PP
+.PP
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/camera_light_color\fP\fCautoware_msgs/traffic_light\fPSubscribe traffic light color obtained from camera image\&. \fC/ams_light_color\fP\fCautoware_msgs/traffic_light\fPSubscribe traffic light color recieved from external systems\&. 
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/light_color\fP\fCautoware_msgs/traffic_light\fPPublishes traffic light color for planning\&. 

@@ -1,0 +1,82 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_loader/waypoint_loader_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_loader/waypoint_loader_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+\fC#include 'autoware_msgs/LaneArray\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBwaypoint_maker::WaypointLoaderNode\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBwaypoint_maker\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::underlying_type< FileFormat >::type \fBwaypoint_maker::FileFormatInteger\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBwaypoint_maker::FileFormat\fP : int32_t { \fBwaypoint_maker::FileFormat::ver1\fP, \fBwaypoint_maker::FileFormat::ver2\fP, \fBwaypoint_maker::FileFormat::ver3\fP, \fBwaypoint_maker::FileFormat::unknown\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBwaypoint_maker::kmph2mps\fP (double velocity_kmph)"
+.br
+.ti -1c
+.RI "double \fBwaypoint_maker::mps2kmph\fP (double velocity_mps)"
+.br
+.ti -1c
+.RI "const std::string \fBwaypoint_maker::addFileSuffix\fP (std::string file_path, std::string suffix)"
+.br
+.ti -1c
+.RI "void \fBwaypoint_maker::parseColumns\fP (const std::string &line, std::vector< std::string > *columns)"
+.br
+.ti -1c
+.RI "size_t \fBwaypoint_maker::countColumns\fP (const std::string &line)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBwaypoint_maker::MULTI_LANE_CSV\fP = '/tmp/driving_lane\&.csv'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

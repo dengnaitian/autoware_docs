@@ -1,0 +1,66 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_object_filter_packages_roi_object_filter__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_object_filter_packages_roi_object_filter__r_e_a_d_m_e \- ROI Object Filter 
+The ROI object filter node uses information from the ADAS map to remove the detected objects outside of the drivable area\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+PointCloud map\&.
+.PP
+.IP "1." 4
+ADAS map with drivable area included (`wayarea)\&.
+.PP
+.IP "1." 4
+OccupancyGrid in GridMap format\&.
+.PP
+.IP "1." 4
+NDT localization (TF tree properly constructed)\&.
+.PP
+.PP
+.SS "Input Topics"
+.PP
+.IP "1." 4
+GridMap containing the drivable area occupancy grid (\fCgrid_map_msgs/GridMap\fP)\&. Published by \fCwayarea2grid\fP node in the semantics package\&.
+.PP
+.IP "1." 4
+Object Detection results to filter (\fCautoware_msgs/DetectedObjectArray\fP)\&. Published by an object detector\&.
+.PP
+.PP
+.SS "Output Topics"
+.PP
+.IP "1." 4
+Objects with the \fCvalid\fP field modified according to the ROI, including those in the list of exceptions (\fCautoware_msgs/DetectedObjectArray\fP) on the \fC/detection/object_filter/objects\fP topic\&.
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+Available parameters:
+.PP
+ParameterTypeDescriptionDefault  \fCwayarea_gridmap_topic\fP*String*Topic name containing the GridMap with the drivable area occupancy grid\&.\fCgrid_map_wayarea\fP \fCdetection_topic\fP*String*Name of the \fCDetectedObjectArray\fP topic to subscribe containing the detections to filter\&.\fC/detection/lidar_detector/objects\fP \fCwayarea_no_road_value\fP*Int*Occupancy Grid integer value of the non drivable regions\&.\fC255\fP \fCsync_topics\fP*Bool*Whether or not to Sync detection topics using ROS filters\&.\fCfalse\fP \fCwayarea_gridmap_layer\fP*String*Name of the layer in the GridMap containing the drivable area occupancy grid\&.\fCwayarea\fP \fCexception_list\fP*String Array*A list of the object to be kept even when found outside the ROI\&.\fC[person, bicycle]\fP 
+.SS "Usage example"
+.PP
+.IP "1." 4
+\fBLaunch\fP a ground filter algorithm from the \fCPoints Preprocessor\fP section in the \fBSensing\fP tab\&. (adjust the parameters to your vehicle setup)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP a Lidar Detector from the Computing tab or fusion\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP NDT localization with the Map and \fBVectorMap\fP being published\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP \fCwayarea2grid\fP from the Semantics package in the *Computing*** tab\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP this node\&.
+.PP
+.PP
+.SS "Notes"
+.PP
+.IP "\(bu" 2
+\fBVectorMap\fP MUST include the drivable area (i\&.e\&. \fCwayarea\&.csv\fP) 
+.PP
+

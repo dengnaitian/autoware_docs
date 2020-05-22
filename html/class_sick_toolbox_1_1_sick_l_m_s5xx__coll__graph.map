@@ -1,0 +1,5 @@
+<map id="SickToolbox::SickLMS5xx" name="SickToolbox::SickLMS5xx">
+<area shape="rect" id="node2" href="$class_sick_toolbox_1_1_sick_l_i_d_a_r.html" title="SickToolbox::SickLIDAR\l\&lt; SickLMS5xxBufferMonitor,\l SickLMS5xxMessage \&gt;" alt="" coords="15,215,206,271"/>
+<area shape="rect" id="node3" href="$class_sick_toolbox_1_1_sick_l_m_s5xx_buffer_monitor.html" title="A class for monitoring the receive buffer when interfacing with a Sick LD LIDAR. " alt="" coords="5,111,216,152"/>
+<area shape="rect" id="node4" href="$class_sick_toolbox_1_1_sick_buffer_monitor.html" title="SickToolbox::SickBufferMonitor\l\&lt; SickLMS5xxBufferMonitor,\l SickLMS5xxMessage \&gt;" alt="" coords="7,5,214,61"/>
+</map>

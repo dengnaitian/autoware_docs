@@ -1,0 +1,101 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/system/sync/sync_drivers.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/system/sync/sync_drivers.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <boost/circular_buffer\&.hpp>\fP
+.br
+\fC#include 'std_msgs/Header\&.h'\fP
+.br
+\fC#include 'sensor_msgs/Image\&.h'\fP
+.br
+\fC#include 'sensor_msgs/PointCloud2\&.h'\fP
+.br
+\fC#include 'autoware_msgs/SyncTimeDiff\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBfabs_time_diff\fP (const std_msgs::Header *timespec1, const std_msgs::Header *timespec2)"
+.br
+.ti -1c
+.RI "void \fBimage_raw_callback\fP (sensor_msgs::Image image_raw_msg)"
+.br
+.ti -1c
+.RI "void \fBpoints_raw_callback\fP (const sensor_msgs::PointCloud2::ConstPtr &points_raw_msg)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "sensor_msgs::Image \fBimage_raw_buf\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpoints_raw__pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBimage_raw__pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBtime_diff_pub\fP"
+.br
+.ti -1c
+.RI "bool \fBis_sim\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double fabs_time_diff (const std_msgs::Header * timespec1, const std_msgs::Header * timespec2)"
+
+.PP
+Definition at line 37 of file sync_drivers\&.cpp\&.
+.SS "void image_raw_callback (sensor_msgs::Image image_raw_msg)"
+
+.PP
+Definition at line 44 of file sync_drivers\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 66 of file sync_drivers\&.cpp\&.
+.SS "void points_raw_callback (const sensor_msgs::PointCloud2::ConstPtr & points_raw_msg)"
+
+.PP
+Definition at line 49 of file sync_drivers\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "ros::Publisher image_raw__pub"
+
+.PP
+Definition at line 33 of file sync_drivers\&.cpp\&.
+.SS "sensor_msgs::Image image_raw_buf"
+
+.PP
+Definition at line 30 of file sync_drivers\&.cpp\&.
+.SS "bool is_sim"
+
+.PP
+Definition at line 35 of file sync_drivers\&.cpp\&.
+.SS "ros::Publisher points_raw__pub"
+
+.PP
+Definition at line 32 of file sync_drivers\&.cpp\&.
+.SS "ros::Publisher time_diff_pub"
+
+.PP
+Definition at line 34 of file sync_drivers\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

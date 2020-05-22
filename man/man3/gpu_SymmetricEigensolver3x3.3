@@ -1,0 +1,125 @@
+.TH "gpu::SymmetricEigensolver3x3" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::SymmetricEigensolver3x3 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SymmetricEigenSolver\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCUDAH\fP \fBSymmetricEigensolver3x3\fP ()"
+.br
+.ti -1c
+.RI "\fBSymmetricEigensolver3x3\fP (int offset)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBSymmetricEigensolver3x3\fP (const \fBSymmetricEigensolver3x3\fP &other)"
+.br
+.ti -1c
+.RI "void \fBsetInputMatrices\fP (double *input_matrices)"
+.br
+.ti -1c
+.RI "void \fBsetEigenvectors\fP (double *eigenvectors)"
+.br
+.ti -1c
+.RI "void \fBsetEigenvalues\fP (double *eigenvalues)"
+.br
+.ti -1c
+.RI "double * \fBgetBuffer\fP () const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBnormalizeInput\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvalues\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvector00\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvector01\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvector10\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvector11\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcomputeEigenvector2\fP (int tid)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBupdateEigenvalues\fP (int tid)"
+.br
+.ti -1c
+.RI "void \fBmemFree\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file SymmetricEigenSolver\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBCUDAH\fP gpu::SymmetricEigensolver3x3::SymmetricEigensolver3x3 ()"
+
+.PP
+Definition at line 91 of file SymmetricEigenSolver\&.h\&.
+.SS "gpu::SymmetricEigensolver3x3::SymmetricEigensolver3x3 (int offset)"
+
+.SS "\fBCUDAH\fP gpu::SymmetricEigensolver3x3::SymmetricEigensolver3x3 (const \fBSymmetricEigensolver3x3\fP & other)"
+
+.PP
+Definition at line 104 of file SymmetricEigenSolver\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvalues (int tid)"
+
+.PP
+Definition at line 172 of file SymmetricEigenSolver\&.h\&.
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvector00 (int tid)"
+
+.PP
+Definition at line 230 of file SymmetricEigenSolver\&.h\&.
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvector01 (int tid)"
+
+.PP
+Definition at line 255 of file SymmetricEigenSolver\&.h\&.
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvector10 (int tid)"
+
+.PP
+Definition at line 278 of file SymmetricEigenSolver\&.h\&.
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvector11 (int tid)"
+
+.PP
+Definition at line 315 of file SymmetricEigenSolver\&.h\&.
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::computeEigenvector2 (int tid)"
+
+.PP
+Definition at line 402 of file SymmetricEigenSolver\&.h\&.
+.SS "double* gpu::SymmetricEigensolver3x3::getBuffer () const"
+
+.SS "void gpu::SymmetricEigensolver3x3::memFree ()"
+
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::normalizeInput (int tid)"
+
+.PP
+Definition at line 118 of file SymmetricEigenSolver\&.h\&.
+.SS "void gpu::SymmetricEigensolver3x3::setEigenvalues (double * eigenvalues)"
+
+.SS "void gpu::SymmetricEigensolver3x3::setEigenvectors (double * eigenvectors)"
+
+.SS "void gpu::SymmetricEigensolver3x3::setInputMatrices (double * input_matrices)"
+
+.SS "\fBCUDAH\fP void gpu::SymmetricEigensolver3x3::updateEigenvalues (int tid)"
+
+.PP
+Definition at line 220 of file SymmetricEigenSolver\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

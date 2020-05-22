@@ -1,0 +1,145 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/op_simulation_package/include/op_car_simulator_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/op_simulation_package/include/op_car_simulator_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include 'vector_map_msgs/PointArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/NodeArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/StopLineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/DTLaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/AreaArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/SignalArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/StopLine\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/VectorArray\&.h'\fP
+.br
+\fC#include <geometry_msgs/Vector3Stamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <std_msgs/Int8\&.h>\fP
+.br
+\fC#include <visualization_msgs/MarkerArray\&.h>\fP
+.br
+\fC#include <visualization_msgs/InteractiveMarkerPose\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <std_msgs/Float32\&.h>\fP
+.br
+\fC#include 'autoware_msgs/Signals\&.h'\fP
+.br
+\fC#include 'autoware_msgs/DetectedObjectArray\&.h'\fP
+.br
+\fC#include 'autoware_msgs/CloudClusterArray\&.h'\fP
+.br
+\fC#include 'sensor_msgs/Joy\&.h'\fP
+.br
+\fC#include 'op_simu/TrajectoryFollower\&.h'\fP
+.br
+\fC#include 'op_planner/LocalPlannerH\&.h'\fP
+.br
+\fC#include 'op_planner/PlannerH\&.h'\fP
+.br
+\fC#include 'op_planner/MappingHelpers\&.h'\fP
+.br
+\fC#include 'op_simu/SimpleTracker\&.h'\fP
+.br
+\fC#include 'op_planner/SimuDecisionMaker\&.h'\fP
+.br
+\fC#include 'op_utility/DataRW\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCarSimulatorNS::SimuCommandParams\fP"
+.br
+.ti -1c
+.RI "class \fBCarSimulatorNS::OpenPlannerCarSimulator\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBCarSimulatorNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTEERING_AXIS\fP   0"
+.br
+.ti -1c
+.RI "#define \fBACCELERATION_AXIS\fP   1"
+.br
+.ti -1c
+.RI "#define \fBBRAKE_AXIS\fP   2"
+.br
+.ti -1c
+.RI "#define \fBBUTTON_INDEX\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSTART_BUTTON_VALUE\fP   512"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCarSimulatorNS::MAP_SOURCE_TYPE\fP { \fBCarSimulatorNS::MAP_AUTOWARE\fP, \fBCarSimulatorNS::MAP_FOLDER\fP, \fBCarSimulatorNS::MAP_KML_FILE\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ACCELERATION_AXIS   1"
+
+.PP
+Definition at line 66 of file op_car_simulator_core\&.h\&.
+.SS "#define BRAKE_AXIS   2"
+
+.PP
+Definition at line 67 of file op_car_simulator_core\&.h\&.
+.SS "#define BUTTON_INDEX   0"
+
+.PP
+Definition at line 68 of file op_car_simulator_core\&.h\&.
+.SS "#define START_BUTTON_VALUE   512"
+
+.PP
+Definition at line 69 of file op_car_simulator_core\&.h\&.
+.SS "#define STEERING_AXIS   0"
+
+.PP
+Definition at line 65 of file op_car_simulator_core\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

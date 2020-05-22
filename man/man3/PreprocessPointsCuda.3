@@ -1,0 +1,112 @@
+.TH "PreprocessPointsCuda" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PreprocessPointsCuda \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <preprocess_points_cuda\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPreprocessPointsCuda\fP (const int NUM_THREADS, const int MAX_NUM_PILLARS, const int MAX_POINTS_PER_PILLAR, const int NUM_INDS_FOR_SCAN, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_BOX_CORNERS)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "\fB~PreprocessPointsCuda\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoPreprocessPointsCuda\fP (const float *dev_points, const int in_num_points, int *dev_x_coors, int *dev_y_coors, float *dev_num_points_per_pillar, float *dev_pillar_x, float *dev_pillar_y, float *dev_pillar_z, float *dev_pillar_i, float *dev_x_coors_for_sub_shaped, float *dev_y_coors_for_sub_shaped, float *dev_pillar_feature_mask, int *dev_sparse_pillar_map, int *host_pillar_count)"
+.br
+.RI "\fICUDA preprocessing for input pointcloud\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file preprocess_points_cuda\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PreprocessPointsCuda::PreprocessPointsCuda (const int NUM_THREADS, const int MAX_NUM_PILLARS, const int MAX_POINTS_PER_PILLAR, const int NUM_INDS_FOR_SCAN, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_BOX_CORNERS)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINUM_THREADS\fP Number of threads when launching cuda kernel 
+.br
+\fIMAX_NUM_PILLARS\fP Maximum number of pillars 
+.br
+\fIMAX_POINTS_PER_PILLAR\fP Maximum number of points per pillar 
+.br
+\fINUM_INDS_FOR_SCAN\fP Number of indexes for scan(cumsum) 
+.br
+\fIGRID_X_SIZE\fP Number of pillars in x-coordinate 
+.br
+\fIGRID_Y_SIZE\fP Number of pillars in y-coordinate 
+.br
+\fIGRID_Z_SIZE\fP Number of pillars in z-coordinate 
+.br
+\fIPILLAR_X_SIZE\fP Size of x-dimension for a pillar 
+.br
+\fIPILLAR_Y_SIZE\fP Size of y-dimension for a pillar 
+.br
+\fIPILLAR_Z_SIZE\fP Size of z-dimension for a pillar 
+.br
+\fIMIN_X_RANGE\fP Minimum x value for pointcloud 
+.br
+\fIMIN_Y_RANGE\fP Minimum y value for pointcloud 
+.br
+\fIMIN_Z_RANGE\fP Minimum z value for pointcloud 
+.br
+\fINUM_BOX_CORNERS\fP Number of corners for 2D box
+.RE
+.PP
+Captital variables never change after the compile 
+.SS "PreprocessPointsCuda::~PreprocessPointsCuda ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void PreprocessPointsCuda::doPreprocessPointsCuda (const float * dev_points, const int in_num_points, int * dev_x_coors, int * dev_y_coors, float * dev_num_points_per_pillar, float * dev_pillar_x, float * dev_pillar_y, float * dev_pillar_z, float * dev_pillar_i, float * dev_x_coors_for_sub_shaped, float * dev_y_coors_for_sub_shaped, float * dev_pillar_feature_mask, int * dev_sparse_pillar_map, int * host_pillar_count)"
+
+.PP
+CUDA preprocessing for input pointcloud\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev_points\fP Pointcloud array 
+.br
+\fIin_num_points\fP The number of points 
+.br
+\fIdev_x_coors\fP X-coordinate indexes for corresponding pillars 
+.br
+\fIdev_y_coors\fP Y-coordinate indexes for corresponding pillars 
+.br
+\fIdev_num_points_per_pillar\fP Number of points in corresponding pillars 
+.br
+\fIdev_pillar_x\fP X-coordinate values for points in each pillar 
+.br
+\fIdev_pillar_y\fP Y-coordinate values for points in each pillar 
+.br
+\fIdev_pillar_z\fP Z-coordinate values for points in each pillar 
+.br
+\fIdev_pillar_i\fP Intensity values for points in each pillar 
+.br
+\fIdev_x_coors_for_sub_shaped\fP Array for x substraction in the network 
+.br
+\fIdev_y_coors_for_sub_shaped\fP Array for y substraction in the network 
+.br
+\fIdev_pillar_feature_mask\fP Mask to make pillars' feature zero where no points in the pillars 
+.br
+\fIdev_sparse_pillar_map\fP Grid map representation for pillar-occupancy 
+.br
+\fIhost_pillar_count\fP The numnber of valid pillars for an input pointcloud
+.RE
+.PP
+Convert pointcloud to pillar representation 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

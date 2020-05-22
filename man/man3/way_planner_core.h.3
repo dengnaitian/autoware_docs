@@ -1,0 +1,120 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/way_planner/include/way_planner_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/way_planner/include/way_planner_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include 'vector_map_msgs/PointArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/NodeArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/StopLineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/DTLaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/AreaArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/SignalArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/StopLine\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/VectorArray\&.h'\fP
+.br
+\fC#include <geometry_msgs/Vector3Stamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <std_msgs/Int8\&.h>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+\fC#include 'autoware_can_msgs/CANInfo\&.h'\fP
+.br
+\fC#include <visualization_msgs/MarkerArray\&.h>\fP
+.br
+\fC#include 'op_planner/MappingHelpers\&.h'\fP
+.br
+\fC#include 'op_planner/PlanningHelpers\&.h'\fP
+.br
+\fC#include 'op_planner/PlannerH\&.h'\fP
+.br
+\fC#include 'ROSHelpers\&.h'\fP
+.br
+\fC#include 'SocketServer\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWayPlannerNS::AutowareRoadNetwork\fP"
+.br
+.ti -1c
+.RI "class \fBWayPlannerNS::WayPlannerParams\fP"
+.br
+.ti -1c
+.RI "class \fBWayPlannerNS::way_planner_core\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBWayPlannerNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAX_GLOBAL_PLAN_DISTANCE\fP   10000"
+.br
+.ti -1c
+.RI "#define \fB_ENABLE_VISUALIZE_PLAN\fP"
+.br
+.ti -1c
+.RI "#define \fBREPLANNING_DISTANCE\fP   25"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBWayPlannerNS::MAP_SOURCE_TYPE\fP { \fBWayPlannerNS::MAP_AUTOWARE\fP, \fBWayPlannerNS::MAP_FOLDER\fP, \fBWayPlannerNS::MAP_KML_FILE\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _ENABLE_VISUALIZE_PLAN"
+
+.PP
+Definition at line 57 of file way_planner_core\&.h\&.
+.SS "#define MAX_GLOBAL_PLAN_DISTANCE   10000"
+
+.PP
+Definition at line 56 of file way_planner_core\&.h\&.
+.SS "#define REPLANNING_DISTANCE   25"
+
+.PP
+Definition at line 58 of file way_planner_core\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

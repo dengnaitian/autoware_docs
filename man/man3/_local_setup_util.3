@@ -1,0 +1,101 @@
+.TH "_local_setup_util" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_local_setup_util \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBmain\fP (argv=sys\&.argv[1:])"
+.br
+.ti -1c
+.RI "def \fBget_packages\fP (prefix_path, merged_install)"
+.br
+.ti -1c
+.RI "def \fBadd_package\fP (path, packages)"
+.br
+.ti -1c
+.RI "def \fBorder_packages\fP (packages)"
+.br
+.ti -1c
+.RI "def \fBreduce_cycle_set\fP (packages)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def _local_setup_util\&.add_package ( path,  packages)"
+
+.PP
+.nf
+Check the path and if it exists extract the packages runtime dependencies.
+
+:param Path path: The resource file containing the runtime dependencies
+:param dict packages: A mapping from package names to the sets of runtime
+  dependencies to add to
+
+.fi
+.PP
+ 
+.PP
+Definition at line 70 of file _local_setup_util\&.py\&.
+.SS "def _local_setup_util\&.get_packages ( prefix_path,  merged_install)"
+
+.PP
+.nf
+Find packages based on colcon-specific files created during installation.
+
+:param Path prefix_path: The install prefix path of all packages
+:param bool merged_install: The flag if the packages are all installed
+  directly in the prefix or if each package is installed in a subdirectory
+  named after the package
+:returns: A mapping from the package name to the set of runtime
+  dependencies
+:rtype: dict
+
+.fi
+.PP
+ 
+.PP
+Definition at line 24 of file _local_setup_util\&.py\&.
+.SS "def _local_setup_util\&.main ( argv = \fCsys\&.argv[1:]\fP)"
+
+.PP
+Definition at line 10 of file _local_setup_util\&.py\&.
+.SS "def _local_setup_util\&.order_packages ( packages)"
+
+.PP
+.nf
+Order packages topologically.
+
+:param Path path: The resource file containing the runtime dependencies
+:param dict packages: A mapping from package name to the set of runtime
+  dependencies
+:returns: The package names
+:rtype: list
+
+.fi
+.PP
+ 
+.PP
+Definition at line 83 of file _local_setup_util\&.py\&.
+.SS "def _local_setup_util\&.reduce_cycle_set ( packages)"
+
+.PP
+.nf
+Reduce the set of packages to the ones part of the circular dependency.
+
+:param dict packages: A mapping from package name to the set of runtime
+  dependencies which is modified in place
+
+.fi
+.PP
+ 
+.PP
+Definition at line 114 of file _local_setup_util\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,268 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/for_use_GPU.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/for_use_GPU.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cuda\&.h>\fP
+.br
+\fC#include 'MODEL_info\&.h'\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_SWITCH_FLOAT_H\fP"
+.br
+.ti -1c
+.RI "#define \fBROOT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBPART\fP   1"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "CUdevice * \fBdev\fP"
+.br
+.ti -1c
+.RI "CUcontext * \fBctx\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_process_root\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_process_part\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_dt1d_x\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_dt1d_y\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_a_score\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_inverse_Q\fP"
+.br
+.ti -1c
+.RI "CUmodule * \fBmodule\fP"
+.br
+.ti -1c
+.RI "int * \fBNR_MAXTHREADS_X\fP"
+.br
+.ti -1c
+.RI "int * \fBNR_MAXTHREADS_Y\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfeatp2_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBA_SIZE_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBB_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBB_dims_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfconvs_error_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfconvs_C_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpart_C_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpart_error_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBM_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpM_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpIx_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpIy_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpm_size_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBPIDX_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBdef_array_dev\fP"
+.br
+.ti -1c
+.RI "int \fBsum_size_def_array\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBDID_4_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBnumpart_dev\fP"
+.br
+.ti -1c
+.RI "int \fBmax_numpart\fP"
+.br
+.ti -1c
+.RI "int \fBdevice_num\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _SWITCH_FLOAT_H"
+
+.PP
+Definition at line 25 of file for_use_GPU\&.h\&.
+.SS "#define PART   1"
+
+.PP
+Definition at line 63 of file for_use_GPU\&.h\&.
+.SS "#define ROOT   0"
+
+.PP
+Definition at line 62 of file for_use_GPU\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "CUdeviceptr* A_SIZE_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* B_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* B_dims_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUcontext* ctx"
+
+.PP
+Definition at line 49 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* def_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdevice* dev"
+
+.PP
+Definition at line 48 of file GPU_init\&.cpp\&.
+.SS "int device_num"
+
+.PP
+Definition at line 52 of file obstacle_detection\&.cpp\&.
+.SS "CUdeviceptr* DID_4_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* fconvs_C_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* fconvs_error_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* featp2_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_calc_a_score"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_dt1d_x"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_dt1d_y"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_inverse_Q"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_process_part"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction* func_process_root"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* M_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "int max_numpart"
+
+.PP
+Definition at line 25 of file get_boxes\&.cpp\&.
+.SS "CUmodule* module"
+
+.PP
+Definition at line 51 of file GPU_init\&.cpp\&.
+.SS "int* NR_MAXTHREADS_X"
+
+.PP
+Definition at line 52 of file GPU_init\&.cpp\&.
+.SS "int * NR_MAXTHREADS_Y"
+
+.PP
+Definition at line 52 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* numpart_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* part_C_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* part_error_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* PIDX_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* pm_size_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "int sum_size_def_array"
+
+.PP
+Definition at line 34 of file load_model\&.cpp\&.
+.SS "CUdeviceptr* tmpIx_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* tmpIy_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* tmpM_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

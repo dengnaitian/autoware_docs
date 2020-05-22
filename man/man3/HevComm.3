@@ -1,0 +1,201 @@
+.TH "HevComm" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HevComm \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HevComm\&.h>\fP
+.PP
+Inherits \fBChangeConfig\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHevComm\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~HevComm\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBInitializeComm\fP (const \fBPlannerHNS::CAR_BASIC_INFO\fP &carInfo)"
+.br
+.ti -1c
+.RI "virtual int \fBStartComm\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetDriveMotorStatus\fP (bool bOn)"
+.br
+.ti -1c
+.RI "virtual void \fBSetSteerMotorStatus\fP (bool bOn)"
+.br
+.ti -1c
+.RI "virtual void \fBSetNormalizedSteeringAngle\fP (double angle)"
+.br
+.ti -1c
+.RI "virtual void \fBSetNormalizedSpeed\fP (double speed)"
+.br
+.ti -1c
+.RI "virtual void \fBSetShift\fP (\fBPlannerHNS::SHIFT_POS\fP shift)"
+.br
+.ti -1c
+.RI "virtual void \fBSetBrakeValue\fP (double brake)"
+.br
+.ti -1c
+.RI "virtual bool \fBGetDriveMotorStatus\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBGetSteerMotorStatus\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentSteerAngle\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentSpeed\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBPlannerHNS::SHIFT_POS\fP \fBGetCurrentShift\fP ()"
+.br
+.ti -1c
+.RI "virtual double \fBGetCurrentBrakeValue\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetHevCorrectShift\fP (\fBPlannerHNS::SHIFT_POS\fP s)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::SHIFT_POS\fP \fBGetGeneralCorrectShift\fP (int shift)"
+.br
+.ti -1c
+.RI "virtual int \fBGoLive\fP (bool bLive)"
+.br
+.ti -1c
+.RI "virtual bool \fBIsAutoDrive\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBIsAutoSteer\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBIsAuto\fP ()"
+.br
+.ti -1c
+.RI "bool \fBCloseComm\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file HevComm\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HevComm::HevComm ()"
+
+.PP
+Definition at line 10 of file HevComm\&.cpp\&.
+.SS "HevComm::~HevComm ()\fC [virtual]\fP"
+
+.PP
+Definition at line 30 of file HevComm\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool HevComm::CloseComm ()\fC [inline]\fP"
+
+.PP
+Definition at line 46 of file HevComm\&.h\&.
+.SS "double HevComm::GetCurrentBrakeValue ()\fC [virtual]\fP"
+
+.PP
+Definition at line 254 of file HevComm\&.cpp\&.
+.SS "\fBPlannerHNS::SHIFT_POS\fP HevComm::GetCurrentShift ()\fC [virtual]\fP"
+
+.PP
+Definition at line 246 of file HevComm\&.cpp\&.
+.SS "double HevComm::GetCurrentSpeed ()\fC [virtual]\fP"
+
+.PP
+Definition at line 235 of file HevComm\&.cpp\&.
+.SS "double HevComm::GetCurrentSteerAngle ()\fC [virtual]\fP"
+
+.PP
+Definition at line 222 of file HevComm\&.cpp\&.
+.SS "bool HevComm::GetDriveMotorStatus ()\fC [virtual]\fP"
+
+.PP
+Definition at line 212 of file HevComm\&.cpp\&.
+.SS "\fBPlannerHNS::SHIFT_POS\fP HevComm::GetGeneralCorrectShift (int shift)"
+
+.PP
+Definition at line 179 of file HevComm\&.cpp\&.
+.SS "int HevComm::GetHevCorrectShift (\fBPlannerHNS::SHIFT_POS\fP s)"
+
+.PP
+Definition at line 159 of file HevComm\&.cpp\&.
+.SS "bool HevComm::GetSteerMotorStatus ()\fC [virtual]\fP"
+
+.PP
+Definition at line 217 of file HevComm\&.cpp\&.
+.SS "int HevComm::GoLive (bool bLive)\fC [virtual]\fP"
+
+.PP
+Definition at line 259 of file HevComm\&.cpp\&.
+.SS "int HevComm::InitializeComm (const \fBPlannerHNS::CAR_BASIC_INFO\fP & carInfo)\fC [virtual]\fP"
+
+.PP
+Definition at line 101 of file HevComm\&.cpp\&.
+.SS "bool HevComm::IsAuto ()\fC [virtual]\fP"
+
+.PP
+Definition at line 82 of file HevComm\&.cpp\&.
+.SS "bool HevComm::IsAutoDrive ()\fC [virtual]\fP"
+
+.PP
+Definition at line 57 of file HevComm\&.cpp\&.
+.SS "bool HevComm::IsAutoSteer ()\fC [virtual]\fP"
+
+.PP
+Definition at line 70 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetBrakeValue (double brake)\fC [virtual]\fP"
+
+.PP
+Definition at line 207 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetDriveMotorStatus (bool bOn)\fC [virtual]\fP"
+
+.PP
+Definition at line 112 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetNormalizedSpeed (double speed)\fC [virtual]\fP"
+
+.PP
+Definition at line 135 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetNormalizedSteeringAngle (double angle)\fC [virtual]\fP"
+
+.PP
+Definition at line 125 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetShift (\fBPlannerHNS::SHIFT_POS\fP shift)\fC [virtual]\fP"
+
+.PP
+Definition at line 199 of file HevComm\&.cpp\&.
+.SS "void HevComm::SetSteerMotorStatus (bool bOn)\fC [virtual]\fP"
+
+.PP
+Definition at line 121 of file HevComm\&.cpp\&.
+.SS "int HevComm::StartComm ()\fC [virtual]\fP"
+
+.PP
+Definition at line 107 of file HevComm\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP HevComm::m_CarInfo"
+
+.PP
+Definition at line 48 of file HevComm\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

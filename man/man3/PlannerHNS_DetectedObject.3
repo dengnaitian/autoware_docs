@@ -1,0 +1,211 @@
+.TH "PlannerHNS::DetectedObject" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::DetectedObject \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectedObject\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "std::string \fBlabel\fP"
+.br
+.ti -1c
+.RI "\fBOBSTACLE_TYPE\fP \fBt\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBcenter\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBpredicted_center\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBnoisy_center\fP"
+.br
+.ti -1c
+.RI "\fBSTATE_TYPE\fP \fBpredicted_behavior\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBcenters_list\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBcontour\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBpredTrajectories\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP * > \fBpClosestWaypoints\fP"
+.br
+.ti -1c
+.RI "double \fBw\fP"
+.br
+.ti -1c
+.RI "double \fBl\fP"
+.br
+.ti -1c
+.RI "double \fBh\fP"
+.br
+.ti -1c
+.RI "double \fBdistance_to_center\fP"
+.br
+.ti -1c
+.RI "double \fBactual_speed\fP"
+.br
+.ti -1c
+.RI "double \fBactual_yaw\fP"
+.br
+.ti -1c
+.RI "bool \fBbDirection\fP"
+.br
+.ti -1c
+.RI "bool \fBbVelocity\fP"
+.br
+.ti -1c
+.RI "int \fBacceleration\fP"
+.br
+.ti -1c
+.RI "int \fBacceleration_desc\fP"
+.br
+.ti -1c
+.RI "double \fBacceleration_raw\fP"
+.br
+.ti -1c
+.RI "\fBLIGHT_INDICATOR\fP \fBindicator_state\fP"
+.br
+.ti -1c
+.RI "int \fBoriginalID\fP"
+.br
+.ti -1c
+.RI "\fBBEH_STATE_TYPE\fP \fBbehavior_state\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 873 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::DetectedObject::DetectedObject ()\fC [inline]\fP"
+
+.PP
+Definition at line 907 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int PlannerHNS::DetectedObject::acceleration"
+
+.PP
+Definition at line 897 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::DetectedObject::acceleration_desc"
+
+.PP
+Definition at line 899 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::acceleration_raw"
+
+.PP
+Definition at line 900 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::actual_speed"
+
+.PP
+Definition at line 892 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::actual_yaw"
+
+.PP
+Definition at line 893 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::DetectedObject::bDirection"
+
+.PP
+Definition at line 895 of file RoadNetwork\&.h\&.
+.SS "\fBBEH_STATE_TYPE\fP PlannerHNS::DetectedObject::behavior_state"
+
+.PP
+Definition at line 905 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::DetectedObject::bVelocity"
+
+.PP
+Definition at line 896 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::DetectedObject::center"
+
+.PP
+Definition at line 879 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::DetectedObject::centers_list"
+
+.PP
+Definition at line 883 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBGPSPoint\fP> PlannerHNS::DetectedObject::contour"
+
+.PP
+Definition at line 884 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::distance_to_center"
+
+.PP
+Definition at line 890 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::h"
+
+.PP
+Definition at line 889 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::DetectedObject::id"
+
+.PP
+Definition at line 876 of file RoadNetwork\&.h\&.
+.SS "\fBLIGHT_INDICATOR\fP PlannerHNS::DetectedObject::indicator_state"
+
+.PP
+Definition at line 902 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::l"
+
+.PP
+Definition at line 888 of file RoadNetwork\&.h\&.
+.SS "std::string PlannerHNS::DetectedObject::label"
+
+.PP
+Definition at line 877 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::DetectedObject::noisy_center"
+
+.PP
+Definition at line 881 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::DetectedObject::originalID"
+
+.PP
+Definition at line 904 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBWayPoint\fP*> PlannerHNS::DetectedObject::pClosestWaypoints"
+
+.PP
+Definition at line 886 of file RoadNetwork\&.h\&.
+.SS "\fBSTATE_TYPE\fP PlannerHNS::DetectedObject::predicted_behavior"
+
+.PP
+Definition at line 882 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::DetectedObject::predicted_center"
+
+.PP
+Definition at line 880 of file RoadNetwork\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::DetectedObject::predTrajectories"
+
+.PP
+Definition at line 885 of file RoadNetwork\&.h\&.
+.SS "\fBOBSTACLE_TYPE\fP PlannerHNS::DetectedObject::t"
+
+.PP
+Definition at line 878 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::DetectedObject::w"
+
+.PP
+Definition at line 887 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,19 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_filters_packages_points_preprocessor_nodes_ring_ground_filter__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_filters_packages_points_preprocessor_nodes_ring_ground_filter__r_e_a_d_m_e \- Some Guidelines for Tuning the Ring Ground Filter 
+Author : Patiphon Narksri
+.PP
+\fIProblem:\fP Some parts of vertical objects are detected as ground points\&.
+.PP
+\fIFIX:\fP One workaround for this is to set the 'clipping_threshold' parameter in the launch file\&. By setting this threshold, any points higher than this threshold will be detected as vertical points\&. However, because all points that are higher than the threshold will be detected as vertical points, slopes might be incorrectly detected as vertical points as well\&. 
+.PP
+.PP
+\fIProblem:\fP Some small objects like curbs are missing\&. \fIFIX:\fP Try to lower the 'gap_thres' parameter\&. However, lowering this parameter too much might result in mis-detecting slopes as vertical points\&. Usually, 0\&.15 - 0\&.2 is enough for detecting curbs\&. 
+.PP
+.PP
+\fIProblem:\fP Ring shaped noise (ground points being detected as vertical points) occurs nearby the vehicle\&. \fIFIX:\fP Try to lower the 'points_distance' parameter\&. However, lowering this parameter too much might result in mis-detecting vertical objects which are far away from the vehicle as ground points\&. 
+.PP
+.PP
+\fIProblem:\fP \fBLine\fP shaped noise (in radial direction) occurs near edges of vertical objects\&. \fIFIX:\fP Decrease the 'min_points' parameter\&. However, by doing so, some parts of vertical objects will be mis-detected as ground points\&. 

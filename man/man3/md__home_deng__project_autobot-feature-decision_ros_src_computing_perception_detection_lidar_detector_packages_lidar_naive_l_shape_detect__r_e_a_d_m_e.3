@@ -1,0 +1,44 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_naive_l_shape_detect__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_naive_l_shape_detect__r_e_a_d_m_e \- Naive-L-Shape fitting 
+
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch lidar_naive_l_shape_detect lidar_naive_l_shape_detect\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Detection/ lidar_detector -> \fClidar_naive_l_shape_detect\fP
+.PP
+.SS "Reference"
+.PP
+A\&. Arya Senna Abdul Rachman, 3D-LIDAR Multi Object Tracking for Autonomous Driving\&. 2017\&. [paper](https://repository.tudelft.nl/islandora/object/uuid:f536b829-42ae-41d5-968d-13bbaa4ec736
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+\fClidar_eucledian_cluster_detect\fP node\&.
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters for \fClidar_naive_l_shape_detect\fP
+.PP
+ParameterTypeDescription  \fCinput topic\fP*String* Input topic(type: autoware_msgs::DetectedObjectArray)\&. Default \fC/detection/lidar_objects\fP\&. \fCoutput topic\fP*String*Output topic(type: autoware_msgs::DetectedObjectArray)\&. Default \fC/detection/lidar_objects/l_shaped\fP\&. \fCrandom_ponts\fP*int*Number of random sampling points\&. Default \fC80\fP\&. \fCslope_dist_thres\fP*float*Threshold for applying L-shape fitting\&. Default \fC2\&.0\fP\&. \fCnum_points_thres\fP*int*Threshold for applying L-shape fitting\&. Default \fC10\fP\&. \fCsensor_height\fP*float*Lidar height from base_link\&. Default \fC2\&.3\fP\&. 
+.PP
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/detection/lidar_objects\fP\fCautoware_msgs::DetectedObjectArray\fPSegmented pointcloud from a clustering algorithm like eucledian cluster\&. 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/detection/lidar_objects/l_shaped\fP\fCautoware_msgs::DetectedObjectArray\fPL-shape fitting pose and dimension will be published\&. 
+.PP
+.SS "Video"
+.PP
+\fC\fP 

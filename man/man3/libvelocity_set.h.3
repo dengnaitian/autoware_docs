@@ -1,0 +1,115 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_planner/src/velocity_set/libvelocity_set.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_planner/src/velocity_set/libvelocity_set.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <geometry_msgs/Point\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <vector_map/vector_map\&.h>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBCrossWalkPoints\fP"
+.br
+.ti -1c
+.RI "class \fBCrossWalk\fP"
+.br
+.ti -1c
+.RI "class \fBObstaclePoints\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEControl\fP { \fBKEEP\fP = -1, \fBSTOP\fP = 1, \fBDECELERATE\fP = 2, \fBOTHERS\fP = 3, \fBEControl::KEEP\fP = -1, \fBEControl::STOP\fP = 1, \fBEControl::STOPLINE\fP = 2, \fBEControl::DECELERATE\fP = 3, \fBEControl::OTHERS\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBEObstacleType\fP { \fBEObstacleType::NONE\fP = -1, \fBEObstacleType::ON_WAYPOINTS\fP = 1, \fBEObstacleType::ON_CROSSWALK\fP = 2, \fBEObstacleType::STOPLINE\fP = 3 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBcalcSquareOfLength\fP (const \fBgeometry_msgs::Point\fP &p1, const \fBgeometry_msgs::Point\fP &p2)"
+.br
+.ti -1c
+.RI "int \fBcalcWaypointIndexReverse\fP (const autoware_msgs::Lane &lane, const int begin_waypoint, const double \fBdistance\fP)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBEControl\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIKEEP \fP\fP
+.TP
+\fB\fISTOP \fP\fP
+.TP
+\fB\fIDECELERATE \fP\fP
+.TP
+\fB\fIOTHERS \fP\fP
+.TP
+\fB\fIKEEP \fP\fP
+.TP
+\fB\fISTOP \fP\fP
+.TP
+\fB\fISTOPLINE \fP\fP
+.TP
+\fB\fIDECELERATE \fP\fP
+.TP
+\fB\fIOTHERS \fP\fP
+.PP
+Definition at line 16 of file libvelocity_set\&.h\&.
+.SS "enum \fBEObstacleType\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fION_WAYPOINTS \fP\fP
+.TP
+\fB\fION_CROSSWALK \fP\fP
+.TP
+\fB\fISTOPLINE \fP\fP
+.PP
+Definition at line 25 of file libvelocity_set\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "double calcSquareOfLength (const \fBgeometry_msgs::Point\fP & p1, const \fBgeometry_msgs::Point\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 181 of file libvelocity_set\&.h\&.
+.SS "int calcWaypointIndexReverse (const autoware_msgs::Lane & lane, const int begin_waypoint, const double distance)\fC [inline]\fP"
+
+.PP
+Definition at line 187 of file libvelocity_set\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

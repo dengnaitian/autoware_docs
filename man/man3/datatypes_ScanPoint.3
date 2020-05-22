@@ -1,0 +1,651 @@
+.TH "datatypes::ScanPoint" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::ScanPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ScanPoint\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFlags\fP { \fBFlagGround\fP = 0x0001, \fBFlagDirt\fP = 0x0002, \fBFlagRain\fP = 0x0004, \fBFlagThresholdSwitching\fP = 0x0010, \fBFlagReflector\fP = 0x0020, \fBFlagLeftCovered\fP = 0x0100, \fBFlagRightCovered\fP = 0x0200, \fBFlagBackground\fP = 0x0400, \fBFlagMarker\fP = 0x0800, \fBFlagTransparent\fP = 0x1000, \fBMaskInvalid\fP = FlagGround | FlagDirt | FlagRain | FlagBackground, \fBMaskCovered\fP = FlagLeftCovered | FlagRightCovered }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScanPoint\fP ()"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetX\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetY\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetZ\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDist\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetHAngle\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetVAngle\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetEchoWidth\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetFlags\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetSourceId\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetLayer\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetEchoNum\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisValid\fP () const "
+.br
+.RI "\fIChecks if the scan point is valid (no ground, dirt, or rain) \fP"
+.ti -1c
+.RI "bool \fBisMarked\fP () const "
+.br
+.RI "\fIChecks if the marker is set\&. \fP"
+.ti -1c
+.RI "bool \fBisGround\fP () const "
+.br
+.RI "\fIChecks if the scan point is labeled as ground\&. \fP"
+.ti -1c
+.RI "bool \fBisBackground\fP () const "
+.br
+.RI "\fIChecks if the scan point is labeled as background\&. \fP"
+.ti -1c
+.RI "bool \fBisDirt\fP () const "
+.br
+.RI "\fIChecks if the scan point is labeled as dirt\&. \fP"
+.ti -1c
+.RI "bool \fBisRain\fP () const "
+.br
+.RI "\fIChecks if the scan point is labeled as rain\&. \fP"
+.ti -1c
+.RI "bool \fBisLeftCovered\fP () const "
+.br
+.RI "\fIChecks if the 'left covered' flag is set\&. \fP"
+.ti -1c
+.RI "bool \fBisRightCovered\fP () const "
+.br
+.RI "\fIChecks if the 'right covered' flag is set\&. \fP"
+.ti -1c
+.RI "bool \fBisReflector\fP () const "
+.br
+.RI "\fIChecks if the reflector flag is set\&. \fP"
+.ti -1c
+.RI "bool \fBisThresholdSwitching\fP () const "
+.br
+.RI "\fIChecks if the threshold switching flag is set\&. \fP"
+.ti -1c
+.RI "bool \fBisTransparent\fP () const "
+.br
+.RI "\fIChecks if there is at least one more echo behind this scan point (B or C echo) \fP"
+.ti -1c
+.RI "double \fBgetDist\fP (const \fBScanPoint\fP &other) const "
+.br
+.RI "\fIReturns the distance between this and the given other scanpoint, in [m]\&. \fP"
+.ti -1c
+.RI "double \fBgetDist2D\fP (const \fBScanPoint\fP &other) const "
+.br
+.RI "\fIReturns the two-dimensional distance between this and the given other scanpoint, in [m]\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP \fBtoPoint3D\fP () const "
+.br
+.RI "\fIReturns the x,y,z coordinates as a \fBPoint3D\fP structure\&. \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBtoPoint2D\fP () const "
+.br
+.RI "\fIReturns the x and y coordinates as a \fBPoint2D\fP structure\&. \fP"
+.ti -1c
+.RI "void \fBsetPoint3D\fP (const \fBPoint3D\fP &pt)"
+.br
+.ti -1c
+.RI "void \fBsetCartesian\fP (double x, double y, double z)"
+.br
+.ti -1c
+.RI "void \fBsetPolar\fP (double dist, double hAngle, double vAngle)"
+.br
+.ti -1c
+.RI "void \fBaddCartesianOffset\fP (double xOffset, double yOffset, double zOffset)"
+.br
+.ti -1c
+.RI "void \fBaddPolarOffset\fP (double distOffset, double hAngleOffset, double vAngleOffset)"
+.br
+.ti -1c
+.RI "void \fBsetEchoWidth\fP (double echoWidth)"
+.br
+.RI "\fISet the echo pulse width, typically in [m]\&. \fP"
+.ti -1c
+.RI "void \fBsetSourceId\fP (\fBUINT8\fP id)"
+.br
+.ti -1c
+.RI "void \fBsetLayer\fP (\fBUINT8\fP ch)"
+.br
+.ti -1c
+.RI "void \fBsetEchoNum\fP (\fBUINT8\fP sub)"
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (\fBUINT16\fP flags)"
+.br
+.RI "\fISets the scan point flags directly\&. \fP"
+.ti -1c
+.RI "void \fBsetMarker\fP (bool \fBisMarked\fP=true)"
+.br
+.RI "\fISet or clear the 'Marker' flag\&. \fP"
+.ti -1c
+.RI "void \fBsetBackground\fP (bool \fBisBackground\fP=true)"
+.br
+.RI "\fILabels the scan point as invalid because it is in the background area\&. \fP"
+.ti -1c
+.RI "void \fBsetGround\fP (bool \fBisGround\fP=true)"
+.br
+.RI "\fILabels the scan point as invalid because it is an echo from the ground\&. \fP"
+.ti -1c
+.RI "void \fBsetDirt\fP (bool \fBisDirt\fP=true)"
+.br
+.RI "\fILabels the scan point as invalid because its an echo from dirt\&. \fP"
+.ti -1c
+.RI "void \fBsetRain\fP (bool \fBisRain\fP=true)"
+.br
+.RI "\fILabels the scan point as invalid because its an echo from rain\&. \fP"
+.ti -1c
+.RI "void \fBsetLeftCovered\fP (bool \fBisLeftCovered\fP=true)"
+.br
+.RI "\fILabels the scan point: Left neighbour point may be covered\&. \fP"
+.ti -1c
+.RI "void \fBsetRightCovered\fP (bool \fBisRightCovered\fP=true)"
+.br
+.RI "\fILabels the scan point: Right neighbour point may be covered\&. \fP"
+.ti -1c
+.RI "void \fBsetNotCovered\fP ()"
+.br
+.RI "\fIRemove cover status\&. \fP"
+.ti -1c
+.RI "void \fBsetReflector\fP (bool \fBisReflector\fP=true)"
+.br
+.RI "\fILabels the scan point: EPW is high enough to be a reflector\&. \fP"
+.ti -1c
+.RI "void \fBsetValid\fP ()"
+.br
+.RI "\fIRemoves all scan status information\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static double \fBgetDistanceBetweenScanpoints\fP (const \fBScanPoint\fP &pt1, const \fBScanPoint\fP &pt2)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBm_x\fP"
+.br
+.ti -1c
+.RI "double \fBm_y\fP"
+.br
+.ti -1c
+.RI "double \fBm_z\fP"
+.br
+.ti -1c
+.RI "double \fBm_dist\fP"
+.br
+.ti -1c
+.RI "double \fBm_hAngle\fP"
+.br
+.ti -1c
+.RI "double \fBm_vAngle\fP"
+.br
+.ti -1c
+.RI "double \fBm_echoWidth\fP"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBm_flags\fP"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBm_sourceId\fP"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBm_channel\fP"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBm_subchannel\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBScanPoint\fP &, const \fBScanPoint\fP &)"
+.br
+.RI "\fIEquality predicate\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file ScanPoint\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::ScanPoint::Flags\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFlagGround \fP\fP
+Invalid scan point, echo from ground\&. 
+.TP
+\fB\fIFlagDirt \fP\fP
+Invalid scan point, echo from dirt\&. 
+.TP
+\fB\fIFlagRain \fP\fP
+Invalid scan point, echo from rain drop\&. 
+.TP
+\fB\fIFlagThresholdSwitching \fP\fP
+Old: \fBScan\fP point was measured in a shot with threshold switching (earlier FPGA versions) \fBScan\fP point was measured using the higher threshold (since FGPA version 8\&.0\&.08) 
+.TP
+\fB\fIFlagReflector \fP\fP
+EPW of scan point is high enough to be a reflector\&. 
+.TP
+\fB\fIFlagLeftCovered \fP\fP
+Left neighbour point may be covered\&. 
+.TP
+\fB\fIFlagRightCovered \fP\fP
+Right neighbour point may be covered\&. 
+.TP
+\fB\fIFlagBackground \fP\fP
+\fBPoint\fP has been recognized as background and should not be used in the tracking anymore\&. 
+.TP
+\fB\fIFlagMarker \fP\fP
+\fBPoint\fP is 'marked' (see above) 
+.TP
+\fB\fIFlagTransparent \fP\fP
+There is at least one more echo behind this scan point (B or C echo) 
+.TP
+\fB\fIMaskInvalid \fP\fP
+All flags of invalid scan points\&. 
+.TP
+\fB\fIMaskCovered \fP\fP
+All coverage flags\&. 
+.PP
+Definition at line 48 of file ScanPoint\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::ScanPoint::ScanPoint ()"
+
+.PP
+Definition at line 22 of file ScanPoint\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::ScanPoint::addCartesianOffset (double xOffset, double yOffset, double zOffset)"
+
+.PP
+Definition at line 137 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::addPolarOffset (double distOffset, double hAngleOffset, double vAngleOffset)"
+Useful e\&.g\&. to add the horizontal and vertical angle offsets of the mounting position of a laserscanner\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdistOffset\fP Radial offset in meters
+.br
+\fIhAngleOffset\fP Horizontal (yaw) angle offset in radians\&. The resulting angle will be normalized into the interval [-pi,+pi)\&.
+.br
+\fIvAngleOffset\fP Vertical (pitch) angle offset in radians\&. The resulting angle will be normalized into the interval [-pi,+pi)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::clear ()"
+
+.PP
+Definition at line 26 of file ScanPoint\&.cpp\&.
+.SS "double datatypes::ScanPoint::getDist () const\fC [inline]\fP"
+
+.PP
+Definition at line 93 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getDist (const \fBScanPoint\fP & other) const"
+
+.PP
+Returns the distance between this and the given other scanpoint, in [m]\&. This method calculates the actual three-dimensional distance in x,y,z\&. dist2D() uses only x and y\&. 
+.PP
+Definition at line 73 of file ScanPoint\&.cpp\&.
+.SS "double datatypes::ScanPoint::getDist2D (const \fBScanPoint\fP & other) const"
+
+.PP
+Returns the two-dimensional distance between this and the given other scanpoint, in [m]\&. This method calculates the distance only in x and y coordinates; the z dimension is ignored\&. dist() uses all three dimensions\&. 
+.PP
+Definition at line 83 of file ScanPoint\&.cpp\&.
+.SS "double datatypes::ScanPoint::getDistanceBetweenScanpoints (const \fBScanPoint\fP & pt1, const \fBScanPoint\fP & pt2)\fC [static]\fP"
+Returns the distance, in [m], between the two 3d-scanpoint coordinates\&. 
+.PP
+Definition at line 68 of file ScanPoint\&.cpp\&.
+.SS "\fBUINT8\fP datatypes::ScanPoint::getEchoNum () const\fC [inline]\fP"
+
+.PP
+Definition at line 101 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getEchoWidth () const\fC [inline]\fP"
+
+.PP
+Definition at line 97 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::ScanPoint::getFlags () const\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getHAngle () const\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScanPoint::getLayer () const\fC [inline]\fP"
+
+.PP
+Definition at line 100 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScanPoint::getSourceId () const\fC [inline]\fP"
+
+.PP
+Definition at line 99 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getVAngle () const\fC [inline]\fP"
+
+.PP
+Definition at line 95 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getX () const\fC [inline]\fP"
+
+.PP
+Definition at line 89 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getY () const\fC [inline]\fP"
+
+.PP
+Definition at line 90 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::getZ () const\fC [inline]\fP"
+
+.PP
+Definition at line 91 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isBackground () const\fC [inline]\fP"
+
+.PP
+Checks if the scan point is labeled as background\&. 
+.PP
+Definition at line 110 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isDirt () const\fC [inline]\fP"
+
+.PP
+Checks if the scan point is labeled as dirt\&. 
+.PP
+Definition at line 112 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isGround () const\fC [inline]\fP"
+
+.PP
+Checks if the scan point is labeled as ground\&. 
+.PP
+Definition at line 108 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isLeftCovered () const\fC [inline]\fP"
+
+.PP
+Checks if the 'left covered' flag is set\&. 
+.PP
+Definition at line 116 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isMarked () const\fC [inline]\fP"
+
+.PP
+Checks if the marker is set\&. 
+.PP
+Definition at line 106 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isRain () const\fC [inline]\fP"
+
+.PP
+Checks if the scan point is labeled as rain\&. 
+.PP
+Definition at line 114 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isReflector () const\fC [inline]\fP"
+
+.PP
+Checks if the reflector flag is set\&. 
+.PP
+Definition at line 120 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isRightCovered () const\fC [inline]\fP"
+
+.PP
+Checks if the 'right covered' flag is set\&. 
+.PP
+Definition at line 118 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isThresholdSwitching () const\fC [inline]\fP"
+
+.PP
+Checks if the threshold switching flag is set\&. 
+.PP
+Definition at line 122 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isTransparent () const\fC [inline]\fP"
+
+.PP
+Checks if there is at least one more echo behind this scan point (B or C echo) 
+.PP
+Definition at line 124 of file ScanPoint\&.hpp\&.
+.SS "bool datatypes::ScanPoint::isValid () const\fC [inline]\fP"
+
+.PP
+Checks if the scan point is valid (no ground, dirt, or rain) 
+.PP
+Definition at line 104 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setBackground (bool isBackground = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point as invalid because it is in the background area\&. 
+.PP
+Definition at line 185 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setCartesian (double x, double y, double z)"
+Equivalent polar coordinates are computed on the fly\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP x-coordinate in meters 
+.br
+\fIy\fP y-coordinate in meters 
+.br
+\fIz\fP z-coordinate in meters 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::setDirt (bool isDirt = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point as invalid because its an echo from dirt\&. 
+.PP
+Definition at line 201 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setEchoNum (\fBUINT8\fP sub)\fC [inline]\fP"
+
+.PP
+Definition at line 169 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setEchoWidth (double echoWidth)"
+
+.PP
+Set the echo pulse width, typically in [m]\&. The resolution of the echo width is reduced in the same way as compressMeters() does\&. This is to ensure that compressed replay data is the same as uncompressed live data\&. 
+.PP
+Definition at line 237 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::setFlags (\fBUINT16\fP flags)\fC [inline]\fP"
+
+.PP
+Sets the scan point flags directly\&. 
+.PP
+Definition at line 172 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setGround (bool isGround = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point as invalid because it is an echo from the ground\&. 
+.PP
+Definition at line 193 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setLayer (\fBUINT8\fP ch)\fC [inline]\fP"
+
+.PP
+Definition at line 168 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setLeftCovered (bool isLeftCovered = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point: Left neighbour point may be covered\&. 
+.PP
+Definition at line 217 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setMarker (bool isMarked = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Set or clear the 'Marker' flag\&. 
+.PP
+Definition at line 177 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setNotCovered ()\fC [inline]\fP"
+
+.PP
+Remove cover status\&. 
+.PP
+Definition at line 233 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setPoint3D (const \fBPoint3D\fP & pt)"
+Equivalent polar coordinates are computed on the fly\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpt\fP \fBPoint\fP coordinates in [m] 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::setPolar (double dist, double hAngle, double vAngle)"
+Equivalent Cartesian coordinates are computed on the fly\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdist\fP Radial distance in meters
+.br
+\fIhAngle\fP Horizontal/azimuth angle in radians\&. The angle will be normalized into the interval [-pi,+pi)\&.
+.br
+\fIvAngle\fP Vertical/elevation angle in radians\&. The angle will be normalized into the interval [-pi,+pi)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file ScanPoint\&.cpp\&.
+.SS "void datatypes::ScanPoint::setRain (bool isRain = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point as invalid because its an echo from rain\&. 
+.PP
+Definition at line 209 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setReflector (bool isReflector = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point: EPW is high enough to be a reflector\&. 
+.PP
+Definition at line 236 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setRightCovered (bool isRightCovered = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Labels the scan point: Right neighbour point may be covered\&. 
+.PP
+Definition at line 225 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setSourceId (\fBUINT8\fP id)\fC [inline]\fP"
+
+.PP
+Definition at line 166 of file ScanPoint\&.hpp\&.
+.SS "void datatypes::ScanPoint::setValid ()\fC [inline]\fP"
+
+.PP
+Removes all scan status information\&. 
+.PP
+Definition at line 245 of file ScanPoint\&.hpp\&.
+.SS "\fBPoint2D\fP datatypes::ScanPoint::toPoint2D () const"
+
+.PP
+Returns the x and y coordinates as a \fBPoint2D\fP structure\&. 
+.PP
+Definition at line 123 of file ScanPoint\&.cpp\&.
+.SS "\fBPoint3D\fP datatypes::ScanPoint::toPoint3D () const"
+
+.PP
+Returns the x,y,z coordinates as a \fBPoint3D\fP structure\&. 
+.PP
+Definition at line 116 of file ScanPoint\&.cpp\&.
+.SS "std::string datatypes::ScanPoint::toString () const"
+
+.PP
+Definition at line 243 of file ScanPoint\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool operator== (const \fBScanPoint\fP &, const \fBScanPoint\fP &)\fC [friend]\fP"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 262 of file ScanPoint\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUINT8\fP datatypes::ScanPoint::m_channel\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_dist\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_echoWidth\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::ScanPoint::m_flags\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_hAngle\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScanPoint::m_sourceId\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file ScanPoint\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::ScanPoint::m_subchannel\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_vAngle\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_x\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_y\fC [protected]\fP"
+
+.PP
+Definition at line 68 of file ScanPoint\&.hpp\&.
+.SS "double datatypes::ScanPoint::m_z\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file ScanPoint\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,53 @@
+.TH "autoware_health_checker::SystemStatusSubscriber" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_health_checker::SystemStatusSubscriber \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <system_status_subscriber\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystemStatusSubscriber\fP (ros::NodeHandle nh, ros::NodeHandle pnh)"
+.br
+.ti -1c
+.RI "\fB~SystemStatusSubscriber\fP ()"
+.br
+.ti -1c
+.RI "void \fBenable\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddCallback\fP (std::function< void(autoware_system_msgs::SystemStatus)> func)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file system_status_subscriber\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "autoware_health_checker::SystemStatusSubscriber::SystemStatusSubscriber (ros::NodeHandle nh, ros::NodeHandle pnh)"
+
+.PP
+Definition at line 23 of file system_status_subscriber\&.cpp\&.
+.SS "autoware_health_checker::SystemStatusSubscriber::~SystemStatusSubscriber ()"
+
+.PP
+Definition at line 29 of file system_status_subscriber\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void autoware_health_checker::SystemStatusSubscriber::addCallback (std::function< void(autoware_system_msgs::SystemStatus)> func)"
+
+.PP
+Definition at line 55 of file system_status_subscriber\&.cpp\&.
+.SS "void autoware_health_checker::SystemStatusSubscriber::enable ()"
+
+.PP
+Definition at line 31 of file system_status_subscriber\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

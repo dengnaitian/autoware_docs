@@ -1,0 +1,120 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/tablet_socket/nodes/tablet_receiver/tablet_receiver.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/tablet_socket/nodes/tablet_receiver/tablet_receiver.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <wait\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <gnss/geo_pos_conv\&.hpp>\fP
+.br
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include 'tablet_socket_msgs/gear_cmd\&.h'\fP
+.br
+\fC#include 'tablet_socket_msgs/mode_cmd\&.h'\fP
+.br
+\fC#include 'tablet_socket_msgs/route_cmd\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLaunch\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNODE_NAME\fP   'tablet_receiver'"
+.br
+.ti -1c
+.RI "#define \fBTOPIC_NR\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PORT\fP   (5666)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PLANE\fP   (7)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBstopChildProcess\fP (int signo)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static \fBLaunch\fP \fBs2\fP ('set\&.launch')"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULT_PLANE   (7)"
+
+.PP
+Definition at line 45 of file tablet_receiver\&.cpp\&.
+.SS "#define DEFAULT_PORT   (5666)"
+
+.PP
+Definition at line 44 of file tablet_receiver\&.cpp\&.
+.SS "#define NODE_NAME   'tablet_receiver'"
+
+.PP
+Definition at line 41 of file tablet_receiver\&.cpp\&.
+.SS "#define TOPIC_NR   (5)"
+
+.PP
+Definition at line 42 of file tablet_receiver\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 112 of file tablet_receiver\&.cpp\&.
+.SS "void stopChildProcess (int signo)"
+
+.PP
+Definition at line 105 of file tablet_receiver\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBLaunch\fP s2('set\&.launch')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

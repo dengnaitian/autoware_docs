@@ -1,0 +1,199 @@
+.TH "SickToolbox::SickBufferMonitor< SICK_MONITOR_CLASS, SICK_MSG_CLASS >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickBufferMonitor< SICK_MONITOR_CLASS, SICK_MSG_CLASS > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickBufferMonitor\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickBufferMonitor\fP (SICK_MONITOR_CLASS *const monitor_instance)  throw ( SickThreadException )"
+.br
+.RI "\fIPrimary constructor\&. \fP"
+.ti -1c
+.RI "void \fBSetDataStream\fP (const unsigned int sick_fd)  throw ( SickThreadException )"
+.br
+.RI "\fIA method for setting/changing the current data stream\&. \fP"
+.ti -1c
+.RI "void \fBStartMonitor\fP (const unsigned int sick_fd)  throw ( SickThreadException )"
+.br
+.RI "\fICreates and starts the buffer monitor thread\&. \fP"
+.ti -1c
+.RI "bool \fBGetNextMessageFromMonitor\fP (SICK_MSG_CLASS &sick_message)  throw ( SickThreadException )"
+.br
+.RI "\fIChecks the message container for the next available Sick message\&. \fP"
+.ti -1c
+.RI "void \fBStopMonitor\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fICancels the buffer monitor thread\&. \fP"
+.ti -1c
+.RI "void \fBAcquireDataStream\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fIAcquires a lock on the data stream\&. \fP"
+.ti -1c
+.RI "void \fBGetNextMessageFromDataStream\fP (SICK_MSG_CLASS &sick_message)"
+.br
+.ti -1c
+.RI "void \fBReleaseDataStream\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fIReleases a lock on the data stream\&. \fP"
+.ti -1c
+.RI "\fB~SickBufferMonitor\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fIThe destructor (kills the mutex) \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_readBytes\fP (uint8_t *const dest_buffer, const int num_bytes_to_read, const unsigned int timeout_value=0) const   throw ( SickTimeoutException, SickIOException )"
+.br
+.RI "\fIAttempt to read a certain number of bytes from the stream\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fB_sick_fd\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS>
+.br
+class SickToolbox::SickBufferMonitor< SICK_MONITOR_CLASS, SICK_MSG_CLASS >"
+
+.PP
+Definition at line 32 of file SickBufferMonitor\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS > \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::\fBSickBufferMonitor\fP (SICK_MONITOR_CLASS *const monitor_instance)\fBSickThreadException\fP"
+
+.PP
+Primary constructor\&. A standard constructor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice_instance\fP A pointer to the current driver instance 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::~\fBSickBufferMonitor\fP ()\fBSickThreadException\fP"
+
+.PP
+The destructor (kills the mutex) A standard destructor 
+.PP
+Definition at line 289 of file SickBufferMonitor\&.hh\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_readBytes (uint8_t *const dest_buffer, const int num_bytes_to_read, const unsigned int timeout_value = \fC0\fP) const \fBSickTimeoutException\fP,\fBSickIOException\fP\fC [protected]\fP"
+
+.PP
+Attempt to read a certain number of bytes from the stream\&. Reads n bytes into the destination buffer
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*dest_buffer\fP A pointer to the destination buffer 
+.br
+\fInum_bytes_to_read\fP The number of bytes to read into the buffer 
+.br
+\fItimeout_value\fP The number of microseconds allowed between subsequent bytes in a message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the number of requested bytes were successfully read 
+.RE
+.PP
+
+.PP
+Definition at line 337 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::AcquireDataStream ()\fBSickThreadException\fP"
+
+.PP
+Acquires a lock on the data stream\&. Locks access to the data stream 
+.PP
+Definition at line 263 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::GetNextMessageFromDataStream (SICK_MSG_CLASS & sick_message)"
+Acquire the next message from raw byte stream 
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS> bool \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::GetNextMessageFromMonitor (SICK_MSG_CLASS & sick_message)\fBSickThreadException\fP"
+
+.PP
+Checks the message container for the next available Sick message\&. Acquire the most recent message buffered by the monitor
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&sick_message\fP The message object that is to be populated with the results 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the current contents were acquired, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::ReleaseDataStream ()\fBSickThreadException\fP"
+
+.PP
+Releases a lock on the data stream\&. Unlock access to the data stream 
+.PP
+Definition at line 276 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::SetDataStream (const unsigned int sick_fd)\fBSickThreadException\fP"
+
+.PP
+A method for setting/changing the current data stream\&. A method for setting the target data stream
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsick_fd\fP The data stream file descriptor 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::StartMonitor (const unsigned int sick_fd)\fBSickThreadException\fP"
+
+.PP
+Creates and starts the buffer monitor thread\&. Start the buffer monitor for the device
+.PP
+\fBReturns:\fP
+.RS 4
+True upon success, False otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file SickBufferMonitor\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::StopMonitor ()\fBSickThreadException\fP"
+
+.PP
+Cancels the buffer monitor thread\&. Stop the buffer monitor for the device
+.PP
+\fBReturns:\fP
+.RS 4
+True if the thread was properly canceled, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file SickBufferMonitor\&.hh\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> unsigned int \fBSickToolbox::SickBufferMonitor\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sick_fd\fC [protected]\fP"
+Sick data stream file descriptor 
+.PP
+Definition at line 66 of file SickBufferMonitor\&.hh\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

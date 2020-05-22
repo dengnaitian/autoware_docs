@@ -1,0 +1,118 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/PlanningHelpers.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/PlanningHelpers.h \- Helper functions for planning algorithms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'RoadNetwork\&.h'\fP
+.br
+\fC#include 'op_utility/UtilityH\&.h'\fP
+.br
+\fC#include 'op_utility/DataRW\&.h'\fP
+.br
+\fC#include 'tinyxml\&.h'\fP
+.br
+\fC#include 'autoware_msgs/Waypoint\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPlannerHNS::PlanningHelpers\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBPlannerHNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBdistance2points\fP(from,  to)   sqrt(pow(to\&.x \- from\&.x, 2) + pow(to\&.y \- from\&.y, 2))"
+.br
+.ti -1c
+.RI "#define \fBdistance2pointsSqr\fP(from,  to)   pow(to\&.x \- from\&.x, 2) + pow(to\&.y \- from\&.y, 2)"
+.br
+.ti -1c
+.RI "#define \fBpointNorm\fP(v)   sqrt(v\&.x*v\&.x + v\&.y*v\&.y)"
+.br
+.ti -1c
+.RI "#define \fBangle2points\fP(from,  to)   atan2(to\&.y \- from\&.y, to\&.x \- from\&.x )"
+.br
+.ti -1c
+.RI "#define \fBLANE_CHANGE_SPEED_FACTOR\fP   0\&.8"
+.br
+.ti -1c
+.RI "#define \fBLANE_CHANGE_COST\fP   3\&.0"
+.br
+.ti -1c
+.RI "#define \fBBACKUP_STRAIGHT_PLAN_DISTANCE\fP   75"
+.br
+.ti -1c
+.RI "#define \fBLANE_CHANGE_MIN_DISTANCE\fP   5"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Helper functions for planning algorithms\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Hatem Darweesh 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Jun 16, 2016 
+.RE
+.PP
+
+.PP
+Definition in file \fBPlanningHelpers\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define angle2points(from, to)   atan2(to\&.y \- from\&.y, to\&.x \- from\&.x )"
+
+.PP
+Definition at line 23 of file PlanningHelpers\&.h\&.
+.SS "#define BACKUP_STRAIGHT_PLAN_DISTANCE   75"
+
+.PP
+Definition at line 26 of file PlanningHelpers\&.h\&.
+.SS "#define distance2points(from, to)   sqrt(pow(to\&.x \- from\&.x, 2) + pow(to\&.y \- from\&.y, 2))"
+
+.PP
+Definition at line 20 of file PlanningHelpers\&.h\&.
+.SS "#define distance2pointsSqr(from, to)   pow(to\&.x \- from\&.x, 2) + pow(to\&.y \- from\&.y, 2)"
+
+.PP
+Definition at line 21 of file PlanningHelpers\&.h\&.
+.SS "#define LANE_CHANGE_COST   3\&.0"
+
+.PP
+Definition at line 25 of file PlanningHelpers\&.h\&.
+.SS "#define LANE_CHANGE_MIN_DISTANCE   5"
+
+.PP
+Definition at line 27 of file PlanningHelpers\&.h\&.
+.SS "#define LANE_CHANGE_SPEED_FACTOR   0\&.8"
+
+.PP
+Definition at line 24 of file PlanningHelpers\&.h\&.
+.SS "#define pointNorm(v)   sqrt(v\&.x*v\&.x + v\&.y*v\&.y)"
+
+.PP
+Definition at line 22 of file PlanningHelpers\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

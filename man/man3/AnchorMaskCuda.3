@@ -1,0 +1,89 @@
+.TH "AnchorMaskCuda" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnchorMaskCuda \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <anchor_mask_cuda\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnchorMaskCuda\fP (const int NUM_INDS_FOR_SCAN, const int NUM_ANCHOR_X_INDS, const int NUM_ANCHOR_Y_INDS, const int NUM_ANCHOR_R_INDS, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const int GRID_X_SIZE, const int GRID_Y_SIZE)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBdoAnchorMaskCuda\fP (int *dev_sparse_pillar_map, int *dev_cumsum_along_x, int *dev_cumsum_along_y, const float *dev_box_anchors_min_x, const float *dev_box_anchors_min_y, const float *dev_box_anchors_max_x, const float *dev_box_anchors_max_y, int *dev_anchor_mask)"
+.br
+.RI "\fIcall cuda code for making anchor mask \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file anchor_mask_cuda\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AnchorMaskCuda::AnchorMaskCuda (const int NUM_INDS_FOR_SCAN, const int NUM_ANCHOR_X_INDS, const int NUM_ANCHOR_Y_INDS, const int NUM_ANCHOR_R_INDS, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const int GRID_X_SIZE, const int GRID_Y_SIZE)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINUM_INDS_FOR_SCAN\fP Number of indexes for scan(cumsum) 
+.br
+\fINUM_ANCHOR_X_INDS\fP Number of x-indexes for anchors 
+.br
+\fINUM_ANCHOR_Y_INDS\fP Number of y-indexes for anchors 
+.br
+\fINUM_ANCHOR_R_INDS\fP Number of rotation-indexes for anchors 
+.br
+\fIMIN_X_RANGE\fP Minimum x value for pointcloud 
+.br
+\fIMIN_Y_RANGE\fP Minimum y value for pointcloud 
+.br
+\fIPILLAR_X_SIZE\fP Size of x-dimension for a pillar 
+.br
+\fIPILLAR_Y_SIZE\fP Size of y-dimension for a pillar 
+.br
+\fIGRID_X_SIZE\fP Number of pillars in x-coordinate 
+.br
+\fIGRID_Y_SIZE\fP Number of pillars in y-coordinate
+.RE
+.PP
+Captital variables never change after the compile 
+.SH "Member Function Documentation"
+.PP 
+.SS "void AnchorMaskCuda::doAnchorMaskCuda (int * dev_sparse_pillar_map, int * dev_cumsum_along_x, int * dev_cumsum_along_y, const float * dev_box_anchors_min_x, const float * dev_box_anchors_min_y, const float * dev_box_anchors_max_x, const float * dev_box_anchors_max_y, int * dev_anchor_mask)"
+
+.PP
+call cuda code for making anchor mask 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev_sparse_pillar_map\fP Grid map representation for pillar occupancy 
+.br
+\fIdev_cumsum_along_x\fP Array for storing cumsum-ed dev_sparse_pillar_map values 
+.br
+\fIdev_cumsum_along_y\fP Array for storing cumsum-ed dev_cumsum_along_y values 
+.br
+\fIdev_box_anchors_min_x\fP Array for storing min x value for each anchor 
+.br
+\fIdev_box_anchors_min_y\fP Array for storing min y value for each anchor 
+.br
+\fIdev_box_anchors_max_x\fP Array for storing max x value for each anchor 
+.br
+\fIdev_box_anchors_max_y\fP Array for storing max y value for each anchor 
+.br
+\fIdev_box_anchors_max_y\fP Array for storing max y value for each anchor 
+.br
+\fIdev_anchor_mask\fP Anchor mask for filtering the network output
+.RE
+.PP
+dev_* means device memory\&. Make a mask for filtering pillar occupancy area 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

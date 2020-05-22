@@ -1,0 +1,114 @@
+.TH "gpu::GNormalDistributionsTransform" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::GNormalDistributionsTransform \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NormalDistributionsTransform\&.h>\fP
+.PP
+Inherits \fBgpu::GRegistration\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGNormalDistributionsTransform\fP ()"
+.br
+.ti -1c
+.RI "\fBGNormalDistributionsTransform\fP (const \fBGNormalDistributionsTransform\fP &other)"
+.br
+.ti -1c
+.RI "void \fBsetStepSize\fP (double \fBstep_size\fP)"
+.br
+.ti -1c
+.RI "void \fBsetResolution\fP (float resolution)"
+.br
+.ti -1c
+.RI "void \fBsetOutlierRatio\fP (double olr)"
+.br
+.ti -1c
+.RI "double \fBgetStepSize\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetResolution\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetOutlierRatio\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetTransformationProbability\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetRealIterations\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+.br
+.ti -1c
+.RI "double \fBgetFitnessScore\fP (double max_range=DBL_MAX)"
+.br
+.ti -1c
+.RI "\fB~GNormalDistributionsTransform\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeTransformation\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.ti -1c
+.RI "double \fBcomputeDerivatives\fP (Eigen::Matrix< double, 6, 1 > &score_gradient, Eigen::Matrix< double, 6, 6 > &hessian, float *trans_x, float *trans_y, float *trans_z, int points_num, Eigen::Matrix< double, 6, 1 > \fBpose\fP, bool compute_hessian=true)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file NormalDistributionsTransform\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "gpu::GNormalDistributionsTransform::GNormalDistributionsTransform ()"
+
+.SS "gpu::GNormalDistributionsTransform::GNormalDistributionsTransform (const \fBGNormalDistributionsTransform\fP & other)"
+
+.SS "gpu::GNormalDistributionsTransform::~GNormalDistributionsTransform ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double gpu::GNormalDistributionsTransform::computeDerivatives (Eigen::Matrix< double, 6, 1 > & score_gradient, Eigen::Matrix< double, 6, 6 > & hessian, float * trans_x, float * trans_y, float * trans_z, int points_num, Eigen::Matrix< double, 6, 1 > pose, bool compute_hessian = \fCtrue\fP)\fC [protected]\fP"
+
+.SS "void gpu::GNormalDistributionsTransform::computeTransformation (const Eigen::Matrix< float, 4, 4 > & guess)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBgpu::GRegistration\fP\&.
+.SS "double gpu::GNormalDistributionsTransform::getFitnessScore (double max_range = \fCDBL_MAX\fP)"
+
+.SS "double gpu::GNormalDistributionsTransform::getOutlierRatio () const"
+
+.SS "int gpu::GNormalDistributionsTransform::getRealIterations ()"
+
+.SS "float gpu::GNormalDistributionsTransform::getResolution () const"
+
+.SS "double gpu::GNormalDistributionsTransform::getStepSize () const"
+
+.SS "double gpu::GNormalDistributionsTransform::getTransformationProbability () const"
+
+.SS "void gpu::GNormalDistributionsTransform::setInputTarget (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+
+.SS "void gpu::GNormalDistributionsTransform::setInputTarget (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+
+.SS "void gpu::GNormalDistributionsTransform::setOutlierRatio (double olr)"
+
+.SS "void gpu::GNormalDistributionsTransform::setResolution (float resolution)"
+
+.SS "void gpu::GNormalDistributionsTransform::setStepSize (double step_size)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

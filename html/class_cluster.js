@@ -1,0 +1,26 @@
+var class_cluster =
+[
+    [ "Cluster", "class_cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81", null ],
+    [ "~Cluster", "class_cluster.html#a4bddfc88ac859610acab15dd12851b58", null ],
+    [ "GetAveragePoint", "class_cluster.html#a6772a5a5b62d5761f11012464f2a8d90", null ],
+    [ "GetBoundingBox", "class_cluster.html#ae2fdf1263126fb3d7416a71bc3105dd7", null ],
+    [ "GetCentroid", "class_cluster.html#adb15a4b7b4de9f8cbf0f07e94c48a05a", null ],
+    [ "GetCloud", "class_cluster.html#a47b93d3d8eca6543fe9f442ef76249b0", null ],
+    [ "GetEigenValues", "class_cluster.html#a7f37b4978e68ca2939e067e1f0b4f8bd", null ],
+    [ "GetEigenVectors", "class_cluster.html#a1d1c8808b2a6000cdee9219638caf437", null ],
+    [ "GetFpfhDescriptor", "class_cluster.html#abb9268a753f9fbe26d7fc4ed4e2ea371", null ],
+    [ "GetHeight", "class_cluster.html#ad543bee32661f0369e43791af81e6bbb", null ],
+    [ "GetId", "class_cluster.html#a58fb7323fac10a5982a9d712d86d3f1e", null ],
+    [ "GetLabel", "class_cluster.html#a02e290ca886223e8adc41f9ef3f06f92", null ],
+    [ "GetLenght", "class_cluster.html#a19f0fc0e1131816a90336774b2b4e35b", null ],
+    [ "GetMaxPoint", "class_cluster.html#a51a56de0eefda0eba620507b6f3da3d9", null ],
+    [ "GetMinPoint", "class_cluster.html#a0dbea916eefeec1d74294115ca4777ce", null ],
+    [ "GetOrientationAngle", "class_cluster.html#ada8a9b0615232cbb2bfc7db8a9bec323", null ],
+    [ "GetPolygon", "class_cluster.html#a5d568348554e6703efc21e7400ed6daa", null ],
+    [ "GetWidth", "class_cluster.html#a30aa02cfbf047421bb2198bb7614ab6e", null ],
+    [ "IsValid", "class_cluster.html#a4d8669e557b7d209ffdef0fe7526e241", null ],
+    [ "JoinCloud", "class_cluster.html#ae608df0a51458f8ab8bfbff3c030272d", null ],
+    [ "SetCloud", "class_cluster.html#ac46d8eea8c77a77b2993bcb5dad9d4b8", null ],
+    [ "SetValidity", "class_cluster.html#ac424646be511d934d30d0bebaf065578", null ],
+    [ "ToROSMessage", "class_cluster.html#a875782de5dae1571e93add3b0dace33f", null ]
+];

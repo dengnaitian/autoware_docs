@@ -1,0 +1,143 @@
+.TH "amathutils" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+amathutils \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBrad2deg\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBdeg2rad\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBmps2kmph\fP (double _mpsval)"
+.br
+.ti -1c
+.RI "double \fBkmph2mps\fP (double _kmphval)"
+.br
+.ti -1c
+.RI "double \fBgetGravityAcceleration\fP (double _acceleration_mpss)"
+.br
+.ti -1c
+.RI "double \fBgetAcceleration\fP (double _v0, double _v, double _x)"
+.br
+.ti -1c
+.RI "double \fBgetTimefromAcceleration\fP (double _v0, double _v, double _a)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetNearPtOnLine\fP (const \fBgeometry_msgs::Point\fP &_p, const \fBgeometry_msgs::Point\fP &_a, const \fBgeometry_msgs::Point\fP &_b)"
+.br
+.ti -1c
+.RI "double \fBfind_distance\fP (const \fBgeometry_msgs::Point\fP &_from, const \fBgeometry_msgs::Point\fP &_to)"
+.br
+.ti -1c
+.RI "double \fBfind_distance\fP (const geometry_msgs::Pose &_from, const geometry_msgs::Pose &_to)"
+.br
+.ti -1c
+.RI "double \fBfind_angle\fP (const \fBgeometry_msgs::Point\fP &_from, const \fBgeometry_msgs::Point\fP &_to)"
+.br
+.ti -1c
+.RI "bool \fBisIntersectLine\fP (const \fBgeometry_msgs::Point\fP &_l1_p1, const \fBgeometry_msgs::Point\fP &_l1_p2, const \fBgeometry_msgs::Point\fP &_l2_p1, const \fBgeometry_msgs::Point\fP &_l2_p2)"
+.br
+.ti -1c
+.RI "int \fBisPointLeftFromLine\fP (const \fBgeometry_msgs::Point\fP &_target, const \fBgeometry_msgs::Point\fP &_line_p1, const \fBgeometry_msgs::Point\fP &_line_p2)"
+.br
+.ti -1c
+.RI "double \fBgetPoseYawAngle\fP (const geometry_msgs::Pose &_pose)"
+.br
+.ti -1c
+.RI "double \fBcalcPosesAngleDiffRaw\fP (const geometry_msgs::Pose &p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.ti -1c
+.RI "double \fBradianNormalize\fP (double _angle)"
+.br
+.ti -1c
+.RI "double \fBcalcPosesAngleDiffDeg\fP (const geometry_msgs::Pose &_p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.ti -1c
+.RI "double \fBcalcPosesAngleDiffRad\fP (const geometry_msgs::Pose &_p_from, const geometry_msgs::Pose &_p_to)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double amathutils::calcPosesAngleDiffDeg (const geometry_msgs::Pose & _p_from, const geometry_msgs::Pose & _p_to)"
+
+.PP
+Definition at line 107 of file Amathutils\&.cpp\&.
+.SS "double amathutils::calcPosesAngleDiffRad (const geometry_msgs::Pose & _p_from, const geometry_msgs::Pose & _p_to)"
+
+.PP
+Definition at line 113 of file Amathutils\&.cpp\&.
+.SS "double amathutils::calcPosesAngleDiffRaw (const geometry_msgs::Pose & p_from, const geometry_msgs::Pose & _p_to)"
+
+.PP
+Definition at line 92 of file Amathutils\&.cpp\&.
+.SS "double amathutils::deg2rad (double _angle)\fC [inline]\fP"
+
+.PP
+Definition at line 22 of file amathutils\&.hpp\&.
+.SS "double amathutils::find_angle (const \fBgeometry_msgs::Point\fP & _from, const \fBgeometry_msgs::Point\fP & _to)"
+
+.PP
+Definition at line 39 of file Amathutils\&.cpp\&.
+.SS "double amathutils::find_distance (const \fBgeometry_msgs::Point\fP & _from, const \fBgeometry_msgs::Point\fP & _to)"
+
+.PP
+Definition at line 30 of file Amathutils\&.cpp\&.
+.SS "double amathutils::find_distance (const geometry_msgs::Pose & _from, const geometry_msgs::Pose & _to)"
+
+.PP
+Definition at line 34 of file Amathutils\&.cpp\&.
+.SS "double amathutils::getAcceleration (double _v0, double _v, double _x)\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file amathutils\&.hpp\&.
+.SS "double amathutils::getGravityAcceleration (double _acceleration_mpss)\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file amathutils\&.hpp\&.
+.SS "\fBgeometry_msgs::Point\fP amathutils::getNearPtOnLine (const \fBgeometry_msgs::Point\fP & _p, const \fBgeometry_msgs::Point\fP & _a, const \fBgeometry_msgs::Point\fP & _b)"
+
+.PP
+Definition at line 5 of file Amathutils\&.cpp\&.
+.SS "double amathutils::getPoseYawAngle (const geometry_msgs::Pose & _pose)"
+
+.PP
+Definition at line 81 of file Amathutils\&.cpp\&.
+.SS "double amathutils::getTimefromAcceleration (double _v0, double _v, double _a)\fC [inline]\fP"
+
+.PP
+Definition at line 47 of file amathutils\&.hpp\&.
+.SS "bool amathutils::isIntersectLine (const \fBgeometry_msgs::Point\fP & _l1_p1, const \fBgeometry_msgs::Point\fP & _l1_p2, const \fBgeometry_msgs::Point\fP & _l2_p1, const \fBgeometry_msgs::Point\fP & _l2_p2)"
+
+.PP
+Definition at line 48 of file Amathutils\&.cpp\&.
+.SS "int amathutils::isPointLeftFromLine (const \fBgeometry_msgs::Point\fP & _target, const \fBgeometry_msgs::Point\fP & _line_p1, const \fBgeometry_msgs::Point\fP & _line_p2)"
+
+.PP
+Definition at line 69 of file Amathutils\&.cpp\&.
+.SS "double amathutils::kmph2mps (double _kmphval)\fC [inline]\fP"
+
+.PP
+Definition at line 32 of file amathutils\&.hpp\&.
+.SS "double amathutils::mps2kmph (double _mpsval)\fC [inline]\fP"
+
+.PP
+Definition at line 27 of file amathutils\&.hpp\&.
+.SS "double amathutils::rad2deg (double _angle)\fC [inline]\fP"
+
+.PP
+Definition at line 18 of file amathutils\&.hpp\&.
+.SS "double amathutils::radianNormalize (double _angle)"
+
+.PP
+Definition at line 97 of file Amathutils\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

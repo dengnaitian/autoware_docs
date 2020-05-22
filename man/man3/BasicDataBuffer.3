@@ -1,0 +1,82 @@
+.TH "BasicDataBuffer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BasicDataBuffer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BasicDataBuffer\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicDataBuffer\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fB~BasicDataBuffer\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "void \fBsetLimit\fP (\fBUINT32\fP maxBytesToBeUsed)"
+.br
+.ti -1c
+.RI "bool \fBpushData\fP (\fBBasicData\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBBasicData\fP * \fBpopData\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetUsedBytes\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetBufferSize\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file BasicDataBuffer\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BasicDataBuffer::BasicDataBuffer ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 13 of file BasicDataBuffer\&.cpp\&.
+.SS "BasicDataBuffer::~BasicDataBuffer ()"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 23 of file BasicDataBuffer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUINT32\fP BasicDataBuffer::getBufferSize ()"
+Liefert die Anzahl der aktuell gespeicherten Datensaetze\&. 
+.PP
+Definition at line 56 of file BasicDataBuffer\&.cpp\&.
+.SS "\fBUINT32\fP BasicDataBuffer::getUsedBytes ()"
+Liefert die aktuell genutzte Speichergroesse\&. 
+.PP
+Definition at line 47 of file BasicDataBuffer\&.cpp\&.
+.SS "\fBBasicData\fP * BasicDataBuffer::popData ()"
+
+.PP
+Definition at line 99 of file BasicDataBuffer\&.cpp\&.
+.SS "bool BasicDataBuffer::pushData (\fBBasicData\fP * data)"
+
+.PP
+Definition at line 67 of file BasicDataBuffer\&.cpp\&.
+.SS "void BasicDataBuffer::setLimit (\fBUINT32\fP maxBytesToBeUsed)"
+Setze das Speicher-Limit, in Bytes\&. 0 = Kein Limit\&.
+.PP
+Falls bereits zu viel Speicher benutzt wird, wird dieser nicht sofort freigegeben, aber keine weiteren Elemente akzeptiert\&. 
+.PP
+Definition at line 37 of file BasicDataBuffer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

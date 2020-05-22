@@ -1,0 +1,214 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/autoware_bag_tools/nodes/nmea2kml/nmea2kml.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/autoware_bag_tools/nodes/nmea2kml/nmea2kml.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <rosbag/bag\&.h>\fP
+.br
+\fC#include <rosbag/view\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <nmea_msgs/Sentence\&.h>\fP
+.br
+\fC#include 'ReadNMEASentence\&.h'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <ostream>\fP
+.br
+\fC#include <boost/foreach\&.hpp>\fP
+.br
+\fC#include <boost/filesystem\&.hpp>\fP
+.br
+\fC#include <tinyxml\&.h>\fP
+.br
+\fC#include 'dirent\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGPS_Point\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBforeach\fP   BOOST_FOREACH"
+.br
+.ti -1c
+.RI "#define \fBMAX_SAT_NUM\fP   15"
+.br
+.ti -1c
+.RI "#define \fBLINE_WIDTH\fP   8"
+.br
+.ti -1c
+.RI "#define \fBGROUND_RELATIVE_HRIGHT\fP   8"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBOpenROSBag\fP (const std::string &bag_Name, rosbag::Bag &_bag, rosbag::View &_bagView, rosbag::View::iterator &_viewIterator)"
+.br
+.ti -1c
+.RI "int \fBGetNextSentence\fP (nmea_msgs::SentenceConstPtr &pOutSentence, rosbag::View &_bagView, rosbag::View::iterator &_viewIterator)"
+.br
+.ti -1c
+.RI "void \fBCreateTemplateDocument\fP (TiXmlDocument &doc)"
+.br
+.ti -1c
+.RI "TiXmlElement * \fBCreateStyleWithColor\fP (TiXmlElement *pElem, std::string style_name, int r, int g, int \fBb\fP, int a)"
+.br
+.ti -1c
+.RI "void \fBInsertNewStyle\fP (TiXmlElement *pElem, std::string style_id, int r, int g, int \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBInitializeStyleForSateliteNumbers\fP (TiXmlElement *pElem, int max_sat_nu)"
+.br
+.ti -1c
+.RI "void \fBCreateLinePlaceMark\fP (std::vector< \fBGPS_Point\fP > &line, int sat_no)"
+.br
+.ti -1c
+.RI "void \fBParseAndWrite\fP (const nmea_msgs::SentenceConstPtr &msg, std::ofstream &_ofs)"
+.br
+.ti -1c
+.RI "void \fBGetFileNameInFolder\fP (const std::string &path, std::vector< std::string > &out_list)"
+.br
+.ti -1c
+.RI "void \fBConvertOneFile\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBg_prev_sat_number\fP = 0"
+.br
+.ti -1c
+.RI "int \fBg_max_sat\fP = 0"
+.br
+.ti -1c
+.RI "int \fBg_min_sat\fP = 100"
+.br
+.ti -1c
+.RI "TiXmlElement * \fBpHeadElem\fP = 0"
+.br
+.ti -1c
+.RI "long \fBpath_id\fP = 0"
+.br
+.ti -1c
+.RI "std::vector< \fBGPS_Point\fP > \fBg_line_points\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define foreach   BOOST_FOREACH"
+
+.PP
+Definition at line 40 of file nmea2kml\&.cpp\&.
+.SS "#define GROUND_RELATIVE_HRIGHT   8"
+
+.PP
+Definition at line 46 of file nmea2kml\&.cpp\&.
+.SS "#define LINE_WIDTH   8"
+
+.PP
+Definition at line 45 of file nmea2kml\&.cpp\&.
+.SS "#define MAX_SAT_NUM   15"
+
+.PP
+Definition at line 44 of file nmea2kml\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void ConvertOneFile (const std::string & fileName)"
+
+.PP
+Definition at line 329 of file nmea2kml\&.cpp\&.
+.SS "void CreateLinePlaceMark (std::vector< \fBGPS_Point\fP > & line, int sat_no)"
+
+.PP
+Definition at line 217 of file nmea2kml\&.cpp\&.
+.SS "TiXmlElement* CreateStyleWithColor (TiXmlElement * pElem, std::string style_name, int r, int g, int b, int a)"
+
+.PP
+Definition at line 159 of file nmea2kml\&.cpp\&.
+.SS "void CreateTemplateDocument (TiXmlDocument & doc)"
+
+.PP
+Definition at line 141 of file nmea2kml\&.cpp\&.
+.SS "void GetFileNameInFolder (const std::string & path, std::vector< std::string > & out_list)"
+
+.PP
+Definition at line 312 of file nmea2kml\&.cpp\&.
+.SS "int GetNextSentence (nmea_msgs::SentenceConstPtr & pOutSentence, rosbag::View & _bagView, rosbag::View::iterator & _viewIterator)"
+
+.PP
+Definition at line 120 of file nmea2kml\&.cpp\&.
+.SS "void InitializeStyleForSateliteNumbers (TiXmlElement * pElem, int max_sat_nu)"
+
+.PP
+Definition at line 193 of file nmea2kml\&.cpp\&.
+.SS "void InsertNewStyle (TiXmlElement * pElem, std::string style_id, int r, int g, int b)"
+
+.PP
+Definition at line 174 of file nmea2kml\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 366 of file nmea2kml\&.cpp\&.
+.SS "bool OpenROSBag (const std::string & bag_Name, rosbag::Bag & _bag, rosbag::View & _bagView, rosbag::View::iterator & _viewIterator)"
+
+.PP
+Definition at line 79 of file nmea2kml\&.cpp\&.
+.SS "void ParseAndWrite (const nmea_msgs::SentenceConstPtr & msg, std::ofstream & _ofs)"
+
+.PP
+Definition at line 263 of file nmea2kml\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "std::vector<\fBGPS_Point\fP> g_line_points"
+
+.PP
+Definition at line 77 of file nmea2kml\&.cpp\&.
+.SS "int g_max_sat = 0"
+
+.PP
+Definition at line 52 of file nmea2kml\&.cpp\&.
+.SS "int g_min_sat = 100"
+
+.PP
+Definition at line 53 of file nmea2kml\&.cpp\&.
+.SS "int g_prev_sat_number = 0"
+
+.PP
+Definition at line 51 of file nmea2kml\&.cpp\&.
+.SS "long path_id = 0"
+
+.PP
+Definition at line 55 of file nmea2kml\&.cpp\&.
+.SS "TiXmlElement* pHeadElem = 0"
+
+.PP
+Definition at line 54 of file nmea2kml\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

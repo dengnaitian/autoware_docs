@@ -1,0 +1,114 @@
+.TH "geo_pos_conv" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+geo_pos_conv \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <geo_pos_conv\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgeo_pos_conv\fP ()"
+.br
+.ti -1c
+.RI "double \fBx\fP () const "
+.br
+.ti -1c
+.RI "double \fBy\fP () const "
+.br
+.ti -1c
+.RI "double \fBz\fP () const "
+.br
+.ti -1c
+.RI "void \fBset_plane\fP (double lat, double lon)"
+.br
+.ti -1c
+.RI "void \fBset_plane\fP (int num)"
+.br
+.ti -1c
+.RI "void \fBset_xyz\fP (double cx, double cy, double cz)"
+.br
+.ti -1c
+.RI "void \fBset_llh\fP (double lat, double lon, double h)"
+.br
+.ti -1c
+.RI "void \fBset_llh_novatel_degrees\fP (double latd, double lond, double h)"
+.br
+.ti -1c
+.RI "void \fBset_llh_nmea_degrees\fP (double latd, double lond, double h)"
+.br
+.ti -1c
+.RI "void \fBllh_to_xyz\fP (double lat, double lon, double ele)"
+.br
+.ti -1c
+.RI "void \fBconv_llh2xyz\fP (void)"
+.br
+.ti -1c
+.RI "void \fBconv_xyz2llh\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file geo_pos_conv\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "geo_pos_conv::geo_pos_conv ()"
+
+.PP
+Definition at line 19 of file geo_pos_conv\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void geo_pos_conv::conv_llh2xyz (void)"
+
+.PP
+Definition at line 241 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::conv_xyz2llh (void)"
+
+.PP
+Definition at line 341 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::llh_to_xyz (double lat, double lon, double ele)"
+
+.PP
+Definition at line 232 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::set_llh (double lat, double lon, double h)"
+
+.SS "void geo_pos_conv::set_llh_nmea_degrees (double latd, double lond, double h)"
+
+.PP
+Definition at line 214 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::set_llh_novatel_degrees (double latd, double lond, double h)"
+
+.PP
+Definition at line 203 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::set_plane (double lat, double lon)"
+
+.PP
+Definition at line 46 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::set_plane (int num)"
+
+.PP
+Definition at line 52 of file geo_pos_conv\&.cpp\&.
+.SS "void geo_pos_conv::set_xyz (double cx, double cy, double cz)"
+
+.PP
+Definition at line 194 of file geo_pos_conv\&.cpp\&.
+.SS "double geo_pos_conv::x () const"
+
+.PP
+Definition at line 31 of file geo_pos_conv\&.cpp\&.
+.SS "double geo_pos_conv::y () const"
+
+.PP
+Definition at line 36 of file geo_pos_conv\&.cpp\&.
+.SS "double geo_pos_conv::z () const"
+
+.PP
+Definition at line 41 of file geo_pos_conv\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

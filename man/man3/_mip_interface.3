@@ -1,0 +1,163 @@
+.TH "_mip_interface" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_mip_interface \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mip_sdk_interface\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBu8\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "void * \fBport_handle\fP"
+.br
+.ti -1c
+.RI "\fBring_buffer\fP \fBinput_buffer\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBinput_buffer_bytes\fP [\fBMIP_INTERFACE_INPUT_RING_BUFFER_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBmip_packet\fP [\fBMIP_MAX_PACKET_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_packet_byte_count\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBparser_start_time\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBparser_num_bad_checksums\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBparser_timeouts\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBparser_in_sync\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBparser_headers_skipped\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBpacket_timeout\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBcommand_response_received\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBcommand_id\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBcommand_acknack_response\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP * \fBcommand_response_data\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBcommand_response_data_size\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBcallback_data_set_list\fP [\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+.br
+.ti -1c
+.RI "\fBparser_callback_ptr\fP \fBcallback_function_list\fP [\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+.br
+.ti -1c
+.RI "void * \fBcallback_user_ptr_list\fP [\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file mip_sdk_interface\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBu8\fP _mip_interface::callback_data_set_list[\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+
+.PP
+Definition at line 111 of file mip_sdk_interface\&.h\&.
+.SS "\fBparser_callback_ptr\fP _mip_interface::callback_function_list[\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+
+.PP
+Definition at line 112 of file mip_sdk_interface\&.h\&.
+.SS "void* _mip_interface::callback_user_ptr_list[\fBMIP_INTERFACE_MAX_CALLBACKS\fP+1]"
+
+.PP
+Definition at line 113 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::command_acknack_response"
+
+.PP
+Definition at line 106 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::command_id"
+
+.PP
+Definition at line 105 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP* _mip_interface::command_response_data"
+
+.PP
+Definition at line 107 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::command_response_data_size"
+
+.PP
+Definition at line 108 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::command_response_received"
+
+.PP
+Definition at line 104 of file mip_sdk_interface\&.h\&.
+.SS "\fBring_buffer\fP _mip_interface::input_buffer"
+
+.PP
+Definition at line 89 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::input_buffer_bytes[\fBMIP_INTERFACE_INPUT_RING_BUFFER_SIZE\fP]"
+
+.PP
+Definition at line 90 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::mip_packet[\fBMIP_MAX_PACKET_SIZE\fP]"
+
+.PP
+Definition at line 93 of file mip_sdk_interface\&.h\&.
+.SS "\fBu16\fP _mip_interface::mip_packet_byte_count"
+
+.PP
+Definition at line 94 of file mip_sdk_interface\&.h\&.
+.SS "\fBu32\fP _mip_interface::packet_timeout"
+
+.PP
+Definition at line 101 of file mip_sdk_interface\&.h\&.
+.SS "\fBu32\fP _mip_interface::parser_headers_skipped"
+
+.PP
+Definition at line 99 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::parser_in_sync"
+
+.PP
+Definition at line 98 of file mip_sdk_interface\&.h\&.
+.SS "\fBu32\fP _mip_interface::parser_num_bad_checksums"
+
+.PP
+Definition at line 96 of file mip_sdk_interface\&.h\&.
+.SS "\fBu32\fP _mip_interface::parser_start_time"
+
+.PP
+Definition at line 95 of file mip_sdk_interface\&.h\&.
+.SS "\fBu32\fP _mip_interface::parser_timeouts"
+
+.PP
+Definition at line 97 of file mip_sdk_interface\&.h\&.
+.SS "void* _mip_interface::port_handle"
+
+.PP
+Definition at line 86 of file mip_sdk_interface\&.h\&.
+.SS "\fBu8\fP _mip_interface::state"
+
+.PP
+Definition at line 83 of file mip_sdk_interface\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

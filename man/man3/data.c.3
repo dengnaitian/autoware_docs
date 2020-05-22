@@ -1,0 +1,534 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/data.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/data.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'data\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBNUMCHARS\fP   37"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlist\fP * \fBget_paths\fP (char *filename)"
+.br
+.ti -1c
+.RI "char ** \fBget_random_paths\fP (char **paths, int n, int m)"
+.br
+.ti -1c
+.RI "char ** \fBfind_replace_paths\fP (char **paths, int n, char *find, char *replace)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_image_paths_gray\fP (char **paths, int n, int w, int h)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_image_paths\fP (char **paths, int n, int w, int h)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_image_augment_paths\fP (char **paths, int n, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+.br
+.ti -1c
+.RI "\fBbox_label\fP * \fBread_boxes\fP (char *filename, int *n)"
+.br
+.ti -1c
+.RI "void \fBrandomize_boxes\fP (\fBbox_label\fP *\fBb\fP, int n)"
+.br
+.ti -1c
+.RI "void \fBcorrect_boxes\fP (\fBbox_label\fP *boxes, int n, float dx, float dy, float sx, float sy, int flip)"
+.br
+.ti -1c
+.RI "void \fBfill_truth_swag\fP (char *path, float *truth, int classes, int flip, float dx, float dy, float sx, float sy)"
+.br
+.ti -1c
+.RI "void \fBfill_truth_region\fP (char *path, float *truth, int classes, int num_boxes, int flip, float dx, float dy, float sx, float sy)"
+.br
+.ti -1c
+.RI "void \fBload_rle\fP (\fBimage\fP im, int *rle, int n)"
+.br
+.ti -1c
+.RI "void \fBor_image\fP (\fBimage\fP src, \fBimage\fP dest, int \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBexclusive_image\fP (\fBimage\fP src)"
+.br
+.ti -1c
+.RI "\fBbox\fP \fBbound_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBfill_truth_iseg\fP (char *path, int num_boxes, float *truth, int classes, int w, int h, \fBaugment_args\fP aug, int flip, int mw, int mh)"
+.br
+.ti -1c
+.RI "void \fBfill_truth_detection\fP (char *path, int num_boxes, float *truth, int classes, int flip, float dx, float dy, float sx, float sy)"
+.br
+.ti -1c
+.RI "void \fBprint_letters\fP (float *pred, int n)"
+.br
+.ti -1c
+.RI "void \fBfill_truth_captcha\fP (char *path, int n, float *truth)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_captcha\fP (char **paths, int n, int m, int \fBk\fP, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_captcha_encode\fP (char **paths, int n, int m, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBfill_truth\fP (char *path, char **labels, int \fBk\fP, float *truth)"
+.br
+.ti -1c
+.RI "void \fBfill_hierarchy\fP (float *truth, int \fBk\fP, \fBtree\fP *hierarchy)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_regression_labels_paths\fP (char **paths, int n, int \fBk\fP)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_labels_paths\fP (char **paths, int n, char **labels, int \fBk\fP, \fBtree\fP *hierarchy)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_tags_paths\fP (char **paths, int n, int \fBk\fP)"
+.br
+.ti -1c
+.RI "char ** \fBget_labels\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBfree_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_segmentation_image\fP (char *path, int w, int h, int classes)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_segmentation_image2\fP (char *path, int w, int h, int classes)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_seg\fP (int n, char **paths, int m, int w, int h, int classes, int min, int max, float angle, float aspect, float hue, float saturation, float exposure, int div)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_iseg\fP (int n, char **paths, int m, int w, int h, int classes, int boxes, int coords, int min, int max, float angle, float aspect, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_region\fP (int n, char **paths, int m, int w, int h, int size, int classes, float jitter, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_compare\fP (int n, char **paths, int m, int classes, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_swag\fP (char **paths, int n, int classes, float jitter)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_detection\fP (int n, char **paths, int m, int w, int h, int boxes, int classes, float jitter, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "void * \fBload_thread\fP (void *ptr)"
+.br
+.ti -1c
+.RI "pthread_t \fBload_data_in_thread\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "void * \fBload_threads\fP (void *ptr)"
+.br
+.ti -1c
+.RI "void \fBload_data_blocking\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "pthread_t \fBload_data\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_writing\fP (char **paths, int n, int m, int w, int h, int out_w, int out_h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_old\fP (char **paths, int n, int m, char **labels, int \fBk\fP, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_super\fP (char **paths, int n, int m, int w, int h, int scale)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_regression\fP (char **paths, int n, int m, int \fBk\fP, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBselect_data\fP (\fBdata\fP *orig, int *inds)"
+.br
+.ti -1c
+.RI "\fBdata\fP * \fBtile_data\fP (\fBdata\fP orig, int divs, int size)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBresize_data\fP (\fBdata\fP orig, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_augment\fP (char **paths, int n, int m, char **labels, int \fBk\fP, \fBtree\fP *hierarchy, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_tag\fP (char **paths, int n, int m, int \fBk\fP, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBconcat_matrix\fP (\fBmatrix\fP m1, \fBmatrix\fP m2)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBconcat_data\fP (\fBdata\fP d1, \fBdata\fP d2)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBconcat_datas\fP (\fBdata\fP *d, int n)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_categorical_data_csv\fP (char *filename, int target, int \fBk\fP)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_cifar10_data\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBget_random_batch\fP (\fBdata\fP d, int n, float *X, float *y)"
+.br
+.ti -1c
+.RI "void \fBget_next_batch\fP (\fBdata\fP d, int n, int offset, float *X, float *y)"
+.br
+.ti -1c
+.RI "void \fBsmooth_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_all_cifar10\fP ()"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_go\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBrandomize_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "void \fBscale_data_rows\fP (\fBdata\fP d, float s)"
+.br
+.ti -1c
+.RI "void \fBtranslate_data_rows\fP (\fBdata\fP d, float s)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBcopy_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "void \fBnormalize_data_rows\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBget_data_part\fP (\fBdata\fP d, int part, int total)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBget_random_data\fP (\fBdata\fP d, int num)"
+.br
+.ti -1c
+.RI "\fBdata\fP * \fBsplit_data\fP (\fBdata\fP d, int part, int total)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP = PTHREAD_MUTEX_INITIALIZER"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define NUMCHARS   37"
+
+.PP
+Definition at line 450 of file data\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBbox\fP bound_image (\fBimage\fP im)"
+
+.PP
+Definition at line 341 of file data\&.c\&.
+.SS "\fBdata\fP concat_data (\fBdata\fP d1, \fBdata\fP d2)"
+
+.PP
+Definition at line 1300 of file data\&.c\&.
+.SS "\fBdata\fP concat_datas (\fBdata\fP * d, int n)"
+
+.PP
+Definition at line 1311 of file data\&.c\&.
+.SS "\fBmatrix\fP concat_matrix (\fBmatrix\fP m1, \fBmatrix\fP m2)"
+
+.PP
+Definition at line 1284 of file data\&.c\&.
+.SS "\fBdata\fP copy_data (\fBdata\fP d)"
+
+.PP
+Definition at line 1510 of file data\&.c\&.
+.SS "void correct_boxes (\fBbox_label\fP * boxes, int n, float dx, float dy, float sx, float sy, int flip)"
+
+.PP
+Definition at line 179 of file data\&.c\&.
+.SS "void exclusive_image (\fBimage\fP src)"
+
+.PP
+Definition at line 326 of file data\&.c\&.
+.SS "void fill_hierarchy (float * truth, int k, \fBtree\fP * hierarchy)"
+
+.PP
+Definition at line 519 of file data\&.c\&.
+.SS "void fill_truth (char * path, char ** labels, int k, float * truth)"
+
+.PP
+Definition at line 504 of file data\&.c\&.
+.SS "void fill_truth_captcha (char * path, int n, float * truth)"
+
+.PP
+Definition at line 462 of file data\&.c\&.
+.SS "void fill_truth_detection (char * path, int num_boxes, float * truth, int classes, int flip, float dx, float dy, float sx, float sy)"
+
+.PP
+Definition at line 408 of file data\&.c\&.
+.SS "void fill_truth_iseg (char * path, int num_boxes, float * truth, int classes, int w, int h, \fBaugment_args\fP aug, int flip, int mw, int mh)"
+
+.PP
+Definition at line 363 of file data\&.c\&.
+.SS "void fill_truth_region (char * path, float * truth, int classes, int num_boxes, int flip, float dx, float dy, float sx, float sy)"
+
+.PP
+Definition at line 254 of file data\&.c\&.
+.SS "void fill_truth_swag (char * path, float * truth, int classes, int flip, float dx, float dy, float sx, float sy)"
+
+.PP
+Definition at line 216 of file data\&.c\&.
+.SS "char** find_replace_paths (char ** paths, int n, char * find, char * replace)"
+
+.PP
+Definition at line 56 of file data\&.c\&.
+.SS "void free_data (\fBdata\fP d)"
+
+.PP
+Definition at line 626 of file data\&.c\&.
+.SS "\fBdata\fP get_data_part (\fBdata\fP d, int part, int total)"
+
+.PP
+Definition at line 1531 of file data\&.c\&.
+.SS "char** get_labels (char * filename)"
+
+.PP
+Definition at line 618 of file data\&.c\&.
+.SS "void get_next_batch (\fBdata\fP d, int n, int offset, float * X, float * y)"
+
+.PP
+Definition at line 1377 of file data\&.c\&.
+.SS "\fBlist\fP* get_paths (char * filename)"
+
+.PP
+Definition at line 12 of file data\&.c\&.
+.SS "void get_random_batch (\fBdata\fP d, int n, float * X, float * y)"
+
+.PP
+Definition at line 1367 of file data\&.c\&.
+.SS "\fBdata\fP get_random_data (\fBdata\fP d, int num)"
+
+.PP
+Definition at line 1544 of file data\&.c\&.
+.SS "char** get_random_paths (char ** paths, int n, int m)"
+
+.PP
+Definition at line 42 of file data\&.c\&.
+.SS "\fBimage\fP get_segmentation_image (char * path, int w, int h, int classes)"
+
+.PP
+Definition at line 637 of file data\&.c\&.
+.SS "\fBimage\fP get_segmentation_image2 (char * path, int w, int h, int classes)"
+
+.PP
+Definition at line 664 of file data\&.c\&.
+.SS "\fBdata\fP load_all_cifar10 ()"
+
+.PP
+Definition at line 1399 of file data\&.c\&.
+.SS "\fBdata\fP load_categorical_data_csv (char * filename, int target, int k)"
+
+.PP
+Definition at line 1323 of file data\&.c\&.
+.SS "\fBdata\fP load_cifar10_data (char * filename)"
+
+.PP
+Definition at line 1340 of file data\&.c\&.
+.SS "pthread_t load_data (\fBload_args\fP args)"
+
+.PP
+Definition at line 1098 of file data\&.c\&.
+.SS "\fBdata\fP load_data_augment (char ** paths, int n, int m, char ** labels, int k, \fBtree\fP * hierarchy, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+
+.PP
+Definition at line 1258 of file data\&.c\&.
+.SS "void load_data_blocking (\fBload_args\fP args)"
+
+.PP
+Definition at line 1091 of file data\&.c\&.
+.SS "\fBdata\fP load_data_captcha (char ** paths, int n, int m, int k, int w, int h)"
+
+.PP
+Definition at line 477 of file data\&.c\&.
+.SS "\fBdata\fP load_data_captcha_encode (char ** paths, int n, int m, int w, int h)"
+
+.PP
+Definition at line 492 of file data\&.c\&.
+.SS "\fBdata\fP load_data_compare (int n, char ** paths, int m, int classes, int w, int h)"
+
+.PP
+Definition at line 840 of file data\&.c\&.
+.SS "\fBdata\fP load_data_detection (int n, char ** paths, int m, int w, int h, int boxes, int classes, float jitter, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 957 of file data\&.c\&.
+.SS "pthread_t load_data_in_thread (\fBload_args\fP args)"
+
+.PP
+Definition at line 1053 of file data\&.c\&.
+.SS "\fBdata\fP load_data_iseg (int n, char ** paths, int m, int w, int h, int classes, int boxes, int coords, int min, int max, float angle, float aspect, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 746 of file data\&.c\&.
+.SS "\fBdata\fP load_data_old (char ** paths, int n, int m, char ** labels, int k, int w, int h)"
+
+.PP
+Definition at line 1122 of file data\&.c\&.
+.SS "\fBdata\fP load_data_region (int n, char ** paths, int m, int w, int h, int size, int classes, float jitter, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 786 of file data\&.c\&.
+.SS "\fBdata\fP load_data_regression (char ** paths, int n, int m, int k, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1177 of file data\&.c\&.
+.SS "\fBdata\fP load_data_seg (int n, char ** paths, int m, int w, int h, int classes, int min, int max, float angle, float aspect, float hue, float saturation, float exposure, int div)"
+
+.PP
+Definition at line 698 of file data\&.c\&.
+.SS "\fBdata\fP load_data_super (char ** paths, int n, int m, int w, int h, int scale)"
+
+.PP
+Definition at line 1147 of file data\&.c\&.
+.SS "\fBdata\fP load_data_swag (char ** paths, int n, int classes, float jitter)"
+
+.PP
+Definition at line 904 of file data\&.c\&.
+.SS "\fBdata\fP load_data_tag (char ** paths, int n, int m, int k, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1271 of file data\&.c\&.
+.SS "\fBdata\fP load_data_writing (char ** paths, int n, int m, int w, int h, int out_w, int out_h)"
+
+.PP
+Definition at line 1107 of file data\&.c\&.
+.SS "\fBdata\fP load_go (char * filename)"
+
+.PP
+Definition at line 1432 of file data\&.c\&.
+.SS "\fBmatrix\fP load_image_augment_paths (char ** paths, int n, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+
+.PP
+Definition at line 105 of file data\&.c\&.
+.SS "\fBmatrix\fP load_image_paths (char ** paths, int n, int w, int h)"
+
+.PP
+Definition at line 89 of file data\&.c\&.
+.SS "\fBmatrix\fP load_image_paths_gray (char ** paths, int n, int w, int h)"
+
+.PP
+Definition at line 68 of file data\&.c\&.
+.SS "\fBmatrix\fP load_labels_paths (char ** paths, int n, char ** labels, int k, \fBtree\fP * hierarchy)"
+
+.PP
+Definition at line 581 of file data\&.c\&.
+.SS "\fBmatrix\fP load_regression_labels_paths (char ** paths, int n, int k)"
+
+.PP
+Definition at line 551 of file data\&.c\&.
+.SS "void load_rle (\fBimage\fP im, int * rle, int n)"
+
+.PP
+Definition at line 302 of file data\&.c\&.
+.SS "\fBmatrix\fP load_tags_paths (char ** paths, int n, int k)"
+
+.PP
+Definition at line 594 of file data\&.c\&.
+.SS "void* load_thread (void * ptr)"
+
+.PP
+Definition at line 1010 of file data\&.c\&.
+.SS "void* load_threads (void * ptr)"
+
+.PP
+Definition at line 1062 of file data\&.c\&.
+.SS "void normalize_data_rows (\fBdata\fP d)"
+
+.PP
+Definition at line 1523 of file data\&.c\&.
+.SS "void or_image (\fBimage\fP src, \fBimage\fP dest, int c)"
+
+.PP
+Definition at line 318 of file data\&.c\&.
+.SS "void print_letters (float * pred, int n)"
+
+.PP
+Definition at line 452 of file data\&.c\&.
+.SS "void randomize_boxes (\fBbox_label\fP * b, int n)"
+
+.PP
+Definition at line 168 of file data\&.c\&.
+.SS "void randomize_data (\fBdata\fP d)"
+
+.PP
+Definition at line 1479 of file data\&.c\&.
+.SS "\fBbox_label\fP* read_boxes (char * filename, int * n)"
+
+.PP
+Definition at line 138 of file data\&.c\&.
+.SS "\fBdata\fP resize_data (\fBdata\fP orig, int w, int h)"
+
+.PP
+Definition at line 1238 of file data\&.c\&.
+.SS "void scale_data_rows (\fBdata\fP d, float s)"
+
+.PP
+Definition at line 1494 of file data\&.c\&.
+.SS "\fBdata\fP select_data (\fBdata\fP * orig, int * inds)"
+
+.PP
+Definition at line 1188 of file data\&.c\&.
+.SS "void smooth_data (\fBdata\fP d)"
+
+.PP
+Definition at line 1387 of file data\&.c\&.
+.SS "\fBdata\fP* split_data (\fBdata\fP d, int part, int total)"
+
+.PP
+Definition at line 1567 of file data\&.c\&.
+.SS "\fBdata\fP* tile_data (\fBdata\fP orig, int divs, int size)"
+
+.PP
+Definition at line 1211 of file data\&.c\&.
+.SS "void translate_data_rows (\fBdata\fP d, float s)"
+
+.PP
+Definition at line 1502 of file data\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER"
+
+.PP
+Definition at line 10 of file data\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

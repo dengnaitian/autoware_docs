@@ -1,0 +1,5 @@
+<map id="ROSSubBase" name="ROSSubBase">
+<area shape="rect" id="node4" href="$class_r_o_s_sub.html" title="ROSSub\&lt; MSGTYPE \&gt;" alt="" coords="5,237,168,263"/>
+<area shape="rect" id="node5" href="$class_r_o_s_sub.html" title="ROSSub\&lt; sensor_msgs\l::PointCloud2ConstPtr \&gt;" alt="" coords="192,229,357,271"/>
+<area shape="rect" id="node2" href="$class_r_o_s_interface_base.html" title="ROSInterfaceBase" alt="" coords="114,80,246,107"/>
+</map>

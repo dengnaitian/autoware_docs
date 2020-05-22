@@ -1,0 +1,76 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/map_tools/nodes/map_extender/map_extender.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/map_tools/nodes/map_extender/map_extender.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <pcl/io/io\&.h>\fP
+.br
+\fC#include <pcl/io/pcd_io\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl/registration/ndt\&.h>\fP
+.br
+\fC#include <pcl/filters/voxel_grid\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBpose\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr \fBadditional_map_ptr\fP (new \fBpcl::PointCloud\fP< pcl::PointXYZI >)"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr \fBfiltered_additional_map_ptr\fP (new \fBpcl::PointCloud\fP< pcl::PointXYZI >)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBpcl::PointCloud\fP<pcl::PointXYZI>::Ptr additional_map_ptr (new \fBpcl::PointCloud\fP< pcl::PointXYZI >)"
+
+.SS "\fBpcl::PointCloud\fP<pcl::PointXYZI>::Ptr filtered_additional_map_ptr (new \fBpcl::PointCloud\fP< pcl::PointXYZI >)"
+
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 185 of file map_extender\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

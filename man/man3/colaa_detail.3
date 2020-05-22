@@ -1,0 +1,139 @@
+.TH "colaa::detail" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colaa::detail \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, double value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBUINT16\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBINT16\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, \fBINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBwriteToBuffer\fP (\fBBYTE\fP *buffer, const std::string &value)"
+.br
+.ti -1c
+.RI "template<typename T > T \fBread\fP (const std::string &str)"
+.br
+.RI "\fIGeneral template which is unimplemented; implemented specializations follow below\&. \fP"
+.ti -1c
+.RI "template<> double \fBread< double >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBINT16\fP \fBread< INT16 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBINT32\fP \fBread< INT32 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBINT8\fP \fBread< INT8 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBUINT8\fP \fBread< UINT8 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBUINT32\fP \fBread< UINT32 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> \fBUINT16\fP \fBread< UINT16 >\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "template<> std::string \fBread< std::string >\fP (const std::string &rxData)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > T colaa::detail::read (const std::string & str)\fC [inline]\fP"
+
+.PP
+General template which is unimplemented; implemented specializations follow below\&. 
+.PP
+Definition at line 72 of file colaa\&.hpp\&.
+.SS "template<> double \fBcolaa::detail::read\fP< double > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file colaa\&.hpp\&.
+.SS "template<> \fBINT16\fP \fBcolaa::detail::read\fP< \fBINT16\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 78 of file colaa\&.hpp\&.
+.SS "template<> \fBINT32\fP \fBcolaa::detail::read\fP< \fBINT32\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file colaa\&.hpp\&.
+.SS "template<> \fBINT8\fP \fBcolaa::detail::read\fP< \fBINT8\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file colaa\&.hpp\&.
+.SS "template<> std::string \fBcolaa::detail::read\fP< std::string > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file colaa\&.hpp\&.
+.SS "template<> \fBUINT16\fP \fBcolaa::detail::read\fP< \fBUINT16\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 83 of file colaa\&.hpp\&.
+.SS "template<> \fBUINT32\fP \fBcolaa::detail::read\fP< \fBUINT32\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 82 of file colaa\&.hpp\&.
+.SS "template<> \fBUINT8\fP \fBcolaa::detail::read\fP< \fBUINT8\fP > (const std::string & rxData)\fC [inline]\fP"
+
+.PP
+Definition at line 81 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, double value)"
+
+.PP
+Definition at line 229 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBUINT8\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 38 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBINT8\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 39 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBUINT16\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 40 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBINT16\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 41 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBUINT32\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, \fBINT32\fP value)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file colaa\&.hpp\&.
+.SS "\fBUINT16\fP colaa::detail::writeToBuffer (\fBBYTE\fP * buffer, const std::string & value)\fC [inline]\fP"
+
+.PP
+Definition at line 44 of file colaa\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

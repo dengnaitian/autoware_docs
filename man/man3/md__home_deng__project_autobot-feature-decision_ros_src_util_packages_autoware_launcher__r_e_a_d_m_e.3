@@ -1,0 +1,149 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_launcher__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_launcher__r_e_a_d_m_e \- Autoware Launcher 
+
+.SS "Quick Start"
+.PP
+.IP "1." 4
+Put map and rosbag file 
+.PP
+.nf
+1 ~/\&.autoware/data/tf/tf\&.launch
+2 ~/\&.autoware/data/pointcloud_map/*\&.pcd
+3 ~/\&.autoware/data/vector_map/*\&.csv
+4 ~/\&.autoware/log/20150324\&.bag
+
+.fi
+.PP
+
+.PP
+.IP "1." 4
+Start the Autoware Launcher
+.br
+ 
+.PP
+.nf
+1 $ cd Autoware/ros
+2 $ \&./run-experimental
+
+.fi
+.PP
+ 
+.PP
+.IP "1." 4
+Load a profile if needed
+.br
+ Window Menu -> \fBFile\fP -> Load Profile
+.PP
+.IP "1." 4
+Show simulation panel
+.br
+ Window Menu -> View -> Simulation
+.PP
+.IP "1." 4
+Play rosbag
+.br
+ Swtich on Simulation Mode check box, then, push Play button\&.
+.PP
+.IP "1." 4
+Push launch buttons
+.br
+ Map, Vehicle, Sensing, and Visualization 
+.PP
+.IP "1." 4
+Push Localization button on rviz plugin and check the estimated vehicle pose 
+.PP
+.IP "1." 4
+Push other buttons on rviz plugin
+.br
+ Detection, Prediction, Decision, Mission, and Motion  
+.PP
+.PP
+.SS "Develop"
+.PP
+Develop mode is under development and very unstable (Window Menu -> View -> Develop Mode)\&.
+.br
+ 
+.PP
+NOTICE
+.IP "\(bu" 2
+On treeview widget, R key is run, T key is terminate\&.
+.IP "\(bu" 2
+On summary panel, I key initialize the parameters to default\&.
+.IP "\(bu" 2
+Use 'save as' instead of 'save'\&.
+.IP "\(bu" 2
+Choose \&.launch file when you save/load profile\&.
+.PP
+.PP
+.SS "Plugins"
+.PP
+If you want to use your launch file\&. Create the plugin file\&.
+.IP "\(bu" 2
+\&./documents/plugin/format\&.md 'Plugin File Format'\&.
+.PP
+.PP
+For example, you can add ndt matching as following\&.
+.IP "1." 4
+Create plugin file template by text editor (e\&.g\&. autoware_launcher/plugins/refs/ndt_matching\&.yaml) 
+.PP
+.nf
+1 format: Autoware Launcher Plugin Version 0\&.1
+2 rosxml: $(find lidar_localizer)/launch/ndt_matching\&.launch
+
+.fi
+.PP
+
+.PP
+.IP "1." 4
+\fBLaunch\fP plugin file generate tool
+.br
+ \fCrosrun \fBautoware_launcher\fP tool refs/ndt_matching\fP
+.PP
+.IP "1." 4
+Set type and default value
+.br
+ 
+.PP
+.IP "1." 4
+Push export button\&. The tool will set the text to clipboard\&. Paste it to yaml file\&.
+.br
+ 
+.PP
+.nf
+1 format: Autoware Launcher Plugin Version 0\&.1
+2 rosxml: $(find lidar_localizer)/launch/ndt_matching\&.launch
+3 args:
+4 - {name: method_type, type: int, default: 0}
+5 - {name: use_gnss, type: int, default: 1}
+6 - {name: use_odom, type: bool, default: false}
+7 \&.\&.\&.
+8 panel:
+9   widget: node\&.panel
+10   frames:
+11   - {target: args\&.method_type, widget: basic\&.int}
+12   - {target: args\&.use_gnss, widget: basic\&.int}
+13   - {target: args\&.use_odom, widget: basic\&.bool}
+14   \&.\&.\&.
+
+.fi
+.PP
+
+.PP
+.IP "1." 4
+Add new plugin path to parent plugin file by text editor (e\&.g\&. autoware_launcher/plugins/node/localization\&.yaml)\&. 
+.PP
+.nf
+1 format: Autoware Launcher Plugin Version 0\&.1
+2 rules:
+3 - { name: downsampler,      plugin: leaf/voxel_grid_filter  }
+4 - { name: localizer,        plugin: refs/ndt_matching }
+5 - { name: vel_pose_connect, plugin: refs/vel_pose_connect }
+
+.fi
+.PP
+ 
+.PP
+

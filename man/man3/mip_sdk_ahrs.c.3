@@ -1,0 +1,419 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_ahrs.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_ahrs.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk_ahrs\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmip_ahrs_raw_accel_byteswap\fP (\fBmip_ahrs_raw_accel\fP *raw_accel)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_raw_gyro_byteswap\fP (\fBmip_ahrs_raw_gyro\fP *raw_gyro)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_raw_mag_byteswap\fP (\fBmip_ahrs_raw_mag\fP *raw_mag)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_scaled_accel_byteswap\fP (\fBmip_ahrs_scaled_accel\fP *scaled_accel)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_scaled_gyro_byteswap\fP (\fBmip_ahrs_scaled_gyro\fP *scaled_gyro)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_scaled_mag_byteswap\fP (\fBmip_ahrs_scaled_mag\fP *scaled_mag)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_delta_theta_byteswap\fP (\fBmip_ahrs_delta_theta\fP *delta_theta)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_delta_velocity_byteswap\fP (\fBmip_ahrs_delta_velocity\fP *delta_velocity)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_orientation_matrix_byteswap\fP (\fBmip_ahrs_orientation_matrix\fP *orientation_matrix)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_quaternion_byteswap\fP (\fBmip_ahrs_quaternion\fP *quaternion)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_euler_angles_byteswap\fP (\fBmip_ahrs_euler_angles\fP *euler_angles)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_orientation_update_matrix_byteswap\fP (\fBmip_ahrs_orientation_update_matrix\fP *orientation_update_matrix)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_raw_temp_byteswap\fP (\fBmip_ahrs_raw_temp\fP *raw_temp)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_internal_timestamp_byteswap\fP (\fBmip_ahrs_internal_timestamp\fP *internal_timestamp)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_1pps_timestamp_byteswap\fP (\fBmip_ahrs_1pps_timestamp\fP *pps_timestamp)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_gps_timestamp_byteswap\fP (\fBmip_ahrs_gps_timestamp\fP *gps_timestamp)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_up_vector_byteswap\fP (\fBmip_ahrs_up_vector\fP *up_vector)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_north_vector_byteswap\fP (\fBmip_ahrs_north_vector\fP *north_vector)"
+.br
+.ti -1c
+.RI "void \fBmip_ahrs_signal_settings_byteswap\fP (\fBmip_ahrs_signal_settings\fP *signal_settings)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_ahrs\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void mip_ahrs_1pps_timestamp_byteswap (\fBmip_ahrs_1pps_timestamp\fP * pps_timestamp)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS 1PPS Timestamp Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_1pps_timestamp\fP *pps_timestamp - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 441 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_delta_theta_byteswap (\fBmip_ahrs_delta_theta\fP * delta_theta)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Delta Theta Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_delta_theta\fP *delta_theta - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 223 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_delta_velocity_byteswap (\fBmip_ahrs_delta_velocity\fP * delta_velocity)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Delta Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_delta_velocity\fP *delta_velocity - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 250 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_euler_angles_byteswap (\fBmip_ahrs_euler_angles\fP * euler_angles)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Euler \fBAngle\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_euler_angles\fP *euler_angles - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 334 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_gps_timestamp_byteswap (\fBmip_ahrs_gps_timestamp\fP * gps_timestamp)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS GPS Timestamp Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_gps_timestamp\fP *gps_timestamp - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 466 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_internal_timestamp_byteswap (\fBmip_ahrs_internal_timestamp\fP * internal_timestamp)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Internal Timestamp Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_internal_timestamp\fP *internal_timestamp - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 417 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_north_vector_byteswap (\fBmip_ahrs_north_vector\fP * north_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS North \fBVector\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_north_vector\fP *north_vector - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 519 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_orientation_matrix_byteswap (\fBmip_ahrs_orientation_matrix\fP * orientation_matrix)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Orientation Matrix Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_orientation_matrix\fP *orientation_matrix - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 277 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_orientation_update_matrix_byteswap (\fBmip_ahrs_orientation_update_matrix\fP * orientation_update_matrix)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Orientation Update Matrix Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_orientation_update_matrix\fP *orientation_update_matrix - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 360 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_quaternion_byteswap (\fBmip_ahrs_quaternion\fP * quaternion)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Quaternion Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_quaternion\fP *quaternion - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 307 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_raw_accel_byteswap (\fBmip_ahrs_raw_accel\fP * raw_accel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Raw Accel Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_raw_accel\fP *raw_accel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 61 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_raw_gyro_byteswap (\fBmip_ahrs_raw_gyro\fP * raw_gyro)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Raw Gyro Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_raw_gyro\fP *raw_gyro - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 88 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_raw_mag_byteswap (\fBmip_ahrs_raw_mag\fP * raw_mag)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Raw Mag Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_raw_mag\fP *raw_mag - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 115 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_raw_temp_byteswap (\fBmip_ahrs_raw_temp\fP * raw_temp)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Raw Temp Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_raw_temp\fP *raw_temp - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 390 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_scaled_accel_byteswap (\fBmip_ahrs_scaled_accel\fP * scaled_accel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Scaled Accel Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_scaled_accel\fP *scaled_accel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 142 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_scaled_gyro_byteswap (\fBmip_ahrs_scaled_gyro\fP * scaled_gyro)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Scaled Gyro Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_scaled_gyro\fP *scaled_gyro - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 169 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_scaled_mag_byteswap (\fBmip_ahrs_scaled_mag\fP * scaled_mag)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Scaled Mag Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_scaled_mag\fP *scaled_mag - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 196 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_signal_settings_byteswap (\fBmip_ahrs_signal_settings\fP * signal_settings)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS signal conditioning Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_signal_settings\fP *signal_settings - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 546 of file mip_sdk_ahrs\&.c\&.
+.SS "void mip_ahrs_up_vector_byteswap (\fBmip_ahrs_up_vector\fP * up_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap an AHRS Up \fBVector\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_ahrs_up_vector\fP *up_vector - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 492 of file mip_sdk_ahrs\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

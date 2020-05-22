@@ -1,0 +1,65 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/rnn_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/rnn_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSET\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_rnn_layer\fP (int batch, int inputs, int outputs, int steps, \fBACTIVATION\fP activation, int batch_normalize, int adam)"
+.br
+.ti -1c
+.RI "void \fBforward_rnn_layer\fP (\fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_rnn_layer\fP (\fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBupdate_rnn_layer\fP (\fBlayer\fP l, \fBupdate_args\fP a)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define USET"
+
+.PP
+Definition at line 8 of file rnn_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_rnn_layer (\fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 130 of file rnn_layer\&.c\&.
+.SS "void forward_rnn_layer (\fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 89 of file rnn_layer\&.c\&.
+.SS "\fBlayer\fP make_rnn_layer (int batch, int inputs, int outputs, int steps, \fBACTIVATION\fP activation, int batch_normalize, int adam)"
+
+.PP
+Definition at line 29 of file rnn_layer\&.c\&.
+.SS "void update_rnn_layer (\fBlayer\fP l, \fBupdate_args\fP a)"
+
+.PP
+Definition at line 82 of file rnn_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

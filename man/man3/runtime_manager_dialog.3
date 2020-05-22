@@ -1,0 +1,583 @@
+.TH "runtime_manager_dialog" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+runtime_manager_dialog \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBCheckboxes\fP"
+.br
+.ti -1c
+.RI "class \fBColorLabel\fP"
+.br
+.ti -1c
+.RI "class \fBInfoBarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBMyApp\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogCarPedestrian\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogDPM\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogLaneStop\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogNDTMapping\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogParam\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogROSbagRecord\fP"
+.br
+.ti -1c
+.RI "class \fBMyFrame\fP"
+.br
+.ti -1c
+.RI "class \fBParamPanel\fP"
+.br
+.ti -1c
+.RI "class \fBStrValObj\fP"
+.br
+.ti -1c
+.RI "class \fBVarPanel\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgdic_dialog_type_chk\fP (gdic, name)"
+.br
+.ti -1c
+.RI "def \fBgdic_dialog_name_get\fP (gdic)"
+.br
+.ti -1c
+.RI "def \fBset_size_gdic\fP (dlg, gdic={})"
+.br
+.ti -1c
+.RI "def \fBfile_dialog\fP (parent, tc, path_inf_dic={})"
+.br
+.ti -1c
+.RI "def \fBpost_evt_toggle_obj\fP (win, obj, v)"
+.br
+.ti -1c
+.RI "def \fBbutton_color_change\fP (btn, v=None)"
+.br
+.ti -1c
+.RI "def \fBOnButtonColorHdr\fP (event)"
+.br
+.ti -1c
+.RI "def \fBis_btn_null_bgcol\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBbutton_color_hdr_setup\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBbuttons_color_hdr_setup\fP (frm_obj)"
+.br
+.ti -1c
+.RI "def \fBshow_modal\fP (dlg)"
+.br
+.ti -1c
+.RI "def \fBload_yaml\fP (filename, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBterminate_children\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBterminate\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBproc_wait_thread\fP (ev, proc, obj)"
+.br
+.ti -1c
+.RI "def \fBth_start\fP (target, kwargs={})"
+.br
+.ti -1c
+.RI "def \fBth_end\fP (th, ev)"
+.br
+.ti -1c
+.RI "def \fBque_clear\fP (que)"
+.br
+.ti -1c
+.RI "def \fBappend_tc_limit\fP (tc, s, rm_chars=0)"
+.br
+.ti -1c
+.RI "def \fBcut_esc\fP (s)"
+.br
+.ti -1c
+.RI "def \fBchange_font_point_by_rate\fP (obj, rate=1\&.0)"
+.br
+.ti -1c
+.RI "def \fBfix_link_color\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBget_tooltip\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBget_tooltips\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBset_tooltip\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBset_tooltip_str\fP (obj, s)"
+.br
+.ti -1c
+.RI "def \fBset_tooltips\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBget_tooltip_obj\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBscaled_bitmap\fP (bm, scale)"
+.br
+.ti -1c
+.RI "def \fBsizer_wrap\fP (add_objs, orient=\fBwx\&.VERTICAL\fP, prop=0, flag=0, border=0, parent=None)"
+.br
+.ti -1c
+.RI "def \fBstatic_box_sizer\fP (parent, s, orient=\fBwx\&.VERTICAL\fP)"
+.br
+.ti -1c
+.RI "def \fBwx_flag_get\fP (flags)"
+.br
+.ti -1c
+.RI "def \fBmsg_path_to_obj_attr\fP (msg, path)"
+.br
+.ti -1c
+.RI "def \fBstr_to_rosval\fP (s, type_str, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBstr_to_float\fP (s)"
+.br
+.ti -1c
+.RI "def \fBset_path\fP (tc, v)"
+.br
+.ti -1c
+.RI "def \fBset_val\fP (obj, v)"
+.br
+.ti -1c
+.RI "def \fBenables_set\fP (obj, \fBk\fP, en)"
+.br
+.ti -1c
+.RI "def \fBenables_get\fP (obj, \fBk\fP, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBenables_get_last\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBobj_refresh\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdic_list_push\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBdic_list_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBdic_list_get\fP (dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_push\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_set\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBattr_getset\fP (obj, name, def_ret)"
+.br
+.ti -1c
+.RI "def \fBdic_getset\fP (dic, key, def_ret)"
+.br
+.ti -1c
+.RI "def \fBlst_append_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBlst_remove_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBget_top\fP (lst, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBadjust_num_str\fP (s)"
+.br
+.ti -1c
+.RI "def \fBrtmgr_src_dir\fP ()"
+.br
+.ti -1c
+.RI "def \fBpath_expand_cmd\fP (path)"
+.br
+.ti -1c
+.RI "def \fBeval_if_str\fP (self, v)"
+.br
+.ti -1c
+.RI "def \fBdic_eval_if_str\fP (self, dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBprn_dict\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBsend_to_proc_manager\fP (order)"
+.br
+.ti -1c
+.RI "def \fBset_process_nice\fP (proc, value)"
+.br
+.ti -1c
+.RI "def \fBset_process_cpu_affinity\fP (proc, cpus)"
+.br
+.ti -1c
+.RI "def \fBshutdown_proc_manager\fP ()"
+.br
+.ti -1c
+.RI "def \fBset_scheduling_policy\fP (proc, policy, priority)"
+.br
+.ti -1c
+.RI "def \fBget_cpu_count\fP ()"
+.br
+.ti -1c
+.RI "def \fBget_proc_children\fP (proc, r=False)"
+.br
+.ti -1c
+.RI "def \fBget_proc_nice\fP (proc)"
+.br
+.ti -1c
+.RI "def \fBget_proc_cpu_affinity\fP (proc)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBSCHED_OTHER\fP = 0"
+.br
+.ti -1c
+.RI "int \fBSCHED_FIFO\fP = 1"
+.br
+.ti -1c
+.RI "int \fBSCHED_RR\fP = 2"
+.br
+.ti -1c
+.RI "string \fBPROC_MANAGER_SOCK\fP = '/tmp/autoware_proc_manager'"
+.br
+.ti -1c
+.RI "\fBbtn_null_bgcol\fP = None"
+.br
+.ti -1c
+.RI "\fBapp\fP = \fBMyApp\fP(0)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def runtime_manager_dialog\&.adjust_num_str ( s)"
+
+.PP
+Definition at line 3316 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.append_tc_limit ( tc,  s,  rm_chars = \fC0\fP)"
+
+.PP
+Definition at line 3118 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.attr_getset ( obj,  name,  def_ret)"
+
+.PP
+Definition at line 3291 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.bak_stk_pop ( dic,  key)"
+
+.PP
+Definition at line 3278 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.bak_stk_push ( dic,  key)"
+
+.PP
+Definition at line 3273 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.bak_stk_set ( dic,  key,  v)"
+
+.PP
+Definition at line 3286 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.button_color_change ( btn,  v = \fCNone\fP)"
+
+.PP
+Definition at line 3022 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.button_color_hdr_setup ( btn)"
+
+.PP
+Definition at line 3053 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.buttons_color_hdr_setup ( frm_obj)"
+
+.PP
+Definition at line 3061 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.change_font_point_by_rate ( obj,  rate = \fC1\&.0\fP)"
+
+.PP
+Definition at line 3134 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.cut_esc ( s)"
+
+.PP
+Definition at line 3123 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.dic_eval_if_str ( self,  dic,  key,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3339 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.dic_getset ( dic,  key,  def_ret)"
+
+.PP
+Definition at line 3296 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.dic_list_get ( dic,  key,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3270 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.dic_list_pop ( dic,  key)"
+
+.PP
+Definition at line 3267 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.dic_list_push ( dic,  key,  v)"
+
+.PP
+Definition at line 3264 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.enables_get ( obj,  k,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3249 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.enables_get_last ( obj)"
+
+.PP
+Definition at line 3252 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.enables_set ( obj,  k,  en)"
+
+.PP
+Definition at line 3233 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.eval_if_str ( self,  v)"
+
+.PP
+Definition at line 3336 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.file_dialog ( parent,  tc,  path_inf_dic = \fC{}\fP)"
+
+.PP
+Definition at line 2978 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.fix_link_color ( obj)"
+
+.PP
+Definition at line 3141 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.gdic_dialog_name_get ( gdic)"
+
+.PP
+Definition at line 2144 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.gdic_dialog_type_chk ( gdic,  name)"
+
+.PP
+Definition at line 2131 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_cpu_count ()"
+
+.PP
+Definition at line 3392 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_proc_children ( proc,  r = \fCFalse\fP)"
+
+.PP
+Definition at line 3398 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_proc_cpu_affinity ( proc)"
+
+.PP
+Definition at line 3410 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_proc_nice ( proc)"
+
+.PP
+Definition at line 3404 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_tooltip ( dic)"
+
+.PP
+Definition at line 3148 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_tooltip_obj ( obj)"
+
+.PP
+Definition at line 3167 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_tooltips ( dic)"
+
+.PP
+Definition at line 3151 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.get_top ( lst,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3313 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.is_btn_null_bgcol ( btn)"
+
+.PP
+Definition at line 3043 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.load_yaml ( filename,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3071 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.lst_append_once ( lst,  v)"
+
+.PP
+Definition at line 3301 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.lst_remove_once ( lst,  v)"
+
+.PP
+Definition at line 3307 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.msg_path_to_obj_attr ( msg,  path)"
+
+.PP
+Definition at line 3200 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.obj_refresh ( obj)"
+
+.PP
+Definition at line 3256 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.OnButtonColorHdr ( event)"
+
+.PP
+Definition at line 3031 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.path_expand_cmd ( path)"
+
+.PP
+Definition at line 3327 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.post_evt_toggle_obj ( win,  obj,  v)"
+
+.PP
+Definition at line 3004 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.prn_dict ( dic)"
+
+.PP
+Definition at line 3342 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.proc_wait_thread ( ev,  proc,  obj)"
+
+.PP
+Definition at line 3093 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.que_clear ( que)"
+
+.PP
+Definition at line 3114 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.rtmgr_src_dir ()"
+
+.PP
+Definition at line 3324 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.scaled_bitmap ( bm,  scale)"
+
+.PP
+Definition at line 3173 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.send_to_proc_manager ( order)"
+
+.PP
+Definition at line 3346 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_path ( tc,  v)"
+
+.PP
+Definition at line 3221 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_process_cpu_affinity ( proc,  cpus)"
+
+.PP
+Definition at line 3368 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_process_nice ( proc,  value)"
+
+.PP
+Definition at line 3360 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_scheduling_policy ( proc,  policy,  priority)"
+
+.PP
+Definition at line 3382 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_size_gdic ( dlg,  gdic = \fC{}\fP)"
+
+.PP
+Definition at line 2969 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_tooltip ( obj,  dic)"
+
+.PP
+Definition at line 3154 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_tooltip_str ( obj,  s)"
+
+.PP
+Definition at line 3157 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_tooltips ( obj,  dic)"
+
+.PP
+Definition at line 3161 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.set_val ( obj,  v)"
+
+.PP
+Definition at line 3225 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.show_modal ( dlg)"
+
+.PP
+Definition at line 3067 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.shutdown_proc_manager ()"
+
+.PP
+Definition at line 3376 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.sizer_wrap ( add_objs,  orient = \fC\fBwx\&.VERTICAL\fP\fP,  prop = \fC0\fP,  flag = \fC0\fP,  border = \fC0\fP,  parent = \fCNone\fP)"
+
+.PP
+Definition at line 3179 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.static_box_sizer ( parent,  s,  orient = \fC\fBwx\&.VERTICAL\fP\fP)"
+
+.PP
+Definition at line 3187 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.str_to_float ( s)"
+
+.PP
+Definition at line 3218 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.str_to_rosval ( s,  type_str,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3207 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.terminate ( proc,  sigint = \fCFalse\fP)"
+
+.PP
+Definition at line 3087 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.terminate_children ( proc,  sigint = \fCFalse\fP)"
+
+.PP
+Definition at line 3082 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.th_end ( th,  ev)"
+
+.PP
+Definition at line 3106 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.th_start ( target,  kwargs = \fC{}\fP)"
+
+.PP
+Definition at line 3098 of file runtime_manager_dialog\&.py\&.
+.SS "def runtime_manager_dialog\&.wx_flag_get ( flags)"
+
+.PP
+Definition at line 3192 of file runtime_manager_dialog\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "runtime_manager_dialog\&.app = \fBMyApp\fP(0)"
+
+.PP
+Definition at line 3419 of file runtime_manager_dialog\&.py\&.
+.SS "runtime_manager_dialog\&.btn_null_bgcol = None"
+
+.PP
+Definition at line 3041 of file runtime_manager_dialog\&.py\&.
+.SS "string runtime_manager_dialog\&.PROC_MANAGER_SOCK = '/tmp/autoware_proc_manager'"
+
+.PP
+Definition at line 91 of file runtime_manager_dialog\&.py\&.
+.SS "int runtime_manager_dialog\&.SCHED_FIFO = 1"
+
+.PP
+Definition at line 89 of file runtime_manager_dialog\&.py\&.
+.SS "int runtime_manager_dialog\&.SCHED_OTHER = 0"
+
+.PP
+Definition at line 88 of file runtime_manager_dialog\&.py\&.
+.SS "int runtime_manager_dialog\&.SCHED_RR = 2"
+
+.PP
+Definition at line 90 of file runtime_manager_dialog\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

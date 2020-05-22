@@ -1,0 +1,136 @@
+.TH "OpenCVConnector" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OpenCVConnector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cv_connection\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOpenCVConnector\fP (std::string \fBtopic_name\fP, std::string camera_frame_id, std::string cam_info_file, int buffer)"
+.br
+.ti -1c
+.RI "\fB~OpenCVConnector\fP ()"
+.br
+.ti -1c
+.RI "void \fBWriteToOpenCV\fP (unsigned char *\fBdata\fP, int width_in, int height_in, int width_pub, int height_pub)"
+.br
+.ti -1c
+.RI "void \fBWriteToJpeg\fP (uint8_t *\fBdata\fP, uint32_t compressed_size)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "image_transport::ImageTransport \fBit\fP"
+.br
+.ti -1c
+.RI "image_transport::Publisher \fBpub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_jpg\fP"
+.br
+.ti -1c
+.RI "std::string \fBtopic_name\fP"
+.br
+.ti -1c
+.RI "std::string \fBcamera_id\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBcounter\fP"
+.br
+.ti -1c
+.RI "sensor_msgs::CameraInfo \fBcamera_info\fP"
+.br
+.ti -1c
+.RI "camera_info_manager::CameraInfoManager \fBcamera_info_manager\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_caminfo\fP"
+.br
+.ti -1c
+.RI "std::string \fBcalib_folder\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 56 of file cv_connection\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OpenCVConnector::OpenCVConnector (std::string topic_name, std::string camera_frame_id, std::string cam_info_file, int buffer)"
+
+.PP
+Definition at line 48 of file cv_connection\&.cpp\&.
+.SS "OpenCVConnector::~OpenCVConnector ()"
+
+.PP
+Definition at line 72 of file cv_connection\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OpenCVConnector::WriteToJpeg (uint8_t * data, uint32_t compressed_size)"
+
+.PP
+Definition at line 109 of file cv_connection\&.cpp\&.
+.SS "void OpenCVConnector::WriteToOpenCV (unsigned char * data, int width_in, int height_in, int width_pub, int height_pub)"
+
+.PP
+Definition at line 77 of file cv_connection\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string OpenCVConnector::calib_folder"
+
+.PP
+Definition at line 79 of file cv_connection\&.hpp\&.
+.SS "std::string OpenCVConnector::camera_id"
+
+.PP
+Definition at line 73 of file cv_connection\&.hpp\&.
+.SS "sensor_msgs::CameraInfo OpenCVConnector::camera_info"
+
+.PP
+Definition at line 76 of file cv_connection\&.hpp\&.
+.SS "camera_info_manager::CameraInfoManager OpenCVConnector::camera_info_manager"
+
+.PP
+Definition at line 77 of file cv_connection\&.hpp\&.
+.SS "unsigned int OpenCVConnector::counter"
+
+.PP
+Definition at line 74 of file cv_connection\&.hpp\&.
+.SS "image_transport::ImageTransport OpenCVConnector::it"
+
+.PP
+Definition at line 69 of file cv_connection\&.hpp\&.
+.SS "ros::NodeHandle OpenCVConnector::nh"
+
+.PP
+Definition at line 68 of file cv_connection\&.hpp\&.
+.SS "image_transport::Publisher OpenCVConnector::pub"
+
+.PP
+Definition at line 70 of file cv_connection\&.hpp\&.
+.SS "ros::Publisher OpenCVConnector::pub_caminfo"
+
+.PP
+Definition at line 78 of file cv_connection\&.hpp\&.
+.SS "ros::Publisher OpenCVConnector::pub_jpg"
+
+.PP
+Definition at line 71 of file cv_connection\&.hpp\&.
+.SS "std::string OpenCVConnector::topic_name"
+
+.PP
+Definition at line 72 of file cv_connection\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

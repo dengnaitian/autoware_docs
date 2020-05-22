@@ -1,0 +1,97 @@
+.TH "UtilityHNS::AisanSignalFileReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::AisanSignalFileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAisanSignal\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAisanSignalFileReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fBAisanSignalFileReader\fP (const vector_map_msgs::SignalArray &_signals)"
+.br
+.ti -1c
+.RI "\fB~AisanSignalFileReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBAisanSignal\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBAisanSignal\fP > &data_list)"
+.br
+.ti -1c
+.RI "void \fBParseNextLine\fP (const vector_map_msgs::Signal &_rec, \fBAisanSignal\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBAisanSignal\fP * \fBGetDataRowById\fP (int _lnid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBAisanSignal\fP > \fBm_data_list\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 475 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::AisanSignalFileReader::AisanSignalFileReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 488 of file DataRW\&.h\&.
+.SS "UtilityHNS::AisanSignalFileReader::AisanSignalFileReader (const vector_map_msgs::SignalArray & _signals)"
+
+.PP
+Definition at line 1461 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::AisanSignalFileReader::~AisanSignalFileReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 493 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAisanSignalFileReader::AisanSignal\fP * UtilityHNS::AisanSignalFileReader::GetDataRowById (int _lnid)"
+
+.PP
+Definition at line 1499 of file DataRW\&.cpp\&.
+.SS "void UtilityHNS::AisanSignalFileReader::ParseNextLine (const vector_map_msgs::Signal & _rec, \fBAisanSignal\fP & data)"
+
+.PP
+Definition at line 1490 of file DataRW\&.cpp\&.
+.SS "int UtilityHNS::AisanSignalFileReader::ReadAllData (std::vector< \fBAisanSignal\fP > & data_list)"
+
+.PP
+Definition at line 1543 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::AisanSignalFileReader::ReadNextLine (\fBAisanSignal\fP & data)"
+
+.PP
+Definition at line 1522 of file DataRW\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBAisanSignal\fP> UtilityHNS::AisanSignalFileReader::m_data_list"
+
+.PP
+Definition at line 499 of file DataRW\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

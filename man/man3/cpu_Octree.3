@@ -1,0 +1,59 @@
+.TH "cpu::Octree< PointSourceType >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cpu::Octree< PointSourceType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Octree\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOctree\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInput\fP (std::vector< Eigen::Vector3i > occupied_voxels, typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr point_cloud)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (std::vector< Eigen::Vector3i > new_voxels, typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr new_cloud)"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 6, 1 > \fBnearestOctreeNode\fP (PointSourceType q)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSourceType>
+.br
+class cpu::Octree< PointSourceType >"
+
+.PP
+Definition at line 17 of file Octree\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSourceType > \fBcpu::Octree\fP< PointSourceType >::\fBOctree\fP ()"
+
+.PP
+Definition at line 19 of file Octree\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSourceType > Eigen::Matrix< float, 6, 1 > \fBcpu::Octree\fP< PointSourceType >::nearestOctreeNode (PointSourceType q)"
+
+.PP
+Definition at line 638 of file Octree\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::Octree\fP< PointSourceType >::setInput (std::vector< Eigen::Vector3i > occupied_voxels, typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr point_cloud)"
+
+.PP
+Definition at line 50 of file Octree\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::Octree\fP< PointSourceType >::update (std::vector< Eigen::Vector3i > new_voxels, typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr new_cloud)"
+
+.PP
+Definition at line 335 of file Octree\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

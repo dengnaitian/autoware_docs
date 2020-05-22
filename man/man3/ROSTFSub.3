@@ -1,0 +1,217 @@
+.TH "ROSTFSub" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ROSTFSub \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rosinterface\&.h>\fP
+.PP
+Inherits \fBROSInterfaceBase\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBstartReceiveSlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopReceiveSlot\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBreceiveTFSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartReceiveSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopReceiveSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetQueryIntervalSignal\fP (int QueryInterval)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSTFSub\fP (QString destinationFrame, QString originalFrame='world', int QueryInterval=10, QObject *parent=0)"
+.br
+.ti -1c
+.RI "\fB~ROSTFSub\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetTF\fP (tf::StampedTransform &\fBtransform\fP)"
+.br
+.ti -1c
+.RI "QString \fBgetDestinationFrame\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetDestinationFrame\fP (QString destinationFrame)"
+.br
+.ti -1c
+.RI "QString \fBgetOriginalFrame\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetOriginalFrame\fP (QString orignalFrame='world')"
+.br
+.ti -1c
+.RI "void \fBresetQueryInterval\fP (int QueryInterval)"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreceiveTFSlot\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclearTFs\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBdestinationframe\fP"
+.br
+.ti -1c
+.RI "QString \fBoriginalframe\fP"
+.br
+.ti -1c
+.RI "QTimer * \fBtimer\fP"
+.br
+.ti -1c
+.RI "bool \fBreceiveflag\fP"
+.br
+.ti -1c
+.RI "QReadWriteLock \fBlock\fP"
+.br
+.ti -1c
+.RI "tf::TransformListener \fBlistener\fP"
+.br
+.ti -1c
+.RI "QQueue< tf::StampedTransform > \fBtfs\fP"
+.br
+.ti -1c
+.RI "tf::StampedTransform \fBlasttf\fP"
+.br
+.ti -1c
+.RI "bool \fBlastflag\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 239 of file rosinterface\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ROSTFSub::ROSTFSub (QString destinationFrame, QString originalFrame = \fC'world'\fP, int QueryInterval = \fC10\fP, QObject * parent = \fC0\fP)"
+
+.PP
+Definition at line 159 of file rosinterface\&.cpp\&.
+.SS "ROSTFSub::~ROSTFSub ()"
+
+.PP
+Definition at line 175 of file rosinterface\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ROSTFSub::clearTFs ()\fC [protected]\fP"
+
+.PP
+Definition at line 234 of file rosinterface\&.cpp\&.
+.SS "QString ROSTFSub::getDestinationFrame ()"
+
+.PP
+Definition at line 253 of file rosinterface\&.cpp\&.
+.SS "QString ROSTFSub::getOriginalFrame ()"
+
+.PP
+Definition at line 265 of file rosinterface\&.cpp\&.
+.SS "bool ROSTFSub::getTF (tf::StampedTransform & transform)"
+
+.PP
+Definition at line 239 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::receiveTFSignal ()\fC [signal]\fP"
+
+.SS "void ROSTFSub::receiveTFSlot ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 203 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::resetDestinationFrame (QString destinationFrame)"
+
+.PP
+Definition at line 258 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::resetOriginalFrame (QString orignalFrame = \fC'world'\fP)"
+
+.PP
+Definition at line 270 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::resetQueryInterval (int QueryInterval)"
+
+.PP
+Definition at line 277 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::resetQueryIntervalSignal (int QueryInterval)\fC [signal]\fP"
+
+.SS "void ROSTFSub::startReceiveSignal ()\fC [signal]\fP"
+
+.SS "void ROSTFSub::startReceiveSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 186 of file rosinterface\&.cpp\&.
+.SS "void ROSTFSub::stopReceiveSignal ()\fC [signal]\fP"
+
+.SS "void ROSTFSub::stopReceiveSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 195 of file rosinterface\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString ROSTFSub::destinationframe\fC [protected]\fP"
+
+.PP
+Definition at line 246 of file rosinterface\&.h\&.
+.SS "bool ROSTFSub::lastflag\fC [protected]\fP"
+
+.PP
+Definition at line 254 of file rosinterface\&.h\&.
+.SS "tf::StampedTransform ROSTFSub::lasttf\fC [protected]\fP"
+
+.PP
+Definition at line 253 of file rosinterface\&.h\&.
+.SS "tf::TransformListener ROSTFSub::listener\fC [protected]\fP"
+
+.PP
+Definition at line 251 of file rosinterface\&.h\&.
+.SS "QReadWriteLock ROSTFSub::lock\fC [protected]\fP"
+
+.PP
+Definition at line 250 of file rosinterface\&.h\&.
+.SS "QString ROSTFSub::originalframe\fC [protected]\fP"
+
+.PP
+Definition at line 247 of file rosinterface\&.h\&.
+.SS "bool ROSTFSub::receiveflag\fC [protected]\fP"
+
+.PP
+Definition at line 249 of file rosinterface\&.h\&.
+.SS "QQueue<tf::StampedTransform> ROSTFSub::tfs\fC [protected]\fP"
+
+.PP
+Definition at line 252 of file rosinterface\&.h\&.
+.SS "QTimer* ROSTFSub::timer\fC [protected]\fP"
+
+.PP
+Definition at line 248 of file rosinterface\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

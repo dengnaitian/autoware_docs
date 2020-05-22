@@ -1,0 +1,232 @@
+.TH "SickToolbox" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox \- Encapsulates the Sick LIDAR Matlab/C++ toolbox\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSickBadChecksumException\fP"
+.br
+.RI "\fIThrown when a received message has an invalid checksum\&. \fP"
+.ti -1c
+.RI "class \fBSickBufferMonitor\fP"
+.br
+.ti -1c
+.RI "class \fBSickConfigException\fP"
+.br
+.RI "\fIThrown when the driver detects (or the Sick reports) an invalid config\&. \fP"
+.ti -1c
+.RI "class \fBSickErrorException\fP"
+.br
+.RI "\fIThrown when Sick returns an error code or an unexpected response\&. \fP"
+.ti -1c
+.RI "class \fBSickException\fP"
+.br
+.RI "\fIProvides a base exception class from which to derive other Sick exceptions\&. \fP"
+.ti -1c
+.RI "class \fBSickIOException\fP"
+.br
+.RI "\fIThrown instance where the driver can't read,write,drain,flush,\&.\&.\&. the buffers\&. \fP"
+.ti -1c
+.RI "class \fBSickLIDAR\fP"
+.br
+.RI "\fIProvides an abstract parent for all Sick LIDAR devices\&. \fP"
+.ti -1c
+.RI "class \fBSickLMS5xx\fP"
+.br
+.RI "\fIProvides a simple driver interface for working with the Sick LD-OEM/Sick LD-LRS long-range models via Ethernet\&. \fP"
+.ti -1c
+.RI "class \fBSickLMS5xxBufferMonitor\fP"
+.br
+.RI "\fIA class for monitoring the receive buffer when interfacing with a Sick LD LIDAR\&. \fP"
+.ti -1c
+.RI "class \fBSickLMS5xxMessage\fP"
+.br
+.RI "\fIA class to represent all messages sent to and from the Sick LMS 5xx unit\&. \fP"
+.ti -1c
+.RI "class \fBSickMessage\fP"
+.br
+.RI "\fIProvides an abstract parent for all Sick messages\&. \fP"
+.ti -1c
+.RI "class \fBSickThreadException\fP"
+.br
+.RI "\fIThrown when error occurs during thread initialization, and uninitialization\&. \fP"
+.ti -1c
+.RI "class \fBSickTimeoutException\fP"
+.br
+.RI "\fIMakes handling timeouts much easier\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBSickLMS5xx::sick_lms_5xx_status_t\fP \fBsick_lms_5xx_status_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_status_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef \fBSickLMS5xx::sick_lms_5xx_scan_format_t\fP \fBsick_lms_5xx_scan_format_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_format_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef \fBSickLMS5xx::sick_lms_5xx_scan_freq_t\fP \fBsick_lms_5xx_scan_freq_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_freq_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef \fBSickLMS5xx::sick_lms_5xx_scan_res_t\fP \fBsick_lms_5xx_scan_res_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_res_t\fP a bit easier\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBhost_to_sick_lms_5xx_byte_order\fP (uint16_t value)"
+.br
+.RI "\fIConverts host byte order (little-endian) to Sick LMS byte order (little-endian) \fP"
+.ti -1c
+.RI "uint32_t \fBhost_to_sick_lms_5xx_byte_order\fP (uint32_t value)"
+.br
+.RI "\fIConverts host byte order (little-endian) to Sick LMS byte order (little-endian) \fP"
+.ti -1c
+.RI "uint16_t \fBsick_lms_5xx_to_host_byte_order\fP (uint16_t value)"
+.br
+.RI "\fIConverts Sick LMS byte order (little-endian) to host byte order (little-endian) \fP"
+.ti -1c
+.RI "uint32_t \fBsick_lms_5xx_to_host_byte_order\fP (uint32_t value)"
+.br
+.RI "\fIConverts Sick LMS byte order (little-endian) to host byte order (little-endian) \fP"
+.ti -1c
+.RI "std::string \fBint_to_str\fP (const int value)"
+.br
+.RI "\fIUtility function for converting int to standard string\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulates the Sick LIDAR Matlab/C++ toolbox\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBSickToolbox::sick_lms_5xx_scan_format_t\fP"
+
+.PP
+Makes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_format_t\fP a bit easier\&. 
+.PP
+Definition at line 347 of file SickLMS5xx\&.hh\&.
+.SS "\fBSickToolbox::sick_lms_5xx_scan_freq_t\fP"
+
+.PP
+Makes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_freq_t\fP a bit easier\&. 
+.PP
+Definition at line 353 of file SickLMS5xx\&.hh\&.
+.SS "\fBSickToolbox::sick_lms_5xx_scan_res_t\fP"
+
+.PP
+Makes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_res_t\fP a bit easier\&. 
+.PP
+Definition at line 359 of file SickLMS5xx\&.hh\&.
+.SS "\fBSickToolbox::sick_lms_5xx_status_t\fP"
+
+.PP
+Makes working w/ \fBSickLMS5xx::sick_lms_5xx_status_t\fP a bit easier\&. 
+.PP
+Definition at line 341 of file SickLMS5xx\&.hh\&.
+.SH "Function Documentation"
+.PP 
+.SS "uint16_t SickToolbox::host_to_sick_lms_5xx_byte_order (uint16_t value)\fC [inline]\fP"
+
+.PP
+Converts host byte order (little-endian) to Sick LMS byte order (little-endian) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The 2-byte value to convert to little-endian 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value in Sick LMS byte order (little-endian) 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file SickLMS5xxUtility\&.hh\&.
+.SS "uint32_t SickToolbox::host_to_sick_lms_5xx_byte_order (uint32_t value)\fC [inline]\fP"
+
+.PP
+Converts host byte order (little-endian) to Sick LMS byte order (little-endian) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The 4-byte value to convert to little-endian 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value in Sick LMS byte order (little-endian) 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file SickLMS5xxUtility\&.hh\&.
+.SS "std::string SickToolbox::int_to_str (const int value)\fC [inline]\fP"
+
+.PP
+Utility function for converting int to standard string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP Integer to be converted 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+String representing the given integer 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file SickLMS5xxUtility\&.hh\&.
+.SS "uint16_t SickToolbox::sick_lms_5xx_to_host_byte_order (uint16_t value)\fC [inline]\fP"
+
+.PP
+Converts Sick LMS byte order (little-endian) to host byte order (little-endian) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The 2-byte value to convert to little-endian 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value in host byte order (little-endian) 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file SickLMS5xxUtility\&.hh\&.
+.SS "uint32_t SickToolbox::sick_lms_5xx_to_host_byte_order (uint32_t value)\fC [inline]\fP"
+
+.PP
+Converts Sick LMS byte order (little-endian) to host byte order (little-endian) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The 4-byte value to convert to little-endian 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value in host byte order (little-endian) 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file SickLMS5xxUtility\&.hh\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

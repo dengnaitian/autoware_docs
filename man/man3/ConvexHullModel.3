@@ -1,0 +1,50 @@
+.TH "ConvexHullModel" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConvexHullModel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <convex_hull\&.hpp>\fP
+.PP
+Inherits \fBShapeEstimationModelInterface\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConvexHullModel\fP ()"
+.br
+.ti -1c
+.RI "\fB~ConvexHullModel\fP ()"
+.br
+.ti -1c
+.RI "bool \fBestimate\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ > &cluster, autoware_msgs::DetectedObject &output) override"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file convex_hull\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ConvexHullModel::ConvexHullModel ()\fC [inline]\fP"
+
+.PP
+Definition at line 27 of file convex_hull\&.hpp\&.
+.SS "ConvexHullModel::~ConvexHullModel ()\fC [inline]\fP"
+
+.PP
+Definition at line 29 of file convex_hull\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ConvexHullModel::estimate (const \fBpcl::PointCloud\fP< pcl::PointXYZ > & cluster, autoware_msgs::DetectedObject & output)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBShapeEstimationModelInterface\fP\&.
+.PP
+Definition at line 22 of file convex_hull\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

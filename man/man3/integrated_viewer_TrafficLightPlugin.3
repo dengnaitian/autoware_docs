@@ -1,0 +1,108 @@
+.TH "integrated_viewer::TrafficLightPlugin" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+integrated_viewer::TrafficLightPlugin \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <traffic_light_plugin\&.h>\fP
+.PP
+Inherits Panel\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBStateInfo\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrafficLightPlugin\fP (QWidget *parent=0)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBStateNumber\fP { \fBRED\fP = 0, \fBGREEN\fP = 1, \fBUNDEFINED\fP = 2 }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSignalStateCallback\fP (const autoware_msgs::TrafficLight::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBGetStateInfo\fP (const \fBStateNumber\fP num, \fBStateInfo\fP &info)"
+.br
+.ti -1c
+.RI "void \fBSetStateInfo\fP (const \fBStateInfo\fP info)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::NodeHandle \fBnode_handle_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsignal_state_sub_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file traffic_light_plugin\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBintegrated_viewer::TrafficLightPlugin::StateNumber\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIUNDEFINED \fP\fP
+.PP
+Definition at line 25 of file traffic_light_plugin\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "integrated_viewer::TrafficLightPlugin::TrafficLightPlugin (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 13 of file traffic_light_plugin\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void integrated_viewer::TrafficLightPlugin::GetStateInfo (const \fBStateNumber\fP num, \fBStateInfo\fP & info)\fC [protected]\fP"
+
+.PP
+Definition at line 40 of file traffic_light_plugin\&.cpp\&.
+.SS "void integrated_viewer::TrafficLightPlugin::SetStateInfo (const \fBStateInfo\fP info)\fC [protected]\fP"
+
+.PP
+Definition at line 68 of file traffic_light_plugin\&.cpp\&.
+.SS "void integrated_viewer::TrafficLightPlugin::SignalStateCallback (const autoware_msgs::TrafficLight::ConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file traffic_light_plugin\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ros::NodeHandle integrated_viewer::TrafficLightPlugin::node_handle_\fC [protected]\fP"
+
+.PP
+Definition at line 48 of file traffic_light_plugin\&.h\&.
+.SS "ros::Subscriber integrated_viewer::TrafficLightPlugin::signal_state_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file traffic_light_plugin\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

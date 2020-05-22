@@ -1,0 +1,185 @@
+.TH "PlannerHNS::TrajectoryDynamicCosts" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::TrajectoryDynamicCosts \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TrajectoryDynamicCosts\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrajectoryDynamicCosts\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TrajectoryDynamicCosts\fP ()"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStep\fP (const vector< vector< vector< \fBWayPoint\fP > > > &rollOuts, const vector< vector< \fBWayPoint\fP > > &totalPaths, const \fBWayPoint\fP &currState, const int &currTrajectoryIndex, const int &currLaneIndex, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list)"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStepStatic\fP (const vector< vector< \fBWayPoint\fP > > &rollOuts, const vector< \fBWayPoint\fP > &totalPaths, const \fBWayPoint\fP &currState, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const vector< \fBWayPoint\fP > &leftLaneLimited, const vector< \fBWayPoint\fP > &rightLaneLimited, const int &iCurrentIndex=\-1)"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStepStatic\fP (const vector< vector< \fBWayPoint\fP > > &rollOuts, const vector< \fBWayPoint\fP > &totalPaths, const \fBWayPoint\fP &currState, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const int &iCurrentIndex=\-1)"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStepDynamic\fP (const vector< vector< \fBWayPoint\fP > > &rollOuts, const vector< \fBWayPoint\fP > &totalPaths, const \fBWayPoint\fP &currState, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const vector< \fBWayPoint\fP > &leftLaneLimted, const vector< \fBWayPoint\fP > &rightLaneLimited, const int &iCurrentIndex=\-1)"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStepDynamic\fP (const vector< vector< \fBWayPoint\fP > > &rollOuts, const vector< \fBWayPoint\fP > &totalPaths, const \fBWayPoint\fP &currState, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const int &iCurrentIndex=\-1)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_PrevCostIndex\fP"
+.br
+.ti -1c
+.RI "int \fBm_PrevIndex\fP"
+.br
+.ti -1c
+.RI "vector< \fBTrajectoryCost\fP > \fBm_TrajectoryCosts\fP"
+.br
+.ti -1c
+.RI "\fBPlanningParams\fP \fBm_Params\fP"
+.br
+.ti -1c
+.RI "\fBPolygonShape\fP \fBm_SafetyBorder\fP"
+.br
+.ti -1c
+.RI "vector< \fBWayPoint\fP > \fBm_AllContourPoints\fP"
+.br
+.ti -1c
+.RI "vector< \fBWayPoint\fP > \fBm_CollisionPoints\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightPriority\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightTransition\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLong\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLat\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLaneChange\fP"
+.br
+.ti -1c
+.RI "double \fBm_LateralSkipDistance\fP"
+.br
+.ti -1c
+.RI "double \fBm_CollisionTimeDiff\fP"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBm_neighborLaneCost\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file TrajectoryDynamicCosts\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::TrajectoryDynamicCosts::TrajectoryDynamicCosts ()"
+
+.PP
+Definition at line 15 of file TrajectoryDynamicCosts\&.cpp\&.
+.SS "PlannerHNS::TrajectoryDynamicCosts::~TrajectoryDynamicCosts ()\fC [virtual]\fP"
+
+.PP
+Definition at line 32 of file TrajectoryDynamicCosts\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::DoOneStep (const vector< vector< vector< \fBWayPoint\fP > > > & rollOuts, const vector< vector< \fBWayPoint\fP > > & totalPaths, const \fBWayPoint\fP & currState, const int & currTrajectoryIndex, const int & currLaneIndex, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list)"
+
+.PP
+Definition at line 335 of file TrajectoryDynamicCosts\&.cpp\&.
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::DoOneStepDynamic (const vector< vector< \fBWayPoint\fP > > & rollOuts, const vector< \fBWayPoint\fP > & totalPaths, const \fBWayPoint\fP & currState, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const vector< \fBWayPoint\fP > & leftLaneLimted, const vector< \fBWayPoint\fP > & rightLaneLimited, const int & iCurrentIndex = \fC\-1\fP)"
+
+.PP
+Definition at line 137 of file TrajectoryDynamicCosts\&.cpp\&.
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::DoOneStepDynamic (const vector< vector< \fBWayPoint\fP > > & rollOuts, const vector< \fBWayPoint\fP > & totalPaths, const \fBWayPoint\fP & currState, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const int & iCurrentIndex = \fC\-1\fP)"
+
+.PP
+Definition at line 1447 of file TrajectoryDynamicCosts\&.cpp\&.
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::DoOneStepStatic (const vector< vector< \fBWayPoint\fP > > & rollOuts, const vector< \fBWayPoint\fP > & totalPaths, const \fBWayPoint\fP & currState, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const vector< \fBWayPoint\fP > & leftLaneLimited, const vector< \fBWayPoint\fP > & rightLaneLimited, const int & iCurrentIndex = \fC\-1\fP)"
+
+.PP
+Definition at line 229 of file TrajectoryDynamicCosts\&.cpp\&.
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::DoOneStepStatic (const vector< vector< \fBWayPoint\fP > > & rollOuts, const vector< \fBWayPoint\fP > & totalPaths, const \fBWayPoint\fP & currState, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const int & iCurrentIndex = \fC\-1\fP)"
+
+.PP
+Definition at line 36 of file TrajectoryDynamicCosts\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "vector<\fBWayPoint\fP> PlannerHNS::TrajectoryDynamicCosts::m_AllContourPoints"
+
+.PP
+Definition at line 55 of file TrajectoryDynamicCosts\&.h\&.
+.SS "vector<\fBWayPoint\fP> PlannerHNS::TrajectoryDynamicCosts::m_CollisionPoints"
+
+.PP
+Definition at line 56 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_CollisionTimeDiff"
+
+.PP
+Definition at line 63 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_LateralSkipDistance"
+
+.PP
+Definition at line 62 of file TrajectoryDynamicCosts\&.h\&.
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryDynamicCosts::m_neighborLaneCost"
+
+.PP
+Definition at line 65 of file TrajectoryDynamicCosts\&.h\&.
+.SS "\fBPlanningParams\fP PlannerHNS::TrajectoryDynamicCosts::m_Params"
+
+.PP
+Definition at line 53 of file TrajectoryDynamicCosts\&.h\&.
+.SS "int PlannerHNS::TrajectoryDynamicCosts::m_PrevCostIndex"
+
+.PP
+Definition at line 50 of file TrajectoryDynamicCosts\&.h\&.
+.SS "int PlannerHNS::TrajectoryDynamicCosts::m_PrevIndex"
+
+.PP
+Definition at line 51 of file TrajectoryDynamicCosts\&.h\&.
+.SS "\fBPolygonShape\fP PlannerHNS::TrajectoryDynamicCosts::m_SafetyBorder"
+
+.PP
+Definition at line 54 of file TrajectoryDynamicCosts\&.h\&.
+.SS "vector<\fBTrajectoryCost\fP> PlannerHNS::TrajectoryDynamicCosts::m_TrajectoryCosts"
+
+.PP
+Definition at line 52 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_WeightLaneChange"
+
+.PP
+Definition at line 61 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_WeightLat"
+
+.PP
+Definition at line 60 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_WeightLong"
+
+.PP
+Definition at line 59 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_WeightPriority"
+
+.PP
+Definition at line 57 of file TrajectoryDynamicCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryDynamicCosts::m_WeightTransition"
+
+.PP
+Definition at line 58 of file TrajectoryDynamicCosts\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,165 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/pointgrey/nodes/ladybug/ladybug.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/pointgrey/nodes/ladybug/ladybug.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/image_encodings\&.h>\fP
+.br
+\fC#include <sensor_msgs/Image\&.h>\fP
+.br
+\fC#include <sensor_msgs/CameraInfo\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include 'opencv2/core/core\&.hpp'\fP
+.br
+\fC#include 'opencv2/highgui/highgui\&.hpp'\fP
+.br
+\fC#include <opencv2/imgproc/imgproc\&.hpp>\fP
+.br
+\fC#include 'ladybug\&.h'\fP
+.br
+\fC#include 'ladybugstream\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBparseCameraInfo\fP (const cv::Mat &camMat, const cv::Mat &disCoeff, const \fBcv::Size\fP &imgSize, sensor_msgs::CameraInfo &msg)"
+.br
+.ti -1c
+.RI "void \fBGetMatricesFromFile\fP (ros::NodeHandle nh, sensor_msgs::CameraInfo &camerainfo_msg)"
+.br
+.ti -1c
+.RI "void \fBpublishImage\fP (cv::Mat &\fBimage\fP, ros::Publisher &image_pub, long int &count, size_t camera_id)"
+.br
+.ti -1c
+.RI "LadybugError \fBinit_camera\fP ()"
+.br
+.ti -1c
+.RI "LadybugError \fBstart_camera\fP ()"
+.br
+.ti -1c
+.RI "LadybugError \fBstop_camera\fP ()"
+.br
+.ti -1c
+.RI "LadybugError \fBacquire_image\fP (LadybugImage &\fBimage\fP)"
+.br
+.ti -1c
+.RI "LadybugError \fBunlock_image\fP (unsigned int bufferIndex)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "LadybugContext \fBm_context\fP"
+.br
+.ti -1c
+.RI "LadybugDataFormat \fBm_dataFormat\fP"
+.br
+.ti -1c
+.RI "float \fBm_frameRate\fP"
+.br
+.ti -1c
+.RI "bool \fBm_isFrameRateAuto\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBm_jpegQualityPercentage\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub\fP [LADYBUG_NUM_CAMERAS+1]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "LadybugError acquire_image (LadybugImage & image)"
+
+.PP
+Definition at line 260 of file ladybug\&.cpp\&.
+.SS "void GetMatricesFromFile (ros::NodeHandle nh, sensor_msgs::CameraInfo & camerainfo_msg)"
+
+.PP
+Definition at line 85 of file ladybug\&.cpp\&.
+.SS "LadybugError init_camera ()"
+
+.PP
+Definition at line 139 of file ladybug\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 270 of file ladybug\&.cpp\&.
+.SS "void parseCameraInfo (const cv::Mat & camMat, const cv::Mat & disCoeff, const \fBcv::Size\fP & imgSize, sensor_msgs::CameraInfo & msg)"
+
+.PP
+Definition at line 44 of file ladybug\&.cpp\&.
+.SS "void publishImage (cv::Mat & image, ros::Publisher & image_pub, long int & count, size_t camera_id)"
+
+.PP
+Definition at line 120 of file ladybug\&.cpp\&.
+.SS "LadybugError start_camera ()"
+
+.PP
+Definition at line 213 of file ladybug\&.cpp\&.
+.SS "LadybugError stop_camera ()"
+
+.PP
+Definition at line 250 of file ladybug\&.cpp\&.
+.SS "LadybugError unlock_image (unsigned int bufferIndex)"
+
+.PP
+Definition at line 265 of file ladybug\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "LadybugContext m_context"
+
+.PP
+Definition at line 29 of file ladybug\&.cpp\&.
+.SS "LadybugDataFormat m_dataFormat"
+
+.PP
+Definition at line 30 of file ladybug\&.cpp\&.
+.SS "float m_frameRate"
+
+.PP
+Definition at line 32 of file ladybug\&.cpp\&.
+.SS "bool m_isFrameRateAuto"
+
+.PP
+Definition at line 33 of file ladybug\&.cpp\&.
+.SS "unsigned int m_jpegQualityPercentage"
+
+.PP
+Definition at line 34 of file ladybug\&.cpp\&.
+.SS "ros::Publisher pub[LADYBUG_NUM_CAMERAS+1]"
+
+.PP
+Definition at line 36 of file ladybug\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

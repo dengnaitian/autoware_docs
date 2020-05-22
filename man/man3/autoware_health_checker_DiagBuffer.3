@@ -1,0 +1,73 @@
+.TH "autoware_health_checker::DiagBuffer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_health_checker::DiagBuffer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <diag_buffer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDiagBuffer\fP (std::string key, uint8_t \fBtype\fP, std::string \fBdescription\fP, double buffer_length)"
+.br
+.ti -1c
+.RI "\fB~DiagBuffer\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddDiag\fP (autoware_system_msgs::DiagnosticStatus status)"
+.br
+.ti -1c
+.RI "autoware_system_msgs::DiagnosticStatusArray \fBgetAndClearData\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const uint8_t \fBtype\fP"
+.br
+.ti -1c
+.RI "const std::string \fBdescription\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file diag_buffer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "autoware_health_checker::DiagBuffer::DiagBuffer (std::string key, uint8_t type, std::string description, double buffer_length)"
+
+.PP
+Definition at line 23 of file diag_buffer\&.cpp\&.
+.SS "autoware_health_checker::DiagBuffer::~DiagBuffer ()"
+
+.PP
+Definition at line 30 of file diag_buffer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void autoware_health_checker::DiagBuffer::addDiag (autoware_system_msgs::DiagnosticStatus status)"
+
+.PP
+Definition at line 32 of file diag_buffer\&.cpp\&.
+.SS "autoware_system_msgs::DiagnosticStatusArray autoware_health_checker::DiagBuffer::getAndClearData ()"
+
+.PP
+Definition at line 39 of file diag_buffer\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::string autoware_health_checker::DiagBuffer::description"
+
+.PP
+Definition at line 45 of file diag_buffer\&.h\&.
+.SS "const uint8_t autoware_health_checker::DiagBuffer::type"
+
+.PP
+Definition at line 44 of file diag_buffer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

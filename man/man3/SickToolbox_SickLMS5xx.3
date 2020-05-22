@@ -1,0 +1,418 @@
+.TH "SickToolbox::SickLMS5xx" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickLMS5xx \- Provides a simple driver interface for working with the Sick LD-OEM/Sick LD-LRS long-range models via Ethernet\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickLMS5xx\&.hh>\fP
+.PP
+Inherits \fBSickToolbox::SickLIDAR< SickLMS5xxBufferMonitor, SickLMS5xxMessage >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBsick_lms_5xx_status_t\fP { \fBSICK_LMS_5XX_STATUS_UNKNOWN\fP = 0x00, \fBSICK_LMS_5XX_STATUS_INITIALIZATION\fP = 0x01, \fBSICK_LMS_5XX_STATUS_CONFIGURATION\fP = 0x02, \fBSICK_LMS_5XX_STATUS_IDLE\fP = 0x03, \fBSICK_LMS_5XX_STATUS_ROTATED\fP = 0x04, \fBSICK_LMS_5XX_STATUS_IN_PREP\fP = 0x05, \fBSICK_LMS_5XX_STATUS_READY\fP = 0x06, \fBSICK_LMS_5XX_STATUS_READY_FOR_MEASUREMENT\fP = 0x07 }
+.RI "\fIDefines the Sick LMS 5xx status\&. This enum lists all of the Sick LMS 5xx status\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBsick_lms_5xx_scan_format_t\fP { \fBSICK_LMS_5XX_SCAN_FORMAT_DIST\fP = 0x00, \fBSICK_LMS_5XX_SCAN_FORMAT_DIST_REFLECT\fP = 0x01, \fBSICK_LMS_5XX_SCAN_FORMAT_UNKNOWN\fP = 0xFF }
+.RI "\fIDefines the Sick LMS 5xx scan types This enum is for specifying the desired scan returns\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBsick_lms_5xx_echo_filter_t\fP { \fBSICK_LMS_5XX_ECHO_FILTER_FIRST\fP = 0x00, \fBSICK_LMS_5XX_ECHO_FILTER_ALL_ECHOES\fP = 0x01, \fBSICK_LMS_5XX_ECHO_FILTER_LAST\fP = 0x02 }
+.RI "\fIDefines the Sick LMS 5xx echo filter modes\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBsick_lms_5xx_scan_freq_t\fP { \fBSICK_LMS_5XX_SCAN_FREQ_UNKNOWN\fP = 0x00, \fBSICK_LMS_5XX_SCAN_FREQ_25\fP = 2500, \fBSICK_LMS_5XX_SCAN_FREQ_35\fP = 3500, \fBSICK_LMS_5XX_SCAN_FREQ_50\fP = 5000, \fBSICK_LMS_5XX_SCAN_FREQ_75\fP = 7500, \fBSICK_LMS_5XX_SCAN_FREQ_100\fP = 10000 }
+.RI "\fIDefines the Sick LMS 5xx scan frequency\&. This enum lists all of the Sick LMS 5xx scan frequencies\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBsick_lms_5xx_scan_res_t\fP { \fBSICK_LMS_5XX_SCAN_RES_UNKNOWN\fP = 0x00, \fBSICK_LMS_5XX_SCAN_RES_17\fP = 1667, \fBSICK_LMS_5XX_SCAN_RES_25\fP = 2500, \fBSICK_LMS_5XX_SCAN_RES_33\fP = 3333, \fBSICK_LMS_5XX_SCAN_RES_50\fP = 5000, \fBSICK_LMS_5XX_SCAN_RES_67\fP = 6667, \fBSICK_LMS_5XX_SCAN_RES_75\fP = 7500, \fBSICK_LMS_5XX_SCAN_RES_100\fP = 10000 }
+.RI "\fIDefines the Sick LMS 5xx scan resolution\&. This enum lists all of the Sick LMS 5xx scan resolutions\&. \fP""
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickLMS5xx\fP (const std::string sick_ip_address=\fBDEFAULT_SICK_LMS_5XX_IP_ADDRESS\fP, const uint16_t sick_tcp_port=\fBDEFAULT_SICK_LMS_5XX_TCP_PORT\fP)"
+.br
+.RI "\fIA standard constructor\&. \fP"
+.ti -1c
+.RI "void \fBInitialize\fP (const bool disp_banner=true)  throw ( SickIOException, SickThreadException, SickTimeoutException, SickErrorException )"
+.br
+.RI "\fIInitializes the driver and syncs it with Sick LMS 5xx unit\&. Uses flash params\&. \fP"
+.ti -1c
+.RI "void \fBSetSickScanFreqAndRes\fP (const \fBsick_lms_5xx_scan_freq_t\fP scan_freq, const \fBsick_lms_5xx_scan_res_t\fP scan_res)  throw ( SickTimeoutException, SickIOException, SickErrorException )"
+.br
+.RI "\fISets the Sick LMS 5xx scan frequency and resolution\&. \fP"
+.ti -1c
+.RI "void \fBSetSickEchoFilter\fP (\fBsick_lms_5xx_echo_filter_t\fP echo_filter)  throw ( SickTimeoutException, SickIOException, SickErrorException )"
+.br
+.ti -1c
+.RI "\fBsick_lms_5xx_scan_freq_t\fP \fBGetSickScanFreq\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIGets the Sick LMS 5xx scan frequency\&. \fP"
+.ti -1c
+.RI "\fBsick_lms_5xx_scan_res_t\fP \fBGetSickScanRes\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIGets the Sick LMS 5xx scan resolution\&. \fP"
+.ti -1c
+.RI "double \fBGetSickStartAngle\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIGets the Sick LMS 5xx scan area start angle [-5,185] deg\&. \fP"
+.ti -1c
+.RI "double \fBGetSickStopAngle\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIGets the Sick LMS 5xx scan area start angle [-45,270] deg\&. \fP"
+.ti -1c
+.RI "void \fBSetSickScanDataFormat\fP (const \fBsick_lms_5xx_scan_format_t\fP scan_format)  throw ( SickTimeoutException, SickIOException, SickThreadException, SickErrorException )"
+.br
+.ti -1c
+.RI "void \fBGetSickMeasurements\fP (unsigned int *const range_1_vals, unsigned int *const range_2_vals, unsigned int *const range_3_vals, unsigned int *const range_4_vals, unsigned int *const range_5_vals, unsigned int *const reflect_1_vals, unsigned int *const reflect_2_vals, unsigned int *const reflect_3_vals, unsigned int *const reflect_4_vals, unsigned int *const reflect_5_vals, unsigned int &num_measurements, unsigned int *const dev_status=NULL)  throw ( SickIOException, SickConfigException, SickTimeoutException )"
+.br
+.RI "\fIAcquire multi-pulse sick range measurements\&. \fP"
+.ti -1c
+.RI "void \fBUninitialize\fP (const bool disp_banner=true)  throw ( SickIOException, SickTimeoutException, SickErrorException, SickThreadException )"
+.br
+.RI "\fITear down the connection between the host and the Sick LD\&. \fP"
+.ti -1c
+.RI "\fBsick_lms_5xx_scan_freq_t\fP \fBIntToSickScanFreq\fP (const int scan_freq) const "
+.br
+.RI "\fIConvert integer to corresponding sick_lms_5xx_scan_freq_t\&. \fP"
+.ti -1c
+.RI "int \fBSickScanFreqToInt\fP (const \fBsick_lms_5xx_scan_freq_t\fP scan_freq) const "
+.br
+.RI "\fIConvert sick_lms_5xx_scan_freq_t to corresponding integer\&. \fP"
+.ti -1c
+.RI "\fBsick_lms_5xx_scan_res_t\fP \fBDoubleToSickScanRes\fP (const double scan_res) const "
+.br
+.RI "\fIConvert double to corresponding sick_lms_5xx_scan_res_t\&. \fP"
+.ti -1c
+.RI "double \fBSickScanResToDouble\fP (const \fBsick_lms_5xx_scan_res_t\fP scan_res) const "
+.br
+.RI "\fIConvert sick_lms_5xx_scan_res_t to corresponding double\&. \fP"
+.ti -1c
+.RI "\fB~SickLMS5xx\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBSICK_LMS_5XX_MAX_NUM_MEASUREMENTS\fP = 1141"
+.br
+.RI "\fILMS 5xx max number of measurements\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Provides a simple driver interface for working with the Sick LD-OEM/Sick LD-LRS long-range models via Ethernet\&. 
+.PP
+Definition at line 49 of file SickLMS5xx\&.hh\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSickToolbox::SickLMS5xx::sick_lms_5xx_echo_filter_t\fP"
+
+.PP
+Defines the Sick LMS 5xx echo filter modes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISICK_LMS_5XX_ECHO_FILTER_FIRST \fP\fP
+First echo\&. 
+.TP
+\fB\fISICK_LMS_5XX_ECHO_FILTER_ALL_ECHOES \fP\fP
+All echoes\&. 
+.TP
+\fB\fISICK_LMS_5XX_ECHO_FILTER_LAST \fP\fP
+Last echo (default) 
+.PP
+Definition at line 90 of file SickLMS5xx\&.hh\&.
+.SS "enum \fBSickToolbox::SickLMS5xx::sick_lms_5xx_scan_format_t\fP"
+
+.PP
+Defines the Sick LMS 5xx scan types This enum is for specifying the desired scan returns\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FORMAT_DIST \fP\fP
+Dist, no reflect\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FORMAT_DIST_REFLECT \fP\fP
+Dist, reflection\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FORMAT_UNKNOWN \fP\fP
+Unknown format\&. 
+.PP
+Definition at line 78 of file SickLMS5xx\&.hh\&.
+.SS "enum \fBSickToolbox::SickLMS5xx::sick_lms_5xx_scan_freq_t\fP"
+
+.PP
+Defines the Sick LMS 5xx scan frequency\&. This enum lists all of the Sick LMS 5xx scan frequencies\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_UNKNOWN \fP\fP
+LMS 5xx scan freq unknown\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_25 \fP\fP
+LMS 5xx scan freq 25Hz\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_35 \fP\fP
+LMS 5xx scan freq 35Hz\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_50 \fP\fP
+LMS 5xx scan freq 50Hz\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_75 \fP\fP
+LMS 5xx scan freq 75Hz\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_FREQ_100 \fP\fP
+LMS 5xx scan freq 100Hz\&. 
+.PP
+Definition at line 103 of file SickLMS5xx\&.hh\&.
+.SS "enum \fBSickToolbox::SickLMS5xx::sick_lms_5xx_scan_res_t\fP"
+
+.PP
+Defines the Sick LMS 5xx scan resolution\&. This enum lists all of the Sick LMS 5xx scan resolutions\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_UNKNOWN \fP\fP
+LMS 5xx scan res unknown\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_17 \fP\fP
+LMS 5xx scan res 0\&.1667 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_25 \fP\fP
+LMS 5xx scan res 0\&.25 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_33 \fP\fP
+LMS 5xx scan res 0\&.3333 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_50 \fP\fP
+LMS 5xx scan res 0\&.50 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_67 \fP\fP
+LMS 5xx scan res 0\&.6667 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_75 \fP\fP
+LMS 5xx scan res 0\&.75 deg\&. 
+.TP
+\fB\fISICK_LMS_5XX_SCAN_RES_100 \fP\fP
+LMS 5xx scan res 1\&.0 deg\&. 
+.PP
+Definition at line 119 of file SickLMS5xx\&.hh\&.
+.SS "enum \fBSickToolbox::SickLMS5xx::sick_lms_5xx_status_t\fP"
+
+.PP
+Defines the Sick LMS 5xx status\&. This enum lists all of the Sick LMS 5xx status\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISICK_LMS_5XX_STATUS_UNKNOWN \fP\fP
+LMS 5xx status undefined\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_INITIALIZATION \fP\fP
+LMS 5xx initializing\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_CONFIGURATION \fP\fP
+LMS 5xx configuration\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_IDLE \fP\fP
+LMS 5xx is idle\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_ROTATED \fP\fP
+LMS 5xx mirror rotating\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_IN_PREP \fP\fP
+LMS 5xx in preparation\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_READY \fP\fP
+LMS 5xx is ready\&. 
+.TP
+\fB\fISICK_LMS_5XX_STATUS_READY_FOR_MEASUREMENT \fP\fP
+LMS 5xx is ready to give measurements\&. 
+.PP
+Definition at line 60 of file SickLMS5xx\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SickToolbox::SickLMS5xx::SickLMS5xx (const std::string sick_ip_address = \fC\fBDEFAULT_SICK_LMS_5XX_IP_ADDRESS\fP\fP, const uint16_t sick_tcp_port = \fC\fBDEFAULT_SICK_LMS_5XX_TCP_PORT\fP\fP)"
+
+.PP
+A standard constructor\&. Primary constructor
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsick_ip_address\fP The ip address of the Sick LD 
+.br
+\fIsick_tcp_port\fP The TCP port associated w/ the Sick LD server 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file SickLMS5xx\&.cc\&.
+.SS "SickToolbox::SickLMS5xx::~SickLMS5xx ()"
+Destructor
+.PP
+A standard destructor 
+.PP
+Definition at line 69 of file SickLMS5xx\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSickLMS5xx::sick_lms_5xx_scan_res_t\fP SickToolbox::SickLMS5xx::DoubleToSickScanRes (const double scan_res) const"
+
+.PP
+Convert double to corresponding sick_lms_5xx_scan_res_t\&. Utility function for converting double to scan resolution 
+.PP
+Definition at line 645 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::GetSickMeasurements (unsigned int *const range_1_vals, unsigned int *const range_2_vals, unsigned int *const range_3_vals, unsigned int *const range_4_vals, unsigned int *const range_5_vals, unsigned int *const reflect_1_vals, unsigned int *const reflect_2_vals, unsigned int *const reflect_3_vals, unsigned int *const reflect_4_vals, unsigned int *const reflect_5_vals, unsigned int & num_measurements, unsigned int *const dev_status = \fCNULL\fP) \fBSickIOException\fP, \fBSickConfigException\fP,\fBSickTimeoutException\fP"
+
+.PP
+Acquire multi-pulse sick range measurements\&. Get the Sick Range Measurements
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrange_1_vals\fP A buffer to hold the range measurements 
+.br
+\fIrange_2_vals\fP A buffer to hold the second pulse range measurements 
+.br
+\fIrefelct_1_vals\fP A buffer to hold the frist pulse reflectivity 
+.br
+\fIreflect_2_vals\fP A buffer to hold the second pulse reflectivity 
+.RE
+.PP
+
+.PP
+Definition at line 363 of file SickLMS5xx\&.cc\&.
+.SS "\fBsick_lms_5xx_scan_freq_t\fP SickToolbox::SickLMS5xx::GetSickScanFreq () const\fBSickIOException\fP"
+
+.PP
+Gets the Sick LMS 5xx scan frequency\&. Get the Sick LMS 5xx scan frequency
+.PP
+\fBReturns:\fP
+.RS 4
+Sick LMS 5xx scan frequency {25,50} Hz 
+.RE
+.PP
+
+.PP
+Definition at line 248 of file SickLMS5xx\&.cc\&.
+.SS "\fBsick_lms_5xx_scan_res_t\fP SickToolbox::SickLMS5xx::GetSickScanRes () const\fBSickIOException\fP"
+
+.PP
+Gets the Sick LMS 5xx scan resolution\&. Get the Sick LMS 5xx scan resolution
+.PP
+\fBReturns:\fP
+.RS 4
+Sick LMS 5xx scan resolution {0\&.25, 0\&.5, etc\&.} deg 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file SickLMS5xx\&.cc\&.
+.SS "double SickToolbox::SickLMS5xx::GetSickStartAngle () const\fBSickIOException\fP"
+
+.PP
+Gets the Sick LMS 5xx scan area start angle [-5,185] deg\&. Get the Sick LMS 5xx scan start angle
+.PP
+\fBReturns:\fP
+.RS 4
+Sick LMS 5xx start angle as double 
+.RE
+.PP
+
+.PP
+Definition at line 278 of file SickLMS5xx\&.cc\&.
+.SS "double SickToolbox::SickLMS5xx::GetSickStopAngle () const\fBSickIOException\fP"
+
+.PP
+Gets the Sick LMS 5xx scan area start angle [-45,270] deg\&. Get the Sick LMS 5xx scan stop angle
+.PP
+\fBReturns:\fP
+.RS 4
+Sick LMS 5xx start angle as double 
+.RE
+.PP
+
+.PP
+Definition at line 293 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::Initialize (const bool disp_banner = \fCtrue\fP) \fBSickIOException\fP, \fBSickThreadException\fP, \fBSickTimeoutException\fP,\fBSickErrorException\fP"
+
+.PP
+Initializes the driver and syncs it with Sick LMS 5xx unit\&. Uses flash params\&. Initializes the Sick LD unit (use scan areas defined in flash) 
+.PP
+Definition at line 74 of file SickLMS5xx\&.cc\&.
+.SS "\fBSickLMS5xx::sick_lms_5xx_scan_freq_t\fP SickToolbox::SickLMS5xx::IntToSickScanFreq (const int scan_freq) const"
+
+.PP
+Convert integer to corresponding sick_lms_5xx_scan_freq_t\&. Utility function for converting integer to scan frequency 
+.PP
+Definition at line 609 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::SetSickEchoFilter (\fBsick_lms_5xx_echo_filter_t\fP echo_filter) \fBSickTimeoutException\fP, \fBSickIOException\fP,\fBSickErrorException\fP"
+Sets the Sick LMS 5xx echo filter mode 
+.PP
+Definition at line 199 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::SetSickScanDataFormat (const \fBsick_lms_5xx_scan_format_t\fP scan_format) \fBSickTimeoutException\fP, \fBSickIOException\fP, \fBSickThreadException\fP,\fBSickErrorException\fP"
+Sets the sick scan data format
+.PP
+Set device to output only range values 
+.PP
+Definition at line 307 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::SetSickScanFreqAndRes (const \fBsick_lms_5xx_scan_freq_t\fP scan_freq, const \fBsick_lms_5xx_scan_res_t\fP scan_res) \fBSickTimeoutException\fP, \fBSickIOException\fP,\fBSickErrorException\fP"
+
+.PP
+Sets the Sick LMS 5xx scan frequency and resolution\&. Sets the Sick LMS 5xx scan frequency and scan resolution
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscan_freq\fP Desired scan frequency (e\&.g\&. \fBSickLMS5xx::SICK_LMS_5XX_SCAN_FREQ_50\fP) 
+.br
+\fIscan_res\fP Desired scan angular resolution (e\&.g\&. \fBSickLMS5xx::SICK_LMS_5XX_SCAN_RES_50\fP) 
+.br
+\fIwrite_to_eeprom\fP Write the configuration to EEPROM 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file SickLMS5xx\&.cc\&.
+.SS "int SickToolbox::SickLMS5xx::SickScanFreqToInt (const \fBsick_lms_5xx_scan_freq_t\fP scan_freq) const"
+
+.PP
+Convert sick_lms_5xx_scan_freq_t to corresponding integer\&. Utility function for converting scan frequency to integer 
+.PP
+Definition at line 623 of file SickLMS5xx\&.cc\&.
+.SS "double SickToolbox::SickLMS5xx::SickScanResToDouble (const \fBsick_lms_5xx_scan_res_t\fP scan_res) const"
+
+.PP
+Convert sick_lms_5xx_scan_res_t to corresponding double\&. Utility function for converting scan resolution to double 
+.PP
+Definition at line 666 of file SickLMS5xx\&.cc\&.
+.SS "void SickToolbox::SickLMS5xx::Uninitialize (const bool disp_banner = \fCtrue\fP) \fBSickIOException\fP, \fBSickTimeoutException\fP, \fBSickErrorException\fP,\fBSickThreadException\fP"
+
+.PP
+Tear down the connection between the host and the Sick LD\&. Uninitializes the Sick LD unit 
+.PP
+Definition at line 525 of file SickLMS5xx\&.cc\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const int SickToolbox::SickLMS5xx::SICK_LMS_5XX_MAX_NUM_MEASUREMENTS = 1141\fC [static]\fP"
+
+.PP
+LMS 5xx max number of measurements\&. 
+.PP
+Definition at line 53 of file SickLMS5xx\&.hh\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

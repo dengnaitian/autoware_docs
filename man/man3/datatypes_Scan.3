@@ -1,0 +1,514 @@
+.TH "datatypes::Scan" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Scan \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Scan\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBScanFlags\fP { \fBFlagVehicleCoordinates\fP = 0x00000800 }"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBScanPoint\fP > \fBPointList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBScannerInfo\fP > \fBScannerInfoVector\fP"
+.br
+.ti -1c
+.RI "typedef \fBScanPoint\fP & \fBreference\fP"
+.br
+.ti -1c
+.RI "typedef const \fBScanPoint\fP & \fBconst_reference\fP"
+.br
+.RI "\fIType of a const reference to an element\&. \fP"
+.ti -1c
+.RI "typedef PointList::size_type \fBsize_type\fP"
+.br
+.ti -1c
+.RI "typedef PointList::const_iterator \fBconst_iterator\fP"
+.br
+.ti -1c
+.RI "typedef PointList::iterator \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "\fBScan\fP (\fBsize_type\fP maxPoints=5280)"
+.br
+.ti -1c
+.RI "\fBScan\fP (const \fBScan\fP &)"
+.br
+.ti -1c
+.RI "\fBScan\fP & \fBoperator=\fP (const \fBScan\fP &)"
+.br
+.ti -1c
+.RI "\fBScan\fP & \fBcopy\fP (const \fBScan\fP &)"
+.br
+.ti -1c
+.RI "\fB~Scan\fP ()"
+.br
+.RI "\fIDefault destructor\&. \fP"
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "\fIResets all members of this object\&. \fP"
+.ti -1c
+.RI "\fBUINT16\fP \fBgetNumPoints\fP () const "
+.br
+.ti -1c
+.RI "\fBsize_type\fP \fBsize\fP () const "
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const "
+.br
+.ti -1c
+.RI "void \fBresize\fP (\fBsize_type\fP new_size, const \fBScanPoint\fP &default_point=\fBScanPoint\fP())"
+.br
+.RI "\fIResizes the scan to the specified number of points\&. \fP"
+.ti -1c
+.RI "\fBsize_type\fP \fBcapacity\fP () const "
+.br
+.ti -1c
+.RI "void \fBreserve\fP (\fBsize_type\fP new_capacity)"
+.br
+.RI "\fIAllocates memory for a total of new_capacity points\&. \fP"
+.ti -1c
+.RI "\fBUINT16\fP \fBgetScanNumber\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetScanNumber\fP (\fBUINT16\fP val)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetTotalObjectSize\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetFlags\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (\fBUINT32\fP val)"
+.br
+.ti -1c
+.RI "void \fBclearLabelFlag\fP (\fBScan::ScanFlags\fP scanFlag)"
+.br
+.ti -1c
+.RI "void \fBsetVehicleCoordinates\fP (bool inVehicleCoordinates)"
+.br
+.RI "\fISet whether the scanpoints are given in vehicle coordinates\&. \fP"
+.ti -1c
+.RI "const \fBPointList\fP & \fBgetPointList\fP () const "
+.br
+.ti -1c
+.RI "\fBPointList\fP & \fBgetPointList\fP ()"
+.br
+.ti -1c
+.RI "PointList::const_iterator \fBgetPointListBegin\fP () const "
+.br
+.ti -1c
+.RI "PointList::iterator \fBgetPointListBegin\fP ()"
+.br
+.ti -1c
+.RI "PointList::const_iterator \fBgetPointListEnd\fP () const "
+.br
+.ti -1c
+.RI "PointList::iterator \fBgetPointListEnd\fP ()"
+.br
+.ti -1c
+.RI "\fBconst_iterator\fP \fBbegin\fP () const "
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "\fBconst_iterator\fP \fBend\fP () const "
+.br
+.ti -1c
+.RI "\fBiterator\fP \fBend\fP ()"
+.br
+.ti -1c
+.RI "\fBreference\fP \fBoperator[]\fP (\fBsize_type\fP n)"
+.br
+.ti -1c
+.RI "\fBconst_reference\fP \fBoperator[]\fP (\fBsize_type\fP n) const "
+.br
+.ti -1c
+.RI "\fBreference\fP \fBat\fP (\fBsize_type\fP n)"
+.br
+.ti -1c
+.RI "\fBconst_reference\fP \fBat\fP (\fBsize_type\fP n) const "
+.br
+.RI "\fIReturns the n-th scan point (read only) with range checking\&. \fP"
+.ti -1c
+.RI "const \fBScanPoint\fP & \fBgetPoint\fP (\fBUINT16\fP n) const "
+.br
+.ti -1c
+.RI "\fBScanPoint\fP & \fBgetPoint\fP (\fBUINT16\fP n)"
+.br
+.ti -1c
+.RI "\fBScanPoint\fP & \fBaddNewPoint\fP ()"
+.br
+.ti -1c
+.RI "const \fBScannerInfoVector\fP & \fBgetScannerInfos\fP () const "
+.br
+.ti -1c
+.RI "\fBScannerInfoVector\fP & \fBgetScannerInfos\fP ()"
+.br
+.ti -1c
+.RI "const \fBScannerInfo\fP * \fBgetScannerInfoByDeviceId\fP (\fBUINT8\fP id) const "
+.br
+.ti -1c
+.RI "void \fBsetScannerInfos\fP (const \fBScannerInfoVector\fP &v)"
+.br
+.ti -1c
+.RI "void \fBsort\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddCartesianOffset\fP (double offsetX, double offsetY, double offsetZ)"
+.br
+.ti -1c
+.RI "void \fBaddPolarOffset\fP (double distOffset, double hAngleOffset, double vAngleOffset)"
+.br
+.ti -1c
+.RI "bool \fBtransformToVehicleCoordinates\fP ()"
+.br
+.RI "\fITransforms this scan (i\&.e\&. the scan points) to the vehicle coordinates\&. \fP"
+.ti -1c
+.RI "bool \fBtransformToVehicleCoordinatesUnsorted\fP ()"
+.br
+.RI "\fITransforms this scan (i\&.e\&. the scan points) to the vehicle coordinates\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT32\fP \fBm_flags\fP"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBm_scanNumber\fP"
+.br
+.ti -1c
+.RI "\fBPointList\fP \fBm_points\fP"
+.br
+.ti -1c
+.RI "\fBScannerInfoVector\fP \fBm_scannerInfos\fP"
+.br
+.RI "\fIThe \fBScannerInfo\fP collection\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file Scan\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef PointList::const_iterator \fBdatatypes::Scan::const_iterator\fP"
+
+.PP
+Definition at line 43 of file Scan\&.hpp\&.
+.SS "typedef const \fBScanPoint\fP& \fBdatatypes::Scan::const_reference\fP"
+
+.PP
+Type of a const reference to an element\&. 
+.PP
+Definition at line 37 of file Scan\&.hpp\&.
+.SS "typedef PointList::iterator \fBdatatypes::Scan::iterator\fP"
+
+.PP
+Definition at line 46 of file Scan\&.hpp\&.
+.SS "typedef std::vector<\fBScanPoint\fP> \fBdatatypes::Scan::PointList\fP"
+
+.PP
+Definition at line 28 of file Scan\&.hpp\&.
+.SS "typedef \fBScanPoint\fP& \fBdatatypes::Scan::reference\fP"
+
+.PP
+Definition at line 34 of file Scan\&.hpp\&.
+.SS "typedef std::vector<\fBScannerInfo\fP> \fBdatatypes::Scan::ScannerInfoVector\fP"
+
+.PP
+Definition at line 31 of file Scan\&.hpp\&.
+.SS "typedef PointList::size_type \fBdatatypes::Scan::size_type\fP"
+
+.PP
+Definition at line 40 of file Scan\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::Scan::ScanFlags\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFlagVehicleCoordinates \fP\fP
+Bit 11: Scanpoint coordinate system; 0 = scanner coordinates, 1 = vehicle / reference coordinates\&. 
+.PP
+Definition at line 49 of file Scan\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Scan::Scan (\fBsize_type\fP maxPoints = \fC5280\fP)"
+
+.PP
+Definition at line 26 of file Scan\&.cpp\&.
+.SS "datatypes::Scan::Scan (const \fBScan\fP & other)"
+Copy constructor\&. Copies the given right hand side object into this object\&. An alias for \fBcopy()\fP\&. 
+.PP
+Definition at line 37 of file Scan\&.cpp\&.
+.SS "datatypes::Scan::~Scan ()"
+
+.PP
+Default destructor\&. 
+.PP
+Definition at line 145 of file Scan\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::Scan::addCartesianOffset (double offsetX, double offsetY, double offsetZ)"
+
+.PP
+Definition at line 200 of file Scan\&.cpp\&.
+.SS "\fBScanPoint\fP & datatypes::Scan::addNewPoint ()"
+The new point is added to the list of scan points and the number of scan points is increased\&. 
+.PP
+Definition at line 173 of file Scan\&.cpp\&.
+.SS "void datatypes::Scan::addPolarOffset (double distOffset, double hAngleOffset, double vAngleOffset)"
+
+.PP
+Definition at line 206 of file Scan\&.cpp\&.
+.SS "\fBreference\fP datatypes::Scan::at (\fBsize_type\fP n)\fC [inline]\fP"
+
+.PP
+Definition at line 239 of file Scan\&.hpp\&.
+.SS "\fBconst_reference\fP datatypes::Scan::at (\fBsize_type\fP n) const\fC [inline]\fP"
+
+.PP
+Returns the n-th scan point (read only) with range checking\&. 
+.PP
+Definition at line 242 of file Scan\&.hpp\&.
+.SS "\fBconst_iterator\fP datatypes::Scan::begin () const\fC [inline]\fP"
+
+.PP
+Definition at line 221 of file Scan\&.hpp\&.
+.SS "\fBiterator\fP datatypes::Scan::begin ()\fC [inline]\fP"
+
+.PP
+Definition at line 224 of file Scan\&.hpp\&.
+.SS "\fBsize_type\fP datatypes::Scan::capacity () const\fC [inline]\fP"
+
+.PP
+Definition at line 137 of file Scan\&.hpp\&.
+.SS "void datatypes::Scan::clear ()"
+
+.PP
+Resets all members of this object\&. 
+.PP
+Definition at line 133 of file Scan\&.cpp\&.
+.SS "void datatypes::Scan::clearLabelFlag (\fBScan::ScanFlags\fP scanFlag)"
+
+.PP
+Definition at line 373 of file Scan\&.cpp\&.
+.SS "\fBScan\fP & datatypes::Scan::copy (const \fBScan\fP & other)"
+
+.PP
+Definition at line 52 of file Scan\&.cpp\&.
+.SS "bool datatypes::Scan::empty () const\fC [inline]\fP"
+
+.PP
+Definition at line 113 of file Scan\&.hpp\&.
+.SS "\fBconst_iterator\fP datatypes::Scan::end () const\fC [inline]\fP"
+
+.PP
+Definition at line 227 of file Scan\&.hpp\&.
+.SS "\fBiterator\fP datatypes::Scan::end ()\fC [inline]\fP"
+
+.PP
+Definition at line 230 of file Scan\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::Scan::getFlags () const\fC [inline]\fP"
+
+.PP
+Definition at line 168 of file Scan\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Scan::getNumPoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 107 of file Scan\&.hpp\&.
+.SS "const \fBScanPoint\fP& datatypes::Scan::getPoint (\fBUINT16\fP n) const\fC [inline]\fP"
+
+.PP
+Definition at line 245 of file Scan\&.hpp\&.
+.SS "\fBScanPoint\fP& datatypes::Scan::getPoint (\fBUINT16\fP n)\fC [inline]\fP"
+
+.PP
+Definition at line 247 of file Scan\&.hpp\&.
+.SS "const \fBPointList\fP& datatypes::Scan::getPointList () const\fC [inline]\fP"
+
+.PP
+Definition at line 205 of file Scan\&.hpp\&.
+.SS "\fBPointList\fP& datatypes::Scan::getPointList ()\fC [inline]\fP"
+
+.PP
+Definition at line 207 of file Scan\&.hpp\&.
+.SS "PointList::const_iterator datatypes::Scan::getPointListBegin () const\fC [inline]\fP"
+
+.PP
+Definition at line 210 of file Scan\&.hpp\&.
+.SS "PointList::iterator datatypes::Scan::getPointListBegin ()\fC [inline]\fP"
+
+.PP
+Definition at line 212 of file Scan\&.hpp\&.
+.SS "PointList::const_iterator datatypes::Scan::getPointListEnd () const\fC [inline]\fP"
+
+.PP
+Definition at line 215 of file Scan\&.hpp\&.
+.SS "PointList::iterator datatypes::Scan::getPointListEnd ()\fC [inline]\fP"
+
+.PP
+Definition at line 218 of file Scan\&.hpp\&.
+.SS "const \fBScannerInfo\fP * datatypes::Scan::getScannerInfoByDeviceId (\fBUINT8\fP id) const"
+
+.PP
+Definition at line 360 of file Scan\&.cpp\&.
+.SS "const \fBScannerInfoVector\fP& datatypes::Scan::getScannerInfos () const\fC [inline]\fP"
+
+.PP
+Definition at line 261 of file Scan\&.hpp\&.
+.SS "\fBScan::ScannerInfoVector\fP & datatypes::Scan::getScannerInfos ()"
+
+.PP
+Definition at line 355 of file Scan\&.cpp\&.
+.SS "\fBUINT16\fP datatypes::Scan::getScanNumber () const\fC [inline]\fP"
+
+.PP
+Definition at line 153 of file Scan\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::Scan::getTotalObjectSize ()"
+
+.PP
+Definition at line 86 of file Scan\&.cpp\&.
+.SS "const \fBUINT32\fP datatypes::Scan::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 44 of file Scan\&.cpp\&.
+.SS "\fBScan\fP & datatypes::Scan::operator= (const \fBScan\fP & other)"
+
+.PP
+Definition at line 97 of file Scan\&.cpp\&.
+.SS "\fBreference\fP datatypes::Scan::operator[] (\fBsize_type\fP n)\fC [inline]\fP"
+
+.PP
+Definition at line 233 of file Scan\&.hpp\&.
+.SS "\fBconst_reference\fP datatypes::Scan::operator[] (\fBsize_type\fP n) const\fC [inline]\fP"
+
+.PP
+Definition at line 236 of file Scan\&.hpp\&.
+.SS "void datatypes::Scan::reserve (\fBsize_type\fP new_capacity)"
+
+.PP
+Allocates memory for a total of new_capacity points\&. A \fBScan\fP must not hold more than 0xFFFF scan points (65536 in decimal), which is the maximum number an UINT16 can hold\&. If the \fCnew_capacity\fP is larger than this value (65536), a std::out_of_range exception will be thrown\&.
+.PP
+(Naming scheme according to std::vector\&.) 
+.PP
+Definition at line 159 of file Scan\&.cpp\&.
+.SS "void datatypes::Scan::resize (\fBsize_type\fP new_size, const \fBScanPoint\fP & default_point = \fC\fBScanPoint\fP()\fP)"
+
+.PP
+Resizes the scan to the specified number of points\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_size\fP Number of points the scan should contain\&. 
+.br
+\fIdefault_point\fP Data with which new elements should be populated\&.
+.RE
+.PP
+This function will resize the \fBScan\fP to the specified number of scan points\&. If the number is smaller than the scan's current size the scan is truncated, otherwise the scan is extended and new elements are populated with given data\&.
+.PP
+A \fBScan\fP must not hold more than 0xFFFF scan points (65536 in decimal), which is the maximum number an UINT16 can hold\&. If the \fCnew_capacity\fP is larger than this value (65536), a std::out_of_range exception will be thrown\&.
+.PP
+(Naming scheme according to std::vector\&.) 
+.PP
+Definition at line 149 of file Scan\&.cpp\&.
+.SS "void datatypes::Scan::setFlags (\fBUINT32\fP val)\fC [inline]\fP"
+
+.PP
+Definition at line 183 of file Scan\&.hpp\&.
+.SS "void datatypes::Scan::setScannerInfos (const \fBScannerInfoVector\fP & v)"
+
+.PP
+Definition at line 212 of file Scan\&.cpp\&.
+.SS "void datatypes::Scan::setScanNumber (\fBUINT16\fP val)\fC [inline]\fP"
+
+.PP
+Definition at line 156 of file Scan\&.hpp\&.
+.SS "void datatypes::Scan::setVehicleCoordinates (bool inVehicleCoordinates)"
+
+.PP
+Set whether the scanpoints are given in vehicle coordinates\&. 
+.PP
+Definition at line 179 of file Scan\&.cpp\&.
+.SS "\fBsize_type\fP datatypes::Scan::size () const\fC [inline]\fP"
+
+.PP
+Definition at line 110 of file Scan\&.hpp\&.
+.SS "void datatypes::Scan::sort ()"
+
+.PP
+Definition at line 195 of file Scan\&.cpp\&.
+.SS "bool datatypes::Scan::transformToVehicleCoordinates ()"
+
+.PP
+Transforms this scan (i\&.e\&. the scan points) to the vehicle coordinates\&. Note: This operation also calls \fBsort()\fP, so that the transformed scan is sorted by angle as well\&. (Previously, it was not sorted, but apparently everyone who used this needed the sorting and it got forgotten too often\&.) For transformation without sorting, use \fBtransformToVehicleCoordinatesUnsorted()\fP\&.
+.PP
+\fBReturns:\fP
+.RS 4
+True if the scan has been converted successfully\&. False if no conversion has been done, which could be caused by missing \fBScannerInfo\fP information\&. 
+.RE
+.PP
+
+.PP
+Definition at line 343 of file Scan\&.cpp\&.
+.SS "bool datatypes::Scan::transformToVehicleCoordinatesUnsorted ()"
+
+.PP
+Transforms this scan (i\&.e\&. the scan points) to the vehicle coordinates\&. This method does not sort the resulting scan\&. Use \fBtransformToVehicleCoordinates()\fP if transformation with additional sorting is needed\&.
+.PP
+\fBReturns:\fP
+.RS 4
+True if the scan has been converted successfully\&. False if no conversion has been done, which could be caused by missing \fBScannerInfo\fP information\&. 
+.RE
+.PP
+
+.PP
+Definition at line 299 of file Scan\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUINT32\fP datatypes::Scan::m_flags\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file Scan\&.hpp\&.
+.SS "\fBPointList\fP datatypes::Scan::m_points\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file Scan\&.hpp\&.
+.SS "\fBScannerInfoVector\fP datatypes::Scan::m_scannerInfos\fC [protected]\fP"
+
+.PP
+The \fBScannerInfo\fP collection\&. 
+.PP
+Definition at line 73 of file Scan\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Scan::m_scanNumber\fC [protected]\fP"
+
+.PP
+Definition at line 63 of file Scan\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,94 @@
+.TH "application::BasicApplication" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+application::BasicApplication \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BasicApplication\&.hpp>\fP
+.PP
+Inherited by \fBapplication::LdmrsApp\fP, \fBapplication::LdmrsFieldApp\fP, \fBapplication::LdmrsNtpTimeApp\fP, \fBapplication::LdmrsScanpointCoordinateApp\fP, \fBapplication::LdmrsSectorChangeApp\fP, and \fBsick_ldmrs_driver::SickLDMRS\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicApplication\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicApplication\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetApplicationType\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetSourceId\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSourceId\fP (\fBUINT16\fP applicationId)"
+.br
+.ti -1c
+.RI "void \fBsetApplicationName\fP (std::string appName)"
+.br
+.ti -1c
+.RI "std::string \fBgetApplicationName\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetData\fP (\fBBasicData\fP &\fBdata\fP)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetApplicationType\fP (\fBUINT16\fP applicationtype)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file BasicApplication\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "application::BasicApplication::BasicApplication ()"
+
+.PP
+Definition at line 14 of file BasicApplication\&.cpp\&.
+.SS "application::BasicApplication::~BasicApplication ()\fC [virtual]\fP"
+
+.PP
+Definition at line 22 of file BasicApplication\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string application::BasicApplication::getApplicationName ()"
+
+.PP
+Definition at line 40 of file BasicApplication\&.cpp\&.
+.SS "\fBUINT16\fP application::BasicApplication::getApplicationType ()"
+
+.PP
+Definition at line 50 of file BasicApplication\&.cpp\&.
+.SS "\fBUINT16\fP application::BasicApplication::getSourceId ()"
+Die System-Eindeutige ID der Applikation, als Zahl\&. 
+.PP
+Definition at line 68 of file BasicApplication\&.cpp\&.
+.SS "void application::BasicApplication::setApplicationName (std::string appName)"
+
+.PP
+Definition at line 32 of file BasicApplication\&.cpp\&.
+.SS "void application::BasicApplication::setApplicationType (\fBUINT16\fP applicationtype)\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file BasicApplication\&.cpp\&.
+.SS "virtual void application::BasicApplication::setData (\fBBasicData\fP & data)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBsick_ldmrs_driver::SickLDMRS\fP, \fBapplication::LdmrsNtpTimeApp\fP, \fBapplication::LdmrsSectorChangeApp\fP, \fBapplication::LdmrsFieldApp\fP, \fBapplication::LdmrsScanpointCoordinateApp\fP, and \fBapplication::LdmrsApp\fP\&.
+.SS "void application::BasicApplication::setSourceId (\fBUINT16\fP sourceId)"
+Die System-Eindeutige ID der Applikation, als Zahl\&. 
+.PP
+Definition at line 76 of file BasicApplication\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,113 @@
+.TH "WayPlannerNS::ROSHelpers" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WayPlannerNS::ROSHelpers \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ROSHelpers\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSHelpers\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ROSHelpers\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBGetTransformFromTF\fP (const std::string parent_frame, const std::string child_frame, tf::StampedTransform &\fBtransform\fP)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowarePathFormat\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path, autoware_msgs::LaneArray &laneArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowareVisualizePathFormat\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &curr_path, const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &paths, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowareVisualizePathFormat\fP (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &globalPaths, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromRoadNetworkToAutowareVisualizeMapFormat\fP (const \fBPlannerHNS::RoadNetwork\fP &\fBmap\fP, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBcreateGlobalLaneArrayMarker\fP (std_msgs::ColorRGBA color, const autoware_msgs::LaneArray &lane_waypoints_array, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBcreateGlobalLaneArrayVelocityMarker\fP (const autoware_msgs::LaneArray &lane_waypoints_array, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBcreateGlobalLaneArrayOrientationMarker\fP (const autoware_msgs::LaneArray &lane_waypoints_array, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHPointsToAutowarePathFormat\fP (const std::vector< \fBPlannerHNS::GPSPoint\fP > &path, autoware_msgs::LaneArray &laneArray)"
+.br
+.ti -1c
+.RI "static void \fBFindIncommingBranches\fP (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &globalPaths, const \fBPlannerHNS::WayPoint\fP &currPose, const double &min_distance, std::vector< \fBPlannerHNS::WayPoint\fP * > &branches, \fBPlannerHNS::WayPoint\fP *currOptions)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 116 of file ROSHelpers\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WayPlannerNS::ROSHelpers::ROSHelpers ()"
+
+.PP
+Definition at line 18 of file ROSHelpers\&.cpp\&.
+.SS "WayPlannerNS::ROSHelpers::~ROSHelpers ()\fC [virtual]\fP"
+
+.PP
+Definition at line 22 of file ROSHelpers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void WayPlannerNS::ROSHelpers::ConvertFromPlannerHPointsToAutowarePathFormat (const std::vector< \fBPlannerHNS::GPSPoint\fP > & path, autoware_msgs::LaneArray & laneArray)\fC [static]\fP"
+
+.PP
+Definition at line 44 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::ConvertFromPlannerHToAutowarePathFormat (const std::vector< \fBPlannerHNS::WayPoint\fP > & path, autoware_msgs::LaneArray & laneArray)\fC [static]\fP"
+
+.PP
+Definition at line 65 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::ConvertFromPlannerHToAutowareVisualizePathFormat (const std::vector< \fBPlannerHNS::WayPoint\fP > & curr_path, const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & paths, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 202 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::ConvertFromPlannerHToAutowareVisualizePathFormat (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & globalPaths, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 269 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::ConvertFromRoadNetworkToAutowareVisualizeMapFormat (const \fBPlannerHNS::RoadNetwork\fP & map, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 109 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::createGlobalLaneArrayMarker (std_msgs::ColorRGBA color, const autoware_msgs::LaneArray & lane_waypoints_array, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 348 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::createGlobalLaneArrayOrientationMarker (const autoware_msgs::LaneArray & lane_waypoints_array, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 428 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::createGlobalLaneArrayVelocityMarker (const autoware_msgs::LaneArray & lane_waypoints_array, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.PP
+Definition at line 380 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::FindIncommingBranches (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & globalPaths, const \fBPlannerHNS::WayPoint\fP & currPose, const double & min_distance, std::vector< \fBPlannerHNS::WayPoint\fP * > & branches, \fBPlannerHNS::WayPoint\fP * currOptions)\fC [static]\fP"
+
+.PP
+Definition at line 488 of file ROSHelpers\&.cpp\&.
+.SS "void WayPlannerNS::ROSHelpers::GetTransformFromTF (const std::string parent_frame, const std::string child_frame, tf::StampedTransform & transform)\fC [static]\fP"
+
+.PP
+Definition at line 25 of file ROSHelpers\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

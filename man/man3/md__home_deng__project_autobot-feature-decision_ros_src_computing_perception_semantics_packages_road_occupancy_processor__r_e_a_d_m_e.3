@@ -1,0 +1,159 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_road_occupancy_processor__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_road_occupancy_processor__r_e_a_d_m_e \- Road Occupancy Processor 
+This package generates the occupancy grid indicating the status of the road\&. It uses the point cloud from a filtered sensor and the ADAS Map data\&.
+.PP
+The occupancy grid can be conceptualized as a one dimensional 8-bit depth bitmap\&.
+.PP
+This package publishes a GridMap/OccupancyGrid with four different possible values:
+.IP "\(bu" 2
+UNKNOWN
+.IP "\(bu" 2
+FREE
+.IP "\(bu" 2
+NO ROAD
+.IP "\(bu" 2
+OCCUPIED
+.PP
+.PP
+These values can be set using parameters, as described in the \fIConfiguration \fBParameters\fP\fP section below\&.
+.PP
+.SS "Extra requirements for compilation"
+.PP
+.IP "\(bu" 2
+GridMap (http://wiki.ros.org/grid_map)
+.PP
+.PP
+.SS "Prerequisites"
+.PP
+.IP "\(bu" 2
+Localization working (TF between velodyne and world)
+.IP "  \(bu" 4
+PCD Map (map)
+.IP "  \(bu" 4
+TF for the Map (tf map->world)
+.IP "  \(bu" 4
+NDT matching (tf world-> base_link)
+.IP "  \(bu" 4
+Base link to Localizer (tf base_link -> velodyne)
+.PP
+
+.IP "\(bu" 2
+Ground filtering method publishing \fC/points_ground\fP and \fC/points_no_ground\fP\&. Autoware has three available:
+.IP "  \(bu" 4
+\fCray_ground_filter\fP
+.IP "  \(bu" 4
+\fCring_ground_filter\fP
+.IP "  \(bu" 4
+\fCeuclidean_cluster\fP with Planar Ground removal
+.PP
+
+.IP "\(bu" 2
+\fCwayarea2gridmap\fP node from Semantics in the Computing Tab
+.IP "  \(bu" 4
+\fBVector\fP Map in \fC/vector_map\fP (also known as ADAS Map)
+.IP "    \(bu" 6
+\fBVectorMap\fP must contain the definition of road areas (way_areas)
+.PP
+
+.PP
+
+.PP
+.PP
+.SS "Data subscription"
+.PP
+This node subscribes to:
+.IP "\(bu" 2
+Ground filtered in \fC/points_ground\fP (sensor_msgs::PointCloud)
+.IP "\(bu" 2
+\fBObstacle\fP points in \fC/points_no_ground\fP (sensor_msgs::PointCloud)
+.IP "\(bu" 2
+GridMap containing the road processed in \fC/grid_map_wayarea\fP (grid_map::GridMap)
+.PP
+.PP
+.SS "Data publishing"
+.PP
+.IP "\(bu" 2
+\fCgridmap_road_status\fP publishes the native format of the grid_map package\&. This can be used to extend the functionalities of this package\&.
+.IP "\(bu" 2
+\fCoccupancy_road_status\fP publishes the native ros \fCnav_msgs::OccupancyGrid\fP message\&.
+.PP
+.PP
+.SS "How to run"
+.PP
+From a sourced terminal in the workspace: \fCroslaunch road_occupancy_processor road_occupancy_processor\&.launch\fP
+.PP
+.SS "Quick Setup"
+.PP
+\fBThis is only a quick guide, each node must be properly configured\fP
+.PP
+.IP "1." 4
+Load PointCloud Map (Map tab)
+.PP
+.IP "1." 4
+Load \fBVectorMap\fP with wayareas available (Map tab)
+.PP
+.IP "1." 4
+Load TF between map and world frames (Map tab)
+.PP
+.IP "1." 4
+Load TF between base_link and Localizer (Setup tab)
+.PP
+.IP "1." 4
+\fBLaunch\fP voxel_grid_filter (Sensing tab/Points Downsampler)
+.PP
+.IP "1." 4
+\fBLaunch\fP ray_ground_filter (Sensing tab/Points Preprocessor)
+.PP
+.IP "1." 4
+\fBLaunch\fP ndt_matching (Computing tab/Localization)
+.PP
+.IP "1." 4
+Initialize NDT pose
+.PP
+.IP "1." 4
+\fBLaunch\fP wayarea2grid (Computing tab/Localization)
+.PP
+.IP "1." 4
+\fBLaunch\fP road_occupancy_processor (Computing tab/Localization)
+.PP
+.PP
+.SS "Configuration parameters"
+.PP
+.IP "\(bu" 2
+\fCpoints_ground_src\fP (default=\fC'points_ground'\fP) defines the PointCloud source topic containing only the ground points\&.
+.IP "\(bu" 2
+\fCpoints_no_ground_src\fP (default=\fC'points_no_ground'\fP) defines the PointCloud source topic containing only the obstacle points\&.
+.IP "\(bu" 2
+\fCwayarea_topic_src\fP (default=\fCgrid_map_wayarea\fP) defines the name of the topic containing the grid_map_msgs:GridMap containing the road areas\&.
+.IP "\(bu" 2
+\fCwayarea_layer_name\fP (default=\fC'wayarea'\fP) defines the name of the layer in the topic \fCwayarea_topic_src\fP that contains the road areas\&.
+.IP "\(bu" 2
+\fCoutput_layer_name\fP (default=\fCroad_status\fP) defines name of the output layer in the published GridMap object\&. If running several instances, each vehicle one can publish a different layer and later add them\&.
+.IP "\(bu" 2
+\fCroad_unknown_value\fP (default=\fC'128'\fP) indicates the value to fill in the occupancy grid when a cell is \fBUNKNOWN\fP\&.
+.IP "\(bu" 2
+\fCroad_free_value\fP (default=\fC'75'\fP) indicates the value to fill in the occupancy grid when a cell is \fBFREE\fP\&. Should be a number between 0-255\&.
+.IP "\(bu" 2
+\fCroad_occupied_value\fP (default=\fC'0'\fP) indicates the value to fill in the occupancy grid when a cell is \fBOCCUPIED\fP\&. Should be a number between 0-255\&.
+.IP "\(bu" 2
+\fCno_road_value\fP (default=\fC'255'\fP) indicates the value to fill in the occupancy grid when a cell is \fBNO ROAD\fP\&. Should be a number between 0-255\&.
+.PP
+.PP
+.SS "Coordinate Frame"
+.PP
+The occupancy grid is published in the same coordinate frame as the input GridMap from \fC/grid_map_wayarea\fP\&.
+.PP
+.SS "Color representation using default values"
+.PP
+\fBBlack\fP color represents areas not defined as NO ROAD in the vector map\&.
+.PP
+\fBDark gray\fP indicates UNKNOWN areas as detected by this node\&.
+.PP
+\fBLight gray\fP means the area is FREE\&.
+.PP
+\fBWhite\fP is used for OCCUPIED areas\&.
+.PP
+ 

@@ -1,0 +1,79 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_object_filter_packages_lidar_shape_estimation__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_object_filter_packages_lidar_shape_estimation__r_e_a_d_m_e \- Shape Estimation 
+L-shape fitting implementation of the paper: 
+.PP
+.nf
+1 @conference{Zhang-2017-26536,
+2 author = {Xiao Zhang and Wenda Xu and Chiyu Dong and John M\&. Dolan},
+3 title = {Efficient L-Shape Fitting for Vehicle Detection Using Laser Scanners},
+4 booktitle = {2017 IEEE Intelligent Vehicles Symposium},
+5 year = {2017},
+6 month = {June},
+7 keywords = {autonomous driving, laser scanner, perception, segmentation},
+8 } 
+
+.fi
+.PP
+.PP
+.SS "How to launch"
+.PP
+.SS "From RTM"
+.PP
+Computing tab -> Detection -> lidar_detector -> lidar_shape_estimation
+.PP
+Configure parameters using the \fC[app]\fP button\&.
+.PP
+.SS "From the command line"
+.PP
+From a sourced command line: \fCroslaunch lidar_shape_estimation shape_estimation_clustering\&.launch\fP
+.PP
+\fBLaunch\fP files also include the visualization node\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+LiDAR data segmented\&.
+.PP
+.IP "1." 4
+Objects
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+ParameterTypeDescriptionDefault  \fCinput\fP*String*Topic name containing the objects detected by the Lidar in 3D space\&.\fC/detection/lidar_detector/objects\fP \fCoutput\fP*String*Topic name containing the objects with the shape estimated in 3D space\&.\fC/detection/lidar_shape_estimation/objects\fP 
+.SS "Usage example"
+.PP
+.IP "1." 4
+\fBLaunch\fP a ground filter algorithm from the \fCPoints Preprocessor\fP section in the \fBSensing\fP tab\&. (adjust the parameters to your vehicle setup)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP a Lidar Detector from the Computing tab\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP this node\&.
+.PP
+.PP
+.SS "Node info"
+.PP
+.PP
+.nf
+1 Node [/lidar_shape_estimation]
+2 Publications: 
+3  * /detection/shape_estimation/objects [autoware_msgs/DetectedObjectArray]
+4 
+5 Subscriptions: 
+6  * /detection/lidar_detector/objects [autoware_msgs/DetectedObjectArray]
+7 
+8 -------------------------
+9 Node [/detection/shape_estimation/shape_estimation_visualization]
+10 Publications: 
+11  * /detection/shape_estimation/objects_markers [visualization_msgs/MarkerArray]
+12 
+13 Subscriptions: 
+14  * /detection/shape_estimation/objects [autoware_msgs/DetectedObjectArray]
+.fi
+.PP
+ 

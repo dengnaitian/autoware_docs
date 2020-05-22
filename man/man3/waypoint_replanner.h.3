@@ -1,0 +1,54 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_replanner/waypoint_replanner.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_replanner/waypoint_replanner.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <autoware_config_msgs/ConfigWaypointReplanner\&.h>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <boost/circular_buffer\&.hpp>\fP
+.br
+\fC#include <autoware_msgs/Lane\&.h>\fP
+.br
+\fC#include <waypoint_follower/libwaypoint_follower\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBwaypoint_maker::WaypointReplanner\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBwaypoint_maker\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::unordered_map< unsigned long, std::pair< unsigned long, double > > \fBwaypoint_maker::KeyVal\fP"
+.br
+.ti -1c
+.RI "typedef boost::circular_buffer< \fBgeometry_msgs::Point\fP > \fBwaypoint_maker::CbufGPoint\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

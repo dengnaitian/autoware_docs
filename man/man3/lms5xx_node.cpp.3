@@ -1,0 +1,46 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/src/lms5xx_node.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/src/lms5xx_node.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <csignal>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <SickLMS5xx\&.hh>\fP
+.br
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include 'sensor_msgs/LaserScan\&.h'\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpublish_scan\fP (ros::Publisher *\fBpub\fP, uint32_t *range_values, uint32_t n_range_values, uint32_t *intensity_values, uint32_t n_intensity_values, double scale, ros::Time start, double scan_time, bool inverted, float angle_min, float angle_max, std::string frame_id)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 83 of file lms5xx_node\&.cpp\&.
+.SS "void publish_scan (ros::Publisher * pub, uint32_t * range_values, uint32_t n_range_values, uint32_t * intensity_values, uint32_t n_intensity_values, double scale, ros::Time start, double scan_time, bool inverted, float angle_min, float angle_max, std::string frame_id)"
+
+.PP
+Definition at line 47 of file lms5xx_node\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

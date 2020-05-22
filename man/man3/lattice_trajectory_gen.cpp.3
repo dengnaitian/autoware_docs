@@ -1,0 +1,114 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/nodes/lattice_trajectory_gen/lattice_trajectory_gen.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/nodes/lattice_trajectory_gen/lattice_trajectory_gen.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include <geometry_msgs/Twist\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <nav_msgs/Path\&.h>\fP
+.br
+\fC#include <sensor_msgs/NavSatFix\&.h>\fP
+.br
+\fC#include <visualization_msgs/Marker\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <std_msgs/Float32\&.h>\fP
+.br
+\fC#include <std_msgs/Float64MultiArray\&.h>\fP
+.br
+\fC#include 'autoware_config_msgs/ConfigWaypointFollower\&.h'\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+\fC#include 'libtraj_gen\&.h'\fP
+.br
+\fC#include 'autoware_can_msgs/CANInfo\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEBUG_TRAJECTORY_GEN\fP"
+.br
+.ti -1c
+.RI "#define \fBWHEEL_ANGLE_MAX\fP   (31\&.28067)"
+.br
+.ti -1c
+.RI "#define \fBSTEERING_ANGLE_MAX\fP   (666\&.00000)"
+.br
+.ti -1c
+.RI "#define \fBWHEEL_TO_STEERING\fP   (\fBSTEERING_ANGLE_MAX\fP/\fBWHEEL_ANGLE_MAX\fP)"
+.br
+.ti -1c
+.RI "#define \fBWHEEL_BASE\fP   (2\&.70)"
+.br
+.ti -1c
+.RI "#define \fBWHEEL_BASE_MKZ\fP   (2\&.84988)"
+.br
+.ti -1c
+.RI "#define \fBWHEEL_TO_STEERING_MKZ\fP   (22\&.00)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEBUG_TRAJECTORY_GEN"
+
+.PP
+Definition at line 59 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define STEERING_ANGLE_MAX   (666\&.00000)"
+
+.PP
+Definition at line 62 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define WHEEL_ANGLE_MAX   (31\&.28067)"
+
+.PP
+Definition at line 61 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define WHEEL_BASE   (2\&.70)"
+
+.PP
+Definition at line 64 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define WHEEL_BASE_MKZ   (2\&.84988)"
+
+.PP
+Definition at line 66 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define WHEEL_TO_STEERING   (\fBSTEERING_ANGLE_MAX\fP/\fBWHEEL_ANGLE_MAX\fP)"
+
+.PP
+Definition at line 63 of file lattice_trajectory_gen\&.cpp\&.
+.SS "#define WHEEL_TO_STEERING_MKZ   (22\&.00)"
+
+.PP
+Definition at line 67 of file lattice_trajectory_gen\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 506 of file lattice_trajectory_gen\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

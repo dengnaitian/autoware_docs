@@ -1,0 +1,179 @@
+.TH "waypoint_maker::WaypointReplanner" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waypoint_maker::WaypointReplanner \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <waypoint_replanner\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWaypointReplanner\fP ()"
+.br
+.ti -1c
+.RI "\fB~WaypointReplanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitParameter\fP (const autoware_config_msgs::ConfigWaypointReplanner::ConstPtr &conf)"
+.br
+.ti -1c
+.RI "void \fBreplanLaneWaypointVel\fP (autoware_msgs::Lane &lane)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBchangeVelSign\fP (autoware_msgs::Lane &lane, bool positive) const "
+.br
+.ti -1c
+.RI "int \fBgetDirection\fP (const autoware_msgs::Lane &lane) const "
+.br
+.ti -1c
+.RI "void \fBresampleLaneWaypoint\fP (const double resample_interval, autoware_msgs::Lane &lane, int dir)"
+.br
+.ti -1c
+.RI "void \fBresampleOnStraight\fP (const \fBCbufGPoint\fP &curve_point, autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "void \fBresampleOnCurve\fP (const \fBgeometry_msgs::Point\fP &target_point, const std::vector< double > &param, autoware_msgs::Lane &lane, int dir)"
+.br
+.ti -1c
+.RI "const \fBCbufGPoint\fP \fBgetCrvPointsOnResample\fP (const autoware_msgs::Lane &lane, const autoware_msgs::Lane &original_lane, unsigned long original_index) const "
+.br
+.ti -1c
+.RI "const \fBCbufGPoint\fP \fBgetCrvPoints\fP (const autoware_msgs::Lane &lane, unsigned long index) const "
+.br
+.ti -1c
+.RI "void \fBcreateRadiusList\fP (const autoware_msgs::Lane &lane, std::vector< double > &curve_radius)"
+.br
+.ti -1c
+.RI "const double \fBcalcVelParam\fP (double vmax) const "
+.br
+.ti -1c
+.RI "void \fBcreateCurveList\fP (const std::vector< double > &curve_radius, \fBKeyVal\fP &curve_list)"
+.br
+.ti -1c
+.RI "void \fBcreateVmaxList\fP (const autoware_msgs::Lane &lane, const \fBKeyVal\fP &curve_list, unsigned long offset, \fBKeyVal\fP &vmax_list)"
+.br
+.ti -1c
+.RI "double \fBsearchVmaxByRange\fP (unsigned long start_idx, unsigned long end_idx, unsigned int offset, const autoware_msgs::Lane &lane) const "
+.br
+.ti -1c
+.RI "void \fBsetVelocityByRange\fP (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vel, autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "void \fBraiseVelocityByRange\fP (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vmin, autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "void \fBlimitVelocityByRange\fP (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vmin, autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "void \fBlimitAccelDecel\fP (const unsigned long idx, autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "const std::vector< double > \fBcalcCurveParam\fP (\fBCbufGPoint\fP point) const "
+.br
+.ti -1c
+.RI "const double \fBcalcPathLength\fP (const autoware_msgs::Lane &lane) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 34 of file waypoint_replanner\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waypoint_maker::WaypointReplanner::WaypointReplanner ()"
+
+.PP
+Definition at line 21 of file waypoint_replanner\&.cpp\&.
+.SS "waypoint_maker::WaypointReplanner::~WaypointReplanner ()"
+
+.PP
+Definition at line 25 of file waypoint_replanner\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const std::vector< double > waypoint_maker::WaypointReplanner::calcCurveParam (\fBCbufGPoint\fP point) const\fC [protected]\fP"
+
+.PP
+Definition at line 421 of file waypoint_replanner\&.cpp\&.
+.SS "const double waypoint_maker::WaypointReplanner::calcPathLength (const autoware_msgs::Lane & lane) const\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file waypoint_replanner\&.cpp\&.
+.SS "const double waypoint_maker::WaypointReplanner::calcVelParam (double vmax) const\fC [protected]\fP"
+
+.PP
+Definition at line 286 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::changeVelSign (autoware_msgs::Lane & lane, bool positive) const\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::createCurveList (const std::vector< double > & curve_radius, \fBKeyVal\fP & curve_list)\fC [protected]\fP"
+
+.PP
+Definition at line 295 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::createRadiusList (const autoware_msgs::Lane & lane, std::vector< double > & curve_radius)\fC [protected]\fP"
+
+.PP
+Definition at line 259 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::createVmaxList (const autoware_msgs::Lane & lane, const \fBKeyVal\fP & curve_list, unsigned long offset, \fBKeyVal\fP & vmax_list)\fC [protected]\fP"
+
+.SS "const \fBCbufGPoint\fP waypoint_maker::WaypointReplanner::getCrvPoints (const autoware_msgs::Lane & lane, unsigned long index) const\fC [protected]\fP"
+
+.PP
+Definition at line 245 of file waypoint_replanner\&.cpp\&.
+.SS "const \fBCbufGPoint\fP waypoint_maker::WaypointReplanner::getCrvPointsOnResample (const autoware_msgs::Lane & lane, const autoware_msgs::Lane & original_lane, unsigned long original_index) const\fC [protected]\fP"
+
+.PP
+Definition at line 227 of file waypoint_replanner\&.cpp\&.
+.SS "int waypoint_maker::WaypointReplanner::getDirection (const autoware_msgs::Lane & lane) const\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::initParameter (const autoware_config_msgs::ConfigWaypointReplanner::ConstPtr & conf)"
+
+.PP
+Definition at line 29 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::limitAccelDecel (const unsigned long idx, autoware_msgs::Lane & lane)\fC [protected]\fP"
+
+.PP
+Definition at line 396 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::limitVelocityByRange (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vmin, autoware_msgs::Lane & lane)\fC [protected]\fP"
+
+.PP
+Definition at line 371 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::raiseVelocityByRange (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vmin, autoware_msgs::Lane & lane)\fC [protected]\fP"
+
+.PP
+Definition at line 348 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::replanLaneWaypointVel (autoware_msgs::Lane & lane)"
+
+.PP
+Definition at line 71 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::resampleLaneWaypoint (const double resample_interval, autoware_msgs::Lane & lane, int dir)\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::resampleOnCurve (const \fBgeometry_msgs::Point\fP & target_point, const std::vector< double > & param, autoware_msgs::Lane & lane, int dir)\fC [protected]\fP"
+
+.PP
+Definition at line 183 of file waypoint_replanner\&.cpp\&.
+.SS "void waypoint_maker::WaypointReplanner::resampleOnStraight (const \fBCbufGPoint\fP & curve_point, autoware_msgs::Lane & lane)\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file waypoint_replanner\&.cpp\&.
+.SS "double waypoint_maker::WaypointReplanner::searchVmaxByRange (unsigned long start_idx, unsigned long end_idx, unsigned int offset, const autoware_msgs::Lane & lane) const\fC [protected]\fP"
+
+.SS "void waypoint_maker::WaypointReplanner::setVelocityByRange (unsigned long start_idx, unsigned long end_idx, unsigned int offset, double vel, autoware_msgs::Lane & lane)\fC [protected]\fP"
+
+.PP
+Definition at line 329 of file waypoint_replanner\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

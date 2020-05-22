@@ -1,0 +1,212 @@
+.TH "lane_planner::vmap" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lane_planner::vmap \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBVectorMap\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwrite_waypoints\fP (const std::vector< \fBvector_map::Point\fP > &points, double velocity, const std::string &path)"
+.br
+.ti -1c
+.RI "double \fBcompute_reduction\fP (const vector_map::DTLane &d, double w)"
+.br
+.ti -1c
+.RI "bool \fBis_straight_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBis_curve_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBis_crossroad_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBis_clothoid_dtlane\fP (const vector_map::DTLane &dtlane)"
+.br
+.ti -1c
+.RI "bool \fBis_connection_dtlane\fP (const \fBVectorMap\fP &fine_vmap, int index)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcreate_geometry_msgs_point\fP (const \fBvector_map::Point\fP &vp)"
+.br
+.ti -1c
+.RI "\fBvector_map::Point\fP \fBcreate_vector_map_point\fP (const \fBgeometry_msgs::Point\fP &gp)"
+.br
+.ti -1c
+.RI "autoware_msgs::DTLane \fBcreate_waypoint_follower_dtlane\fP (const vector_map::DTLane &vd)"
+.br
+.ti -1c
+.RI "vector_map::DTLane \fBcreate_vector_map_dtlane\fP (const autoware_msgs::DTLane &wd)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBcreate_lane_vmap\fP (const \fBVectorMap\fP &vmap, int lno)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBcreate_coarse_vmap_from_lane\fP (const autoware_msgs::Lane &lane)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBcreate_coarse_vmap_from_route\fP (const tablet_socket_msgs::route_cmd &route)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP \fBcreate_fine_vmap\fP (const \fBVectorMap\fP &lane_vmap, int lno, const \fBVectorMap\fP &coarse_vmap, double search_radius, int waypoint_max)"
+.br
+.ti -1c
+.RI "std::vector< \fBvector_map::Point\fP > \fBcreate_branching_points\fP (const \fBVectorMap\fP &vmap)"
+.br
+.ti -1c
+.RI "std::vector< \fBvector_map::Point\fP > \fBcreate_merging_points\fP (const \fBVectorMap\fP &vmap)"
+.br
+.ti -1c
+.RI "void \fBpublish_add_marker\fP (const ros::Publisher &\fBpub\fP, const visualization_msgs::Marker &marker, const std::vector< \fBvector_map::Point\fP > &points)"
+.br
+.ti -1c
+.RI "void \fBpublish_delete_marker\fP (const ros::Publisher &\fBpub\fP, const visualization_msgs::Marker &marker)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr int \fBLNO_ALL\fP = \-1"
+.br
+.ti -1c
+.RI "constexpr int \fBLNO_CROSSING\fP = 0"
+.br
+.ti -1c
+.RI "constexpr int \fBLNO_MOSTLEFT\fP = 1"
+.br
+.ti -1c
+.RI "constexpr int \fBTRAFFIC_LIGHT_RED\fP = 0"
+.br
+.ti -1c
+.RI "constexpr int \fBTRAFFIC_LIGHT_GREEN\fP = 1"
+.br
+.ti -1c
+.RI "constexpr int \fBTRAFFIC_LIGHT_UNKNOWN\fP = 2"
+.br
+.ti -1c
+.RI "constexpr double \fBRADIUS_MAX\fP = 90000000000"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double lane_planner::vmap::compute_reduction (const vector_map::DTLane & d, double w)"
+
+.PP
+Definition at line 414 of file lane_planner_vmap\&.cpp\&.
+.SS "std::vector< \fBvector_map::Point\fP > lane_planner::vmap::create_branching_points (const \fBVectorMap\fP & vmap)"
+
+.PP
+Definition at line 719 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBVectorMap\fP lane_planner::vmap::create_coarse_vmap_from_lane (const autoware_msgs::Lane & lane)"
+
+.PP
+Definition at line 561 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBVectorMap\fP lane_planner::vmap::create_coarse_vmap_from_route (const tablet_socket_msgs::route_cmd & route)"
+
+.PP
+Definition at line 570 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBVectorMap\fP lane_planner::vmap::create_fine_vmap (const \fBVectorMap\fP & lane_vmap, int lno, const \fBVectorMap\fP & coarse_vmap, double search_radius, int waypoint_max)"
+
+.PP
+Definition at line 588 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP lane_planner::vmap::create_geometry_msgs_point (const \fBvector_map::Point\fP & vp)"
+
+.PP
+Definition at line 473 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBVectorMap\fP lane_planner::vmap::create_lane_vmap (const \fBVectorMap\fP & vmap, int lno)"
+
+.PP
+Definition at line 525 of file lane_planner_vmap\&.cpp\&.
+.SS "std::vector< \fBvector_map::Point\fP > lane_planner::vmap::create_merging_points (const \fBVectorMap\fP & vmap)"
+
+.PP
+Definition at line 731 of file lane_planner_vmap\&.cpp\&.
+.SS "vector_map::DTLane lane_planner::vmap::create_vector_map_dtlane (const autoware_msgs::DTLane & wd)"
+
+.PP
+Definition at line 510 of file lane_planner_vmap\&.cpp\&.
+.SS "\fBvector_map::Point\fP lane_planner::vmap::create_vector_map_point (const \fBgeometry_msgs::Point\fP & gp)"
+
+.PP
+Definition at line 484 of file lane_planner_vmap\&.cpp\&.
+.SS "autoware_msgs::DTLane lane_planner::vmap::create_waypoint_follower_dtlane (const vector_map::DTLane & vd)"
+
+.PP
+Definition at line 495 of file lane_planner_vmap\&.cpp\&.
+.SS "bool lane_planner::vmap::is_clothoid_dtlane (const vector_map::DTLane & dtlane)"
+
+.PP
+Definition at line 436 of file lane_planner_vmap\&.cpp\&.
+.SS "bool lane_planner::vmap::is_connection_dtlane (const \fBVectorMap\fP & fine_vmap, int index)"
+
+.PP
+Definition at line 442 of file lane_planner_vmap\&.cpp\&.
+.SS "bool lane_planner::vmap::is_crossroad_dtlane (const vector_map::DTLane & dtlane)"
+
+.PP
+Definition at line 430 of file lane_planner_vmap\&.cpp\&.
+.SS "bool lane_planner::vmap::is_curve_dtlane (const vector_map::DTLane & dtlane)"
+
+.PP
+Definition at line 424 of file lane_planner_vmap\&.cpp\&.
+.SS "bool lane_planner::vmap::is_straight_dtlane (const vector_map::DTLane & dtlane)"
+
+.PP
+Definition at line 419 of file lane_planner_vmap\&.cpp\&.
+.SS "void lane_planner::vmap::publish_add_marker (const ros::Publisher & pub, const visualization_msgs::Marker & marker, const std::vector< \fBvector_map::Point\fP > & points)"
+
+.PP
+Definition at line 743 of file lane_planner_vmap\&.cpp\&.
+.SS "void lane_planner::vmap::publish_delete_marker (const ros::Publisher & pub, const visualization_msgs::Marker & marker)"
+
+.PP
+Definition at line 763 of file lane_planner_vmap\&.cpp\&.
+.SS "void lane_planner::vmap::write_waypoints (const std::vector< \fBvector_map::Point\fP > & points, double velocity, const std::string & path)"
+
+.PP
+Definition at line 391 of file lane_planner_vmap\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr int lane_planner::vmap::LNO_ALL = \-1"
+
+.PP
+Definition at line 36 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr int lane_planner::vmap::LNO_CROSSING = 0"
+
+.PP
+Definition at line 37 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr int lane_planner::vmap::LNO_MOSTLEFT = 1"
+
+.PP
+Definition at line 38 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr double lane_planner::vmap::RADIUS_MAX = 90000000000"
+
+.PP
+Definition at line 44 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr int lane_planner::vmap::TRAFFIC_LIGHT_GREEN = 1"
+
+.PP
+Definition at line 41 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr int lane_planner::vmap::TRAFFIC_LIGHT_RED = 0"
+
+.PP
+Definition at line 40 of file lane_planner_vmap\&.hpp\&.
+.SS "constexpr int lane_planner::vmap::TRAFFIC_LIGHT_UNKNOWN = 2"
+
+.PP
+Definition at line 42 of file lane_planner_vmap\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

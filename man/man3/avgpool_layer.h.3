@@ -1,0 +1,72 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/avgpool_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/avgpool_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBavgpool_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBimage\fP \fBget_avgpool_image\fP (\fBavgpool_layer\fP l)"
+.br
+.ti -1c
+.RI "\fBavgpool_layer\fP \fBmake_avgpool_layer\fP (int batch, int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBresize_avgpool_layer\fP (\fBavgpool_layer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_avgpool_layer\fP (const \fBavgpool_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_avgpool_layer\fP (const \fBavgpool_layer\fP l, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBavgpool_layer\fP"
+
+.PP
+Definition at line 9 of file avgpool_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_avgpool_layer (const \fBavgpool_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 57 of file avgpool_layer\&.c\&.
+.SS "void forward_avgpool_layer (const \fBavgpool_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 40 of file avgpool_layer\&.c\&.
+.SS "\fBimage\fP get_avgpool_image (\fBavgpool_layer\fP l)"
+
+.SS "\fBavgpool_layer\fP make_avgpool_layer (int batch, int w, int h, int c)"
+
+.PP
+Definition at line 5 of file avgpool_layer\&.c\&.
+.SS "void resize_avgpool_layer (\fBavgpool_layer\fP * l, int w, int h)"
+
+.PP
+Definition at line 33 of file avgpool_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,58 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/common/common.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/common/common.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdlib>\fP
+.br
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBs_free\fP(a)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdpm_ttic_add_part_calculation\fP (\fBFLOAT\fP *score, \fBFLOAT\fP *M, int *rootsize, int *partsize, int ax, int ay)"
+.br
+.ti -1c
+.RI "\fBFLOAT\fP * \fBdpm_ttic_init_accumulated_score\fP (IplImage *\fBimage\fP, size_t &accumulated_size)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define s_free(a)"
+\fBValue:\fP
+.PP
+.nf
+do {    \
+    std::free(a);   \
+    a = nullptr;    \
+} while(0)
+.fi
+.PP
+Definition at line 10 of file common\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void dpm_ttic_add_part_calculation (\fBFLOAT\fP * score, \fBFLOAT\fP * M, int * rootsize, int * partsize, int ax, int ay)"
+
+.PP
+Definition at line 19 of file common\&.cpp\&.
+.SS "\fBFLOAT\fP* dpm_ttic_init_accumulated_score (IplImage * image, size_t & accumulated_size)"
+
+.PP
+Definition at line 39 of file common\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

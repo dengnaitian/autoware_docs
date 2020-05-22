@@ -1,0 +1,111 @@
+.TH "colab" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colab \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddStringToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, const std::string &stringValue)"
+.br
+.ti -1c
+.RI "void \fBaddStringToBuffer\fP (\fBBYTE\fP *buffer, const std::string &stringValue)"
+.br
+.ti -1c
+.RI "std::string \fBgetStringFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, \fBUINT16\fP length)"
+.br
+.ti -1c
+.RI "std::string \fBgetStringFromBuffer\fP (\fBBYTE\fP *&buffer, \fBUINT16\fP length)"
+.br
+.ti -1c
+.RI "std::string \fBgetCommandStringFromBuffer\fP (\fBUINT8\fP *buffer)"
+.br
+.ti -1c
+.RI "std::string \fBgetIdentifierFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &nextData, \fBUINT16\fP bufferLength)"
+.br
+.ti -1c
+.RI "void \fBaddFrameToBuffer\fP (\fBUINT8\fP *sendBuffer, \fBUINT8\fP *cmdBuffer, \fBUINT16\fP *len)"
+.br
+.ti -1c
+.RI "double \fBgetDoubleFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBdecodeUINT16\fP (\fBBYTE\fP *buffer)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBaddIntegerToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, T intValue)"
+.br
+.ti -1c
+.RI "template<typename T > T \fBgetIntegerFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBaddFloatToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, T floatValue)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > void colab::addFloatToBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos, T floatValue)"
+NOT IMPLEMENTED YET!!! It's only a skeleton\&.
+.PP
+Accepts float and double\&.
+.PP
+The floatValue will be stored in BigEndian byte order (as required for CoLaB)\&. pos points then to the first byte of the next data field\&. 
+.PP
+Definition at line 152 of file colab\&.hpp\&.
+.SS "void colab::addFrameToBuffer (\fBUINT8\fP * sendBuffer, \fBUINT8\fP * cmdBuffer, \fBUINT16\fP * len)"
+Stores the given cmdBuffer (sopas command) to the given sendBuffer (with header and checksum)\&. 
+.PP
+Definition at line 99 of file colab\&.cpp\&.
+.SS "template<typename T > void colab::addIntegerToBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos, T intValue)"
+Accepts all integer types (any bit width and sign)\&. If width of intValue is greater than given type T, the higher bytes are truncated\&.
+.PP
+The intValue will be stored in BigEndian byte order (as required for CoLaB)\&. pos points then to the first byte of the next data field\&.\&. 
+.PP
+Definition at line 104 of file colab\&.hpp\&.
+.SS "void colab::addStringToBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos, const std::string & stringValue)"
+Stores the given stringValue to the given buffer\&. The string is inserted at position pos, and pos is increased by the number of bytes that were written\&. If the length of stringValue is longer than the remaining space of the buffer, than filling stopps at the end of buffer\&. 
+.PP
+Definition at line 16 of file colab\&.cpp\&.
+.SS "void colab::addStringToBuffer (\fBBYTE\fP * buffer, const std::string & stringValue)"
+Stores the given stringValue to the given buffer\&. The buffer pointer will be increased 
+.PP
+Definition at line 25 of file colab\&.cpp\&.
+.SS "\fBUINT16\fP colab::decodeUINT16 (\fBBYTE\fP * buffer)"
+
+.PP
+Definition at line 144 of file colab\&.cpp\&.
+.SS "std::string colab::getCommandStringFromBuffer (\fBUINT8\fP * buffer)"
+Returns the Sopas command as string from buffer 
+.PP
+Definition at line 52 of file colab\&.cpp\&.
+.SS "double colab::getDoubleFromBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos)"
+
+.PP
+Definition at line 131 of file colab\&.cpp\&.
+.SS "std::string colab::getIdentifierFromBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & nextData, \fBUINT16\fP bufferLength)"
+buffer should point to the BEGIN of the buffer (incl\&. magic word), bufferLength is the length of the full buffer (incl\&. magic word and checksum)\&.
+.PP
+Returns the variable or method identifier from buffer\&. pos points to the begin of the next data after identifier\&. is pos == 0, there is no more data 
+.PP
+Definition at line 59 of file colab\&.cpp\&.
+.SS "template<typename T > T colab::getIntegerFromBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos)"
+Accepts all integer types (any bit width and sign)\&.
+.PP
+Returns the requested intValue\&. pos points then to the first byte of the next data field\&. 
+.PP
+Definition at line 124 of file colab\&.hpp\&.
+.SS "std::string colab::getStringFromBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP & pos, \fBUINT16\fP length)"
+Returns bytes from pos to pos+length as string\&. pos points to the next byte after (pos+length) 
+.PP
+Definition at line 34 of file colab\&.cpp\&.
+.SS "std::string colab::getStringFromBuffer (\fBBYTE\fP *& buffer, \fBUINT16\fP length)"
+Returns bytes from 0 to length as string\&. buffer will be shifted to be able to read the next value 
+.PP
+Definition at line 43 of file colab\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

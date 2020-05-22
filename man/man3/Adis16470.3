@@ -1,0 +1,193 @@
+.TH "Adis16470" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Adis16470 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adis16470\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAdis16470\fP ()"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "int \fBopenPort\fP (const std::string device)"
+.br
+.RI "\fIOpen device\&. \fP"
+.ti -1c
+.RI "void \fBclosePort\fP ()"
+.br
+.RI "\fIClose device\&. \fP"
+.ti -1c
+.RI "int \fBget_product_id\fP (int16_t &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBupdate\fP (void)"
+.br
+.RI "\fIupdate gyro and accel in high-precision read \fP"
+.ti -1c
+.RI "int \fBupdate_burst\fP (void)"
+.br
+.RI "\fIUpdate all information by bust read\&. \fP"
+.ti -1c
+.RI "int \fBread_register\fP (char address, int16_t &\fBdata\fP)"
+.br
+.RI "\fIRead data from the register\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBfd_\fP"
+.br
+.RI "\fI\fBFile\fP descripter for USB-ISS\&. \fP"
+.ti -1c
+.RI "struct termios \fBdefaults_\fP"
+.br
+.RI "\fISaved terminal config\&. \fP"
+.ti -1c
+.RI "double \fBgyro\fP [3]"
+.br
+.ti -1c
+.RI "double \fBaccl\fP [3]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 39 of file adis16470\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Adis16470::Adis16470 ()"
+
+.PP
+Constructor\&. 
+.PP
+Definition at line 58 of file adis16470\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Adis16470::closePort ()"
+
+.PP
+Close device\&. 
+.PP
+Definition at line 123 of file adis16470\&.cpp\&.
+.SS "int Adis16470::get_product_id (int16_t & pid)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP Product ID (0x4056) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fI0\fP Success 
+.br
+\fI-1\fP Failed 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file adis16470\&.cpp\&.
+.SS "int Adis16470::openPort (const std::string device)"
+
+.PP
+Open device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP Device file name (/dev/ttyACM*) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fI0\fP Success 
+.br
+\fI-1\fP Failure 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file adis16470\&.cpp\&.
+.SS "int Adis16470::read_register (char address, int16_t & data)"
+
+.PP
+Read data from the register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddress\fP Register address 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fI0\fP Success 
+.br
+\fI-1\fP Failed
+.RE
+.PP
+.IP "\(bu" 2
+Adress is the first byte of actual address
+.IP "\(bu" 2
+Actual data at the adress will be returned by next call\&. 
+.PP
+
+.PP
+Definition at line 199 of file adis16470\&.cpp\&.
+.SS "int Adis16470::update (void)"
+
+.PP
+update gyro and accel in high-precision read 
+.PP
+Definition at line 278 of file adis16470\&.cpp\&.
+.SS "int Adis16470::update_burst (void)"
+
+.PP
+Update all information by bust read\&. 
+.PP
+\fBReturn values:\fP
+.RS 4
+\fI0\fP Success 
+.br
+\fI-1\fP Failed
+.RE
+.PP
+.IP "\(bu" 2
+See burst read function at pp\&.14
+.IP "\(bu" 2
+Data resolution is 16 bit 
+.PP
+
+.PP
+Definition at line 229 of file adis16470\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double Adis16470::accl[3]"
+
+.PP
+Definition at line 50 of file adis16470\&.h\&.
+.SS "struct termios Adis16470::defaults_"
+
+.PP
+Saved terminal config\&. 
+.PP
+Definition at line 45 of file adis16470\&.h\&.
+.SS "int Adis16470::fd_"
+
+.PP
+\fBFile\fP descripter for USB-ISS\&. 
+.PP
+Definition at line 43 of file adis16470\&.h\&.
+.SS "double Adis16470::gyro[3]"
+
+.PP
+Definition at line 48 of file adis16470\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,63 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/tree.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/tree.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'tree\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'data\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBchange_leaves\fP (\fBtree\fP *\fBt\fP, char *leaf_list)"
+.br
+.ti -1c
+.RI "float \fBget_hierarchy_probability\fP (float *x, \fBtree\fP *hier, int \fBc\fP, int stride)"
+.br
+.ti -1c
+.RI "void \fBhierarchy_predictions\fP (float *predictions, int n, \fBtree\fP *hier, int only_leaves, int stride)"
+.br
+.ti -1c
+.RI "int \fBhierarchy_top_prediction\fP (float *predictions, \fBtree\fP *hier, float thresh, int stride)"
+.br
+.ti -1c
+.RI "\fBtree\fP * \fBread_tree\fP (char *filename)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void change_leaves (\fBtree\fP * t, char * leaf_list)"
+
+.PP
+Definition at line 7 of file tree\&.c\&.
+.SS "float get_hierarchy_probability (float * x, \fBtree\fP * hier, int c, int stride)"
+
+.PP
+Definition at line 27 of file tree\&.c\&.
+.SS "void hierarchy_predictions (float * predictions, int n, \fBtree\fP * hier, int only_leaves, int stride)"
+
+.PP
+Definition at line 37 of file tree\&.c\&.
+.SS "int hierarchy_top_prediction (float * predictions, \fBtree\fP * hier, float thresh, int stride)"
+
+.PP
+Definition at line 53 of file tree\&.c\&.
+.SS "\fBtree\fP* read_tree (char * filename)"
+
+.PP
+Definition at line 83 of file tree\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

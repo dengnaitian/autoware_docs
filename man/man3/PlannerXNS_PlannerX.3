@@ -1,0 +1,805 @@
+.TH "PlannerXNS::PlannerX" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerXNS::PlannerX \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dp_planner_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerX\fP ()"
+.br
+.ti -1c
+.RI "\fB~PlannerX\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlannerMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetInitPose\fP (const geometry_msgs::PoseWithCovarianceStampedConstPtr &input)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCloudClusters\fP (const autoware_msgs::CloudClusterArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetBoundingBoxes\fP (const jsk_recognition_msgs::BoundingBoxArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetEmergencyStop\fP (const std_msgs::Int8 &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTrafficLight\fP (const std_msgs::Int8 &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetOutsideControl\fP (const std_msgs::Int8 &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetAStarPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetWayPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCostMap\fP (const nav_msgs::OccupancyGrid &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCenterLines\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRvizPoint\fP (const geometry_msgs::PointStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP ()"
+.br
+.ti -1c
+.RI "autoware_msgs::CloudCluster \fBGenerateSimulatedObstacleCluster\fP (const double &x_rand, const double &y_rand, const double &z_rand, const int &nPoints, const geometry_msgs::PointStamped &centerPose)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBm_TrackingTime\fP"
+.br
+.ti -1c
+.RI "int \fBm_nTrackObjects\fP"
+.br
+.ti -1c
+.RI "int \fBm_nContourPoints\fP"
+.br
+.ti -1c
+.RI "int \fBm_nOriginalPoints\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_Timer\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_TrafficLightTimer\fP"
+.br
+.ti -1c
+.RI "int \fBm_counter\fP"
+.br
+.ti -1c
+.RI "int \fBm_frequency\fP"
+.br
+.ti -1c
+.RI "\fBSimulationNS::SimpleTracker\fP \fBm_ObstacleTracking\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::LocalPlannerH\fP \fBm_LocalPlanner\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_InitPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbInitPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_OriginalClusters\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_TrackedClusters\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_DetectedBoxes\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewClusters\fP"
+.br
+.ti -1c
+.RI "jsk_recognition_msgs::BoundingBoxArray \fBm_BoundingBoxes\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewBoxes\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleState\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleState\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewEmergency\fP"
+.br
+.ti -1c
+.RI "int \fBm_bEmergencyStop\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewTrafficLigh\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bGreenLight\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewOutsideControl\fP"
+.br
+.ti -1c
+.RI "int \fBm_bOutsideControl\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_AStarPath\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewAStarPath\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_AStartPlanningTimer\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_WayPlannerPaths\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayPlannerPath\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_CurrentBehavior\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_PrevBehavior\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_PlanningTimer\fP"
+.br
+.ti -1c
+.RI "\fBAutowareRoadNetwork\fP \fBm_AwMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "\fBMAP_SOURCE_TYPE\fP \fBm_MapSource\fP"
+.br
+.ti -1c
+.RI "bool \fBbKmlMapLoaded\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_KmlMapPath\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bEnableTracking\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bEnableOutsideControl\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalPath\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalBasePath\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_ClosestIndex\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_BehaviorState\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_GlobalPlanNodes\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_StartPoint\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_GoalPoint\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_AStarStartPoint\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_AStarGoalPoint\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_EnableLattice\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_DetectedPolygonsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrackedObstaclesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalTrajectoriesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalTrajectoriesRviz_dynamic\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TestLineRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_BehaviorStateRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SafetyBorderRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_cluster_cloud\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuBoxPose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_initialpose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cluster_cloud\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_bounding_boxs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vehicle_simu_status\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_EmergencyStop\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_TrafficLight\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_OutsideControl\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_AStarPath\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_WayPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_CostMap\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_map_nodes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_stop_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dtlanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_simulated_obstacle_pose_rviz\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 74 of file dp_planner_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerXNS::PlannerX::PlannerX ()"
+
+.PP
+\fBTodo\fP
+.RS 4
+This works only in simulation (Autoware or ff_Waypoint_follower), twist_cmd should be changed, consult team 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file dp_planner_core\&.cpp\&.
+.SS "PlannerXNS::PlannerX::~PlannerX ()"
+
+.PP
+Definition at line 161 of file dp_planner_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerXNS::PlannerX::callbackGetAStarPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 492 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetBoundingBoxes (const jsk_recognition_msgs::BoundingBoxArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 413 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetCloudClusters (const autoware_msgs::CloudClusterArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 393 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetCostMap (const nav_msgs::OccupancyGrid & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 282 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 339 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetEmergencyStop (const std_msgs::Int8 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 468 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetInitPose (const geometry_msgs::PoseWithCovarianceStampedConstPtr & input)\fC [protected]\fP"
+
+.PP
+Definition at line 267 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetOutsideControl (const std_msgs::Int8 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 485 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 450 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetRvizPoint (const geometry_msgs::PointStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 286 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetTrafficLight (const std_msgs::Int8 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 475 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 420 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVMCenterLines (const vector_map_msgs::DTLaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 194 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 179 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 186 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 172 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 190 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::callbackGetWayPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 515 of file dp_planner_core\&.cpp\&.
+.SS "autoware_msgs::CloudCluster PlannerXNS::PlannerX::GenerateSimulatedObstacleCluster (const double & x_rand, const double & y_rand, const double & z_rand, const int & nPoints, const geometry_msgs::PointStamped & centerPose)\fC [protected]\fP"
+
+.PP
+Definition at line 359 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::PlannerMainLoop ()"
+
+.PP
+Definition at line 595 of file dp_planner_core\&.cpp\&.
+.SS "void PlannerXNS::PlannerX::UpdatePlanningParams ()\fC [protected]\fP"
+
+.PP
+Definition at line 201 of file dp_planner_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlannerXNS::PlannerX::bInitPos\fC [protected]\fP"
+
+.PP
+Definition at line 95 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bKmlMapLoaded\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewAStarPath\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewBoxes\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewClusters\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 98 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewEmergency\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewOutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 116 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bNewTrafficLigh\fC [protected]\fP"
+
+.PP
+Definition at line 113 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bVehicleState\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::bWayPlannerPath\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file dp_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> PlannerXNS::PlannerX::m_AStarPath\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file dp_planner_core\&.h\&.
+.SS "timespec PlannerXNS::PlannerX::m_AStartPlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file dp_planner_core\&.h\&.
+.SS "\fBAutowareRoadNetwork\fP PlannerXNS::PlannerX::m_AwMap\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_bEmergencyStop\fC [protected]\fP"
+
+.PP
+Definition at line 111 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::m_bEnableOutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 138 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::m_bEnableTracking\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file dp_planner_core\&.h\&.
+.SS "bool PlannerXNS::PlannerX::m_bGreenLight\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file dp_planner_core\&.h\&.
+.SS "jsk_recognition_msgs::BoundingBoxArray PlannerXNS::PlannerX::m_BoundingBoxes\fC [protected]\fP"
+
+.PP
+Definition at line 104 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_bOutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 117 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_counter\fC [protected]\fP"
+
+.PP
+Definition at line 85 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerXNS::PlannerX::m_CurrentBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP PlannerXNS::PlannerX::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file dp_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> PlannerXNS::PlannerX::m_DetectedBoxes\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_frequency\fC [protected]\fP"
+
+.PP
+Definition at line 86 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP PlannerXNS::PlannerX::m_InitPos\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file dp_planner_core\&.h\&.
+.SS "std::string PlannerXNS::PlannerX::m_KmlMapPath\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::LocalPlannerH\fP PlannerXNS::PlannerX::m_LocalPlanner\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file dp_planner_core\&.h\&.
+.SS "std::vector<std::string> PlannerXNS::PlannerX::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 140 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP PlannerXNS::PlannerX::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 132 of file dp_planner_core\&.h\&.
+.SS "\fBMAP_SOURCE_TYPE\fP PlannerXNS::PlannerX::m_MapSource\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_nContourPoints\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_nOriginalPoints\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file dp_planner_core\&.h\&.
+.SS "int PlannerXNS::PlannerX::m_nTrackObjects\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file dp_planner_core\&.h\&.
+.SS "\fBSimulationNS::SimpleTracker\fP PlannerXNS::PlannerX::m_ObstacleTracking\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file dp_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> PlannerXNS::PlannerX::m_OriginalClusters\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file dp_planner_core\&.h\&.
+.SS "geometry_msgs::Pose PlannerXNS::PlannerX::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file dp_planner_core\&.h\&.
+.SS "struct timespec PlannerXNS::PlannerX::m_PlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerXNS::PlannerX::m_PrevBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file dp_planner_core\&.h\&.
+.SS "timespec PlannerXNS::PlannerX::m_Timer\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file dp_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> PlannerXNS::PlannerX::m_TrackedClusters\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file dp_planner_core\&.h\&.
+.SS "double PlannerXNS::PlannerX::m_TrackingTime\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file dp_planner_core\&.h\&.
+.SS "timespec PlannerXNS::PlannerX::m_TrafficLightTimer\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file dp_planner_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP PlannerXNS::PlannerX::m_VehicleState\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file dp_planner_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > PlannerXNS::PlannerX::m_WayPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file dp_planner_core\&.h\&.
+.SS "ros::NodeHandle PlannerXNS::PlannerX::nh\fC [protected]\fP"
+
+.PP
+Definition at line 145 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_AStarGoalPoint\fC [protected]\fP"
+
+.PP
+Definition at line 156 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_AStarStartPoint\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_BehaviorState\fC [protected]\fP"
+
+.PP
+Definition at line 151 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_BehaviorStateRviz\fC [protected]\fP"
+
+.PP
+Definition at line 164 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_ClosestIndex\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_cluster_cloud\fC [protected]\fP"
+
+.PP
+Definition at line 166 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_DetectedPolygonsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 159 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_EnableLattice\fC [protected]\fP"
+
+.PP
+Definition at line 157 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_GlobalPlanNodes\fC [protected]\fP"
+
+.PP
+Definition at line 152 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_GoalPoint\fC [protected]\fP"
+
+.PP
+Definition at line 154 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_LocalBasePath\fC [protected]\fP"
+
+.PP
+Definition at line 149 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_LocalPath\fC [protected]\fP"
+
+.PP
+Definition at line 148 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_LocalTrajectoriesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_LocalTrajectoriesRviz_dynamic\fC [protected]\fP"
+
+.PP
+Definition at line 162 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_SafetyBorderRviz\fC [protected]\fP"
+
+.PP
+Definition at line 165 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_SimuBoxPose\fC [protected]\fP"
+
+.PP
+Definition at line 167 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_StartPoint\fC [protected]\fP"
+
+.PP
+Definition at line 153 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_TestLineRviz\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file dp_planner_core\&.h\&.
+.SS "ros::Publisher PlannerXNS::PlannerX::pub_TrackedObstaclesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_AStarPath\fC [protected]\fP"
+
+.PP
+Definition at line 181 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_bounding_boxs\fC [protected]\fP"
+
+.PP
+Definition at line 174 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 177 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_cluster_cloud\fC [protected]\fP"
+
+.PP
+Definition at line 173 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_CostMap\fC [protected]\fP"
+
+.PP
+Definition at line 184 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 171 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 172 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_dtlanes\fC [protected]\fP"
+
+.PP
+Definition at line 191 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_EmergencyStop\fC [protected]\fP"
+
+.PP
+Definition at line 178 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_initialpose\fC [protected]\fP"
+
+.PP
+Definition at line 170 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_map_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 188 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_map_nodes\fC [protected]\fP"
+
+.PP
+Definition at line 189 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_map_points\fC [protected]\fP"
+
+.PP
+Definition at line 187 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_OutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 180 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 176 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_simulated_obstacle_pose_rviz\fC [protected]\fP"
+
+.PP
+Definition at line 193 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_TrafficLight\fC [protected]\fP"
+
+.PP
+Definition at line 179 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_vehicle_simu_status\fC [protected]\fP"
+
+.PP
+Definition at line 175 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sub_WayPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 182 of file dp_planner_core\&.h\&.
+.SS "ros::Subscriber PlannerXNS::PlannerX::sup_stop_lines\fC [protected]\fP"
+
+.PP
+Definition at line 190 of file dp_planner_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

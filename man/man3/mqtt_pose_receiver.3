@@ -1,0 +1,114 @@
+.TH "mqtt_pose_receiver" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mqtt_pose_receiver \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBpublish_current_pose\fP (msg)"
+.br
+.ti -1c
+.RI "def \fBpublish_tf\fP (current_pose)"
+.br
+.ti -1c
+.RI "def \fBon_connect\fP (\fBclient\fP, userdata, flags, respons_code)"
+.br
+.ti -1c
+.RI "def \fBon_message\fP (\fBclient\fP, userdata, msg)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBmqtt_publisher\fP = None;"
+.br
+.ti -1c
+.RI "\fBmqtt_config\fP = None;"
+.br
+.ti -1c
+.RI "\fBconfig_file_path\fP = os\&.path\&.normpath(os\&.path\&.join(os\&.path\&.dirname(os\&.path\&.abspath(__file__)), '\&.\&./\&.\&./mqtt_config\&.yml'))"
+.br
+.ti -1c
+.RI "\fBf\fP = open(\fBconfig_file_path\fP, 'r+')"
+.br
+.ti -1c
+.RI "\fBclient\fP = mqtt\&.Client(protocol=mqtt\&.MQTTv311)"
+.br
+.ti -1c
+.RI "\fBon_connect\fP"
+.br
+.ti -1c
+.RI "\fBon_message\fP"
+.br
+.ti -1c
+.RI "\fBport\fP"
+.br
+.ti -1c
+.RI "\fBkeepalive\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def mqtt_pose_receiver\&.on_connect ( client,  userdata,  flags,  respons_code)"
+
+.PP
+Definition at line 39 of file mqtt_pose_receiver\&.py\&.
+.SS "def mqtt_pose_receiver\&.on_message ( client,  userdata,  msg)"
+
+.PP
+Definition at line 44 of file mqtt_pose_receiver\&.py\&.
+.SS "def mqtt_pose_receiver\&.publish_current_pose ( msg)"
+
+.PP
+Definition at line 14 of file mqtt_pose_receiver\&.py\&.
+.SS "def mqtt_pose_receiver\&.publish_tf ( current_pose)"
+
+.PP
+Definition at line 31 of file mqtt_pose_receiver\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "mqtt_pose_receiver\&.client = mqtt\&.Client(protocol=mqtt\&.MQTTv311)"
+
+.PP
+Definition at line 57 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.config_file_path = os\&.path\&.normpath(os\&.path\&.join(os\&.path\&.dirname(os\&.path\&.abspath(__file__)), '\&.\&./\&.\&./mqtt_config\&.yml'))"
+
+.PP
+Definition at line 52 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.f = open(\fBconfig_file_path\fP, 'r+')"
+
+.PP
+Definition at line 53 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.keepalive"
+
+.PP
+Definition at line 60 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.mqtt_config = None;"
+
+.PP
+Definition at line 12 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.mqtt_publisher = None;"
+
+.PP
+Definition at line 11 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.on_connect"
+
+.PP
+Definition at line 58 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.on_message"
+
+.PP
+Definition at line 59 of file mqtt_pose_receiver\&.py\&.
+.SS "mqtt_pose_receiver\&.port"
+
+.PP
+Definition at line 60 of file mqtt_pose_receiver\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

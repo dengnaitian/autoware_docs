@@ -1,0 +1,138 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_print_resolution.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_print_resolution.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <sick_ldmrs_msgs/sick_ldmrs_point_type\&.h>\fP
+.br
+\fC#include <pcl/point_cloud\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBdeg2rad\fP   0\&.01745329251994329576923690768"
+.br
+.ti -1c
+.RI "#define \fBrad2deg\fP   57\&.29577951308232087679815481"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< std::pair< double, double > > \fBResolutionMap\fP"
+.br
+.ti -1c
+.RI "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< \fBPointT\fP > \fBPointCloudT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBdoubleToString\fP (double val, int digits_after_decimal_point)"
+.br
+.ti -1c
+.RI "bool \fBalmostEqual\fP (double a, double \fBb\fP)"
+.br
+.ti -1c
+.RI "double \fBgetHAngle\fP (const \fBPointT\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::string \fBsectorToString\fP (const \fBResolutionMap\fP &sector)"
+.br
+.ti -1c
+.RI "PointCloudT::const_iterator \fBgetNextPointInSameLayer\fP (PointCloudT::const_iterator iter, const PointCloudT::ConstPtr cloud)"
+.br
+.ti -1c
+.RI "PointCloudT::const_iterator \fBgetNextPoint\fP (PointCloudT::const_iterator iter, const PointCloudT::ConstPtr cloud)"
+.br
+.ti -1c
+.RI "void \fBcheckResolution\fP (const PointCloudT::ConstPtr cloud)"
+.br
+.ti -1c
+.RI "void \fBcallback\fP (const sensor_msgs::PointCloud2::ConstPtr &pc)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define deg2rad   0\&.01745329251994329576923690768"
+
+.PP
+Definition at line 50 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "#define rad2deg   57\&.29577951308232087679815481"
+
+.PP
+Definition at line 53 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBpcl::PointCloud\fP<\fBPointT\fP> \fBPointCloudT\fP"
+
+.PP
+Definition at line 47 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+
+.PP
+Definition at line 46 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "typedef std::vector<std::pair<double, double> > \fBResolutionMap\fP"
+
+.PP
+Definition at line 45 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "bool almostEqual (double a, double b)\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "void callback (const sensor_msgs::PointCloud2::ConstPtr & pc)"
+
+.PP
+Definition at line 195 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "void checkResolution (const PointCloudT::ConstPtr cloud)"
+
+.PP
+Definition at line 116 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "std::string doubleToString (double val, int digits_after_decimal_point)"
+Konvertiere Double-Zahl in String\&. 
+.PP
+Definition at line 56 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "double getHAngle (const \fBPointT\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "PointCloudT::const_iterator getNextPoint (PointCloudT::const_iterator iter, const PointCloudT::ConstPtr cloud)"
+
+.PP
+Definition at line 104 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "PointCloudT::const_iterator getNextPointInSameLayer (PointCloudT::const_iterator iter, const PointCloudT::ConstPtr cloud)"
+
+.PP
+Definition at line 89 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 204 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SS "std::string sectorToString (const \fBResolutionMap\fP & sector)"
+
+.PP
+Definition at line 75 of file sick_ldmrs_print_resolution\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

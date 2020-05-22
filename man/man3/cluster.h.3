@@ -1,0 +1,96 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_euclidean_cluster_detect/include/cluster.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_euclidean_cluster_detect/include/cluster.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl/PCLPointCloud2\&.h>\fP
+.br
+\fC#include <pcl/conversions\&.h>\fP
+.br
+\fC#include <pcl_ros/transforms\&.h>\fP
+.br
+\fC#include <pcl_ros/point_cloud\&.h>\fP
+.br
+\fC#include <pcl/ModelCoefficients\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <pcl/filters/extract_indices\&.h>\fP
+.br
+\fC#include <pcl/filters/voxel_grid\&.h>\fP
+.br
+\fC#include <pcl/filters/conditional_removal\&.h>\fP
+.br
+\fC#include <pcl/features/fpfh_omp\&.h>\fP
+.br
+\fC#include <pcl/features/normal_3d_omp\&.h>\fP
+.br
+\fC#include <pcl/features/don\&.h>\fP
+.br
+\fC#include <pcl/kdtree/kdtree\&.h>\fP
+.br
+\fC#include <pcl/sample_consensus/method_types\&.h>\fP
+.br
+\fC#include <pcl/sample_consensus/model_types\&.h>\fP
+.br
+\fC#include <pcl/segmentation/sac_segmentation\&.h>\fP
+.br
+\fC#include <pcl/segmentation/extract_clusters\&.h>\fP
+.br
+\fC#include <pcl/segmentation/conditional_euclidean_clustering\&.h>\fP
+.br
+\fC#include <pcl/common/common\&.h>\fP
+.br
+\fC#include <pcl/common/pca\&.h>\fP
+.br
+\fC#include <pcl/search/organized\&.h>\fP
+.br
+\fC#include <pcl/search/kdtree\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBox\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/PolygonArray\&.h>\fP
+.br
+\fC#include <jsk_rviz_plugins/PictogramArray\&.h>\fP
+.br
+\fC#include 'autoware_msgs/CloudCluster\&.h'\fP
+.br
+\fC#include 'opencv2/core/core\&.hpp'\fP
+.br
+\fC#include 'opencv2/imgproc/imgproc\&.hpp'\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <chrono>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCluster\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::shared_ptr< \fBCluster\fP > \fBClusterPtr\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::shared_ptr<\fBCluster\fP> \fBClusterPtr\fP"
+
+.PP
+Definition at line 149 of file cluster\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

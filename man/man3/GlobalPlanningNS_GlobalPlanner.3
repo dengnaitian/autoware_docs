@@ -1,0 +1,557 @@
+.TH "GlobalPlanningNS::GlobalPlanner" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GlobalPlanningNS::GlobalPlanner \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_global_planner_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobalPlanner\fP ()"
+.br
+.ti -1c
+.RI "\fB~GlobalPlanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_iCurrentGoalIndex\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBGenerateGlobalPlan\fP (\fBPlannerHNS::WayPoint\fP &startPoint, \fBPlannerHNS::WayPoint\fP &goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &generatedTotalPaths)"
+.br
+.ti -1c
+.RI "bool \fBGenerateGlobalPlan\fP (\fBPlannerHNS::WayPoint\fP &startPoint, \fBPlannerHNS::WayPoint\fP &goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &generatedTotalPaths, \fBPlannerHNS::ForceCmdTypes\fP &fcmd)"
+.br
+.ti -1c
+.RI "void \fBVisualizeAndSend\fP (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > generatedTotalPaths)"
+.br
+.ti -1c
+.RI "void \fBVisualizeDestinations\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &destinations, const int &iSelected)"
+.br
+.ti -1c
+.RI "void \fBSaveSimulationData\fP ()"
+.br
+.ti -1c
+.RI "int \fBLoadSimulationData\fP ()"
+.br
+.ti -1c
+.RI "void \fBClearOldCostFromMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBCreateForcePathAndSend\fP (\fBPlannerHNS::WayPoint\fP subGoalPose)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWhiteLines\fP (const vector_map_msgs::WhiteLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBWayPlannerParams\fP \fBm_params\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPose\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_GoalsPos\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleState\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBm_GridMapIntType\fP"
+.br
+.ti -1c
+.RI "std::vector< std::pair< std::vector< \fBPlannerHNS::WayPoint\fP * >, timespec > > \fBm_ModifiedMapItemsTimes\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_ReplnningTimer\fP"
+.br
+.ti -1c
+.RI "bool \fBbMakeNewPlan\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ForceCmdTypes\fP \fBm_fcommand\fP"
+.br
+.ti -1c
+.RI "int \fBm_GlobalPathID\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bFirstStart\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_MapRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_Paths\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PathsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrafficInfo\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_GoalsListRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_start_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_goal_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_road_status_occupancy\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_fcommand\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map_no_whiteline\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bKmlMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlannerH\fP \fBm_PlannerH\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GeneratedTotalPaths\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_white_line\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 92 of file op_global_planner_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GlobalPlanningNS::GlobalPlanner::GlobalPlanner ()"
+
+.PP
+Definition at line 22 of file op_global_planner_core\&.cpp\&.
+.SS "GlobalPlanningNS::GlobalPlanner::~GlobalPlanner ()"
+
+.PP
+Definition at line 107 of file op_global_planner_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 608 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 664 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 643 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 594 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 601 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 580 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMLines (const vector_map_msgs::LineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 615 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 671 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 587 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 650 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 629 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 622 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 636 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 657 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::callbackGetVMWhiteLines (const vector_map_msgs::WhiteLineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 679 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::ClearOldCostFromMap ()\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::CreateForcePathAndSend (\fBPlannerHNS::WayPoint\fP subGoalPose)\fC [protected]\fP"
+
+.PP
+Definition at line 687 of file op_global_planner_core\&.cpp\&.
+.SS "bool GlobalPlanningNS::GlobalPlanner::GenerateGlobalPlan (\fBPlannerHNS::WayPoint\fP & startPoint, \fBPlannerHNS::WayPoint\fP & goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & generatedTotalPaths)\fC [protected]\fP"
+
+.PP
+Definition at line 252 of file op_global_planner_core\&.cpp\&.
+.SS "bool GlobalPlanningNS::GlobalPlanner::GenerateGlobalPlan (\fBPlannerHNS::WayPoint\fP & startPoint, \fBPlannerHNS::WayPoint\fP & goalPoint, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & generatedTotalPaths, \fBPlannerHNS::ForceCmdTypes\fP & fcmd)\fC [protected]\fP"
+
+.PP
+Definition at line 699 of file op_global_planner_core\&.cpp\&.
+.SS "int GlobalPlanningNS::GlobalPlanner::LoadSimulationData ()\fC [protected]\fP"
+
+.PP
+Definition at line 418 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::MainLoop ()"
+
+.PP
+Definition at line 444 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::SaveSimulationData ()\fC [protected]\fP"
+
+.PP
+Definition at line 383 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::VisualizeAndSend (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > generatedTotalPaths)\fC [protected]\fP"
+
+.PP
+Definition at line 302 of file op_global_planner_core\&.cpp\&.
+.SS "void GlobalPlanningNS::GlobalPlanner::VisualizeDestinations (std::vector< \fBPlannerHNS::WayPoint\fP > & destinations, const int & iSelected)\fC [protected]\fP"
+
+.PP
+Definition at line 340 of file op_global_planner_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool GlobalPlanningNS::GlobalPlanner::bMakeNewPlan\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file op_global_planner_core\&.h\&.
+.SS "bool GlobalPlanningNS::GlobalPlanner::m_bFirstStart\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file op_global_planner_core\&.h\&.
+.SS "bool GlobalPlanningNS::GlobalPlanner::m_bKmlMap\fC [protected]\fP"
+
+.PP
+Definition at line 162 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP GlobalPlanningNS::GlobalPlanner::m_CurrentPose\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::ForceCmdTypes\fP GlobalPlanningNS::GlobalPlanner::m_fcommand\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file op_global_planner_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > GlobalPlanningNS::GlobalPlanner::m_GeneratedTotalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 164 of file op_global_planner_core\&.h\&.
+.SS "int GlobalPlanningNS::GlobalPlanner::m_GlobalPathID\fC [protected]\fP"
+
+.PP
+Definition at line 112 of file op_global_planner_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> GlobalPlanningNS::GlobalPlanner::m_GoalsPos\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file op_global_planner_core\&.h\&.
+.SS "std::vector<int> GlobalPlanningNS::GlobalPlanner::m_GridMapIntType\fC [protected]\fP"
+
+.PP
+Definition at line 104 of file op_global_planner_core\&.h\&.
+.SS "int GlobalPlanningNS::GlobalPlanner::m_iCurrentGoalIndex"
+
+.PP
+Definition at line 96 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP GlobalPlanningNS::GlobalPlanner::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP GlobalPlanningNS::GlobalPlanner::m_Map_no_whiteline\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file op_global_planner_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP GlobalPlanningNS::GlobalPlanner::m_MapRaw\fC [protected]\fP"
+
+.PP
+Definition at line 178 of file op_global_planner_core\&.h\&.
+.SS "std::vector<std::pair<std::vector<\fBPlannerHNS::WayPoint\fP*> , timespec> > GlobalPlanningNS::GlobalPlanner::m_ModifiedMapItemsTimes\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file op_global_planner_core\&.h\&.
+.SS "geometry_msgs::Pose GlobalPlanningNS::GlobalPlanner::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file op_global_planner_core\&.h\&.
+.SS "\fBWayPlannerParams\fP GlobalPlanningNS::GlobalPlanner::m_params\fC [protected]\fP"
+
+.PP
+Definition at line 99 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::PlannerH\fP GlobalPlanningNS::GlobalPlanner::m_PlannerH\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file op_global_planner_core\&.h\&.
+.SS "timespec GlobalPlanningNS::GlobalPlanner::m_ReplnningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file op_global_planner_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP GlobalPlanningNS::GlobalPlanner::m_VehicleState\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file op_global_planner_core\&.h\&.
+.SS "ros::NodeHandle GlobalPlanningNS::GlobalPlanner::nh\fC [protected]\fP"
+
+.PP
+Definition at line 116 of file op_global_planner_core\&.h\&.
+.SS "ros::Publisher GlobalPlanningNS::GlobalPlanner::pub_GoalsListRviz\fC [protected]\fP"
+
+.PP
+Definition at line 126 of file op_global_planner_core\&.h\&.
+.SS "ros::Publisher GlobalPlanningNS::GlobalPlanner::pub_MapRviz\fC [protected]\fP"
+
+.PP
+Definition at line 118 of file op_global_planner_core\&.h\&.
+.SS "ros::Publisher GlobalPlanningNS::GlobalPlanner::pub_Paths\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file op_global_planner_core\&.h\&.
+.SS "ros::Publisher GlobalPlanningNS::GlobalPlanner::pub_PathsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file op_global_planner_core\&.h\&.
+.SS "ros::Publisher GlobalPlanningNS::GlobalPlanner::pub_TrafficInfo\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_cross_walk\fC [protected]\fP"
+
+.PP
+Definition at line 192 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_curbs\fC [protected]\fP"
+
+.PP
+Definition at line 189 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 132 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_dt_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 182 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_edges\fC [protected]\fP"
+
+.PP
+Definition at line 190 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_fcommand\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_goal_pose\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_intersect\fC [protected]\fP"
+
+.PP
+Definition at line 183 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 180 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_lines\fC [protected]\fP"
+
+.PP
+Definition at line 185 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_nodes\fC [protected]\fP"
+
+.PP
+Definition at line 193 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_points\fC [protected]\fP"
+
+.PP
+Definition at line 181 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_road_status_occupancy\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_signals\fC [protected]\fP"
+
+.PP
+Definition at line 187 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_start_pose\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_stop_line\fC [protected]\fP"
+
+.PP
+Definition at line 186 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_vectors\fC [protected]\fP"
+
+.PP
+Definition at line 188 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_way_areas\fC [protected]\fP"
+
+.PP
+Definition at line 191 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sub_white_line\fC [protected]\fP"
+
+.PP
+Definition at line 195 of file op_global_planner_core\&.h\&.
+.SS "ros::Subscriber GlobalPlanningNS::GlobalPlanner::sup_area\fC [protected]\fP"
+
+.PP
+Definition at line 184 of file op_global_planner_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

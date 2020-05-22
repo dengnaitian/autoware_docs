@@ -1,0 +1,123 @@
+.TH "autoware_health_checker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_health_checker \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDiagBuffer\fP"
+.br
+.ti -1c
+.RI "class \fBNodeStatusPublisher\fP"
+.br
+.ti -1c
+.RI "class \fBRateChecker\fP"
+.br
+.ti -1c
+.RI "class \fBSystemStatusSubscriber\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr uint8_t \fBLEVEL_UNDEFINED\fP"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBLEVEL_OK\fP = autoware_system_msgs::DiagnosticStatus::OK"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBLEVEL_WARN\fP = autoware_system_msgs::DiagnosticStatus::WARN"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBLEVEL_ERROR\fP = autoware_system_msgs::DiagnosticStatus::ERROR"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBLEVEL_FATAL\fP = autoware_system_msgs::DiagnosticStatus::FATAL"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBTYPE_UNDEFINED\fP"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBTYPE_OUT_OF_RANGE\fP"
+.br
+.ti -1c
+.RI "constexpr uint8_t \fBTYPE_RATE_IS_SLOW\fP"
+.br
+.ti -1c
+.RI "constexpr double \fBBUFFER_LENGTH\fP = 5\&.0"
+.br
+.ti -1c
+.RI "constexpr double \fBUPDATE_RATE\fP = 10\&.0"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr double autoware_health_checker::BUFFER_LENGTH = 5\&.0"
+
+.PP
+Definition at line 40 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::LEVEL_ERROR = autoware_system_msgs::DiagnosticStatus::ERROR"
+
+.PP
+Definition at line 30 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::LEVEL_FATAL = autoware_system_msgs::DiagnosticStatus::FATAL"
+
+.PP
+Definition at line 31 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::LEVEL_OK = autoware_system_msgs::DiagnosticStatus::OK"
+
+.PP
+Definition at line 28 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::LEVEL_UNDEFINED"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    autoware_system_msgs::DiagnosticStatus::UNDEFINED
+.fi
+.PP
+Definition at line 26 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::LEVEL_WARN = autoware_system_msgs::DiagnosticStatus::WARN"
+
+.PP
+Definition at line 29 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::TYPE_OUT_OF_RANGE"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    autoware_system_msgs::DiagnosticStatus::OUT_OF_RANGE
+.fi
+.PP
+Definition at line 35 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::TYPE_RATE_IS_SLOW"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    autoware_system_msgs::DiagnosticStatus::RATE_IS_SLOW
+.fi
+.PP
+Definition at line 37 of file constants\&.h\&.
+.SS "constexpr uint8_t autoware_health_checker::TYPE_UNDEFINED"
+\fBInitial value:\fP
+.PP
+.nf
+=
+    autoware_system_msgs::DiagnosticStatus::UNDEFINED
+.fi
+.PP
+Definition at line 33 of file constants\&.h\&.
+.SS "constexpr double autoware_health_checker::UPDATE_RATE = 10\&.0"
+
+.PP
+Definition at line 41 of file constants\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,5 @@
+<map id="GPUModel" name="GPUModel">
+<area shape="rect" id="node2" href="$struct_model__info.html" title="Model_info" alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node3" href="$struct_partfilters.html" title="Partfilters" alt="" coords="115,5,194,32"/>
+<area shape="rect" id="node4" href="$struct_rootfilters.html" title="Rootfilters" alt="" coords="219,5,301,32"/>
+</map>

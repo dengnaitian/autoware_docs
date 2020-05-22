@@ -1,0 +1,333 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/packages/lidar_localizer/nodes/ndt_mapping_tku/ndt_mapping_tku.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/packages/lidar_localizer/nodes/ndt_mapping_tku/ndt_mapping_tku.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <GL/glut\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <chrono>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include 'algebra\&.h'\fP
+.br
+\fC#include 'ndt\&.h'\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <pcl/filters/voxel_grid\&.h>\fP
+.br
+\fC#include <pcl/io/io\&.h>\fP
+.br
+\fC#include <pcl/io/pcd_io\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include 'sensor_msgs/PointCloud2\&.h'\fP
+.br
+\fC#include 'std_msgs/String\&.h'\fP
+.br
+\fC#include 'velodyne_pointcloud/point_types\&.h'\fP
+.br
+\fC#include 'velodyne_pointcloud/rawdata\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBG_MAP_X\fP   2000"
+.br
+.ti -1c
+.RI "#define \fBG_MAP_Y\fP   2000"
+.br
+.ti -1c
+.RI "#define \fBG_MAP_Z\fP   200"
+.br
+.ti -1c
+.RI "#define \fBG_MAP_CELLSIZE\fP   1\&.0"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsave_nd_map\fP (char *name)"
+.br
+.ti -1c
+.RI "void \fBpose_mod\fP (\fBPosture\fP *\fBpose\fP)"
+.br
+.ti -1c
+.RI "double \fBnrand\fP (double n)"
+.br
+.ti -1c
+.RI "void \fBpoints_callback\fP (const sensor_msgs::PointCloud2::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBNDMapPtr\fP \fBNDmap\fP"
+.br
+.ti -1c
+.RI "\fBNDPtr\fP \fBNDs\fP"
+.br
+.ti -1c
+.RI "int \fBNDs_num\fP"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBscan_points\fP [130000]"
+.br
+.ti -1c
+.RI "double \fBscan_points_i\fP [130000]"
+.br
+.ti -1c
+.RI "int \fBscan_points_num\fP"
+.br
+.ti -1c
+.RI "int \fBis_first_time\fP = 1"
+.br
+.ti -1c
+.RI "int \fBis_map_exist\fP = 0"
+.br
+.ti -1c
+.RI "double \fBscan_points_weight\fP [130000]"
+.br
+.ti -1c
+.RI "double \fBscan_points_totalweight\fP"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBmap_points\fP [130000]"
+.br
+.ti -1c
+.RI "double \fBmap_points_i\fP [130000]"
+.br
+.ti -1c
+.RI "int \fBlayer_select\fP = \fBLAYER_NUM\fP \- 1"
+.br
+.ti -1c
+.RI "\fBPosture\fP \fBprev_pose\fP"
+.br
+.ti -1c
+.RI "\fBPosture\fP \fBprev_pose2\fP"
+.br
+.ti -1c
+.RI "double \fBg_map_center_x\fP"
+.br
+.ti -1c
+.RI "double \fBg_map_center_y\fP"
+.br
+.ti -1c
+.RI "double \fBg_map_center_z\fP"
+.br
+.ti -1c
+.RI "double \fBg_map_rotation\fP"
+.br
+.ti -1c
+.RI "char \fBg_ndmap_name\fP [500]"
+.br
+.ti -1c
+.RI "int \fBg_use_gnss\fP"
+.br
+.ti -1c
+.RI "int \fBg_map_update\fP = 1"
+.br
+.ti -1c
+.RI "double \fBg_ini_x\fP"
+.br
+.ti -1c
+.RI "double \fBg_ini_y\fP"
+.br
+.ti -1c
+.RI "double \fBg_ini_z\fP"
+.br
+.ti -1c
+.RI "double \fBg_ini_roll\fP"
+.br
+.ti -1c
+.RI "double \fBg_ini_pitch\fP"
+.br
+.ti -1c
+.RI "double \fBg_ini_yaw\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define G_MAP_CELLSIZE   1\&.0"
+
+.PP
+Definition at line 11 of file ndt_mapping_tku\&.cpp\&.
+.SS "#define G_MAP_X   2000"
+
+.PP
+Definition at line 8 of file ndt_mapping_tku\&.cpp\&.
+.SS "#define G_MAP_Y   2000"
+
+.PP
+Definition at line 9 of file ndt_mapping_tku\&.cpp\&.
+.SS "#define G_MAP_Z   200"
+
+.PP
+Definition at line 10 of file ndt_mapping_tku\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 470 of file ndt_mapping_tku\&.cpp\&.
+.SS "double nrand (double n)"
+
+.PP
+Definition at line 105 of file ndt_mapping_tku\&.cpp\&.
+.SS "void points_callback (const sensor_msgs::PointCloud2::ConstPtr & msg)"
+
+.PP
+Definition at line 112 of file ndt_mapping_tku\&.cpp\&.
+.SS "void pose_mod (\fBPosture\fP * pose)"
+
+.PP
+Definition at line 89 of file ndt_mapping_tku\&.cpp\&.
+.SS "void save_nd_map (char * name)"
+
+.PP
+Definition at line 409 of file ndt_mapping_tku\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "double g_ini_pitch"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_ini_roll"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_ini_x"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_ini_y"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_ini_yaw"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_ini_z"
+
+.PP
+Definition at line 69 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_map_center_x"
+
+.PP
+Definition at line 64 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_map_center_y"
+
+.PP
+Definition at line 64 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_map_center_z"
+
+.PP
+Definition at line 64 of file ndt_mapping_tku\&.cpp\&.
+.SS "double g_map_rotation"
+
+.PP
+Definition at line 65 of file ndt_mapping_tku\&.cpp\&.
+.SS "int g_map_update = 1"
+
+.PP
+Definition at line 68 of file ndt_mapping_tku\&.cpp\&.
+.SS "char g_ndmap_name[500]"
+
+.PP
+Definition at line 66 of file ndt_mapping_tku\&.cpp\&.
+.SS "int g_use_gnss"
+
+.PP
+Definition at line 67 of file ndt_mapping_tku\&.cpp\&.
+.SS "int is_first_time = 1"
+
+.PP
+Definition at line 50 of file ndt_mapping_tku\&.cpp\&.
+.SS "int is_map_exist = 0"
+
+.PP
+Definition at line 51 of file ndt_mapping_tku\&.cpp\&.
+.SS "int layer_select = \fBLAYER_NUM\fP \- 1"
+
+.PP
+Definition at line 59 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBPoint\fP map_points[130000]"
+
+.PP
+Definition at line 56 of file ndt_mapping_tku\&.cpp\&.
+.SS "double map_points_i[130000]"
+
+.PP
+Definition at line 57 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBNDMapPtr\fP NDmap"
+
+.PP
+Definition at line 42 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBNDPtr\fP NDs"
+
+.PP
+Definition at line 43 of file ndt_mapping_tku\&.cpp\&.
+.SS "int NDs_num"
+
+.PP
+Definition at line 44 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBPosture\fP prev_pose"
+
+.PP
+Definition at line 61 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBPosture\fP prev_pose2"
+
+.PP
+Definition at line 61 of file ndt_mapping_tku\&.cpp\&.
+.SS "\fBPoint\fP scan_points[130000]"
+
+.PP
+Definition at line 46 of file ndt_mapping_tku\&.cpp\&.
+.SS "double scan_points_i[130000]"
+
+.PP
+Definition at line 47 of file ndt_mapping_tku\&.cpp\&.
+.SS "int scan_points_num"
+
+.PP
+Definition at line 48 of file ndt_mapping_tku\&.cpp\&.
+.SS "double scan_points_totalweight"
+
+.PP
+Definition at line 54 of file ndt_mapping_tku\&.cpp\&.
+.SS "double scan_points_weight[130000]"
+
+.PP
+Definition at line 53 of file ndt_mapping_tku\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

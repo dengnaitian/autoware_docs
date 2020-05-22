@@ -1,0 +1,91 @@
+.TH "datatypes::Msg" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Msg \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Msg\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMsg\fP (const \fBUINT16\fP sourceId)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "\fBMsg\fP (const \fBUINT16\fP sourceId, const std::string message)"
+.br
+.RI "\fIConvenience constructor for the message\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBgetMsg\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMsg\fP (std::string message)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.RI "\fIConversion to string for debugging\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBMsg\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file Msg\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Msg::Msg (const \fBUINT16\fP sourceId)"
+
+.PP
+Constructor\&. 
+.PP
+Definition at line 14 of file Msg\&.cpp\&.
+.SS "datatypes::Msg::Msg (const \fBUINT16\fP sourceId, const std::string message)"
+
+.PP
+Convenience constructor for the message\&. 
+.PP
+Definition at line 20 of file Msg\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string datatypes::Msg::getMsg () const"
+
+.PP
+Definition at line 33 of file Msg\&.cpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Msg::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 28 of file Msg\&.hpp\&.
+.SS "bool datatypes::Msg::operator== (const \fBMsg\fP & other) const\fC [inline]\fP"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 36 of file Msg\&.hpp\&.
+.SS "void datatypes::Msg::setMsg (std::string message)"
+
+.PP
+Definition at line 39 of file Msg\&.cpp\&.
+.SS "std::string datatypes::Msg::toString () const"
+
+.PP
+Conversion to string for debugging\&. 
+.PP
+Definition at line 28 of file Msg\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

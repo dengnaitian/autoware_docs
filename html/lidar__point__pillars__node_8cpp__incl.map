@@ -1,0 +1,11 @@
+<map id="/home/deng/Project/autobot&#45;feature&#45;decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_point_pillars/nodes/lidar_point_pillars_node.cpp" name="/home/deng/Project/autobot&#45;feature&#45;decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_point_pillars/nodes/lidar_point_pillars_node.cpp">
+<area shape="rect" id="node3" href="$point__pillars__ros_8h.html" title="ROS interface for PointPillars. " alt="" coords="336,153,467,195"/>
+<area shape="rect" id="node10" href="$point__pillars_8h.html" title="Algorithm for PointPillars. " alt="" coords="747,243,869,284"/>
+<area shape="rect" id="node19" href="$detection_2lidar__detector_2packages_2lidar__point__pillars_2include_2lidar__point__pillars_2common_8h.html" title="lidar_point_pillars\l/common.h" alt="" coords="448,511,571,552"/>
+<area shape="rect" id="node22" href="$preprocess__points_8h.html" title="CPU version of preprocess points. " alt="" coords="886,332,1029,373"/>
+<area shape="rect" id="node23" href="$preprocess__points__cuda_8h.html" title="GPU version of preprocess points. " alt="" coords="1053,332,1232,373"/>
+<area shape="rect" id="node24" href="$anchor__mask__cuda_8h.html" title="Make anchor mask for filtering output. " alt="" coords="1257,332,1407,373"/>
+<area shape="rect" id="node25" href="$scatter__cuda_8h.html" title="CUDA code for scatter operation. " alt="" coords="1432,332,1555,373"/>
+<area shape="rect" id="node26" href="$postprocess__cuda_8h.html" title="Postprocess for network output. " alt="" coords="94,332,237,373"/>
+<area shape="rect" id="node27" href="$nms__cuda_8h.html" title="Non&#45;maximum suppresion for network output. " alt="" coords="325,421,448,463"/>
+</map>

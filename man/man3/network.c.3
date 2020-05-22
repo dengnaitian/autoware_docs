@@ -1,0 +1,402 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/network.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/network.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'data\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'crop_layer\&.h'\fP
+.br
+\fC#include 'connected_layer\&.h'\fP
+.br
+\fC#include 'gru_layer\&.h'\fP
+.br
+\fC#include 'rnn_layer\&.h'\fP
+.br
+\fC#include 'crnn_layer\&.h'\fP
+.br
+\fC#include 'local_layer\&.h'\fP
+.br
+\fC#include 'convolutional_layer\&.h'\fP
+.br
+\fC#include 'activation_layer\&.h'\fP
+.br
+\fC#include 'detection_layer\&.h'\fP
+.br
+\fC#include 'region_layer\&.h'\fP
+.br
+\fC#include 'yolo_layer\&.h'\fP
+.br
+\fC#include 'normalization_layer\&.h'\fP
+.br
+\fC#include 'batchnorm_layer\&.h'\fP
+.br
+\fC#include 'maxpool_layer\&.h'\fP
+.br
+\fC#include 'reorg_layer\&.h'\fP
+.br
+\fC#include 'avgpool_layer\&.h'\fP
+.br
+\fC#include 'cost_layer\&.h'\fP
+.br
+\fC#include 'softmax_layer\&.h'\fP
+.br
+\fC#include 'dropout_layer\&.h'\fP
+.br
+\fC#include 'route_layer\&.h'\fP
+.br
+\fC#include 'upsample_layer\&.h'\fP
+.br
+\fC#include 'shortcut_layer\&.h'\fP
+.br
+\fC#include 'parser\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBload_args\fP \fBget_base_args\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBnetwork\fP * \fBload_network\fP (char *cfg, char *weights, int clear)"
+.br
+.ti -1c
+.RI "size_t \fBget_current_batch\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBreset_network_state\fP (\fBnetwork\fP *net, int \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBreset_rnn\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float \fBget_current_rate\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "char * \fBget_layer_string\fP (\fBLAYER_TYPE\fP a)"
+.br
+.ti -1c
+.RI "\fBnetwork\fP * \fBmake_network\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBforward_network\fP (\fBnetwork\fP *netp)"
+.br
+.ti -1c
+.RI "void \fBupdate_network\fP (\fBnetwork\fP *netp)"
+.br
+.ti -1c
+.RI "void \fBcalc_network_cost\fP (\fBnetwork\fP *netp)"
+.br
+.ti -1c
+.RI "int \fBget_predicted_class_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBbackward_network\fP (\fBnetwork\fP *netp)"
+.br
+.ti -1c
+.RI "float \fBtrain_network_datum\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float \fBtrain_network_sgd\fP (\fBnetwork\fP *net, \fBdata\fP d, int n)"
+.br
+.ti -1c
+.RI "float \fBtrain_network\fP (\fBnetwork\fP *net, \fBdata\fP d)"
+.br
+.ti -1c
+.RI "void \fBset_temp_network\fP (\fBnetwork\fP *net, float \fBt\fP)"
+.br
+.ti -1c
+.RI "void \fBset_batch_network\fP (\fBnetwork\fP *net, int \fBb\fP)"
+.br
+.ti -1c
+.RI "int \fBresize_network\fP (\fBnetwork\fP *net, int w, int h)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBget_network_detection_layer\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_network_image_layer\fP (\fBnetwork\fP *net, int \fBi\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_network_image\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBvisualize_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBtop_predictions\fP (\fBnetwork\fP *net, int \fBk\fP, int *index)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_predict\fP (\fBnetwork\fP *net, float *input)"
+.br
+.ti -1c
+.RI "int \fBnum_detections\fP (\fBnetwork\fP *net, float thresh)"
+.br
+.ti -1c
+.RI "\fBdetection\fP * \fBmake_network_boxes\fP (\fBnetwork\fP *net, float thresh, int *num)"
+.br
+.ti -1c
+.RI "void \fBfill_network_boxes\fP (\fBnetwork\fP *net, int w, int h, float thresh, float hier, int *\fBmap\fP, int relative, \fBdetection\fP *dets)"
+.br
+.ti -1c
+.RI "\fBdetection\fP * \fBget_network_boxes\fP (\fBnetwork\fP *net, int w, int h, float thresh, float hier, int *\fBmap\fP, int relative, int *num)"
+.br
+.ti -1c
+.RI "void \fBfree_detections\fP (\fBdetection\fP *dets, int n)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_predict_image\fP (\fBnetwork\fP *net, \fBimage\fP im)"
+.br
+.ti -1c
+.RI "int \fBnetwork_width\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "int \fBnetwork_height\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBnetwork_predict_data_multi\fP (\fBnetwork\fP *net, \fBdata\fP test, int n)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBnetwork_predict_data\fP (\fBnetwork\fP *net, \fBdata\fP test)"
+.br
+.ti -1c
+.RI "void \fBprint_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "void \fBcompare_networks\fP (\fBnetwork\fP *n1, \fBnetwork\fP *n2, \fBdata\fP test)"
+.br
+.ti -1c
+.RI "float \fBnetwork_accuracy\fP (\fBnetwork\fP *net, \fBdata\fP d)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_accuracies\fP (\fBnetwork\fP *net, \fBdata\fP d, int n)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBget_network_output_layer\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float \fBnetwork_accuracy_multi\fP (\fBnetwork\fP *net, \fBdata\fP d, int n)"
+.br
+.ti -1c
+.RI "void \fBfree_network\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBnetwork_output_layer\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "int \fBnetwork_inputs\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "int \fBnetwork_outputs\fP (\fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "float * \fBnetwork_output\fP (\fBnetwork\fP *net)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_network (\fBnetwork\fP * netp)"
+
+.PP
+Definition at line 263 of file network\&.c\&.
+.SS "void calc_network_cost (\fBnetwork\fP * netp)"
+
+.PP
+Definition at line 243 of file network\&.c\&.
+.SS "void compare_networks (\fBnetwork\fP * n1, \fBnetwork\fP * n2, \fBdata\fP test)"
+
+.PP
+Definition at line 656 of file network\&.c\&.
+.SS "void fill_network_boxes (\fBnetwork\fP * net, int w, int h, float thresh, float hier, int * map, int relative, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 542 of file network\&.c\&.
+.SS "void forward_network (\fBnetwork\fP * netp)"
+
+.PP
+Definition at line 188 of file network\&.c\&.
+.SS "void free_detections (\fBdetection\fP * dets, int n)"
+
+.PP
+Definition at line 569 of file network\&.c\&.
+.SS "void free_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 716 of file network\&.c\&.
+.SS "\fBload_args\fP get_base_args (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 35 of file network\&.c\&.
+.SS "size_t get_current_batch (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 63 of file network\&.c\&.
+.SS "float get_current_rate (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 90 of file network\&.c\&.
+.SS "char* get_layer_string (\fBLAYER_TYPE\fP a)"
+
+.PP
+Definition at line 122 of file network\&.c\&.
+.SS "\fBdetection\fP* get_network_boxes (\fBnetwork\fP * net, int w, int h, float thresh, float hier, int * map, int relative, int * num)"
+
+.PP
+Definition at line 562 of file network\&.c\&.
+.SS "\fBlayer\fP get_network_detection_layer (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 440 of file network\&.c\&.
+.SS "\fBimage\fP get_network_image (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 466 of file network\&.c\&.
+.SS "\fBimage\fP get_network_image_layer (\fBnetwork\fP * net, int i)"
+
+.PP
+Definition at line 453 of file network\&.c\&.
+.SS "\fBlayer\fP get_network_output_layer (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 699 of file network\&.c\&.
+.SS "int get_predicted_class_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 258 of file network\&.c\&.
+.SS "\fBnetwork\fP* load_network (char * cfg, char * weights, int clear)"
+
+.PP
+Definition at line 53 of file network\&.c\&.
+.SS "\fBnetwork\fP* make_network (int n)"
+
+.PP
+Definition at line 177 of file network\&.c\&.
+.SS "\fBdetection\fP* make_network_boxes (\fBnetwork\fP * net, float thresh, int * num)"
+
+.PP
+Definition at line 526 of file network\&.c\&.
+.SS "float* network_accuracies (\fBnetwork\fP * net, \fBdata\fP d, int n)"
+
+.PP
+Definition at line 689 of file network\&.c\&.
+.SS "float network_accuracy (\fBnetwork\fP * net, \fBdata\fP d)"
+
+.PP
+Definition at line 681 of file network\&.c\&.
+.SS "float network_accuracy_multi (\fBnetwork\fP * net, \fBdata\fP d, int n)"
+
+.PP
+Definition at line 708 of file network\&.c\&.
+.SS "int network_height (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 589 of file network\&.c\&.
+.SS "int network_inputs (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 745 of file network\&.c\&.
+.SS "float* network_output (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 755 of file network\&.c\&.
+.SS "\fBlayer\fP network_output_layer (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 736 of file network\&.c\&.
+.SS "int network_outputs (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 750 of file network\&.c\&.
+.SS "float* network_predict (\fBnetwork\fP * net, float * input)"
+
+.PP
+Definition at line 497 of file network\&.c\&.
+.SS "\fBmatrix\fP network_predict_data (\fBnetwork\fP * net, \fBdata\fP test)"
+
+.PP
+Definition at line 616 of file network\&.c\&.
+.SS "\fBmatrix\fP network_predict_data_multi (\fBnetwork\fP * net, \fBdata\fP test, int n)"
+
+.PP
+Definition at line 591 of file network\&.c\&.
+.SS "float* network_predict_image (\fBnetwork\fP * net, \fBimage\fP im)"
+
+.PP
+Definition at line 579 of file network\&.c\&.
+.SS "int network_width (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 588 of file network\&.c\&.
+.SS "int num_detections (\fBnetwork\fP * net, float thresh)"
+
+.PP
+Definition at line 510 of file network\&.c\&.
+.SS "void print_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 639 of file network\&.c\&.
+.SS "void reset_network_state (\fBnetwork\fP * net, int b)"
+
+.PP
+Definition at line 69 of file network\&.c\&.
+.SS "void reset_rnn (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 85 of file network\&.c\&.
+.SS "int resize_network (\fBnetwork\fP * net, int w, int h)"
+
+.PP
+Definition at line 358 of file network\&.c\&.
+.SS "void set_batch_network (\fBnetwork\fP * net, int b)"
+
+.PP
+Definition at line 339 of file network\&.c\&.
+.SS "void set_temp_network (\fBnetwork\fP * net, float t)"
+
+.PP
+Definition at line 330 of file network\&.c\&.
+.SS "void top_predictions (\fBnetwork\fP * net, int k, int * index)"
+
+.PP
+Definition at line 491 of file network\&.c\&.
+.SS "float train_network (\fBnetwork\fP * net, \fBdata\fP d)"
+
+.PP
+Definition at line 314 of file network\&.c\&.
+.SS "float train_network_datum (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 289 of file network\&.c\&.
+.SS "float train_network_sgd (\fBnetwork\fP * net, \fBdata\fP d, int n)"
+
+.PP
+Definition at line 300 of file network\&.c\&.
+.SS "void update_network (\fBnetwork\fP * netp)"
+
+.PP
+Definition at line 213 of file network\&.c\&.
+.SS "void visualize_network (\fBnetwork\fP * net)"
+
+.PP
+Definition at line 477 of file network\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

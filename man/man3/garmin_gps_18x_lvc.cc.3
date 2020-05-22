@@ -1,0 +1,69 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/gnss/packages/garmin/src/garmin_gps_18x_lvc.cc" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/gnss/packages/garmin/src/garmin_gps_18x_lvc.cc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'garmin_gps_18x_lvc\&.h'\fP
+.br
+\fC#include <sensor_msgs/Imu\&.h>\fP
+.br
+\fC#include <nmea_msgs/Sentence\&.h>\fP
+.br
+\fC#include <sensor_msgs/TimeReference\&.h>\fP
+.br
+\fC#include <sensor_msgs/Temperature\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int16_t \fBconvert12bit2int16\fP (uint16_t v)"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBexplode\fP (const std::string &text, const std::string &separators)"
+.br
+.ti -1c
+.RI "uint32_t \fBnmeaHourToUnixTime\fP (const std::string &nmea_sentence)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBmicroseconds_to_seconds\fP = 1\&.0E\-6"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int16_t convert12bit2int16 (uint16_t v)"
+
+.PP
+Definition at line 106 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "std::vector<std::string> explode (const std::string & text, const std::string & separators)"
+
+.PP
+Definition at line 115 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 286 of file garmin_gps_18x_lvc\&.cc\&.
+.SS "uint32_t nmeaHourToUnixTime (const std::string & nmea_sentence)"
+
+.PP
+Definition at line 133 of file garmin_gps_18x_lvc\&.cc\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const double microseconds_to_seconds = 1\&.0E\-6"
+
+.PP
+Definition at line 17 of file garmin_gps_18x_lvc\&.cc\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

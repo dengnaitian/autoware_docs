@@ -1,0 +1,149 @@
+.TH "ROSSubBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ROSSubBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rosinterface\&.h>\fP
+.PP
+Inherits \fBROSInterfaceBase\fP\&.
+.PP
+Inherited by \fBROSSub< MSGTYPE >\fP, and \fBROSSub< sensor_msgs::PointCloud2ConstPtr >\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBstartReceiveSlot\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopReceiveSlot\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBreceiveMessageSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartReceiveSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopReceiveSignal\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetQueryIntervalSignal\fP (int QueryInterval)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSSubBase\fP (int QueryInterval, QObject *parent)"
+.br
+.ti -1c
+.RI "\fB~ROSSubBase\fP ()"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBreceiveMessageSlot\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreceiveMessage\fP (ros::CallbackQueue::CallOneResult result)"
+.br
+.ti -1c
+.RI "virtual void \fBclearMessage\fP ()=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::CallbackQueue \fBqueue\fP"
+.br
+.ti -1c
+.RI "QTimer * \fBtimer\fP"
+.br
+.ti -1c
+.RI "bool \fBreceiveflag\fP"
+.br
+.ti -1c
+.RI "QReadWriteLock \fBlock\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 111 of file rosinterface\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ROSSubBase::ROSSubBase (int QueryInterval, QObject * parent)"
+
+.PP
+Definition at line 60 of file rosinterface\&.cpp\&.
+.SS "ROSSubBase::~ROSSubBase ()"
+
+.PP
+Definition at line 74 of file rosinterface\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void ROSSubBase::clearMessage ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBROSSub< MSGTYPE >\fP, and \fBROSSub< sensor_msgs::PointCloud2ConstPtr >\fP\&.
+.SS "void ROSSubBase::receiveMessage (ros::CallbackQueue::CallOneResult result)\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file rosinterface\&.cpp\&.
+.SS "void ROSSubBase::receiveMessageSignal ()\fC [signal]\fP"
+
+.SS "void ROSSubBase::receiveMessageSlot ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 99 of file rosinterface\&.cpp\&.
+.SS "void ROSSubBase::resetQueryIntervalSignal (int QueryInterval)\fC [signal]\fP"
+
+.SS "void ROSSubBase::startReceiveSignal ()\fC [signal]\fP"
+
+.SS "void ROSSubBase::startReceiveSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 84 of file rosinterface\&.cpp\&.
+.SS "void ROSSubBase::stopReceiveSignal ()\fC [signal]\fP"
+
+.SS "void ROSSubBase::stopReceiveSlot ()\fC [slot]\fP"
+
+.PP
+Definition at line 92 of file rosinterface\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QReadWriteLock ROSSubBase::lock\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file rosinterface\&.h\&.
+.SS "ros::CallbackQueue ROSSubBase::queue\fC [protected]\fP"
+
+.PP
+Definition at line 118 of file rosinterface\&.h\&.
+.SS "bool ROSSubBase::receiveflag\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file rosinterface\&.h\&.
+.SS "QTimer* ROSSubBase::timer\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file rosinterface\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

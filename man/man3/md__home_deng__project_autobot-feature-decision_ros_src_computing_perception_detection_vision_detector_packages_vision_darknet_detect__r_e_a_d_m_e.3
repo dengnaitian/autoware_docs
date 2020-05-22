@@ -1,0 +1,48 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_detector_packages_vision_darknet_detect__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_detector_packages_vision_darknet_detect__r_e_a_d_m_e \- Vision Darknet Detect 
+Autoware package based on Darknet that supports Yolov3 and Yolov2 image detector\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+NVIDIA GPU with CUDA installed
+.IP "\(bu" 2
+Pretrained \fCYOLOv3\fP or \fCYOLOv2\fP model on COCO dataset, Models found on the \fCYOLO website\fP\&.
+.IP "\(bu" 2
+The weights file must be placed in \fCvision_darknet_detect/darknet/data/\fP\&.
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.IP "  \(bu" 4
+\fCroslaunch vision_darknet_detect vision_yolo3_detect\&.launch\fP
+.IP "  \(bu" 4
+\fCroslaunch vision_darknet_detect vision_yolo2_detect\&.launch\fP
+.PP
+
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Detection/ vision_detector -> \fCvision_darknet_detect\fP You can change the config and weights file, as well as other parameters, by clicking [app]
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescription  \fCscore_threshold\fP*Double* Detections with a confidence value larger than this value will be displayed\&. Default \fC0\&.5\fP\&. \fCnms_threshold\fP*Double*Non-Maximum suppresion area threshold ratio to merge proposals\&. Default \fC0\&.45\fP\&. \fCnetwork_definition_file\fP*String*Network architecture definition configuration file\&. Default \fCyolov3\&.cfg\fP\&. \fCpretrained_model_file\fP*String*Path to pretrained model\&. Default \fCyolov3\&.weights\fP\&. \fCcamera_id\fP*String*Camera workspace\&. Default \fC/\fP\&. \fCimage_src\fP*String*Image source topic\&. Default \fC/image_raw\fP\&. \fCnames_file\fP*String*Path to pretrained model\&. Default \fCcoco\&.names\fP\&. 
+.PP
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/image_raw\fP\fCsensor_msgs/Image\fPSource image stream to perform detection\&. \fC/config/Yolo3\fP\fCautoware_config_msgs/ConfigSSD\fPConfiguration adjustment for threshold\&. 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/detection/vision_objects\fP\fCautoware_msgs::DetectedObjectArray\fPContains the coordinates of the bounding box in image coordinates for detected objects\&. 
+.SS "Video"
+.PP
+\fC\fP 

@@ -1,0 +1,101 @@
+.TH "PlannerHNS::QuarterView" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::QuarterView \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolygonGenerator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQuarterView\fP (const int &min_a, const int &max_a, const int &index)"
+.br
+.ti -1c
+.RI "void \fBInitQuarterView\fP (const int &min_a, const int &max_a, const int &index)"
+.br
+.ti -1c
+.RI "void \fBResetQuarterView\fP ()"
+.br
+.ti -1c
+.RI "bool \fBUpdateQuarterView\fP (const \fBWayPoint\fP &v)"
+.br
+.ti -1c
+.RI "bool \fBGetMaxPoint\fP (\fBWayPoint\fP &maxPoint)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBmin_ang\fP"
+.br
+.ti -1c
+.RI "int \fBmax_ang\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBmax_from_center\fP"
+.br
+.ti -1c
+.RI "bool \fBbFirst\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file PolygonGenerator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::QuarterView::QuarterView (const int & min_a, const int & max_a, const int & index)\fC [inline]\fP"
+
+.PP
+Definition at line 29 of file PolygonGenerator\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool PlannerHNS::QuarterView::GetMaxPoint (\fBWayPoint\fP & maxPoint)\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file PolygonGenerator\&.h\&.
+.SS "void PlannerHNS::QuarterView::InitQuarterView (const int & min_a, const int & max_a, const int & index)\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file PolygonGenerator\&.h\&.
+.SS "void PlannerHNS::QuarterView::ResetQuarterView ()\fC [inline]\fP"
+
+.PP
+Definition at line 45 of file PolygonGenerator\&.h\&.
+.SS "bool PlannerHNS::QuarterView::UpdateQuarterView (const \fBWayPoint\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 50 of file PolygonGenerator\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlannerHNS::QuarterView::bFirst"
+
+.PP
+Definition at line 27 of file PolygonGenerator\&.h\&.
+.SS "int PlannerHNS::QuarterView::id"
+
+.PP
+Definition at line 23 of file PolygonGenerator\&.h\&.
+.SS "int PlannerHNS::QuarterView::max_ang"
+
+.PP
+Definition at line 25 of file PolygonGenerator\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::QuarterView::max_from_center"
+
+.PP
+Definition at line 26 of file PolygonGenerator\&.h\&.
+.SS "int PlannerHNS::QuarterView::min_ang"
+
+.PP
+Definition at line 24 of file PolygonGenerator\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

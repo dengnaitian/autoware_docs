@@ -1,0 +1,229 @@
+.TH "datatypes::EvalCaseResult" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::EvalCaseResult \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EvalCaseResult\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCaseResult\fP { \fBECR_DONT_CARE\fP = 0, \fBECR_LOW\fP = 1, \fBECR_HIGH\fP = 2, \fBECR_DETECTING\fP = 3, \fBECR_FALLING\fP = 4, \fBECR_RAISING\fP = 5, \fBECR_INVALID\fP = 6 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvalCaseResult\fP ()"
+.br
+.ti -1c
+.RI "\fB~EvalCaseResult\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBuiVersionNo\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiNumber\fP"
+.br
+.ti -1c
+.RI "   \fBUINT32\fP \fBudiSysCount\fP"
+.br
+.ti -1c
+.RI "   double \fBdDistScaleFactor\fP"
+.br
+.ti -1c
+.RI "   double \fBdDistScaleOffset\fP"
+.br
+.ti -1c
+.RI "   \fBUINT32\fP \fBuiAngleScaleFactor\fP"
+.br
+.ti -1c
+.RI "   \fBINT32\fP \fBiAngleScaleOffset\fP"
+.br
+.ti -1c
+.RI "} \fBCaseHdr\fP"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBm_eCaseResult\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_sCaseName\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_sComment\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBUINT16\fP \fBuiYear\fP"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiMonth\fP"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiDay\fP"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiHour\fP"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiMinute\fP"
+.br
+.ti -1c
+.RI "   \fBUINT8\fP \fBusiSec\fP"
+.br
+.ti -1c
+.RI "   \fBUINT32\fP \fBudiUSec\fP"
+.br
+.ti -1c
+.RI "} \fBaTimeBlock\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file EvalCaseResult\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::EvalCaseResult::CaseResult\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIECR_DONT_CARE \fP\fP
+.TP
+\fB\fIECR_LOW \fP\fP
+.TP
+\fB\fIECR_HIGH \fP\fP
+.TP
+\fB\fIECR_DETECTING \fP\fP
+.TP
+\fB\fIECR_FALLING \fP\fP
+.TP
+\fB\fIECR_RAISING \fP\fP
+.TP
+\fB\fIECR_INVALID \fP\fP
+.PP
+Definition at line 41 of file EvalCaseResult\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::EvalCaseResult::EvalCaseResult ()"
+
+.PP
+Definition at line 20 of file EvalCaseResult\&.cpp\&.
+.SS "datatypes::EvalCaseResult::~EvalCaseResult ()"
+
+.PP
+Definition at line 34 of file EvalCaseResult\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const \fBUINT32\fP datatypes::EvalCaseResult::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 39 of file EvalCaseResult\&.cpp\&.
+.SS "std::string datatypes::EvalCaseResult::toString () const"
+
+.PP
+Definition at line 48 of file EvalCaseResult\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "struct { \&.\&.\&. }   datatypes::EvalCaseResult::aTimeBlock"
+
+.SS "struct { \&.\&.\&. }   datatypes::EvalCaseResult::CaseHdr"
+
+.SS "double datatypes::EvalCaseResult::dDistScaleFactor"
+
+.PP
+Definition at line 35 of file EvalCaseResult\&.hpp\&.
+.SS "double datatypes::EvalCaseResult::dDistScaleOffset"
+
+.PP
+Definition at line 36 of file EvalCaseResult\&.hpp\&.
+.SS "\fBINT32\fP datatypes::EvalCaseResult::iAngleScaleOffset"
+
+.PP
+Definition at line 38 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::m_eCaseResult"
+
+.PP
+Definition at line 52 of file EvalCaseResult\&.hpp\&.
+.SS "std::string datatypes::EvalCaseResult::m_sCaseName"
+
+.PP
+Definition at line 56 of file EvalCaseResult\&.hpp\&.
+.SS "std::string datatypes::EvalCaseResult::m_sComment"
+
+.PP
+Definition at line 57 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCaseResult::udiSysCount"
+
+.PP
+Definition at line 34 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCaseResult::udiUSec"
+
+.PP
+Definition at line 67 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCaseResult::uiAngleScaleFactor"
+
+.PP
+Definition at line 37 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::EvalCaseResult::uiVersionNo"
+
+.PP
+Definition at line 29 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::EvalCaseResult::uiYear"
+
+.PP
+Definition at line 61 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiDay"
+
+.PP
+Definition at line 63 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiHour"
+
+.PP
+Definition at line 64 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiMinute"
+
+.PP
+Definition at line 65 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiMonth"
+
+.PP
+Definition at line 62 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiNumber"
+
+.PP
+Definition at line 33 of file EvalCaseResult\&.hpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCaseResult::usiSec"
+
+.PP
+Definition at line 66 of file EvalCaseResult\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

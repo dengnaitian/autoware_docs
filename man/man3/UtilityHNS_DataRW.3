@@ -1,0 +1,136 @@
+.TH "UtilityHNS::DataRW" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::DataRW \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataRW\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DataRW\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBWriteKMLFile\fP (const std::string &fileName, const std::vector< std::string > &gps_list)"
+.br
+.ti -1c
+.RI "static void \fBWriteKMLFile\fP (const std::string &fileName, const std::vector< std::vector< std::string > > &gps_list)"
+.br
+.ti -1c
+.RI "static void \fBWriteLogData\fP (const std::string &logFolder, const std::string &logTitle, const std::string &header, const std::vector< std::string > &logData)"
+.br
+.ti -1c
+.RI "static void \fBCreateLoggingFolder\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBLoggingMainfolderName\fP = '/autoware_openplanner_logs/'"
+.br
+.ti -1c
+.RI "static std::string \fBControlLogFolderName\fP = 'ControlLogs/'"
+.br
+.ti -1c
+.RI "static std::string \fBPathLogFolderName\fP = 'TrajectoriesLogs/'"
+.br
+.ti -1c
+.RI "static std::string \fBGlobalPathLogFolderName\fP = 'GlobalPathLogs/'"
+.br
+.ti -1c
+.RI "static std::string \fBStatesLogFolderName\fP = 'BehaviorsLogs/'"
+.br
+.ti -1c
+.RI "static std::string \fBSimulationFolderName\fP = 'SimulationData/'"
+.br
+.ti -1c
+.RI "static std::string \fBKmlMapsFolderName\fP = 'KmlMaps/'"
+.br
+.ti -1c
+.RI "static std::string \fBPredictionFolderName\fP = 'PredictionResults/'"
+.br
+.ti -1c
+.RI "static std::string \fBTrackingFolderName\fP = 'TrackingLogs/'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 40 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::DataRW::DataRW ()"
+
+.PP
+Definition at line 30 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::DataRW::~DataRW ()\fC [virtual]\fP"
+
+.PP
+Definition at line 34 of file DataRW\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void UtilityHNS::DataRW::CreateLoggingFolder ()\fC [static]\fP"
+
+.PP
+Definition at line 38 of file DataRW\&.cpp\&.
+.SS "static void UtilityHNS::DataRW::WriteKMLFile (const std::string & fileName, const std::vector< std::string > & gps_list)\fC [static]\fP"
+
+.SS "static void UtilityHNS::DataRW::WriteKMLFile (const std::string & fileName, const std::vector< std::vector< std::string > > & gps_list)\fC [static]\fP"
+
+.SS "void UtilityHNS::DataRW::WriteLogData (const std::string & logFolder, const std::string & logTitle, const std::string & header, const std::vector< std::string > & logData)\fC [static]\fP"
+
+.PP
+Definition at line 82 of file DataRW\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string UtilityHNS::DataRW::ControlLogFolderName = 'ControlLogs/'\fC [static]\fP"
+
+.PP
+Definition at line 47 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::GlobalPathLogFolderName = 'GlobalPathLogs/'\fC [static]\fP"
+
+.PP
+Definition at line 49 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::KmlMapsFolderName = 'KmlMaps/'\fC [static]\fP"
+
+.PP
+Definition at line 52 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::LoggingMainfolderName = '/autoware_openplanner_logs/'\fC [static]\fP"
+
+.PP
+Definition at line 46 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::PathLogFolderName = 'TrajectoriesLogs/'\fC [static]\fP"
+
+.PP
+Definition at line 48 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::PredictionFolderName = 'PredictionResults/'\fC [static]\fP"
+
+.PP
+Definition at line 53 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::SimulationFolderName = 'SimulationData/'\fC [static]\fP"
+
+.PP
+Definition at line 51 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::StatesLogFolderName = 'BehaviorsLogs/'\fC [static]\fP"
+
+.PP
+Definition at line 50 of file DataRW\&.h\&.
+.SS "std::string UtilityHNS::DataRW::TrackingFolderName = 'TrackingLogs/'\fC [static]\fP"
+
+.PP
+Definition at line 54 of file DataRW\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

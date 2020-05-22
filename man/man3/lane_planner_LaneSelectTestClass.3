@@ -1,0 +1,157 @@
+.TH "lane_planner::LaneSelectTestClass" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lane_planner::LaneSelectTestClass \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <test_lane_select\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLaneSelectTestClass\fP ()"
+.br
+.ti -1c
+.RI "void \fBaccessPublishVehicleLocation\fP (int32_t clst_wp, int32_t larray_id)"
+.br
+.ti -1c
+.RI "void \fBpublishTrafficWaypointsArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBpublishCurrentPose\fP (double x, double y, double \fByaw\fP)"
+.br
+.ti -1c
+.RI "void \fBpublishCurrentVelocity\fP (double vel)"
+.br
+.ti -1c
+.RI "void \fBvehicleLocationCallback\fP (const autoware_msgs::VehicleLocationConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBlsnSpinOnce\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLaneSelectNode\fP * \fBlsn\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::VehicleLocation \fBcb_vehicle_location\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBtraffic_waypoints_array_pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBcurrent_pose_pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBcurrent_velocity_pub\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBvehicle_location_sub\fP"
+.br
+.ti -1c
+.RI "int32_t \fBlane_array_id_\fP = 6587651"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file test_lane_select\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "lane_planner::LaneSelectTestClass::LaneSelectTestClass ()\fC [inline]\fP"
+
+.PP
+Definition at line 27 of file test_lane_select\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void lane_planner::LaneSelectTestClass::accessPublishVehicleLocation (int32_t clst_wp, int32_t larray_id)\fC [inline]\fP"
+
+.PP
+Definition at line 45 of file test_lane_select\&.hpp\&.
+.SS "void lane_planner::LaneSelectTestClass::lsnSpinOnce ()\fC [inline]\fP"
+
+.PP
+Definition at line 96 of file test_lane_select\&.hpp\&.
+.SS "void lane_planner::LaneSelectTestClass::publishCurrentPose (double x, double y, double yaw)\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file test_lane_select\&.hpp\&.
+.SS "void lane_planner::LaneSelectTestClass::publishCurrentVelocity (double vel)\fC [inline]\fP"
+
+.PP
+Definition at line 82 of file test_lane_select\&.hpp\&.
+.SS "void lane_planner::LaneSelectTestClass::publishTrafficWaypointsArray ()\fC [inline]\fP"
+
+.PP
+Definition at line 49 of file test_lane_select\&.hpp\&.
+.SS "void lane_planner::LaneSelectTestClass::vehicleLocationCallback (const autoware_msgs::VehicleLocationConstPtr & msg)\fC [inline]\fP"
+
+.PP
+Definition at line 89 of file test_lane_select\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_msgs::VehicleLocation lane_planner::LaneSelectTestClass::cb_vehicle_location"
+
+.PP
+Definition at line 30 of file test_lane_select\&.hpp\&.
+.SS "ros::Publisher lane_planner::LaneSelectTestClass::current_pose_pub"
+\fBInitial value:\fP
+.PP
+.nf
+=
+      nh\&.advertise<geometry_msgs::PoseStamped>("/current_pose", 0)
+.fi
+.PP
+Definition at line 35 of file test_lane_select\&.hpp\&.
+.SS "ros::Publisher lane_planner::LaneSelectTestClass::current_velocity_pub"
+\fBInitial value:\fP
+.PP
+.nf
+=
+      nh\&.advertise<geometry_msgs::TwistStamped>("/current_velocity", 0)
+.fi
+.PP
+Definition at line 37 of file test_lane_select\&.hpp\&.
+.SS "int32_t lane_planner::LaneSelectTestClass::lane_array_id_ = 6587651"
+
+.PP
+Definition at line 43 of file test_lane_select\&.hpp\&.
+.SS "\fBLaneSelectNode\fP* lane_planner::LaneSelectTestClass::lsn"
+
+.PP
+Definition at line 29 of file test_lane_select\&.hpp\&.
+.SS "ros::NodeHandle lane_planner::LaneSelectTestClass::nh"
+
+.PP
+Definition at line 32 of file test_lane_select\&.hpp\&.
+.SS "ros::Publisher lane_planner::LaneSelectTestClass::traffic_waypoints_array_pub"
+\fBInitial value:\fP
+.PP
+.nf
+=
+      nh\&.advertise<autoware_msgs::LaneArray>("/traffic_waypoints_array", 0)
+.fi
+.PP
+Definition at line 33 of file test_lane_select\&.hpp\&.
+.SS "ros::Subscriber lane_planner::LaneSelectTestClass::vehicle_location_sub"
+\fBInitial value:\fP
+.PP
+.nf
+=
+      nh\&.subscribe("/vehicle_location", 1,
+                   &LaneSelectTestClass::vehicleLocationCallback, this)
+.fi
+.PP
+Definition at line 39 of file test_lane_select\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

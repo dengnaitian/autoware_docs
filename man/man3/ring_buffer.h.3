@@ -1,0 +1,810 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/ring_buffer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/ring_buffer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_types\&.h'\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_ring_buffer\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRING_BUFFER_UNINITIALIZED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_INITIALIZED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_OK\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_ERROR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_MEMORY_ERROR\fP   2"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_SIZE_MISMATCH\fP   3"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_EMPTY\fP   4"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_FULL\fP   5"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_STATIC_TYPE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRING_BUFFER_MALLOC_TYPE\fP   1"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_ring_buffer\fP \fBring_buffer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_init_static\fP (\fBring_buffer\fP *buffer, \fBu8\fP *data_buffer_ptr, \fBu32\fP max_entries, \fBu32\fP entry_size)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_init_malloc\fP (\fBring_buffer\fP *buffer, \fBu32\fP max_entries, \fBu32\fP entry_size)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBring_buffer_count\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBring_buffer_remaining_entries\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_flush\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_write\fP (\fBring_buffer\fP *buffer, \fBu8\fP *entry, \fBu32\fP num_bytes)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_write_multi\fP (\fBring_buffer\fP *buffer, \fBu8\fP *entry_buff, \fBu32\fP num_entries, \fBu32\fP *num_written)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_read\fP (\fBring_buffer\fP *buffer, \fBu8\fP *entry, \fBu32\fP max_bytes)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_read_multi\fP (\fBring_buffer\fP *buffer, \fBu8\fP *entry_buff, \fBu32\fP entry_buff_size, \fBu32\fP num_requested, \fBu32\fP *num_read)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_lookahead_read\fP (\fBring_buffer\fP *buffer, \fBu32\fP offset, \fBu8\fP *entry, \fBu32\fP max_bytes)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_lookahead_read_multi\fP (\fBring_buffer\fP *buffer, \fBu32\fP offset, \fBu8\fP *entry_buff, \fBu32\fP entry_buff_size, \fBu32\fP num_requested, \fBu32\fP *num_read)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBring_buffer_copy\fP (\fBring_buffer\fP *to, \fBring_buffer\fP *from, \fBu32\fP num_entries)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBring_buffer_lookahead_copy\fP (\fBring_buffer\fP *to, \fBu32\fP offset, \fBring_buffer\fP *from, \fBu32\fP num_entries)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_consume_entries\fP (\fBring_buffer\fP *buffer, \fBu32\fP num_entries)"
+.br
+.ti -1c
+.RI "\fBu8\fP * \fBring_buffer_get_first_element_ptr\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_remove_first_element\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu8\fP * \fBring_buffer_get_available_element_ptr\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_increment_count\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBring_buffer_malloc_free\fP (\fBring_buffer\fP *buffer)"
+.br
+.ti -1c
+.RI "void \fB__ring_buffer_reset\fP (\fBring_buffer\fP *buffer)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBring_buffer\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define RING_BUFFER_EMPTY   4"
+
+.PP
+Definition at line 62 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_ERROR   1"
+
+.PP
+Definition at line 59 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_FULL   5"
+
+.PP
+Definition at line 63 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_INITIALIZED   1"
+
+.PP
+Definition at line 56 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_MALLOC_TYPE   1"
+
+.PP
+Definition at line 66 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_MEMORY_ERROR   2"
+
+.PP
+Definition at line 60 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_OK   0"
+
+.PP
+Definition at line 58 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_SIZE_MISMATCH   3"
+
+.PP
+Definition at line 61 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_STATIC_TYPE   0"
+
+.PP
+Definition at line 65 of file ring_buffer\&.h\&.
+.SS "#define RING_BUFFER_UNINITIALIZED   0"
+
+.PP
+Definition at line 55 of file ring_buffer\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_ring_buffer\fP \fBring_buffer\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "void __ring_buffer_reset (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Reset the ring buffer state, stats, and buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Internal Function\&. 
+.PP
+Definition at line 1117 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_consume_entries (\fBring_buffer\fP * buffer, \fBu32\fP num_entries)"
+
+.SH "DESCRIPTION"
+.PP
+Removes \fCnum_entries\fP from the buffer if they exist\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fInum_entries\fP - the number of entries to remove\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of entries removed 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 840 of file ring_buffer\&.c\&.
+.SS "\fBu32\fP ring_buffer_copy (\fBring_buffer\fP * to, \fBring_buffer\fP * from, \fBu32\fP num_entries)"
+
+.SH "DESCRIPTION"
+.PP
+Copy \fCnum_entries\fP between two ring buffers\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *to - pointer to a ring buffer structure to copy to\&. 
+.br
+\fIring_buffer\fP *from - pointer to a ring buffer structure to copy from\&. 
+.br
+\fInum_entries\fP - the number of entries to copy\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of entries copied 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 682 of file ring_buffer\&.c\&.
+.SS "\fBu32\fP ring_buffer_count (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns the number of entries in the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of entries in the buffer, if initialized\&.
+.br
+ 0 Otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 173 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_flush (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Flushes the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Buffer flushed\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 245 of file ring_buffer\&.c\&.
+.SS "\fBu8\fP* ring_buffer_get_available_element_ptr (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Return a pointer to the next available element in the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NULL (0) If the ring buffer pointer is invalid or there are no elements\&.
+.br
+ Otherwise, the pointer to first available element\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This routine should only be used for single-element access!!!
+.br
+Attempting to access multiple elements using this can cause access
+.br
+outside of the array boundaries! 
+.PP
+Definition at line 1023 of file ring_buffer\&.c\&.
+.SS "\fBu8\fP* ring_buffer_get_first_element_ptr (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Return a pointer to the first element in the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+NULL (0) If the ring buffer pointer is invalid or there are no elements\&.
+.br
+ Otherwise, the pointer to first element\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This routine should only be used for single-element access!!!
+.br
+Attempting to access multiple elements using this can cause access
+.br
+outside of the array boundaries! 
+.PP
+Definition at line 930 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_increment_count (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Increments the number of elements in the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Ring buffer invalid\&.
+.br
+.br
+\fIRING_BUFFER_EMPTY\fP Ring buffer full\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Element added\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Used in conjunction with ring_buffer_get_available_element_ptr
+.br
+for pointer write access to ring buffer elements\&. 
+.PP
+Definition at line 1074 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_init_malloc (\fBring_buffer\fP * buffer, \fBu32\fP max_entries, \fBu32\fP entry_size)"
+
+.SH "DESCRIPTION"
+.PP
+Initialize a ring buffer using malloc to allocate the buffer from the heap\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu32\fP max_entries - maximum entries the ring buffer may contain\&. 
+.br
+\fIu32\fP entry_size - size of each entry (bytes)\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Buffer initialized\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 120 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_init_static (\fBring_buffer\fP * buffer, \fBu8\fP * data_buffer_ptr, \fBu32\fP max_entries, \fBu32\fP entry_size)"
+
+.SH "DESCRIPTION"
+.PP
+Initialize a ring buffer with a static memory location\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu8\fP *data_buffer_ptr - data pointer (must be allocated and size = \fCmax_entries\fP * \fCentry_size\fP)\&. 
+.br
+\fIu32\fP max_entries - maximum entries the ring buffer may contain\&. 
+.br
+\fIu32\fP entry_size - size of each entry (bytes)\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Buffer initialized\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 67 of file ring_buffer\&.c\&.
+.SS "\fBu32\fP ring_buffer_lookahead_copy (\fBring_buffer\fP * to, \fBu32\fP offset, \fBring_buffer\fP * from, \fBu32\fP num_entries)"
+
+.SH "DESCRIPTION"
+.PP
+Copy \fCnum_entries\fP between two ring buffers without consuming the entries\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *to - pointer to a ring buffer structure to copy to\&. 
+.br
+\fIu32\fP offset - offset from the first element to start the copy\&. 
+.br
+\fIring_buffer\fP *from - pointer to a ring buffer structure to copy from\&. 
+.br
+\fInum_entries\fP - the number of entries to copy\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of entries copied 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 753 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_lookahead_read (\fBring_buffer\fP * buffer, \fBu32\fP offset, \fBu8\fP * entry, \fBu32\fP max_bytes)"
+
+.SH "DESCRIPTION"
+.PP
+Read an entry from the ring buffer without consuming it\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu32\fP offset - offset from the head of the ring buffer to read\&. 
+.br
+\fIu8\fP *entry - pointer to data buffer where the entry will be stored\&. 
+.br
+\fIu32\fP max_bytes - maximum size of the data buffer\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entry not read, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_FULL\fP Entry not read, the buffer is empty\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entry not read, max_bytes is smaller than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entries read\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 478 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_lookahead_read_multi (\fBring_buffer\fP * buffer, \fBu32\fP offset, \fBu8\fP * entry_buff, \fBu32\fP entry_buff_size, \fBu32\fP num_requested, \fBu32\fP * num_read)"
+
+.SH "DESCRIPTION"
+.PP
+Read \fCnum_requested\fP entries from the ring buffer without consuming them\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu32\fP offset - offset from the head of the ring buffer to read\&. 
+.br
+\fIu8\fP *entry_buff - pointer to data buffer where the entries will be stored\&. 
+.br
+\fIu32\fP entry_buff_size - maximum size of the data buffer in bytes\&. 
+.br
+\fIu32\fP num_requested - the number of entries requested\&. 
+.br
+\fIu32\fP num_read - the number of entries actually read\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entry not read, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_EMPTY\fP Entry not read, the buffer is empty\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entry not read, max_bytes is smaller than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entries read\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 612 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_malloc_free (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Return the allocated memory to the heap\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Buffer not initialized or not malloc'd\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Buffer freed\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 890 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_read (\fBring_buffer\fP * buffer, \fBu8\fP * entry, \fBu32\fP max_bytes)"
+
+.SH "DESCRIPTION"
+.PP
+Read a single entry from the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu8\fP *entry - pointer to data buffer where the entry will be stored\&. 
+.br
+\fIu32\fP max_bytes - maximum size of the data buffer\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entry not read, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_FULL\fP Entry not read, the buffer is empty\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entry not read, max_bytes is smaller than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entry read\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 428 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_read_multi (\fBring_buffer\fP * buffer, \fBu8\fP * entry_buff, \fBu32\fP entry_buff_size, \fBu32\fP num_requested, \fBu32\fP * num_read)"
+
+.SH "DESCRIPTION"
+.PP
+Read \fCnum_requested\fP entries from the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu8\fP *entry - pointer to data buffer where the entries will be stored\&. 
+.br
+\fIu32\fP entry_buff_size - maximum size of the data buffer in bytes\&. 
+.br
+\fIu32\fP num_requested - the number of entries requested\&. 
+.br
+\fIu32\fP num_read - the number of entries actually read\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entry not read, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_EMPTY\fP Entry not read, the buffer is empty\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entry not read, max_bytes is smaller than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entries read\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 546 of file ring_buffer\&.c\&.
+.SS "\fBu32\fP ring_buffer_remaining_entries (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Returns the number of empty entries in the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of empty entries in the buffer, if initialized\&.
+.br
+ 0 Otherwise\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 209 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_remove_first_element (\fBring_buffer\fP * buffer)"
+
+.SH "DESCRIPTION"
+.PP
+Removes the first element of the ring buffer if it exists\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Ring buffer invalid\&.
+.br
+.br
+\fIRING_BUFFER_EMPTY\fP Ring buffer empty\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Element removed\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Used in conjunction with ring_buffer_get_first_element_ptr
+.br
+for pointer read access to ring buffer elements\&. 
+.PP
+Definition at line 972 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_write (\fBring_buffer\fP * buffer, \fBu8\fP * entry, \fBu32\fP num_bytes)"
+
+.SH "DESCRIPTION"
+.PP
+Write \fCnum_bytes\fP of a single entry to the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu8\fP *entry - pointer to memory buffer holding the entry\&. 
+.br
+\fIu32\fP num_bytes - number of bytes to write\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entry not written, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_FULL\fP Entry not written, the buffer is full\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entry not written, num_bytes is larger than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entry written\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fCnum_bytes\fP included for ring buffers with variable entry sizes (e\&.g\&. strings)\&. \fCnum_bytes\fP must be less than the max entry size\&. 
+.PP
+Definition at line 289 of file ring_buffer\&.c\&.
+.SS "\fBu16\fP ring_buffer_write_multi (\fBring_buffer\fP * buffer, \fBu8\fP * entry_buff, \fBu32\fP num_entries, \fBu32\fP * num_written)"
+
+.SH "DESCRIPTION"
+.PP
+Write \fCnum_entries\fP to the ring buffer\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIring_buffer\fP *buffer - pointer to a ring buffer structure\&. 
+.br
+\fIu8\fP *entry_buff - pointer to memory buffer holding the entries\&. 
+.br
+\fIu32\fP num_entries - number of entries to write\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIRING_BUFFER_ERROR\fP Entries not written, buffer not initialized\&.
+.br
+.br
+\fIRING_BUFFER_FULL\fP Entries not written, the buffer is full\&.
+.br
+.br
+\fIRING_BUFFER_MEMORY_ERROR\fP Entries not written, num_bytes is larger than the ring buffer entry size\&.
+.br
+.br
+\fIRING_BUFFER_OK\fP Entries written\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+All entries are assumed to be of size \fCentry_size\fP, which is set by the ring_buffer_init_xxxxxx call\&. 
+.PP
+Definition at line 357 of file ring_buffer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

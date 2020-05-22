@@ -1,0 +1,191 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/data.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/data.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'darknet\&.h'\fP
+.br
+\fC#include 'matrix\&.h'\fP
+.br
+\fC#include 'list\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'tree\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBload_data_blocking\fP (\fBload_args\fP args)"
+.br
+.ti -1c
+.RI "void \fBprint_letters\fP (float *pred, int n)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_captcha\fP (char **paths, int n, int m, int \fBk\fP, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_captcha_encode\fP (char **paths, int n, int m, int w, int h)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_detection\fP (int n, char **paths, int m, int w, int h, int boxes, int classes, float jitter, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_tag\fP (char **paths, int n, int m, int \fBk\fP, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBload_image_augment_paths\fP (char **paths, int n, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_super\fP (char **paths, int n, int m, int w, int h, int scale)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_augment\fP (char **paths, int n, int m, char **labels, int \fBk\fP, \fBtree\fP *hierarchy, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_regression\fP (char **paths, int n, int m, int classes, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_go\fP (char *filename)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_data_writing\fP (char **paths, int n, int m, int w, int h, int out_w, int out_h)"
+.br
+.ti -1c
+.RI "void \fBget_random_batch\fP (\fBdata\fP d, int n, float *X, float *y)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBget_data_part\fP (\fBdata\fP d, int part, int total)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBget_random_data\fP (\fBdata\fP d, int num)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBload_categorical_data_csv\fP (char *filename, int target, int \fBk\fP)"
+.br
+.ti -1c
+.RI "void \fBnormalize_data_rows\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "void \fBscale_data_rows\fP (\fBdata\fP d, float s)"
+.br
+.ti -1c
+.RI "void \fBtranslate_data_rows\fP (\fBdata\fP d, float s)"
+.br
+.ti -1c
+.RI "void \fBrandomize_data\fP (\fBdata\fP d)"
+.br
+.ti -1c
+.RI "\fBdata\fP * \fBsplit_data\fP (\fBdata\fP d, int part, int total)"
+.br
+.ti -1c
+.RI "\fBdata\fP \fBconcat_datas\fP (\fBdata\fP *d, int n)"
+.br
+.ti -1c
+.RI "void \fBfill_truth\fP (char *path, char **labels, int \fBk\fP, float *truth)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBdata\fP concat_datas (\fBdata\fP * d, int n)"
+
+.PP
+Definition at line 1311 of file data\&.c\&.
+.SS "void fill_truth (char * path, char ** labels, int k, float * truth)"
+
+.PP
+Definition at line 504 of file data\&.c\&.
+.SS "\fBdata\fP get_data_part (\fBdata\fP d, int part, int total)"
+
+.PP
+Definition at line 1531 of file data\&.c\&.
+.SS "void get_random_batch (\fBdata\fP d, int n, float * X, float * y)"
+
+.PP
+Definition at line 1367 of file data\&.c\&.
+.SS "\fBdata\fP get_random_data (\fBdata\fP d, int num)"
+
+.PP
+Definition at line 1544 of file data\&.c\&.
+.SS "\fBdata\fP load_categorical_data_csv (char * filename, int target, int k)"
+
+.PP
+Definition at line 1323 of file data\&.c\&.
+.SS "\fBdata\fP load_data_augment (char ** paths, int n, int m, char ** labels, int k, \fBtree\fP * hierarchy, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+
+.PP
+Definition at line 1258 of file data\&.c\&.
+.SS "void load_data_blocking (\fBload_args\fP args)"
+
+.PP
+Definition at line 1091 of file data\&.c\&.
+.SS "\fBdata\fP load_data_captcha (char ** paths, int n, int m, int k, int w, int h)"
+
+.PP
+Definition at line 477 of file data\&.c\&.
+.SS "\fBdata\fP load_data_captcha_encode (char ** paths, int n, int m, int w, int h)"
+
+.PP
+Definition at line 492 of file data\&.c\&.
+.SS "\fBdata\fP load_data_detection (int n, char ** paths, int m, int w, int h, int boxes, int classes, float jitter, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 957 of file data\&.c\&.
+.SS "\fBdata\fP load_data_regression (char ** paths, int n, int m, int classes, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1177 of file data\&.c\&.
+.SS "\fBdata\fP load_data_super (char ** paths, int n, int m, int w, int h, int scale)"
+
+.PP
+Definition at line 1147 of file data\&.c\&.
+.SS "\fBdata\fP load_data_tag (char ** paths, int n, int m, int k, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1271 of file data\&.c\&.
+.SS "\fBdata\fP load_data_writing (char ** paths, int n, int m, int w, int h, int out_w, int out_h)"
+
+.PP
+Definition at line 1107 of file data\&.c\&.
+.SS "\fBdata\fP load_go (char * filename)"
+
+.PP
+Definition at line 1432 of file data\&.c\&.
+.SS "\fBmatrix\fP load_image_augment_paths (char ** paths, int n, int min, int max, int size, float angle, float aspect, float hue, float saturation, float exposure, int center)"
+
+.PP
+Definition at line 105 of file data\&.c\&.
+.SS "void normalize_data_rows (\fBdata\fP d)"
+
+.PP
+Definition at line 1523 of file data\&.c\&.
+.SS "void print_letters (float * pred, int n)"
+
+.PP
+Definition at line 452 of file data\&.c\&.
+.SS "void randomize_data (\fBdata\fP d)"
+
+.PP
+Definition at line 1479 of file data\&.c\&.
+.SS "void scale_data_rows (\fBdata\fP d, float s)"
+
+.PP
+Definition at line 1494 of file data\&.c\&.
+.SS "\fBdata\fP* split_data (\fBdata\fP d, int part, int total)"
+
+.PP
+Definition at line 1567 of file data\&.c\&.
+.SS "void translate_data_rows (\fBdata\fP d, float s)"
+
+.PP
+Definition at line 1502 of file data\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

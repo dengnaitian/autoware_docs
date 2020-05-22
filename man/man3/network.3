@@ -1,0 +1,401 @@
+.TH "network" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+network \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <darknet\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBn\fP"
+.br
+.ti -1c
+.RI "int \fBbatch\fP"
+.br
+.ti -1c
+.RI "size_t * \fBseen\fP"
+.br
+.ti -1c
+.RI "int * \fBt\fP"
+.br
+.ti -1c
+.RI "float \fBepoch\fP"
+.br
+.ti -1c
+.RI "int \fBsubdivisions\fP"
+.br
+.ti -1c
+.RI "\fBlayer\fP * \fBlayers\fP"
+.br
+.ti -1c
+.RI "float * \fBoutput\fP"
+.br
+.ti -1c
+.RI "\fBlearning_rate_policy\fP \fBpolicy\fP"
+.br
+.ti -1c
+.RI "float \fBlearning_rate\fP"
+.br
+.ti -1c
+.RI "float \fBmomentum\fP"
+.br
+.ti -1c
+.RI "float \fBdecay\fP"
+.br
+.ti -1c
+.RI "float \fBgamma\fP"
+.br
+.ti -1c
+.RI "float \fBscale\fP"
+.br
+.ti -1c
+.RI "float \fBpower\fP"
+.br
+.ti -1c
+.RI "int \fBtime_steps\fP"
+.br
+.ti -1c
+.RI "int \fBstep\fP"
+.br
+.ti -1c
+.RI "int \fBmax_batches\fP"
+.br
+.ti -1c
+.RI "float * \fBscales\fP"
+.br
+.ti -1c
+.RI "int * \fBsteps\fP"
+.br
+.ti -1c
+.RI "int \fBnum_steps\fP"
+.br
+.ti -1c
+.RI "int \fBburn_in\fP"
+.br
+.ti -1c
+.RI "int \fBadam\fP"
+.br
+.ti -1c
+.RI "float \fBB1\fP"
+.br
+.ti -1c
+.RI "float \fBB2\fP"
+.br
+.ti -1c
+.RI "float \fBeps\fP"
+.br
+.ti -1c
+.RI "int \fBinputs\fP"
+.br
+.ti -1c
+.RI "int \fBoutputs\fP"
+.br
+.ti -1c
+.RI "int \fBtruths\fP"
+.br
+.ti -1c
+.RI "int \fBnotruth\fP"
+.br
+.ti -1c
+.RI "int \fBh\fP"
+.br
+.ti -1c
+.RI "int \fBw\fP"
+.br
+.ti -1c
+.RI "int \fBc\fP"
+.br
+.ti -1c
+.RI "int \fBmax_crop\fP"
+.br
+.ti -1c
+.RI "int \fBmin_crop\fP"
+.br
+.ti -1c
+.RI "float \fBmax_ratio\fP"
+.br
+.ti -1c
+.RI "float \fBmin_ratio\fP"
+.br
+.ti -1c
+.RI "int \fBcenter\fP"
+.br
+.ti -1c
+.RI "float \fBangle\fP"
+.br
+.ti -1c
+.RI "float \fBaspect\fP"
+.br
+.ti -1c
+.RI "float \fBexposure\fP"
+.br
+.ti -1c
+.RI "float \fBsaturation\fP"
+.br
+.ti -1c
+.RI "float \fBhue\fP"
+.br
+.ti -1c
+.RI "int \fBrandom\fP"
+.br
+.ti -1c
+.RI "int \fBgpu_index\fP"
+.br
+.ti -1c
+.RI "\fBtree\fP * \fBhierarchy\fP"
+.br
+.ti -1c
+.RI "float * \fBinput\fP"
+.br
+.ti -1c
+.RI "float * \fBtruth\fP"
+.br
+.ti -1c
+.RI "float * \fBdelta\fP"
+.br
+.ti -1c
+.RI "float * \fBworkspace\fP"
+.br
+.ti -1c
+.RI "int \fBtrain\fP"
+.br
+.ti -1c
+.RI "int \fBindex\fP"
+.br
+.ti -1c
+.RI "float * \fBcost\fP"
+.br
+.ti -1c
+.RI "float \fBclip\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 429 of file darknet\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int network::adam"
+
+.PP
+Definition at line 454 of file darknet\&.h\&.
+.SS "float network::angle"
+
+.PP
+Definition at line 469 of file darknet\&.h\&.
+.SS "float network::aspect"
+
+.PP
+Definition at line 470 of file darknet\&.h\&.
+.SS "float network::B1"
+
+.PP
+Definition at line 455 of file darknet\&.h\&.
+.SS "float network::B2"
+
+.PP
+Definition at line 456 of file darknet\&.h\&.
+.SS "int network::batch"
+
+.PP
+Definition at line 431 of file darknet\&.h\&.
+.SS "int network::burn_in"
+
+.PP
+Definition at line 452 of file darknet\&.h\&.
+.SS "int network::c"
+
+.PP
+Definition at line 463 of file darknet\&.h\&.
+.SS "int network::center"
+
+.PP
+Definition at line 468 of file darknet\&.h\&.
+.SS "float network::clip"
+
+.PP
+Definition at line 486 of file darknet\&.h\&.
+.SS "float* network::cost"
+
+.PP
+Definition at line 485 of file darknet\&.h\&.
+.SS "float network::decay"
+
+.PP
+Definition at line 442 of file darknet\&.h\&.
+.SS "float* network::delta"
+
+.PP
+Definition at line 481 of file darknet\&.h\&.
+.SS "float network::epoch"
+
+.PP
+Definition at line 434 of file darknet\&.h\&.
+.SS "float network::eps"
+
+.PP
+Definition at line 457 of file darknet\&.h\&.
+.SS "float network::exposure"
+
+.PP
+Definition at line 471 of file darknet\&.h\&.
+.SS "float network::gamma"
+
+.PP
+Definition at line 443 of file darknet\&.h\&.
+.SS "int network::gpu_index"
+
+.PP
+Definition at line 476 of file darknet\&.h\&.
+.SS "int network::h"
+
+.PP
+Definition at line 463 of file darknet\&.h\&.
+.SS "\fBtree\fP* network::hierarchy"
+
+.PP
+Definition at line 477 of file darknet\&.h\&.
+.SS "float network::hue"
+
+.PP
+Definition at line 473 of file darknet\&.h\&.
+.SS "int network::index"
+
+.PP
+Definition at line 484 of file darknet\&.h\&.
+.SS "float* network::input"
+
+.PP
+Definition at line 479 of file darknet\&.h\&.
+.SS "int network::inputs"
+
+.PP
+Definition at line 459 of file darknet\&.h\&.
+.SS "\fBlayer\fP* network::layers"
+
+.PP
+Definition at line 436 of file darknet\&.h\&.
+.SS "float network::learning_rate"
+
+.PP
+Definition at line 440 of file darknet\&.h\&.
+.SS "int network::max_batches"
+
+.PP
+Definition at line 448 of file darknet\&.h\&.
+.SS "int network::max_crop"
+
+.PP
+Definition at line 464 of file darknet\&.h\&.
+.SS "float network::max_ratio"
+
+.PP
+Definition at line 466 of file darknet\&.h\&.
+.SS "int network::min_crop"
+
+.PP
+Definition at line 465 of file darknet\&.h\&.
+.SS "float network::min_ratio"
+
+.PP
+Definition at line 467 of file darknet\&.h\&.
+.SS "float network::momentum"
+
+.PP
+Definition at line 441 of file darknet\&.h\&.
+.SS "int network::n"
+
+.PP
+Definition at line 430 of file darknet\&.h\&.
+.SS "int network::notruth"
+
+.PP
+Definition at line 462 of file darknet\&.h\&.
+.SS "int network::num_steps"
+
+.PP
+Definition at line 451 of file darknet\&.h\&.
+.SS "float* network::output"
+
+.PP
+Definition at line 437 of file darknet\&.h\&.
+.SS "int network::outputs"
+
+.PP
+Definition at line 460 of file darknet\&.h\&.
+.SS "\fBlearning_rate_policy\fP network::policy"
+
+.PP
+Definition at line 438 of file darknet\&.h\&.
+.SS "float network::power"
+
+.PP
+Definition at line 445 of file darknet\&.h\&.
+.SS "int network::random"
+
+.PP
+Definition at line 474 of file darknet\&.h\&.
+.SS "float network::saturation"
+
+.PP
+Definition at line 472 of file darknet\&.h\&.
+.SS "float network::scale"
+
+.PP
+Definition at line 444 of file darknet\&.h\&.
+.SS "float* network::scales"
+
+.PP
+Definition at line 449 of file darknet\&.h\&.
+.SS "size_t* network::seen"
+
+.PP
+Definition at line 432 of file darknet\&.h\&.
+.SS "int network::step"
+
+.PP
+Definition at line 447 of file darknet\&.h\&.
+.SS "int* network::steps"
+
+.PP
+Definition at line 450 of file darknet\&.h\&.
+.SS "int network::subdivisions"
+
+.PP
+Definition at line 435 of file darknet\&.h\&.
+.SS "int* network::t"
+
+.PP
+Definition at line 433 of file darknet\&.h\&.
+.SS "int network::time_steps"
+
+.PP
+Definition at line 446 of file darknet\&.h\&.
+.SS "int network::train"
+
+.PP
+Definition at line 483 of file darknet\&.h\&.
+.SS "float* network::truth"
+
+.PP
+Definition at line 480 of file darknet\&.h\&.
+.SS "int network::truths"
+
+.PP
+Definition at line 461 of file darknet\&.h\&.
+.SS "int network::w"
+
+.PP
+Definition at line 463 of file darknet\&.h\&.
+.SS "float* network::workspace"
+
+.PP
+Definition at line 482 of file darknet\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

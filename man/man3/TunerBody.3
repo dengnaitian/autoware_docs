@@ -1,0 +1,114 @@
+.TH "TunerBody" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TunerBody \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tunerBody\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBsignal_state\fP { \fBGREEN\fP = 0, \fBYELLOW\fP = 1, \fBRED\fP = 2 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTunerBody\fP ()"
+.br
+.ti -1c
+.RI "\fB~TunerBody\fP ()"
+.br
+.ti -1c
+.RI "void \fBlaunch\fP (void)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetColor\fP (\fBsignal_state\fP state)"
+.br
+.ti -1c
+.RI "static void \fBsetClickedPoint\fP (\fBcv::Point\fP pt)"
+.br
+.ti -1c
+.RI "static void \fBsaveResult\fP (std::string fileName)"
+.br
+.ti -1c
+.RI "static void \fBopenSetting\fP (std::string fileName)"
+.br
+.ti -1c
+.RI "static void \fBsetUpdateImage\fP (void)"
+.br
+.ti -1c
+.RI "static void \fBimage_raw_callBack\fP (const sensor_msgs::Image &image_msg)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 31 of file tunerBody\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBTunerBody::signal_state\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIYELLOW \fP\fP
+.TP
+\fB\fIRED \fP\fP
+.PP
+Definition at line 51 of file tunerBody\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TunerBody::TunerBody ()"
+
+.PP
+Definition at line 84 of file tunerBody\&.cpp\&.
+.SS "TunerBody::~TunerBody ()"
+
+.PP
+Definition at line 129 of file tunerBody\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TunerBody::image_raw_callBack (const sensor_msgs::Image & image_msg)\fC [static]\fP"
+
+.PP
+Definition at line 135 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::launch (void)"
+
+.PP
+Definition at line 146 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::openSetting (std::string fileName)\fC [static]\fP"
+
+.PP
+Definition at line 479 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::saveResult (std::string fileName)\fC [static]\fP"
+
+.PP
+Definition at line 352 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::setClickedPoint (\fBcv::Point\fP pt)\fC [static]\fP"
+
+.PP
+Definition at line 345 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::setColor (\fBsignal_state\fP state)\fC [static]\fP"
+
+.PP
+Definition at line 309 of file tunerBody\&.cpp\&.
+.SS "void TunerBody::setUpdateImage (void)\fC [static]\fP"
+
+.PP
+Definition at line 574 of file tunerBody\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

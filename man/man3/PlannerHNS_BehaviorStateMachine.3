@@ -1,0 +1,187 @@
+.TH "PlannerHNS::BehaviorStateMachine" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::BehaviorStateMachine \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BehaviorStateMachine\&.h>\fP
+.PP
+Inherited by \fBPlannerHNS::FollowState\fP, \fBPlannerHNS::FollowStateII\fP, \fBPlannerHNS::ForwardState\fP, \fBPlannerHNS::ForwardStateII\fP, \fBPlannerHNS::GoalState\fP, \fBPlannerHNS::GoalStateII\fP, \fBPlannerHNS::InitState\fP, \fBPlannerHNS::InitStateII\fP, \fBPlannerHNS::LaneChangeLeftStateII\fP, \fBPlannerHNS::LaneChangeRightStateII\fP, \fBPlannerHNS::LaneChangeStateII\fP, \fBPlannerHNS::MergeStateII\fP, \fBPlannerHNS::MissionAccomplishedState\fP, \fBPlannerHNS::MissionAccomplishedStateII\fP, \fBPlannerHNS::ParkInLaneStateII\fP, \fBPlannerHNS::ParkOnSideStateII\fP, \fBPlannerHNS::StopLineStopStateII\fP, \fBPlannerHNS::StopLineWaitStateII\fP, \fBPlannerHNS::StopSignStopState\fP, \fBPlannerHNS::StopSignStopStateII\fP, \fBPlannerHNS::StopSignWaitState\fP, \fBPlannerHNS::StopSignWaitStateII\fP, \fBPlannerHNS::StopState\fP, \fBPlannerHNS::SwerveState\fP, \fBPlannerHNS::SwerveStateII\fP, \fBPlannerHNS::TrafficLightStopState\fP, \fBPlannerHNS::TrafficLightStopStateII\fP, \fBPlannerHNS::TrafficLightWaitState\fP, \fBPlannerHNS::TrafficLightWaitStateII\fP, and \fBPlannerHNS::WaitState\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBBehaviorStateMachine\fP * \fBGetNextState\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBResetTimer\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBInsertNextState\fP (\fBBehaviorStateMachine\fP *\fBnextState\fP)"
+.br
+.ti -1c
+.RI "\fBBehaviorStateMachine\fP (\fBPlanningParams\fP *pParams, \fBPreCalculatedConditions\fP *pPreCalcVal, \fBBehaviorStateMachine\fP *\fBnextState\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~BehaviorStateMachine\fP ()"
+.br
+.ti -1c
+.RI "\fBPreCalculatedConditions\fP * \fBGetCalcParams\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetBehaviorsParams\fP (\fBPlanningParams\fP *pParams)"
+.br
+.ti -1c
+.RI "\fBBehaviorStateMachine\fP * \fBFindBehaviorState\fP (const \fBSTATE_TYPE\fP &behavior)"
+.br
+.ti -1c
+.RI "void \fBUpdateLogCount\fP (\fBBehaviorStateMachine\fP *pState)"
+.br
+.ti -1c
+.RI "\fBBehaviorStateMachine\fP * \fBFindBestState\fP (int nMinCount)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSTATE_TYPE\fP \fBm_Behavior\fP"
+.br
+.ti -1c
+.RI "int \fBm_currentStopSignID\fP"
+.br
+.ti -1c
+.RI "int \fBm_currentTrafficLightID\fP"
+.br
+.ti -1c
+.RI "double \fBdecisionMakingTime\fP"
+.br
+.ti -1c
+.RI "int \fBdecisionMakingCount\fP"
+.br
+.ti -1c
+.RI "double \fBm_zero_velocity\fP"
+.br
+.ti -1c
+.RI "bool \fBm_overtaking\fP"
+.br
+.ti -1c
+.RI "\fBPreCalculatedConditions\fP * \fBm_pCalculatedValues\fP"
+.br
+.ti -1c
+.RI "\fBPlanningParams\fP * \fBm_pParams\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_StateTimer\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBBehaviorStateMachine\fP * > \fBpNextStates\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file BehaviorStateMachine\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::BehaviorStateMachine::BehaviorStateMachine (\fBPlanningParams\fP * pParams, \fBPreCalculatedConditions\fP * pPreCalcVal, \fBBehaviorStateMachine\fP * nextState)"
+
+.PP
+Definition at line 18 of file BehaviorStateMachine\&.cpp\&.
+.SS "PlannerHNS::BehaviorStateMachine::~BehaviorStateMachine ()\fC [virtual]\fP"
+
+.PP
+Definition at line 120 of file BehaviorStateMachine\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBehaviorStateMachine\fP * PlannerHNS::BehaviorStateMachine::FindBehaviorState (const \fBSTATE_TYPE\fP & behavior)"
+
+.PP
+Definition at line 89 of file BehaviorStateMachine\&.cpp\&.
+.SS "\fBBehaviorStateMachine\fP * PlannerHNS::BehaviorStateMachine::FindBestState (int nMinCount)"
+
+.PP
+Definition at line 75 of file BehaviorStateMachine\&.cpp\&.
+.SS "\fBPreCalculatedConditions\fP* PlannerHNS::BehaviorStateMachine::GetCalcParams ()\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file BehaviorStateMachine\&.h\&.
+.SS "virtual \fBBehaviorStateMachine\fP* PlannerHNS::BehaviorStateMachine::GetNextState ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBPlannerHNS::MergeStateII\fP, \fBPlannerHNS::ParkOnSideStateII\fP, \fBPlannerHNS::ParkInLaneStateII\fP, \fBPlannerHNS::LaneChangeRightStateII\fP, \fBPlannerHNS::LaneChangeLeftStateII\fP, \fBPlannerHNS::StopLineWaitStateII\fP, \fBPlannerHNS::StopLineStopStateII\fP, \fBPlannerHNS::LaneChangeStateII\fP, \fBPlannerHNS::TrafficLightWaitStateII\fP, \fBPlannerHNS::TrafficLightStopStateII\fP, \fBPlannerHNS::GoalStateII\fP, \fBPlannerHNS::GoalState\fP, \fBPlannerHNS::InitStateII\fP, \fBPlannerHNS::InitState\fP, \fBPlannerHNS::WaitState\fP, \fBPlannerHNS::StopSignWaitStateII\fP, \fBPlannerHNS::StopSignWaitState\fP, \fBPlannerHNS::StopSignStopStateII\fP, \fBPlannerHNS::StopSignStopState\fP, \fBPlannerHNS::TrafficLightWaitState\fP, \fBPlannerHNS::TrafficLightStopState\fP, \fBPlannerHNS::StopState\fP, \fBPlannerHNS::SwerveStateII\fP, \fBPlannerHNS::SwerveState\fP, \fBPlannerHNS::FollowStateII\fP, \fBPlannerHNS::FollowState\fP, \fBPlannerHNS::MissionAccomplishedStateII\fP, \fBPlannerHNS::MissionAccomplishedState\fP, \fBPlannerHNS::ForwardStateII\fP, and \fBPlannerHNS::ForwardState\fP\&.
+.SS "void PlannerHNS::BehaviorStateMachine::Init ()\fC [virtual]\fP"
+
+.PP
+Definition at line 110 of file BehaviorStateMachine\&.cpp\&.
+.SS "void PlannerHNS::BehaviorStateMachine::InsertNextState (\fBBehaviorStateMachine\fP * nextState)\fC [virtual]\fP"
+
+.PP
+Definition at line 48 of file BehaviorStateMachine\&.cpp\&.
+.SS "void PlannerHNS::BehaviorStateMachine::ResetTimer ()\fC [virtual]\fP"
+
+.PP
+Definition at line 115 of file BehaviorStateMachine\&.cpp\&.
+.SS "void PlannerHNS::BehaviorStateMachine::SetBehaviorsParams (\fBPlanningParams\fP * pParams)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file BehaviorStateMachine\&.h\&.
+.SS "void PlannerHNS::BehaviorStateMachine::UpdateLogCount (\fBBehaviorStateMachine\fP * pState)"
+
+.PP
+Definition at line 54 of file BehaviorStateMachine\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int PlannerHNS::BehaviorStateMachine::decisionMakingCount"
+
+.PP
+Definition at line 30 of file BehaviorStateMachine\&.h\&.
+.SS "double PlannerHNS::BehaviorStateMachine::decisionMakingTime"
+
+.PP
+Definition at line 29 of file BehaviorStateMachine\&.h\&.
+.SS "\fBSTATE_TYPE\fP PlannerHNS::BehaviorStateMachine::m_Behavior"
+
+.PP
+Definition at line 26 of file BehaviorStateMachine\&.h\&.
+.SS "int PlannerHNS::BehaviorStateMachine::m_currentStopSignID"
+
+.PP
+Definition at line 27 of file BehaviorStateMachine\&.h\&.
+.SS "int PlannerHNS::BehaviorStateMachine::m_currentTrafficLightID"
+
+.PP
+Definition at line 28 of file BehaviorStateMachine\&.h\&.
+.SS "bool PlannerHNS::BehaviorStateMachine::m_overtaking"
+
+.PP
+Definition at line 33 of file BehaviorStateMachine\&.h\&.
+.SS "\fBPreCalculatedConditions\fP* PlannerHNS::BehaviorStateMachine::m_pCalculatedValues"
+
+.PP
+Definition at line 52 of file BehaviorStateMachine\&.h\&.
+.SS "\fBPlanningParams\fP* PlannerHNS::BehaviorStateMachine::m_pParams"
+
+.PP
+Definition at line 53 of file BehaviorStateMachine\&.h\&.
+.SS "timespec PlannerHNS::BehaviorStateMachine::m_StateTimer"
+
+.PP
+Definition at line 54 of file BehaviorStateMachine\&.h\&.
+.SS "double PlannerHNS::BehaviorStateMachine::m_zero_velocity"
+
+.PP
+Definition at line 31 of file BehaviorStateMachine\&.h\&.
+.SS "std::vector<\fBBehaviorStateMachine\fP*> PlannerHNS::BehaviorStateMachine::pNextStates"
+
+.PP
+Definition at line 55 of file BehaviorStateMachine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

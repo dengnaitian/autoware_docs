@@ -1,0 +1,177 @@
+.TH "tarfile_calibration" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tarfile_calibration \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBwaitkey\fP ()"
+.br
+.ti -1c
+.RI "def \fBdisplay\fP (win_name, img)"
+.br
+.ti -1c
+.RI "def \fBcal_from_tarfile\fP (\fBboards\fP, \fBtarname\fP, mono=\fBFalse\fP, upload=\fBFalse\fP, \fBcalib_flags\fP=0, visualize=\fBFalse\fP, alpha=1\&.0)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBparser\fP = OptionParser('%prog TARFILE [ opts ]')"
+.br
+.ti -1c
+.RI "\fBdefault\fP"
+.br
+.ti -1c
+.RI "\fBFalse\fP"
+.br
+.ti -1c
+.RI "\fBaction\fP"
+.br
+.ti -1c
+.RI "\fBdest\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.ti -1c
+.RI "\fBtype\fP"
+.br
+.ti -1c
+.RI "\fBmetavar\fP"
+.br
+.ti -1c
+.RI "\fBoptions\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBboards\fP = []"
+.br
+.ti -1c
+.RI "\fBinfo\fP = \fBChessboardInfo\fP()"
+.br
+.ti -1c
+.RI "\fBdim\fP"
+.br
+.ti -1c
+.RI "\fBsize\fP = tuple([int(\fBc\fP) for \fBc\fP in \fBsz\&.split\fP('x')])"
+.br
+.ti -1c
+.RI "\fBn_cols\fP"
+.br
+.ti -1c
+.RI "\fBn_rows\fP"
+.br
+.ti -1c
+.RI "\fBtarname\fP = \fBargs\fP[0]"
+.br
+.ti -1c
+.RI "\fBnum_ks\fP = options\&.k_coefficients"
+.br
+.ti -1c
+.RI "int \fBcalib_flags\fP = 0"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def tarfile_calibration\&.cal_from_tarfile ( boards,  tarname,  mono = \fC\fBFalse\fP\fP,  upload = \fC\fBFalse\fP\fP,  calib_flags = \fC0\fP,  visualize = \fC\fBFalse\fP\fP,  alpha = \fC1\&.0\fP)"
+
+.PP
+Definition at line 79 of file tarfile_calibration\&.py\&.
+.SS "def tarfile_calibration\&.display ( win_name,  img)"
+
+.PP
+Definition at line 68 of file tarfile_calibration\&.py\&.
+.SS "def tarfile_calibration\&.waitkey ()"
+
+.PP
+Definition at line 64 of file tarfile_calibration\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "tarfile_calibration\&.action"
+
+.PP
+Definition at line 177 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.args"
+
+.PP
+Definition at line 198 of file tarfile_calibration\&.py\&.
+.SS "\fBlist\fP tarfile_calibration\&.boards = []"
+
+.PP
+Definition at line 207 of file tarfile_calibration\&.py\&.
+.SS "int tarfile_calibration\&.calib_flags = 0"
+
+.PP
+Definition at line 229 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.default"
+
+.PP
+Definition at line 177 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.dest"
+
+.PP
+Definition at line 177 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.dim"
+
+.PP
+Definition at line 210 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.False"
+
+.PP
+Definition at line 177 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.help"
+
+.PP
+Definition at line 178 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.info = \fBChessboardInfo\fP()"
+
+.PP
+Definition at line 209 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.metavar"
+
+.PP
+Definition at line 191 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.n_cols"
+
+.PP
+Definition at line 212 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.n_rows"
+
+.PP
+Definition at line 213 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.num_ks = options\&.k_coefficients"
+
+.PP
+Definition at line 227 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.options"
+
+.PP
+Definition at line 198 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.parser = OptionParser('%prog TARFILE [ opts ]')"
+
+.PP
+Definition at line 176 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.size = tuple([int(\fBc\fP) for \fBc\fP in \fBsz\&.split\fP('x')])"
+
+.PP
+Definition at line 211 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.tarname = \fBargs\fP[0]"
+
+.PP
+Definition at line 225 of file tarfile_calibration\&.py\&.
+.SS "tarfile_calibration\&.type"
+
+.PP
+Definition at line 191 of file tarfile_calibration\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

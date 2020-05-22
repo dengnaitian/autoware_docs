@@ -1,0 +1,1237 @@
+.TH "datatypes::PositionWGS84" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::PositionWGS84 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PositionWGS84\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPositionWGS84SourceType\fP { \fBUnknown\fP = 0, \fBGPS_SPS\fP, \fBGPS_PPS\fP, \fBGPS_SBAS\fP, \fBGPS_SBAS_Omnistar_VBS\fP, \fBGPS_SBAS_Omnistar_HP\fP, \fBGPS_GBAS\fP, \fBGPS_GBAS_RTK_Float\fP, \fBGPS_GBAS_RTK_Integer\fP, \fBIMU\fP, \fBLandmarkPositioning\fP, \fBManual\fP, \fBCAN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPositionWGS84\fP ()"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~PositionWGS84\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetAltitudeInMeterMSL\fP () const "
+.br
+.RI "\fIReturns the altitude in meter above mean sea level\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.RI "\fIReturns a std::string with a describtion of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "\fBPositionWGS84SourceType\fP \fBgetSource\fP () const "
+.br
+.RI "\fIReturns the type of source that identifies the type of the device that created this object\&. \fP"
+.ti -1c
+.RI "std::string \fBgetSourceString\fP () const "
+.br
+.RI "\fIReturns a std::string with a describtion of the WGS-84 position source\&. \fP"
+.ti -1c
+.RI "double \fBdist\fP (const \fBPositionWGS84\fP &pos) const "
+.br
+.RI "\fICalculates the distance in [m] from this to position in argument\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP \fBgetCartesianRelPos\fP (const \fBPositionWGS84\fP &orign) const "
+.br
+.in -1c
+.PP
+.RI "\fBSetter methods\fP"
+.br
+Use these methods to change the object'S data fields\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetMeasurementTime\fP (time_t val)"
+.br
+.RI "\fISets the time when the position measurement was taken\&. \fP"
+.ti -1c
+.RI "void \fBsetLatitudeInRad\fP (double val)"
+.br
+.RI "\fISets the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBtransformToTangentialPlane\fP (const \fBPositionWGS84\fP &origin, double *easting, double *northing, double *height) const "
+.br
+.ti -1c
+.RI "void \fBtransformToTangentialPlane\fP (const \fBPositionWGS84\fP &origin, double *easting, double *northing) const "
+.br
+.ti -1c
+.RI "void \fBtransformFromTangentialPlane\fP (double dX, double dY, const \fBPositionWGS84\fP &origin)"
+.br
+.ti -1c
+.RI "double \fBdistanceToPos\fP (const \fBPositionWGS84\fP &pos) const "
+.br
+.ti -1c
+.RI "void \fBsetLatitudeInDeg\fP (double val)"
+.br
+.RI "\fISets the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLatitudeInNMEA\fP (double Dm, char H)"
+.br
+.RI "\fISets the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLatitudeInNMEA\fP (double Dm)"
+.br
+.RI "\fISets the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLatitudeSigmaInMeter\fP (double val)"
+.br
+.RI "\fISets the sigma value of the normal distribution describing the confidence about the latitude measurement\&. \fP"
+.ti -1c
+.RI "void \fBsetLongitudeInRad\fP (double val)"
+.br
+.RI "\fISets the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLongitudeInDeg\fP (double val)"
+.br
+.RI "\fISets the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLongitudeInNMEA\fP (double Dm, char H)"
+.br
+.RI "\fISets the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLongitudeInNMEA\fP (double Dm)"
+.br
+.RI "\fISets the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "void \fBsetLongitudeSigmaInMeter\fP (double val)"
+.br
+.RI "\fISets the sigma value of the normal distribution describing the confidence about the longitude measurement\&. \fP"
+.ti -1c
+.RI "void \fBsetAltitudeInMeterMSL\fP (double val)"
+.br
+.RI "\fISets altitude value\&. \fP"
+.ti -1c
+.RI "void \fBsetAltitudeSigmaInMeterMSL\fP (double val)"
+.br
+.RI "\fISets the sigma value of the normal distribution describing the confidence about the altitude measurement\&. \fP"
+.ti -1c
+.RI "void \fBsetCourseAngleInRad\fP (double val)"
+.br
+.RI "\fISets the course angle\&. \fP"
+.ti -1c
+.RI "void \fBsetCourseAngleInDeg\fP (double val)"
+.br
+.RI "\fISets the course angle\&. \fP"
+.ti -1c
+.RI "void \fBsetCourseAngleSigmaInRad\fP (double val)"
+.br
+.RI "\fISets the sigma of the normal distribution describing the confidence about the course angle\&. \fP"
+.ti -1c
+.RI "void \fBsetCourseAngleSigmaInDeg\fP (double val)"
+.br
+.RI "\fISets the sigma of the normal distribution describing the confidence about the course angle\&. \fP"
+.ti -1c
+.RI "void \fBsetYawAngleInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetYawAngleInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetYawAngleSigmaInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetYawAngleSigmaInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetPitchAngleInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetPitchAngleInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetPitchAngleSigmaInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetPitchAngleSigmaInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetRollAngleInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetRollAngleInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetRollAngleSigmaInRad\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetRollAngleSigmaInDeg\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetSource\fP (const \fBPositionWGS84SourceType\fP val)"
+.br
+.RI "\fISets the source of the position measurement\&. \fP"
+.ti -1c
+.RI "void \fBresetToDefault\fP ()"
+.br
+.RI "\fIResets all values of the position to their default values\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBGetter methods\fP"
+.br
+Use these methods to retrieve position information\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "const time_t & \fBgetMeasurementTime\fP () const "
+.br
+.RI "\fIReturns the time when the position measurement was taken\&. \fP"
+.ti -1c
+.RI "const time_t & \fBgetTimestamp\fP () const "
+.br
+.RI "\fIReturns the time when the position measurement was taken\&. \fP"
+.ti -1c
+.RI "double \fBgetLatitudeInRad\fP () const "
+.br
+.RI "\fIReturns the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "double \fBgetLatitudeInDeg\fP () const "
+.br
+.RI "\fIReturns the latitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "double \fBgetLongitudeInRad\fP () const "
+.br
+.RI "\fIReturns the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "double \fBgetLongitudeInDeg\fP () const "
+.br
+.RI "\fIReturns the longitude value of the WGS-84 position\&. \fP"
+.ti -1c
+.RI "double \fBgetCourseAngleInRad\fP () const "
+.br
+.RI "\fIReturns the course angle in [rad]\&. \fP"
+.ti -1c
+.RI "double \fBgetCourseAngleInDeg\fP () const "
+.br
+.RI "\fIReturns the course angle in [deg]\&. \fP"
+.ti -1c
+.RI "double \fBgetYawAngleInRad\fP () const "
+.br
+.RI "\fIReturns the yaw angle in [rad]\&. \fP"
+.ti -1c
+.RI "double \fBgetYawAngleInDeg\fP () const "
+.br
+.RI "\fIReturns the yaw angle\&. \fP"
+.ti -1c
+.RI "double \fBgetYawAngleSigmaInRad\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetYawAngleSigmaInDeg\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetPitchAngleInRad\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetPitchAngleInDeg\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetPitchAngleSigmaInRad\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetPitchAngleSigmaInDeg\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetRollAngleInRad\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetRollAngleInDeg\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetRollAngleSigmaInRad\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetRollAngleSigmaInDeg\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPositionWGS84\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPositionWGS84\fP &other) const "
+.br
+.in -1c
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file PositionWGS84\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::PositionWGS84::PositionWGS84SourceType\fP"
+that provide WGS-84 position information\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUnknown \fP\fP
+.TP
+\fB\fIGPS_SPS \fP\fP
+.TP
+\fB\fIGPS_PPS \fP\fP
+.TP
+\fB\fIGPS_SBAS \fP\fP
+.TP
+\fB\fIGPS_SBAS_Omnistar_VBS \fP\fP
+.TP
+\fB\fIGPS_SBAS_Omnistar_HP \fP\fP
+.TP
+\fB\fIGPS_GBAS \fP\fP
+.TP
+\fB\fIGPS_GBAS_RTK_Float \fP\fP
+.TP
+\fB\fIGPS_GBAS_RTK_Integer \fP\fP
+.TP
+\fB\fIIMU \fP\fP
+.TP
+\fB\fILandmarkPositioning \fP\fP
+.TP
+\fB\fIManual \fP\fP
+.TP
+\fB\fICAN \fP\fP
+.PP
+Definition at line 33 of file PositionWGS84\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::PositionWGS84::PositionWGS84 ()"
+
+.PP
+Constructor\&. All values are initialized with default values: latitude, longitude, and altitude are set to zero, all sigma values are set to negative values and the source is set to SourceType::Unknown\&. 
+.PP
+Definition at line 23 of file PositionWGS84\&.cpp\&.
+.SS "datatypes::PositionWGS84::~PositionWGS84 ()\fC [virtual]\fP"
+
+.PP
+Definition at line 29 of file PositionWGS84\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double datatypes::PositionWGS84::dist (const \fBPositionWGS84\fP & pos) const"
+
+.PP
+Calculates the distance in [m] from this to position in argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP Position of other point on planet\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Distance in [m] between the two positions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 228 of file PositionWGS84\&.cpp\&.
+.SS "double datatypes::PositionWGS84::distanceToPos (const \fBPositionWGS84\fP & pos) const"
+Returns the distance, in [m], to the given position\&. Note that this distance is reliable only in the vicinity of our position, for some 100 m, before the curvature of the earth introduces a relatively high error\&. 
+.PP
+Definition at line 34 of file PositionWGS84\&.cpp\&.
+.SS "double datatypes::PositionWGS84::getAltitudeInMeterMSL () const\fC [inline]\fP"
+
+.PP
+Returns the altitude in meter above mean sea level\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Altitude in [m] above mean sea level (MSL)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 520 of file PositionWGS84\&.hpp\&.
+.SS "\fBPoint3D\fP datatypes::PositionWGS84::getCartesianRelPos (const \fBPositionWGS84\fP & orign) const"
+Get a cartesian coordinate from the latitude/longitude position relative to the gigen reference point (origin)\&. Note: this function is only valid, if the reference point is not to far (some km) from the given reference point\&. 
+.PP
+Definition at line 400 of file PositionWGS84\&.cpp\&.
+.SS "double datatypes::PositionWGS84::getCourseAngleInDeg () const\fC [inline]\fP"
+
+.PP
+Returns the course angle in [deg]\&. The course angle is the angle the vehicle is travelling to\&. If you drift, it's different to the yaw angle, which is the direction of the vehicle is heading/looking at\&.
+.PP
+The angle in between is called slip angle\&.
+.PP
+The angle is always counted positive in counter-clockwise direction, since in our system the z-axis is pointing upwards\&.
+.PP
+Example: If the car is heading to the north, but driving backwards, the yaw angle is 0 degrees and the course angle 180 degrees\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Course angle in [deg]\&. (0 = North, 90 = West) 
+.RE
+.PP
+
+.PP
+Definition at line 454 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getCourseAngleInRad () const\fC [inline]\fP"
+
+.PP
+Returns the course angle in [rad]\&. The course angle is the angle the vehicle is travelling to\&. If you drift, it's different to the yaw angle, which is the direction of the vehicle is heading/looking at\&.
+.PP
+The angle in between is called slip angle\&.
+.PP
+The angle is always counted positive in counter-clockwise direction, since in our system the z-axis is pointing upwards\&.
+.PP
+Example: If the car is heading to the north, but driving backwards, the yaw angle is 0 degrees and the course angle 180 degrees\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Course angle in [rad]\&. (0 = North, pi/2 = West) 
+.RE
+.PP
+
+.PP
+Definition at line 435 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getLatitudeInDeg () const\fC [inline]\fP"
+
+.PP
+Returns the latitude value of the WGS-84 position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Latitude value in [deg]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 394 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getLatitudeInRad () const\fC [inline]\fP"
+
+.PP
+Returns the latitude value of the WGS-84 position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Latitude value in [rad]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getLongitudeInDeg () const\fC [inline]\fP"
+
+.PP
+Returns the longitude value of the WGS-84 position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Longitude value in [deg]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 416 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getLongitudeInRad () const\fC [inline]\fP"
+
+.PP
+Returns the longitude value of the WGS-84 position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Longitude value in [rad]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 405 of file PositionWGS84\&.hpp\&.
+.SS "const time_t& datatypes::PositionWGS84::getMeasurementTime () const\fC [inline]\fP"
+
+.PP
+Returns the time when the position measurement was taken\&. The time should be as close to the real measurement time as possible\&.
+.PP
+\fBReturns:\fP
+.RS 4
+\fBTime\fP specific to the measurement device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 363 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getPitchAngleInDeg () const\fC [inline]\fP"
+
+.PP
+Definition at line 498 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getPitchAngleInRad () const\fC [inline]\fP"
+
+.PP
+Definition at line 497 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getPitchAngleSigmaInDeg () const\fC [inline]\fP"
+
+.PP
+Definition at line 501 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getPitchAngleSigmaInRad () const\fC [inline]\fP"
+
+.PP
+Definition at line 500 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getRollAngleInDeg () const\fC [inline]\fP"
+
+.PP
+Definition at line 504 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getRollAngleInRad () const\fC [inline]\fP"
+
+.PP
+Definition at line 503 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getRollAngleSigmaInDeg () const\fC [inline]\fP"
+
+.PP
+Definition at line 507 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getRollAngleSigmaInRad () const\fC [inline]\fP"
+
+.PP
+Definition at line 506 of file PositionWGS84\&.hpp\&.
+.SS "\fBPositionWGS84SourceType\fP datatypes::PositionWGS84::getSource () const\fC [inline]\fP"
+
+.PP
+Returns the type of source that identifies the type of the device that created this object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Type of source that created this object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 530 of file PositionWGS84\&.hpp\&.
+.SS "std::string datatypes::PositionWGS84::getSourceString () const"
+
+.PP
+Returns a std::string with a describtion of the WGS-84 position source\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+String with current source description\&. 
+.RE
+.PP
+
+.PP
+Definition at line 223 of file PositionWGS84\&.cpp\&.
+.SS "const time_t& datatypes::PositionWGS84::getTimestamp () const\fC [inline]\fP"
+
+.PP
+Returns the time when the position measurement was taken\&. The time should be as close to the real measurement time as possible\&.
+.PP
+\fBReturns:\fP
+.RS 4
+UTC time stamp of measurement recording time\&. 
+.RE
+.PP
+
+.PP
+Definition at line 372 of file PositionWGS84\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::PositionWGS84::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 55 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getYawAngleInDeg () const\fC [inline]\fP"
+
+.PP
+Returns the yaw angle\&. The yaw angle is the angle the vehicle is heading/looking at\&. If you drift, it's different to the course angle, which is the direction of travelling or the track angle\&.
+.PP
+The angle in between is called slip angle\&.
+.PP
+The angle is always counted positive in counter-clockwise direction, since in our system the z-axis is pointing upwards\&.
+.PP
+Example: If the car is heading to the north, but driving backwards, the yaw angle is 0 degrees and the course angle 180 degrees\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Yaw angle in [deg]\&. (0 = North, 90 = West) 
+.RE
+.PP
+
+.PP
+Definition at line 492 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getYawAngleInRad () const\fC [inline]\fP"
+
+.PP
+Returns the yaw angle in [rad]\&. The yaw angle is the angle the vehicle is heading/looking at\&. If you drift, it's different to the course angle, which is the direction of travelling or the track angle\&.
+.PP
+The angle in between is called slip angle\&.
+.PP
+The angle is always counted positive in counter-clockwise direction, since in our system the z-axis is pointing upwards\&.
+.PP
+Example: If the car is heading to the north, but driving backwards, the yaw angle is 0 degrees and the course angle 180 degrees\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Yaw angle in [rad]\&. (0 = North, pi/2 = West) 
+.RE
+.PP
+
+.PP
+Definition at line 473 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getYawAngleSigmaInDeg () const\fC [inline]\fP"
+
+.PP
+Definition at line 495 of file PositionWGS84\&.hpp\&.
+.SS "double datatypes::PositionWGS84::getYawAngleSigmaInRad () const\fC [inline]\fP"
+
+.PP
+Definition at line 494 of file PositionWGS84\&.hpp\&.
+.SS "bool datatypes::PositionWGS84::operator!= (const \fBPositionWGS84\fP & other) const\fC [inline]\fP"
+
+.PP
+Definition at line 511 of file PositionWGS84\&.hpp\&.
+.SS "bool datatypes::PositionWGS84::operator== (const \fBPositionWGS84\fP & other) const"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 43 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::resetToDefault ()"
+
+.PP
+Resets all values of the position to their default values\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBPositionWGS84()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::setAltitudeInMeterMSL (double val)\fC [inline]\fP"
+
+.PP
+Sets altitude value\&. This function sets the altitude above the mean sea level (MSL) in [m]\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Altitude value in [m]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 252 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setAltitudeSigmaInMeterMSL (double val)\fC [inline]\fP"
+
+.PP
+Sets the sigma value of the normal distribution describing the confidence about the altitude measurement\&. Negative values mean that no accuracy knowledge is available\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Sigma value in [m]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeSigmaInMeter()\fP 
+.PP
+\fBsetLatitudeSigmaInMeter()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 265 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setCourseAngleInDeg (double val)\fC [inline]\fP"
+
+.PP
+Sets the course angle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Course angle value in [deg]\&. (0 = North, 90 = West)
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCourseAngleInRad()\fP 
+.PP
+setCourceAngleSigma() 
+.RE
+.PP
+
+.PP
+Definition at line 292 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setCourseAngleInRad (double val)\fC [inline]\fP"
+
+.PP
+Sets the course angle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Course angle value in [rad]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCourseAngleInDeg()\fP 
+.PP
+setCourceAngleSigma() 
+.RE
+.PP
+
+.PP
+Definition at line 275 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setCourseAngleSigmaInDeg (double val)\fC [inline]\fP"
+
+.PP
+Sets the sigma of the normal distribution describing the confidence about the course angle\&. Negative values mean that no accuracy knowledge is available\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Sigma value in [dev]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCourseAngleInRad()\fP 
+.PP
+\fBsetCourseAngleInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 318 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setCourseAngleSigmaInRad (double val)\fC [inline]\fP"
+
+.PP
+Sets the sigma of the normal distribution describing the confidence about the course angle\&. Negative values mean that no accuracy knowledge is available\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Sigma value in [rad]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCourseAngleInRad()\fP 
+.PP
+\fBsetCourseAngleInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 305 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLatitudeInDeg (double val)\fC [inline]\fP"
+
+.PP
+Sets the latitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Latitude value in [deg]\&. Must be in the interval [-90,90] degree\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLatitudeInNMEA (double Dm, char H)"
+
+.PP
+Sets the latitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDm\fP Latitude value [0\&.\&.\&.9000] where format is DDmm\&.mmmmm\&. D stands for value in degree and m for value in decimal minutes\&. 
+.br
+\fIH\fP Hemisphere\&. For Latitude it can be [N]orth or [S]outh\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::setLatitudeInNMEA (double Dm)\fC [inline]\fP"
+
+.PP
+Sets the latitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDm\fP Latitude value in DDmm\&.mmmmm, where D stands for value in degree and m for value in decimal minutes (signed)\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLatitudeInRad (double val)"
+
+.PP
+Sets the latitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Latitude value in [rad]\&. Must be in the interval [-Pi/2, Pi/2] radians which corresponds to [-90,90] degree\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::setLatitudeSigmaInMeter (double val)\fC [inline]\fP"
+
+.PP
+Sets the sigma value of the normal distribution describing the confidence about the latitude measurement\&. Negative values mean that no accuracy knowledge is available\&.
+.PP
+ATTENTION: Sigma value is stored in meter\&. If you use the value in combination with the latitude value be aware that the units differ!
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Sigma value in [m]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeSigmaInMeter()\fP 
+.PP
+setAltitudeInMeter() 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLongitudeInDeg (double val)\fC [inline]\fP"
+
+.PP
+Sets the longitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Longitude value in [deg]\&. Must be in the range [-180, 180] degree\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 182 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLongitudeInNMEA (double Dm, char H)"
+
+.PP
+Sets the longitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDm\fP Latitude value in DDmm\&.mmmmm, where D stands for value in degree and m for value in decimal minutes\&. 
+.br
+\fIH\fP Hemisphere\&. For longitude it can be [W]est or [E]ast\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDm\fP Longitude value [0\&.\&.\&.18000] where format is DDDmm\&.mmmmm\&. D stands for value in degree and m for value in decimal minutes\&. 
+.br
+\fIH\fP Hemisphere\&. For Longitude it can be [W]est or [E]ast\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLongitudeInNMEA()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::setLongitudeInNMEA (double Dm)\fC [inline]\fP"
+
+.PP
+Sets the longitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDm\fP Latitude value in DDmm\&.mmmmm, where D stands for value in degree and m for value in decimal minutes (signed)\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLongitudeInRad()\fP 
+.PP
+\fBsetLongitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInRad()\fP 
+.PP
+\fBsetLatitudeInDeg()\fP 
+.PP
+\fBsetLatitudeInNMEA()\fP 
+.PP
+setAltitudeInMeter() 
+.PP
+\fBgetLatitudeInRad()\fP 
+.PP
+\fBgetLatitudeInDeg()\fP 
+.PP
+\fBgetLongitudeInRad()\fP 
+.PP
+\fBgetLongitudeInDeg()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setLongitudeInRad (double val)"
+
+.PP
+Sets the longitude value of the WGS-84 position\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Longitude value in [deg]\&. Must be in the range [-Pi, Pi] radians which corresponds to [-180, 180] degree\&. 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::setLongitudeSigmaInMeter (double val)\fC [inline]\fP"
+
+.PP
+Sets the sigma value of the normal distribution describing the confidence about the longitude measurement\&. Negative values mean that no accuracy knowledge is available\&.
+.PP
+ATTENTION: Sigma value is stored in meter\&. If you use the value in combination with the longitude value be aware that the units differ!
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Sigma value in [m]\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetLatitudeSigmaInMeter()\fP 
+.PP
+setAltitudeSigmaInMeter() 
+.RE
+.PP
+
+.PP
+Definition at line 236 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setMeasurementTime (time_t val)\fC [inline]\fP"
+
+.PP
+Sets the time when the position measurement was taken\&. The time should be as close to the real measurement time as possible\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP \fBTime\fP specific to the measurement device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setPitchAngleInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 327 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setPitchAngleInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 326 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setPitchAngleSigmaInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 330 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setPitchAngleSigmaInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 329 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setRollAngleInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 333 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setRollAngleInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 332 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setRollAngleSigmaInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 336 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setRollAngleSigmaInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 335 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setSource (const \fBPositionWGS84SourceType\fP val)\fC [inline]\fP"
+
+.PP
+Sets the source of the position measurement\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Source of measurement\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+SourceType 
+.RE
+.PP
+
+.PP
+Definition at line 345 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setYawAngleInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 321 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setYawAngleInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 320 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setYawAngleSigmaInDeg (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 324 of file PositionWGS84\&.hpp\&.
+.SS "void datatypes::PositionWGS84::setYawAngleSigmaInRad (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 323 of file PositionWGS84\&.hpp\&.
+.SS "std::string datatypes::PositionWGS84::toString () const"
+
+.PP
+Returns a std::string with a describtion of the WGS-84 position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+String with describtion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::transformFromTangentialPlane (double dX, double dY, const \fBPositionWGS84\fP & origin)"
+\fBtransformFromTangentialPlane()\fP
+.PP
+Inverse function of transformToTangentialPlane: Generates this point from x-y-coordinates on a tangential plane defined by the origin\&. Note that the x-y-coordinates should be somewhat close to the origin to get accurate results\&. 
+.PP
+Definition at line 322 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::transformToTangentialPlane (const \fBPositionWGS84\fP & origin, double * easting, double * northing, double * height) const"
+
+.PP
+Definition at line 250 of file PositionWGS84\&.cpp\&.
+.SS "void datatypes::PositionWGS84::transformToTangentialPlane (const \fBPositionWGS84\fP & origin, double * easting, double * northing) const"
+\fBtransformToTangentialPlane()\fP
+.PP
+Transforms this point (given in WGS-coordinates) onto a tangential (x-y-) plane\&. The plane is defined by a reference point (origin), relative to which the x-y-coordinates are calculated\&. Note that this point should be somewhat close to the origin (several km is ok) as the tangential plane is flat\&.
+.PP
+Die Ausrichtung ist in beiden Koordinatensystemen gleich\&. 
+.PP
+Definition at line 244 of file PositionWGS84\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

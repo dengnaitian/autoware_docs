@@ -1,0 +1,150 @@
+.TH "datatypes::Circle2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Circle2D \- A circle in the plane\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Circle2D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::Ellipse2D\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBEllipse2D\fP \fBbase_class\fP"
+.br
+.RI "\fIBase class\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCircle2D\fP ()"
+.br
+.RI "\fIConstructor for an all-zero \fBCircle2D\fP\&. \fP"
+.ti -1c
+.RI "\fBCircle2D\fP (const \fBPoint2D\fP &center, \fBvalue_type\fP radius)"
+.br
+.RI "\fIConstructor with specified center point and radius\&. \fP"
+.ti -1c
+.RI "\fBCircle2D\fP (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP radius)"
+.br
+.RI "\fIConstructor with all values given\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetRadius\fP () const "
+.br
+.RI "\fIReturns the radius of this circle\&. \fP"
+.ti -1c
+.RI "void \fBsetRadius\fP (\fBvalue_type\fP radius)"
+.br
+.RI "\fISets the radius of this circle\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "bool \fBcontainsPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns true if the given \fBPoint2D\fP is inside this ellipse or on its outline\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A circle in the plane\&. 
+
+This circle is defined by its center point and its radius\&.
+.PP
+The radius argument must be non-negative\&. 
+.PP
+Definition at line 21 of file Circle2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBEllipse2D\fP \fBdatatypes::Circle2D::base_class\fP"
+
+.PP
+Base class\&. 
+.PP
+Definition at line 25 of file Circle2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Circle2D::Circle2D ()"
+
+.PP
+Constructor for an all-zero \fBCircle2D\fP\&. 
+.PP
+Definition at line 14 of file Circle2D\&.cpp\&.
+.SS "datatypes::Circle2D::Circle2D (const \fBPoint2D\fP & center, \fBvalue_type\fP radius)"
+
+.PP
+Constructor with specified center point and radius\&. 
+.PP
+\fBNote:\fP
+.RS 4
+The radius components must be non-negative, otherwise an assertion will fail\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcenter\fP The center point 
+.br
+\fIradius\fP The radius of the circle\&. 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file Circle2D\&.cpp\&.
+.SS "datatypes::Circle2D::Circle2D (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP radius)"
+
+.PP
+Constructor with all values given\&. Constructor with all values given: x/y of center point, x/y of size (where the x coordinate of the size is in the same direction as the x axis of the coordinate system, rotated by the rotation argument; the y coordinate accordingly), and rotation\&.
+.PP
+\fBNote:\fP
+.RS 4
+The radius components must be non-negative, otherwise an assertion will fail\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx_center\fP X-coordinate of center point 
+.br
+\fIy_center\fP Y-coordinate of center point
+.br
+\fIradius\fP The radius of the circle\&. Must be non-negative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file Circle2D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool datatypes::Circle2D::containsPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns true if the given \fBPoint2D\fP is inside this ellipse or on its outline\&. (Note: This function is relatively cheap\&.) 
+.PP
+Definition at line 37 of file Circle2D\&.cpp\&.
+.SS "\fBvalue_type\fP datatypes::Circle2D::getRadius () const\fC [inline]\fP"
+
+.PP
+Returns the radius of this circle\&. 
+.PP
+Definition at line 60 of file Circle2D\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Circle2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBdatatypes::Ellipse2D\fP\&.
+.PP
+Definition at line 57 of file Circle2D\&.hpp\&.
+.SS "void datatypes::Circle2D::setRadius (\fBvalue_type\fP radius)"
+
+.PP
+Sets the radius of this circle\&. Must be non-negative\&. 
+.PP
+Definition at line 32 of file Circle2D\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

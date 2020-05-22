@@ -1,0 +1,98 @@
+.TH "datatypes::Trigger" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Trigger \- Class for a simple serializable trigger signal\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Trigger\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrigger\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBTrigger\fP (\fBUINT32\fP number, \fBUINT8\fP sourceId)"
+.br
+.RI "\fIConstructor with number and sourceId\&. \fP"
+.ti -1c
+.RI "virtual \fB~Trigger\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetNumber\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetNumber\fP (\fBUINT32\fP number)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class for a simple serializable trigger signal\&. 
+.PP
+Definition at line 18 of file Trigger\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Trigger::Trigger ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 19 of file Trigger\&.cpp\&.
+.SS "datatypes::Trigger::Trigger (\fBUINT32\fP number, \fBUINT8\fP sourceId)"
+
+.PP
+Constructor with number and sourceId\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumber\fP Number of this message (0\&.\&.UINT32) 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file Trigger\&.cpp\&.
+.SS "datatypes::Trigger::~Trigger ()\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 37 of file Trigger\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUINT32\fP datatypes::Trigger::getNumber () const\fC [inline]\fP"
+
+.PP
+Definition at line 34 of file Trigger\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Trigger::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 31 of file Trigger\&.hpp\&.
+.SS "void datatypes::Trigger::setNumber (\fBUINT32\fP number)"
+
+.PP
+Definition at line 41 of file Trigger\&.cpp\&.
+.SS "std::string datatypes::Trigger::toString ()"
+
+.PP
+Definition at line 50 of file Trigger\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

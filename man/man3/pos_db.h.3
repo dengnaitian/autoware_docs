@@ -1,0 +1,116 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/include/pos_db.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/include/pos_db.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdint>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <libssh2\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSendData\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSE_LIBSSH2\fP"
+.br
+.ti -1c
+.RI "#define \fBDB_HOSTNAME\fP   'db3\&.ertl\&.jp'"
+.br
+.ti -1c
+.RI "#define \fBDB_PORT\fP   (5678)"
+.br
+.ti -1c
+.RI "#define \fBSSHPUBKEY\fP   '/\&.ssh/\fBid_rsa\&.pub\fP'"
+.br
+.ti -1c
+.RI "#define \fBSSHPRIVATEKEY\fP   '/\&.ssh/id_rsa'"
+.br
+.ti -1c
+.RI "#define \fBSSHPORT\fP   (22)"
+.br
+.ti -1c
+.RI "#define \fBSSHTUNNELHOST\fP   'localhost'"
+.br
+.ti -1c
+.RI "#define \fBPOS_DB_HEAD_LEN\fP   (16)"
+.br
+.ti -1c
+.RI "#define \fBMAC_ADDRBUFSIZ\fP   20"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBmake_header\fP (int32_t sql_inst, int32_t sql_num)"
+.br
+.ti -1c
+.RI "int \fBprobe_mac_addr\fP (char *mac_addr)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DB_HOSTNAME   'db3\&.ertl\&.jp'"
+
+.PP
+Definition at line 28 of file pos_db\&.h\&.
+.SS "#define DB_PORT   (5678)"
+
+.PP
+Definition at line 29 of file pos_db\&.h\&.
+.SS "#define MAC_ADDRBUFSIZ   20"
+
+.PP
+Definition at line 69 of file pos_db\&.h\&.
+.SS "#define POS_DB_HEAD_LEN   (16)"
+
+.PP
+Definition at line 37 of file pos_db\&.h\&.
+.SS "#define SSHPORT   (22)"
+
+.PP
+Definition at line 33 of file pos_db\&.h\&.
+.SS "#define SSHPRIVATEKEY   '/\&.ssh/id_rsa'"
+
+.PP
+Definition at line 32 of file pos_db\&.h\&.
+.SS "#define SSHPUBKEY   '/\&.ssh/\fBid_rsa\&.pub\fP'"
+
+.PP
+Definition at line 31 of file pos_db\&.h\&.
+.SS "#define SSHTUNNELHOST   'localhost'"
+
+.PP
+Definition at line 34 of file pos_db\&.h\&.
+.SS "#define USE_LIBSSH2"
+
+.PP
+Definition at line 23 of file pos_db\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "std::string make_header (int32_t sql_inst, int32_t sql_num)"
+
+.PP
+Definition at line 11 of file util\&.cpp\&.
+.SS "int probe_mac_addr (char * mac_addr)"
+
+.PP
+Definition at line 53 of file util\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

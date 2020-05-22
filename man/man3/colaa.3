@@ -1,0 +1,255 @@
+.TH "colaa" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colaa \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdetail\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBgetValueOfChar\fP (\fBUINT8\fP \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBnibbleToAscii\fP (\fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "void \fBaddFrameToBuffer\fP (\fBUINT8\fP *sendBuffer, \fBUINT8\fP *cmdBuffer, \fBUINT16\fP *len)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddUINT8ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddUINT16ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddINT8ToBuffer\fP (\fBUINT8\fP *buffer, \fBINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddINT32ToBuffer\fP (\fBUINT8\fP *buffer, \fBINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddUINT32ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBaddStringToBuffer\fP (\fBUINT8\fP *buffer, const std::string &text)"
+.br
+.ti -1c
+.RI "std::string \fBgetNextStringToken\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "std::string \fBgetNextStringToken\fP (\fBUINT8\fP *rxData)"
+.br
+.ti -1c
+.RI "bool \fBGetNibble\fP (unsigned char \fBdata\fP, unsigned char &rNibble)"
+.br
+.ti -1c
+.RI "double \fBdecodeReal\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "double \fBdecodeReal\fP (const std::string &rxData)"
+.br
+.RI "\fIset of more efficient functions that do not copy strings (should be prefered in use together with the colaa::tokenizer) \fP"
+.ti -1c
+.RI "\fBUINT32\fP \fBdecodeUINT32\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBdecodeINT16\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBdecodeINT32\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBdecodeINT16\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBdecodeINT32\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "std::string \fBdecodeString\fP (std::string *rxData, \fBUINT16\fP len)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBdecodeUINT16\fP (\fBBYTE\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBdecodeUINT16\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBdecodeUINT8\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBdecodeUINT16\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBdecodeUINT8\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBdecodeUINT32\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBdecodeXByte\fP (std::string *rxData, \fBUINT16\fP len)"
+.br
+.ti -1c
+.RI "std::string \fBconvertRxBufferToString\fP (\fBUINT8\fP *buffer, \fBUINT16\fP bufferLen)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Parser functions for a partly implementation of the CoLa-A protocol, needed for communication with SICK sensors\&. 
+.SH "Function Documentation"
+.PP 
+.SS "void colaa::addFrameToBuffer (\fBUINT8\fP * sendBuffer, \fBUINT8\fP * cmdBuffer, \fBUINT16\fP * len)"
+Erzeuge den zu sendenden Kommandostring, inklusive sog\&. '23-Frame'\&. Der String wird im CoLa-A Format erzeugt und im Puffer abgelegt\&. sendBuffer = Ziel-Puffer fuer die erzeugten Daten cmdBuffer = Quelle-Puffer mit den Kommandodaten, aber ohne 23-Frame len = Zeiger auf Laenge des cmdBuffer; bei Rueckgabe Laenge des sendBuffers\&. 
+.PP
+Definition at line 77 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addINT32ToBuffer (\fBUINT8\fP * buffer, \fBINT32\fP value)"
+Int32-Wert in den Puffer schreiben (als Text)\&. Wird erstmal als HEX-Wert geschrieben\&.\&.\&.
+.PP
+Return value: Laenge des hinzugefuegten Strings 
+.PP
+Definition at line 180 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addINT8ToBuffer (\fBUINT8\fP * buffer, \fBINT8\fP value)"
+Int8-Wert in den Puffer schreiben (als Text)\&.
+.PP
+Return value: Laenge des hinzugefuegten Strings 
+.PP
+Definition at line 134 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addStringToBuffer (\fBUINT8\fP * buffer, const std::string & text)"
+Fuegt den Text in den Puffer ein (Kopie!)\&.
+.PP
+Return: Anzahl eingefuegte Zeichen\&. 
+.PP
+Definition at line 219 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addUINT16ToBuffer (\fBUINT8\fP * buffer, \fBUINT16\fP value)"
+Schreibe den UINT16-Wert als ASCII-HEX-String in den Puffer\&. Es werden 1 bis 4 Bytes (die 4 Nibbles) geschrieben\&.
+.PP
+Return value: #Bytes 
+.PP
+Definition at line 120 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addUINT32ToBuffer (\fBUINT8\fP * buffer, \fBUINT32\fP value)"
+Schreibe den UINT32-Wert als ASCII-HEX-String in den Puffer\&. Es werden 1 bis 8 Bytes geschrieben, je nach Zahlenwert\&.
+.PP
+Return value: #Bytes 
+.PP
+Definition at line 195 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::addUINT8ToBuffer (\fBUINT8\fP * buffer, \fBUINT8\fP value)"
+Schreibe den UINT8-Wert als ASCII-HEX-String in den Puffer\&. Es werden 1 bis 2 Bytes geschrieben\&.
+.PP
+Return value: #Bytes 
+.PP
+Definition at line 106 of file colaa\&.cpp\&.
+.SS "std::string colaa::convertRxBufferToString (\fBUINT8\fP * buffer, \fBUINT16\fP bufferLen)"
+Lese ein XByte-Array bekannter Laenge (1\&.\&.4 Bytes) und verpacke es als UINT32-Wert\&. Das 1\&. empfangene Byte steht in den unteren 8 Bit des Ergebniswerts, usw\&.
+.PP
+HINWEIS: der Iterator wird weitergeschoben len-1 mal\&. Um das nächste Element zu lesen muss vorher ++tok aufgerufen werden\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbegin\fP = Startpunkt, von wo aus einzelne Stringtokens in Zahlen verwandelt werden 
+.br
+\fIend\fP = Ende des containers, ueber den iteriert wird 
+.br
+\fIlen\fP = Anzahl der Bytes (= Array-Elemente) 
+.RE
+.PP
+
+.PP
+Definition at line 788 of file colaa\&.cpp\&.
+.SS "\fBINT16\fP colaa::decodeINT16 (std::string * rxData)"
+Lese einen INT16-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 467 of file colaa\&.cpp\&.
+.SS "\fBINT16\fP colaa::decodeINT16 (const std::string & rxData)"
+Lese einen INT16-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 529 of file colaa\&.cpp\&.
+.SS "\fBINT32\fP colaa::decodeINT32 (std::string * rxData)"
+Lese einen INT-Wert aus dem Empfangspuffer\&. Ergebnis ist ein INT32-Wert\&. 
+.PP
+Definition at line 478 of file colaa\&.cpp\&.
+.SS "\fBINT32\fP colaa::decodeINT32 (const std::string & rxData)"
+Lese einen INT-Wert aus dem Empfangspuffer\&. Ergebnis ist ein INT32-Wert\&. 
+.PP
+Definition at line 540 of file colaa\&.cpp\&.
+.SS "double colaa::decodeReal (std::string * rxData)"
+Lese eine Real-Zahl aus dem Empfangspuffer\&. Im Fehlerfall wird NaN zurueckgegeben\&. 
+.PP
+Definition at line 327 of file colaa\&.cpp\&.
+.SS "double colaa::decodeReal (const std::string & rxData)"
+
+.PP
+set of more efficient functions that do not copy strings (should be prefered in use together with the colaa::tokenizer) Lese eine Real-Zahl aus dem Empfangspuffer\&. Im Fehlerfall wird NaN zurueckgegeben\&. 
+.PP
+Definition at line 378 of file colaa\&.cpp\&.
+.SS "std::string colaa::decodeString (std::string * rxData, \fBUINT16\fP len)"
+Lese einen String aus dem Empfangspuffer\&. Der Empfangspuffer wird anschliessend um die Stringlaenge + 1 Zeichen (Trenn-Leerzeichen) gekuerzt\&.
+.PP
+Ist der Parameter len = 0 (oder fehlt ganz), dann wird der naechste verfuegbare String ausgelesen\&. Ist len > 0, dann werden genau len Zeichen gelesen\&. 
+.PP
+Definition at line 598 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::decodeUINT16 (\fBBYTE\fP * buffer)"
+
+.PP
+Definition at line 622 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::decodeUINT16 (std::string * rxData)"
+
+.PP
+Definition at line 631 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::decodeUINT16 (const std::string & rxData)"
+Lese einen UINT16-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 657 of file colaa\&.cpp\&.
+.SS "\fBUINT32\fP colaa::decodeUINT32 (std::string * rxData)"
+Lese einen UINT32-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 429 of file colaa\&.cpp\&.
+.SS "\fBUINT32\fP colaa::decodeUINT32 (const std::string & rxData)"
+Lese einen INT-Wert aus dem Empfangspuffer\&. Es wird vorausgesetzt, dass der übergebene String nur den Token für die Zahl enthält\&. Ergebnis ist ein INT32-Wert\&. 
+.PP
+Definition at line 685 of file colaa\&.cpp\&.
+.SS "\fBUINT8\fP colaa::decodeUINT8 (std::string * rxData)"
+Lese einen UINT8-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 644 of file colaa\&.cpp\&.
+.SS "\fBUINT8\fP colaa::decodeUINT8 (const std::string & rxData)"
+Lese einen UINT8-Wert aus dem Empfangspuffer\&. 
+.PP
+Definition at line 670 of file colaa\&.cpp\&.
+.SS "\fBUINT32\fP colaa::decodeXByte (std::string * rxData, \fBUINT16\fP len)"
+Lese ein XByte-Array bekannter Laenge (1\&.\&.4 Bytes) und verpacke es als UINT32-Wert\&. Das 1\&. empfangene Byte steht in den unteren 8 Bit des Ergebniswerts, usw\&.
+.PP
+len = Anzahl der Bytes (= Array-Elemente) 
+.PP
+Definition at line 730 of file colaa\&.cpp\&.
+.SS "std::string colaa::getNextStringToken (std::string * rxData)"
+Isoliere das naechste String-Token\&. Es geht bis zu naechsten Leerzeichen; fuehrende Leerzeichen werden entfernt\&. Der Ursprungs-String wird um das Token gekuerzt\&. 
+.PP
+Definition at line 241 of file colaa\&.cpp\&.
+.SS "std::string colaa::getNextStringToken (\fBUINT8\fP * rxData)"
+Isoliere das naechste String-Token\&. Es geht bis zu naechsten Leerzeichen; fuehrende Leerzeichen werden entfernt\&. Der Ursprungs-Buffer bleibt erhalten! 
+.PP
+Definition at line 266 of file colaa\&.cpp\&.
+.SS "bool colaa::GetNibble (unsigned char data, unsigned char & rNibble)"
+
+.PP
+Definition at line 300 of file colaa\&.cpp\&.
+.SS "\fBUINT16\fP colaa::getValueOfChar (\fBUINT8\fP c)"
+
+.PP
+Definition at line 22 of file colaa\&.cpp\&.
+.SS "\fBUINT8\fP colaa::nibbleToAscii (\fBUINT8\fP value)"
+
+.PP
+Definition at line 48 of file colaa\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

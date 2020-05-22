@@ -1,0 +1,123 @@
+.TH "vssp::vsspDriver" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vssp::vsspDriver \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vssp\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvsspDriver\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTimeout\fP (double to)"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const char *ip, unsigned int port, decltype(cbConnect) cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (decltype(cbPoint) cb)"
+.br
+.ti -1c
+.RI "void \fBregisterAuxCallback\fP (decltype(cbAux) cb)"
+.br
+.ti -1c
+.RI "void \fBregisterPingCallback\fP (decltype(cbPing) cb)"
+.br
+.ti -1c
+.RI "void \fBsetInterlace\fP (int itl)"
+.br
+.ti -1c
+.RI "void \fBrequestVerticalTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBrequestHorizontalTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBrequestPing\fP ()"
+.br
+.ti -1c
+.RI "void \fBrequestAuxData\fP (bool start=1)"
+.br
+.ti -1c
+.RI "void \fBrequestData\fP (bool intensity=1, bool start=1)"
+.br
+.ti -1c
+.RI "void \fBreceivePackets\fP ()"
+.br
+.ti -1c
+.RI "bool \fBpoll\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file vssp\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "vssp::vsspDriver::vsspDriver ()\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file vssp\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void vssp::vsspDriver::connect (const char * ip, unsigned int port, decltype(cbConnect) cb)\fC [inline]\fP"
+
+.PP
+Definition at line 92 of file vssp\&.hpp\&.
+.SS "bool vssp::vsspDriver::poll ()\fC [inline]\fP"
+
+.PP
+Definition at line 165 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::receivePackets ()\fC [inline]\fP"
+
+.PP
+Definition at line 149 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::registerAuxCallback (decltype(cbAux) cb)\fC [inline]\fP"
+
+.PP
+Definition at line 110 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::registerCallback (decltype(cbPoint) cb)\fC [inline]\fP"
+
+.PP
+Definition at line 106 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::registerPingCallback (decltype(cbPing) cb)\fC [inline]\fP"
+
+.PP
+Definition at line 114 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::requestAuxData (bool start = \fC1\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 134 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::requestData (bool intensity = \fC1\fP, bool start = \fC1\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 138 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::requestHorizontalTable ()\fC [inline]\fP"
+
+.PP
+Definition at line 126 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::requestPing ()\fC [inline]\fP"
+
+.PP
+Definition at line 130 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::requestVerticalTable ()\fC [inline]\fP"
+
+.PP
+Definition at line 122 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::setInterlace (int itl)\fC [inline]\fP"
+
+.PP
+Definition at line 118 of file vssp\&.hpp\&.
+.SS "void vssp::vsspDriver::setTimeout (double to)\fC [inline]\fP"
+
+.PP
+Definition at line 88 of file vssp\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

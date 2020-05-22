@@ -1,0 +1,46 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_bag_tools__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_bag_tools__r_e_a_d_m_e \- README 
+Modification of a few bag_tools scripts for Autoware\&.
+.PP
+Original repository: https://github.com/srv/srv_tools bag_tools ROS wiki: http://wiki.ros.org/bag_tools
+.PP
+This repository includes:
+.IP "\(bu" 2
+Tool to change frame_id from topics: \fBchange_frame_id\&.py\fP
+.IP "\(bu" 2
+Tool to replace timestamp in a message with the header message (unmodified): \fBreplace_msg_time_with_hdr\&.py\fP
+.PP
+.PP
+.SS "\fBchange_frame_id\fP"
+.PP
+Using this script, you can use \fBchange_frame_id\&.py\fP as before (see bag_tools wiki) and all the specified topics topics will be have their frame_id changed to the same frame_id: 
+.PP
+.nf
+1 rosrun autoware_bag_tools change_frame_id\&.py -o out\&.bag -i in\&.bag -t /camera2/image_raw /camera3/image_raw /camera4/image_raw /camera5/image_raw /camera6/image_raw -f camera_frame
+
+.fi
+.PP
+ Alternatively, you specify a 1-to-1 mapping of and topics and frame_id\&. Below, the frame_id of topic /camera2/image_raw is changed to camera2, the frame_id of the topic /camera3/image_raw is changed to camera3 and so on: 
+.PP
+.nf
+1 rosrun autoware_bag_tools change_frame_id\&.py -o out\&.bag -i in\&.bag -t /camera2/image_raw /camera3/image_raw /camera4/image_raw /camera5/image_raw /camera6/image_raw -f camera2 camera3 camera4 camera5 camera6
+
+.fi
+.PP
+.PP
+.SS "nmea2kml tool"
+.PP
+Extract GPS data from rosbag file(s) into \&.kml and \&.csv files\&. \&.kml file could be viewed by Google Earth\&. color information indicate the quality of GPS satellite coverage (dark to light red) - (bad - good coverage)
+.PP
+How to Run:
+.PP
+.PP
+.nf
+1 rosrun autoware_bag_tools nmea2kml bag_file_name\&.bag
+2 rosrun autoware_bag_tools nmea2kml bag_files_folder/
+.fi
+.PP
+ 

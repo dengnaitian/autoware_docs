@@ -1,0 +1,732 @@
+.TH "vector_map::VectorMap" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vector_map::VectorMap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vector_map\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVectorMap\fP ()"
+.br
+.ti -1c
+.RI "void \fBsubscribe\fP (ros::NodeHandle &nh, \fBcategory_t\fP category)"
+.br
+.ti -1c
+.RI "void \fBsubscribe\fP (ros::NodeHandle &nh, \fBcategory_t\fP category, const ros::Duration &timeout)"
+.br
+.ti -1c
+.RI "void \fBsubscribe\fP (ros::NodeHandle &nh, \fBcategory_t\fP category, const size_t max_retries)"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBfindByKey\fP (const \fBKey\fP< \fBPoint\fP > &key) const "
+.br
+.ti -1c
+.RI "\fBVector\fP \fBfindByKey\fP (const \fBKey\fP< \fBVector\fP > &key) const "
+.br
+.ti -1c
+.RI "\fBLine\fP \fBfindByKey\fP (const \fBKey\fP< \fBLine\fP > &key) const "
+.br
+.ti -1c
+.RI "\fBArea\fP \fBfindByKey\fP (const \fBKey\fP< \fBArea\fP > &key) const "
+.br
+.ti -1c
+.RI "Pole \fBfindByKey\fP (const \fBKey\fP< Pole > &key) const "
+.br
+.ti -1c
+.RI "Box \fBfindByKey\fP (const \fBKey\fP< Box > &key) const "
+.br
+.ti -1c
+.RI "\fBDTLane\fP \fBfindByKey\fP (const \fBKey\fP< \fBDTLane\fP > &key) const "
+.br
+.ti -1c
+.RI "Node \fBfindByKey\fP (const \fBKey\fP< Node > &key) const "
+.br
+.ti -1c
+.RI "\fBLane\fP \fBfindByKey\fP (const \fBKey\fP< \fBLane\fP > &key) const "
+.br
+.ti -1c
+.RI "WayArea \fBfindByKey\fP (const \fBKey\fP< WayArea > &key) const "
+.br
+.ti -1c
+.RI "RoadEdge \fBfindByKey\fP (const \fBKey\fP< RoadEdge > &key) const "
+.br
+.ti -1c
+.RI "Gutter \fBfindByKey\fP (const \fBKey\fP< Gutter > &key) const "
+.br
+.ti -1c
+.RI "Curb \fBfindByKey\fP (const \fBKey\fP< Curb > &key) const "
+.br
+.ti -1c
+.RI "\fBWhiteLine\fP \fBfindByKey\fP (const \fBKey\fP< \fBWhiteLine\fP > &key) const "
+.br
+.ti -1c
+.RI "StopLine \fBfindByKey\fP (const \fBKey\fP< StopLine > &key) const "
+.br
+.ti -1c
+.RI "ZebraZone \fBfindByKey\fP (const \fBKey\fP< ZebraZone > &key) const "
+.br
+.ti -1c
+.RI "\fBCrossWalk\fP \fBfindByKey\fP (const \fBKey\fP< \fBCrossWalk\fP > &key) const "
+.br
+.ti -1c
+.RI "RoadMark \fBfindByKey\fP (const \fBKey\fP< RoadMark > &key) const "
+.br
+.ti -1c
+.RI "RoadPole \fBfindByKey\fP (const \fBKey\fP< RoadPole > &key) const "
+.br
+.ti -1c
+.RI "RoadSign \fBfindByKey\fP (const \fBKey\fP< RoadSign > &key) const "
+.br
+.ti -1c
+.RI "\fBSignal\fP \fBfindByKey\fP (const \fBKey\fP< \fBSignal\fP > &key) const "
+.br
+.ti -1c
+.RI "StreetLight \fBfindByKey\fP (const \fBKey\fP< StreetLight > &key) const "
+.br
+.ti -1c
+.RI "UtilityPole \fBfindByKey\fP (const \fBKey\fP< UtilityPole > &key) const "
+.br
+.ti -1c
+.RI "GuardRail \fBfindByKey\fP (const \fBKey\fP< GuardRail > &key) const "
+.br
+.ti -1c
+.RI "SideWalk \fBfindByKey\fP (const \fBKey\fP< SideWalk > &key) const "
+.br
+.ti -1c
+.RI "DriveOnPortion \fBfindByKey\fP (const \fBKey\fP< DriveOnPortion > &key) const "
+.br
+.ti -1c
+.RI "CrossRoad \fBfindByKey\fP (const \fBKey\fP< CrossRoad > &key) const "
+.br
+.ti -1c
+.RI "SideStrip \fBfindByKey\fP (const \fBKey\fP< SideStrip > &key) const "
+.br
+.ti -1c
+.RI "CurveMirror \fBfindByKey\fP (const \fBKey\fP< CurveMirror > &key) const "
+.br
+.ti -1c
+.RI "Wall \fBfindByKey\fP (const \fBKey\fP< Wall > &key) const "
+.br
+.ti -1c
+.RI "Fence \fBfindByKey\fP (const \fBKey\fP< Fence > &key) const "
+.br
+.ti -1c
+.RI "RailCrossing \fBfindByKey\fP (const \fBKey\fP< RailCrossing > &key) const "
+.br
+.ti -1c
+.RI "std::vector< \fBPoint\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBPoint\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBVector\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBVector\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBLine\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBLine\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBArea\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBArea\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Pole > \fBfindByFilter\fP (const \fBFilter\fP< Pole > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Box > \fBfindByFilter\fP (const \fBFilter\fP< Box > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBDTLane\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBDTLane\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Node > \fBfindByFilter\fP (const \fBFilter\fP< Node > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBLane\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBLane\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< WayArea > \fBfindByFilter\fP (const \fBFilter\fP< WayArea > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< RoadEdge > \fBfindByFilter\fP (const \fBFilter\fP< RoadEdge > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Gutter > \fBfindByFilter\fP (const \fBFilter\fP< Gutter > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Curb > \fBfindByFilter\fP (const \fBFilter\fP< Curb > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBWhiteLine\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBWhiteLine\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< StopLine > \fBfindByFilter\fP (const \fBFilter\fP< StopLine > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< ZebraZone > \fBfindByFilter\fP (const \fBFilter\fP< ZebraZone > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBCrossWalk\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBCrossWalk\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< RoadMark > \fBfindByFilter\fP (const \fBFilter\fP< RoadMark > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< RoadPole > \fBfindByFilter\fP (const \fBFilter\fP< RoadPole > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< RoadSign > \fBfindByFilter\fP (const \fBFilter\fP< RoadSign > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< \fBSignal\fP > \fBfindByFilter\fP (const \fBFilter\fP< \fBSignal\fP > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< StreetLight > \fBfindByFilter\fP (const \fBFilter\fP< StreetLight > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< UtilityPole > \fBfindByFilter\fP (const \fBFilter\fP< UtilityPole > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< GuardRail > \fBfindByFilter\fP (const \fBFilter\fP< GuardRail > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< SideWalk > \fBfindByFilter\fP (const \fBFilter\fP< SideWalk > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< DriveOnPortion > \fBfindByFilter\fP (const \fBFilter\fP< DriveOnPortion > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< CrossRoad > \fBfindByFilter\fP (const \fBFilter\fP< CrossRoad > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< SideStrip > \fBfindByFilter\fP (const \fBFilter\fP< SideStrip > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< CurveMirror > \fBfindByFilter\fP (const \fBFilter\fP< CurveMirror > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Wall > \fBfindByFilter\fP (const \fBFilter\fP< Wall > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< Fence > \fBfindByFilter\fP (const \fBFilter\fP< Fence > &filter) const "
+.br
+.ti -1c
+.RI "std::vector< RailCrossing > \fBfindByFilter\fP (const \fBFilter\fP< RailCrossing > &filter) const "
+.br
+.ti -1c
+.RI "bool \fBhasSubscribed\fP (\fBcategory_t\fP category) const "
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< PointArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< VectorArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< LineArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< AreaArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< PoleArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< BoxArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< DTLaneArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< NodeArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< LaneArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< WayAreaArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< RoadEdgeArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< GutterArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< CurbArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< WhiteLineArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< StopLineArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< ZebraZoneArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< CrossWalkArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< RoadMarkArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< RoadPoleArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< RoadSignArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< SignalArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< StreetLightArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< UtilityPoleArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< GuardRailArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< SideWalkArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< DriveOnPortionArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< CrossRoadArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< SideStripArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< CurveMirrorArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< WallArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< FenceArray > &cb)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< RailCrossingArray > &cb)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 348 of file vector_map\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VectorMap::VectorMap ()"
+
+.PP
+Definition at line 706 of file vector_map\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBPoint\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBPoint\fP > & filter) const"
+
+.PP
+Definition at line 905 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBVector\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBVector\fP > & filter) const"
+
+.PP
+Definition at line 910 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBLine\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBLine\fP > & filter) const"
+
+.PP
+Definition at line 915 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBArea\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBArea\fP > & filter) const"
+
+.PP
+Definition at line 920 of file vector_map\&.cpp\&.
+.SS "std::vector< Pole > VectorMap::findByFilter (const \fBFilter\fP< Pole > & filter) const"
+
+.PP
+Definition at line 925 of file vector_map\&.cpp\&.
+.SS "std::vector< Box > VectorMap::findByFilter (const \fBFilter\fP< Box > & filter) const"
+
+.PP
+Definition at line 930 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBDTLane\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBDTLane\fP > & filter) const"
+
+.PP
+Definition at line 935 of file vector_map\&.cpp\&.
+.SS "std::vector< Node > VectorMap::findByFilter (const \fBFilter\fP< Node > & filter) const"
+
+.PP
+Definition at line 940 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBLane\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBLane\fP > & filter) const"
+
+.PP
+Definition at line 945 of file vector_map\&.cpp\&.
+.SS "std::vector< WayArea > VectorMap::findByFilter (const \fBFilter\fP< WayArea > & filter) const"
+
+.PP
+Definition at line 950 of file vector_map\&.cpp\&.
+.SS "std::vector< RoadEdge > VectorMap::findByFilter (const \fBFilter\fP< RoadEdge > & filter) const"
+
+.PP
+Definition at line 955 of file vector_map\&.cpp\&.
+.SS "std::vector< Gutter > VectorMap::findByFilter (const \fBFilter\fP< Gutter > & filter) const"
+
+.PP
+Definition at line 960 of file vector_map\&.cpp\&.
+.SS "std::vector< Curb > VectorMap::findByFilter (const \fBFilter\fP< Curb > & filter) const"
+
+.PP
+Definition at line 965 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBWhiteLine\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBWhiteLine\fP > & filter) const"
+
+.PP
+Definition at line 970 of file vector_map\&.cpp\&.
+.SS "std::vector< StopLine > VectorMap::findByFilter (const \fBFilter\fP< StopLine > & filter) const"
+
+.PP
+Definition at line 975 of file vector_map\&.cpp\&.
+.SS "std::vector< ZebraZone > VectorMap::findByFilter (const \fBFilter\fP< ZebraZone > & filter) const"
+
+.PP
+Definition at line 980 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBCrossWalk\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBCrossWalk\fP > & filter) const"
+
+.PP
+Definition at line 985 of file vector_map\&.cpp\&.
+.SS "std::vector< RoadMark > VectorMap::findByFilter (const \fBFilter\fP< RoadMark > & filter) const"
+
+.PP
+Definition at line 990 of file vector_map\&.cpp\&.
+.SS "std::vector< RoadPole > VectorMap::findByFilter (const \fBFilter\fP< RoadPole > & filter) const"
+
+.PP
+Definition at line 995 of file vector_map\&.cpp\&.
+.SS "std::vector< RoadSign > VectorMap::findByFilter (const \fBFilter\fP< RoadSign > & filter) const"
+
+.PP
+Definition at line 1000 of file vector_map\&.cpp\&.
+.SS "std::vector< \fBSignal\fP > VectorMap::findByFilter (const \fBFilter\fP< \fBSignal\fP > & filter) const"
+
+.PP
+Definition at line 1005 of file vector_map\&.cpp\&.
+.SS "std::vector< StreetLight > VectorMap::findByFilter (const \fBFilter\fP< StreetLight > & filter) const"
+
+.PP
+Definition at line 1010 of file vector_map\&.cpp\&.
+.SS "std::vector< UtilityPole > VectorMap::findByFilter (const \fBFilter\fP< UtilityPole > & filter) const"
+
+.PP
+Definition at line 1015 of file vector_map\&.cpp\&.
+.SS "std::vector< GuardRail > VectorMap::findByFilter (const \fBFilter\fP< GuardRail > & filter) const"
+
+.PP
+Definition at line 1020 of file vector_map\&.cpp\&.
+.SS "std::vector< SideWalk > VectorMap::findByFilter (const \fBFilter\fP< SideWalk > & filter) const"
+
+.PP
+Definition at line 1025 of file vector_map\&.cpp\&.
+.SS "std::vector< DriveOnPortion > VectorMap::findByFilter (const \fBFilter\fP< DriveOnPortion > & filter) const"
+
+.PP
+Definition at line 1030 of file vector_map\&.cpp\&.
+.SS "std::vector< CrossRoad > VectorMap::findByFilter (const \fBFilter\fP< CrossRoad > & filter) const"
+
+.PP
+Definition at line 1035 of file vector_map\&.cpp\&.
+.SS "std::vector< SideStrip > VectorMap::findByFilter (const \fBFilter\fP< SideStrip > & filter) const"
+
+.PP
+Definition at line 1040 of file vector_map\&.cpp\&.
+.SS "std::vector< CurveMirror > VectorMap::findByFilter (const \fBFilter\fP< CurveMirror > & filter) const"
+
+.PP
+Definition at line 1045 of file vector_map\&.cpp\&.
+.SS "std::vector< Wall > VectorMap::findByFilter (const \fBFilter\fP< Wall > & filter) const"
+
+.PP
+Definition at line 1050 of file vector_map\&.cpp\&.
+.SS "std::vector< Fence > VectorMap::findByFilter (const \fBFilter\fP< Fence > & filter) const"
+
+.PP
+Definition at line 1055 of file vector_map\&.cpp\&.
+.SS "std::vector< RailCrossing > VectorMap::findByFilter (const \fBFilter\fP< RailCrossing > & filter) const"
+
+.PP
+Definition at line 1060 of file vector_map\&.cpp\&.
+.SS "\fBPoint\fP VectorMap::findByKey (const \fBKey\fP< \fBPoint\fP > & key) const"
+
+.PP
+Definition at line 745 of file vector_map\&.cpp\&.
+.SS "\fBVector\fP VectorMap::findByKey (const \fBKey\fP< \fBVector\fP > & key) const"
+
+.PP
+Definition at line 750 of file vector_map\&.cpp\&.
+.SS "\fBLine\fP VectorMap::findByKey (const \fBKey\fP< \fBLine\fP > & key) const"
+
+.PP
+Definition at line 755 of file vector_map\&.cpp\&.
+.SS "\fBArea\fP VectorMap::findByKey (const \fBKey\fP< \fBArea\fP > & key) const"
+
+.PP
+Definition at line 760 of file vector_map\&.cpp\&.
+.SS "Pole VectorMap::findByKey (const \fBKey\fP< Pole > & key) const"
+
+.PP
+Definition at line 765 of file vector_map\&.cpp\&.
+.SS "Box VectorMap::findByKey (const \fBKey\fP< Box > & key) const"
+
+.PP
+Definition at line 770 of file vector_map\&.cpp\&.
+.SS "\fBDTLane\fP VectorMap::findByKey (const \fBKey\fP< \fBDTLane\fP > & key) const"
+
+.PP
+Definition at line 775 of file vector_map\&.cpp\&.
+.SS "Node VectorMap::findByKey (const \fBKey\fP< Node > & key) const"
+
+.PP
+Definition at line 780 of file vector_map\&.cpp\&.
+.SS "\fBLane\fP VectorMap::findByKey (const \fBKey\fP< \fBLane\fP > & key) const"
+
+.PP
+Definition at line 785 of file vector_map\&.cpp\&.
+.SS "WayArea VectorMap::findByKey (const \fBKey\fP< WayArea > & key) const"
+
+.PP
+Definition at line 790 of file vector_map\&.cpp\&.
+.SS "RoadEdge VectorMap::findByKey (const \fBKey\fP< RoadEdge > & key) const"
+
+.PP
+Definition at line 795 of file vector_map\&.cpp\&.
+.SS "Gutter VectorMap::findByKey (const \fBKey\fP< Gutter > & key) const"
+
+.PP
+Definition at line 800 of file vector_map\&.cpp\&.
+.SS "Curb VectorMap::findByKey (const \fBKey\fP< Curb > & key) const"
+
+.PP
+Definition at line 805 of file vector_map\&.cpp\&.
+.SS "\fBWhiteLine\fP VectorMap::findByKey (const \fBKey\fP< \fBWhiteLine\fP > & key) const"
+
+.PP
+Definition at line 810 of file vector_map\&.cpp\&.
+.SS "StopLine VectorMap::findByKey (const \fBKey\fP< StopLine > & key) const"
+
+.PP
+Definition at line 815 of file vector_map\&.cpp\&.
+.SS "ZebraZone VectorMap::findByKey (const \fBKey\fP< ZebraZone > & key) const"
+
+.PP
+Definition at line 820 of file vector_map\&.cpp\&.
+.SS "\fBCrossWalk\fP VectorMap::findByKey (const \fBKey\fP< \fBCrossWalk\fP > & key) const"
+
+.PP
+Definition at line 825 of file vector_map\&.cpp\&.
+.SS "RoadMark VectorMap::findByKey (const \fBKey\fP< RoadMark > & key) const"
+
+.PP
+Definition at line 830 of file vector_map\&.cpp\&.
+.SS "RoadPole VectorMap::findByKey (const \fBKey\fP< RoadPole > & key) const"
+
+.PP
+Definition at line 835 of file vector_map\&.cpp\&.
+.SS "RoadSign VectorMap::findByKey (const \fBKey\fP< RoadSign > & key) const"
+
+.PP
+Definition at line 840 of file vector_map\&.cpp\&.
+.SS "\fBSignal\fP VectorMap::findByKey (const \fBKey\fP< \fBSignal\fP > & key) const"
+
+.PP
+Definition at line 845 of file vector_map\&.cpp\&.
+.SS "StreetLight VectorMap::findByKey (const \fBKey\fP< StreetLight > & key) const"
+
+.PP
+Definition at line 850 of file vector_map\&.cpp\&.
+.SS "UtilityPole VectorMap::findByKey (const \fBKey\fP< UtilityPole > & key) const"
+
+.PP
+Definition at line 855 of file vector_map\&.cpp\&.
+.SS "GuardRail VectorMap::findByKey (const \fBKey\fP< GuardRail > & key) const"
+
+.PP
+Definition at line 860 of file vector_map\&.cpp\&.
+.SS "SideWalk VectorMap::findByKey (const \fBKey\fP< SideWalk > & key) const"
+
+.PP
+Definition at line 865 of file vector_map\&.cpp\&.
+.SS "DriveOnPortion VectorMap::findByKey (const \fBKey\fP< DriveOnPortion > & key) const"
+
+.PP
+Definition at line 870 of file vector_map\&.cpp\&.
+.SS "CrossRoad VectorMap::findByKey (const \fBKey\fP< CrossRoad > & key) const"
+
+.PP
+Definition at line 875 of file vector_map\&.cpp\&.
+.SS "SideStrip VectorMap::findByKey (const \fBKey\fP< SideStrip > & key) const"
+
+.PP
+Definition at line 880 of file vector_map\&.cpp\&.
+.SS "CurveMirror VectorMap::findByKey (const \fBKey\fP< CurveMirror > & key) const"
+
+.PP
+Definition at line 885 of file vector_map\&.cpp\&.
+.SS "Wall VectorMap::findByKey (const \fBKey\fP< Wall > & key) const"
+
+.PP
+Definition at line 890 of file vector_map\&.cpp\&.
+.SS "Fence VectorMap::findByKey (const \fBKey\fP< Fence > & key) const"
+
+.PP
+Definition at line 895 of file vector_map\&.cpp\&.
+.SS "RailCrossing VectorMap::findByKey (const \fBKey\fP< RailCrossing > & key) const"
+
+.PP
+Definition at line 900 of file vector_map\&.cpp\&.
+.SS "bool VectorMap::hasSubscribed (\fBcategory_t\fP category) const"
+
+.PP
+Definition at line 377 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< PointArray > & cb)"
+
+.PP
+Definition at line 1065 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< VectorArray > & cb)"
+
+.PP
+Definition at line 1070 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< LineArray > & cb)"
+
+.PP
+Definition at line 1075 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< AreaArray > & cb)"
+
+.PP
+Definition at line 1080 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< PoleArray > & cb)"
+
+.PP
+Definition at line 1085 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< BoxArray > & cb)"
+
+.PP
+Definition at line 1090 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< DTLaneArray > & cb)"
+
+.PP
+Definition at line 1095 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< NodeArray > & cb)"
+
+.PP
+Definition at line 1100 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< LaneArray > & cb)"
+
+.PP
+Definition at line 1105 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< WayAreaArray > & cb)"
+
+.PP
+Definition at line 1110 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< RoadEdgeArray > & cb)"
+
+.PP
+Definition at line 1115 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< GutterArray > & cb)"
+
+.PP
+Definition at line 1120 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< CurbArray > & cb)"
+
+.PP
+Definition at line 1125 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< WhiteLineArray > & cb)"
+
+.PP
+Definition at line 1130 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< StopLineArray > & cb)"
+
+.PP
+Definition at line 1135 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< ZebraZoneArray > & cb)"
+
+.PP
+Definition at line 1140 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< CrossWalkArray > & cb)"
+
+.PP
+Definition at line 1145 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< RoadMarkArray > & cb)"
+
+.PP
+Definition at line 1150 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< RoadPoleArray > & cb)"
+
+.PP
+Definition at line 1155 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< RoadSignArray > & cb)"
+
+.PP
+Definition at line 1160 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< SignalArray > & cb)"
+
+.PP
+Definition at line 1165 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< StreetLightArray > & cb)"
+
+.PP
+Definition at line 1170 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< UtilityPoleArray > & cb)"
+
+.PP
+Definition at line 1175 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< GuardRailArray > & cb)"
+
+.PP
+Definition at line 1180 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< SideWalkArray > & cb)"
+
+.PP
+Definition at line 1185 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< DriveOnPortionArray > & cb)"
+
+.PP
+Definition at line 1190 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< CrossRoadArray > & cb)"
+
+.PP
+Definition at line 1195 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< SideStripArray > & cb)"
+
+.PP
+Definition at line 1200 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< CurveMirrorArray > & cb)"
+
+.PP
+Definition at line 1205 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< WallArray > & cb)"
+
+.PP
+Definition at line 1210 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< FenceArray > & cb)"
+
+.PP
+Definition at line 1215 of file vector_map\&.cpp\&.
+.SS "void VectorMap::registerCallback (const \fBCallback\fP< RailCrossingArray > & cb)"
+
+.PP
+Definition at line 1220 of file vector_map\&.cpp\&.
+.SS "void VectorMap::subscribe (ros::NodeHandle & nh, \fBcategory_t\fP category)"
+
+.PP
+Definition at line 710 of file vector_map\&.cpp\&.
+.SS "void VectorMap::subscribe (ros::NodeHandle & nh, \fBcategory_t\fP category, const ros::Duration & timeout)"
+
+.PP
+Definition at line 721 of file vector_map\&.cpp\&.
+.SS "void VectorMap::subscribe (ros::NodeHandle & nh, \fBcategory_t\fP category, const size_t max_retries)"
+
+.PP
+Definition at line 733 of file vector_map\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

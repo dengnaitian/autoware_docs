@@ -1,0 +1,11 @@
+<map id="autoware_launcher.gui.widgets.AwAbstructFrame" name="autoware_launcher.gui.widgets.AwAbstructFrame">
+<area shape="rect" id="node3" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_boolean_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwBooleanFrame" alt="" coords="380,5,616,47"/>
+<area shape="rect" id="node4" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_integer_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwIntegerFrame" alt="" coords="380,71,616,112"/>
+<area shape="rect" id="node5" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_real_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwRealFrame" alt="" coords="380,136,616,177"/>
+<area shape="rect" id="node6" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_text_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwTextFrame" alt="" coords="380,201,616,243"/>
+<area shape="rect" id="node8" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_text_list_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwTextListFrame" alt="" coords="380,267,616,308"/>
+<area shape="rect" id="node10" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_transform_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwTransformFrame" alt="" coords="380,332,616,373"/>
+<area shape="rect" id="node11" href="$classautoware__launcher_1_1gui_1_1plugins_1_1node_1_1_aw_default_node_frame.html" title="autoware_launcher.gui.plugins.node.\lAwDefaultNodeFrame" alt="" coords="381,397,615,439"/>
+<area shape="rect" id="node7" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_file_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwFileFrame" alt="" coords="664,201,900,243"/>
+<area shape="rect" id="node9" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_file_list_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwFileListFrame" alt="" coords="664,267,900,308"/>
+</map>

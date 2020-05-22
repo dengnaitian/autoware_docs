@@ -1,0 +1,130 @@
+.TH "waypoint_maker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waypoint_maker \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWaypointExtractor\fP"
+.br
+.ti -1c
+.RI "class \fBWaypointLoaderNode\fP"
+.br
+.ti -1c
+.RI "class \fBWaypointReplanner\fP"
+.br
+.ti -1c
+.RI "class \fBWaypointReplannerNode\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::underlying_type< \fBFileFormat\fP >::type \fBFileFormatInteger\fP"
+.br
+.ti -1c
+.RI "typedef std::unordered_map< unsigned long, std::pair< unsigned long, double > > \fBKeyVal\fP"
+.br
+.ti -1c
+.RI "typedef boost::circular_buffer< \fBgeometry_msgs::Point\fP > \fBCbufGPoint\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFileFormat\fP : int32_t { \fBFileFormat::ver1\fP, \fBFileFormat::ver2\fP, \fBFileFormat::ver3\fP, \fBFileFormat::unknown\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBparseColumns\fP (const std::string &line, std::vector< std::string > *columns)"
+.br
+.ti -1c
+.RI "size_t \fBcountColumns\fP (const std::string &line)"
+.br
+.ti -1c
+.RI "double \fBkmph2mps\fP (double velocity_kmph)"
+.br
+.ti -1c
+.RI "double \fBmps2kmph\fP (double velocity_mps)"
+.br
+.ti -1c
+.RI "const std::string \fBaddFileSuffix\fP (std::string file_path, std::string suffix)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBMULTI_LANE_CSV\fP = '/tmp/driving_lane\&.csv'"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::circular_buffer<\fBgeometry_msgs::Point\fP> \fBwaypoint_maker::CbufGPoint\fP"
+
+.PP
+Definition at line 32 of file waypoint_replanner\&.h\&.
+.SS "typedef std::underlying_type<\fBFileFormat\fP>::type \fBwaypoint_maker::FileFormatInteger\fP"
+
+.PP
+Definition at line 46 of file waypoint_loader_core\&.h\&.
+.SS "typedef std::unordered_map<unsigned long, std::pair<unsigned long, double> > \fBwaypoint_maker::KeyVal\fP"
+
+.PP
+Definition at line 31 of file waypoint_replanner\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBwaypoint_maker::FileFormat\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIver1 \fP\fP
+.TP
+\fB\fIver2 \fP\fP
+.TP
+\fB\fIver3 \fP\fP
+.TP
+\fB\fIunknown \fP\fP
+.PP
+Definition at line 37 of file waypoint_loader_core\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "const std::string waypoint_maker::addFileSuffix (std::string file_path, std::string suffix)"
+
+.SS "size_t waypoint_maker::countColumns (const std::string & line)"
+
+.PP
+Definition at line 305 of file waypoint_loader_core\&.cpp\&.
+.SS "double waypoint_maker::kmph2mps (double velocity_kmph)\fC [inline]\fP"
+
+.PP
+Definition at line 48 of file waypoint_loader_core\&.h\&.
+.SS "double waypoint_maker::mps2kmph (double velocity_mps)\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file waypoint_loader_core\&.h\&.
+.SS "void waypoint_maker::parseColumns (const std::string & line, std::vector< std::string > * columns)"
+
+.PP
+Definition at line 283 of file waypoint_loader_core\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const std::string waypoint_maker::MULTI_LANE_CSV = '/tmp/driving_lane\&.csv'"
+
+.PP
+Definition at line 35 of file waypoint_loader_core\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

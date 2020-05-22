@@ -1,0 +1,41 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_filters_packages_points_preprocessor_nodes_compare_map_filter__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_filters_packages_points_preprocessor_nodes_compare_map_filter__r_e_a_d_m_e \- Compare Map Filter 
+Autoware package that compare the LiDAR PointCloud and PointCloud Map and then extract (or eliminate) coincident points\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+PointCloud Map with extremely few unnecessary PointCloud (people, cars, etc\&.)\&.
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.IP "  \(bu" 4
+\fCroslaunch points_preprocessor compare_map_filter\&.launch\fP
+.PP
+
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Sensing Tab -> Points Preprocessor -> \fCcompare_map_filter\fP You can change the config, as well as other parameters, by clicking [app]
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescription  \fCinput_point_topic\fP*String*PointCloud source topic\&. Default \fC/points_raw\fP\&. \fCinput_map_topic\fP*String*PointCloud Map topic\&. Default \fC/points_map\fP\&. \fCoutput_match_topic\fP*String*Comparing LiDAR PointCloud and PointCloud Map, topic of the PointCloud which matched\&. Default \fC/match_points\fP\&. \fCoutput_unmatch_topic\fP*String*Comparing LiDAR PointCloud and PointCloud Map, topic of the PointCloud which unmatched\&. Default \fC/unmatch_points\fP\&. \fCdistance_threshold\fP*Double*Threshold for comparing LiDAR PointCloud and PointCloud Map\&. Euclidean distance (mether)\&. Default \fC0\&.3\fP\&. \fCmin_clipping_height\fP*Double*Remove the points where the height is lower than the threshold\&. (Based on sensor coordinates)\&. Default \fC-2\&.0\fP\&. \fCmax_clipping_height\fP*Double*Remove the points where the height is higher than the threshold\&. (Based on sensor coordinates)\&. Default \fC0\&.5\fP\&. 
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/points_raw\fP\fCsensor_msgs/PointCloud2\fPPointCloud source topic\&. \fC/points_map\fP\fCsensor_msgs/PointCloud2\fPPointCloud Map topic\&. \fC/config/compare_map_filter\fP\fCautoware_msgs/ConfigCompareMapFilter\fPConfiguration adjustment for threshold\&. \fC/tf\fPTFsensor frame <-> map frame 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/match_points\fP\fCsensor_msgs/PointCloud2\fPComparing LiDAR PointCloud and PointCloud Map, topic of the PointCloud which matched\&. \fC/unmatch_points\fP\fCsensor_msgs/PointCloud2\fPComparing LiDAR PointCloud and PointCloud Map, topic of the PointCloud which unmatched\&. 
+.SS "Video"
+.PP
+\fC\fP 

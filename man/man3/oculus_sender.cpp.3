@@ -1,0 +1,159 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/oculus_socket/nodes/oculus_sender/oculus_sender.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/socket/packages/oculus_socket/nodes/oculus_sender/oculus_sender.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl/io/io\&.h>\fP
+.br
+\fC#include <pcl/io/pcd_io\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <visualization_msgs/Marker\&.h>\fP
+.br
+\fC#include <visualization_msgs/MarkerArray\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBUFSIZE\fP   1024"
+.br
+.ti -1c
+.RI "#define \fBNDT_PORT\fP   59630"
+.br
+.ti -1c
+.RI "#define \fBPI\fP   3\&.141592"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "double \fBroll\fP"
+.br
+.ti -1c
+.RI "double \fBpitch\fP"
+.br
+.ti -1c
+.RI "double \fByaw\fP"
+.br
+.ti -1c
+.RI "int \fBsock1\fP"
+.br
+.ti -1c
+.RI "struct sockaddr_in \fBaddr1\fP"
+.br
+.ti -1c
+.RI "char \fBbuf1\fP [\fBBUFSIZE\fP]"
+.br
+.ti -1c
+.RI "char \fBbuf2\fP [\fBBUFSIZE\fP]"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBprev\fP"
+.br
+.ti -1c
+.RI "struct timeval \fBt\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BUFSIZE   1024"
+
+.PP
+Definition at line 22 of file oculus_sender\&.cpp\&.
+.SS "#define NDT_PORT   59630"
+
+.PP
+Definition at line 23 of file oculus_sender\&.cpp\&.
+.SS "#define PI   3\&.141592"
+
+.PP
+Definition at line 24 of file oculus_sender\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 104 of file oculus_sender\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "struct sockaddr_in addr1"
+
+.PP
+Definition at line 31 of file oculus_sender\&.cpp\&.
+.SS "char buf1[\fBBUFSIZE\fP]"
+
+.PP
+Definition at line 32 of file oculus_sender\&.cpp\&.
+.SS "char buf2[\fBBUFSIZE\fP]"
+
+.PP
+Definition at line 33 of file oculus_sender\&.cpp\&.
+.SS "double pitch"
+
+.PP
+Definition at line 27 of file oculus_sender\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP prev"
+
+.PP
+Definition at line 35 of file oculus_sender\&.cpp\&.
+.SS "double roll"
+
+.PP
+Definition at line 26 of file oculus_sender\&.cpp\&.
+.SS "int sock1"
+
+.PP
+Definition at line 30 of file oculus_sender\&.cpp\&.
+.SS "struct timeval t"
+
+.PP
+Definition at line 37 of file oculus_sender\&.cpp\&.
+.SS "double yaw"
+
+.PP
+Definition at line 28 of file oculus_sender\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

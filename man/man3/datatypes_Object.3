@@ -1,0 +1,727 @@
+.TH "datatypes::Object" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Object \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Object\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBObjectClassification\fP { \fBUnclassified\fP = 0, \fBUnknownSmall\fP = 1, \fBUnknownBig\fP = 2, \fBPedestrian\fP = 3, \fBBike\fP = 4, \fBCar\fP = 5, \fBTruck\fP = 6, \fBStructure_Pylon\fP = 7, \fBStructure_Beacon\fP = 8, \fBStructure_GuardRail\fP = 9, \fBStructure_ConcreteBarrier\fP = 10, \fBNumClasses\fP, \fBUnknown\fP = 15 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObject\fP ()"
+.br
+.ti -1c
+.RI "\fB~Object\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBObject\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "\fBUINT16\fP \fBgetObjectId\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectId\fP (\fBUINT16\fP v)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetFlags\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (\fBUINT16\fP v)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetObjectAge\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectAge\fP (\fBUINT32\fP v)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetHiddenStatusAge\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisHiddenStatus\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetHiddenStatusAge\fP (\fBUINT16\fP v)"
+.br
+.ti -1c
+.RI "const \fBTime\fP & \fBgetTimestamp\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTimestamp\fP (const \fBTime\fP &v)"
+.br
+.ti -1c
+.RI "\fBObjectClassification\fP \fBgetClassification\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClassification\fP (\fBObjectClassification\fP v)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetClassificationAge\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClassificationAge\fP (\fBUINT32\fP v)"
+.br
+.ti -1c
+.RI "double \fBgetClassificationQuality\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClassificationQuality\fP (double v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetCenterPoint\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCenterPoint\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetCenterPointSigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCenterPointSigma\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "double \fBgetCourseAngle\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCourseAngle\fP (double newCourseAngle)"
+.br
+.ti -1c
+.RI "double \fBgetCourseAngleSigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetCourseAngleSigma\fP (double v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetRelativeVelocity\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRelativeVelocity\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetRelativeVelocitySigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetRelativeVelocitySigma\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetAbsoluteVelocity\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAbsoluteVelocity\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetAbsoluteVelocitySigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAbsoluteVelocitySigma\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetObjectBox\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectBox\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "\fBBox2D\fP \fBgetBox\fP () const "
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetObjectBoxSigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectBoxSigma\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "void \fBgetObjectBoxVarCovar\fP (double &var_x, double &var_y, double &covar_xy) const "
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetBoundingBox\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBoundingBox\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetBoundingBoxCenter\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBoundingBoxCenter\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetClosestPoint\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetClosestPoint\fP (const \fBPoint2D\fP &v)"
+.br
+.ti -1c
+.RI "const \fBPolygon2D\fP & \fBgetContourPoints\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetContourPoints\fP (const \fBPolygon2D\fP &v)"
+.br
+.ti -1c
+.RI "void \fBaddContourPoint\fP (const \fBPoint2D\fP cp)"
+.br
+.ti -1c
+.RI "\fBUINT64\fP \fBgetVehicleWLANid\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetVehicleWLANid\fP (\fBUINT64\fP v)"
+.br
+.ti -1c
+.RI "double \fBgetObjectHeight\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectHeight\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetObjectHeightSigma\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectHeightSigma\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetObjectMass\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetObjectMass\fP (double v)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetValid\fP (bool newValue=true)"
+.br
+.ti -1c
+.RI "double \fBgetMaxAbsoluteVelocity\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMaxAbsoluteVelocity\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetNormalizedMeanPointDist\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetNormalizedMeanPointDist\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetTotalTrackingDuration\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTotalTrackingDuration\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetTotalTrackedPathLength\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetTotalTrackedPathLength\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBgetMeanAbsoluteVelocity\fP () const "
+.br
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::streamsize \fBgetSerializedSize\fP (\fBUINT32\fP version) const "
+.br
+.RI "\fISize of the serialized representation of this object\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "void \fBincrementObjectAge\fP ()"
+.br
+.RI "\fIJust increment objectAge by one\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBobjectClassificationToString\fP (\fBObjectClassification\fP v)"
+.br
+.RI "\fIReturns the given classification value as a string\&. \fP"
+.ti -1c
+.RI "static std::string \fBobjectClassificationToStringWithNum\fP (\fBObjectClassification\fP v)"
+.br
+.RI "\fIReturns the given classification value as a string with the integer number included\&. \fP"
+.ti -1c
+.RI "static const char * \fBobjectClassificationToShortString\fP (\fBObjectClassification\fP v)"
+.br
+.RI "\fIReturns the given classification value as a short string\&. \fP"
+.ti -1c
+.RI "static \fBObject::ObjectClassification\fP \fBstringToObjectClassification\fP (const std::string &s)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class contains all that is known about objects in the environmental model: Object position, velocity, course angle, and classification\&.
+.PP
+Tracked object at position A, Course Angle Psi, Velocity vector vh, and Size sx, xy The available information about each object is shown in the figure above\&. The host vehicle's axis system is X, Y with the origin at H\&. The center point A of the object is given in the host vehicle's axis system X, Y by \fBgetCenterPoint()\fP\&. (In exact ISO 8855 terminology, the used axis system X,Y is the host vehicle's 'intermediate axis system')
+.PP
+The orientation of the object is given by the course angle Psi ( $\psi$) by \fBgetCourseAngle()\fP, which is the angle from the host vehicle's X axis to the object's Xo axis\&. Other names for this angle are the 'object's yaw angle' $\psi$ or heading or orientation\&. This defines the object's axis system Xo, Yo\&.
+.PP
+The velocity of the object is given by the velocity vector vh ( $v_h$) by \fBgetAbsoluteVelocity()\fP, which gives the object's velocity specified in the host vehicle's axis system\&. (In exact ISO 8855 terminology, the vector vh is the object's 'horizontal
+velocity'\&.)
+.PP
+The size of the object is given by the side lengths sx, sy of the rectangle in the object's axis system by \fBgetObjectBox()\fP\&. Position, orientation, and size are given altogether by \fBgetBox()\fP\&.
+.PP
+(Note: In exact ISO 8855 terminology, the object's axis system Xo,Yo might point into a slightly different direction than the velocity vector, in which case $v_h$ is rotated from X_o by the sideslip angle $\beta$\&. The rotation of the velocity vector compared to the host vehicle's axis system, the course angle $\nu$, is then given by $\nu=\psi+\beta$\&. However, depending on the used tracking algorithms the sideslip angle is neglected and $\nu=\psi$, so there should be no difference between the course angle and the yaw angle\&.)
+.PP
+Note: The current Laserscanner tracking algorithms can fill in only a subset of the data fields that exist in this class\&. But those additional data fields are needed as soon as we deal with data fusion from WLAN data sources\&. Since those fusion algorithms are of importance to our algorithms as well, we already have reserved the member variables for those fields\&.
+.PP
+Internal note to self: For the next revision one might consider adding the following data fields:
+.PP
+.IP "\(bu" 2
+centerOfGravity as opposed to center of geometry in \fBgetCenterPoint()\fP
+.IP "\(bu" 2
+maybe a list of available referencePoints
+.IP "\(bu" 2
+maybe an enum of the referencePoint types
+.IP "\(bu" 2
+centerOfGeometry BoundingBox 
+.PP
+
+.PP
+Definition at line 78 of file Object\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::Object::ObjectClassification\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUnclassified \fP\fP
+.TP
+\fB\fIUnknownSmall \fP\fP
+.TP
+\fB\fIUnknownBig \fP\fP
+.TP
+\fB\fIPedestrian \fP\fP
+.TP
+\fB\fIBike \fP\fP
+.TP
+\fB\fICar \fP\fP
+.TP
+\fB\fITruck \fP\fP
+.TP
+\fB\fIStructure_Pylon \fP\fP
+.TP
+\fB\fIStructure_Beacon \fP\fP
+.TP
+\fB\fIStructure_GuardRail \fP\fP
+.TP
+\fB\fIStructure_ConcreteBarrier \fP\fP
+.TP
+\fB\fINumClasses \fP\fP
+.TP
+\fB\fIUnknown \fP\fP
+.PP
+Definition at line 81 of file Object\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Object::Object ()"
+
+.PP
+Definition at line 13 of file Object\&.cpp\&.
+.SS "datatypes::Object::~Object ()"
+
+.PP
+Definition at line 48 of file Object\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::Object::addContourPoint (const \fBPoint2D\fP cp)"
+
+.PP
+Definition at line 194 of file Object\&.cpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getAbsoluteVelocity () const\fC [inline]\fP"
+Returns the velocity vector ('Geschwindigkeitsvektor') of this object in [meter/seconds] as absolute value\&. The orientation is relative to our vehicle's coordinate system\&. 
+.PP
+Definition at line 247 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getAbsoluteVelocitySigma () const\fC [inline]\fP"
+Returns the velocity vector standard deviation (i\&.e\&. the uncertainty) of this object in [meter/seconds], absolute\&. 
+.PP
+Definition at line 253 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getBoundingBox () const\fC [inline]\fP"
+Returns the size of a rectangle around the object's/bounding box center point that contains (bounds) all of this object's scanpoints, in parallel to our vehicle's coordinate system axis (also called a paraxial rectangle)\&. 
+.PP
+Definition at line 314 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getBoundingBoxCenter () const\fC [inline]\fP"
+Returns the center of the bounding box\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+{\fBgetBoundingBox\fP} 
+.RE
+.PP
+
+.PP
+Definition at line 320 of file Object\&.hpp\&.
+.SS "\fBBox2D\fP datatypes::Object::getBox () const"
+Returns a rectangular box around the object's center point in [meter]\&. This method is just shorthand for obtaining the center point by \fBgetCenterPoint()\fP, the course angle (orientation) by \fBgetCourseAngle()\fP, and the size of the object by \fBgetObjectBox()\fP\&. \fBBox2D::getSize()\fP::getX() returns the size of this object in x-direction of the object's coordinate system (i\&.e\&. the object length), \fBBox2D::getSize()\fP::getY() the size of this object in y-direction (i\&.e\&. the object width)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetCenterPoint()\fP, \fBgetCenterPoint()\fP, \fBgetObjectBox()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file Object\&.cpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getCenterPoint () const\fC [inline]\fP"
+Returns the tracked center point of geometry ('Mittelpunkt') of this object in [meter], relative to our vehicle's coordinate system\&.
+.PP
+This estimated center point is as close to the actual center point as possible with the respective tracking algorithm\&. To be more precise, if the tracking algorithm tracks the center of gravity (COG) point, the COG point will be given here instead of the actual center of geometry\&. In those cases the actual center of geometry is unknown, unfortunately\&.
+.PP
+More information about the position of the object might be obtained from the \fBgetContourPoints()\fP pointlist or through accessing the SegmentList by getSegment(), but those will always give unfiltered (non-tracked) results\&. 
+.PP
+Definition at line 187 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getCenterPointSigma () const\fC [inline]\fP"
+Returns the standard deviation (i\&.e\&. the uncertainty, 'Mittelpunkt-Standardabweichung') of the center point of geometry estimation of this object, given in Vehicle coordinates in [meter]\&. 
+.PP
+Definition at line 194 of file Object\&.hpp\&.
+.SS "\fBObjectClassification\fP datatypes::Object::getClassification () const\fC [inline]\fP"
+Returns the object class that is most likely for this object\&. 
+.PP
+Definition at line 156 of file Object\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::Object::getClassificationAge () const\fC [inline]\fP"
+Returns the number of scans in which the object has has been classified in the current classification\&. 
+.PP
+Definition at line 161 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getClassificationQuality () const\fC [inline]\fP"
+Returns the quality measure ('Guete') of the current classification in [0 \&.\&. 1]\&. 
+.PP
+Definition at line 166 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getClosestPoint () const\fC [inline]\fP"
+Returns the point of this object that is closest to the origin of our vehicle's coordinate system\&.
+.PP
+If this is not set, returns a zero-valued point\&. 
+.PP
+Definition at line 328 of file Object\&.hpp\&.
+.SS "const \fBPolygon2D\fP& datatypes::Object::getContourPoints () const\fC [inline]\fP"
+Returns a vector of points that describes a polygon outline of the current object's measurement points\&. 
+.PP
+Definition at line 333 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getCourseAngle () const\fC [inline]\fP"
+Returns the course angle ('Kurswinkel') of this object's movement in [radian], in the interval [-pi, pi)\&. This is named conforming to ISO 8855; elsewhere this value is also called the Orientation or the Heading\&.
+.PP
+This angle is the angle from the host vehicle's x-coordinate axis to the object's x-coordinate axis (which in most cases is identical to the object's velocity vector)\&. It is also the sum of yaw angle ('Gierwinkel') and sideslip angle ('Schwimmwinkel') of this object\&. 
+.PP
+Definition at line 207 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getCourseAngleSigma () const\fC [inline]\fP"
+Returns the course angle standard deviation (i\&.e\&. the uncertainty, 'Kurswinkel-Standardabweichung') in [radian]\&. This is named conforming to ISO 8855; elsewhere this value is also called the Orientation or the Heading\&. 
+.PP
+Definition at line 224 of file Object\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Object::getFlags () const\fC [inline]\fP"
+Returns the flags that have been set in this object\&. Currently used bits are as follows: bit#0 = basic information is available; bit#1 = contour information has been set, bit#2 = boundingBox has been set; bit#3 = object contains fused data from other sources (WLAN etc\&.); bit#4 = relative velocity has been set; bit#5 = CAN \fBObject\fP Data only (protocol version: 1; either bounding box or object box is available (see bit#2); analog see bit#4 if relative or absolute velocity has been set); bit#6\&.\&.\&.15 = reserved 
+.PP
+Definition at line 131 of file Object\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Object::getHiddenStatusAge () const\fC [inline]\fP"
+Returns the number of scans in which the object has not been observed by measurement (i\&.e\&. it was hidden) but instead it has only been predicted\&. 
+.PP
+Definition at line 142 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getMaxAbsoluteVelocity () const\fC [inline]\fP"
+Returns the maximum observed absolute velocity [m/s] (Classification feature)\&. The value is NaN if it hasn't been set so far\&. The value is always non-negative, or NaN\&. 
+.PP
+Definition at line 385 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getMeanAbsoluteVelocity () const"
+Returns the mean velocity during the whole time over which the object has been tracked [m/s], which is basically just \fBgetTotalTrackedPathLength()\fP divided by \fBgetTotalTrackingDuration()\fP\&. Always non-negative\&. 
+.PP
+Definition at line 437 of file Object\&.cpp\&.
+.SS "double datatypes::Object::getNormalizedMeanPointDist () const\fC [inline]\fP"
+Returns the normalized mean distance [m] between scanpoints in the segment, or zero if the object is currently hidden\&. (Classification feature) Always non-negative\&. 
+.PP
+Definition at line 391 of file Object\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::Object::getObjectAge () const\fC [inline]\fP"
+Returns the number of scans in which this object has been tracked\&. 
+.PP
+Definition at line 136 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getObjectBox () const\fC [inline]\fP"
+Returns the estimated size of the object in [meter]\&.
+.PP
+The returned size estimation models a rotated rectangular box around the object's center point (hence the name 'object
+box')\&. \fBPoint2D::getX()\fP returns the size of this object in x-direction of the object's coordinate system (i\&.e\&. the object length), \fBPoint2D::getY()\fP the size in the y-direction (i\&.e\&. the object width)\&. This value is the filtered size estimation of this object\&.
+.PP
+This box contains (bounds) all of this object's scanpoints and is in parallel to the object's coordinate system, i\&.e\&. it is using the \fBgetCourseAngle()\fP orientation\&. [meter]
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetCourseAngle()\fP, \fBgetCenterPoint()\fP, \fBsetObjectBox()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 273 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getObjectBoxSigma () const\fC [inline]\fP"
+Returns the object size estimation's standard deviation [meter]\&.
+.PP
+This is given in the object's coordinate system! Watch out for necessary coordinate transformations (rotations) if you want to use this value in the host vehicle's coordinate system\&. 
+.PP
+Definition at line 297 of file Object\&.hpp\&.
+.SS "void datatypes::Object::getObjectBoxVarCovar (double & var_x, double & var_y, double & covar_xy) const"
+Writes the object box x and y variance (squared standard deviation) and their covariance into the given variables in the host vehicle's coordinate system [meter^2]\&.
+.PP
+In contrast to \fBgetObjectBoxSigma()\fP, here the x and y variance is rotated from the object coordinate system into the host system\&. Hence, if there was a zero covariance beforehand, a non-zero covariance will result after the rotation\&. 
+.PP
+Definition at line 353 of file Object\&.cpp\&.
+.SS "double datatypes::Object::getObjectHeight () const\fC [inline]\fP"
+The height of this object in [m] (most probably received through WLAN data) 
+.PP
+Definition at line 343 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getObjectHeightSigma () const\fC [inline]\fP"
+The standard deviation of the height of this object in [m] (most probably received through WLAN data) 
+.PP
+Definition at line 348 of file Object\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Object::getObjectId () const\fC [inline]\fP"
+Returns the index number of this object\&.
+.PP
+Watch out: In some algorithms, the object id 0 (Null) is used as the special value of a non-valid object, but in other algorithms the id 0 is regarded as just a normal value as any other\&. However, invalid objects should be marked with \fBsetValid()\fP instead of a Null-Value here\&. 
+.PP
+Definition at line 113 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getObjectMass () const\fC [inline]\fP"
+The mass of this object in \fCkilogram\fP 
+.PP
+Definition at line 353 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getRelativeVelocity () const\fC [inline]\fP"
+(Usually Unused\&.) Returns the velocity vector ('Geschwindigkeitsvektor') of this object in [meter/seconds], relative to our vehicle's coordinate system\&. Note: The currently implemented tracking will always track only the absolute velocity; hence, this field relativeVelocity will be unset and simply be zero (or some other irrelevant values)\&. 
+.PP
+Definition at line 232 of file Object\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Object::getRelativeVelocitySigma () const\fC [inline]\fP"
+(Usually Unused\&.) Returns the velocity vector standard deviation (i\&.e\&. the uncertainty) of this object in [meter/seconds], relative to our vehicle's coordinate system\&. Note: The currently implemented tracking will always track only the absolute velocity; hence, this field relativeVelocity will be unset and simply be zero (or some other irrelevant values)\&. 
+.PP
+Definition at line 241 of file Object\&.hpp\&.
+.SS "std::streamsize datatypes::Object::getSerializedSize (\fBUINT32\fP version) const"
+
+.PP
+Size of the serialized representation of this object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIversion\fP 1,2 == compressed meter values; 3,4 == double values 
+.RE
+.PP
+
+.SS "const \fBTime\fP& datatypes::Object::getTimestamp () const\fC [inline]\fP"
+Returns the time of when the center point of this object was observed\&. 
+.PP
+Definition at line 151 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getTotalTrackedPathLength () const\fC [inline]\fP"
+Returns the total path length of object movement that has been tracked [m]\&. (Classification feature) Always non-negative\&. 
+.PP
+Definition at line 402 of file Object\&.hpp\&.
+.SS "double datatypes::Object::getTotalTrackingDuration () const\fC [inline]\fP"
+Returns the total duration for which this object has been tracked in [seconds]\&. (Classification feature, needed for mean velocity) Always non-negative\&. 
+.PP
+Definition at line 397 of file Object\&.hpp\&.
+.SS "const \fBUINT32\fP datatypes::Object::getUsedMemory () const\fC [inline]\fP"
+
+.PP
+Definition at line 413 of file Object\&.hpp\&.
+.SS "\fBUINT64\fP datatypes::Object::getVehicleWLANid () const\fC [inline]\fP"
+An identifier to be used by WLAN fusion algorithms 
+.PP
+Definition at line 338 of file Object\&.hpp\&.
+.SS "void datatypes::Object::incrementObjectAge ()"
+
+.PP
+Just increment objectAge by one\&. 
+.PP
+Definition at line 407 of file Object\&.cpp\&.
+.SS "bool datatypes::Object::isHiddenStatus () const\fC [inline]\fP"
+Returns true if the object is not being observed in the very last measurement (i\&.e\&. it was hidden) but instead it has only been predicted\&. 
+.PP
+Definition at line 146 of file Object\&.hpp\&.
+.SS "bool datatypes::Object::isValid () const\fC [inline]\fP"
+True, if this object is valid\&.
+.PP
+This flag will only be used to decide whether this \fBObject\fP is included in the serialization, i\&.e\&. if an \fBObject\fP has 'false' here, it will not be serialized and will not be received by a receiver\&. Hence, this flag by itself is not included in the serialization\&.
+.PP
+Again: Invalid objects (those which return false here) will \fInot\fP be included in the serialization! 
+.PP
+Definition at line 367 of file Object\&.hpp\&.
+.SS "const char * datatypes::Object::objectClassificationToShortString (\fBObjectClassification\fP v)\fC [static]\fP"
+
+.PP
+Returns the given classification value as a short string\&. 
+.PP
+Definition at line 315 of file Object\&.cpp\&.
+.SS "const char * datatypes::Object::objectClassificationToString (\fBObjectClassification\fP v)\fC [static]\fP"
+
+.PP
+Returns the given classification value as a string\&. 
+.PP
+Definition at line 251 of file Object\&.cpp\&.
+.SS "std::string datatypes::Object::objectClassificationToStringWithNum (\fBObjectClassification\fP v)\fC [static]\fP"
+
+.PP
+Returns the given classification value as a string with the integer number included\&. 
+.PP
+Definition at line 309 of file Object\&.cpp\&.
+.SS "bool datatypes::Object::operator== (const \fBObject\fP & other) const"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 52 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setAbsoluteVelocity (const \fBPoint2D\fP & v)"
+Sets the velocity vector as absolute value\&. Note: This also updates \fBsetMaxAbsoluteVelocity()\fP accordingly\&. 
+.PP
+Definition at line 132 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setAbsoluteVelocitySigma (const \fBPoint2D\fP & v)"
+
+.PP
+Definition at line 143 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setBoundingBox (const \fBPoint2D\fP & v)"
+
+.PP
+Definition at line 164 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setBoundingBoxCenter (const \fBPoint2D\fP & v)"
+
+.PP
+Definition at line 171 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setCenterPoint (const \fBPoint2D\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 188 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setCenterPointSigma (const \fBPoint2D\fP & v)"
+
+.PP
+Definition at line 98 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setClassification (\fBObjectClassification\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 157 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setClassificationAge (\fBUINT32\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 162 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setClassificationQuality (double v)"
+
+.PP
+Definition at line 91 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setClosestPoint (const \fBPoint2D\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 329 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setContourPoints (const \fBPolygon2D\fP & v)"
+
+.PP
+Definition at line 188 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setCourseAngle (double newCourseAngle)"
+Sets the course angle ('Kurswinkel') of this object's movement in [radian], in the interval [-pi, pi)\&. This is named conforming to ISO 8855; elsewhere this value is also called the Orientation or the Heading\&.
+.PP
+If the new course angle is outside of the defined interval [-pi, pi), a warning message will be printed and the value will be normalized into that interval by \fBnormalizeRadians()\fP\&. 
+.PP
+Definition at line 105 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setCourseAngleSigma (double v)"
+
+.PP
+Definition at line 126 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setFlags (\fBUINT16\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 132 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setHiddenStatusAge (\fBUINT16\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 147 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setMaxAbsoluteVelocity (double v)"
+
+.PP
+Definition at line 412 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setNormalizedMeanPointDist (double v)"
+
+.PP
+Definition at line 418 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setObjectAge (\fBUINT32\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 137 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setObjectBox (const \fBPoint2D\fP & v)"
+Set the size of the rectangular box of this object\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBgetObjectBox()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setObjectBoxSigma (const \fBPoint2D\fP & v)"
+
+.PP
+Definition at line 157 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setObjectHeight (double v)\fC [inline]\fP"
+
+.PP
+Definition at line 344 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setObjectHeightSigma (double v)"
+
+.PP
+Definition at line 176 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setObjectId (\fBUINT16\fP v)\fC [inline]\fP"
+Sets the index number of this object\&.
+.PP
+For setting an object to invalid, use \fBsetValid()\fP\&. 
+.PP
+Definition at line 119 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setObjectMass (double v)"
+
+.PP
+Definition at line 182 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setRelativeVelocity (const \fBPoint2D\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 233 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setRelativeVelocitySigma (const \fBPoint2D\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 242 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setTimestamp (const \fBTime\fP & v)\fC [inline]\fP"
+
+.PP
+Definition at line 152 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setTotalTrackedPathLength (double v)"
+
+.PP
+Definition at line 430 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setTotalTrackingDuration (double v)"
+
+.PP
+Definition at line 424 of file Object\&.cpp\&.
+.SS "void datatypes::Object::setValid (bool newValue = \fCtrue\fP)\fC [inline]\fP"
+Set whether this object is valid\&.
+.PP
+This flag will only be used to decide whether this \fBObject\fP is included in the serialization, i\&.e\&. if an \fBObject\fP has 'false' here, it will not be serialized and will not be received by a receiver\&. Hence, this flag by itself is not included in the serialization\&.
+.PP
+Again: Invalid objects (those which have false here) will \fInot\fP be included in the serialization! 
+.PP
+Definition at line 380 of file Object\&.hpp\&.
+.SS "void datatypes::Object::setVehicleWLANid (\fBUINT64\fP v)\fC [inline]\fP"
+
+.PP
+Definition at line 339 of file Object\&.hpp\&.
+.SS "\fBObject::ObjectClassification\fP datatypes::Object::stringToObjectClassification (const std::string & s)\fC [static]\fP"
+Returns the classification value as converted from the given string\&. This accepts the output of both \fBobjectClassificationToString()\fP and \fBobjectClassificationToShortString()\fP\&. 
+.PP
+Definition at line 274 of file Object\&.cpp\&.
+.SS "std::string datatypes::Object::toString () const"
+Returns a human-readable form of the content of this object (for debugging output) The actual output is merely a conversion to string of the return value of toConfigValues()\&. 
+.PP
+Definition at line 201 of file Object\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

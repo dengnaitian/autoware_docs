@@ -1,0 +1,116 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/lib/libtraj_gen.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/lib/libtraj_gen.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <armadillo>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include 'libtraj_gen\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "union \fBSpline\fP \fBinitParams\fP (union \fBState\fP \fBveh\fP, union \fBState\fP goal)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBspeedControlLogic\fP (union \fBState\fP veh_next)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBresponseToControlInputs\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, double dt)"
+.br
+.ti -1c
+.RI "double \fBgetCurvatureCommand\fP (union \fBSpline\fP \fBcurvature\fP, double dt, double v, double \fBt\fP)"
+.br
+.ti -1c
+.RI "double \fBgetVelocityCommand\fP (double v_goal, double v)"
+.br
+.RI "\fIWill update to include ramp\&.\&.\&. \fP"
+.ti -1c
+.RI "union \fBState\fP \fBmotionModel\fP (union \fBState\fP \fBveh\fP, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, double dt, double horizon, int flag)"
+.br
+.ti -1c
+.RI "bool \fBcheckConvergence\fP (union \fBState\fP veh_next, union \fBState\fP goal)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBpDerivEstimate\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, int p_id, double h, double dt, double horizon, int stateIndex)"
+.br
+.ti -1c
+.RI "union \fBSpline\fP \fBgenerateCorrection\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, double dt, double horizon)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBnextState\fP (union \fBState\fP \fBveh\fP, union \fBSpline\fP \fBcurvature\fP, double vdes, double dt, double elapsedTime)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBgenLineStrip\fP (union \fBState\fP \fBveh\fP, union \fBSpline\fP \fBcurvature\fP, double vdes, double \fBt\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool checkConvergence (union \fBState\fP veh_next, union \fBState\fP goal)"
+
+.PP
+Definition at line 417 of file libtraj_gen\&.cpp\&.
+.SS "union \fBSpline\fP generateCorrection (union \fBState\fP veh, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP curvature, double dt, double horizon)"
+
+.PP
+Definition at line 521 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP genLineStrip (union \fBState\fP veh, union \fBSpline\fP curvature, double vdes, double t)"
+
+.PP
+Definition at line 671 of file libtraj_gen\&.cpp\&.
+.SS "double getCurvatureCommand (union \fBSpline\fP curvature, double dt, double v, double t)"
+
+.PP
+Definition at line 244 of file libtraj_gen\&.cpp\&.
+.SS "double getVelocityCommand (double v_goal, double v)"
+
+.PP
+Will update to include ramp\&.\&.\&. 
+.PP
+Definition at line 305 of file libtraj_gen\&.cpp\&.
+.SS "union \fBSpline\fP initParams (union \fBState\fP veh, union \fBState\fP goal)"
+
+.PP
+Definition at line 87 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP motionModel (union \fBState\fP veh, union \fBState\fP goal, union \fBSpline\fP curvature, double dt, double horizon, int flag)"
+
+.PP
+Definition at line 321 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP nextState (union \fBState\fP veh, union \fBSpline\fP curvature, double vdes, double dt, double elapsedTime)"
+
+.PP
+Definition at line 601 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP pDerivEstimate (union \fBState\fP veh, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP curvature, int p_id, double h, double dt, double horizon, int stateIndex)"
+
+.PP
+Definition at line 467 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP responseToControlInputs (union \fBState\fP veh, union \fBState\fP veh_next, double dt)"
+
+.PP
+Definition at line 194 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP speedControlLogic (union \fBState\fP veh_next)"
+
+.PP
+Definition at line 158 of file libtraj_gen\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

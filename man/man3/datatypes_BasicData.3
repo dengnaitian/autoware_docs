@@ -1,0 +1,89 @@
+.TH "datatypes::BasicData" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::BasicData \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BasicDatatypes\&.hpp>\fP
+.PP
+Inherited by \fBdatatypes::Box2D\fP, \fBdatatypes::Ellipse2D\fP, \fBdatatypes::EvalCase\fP, \fBdatatypes::EvalCaseResult\fP, \fBdatatypes::EvalCaseResults\fP, \fBdatatypes::EvalCases\fP, \fBdatatypes::FieldDescription\fP, \fBdatatypes::FieldParameter\fP, \fBdatatypes::Fields\fP, \fBdatatypes::Line2D\fP, \fBdatatypes::MeasurementList\fP, \fBdatatypes::Msg\fP, \fBdatatypes::ObjectList\fP, \fBdatatypes::Point2D\fP, \fBdatatypes::Point3D\fP, \fBdatatypes::Polygon2D\fP, \fBdatatypes::Polygon3D\fP, \fBdatatypes::Position3D\fP, \fBdatatypes::PositionWGS84\fP, \fBdatatypes::Scan\fP, \fBdatatypes::ScannerInfo\fP, \fBdatatypes::SensorStateInfo\fP, and \fBdatatypes::Trigger\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBasicData\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BasicData\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetDatatype\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetSourceId\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetSourceId\fP (\fBUINT16\fP id)"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const =0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBm_datatype\fP"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBm_sourceId\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 95 of file BasicDatatypes\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::BasicData::BasicData ()\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file BasicDatatypes\&.hpp\&.
+.SS "virtual datatypes::BasicData::~BasicData ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 99 of file BasicDatatypes\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBUINT16\fP datatypes::BasicData::getDatatype ()\fC [inline]\fP"
+
+.PP
+Definition at line 101 of file BasicDatatypes\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::BasicData::getSourceId ()\fC [inline]\fP"
+
+.PP
+Definition at line 102 of file BasicDatatypes\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::BasicData::getUsedMemory () const\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBdatatypes::ObjectList\fP, \fBdatatypes::FieldDynamic\fP, \fBdatatypes::FieldRadial\fP, \fBdatatypes::Position3D\fP, \fBdatatypes::FieldRectangle\fP, \fBdatatypes::FieldSegmented\fP, \fBdatatypes::Box2D\fP, \fBdatatypes::Ellipse2D\fP, \fBdatatypes::EvalCaseResult\fP, \fBdatatypes::Polygon2D\fP, \fBdatatypes::MeasurementList\fP, \fBdatatypes::EvalCase\fP, \fBdatatypes::SensorStateInfo\fP, \fBdatatypes::Line2D\fP, \fBdatatypes::Point2D\fP, \fBdatatypes::Circle2D\fP, \fBdatatypes::Point3D\fP, \fBdatatypes::PositionWGS84\fP, \fBdatatypes::Scan\fP, \fBdatatypes::Polygon3D\fP, \fBdatatypes::FieldParameter\fP, \fBdatatypes::EvalCaseResults\fP, \fBdatatypes::Fields\fP, \fBdatatypes::ScannerInfo\fP, \fBdatatypes::Trigger\fP, \fBdatatypes::Msg\fP, and \fBdatatypes::EvalCases\fP\&.
+.SS "virtual void datatypes::BasicData::setSourceId (\fBUINT16\fP id)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 103 of file BasicDatatypes\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUINT16\fP datatypes::BasicData::m_datatype\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file BasicDatatypes\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::BasicData::m_sourceId\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file BasicDatatypes\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

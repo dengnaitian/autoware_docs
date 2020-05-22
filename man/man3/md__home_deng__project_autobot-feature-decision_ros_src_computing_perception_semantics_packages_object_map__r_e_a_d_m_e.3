@@ -1,0 +1,188 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_object_map__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_object_map__r_e_a_d_m_e \- The `object_map` Package 
+This package contains nodes to extract information from the LiDAR sensor and from ADAS Maps\&. The processed result is published as GridMaps (grid_map) and/or occupancy grids(nav_msgs)\&. 
+.PP
+.PP
+.SS "Nodes in the Package"
+.PP
+.SS "points2costmap"
+.PP
+This node reads PointCloud data and creates an occupancy grid based on the data contained in it\&.
+.PP
+The subscribed PointCloud topic should be a processed PointCloud with the ground previously removed\&. The default input is set as the output PointCloud result from the node \fCeuclidean_clustering\fP of the \fClidar_tracker\fP package\&. However, another option might be the output of the \fCray_ground_filter\fP or \fCring_ground_filter\fP, both belonging to the \fCpoints_preprocessor\fP in the \fISensing\fP package\&.
+.PP
+The values contained within the OccupancyGrid range from 0-100, representing a probability percentage where 0 represents free space and 100 represents occupied space\&.
+.PP
+.SS "Input topics"
+.PP
+Default: \fC/points_lanes\fP (PointCloud) from euclidean cluster\&. It contains filtered points with the ground removed\&. Another possible option is \fC/points_no_ground\fP\&.
+.PP
+.SS "Output topics"
+.PP
+\fC/realtime_cost_map\fP (nav_msgs::OccupancyGrid) is the output OccupancyGrid, with values ranging from 0-100\&.
+.PP
+.SS "How to launch"
+.PP
+It can be launched as follows:
+.IP "1." 4
+Using the Runtime \fBManager\fP by clicking the \fCpoints2costmap\fP checkbox under the \fISemantics\fP section in the Computing tab\&.
+.IP "2." 4
+From a sourced terminal executing: \fCroslaunch \fBobject_map\fP points2costmap\&.launch\fP\&.
+.PP
+.PP
+.SS "\fBParameters\fP available in roslaunch and rosrun"
+.PP
+.IP "\(bu" 2
+\fCresolution\fP defines the equivalent value of a cell in the grid in meters\&. Smaller values result in better accuracy at the expense of memory and computing cost (default value: 0\&.1)\&.
+.IP "\(bu" 2
+\fCcell_width\fP represents the width in meters of the OccupancyGrid around the origin of the PointCloud (default: 150)\&.
+.IP "\(bu" 2
+\fCcell_height\fP represents the height in meters of the OccupancyGrid around the origin of the PointCloud (default: 150)\&.
+.IP "\(bu" 2
+\fCoffset_x\fP indicates if the center of the OccupancyGrid will be shifted by this distance, to the left(-) or right(+) (default: 25)\&.
+.IP "\(bu" 2
+\fCoffset_y\fP indicates if the center of the OccupancyGrid will be shifted by this distance, to the back(-) or front(+) (default: 0)\&.
+.IP "\(bu" 2
+\fCoffset_z\fP indicates if the center of the OccupancyGrid will be shifted by this distance, below(-) or above(+) (dDefault: 0)\&.
+.IP "\(bu" 2
+\fCpoints_topic\fP is the PointCloud topic source\&. 
+.PP
+
+.PP
+.PP
+.SS "laserscan2costmap"
+.PP
+This node performs the same function as \fCpoints2costmap\fP but uses 2D LaserScan messages to generate the OccupancyGrid\&.
+.PP
+.SS "Input topics"
+.PP
+Default: \fC/scan\fP (sensor_msgs::LaserScan) from vscan\&.
+.PP
+.SS "Output topics"
+.PP
+\fC/ring_ogm\fP (nav_msgs::OccupancyGrid) is the output OccupancyGrid with values ranging from 0-100\&.
+.PP
+.SS "How to launch"
+.PP
+It can be launched as follows:
+.IP "1." 4
+Using the Runtime \fBManager\fP by clicking the \fClaserscan2costmap\fP checkbox under the \fISemantics\fP section in the Computing tab\&.
+.IP "2." 4
+From a sourced terminal by executing: \fCroslaunch \fBobject_map\fP laserscan2costmap\&.launch\fP\&.
+.PP
+.PP
+.SS "\fBParameters\fP available in roslaunch and rosrun"
+.PP
+.IP "\(bu" 2
+\fCresolution\fP defines the equivalent value of a cell in the grid in meters\&. Smaller values result in better accuracy at the expense of memory and computing cost (default value: 0\&.1)\&.
+.IP "\(bu" 2
+\fCcell_width\fP represents the width in meters of the OccupancyGrid around the origin of the PointCloud (default: 150)\&.
+.IP "\(bu" 2
+\fCcell_height\fP represents the height in meters of the OccupancyGrid around the origin of the PointCloud (default: 150)\&.
+.IP "\(bu" 2
+\fCoffset_x\fP indicates if the center of the OccupancyGrid will be shifted by this distance, to the left(-) or right(+) (default: 25)\&.
+.IP "\(bu" 2
+\fCoffset_y\fP indicates if the center of the OccupancyGrid will be shifted by this distance, to the back(-) or front(+) (default: 0)\&.
+.IP "\(bu" 2
+\fCoffset_z\fP indicates if the center of the OccupancyGrid will be shifted by this distance, below(-) or above(+) (default: 0)\&.
+.IP "\(bu" 2
+\fCscan_topic\fP is the PointCloud topic source\&. 
+.PP
+
+.PP
+.PP
+.SS "wayarea2grid"
+.PP
+The ADAS Maps used in Autoware may contain the definition of the road areas, which is useful for computing whether a region is drivable or not\&. This node reads the data from an ADAS Map (\fBVectorMap\fP) and extracts the 3D positions of the road regions\&. It projects them into an OccupancyGrid and sets the value to \fC128\fP if the area is \fBroad\fP and \fC255\fP if it is not\&. These values are used because this node uses 8-bit bitmaps (grid_map)\&.
+.PP
+.SS "Input topics"
+.PP
+\fC/vector_map\fP (vector_map_msgs::WayArea) from the \fBVectorMap\fP publisher\&. \fC/tf\fP to obtain the transform between the vector map(grid_frame) and the sensor(sensor_frame) \&.
+.PP
+.SS "Output topics"
+.PP
+\fC/grid_map_wayarea\fP (grid_map::GridMap) is the resulting GridMap with values ranging from 0-255\&. \fC/occupancy_wayarea\fP (nav_msgs::OccupancyGrid) is the resulting OccupancyGrid with values ranging from 0-255\&.
+.PP
+.SS "How to launch"
+.PP
+It can be launched as follows:
+.IP "1." 4
+Using the Runtime \fBManager\fP by clicking the \fCwayarea2grid\fP checkbox under the \fISemantics\fP section in the Computing tab\&.
+.IP "2." 4
+From a sourced terminal by executing: \fCroslaunch \fBobject_map\fP wayarea2grid\&.launch\fP
+.PP
+.PP
+.SS "\fBParameters\fP available in roslaunch and rosrun"
+.PP
+.IP "\(bu" 2
+\fCsensor_frame\fP defines the coordinate frame of the vehicle origin (default value: velodyne)\&.
+.IP "\(bu" 2
+\fCgrid_frame\fP defines the coordinate frame of the map (default: map)\&.
+.IP "\(bu" 2
+\fCgrid_resolution\fP defines the equivalent value of a cell in the grid in meters\&. Smaller values result in better accuracy at the expense of memory and computing cost (default: 0\&.2)\&.
+.IP "\(bu" 2
+\fCgrid_length_x\fP represents the width in meters of the OccupancyGrid around the origin of the PointCloud (default: 25)\&.
+.IP "\(bu" 2
+\fCgrid_length_y\fP represents the height in meters of the OccupancyGrid around the origin of the PointCloud (default: 0)\&.
+.IP "\(bu" 2
+\fCgrid_position_x\fP indicates if the center of the OccupancyGrid will be shifted by this distance, left(-) or right(+) (default: 0)\&.
+.IP "\(bu" 2
+\fCgrid_position_y\fP indicates if the center of the OccupancyGrid will be shifted by this distance, back(-) or front(+) (default: 0)\&. 
+.PP
+
+.PP
+.PP
+.SS "grid_map_filter"
+.PP
+This node can combine sensor, map, and perception data as well as other OccupancyGrids\&. It generates OccupancyGrids with useful data for navigation purposes\&. It publishes three different layers\&. More details are provided in the output topics section below\&.
+.PP
+.SS "Input topics"
+.PP
+\fC/vector_map\fP (vector_map_msgs::WayArea) from the \fBVectorMap\fP publisher\&. \fC/tf\fP to obtain the transform between the vector map (grid_frame) and the sensor (sensor_frame)\&. \fC/realtime_cost_map\fP (nav_msgs::OccupancyGrid) calculated by \fCpoints2costmap\fP in this package\&.
+.PP
+.SS "Output topics"
+.PP
+\fC/filtered_grid_map\fP (grid_map::GridMap) which contains 3 layers and is also published as in regular OccupancyGrid messages\&. \fCdistance_transform\fP (nav_msgs::OccupancyGrid) applies a distance transform to the OccupancyGrid obtained from the \fC/realtime_cost_map\fP, allowing us to obtain a gradient of probabilities surrounding the obstacles PointCloud\&. \fCdist_wayarea\fP (nav_msgs::OccupancyGrid) contains a combination of the distance transform and the road data, as described in the \fCwayarea2grid\fP node\&. \fCcircle\fP (nav_msgs::OccupancyGrid) draws a circle surrounding the \fC/realtime_cost_map\fP\&.
+.PP
+The output topics are configured as described in the \fCgrid_map\fP package, and the configuration file is inside the \fCconfig\fP folder of the package\&.
+.PP
+.SS "How to launch"
+.PP
+It can be launched as follows:
+.IP "1." 4
+Using the Runtime \fBManager\fP by clicking the \fCgrid_map_filter\fP checkbox under the \fISemantics\fP section in the Computing tab\&.
+.IP "2." 4
+From a sourced terminal by executing: \fCroslaunch \fBobject_map\fP grid_map_filter\&.launch\fP\&.
+.PP
+.PP
+.SS "\fBParameters\fP available in roslaunch and rosrun"
+.PP
+.IP "\(bu" 2
+\fCmap_frame\fP defines the coordinate system of the realtime costmap (default value: map)\&.
+.IP "\(bu" 2
+\fCmap_topic\fP defines the topic where the realtime costmap is being published (default: /realtime_cost_map)\&.
+.IP "\(bu" 2
+\fCdist_transform_distance\fP defines the maximum distance to calculate the distance transform, in meters (default: 2\&.0)\&.
+.IP "\(bu" 2
+\fCuse_wayarea\fP indicates whether or not to use the road regions to filter the cost map (default: true)\&.
+.IP "\(bu" 2
+\fCuse_fill_circle\fP enables or disables the generation of the circle layer (default: true)\&.
+.IP "\(bu" 2
+\fCfill_circle_cost_threshold\fP indicates the minimum cost value threshold value to decide if a circle will be drawn (default: 20)
+.IP "\(bu" 2
+\fCcircle_radius\fP defines the radius of the circle, in meters (default: 1\&.7)\&. 
+.PP
+
+.PP
+.PP
+.SS "Instruction Videos"
+.PP
+.SS "grid_map_filter"
+.PP
+\fC\fP.PP
+.SS "wayarea2grid"
+.PP
+\fC\fP 

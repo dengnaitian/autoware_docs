@@ -1,0 +1,72 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_tracker_packages_lidar_kf_contour_track__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_tracker_packages_lidar_kf_contour_track__r_e_a_d_m_e \- KF based Object Tracker 
+
+.SS "kf contour tracker"
+.PP
+This nodes contains three options of tracking
+.IP "\(bu" 2
+Association only
+.IP "\(bu" 2
+Simple KF tracking
+.IP "\(bu" 2
+Contour area plust memory tracker (divid the horizon into contours and associate memory for each circle, which represent the maximum life time of each object)
+.PP
+.PP
+.SS "Outputs"
+.PP
+This tracker output (pose, heading, velocity) in global coordinates\&.
+.PP
+.SS "Object Filtering"
+.PP
+It can filter detected objects by size or/and vector map lanes proximity\&.
+.PP
+.SS "Options"
+.PP
+It tracks either OpenPlanner simulted vehicles or live detection cluster from 'lidar_euclidean_cluster_detect' It can simulated frame by frame testing with fixed time intervals 0\&.1 second\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+cloud_clusters
+.PP
+.IP "1." 4
+vector map, in case of using vector map object filtering (to disable using vector map set 'vector map filter distance' to 0)
+.PP
+.IP "1." 4
+op percepion simulator, in case of simulation, also vector map filtering should be disabled\&.
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch lidar_kf_contour_track lidar_kf_contour_track\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Detection -> lidar_tracker -> lidar_kf_contour_tracker
+.PP
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Publications: 
+2  * /tracked_objects [autoware_msgs::DetectedObjectArray]
+3  * /detected_polygons [visualization_msgs::MarkerArray]
+4  * /op_planner_tracked_boxes [jsk_recognition_msgs::BoundingBoxArray]
+5 
+6 Subscriptions: 
+7  * /cloud_cluster [autoware_msgs::CloudClusterArray]
+8  * /current_pose [geometry_msgs::PoseStamped]
+9  * /vector_map_info/* 
+.fi
+.PP
+.PP
+\fCDemo Movie\fP 

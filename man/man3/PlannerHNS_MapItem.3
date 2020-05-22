@@ -1,0 +1,138 @@
+.TH "PlannerHNS::MapItem" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::MapItem \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.PP
+Inherited by \fBPlannerHNS::DrivableArea\fP, and \fBPlannerHNS::Obstacle\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMapItem\fP (int ID, \fBGPSPoint\fP start, \fBGPSPoint\fP end, double \fBcurvature\fP, double width, double length, std::string objName)"
+.br
+.ti -1c
+.RI "\fBMapItem\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~MapItem\fP ()"
+.br
+.ti -1c
+.RI "\fBMapItem\fP (const \fBMapItem\fP &cmi)"
+.br
+.ti -1c
+.RI "\fBMapItem\fP & \fBoperator=\fP (const \fBMapItem\fP &cmi)"
+.br
+.ti -1c
+.RI "virtual int \fBoperator==\fP (const \fBMapItem\fP &mi) const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "\fBGPSPoint\fP \fBsp\fP"
+.br
+.ti -1c
+.RI "\fBGPSPoint\fP \fBep\fP"
+.br
+.ti -1c
+.RI "\fBGPSPoint\fP \fBcenter\fP"
+.br
+.ti -1c
+.RI "double \fBc\fP"
+.br
+.ti -1c
+.RI "double \fBw\fP"
+.br
+.ti -1c
+.RI "double \fBl\fP"
+.br
+.ti -1c
+.RI "std::string \fBfileName\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBpolygon\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 214 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::MapItem::MapItem (int ID, \fBGPSPoint\fP start, \fBGPSPoint\fP end, double curvature, double width, double length, std::string objName)\fC [inline]\fP"
+
+.PP
+Definition at line 228 of file RoadNetwork\&.h\&.
+.SS "PlannerHNS::MapItem::MapItem ()\fC [inline]\fP"
+
+.PP
+Definition at line 240 of file RoadNetwork\&.h\&.
+.SS "virtual PlannerHNS::MapItem::~MapItem ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 245 of file RoadNetwork\&.h\&.
+.SS "PlannerHNS::MapItem::MapItem (const \fBMapItem\fP & cmi)\fC [inline]\fP"
+
+.PP
+Definition at line 247 of file RoadNetwork\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMapItem\fP& PlannerHNS::MapItem::operator= (const \fBMapItem\fP & cmi)\fC [inline]\fP"
+
+.PP
+Definition at line 257 of file RoadNetwork\&.h\&.
+.SS "virtual int PlannerHNS::MapItem::operator== (const \fBMapItem\fP & mi) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 269 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double PlannerHNS::MapItem::c"
+
+.PP
+Definition at line 221 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::MapItem::center"
+
+.PP
+Definition at line 220 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::MapItem::ep"
+
+.PP
+Definition at line 219 of file RoadNetwork\&.h\&.
+.SS "std::string PlannerHNS::MapItem::fileName"
+
+.PP
+Definition at line 224 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::MapItem::id"
+
+.PP
+Definition at line 217 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::MapItem::l"
+
+.PP
+Definition at line 223 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBGPSPoint\fP> PlannerHNS::MapItem::polygon"
+
+.PP
+Definition at line 225 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::MapItem::sp"
+
+.PP
+Definition at line 218 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::MapItem::w"
+
+.PP
+Definition at line 222 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

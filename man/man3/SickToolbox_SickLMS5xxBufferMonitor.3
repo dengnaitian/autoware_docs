@@ -1,0 +1,68 @@
+.TH "SickToolbox::SickLMS5xxBufferMonitor" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickLMS5xxBufferMonitor \- A class for monitoring the receive buffer when interfacing with a Sick LD LIDAR\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickLMS5xxBufferMonitor\&.hh>\fP
+.PP
+Inherits \fBSickToolbox::SickBufferMonitor< SickLMS5xxBufferMonitor, SickLMS5xxMessage >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickLMS5xxBufferMonitor\fP ()"
+.br
+.RI "\fIA standard constructor\&. \fP"
+.ti -1c
+.RI "void \fBGetNextMessageFromDataStream\fP (\fBSickLMS5xxMessage\fP &sick_message)  throw ( SickIOException )"
+.br
+.RI "\fIAcquires the next message from the \fBSickLMS5xx\fP byte stream\&. \fP"
+.ti -1c
+.RI "\fB~SickLMS5xxBufferMonitor\fP ()"
+.br
+.RI "\fIA standard destructor\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A class for monitoring the receive buffer when interfacing with a Sick LD LIDAR\&. 
+.PP
+Definition at line 35 of file SickLMS5xxBufferMonitor\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SickToolbox::SickLMS5xxBufferMonitor::SickLMS5xxBufferMonitor ()"
+
+.PP
+A standard constructor\&. A standard constructor 
+.PP
+Definition at line 36 of file SickLMS5xxBufferMonitor\&.cc\&.
+.SS "SickToolbox::SickLMS5xxBufferMonitor::~SickLMS5xxBufferMonitor ()"
+
+.PP
+A standard destructor\&. A standard destructor 
+.PP
+Definition at line 129 of file SickLMS5xxBufferMonitor\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SickToolbox::SickLMS5xxBufferMonitor::GetNextMessageFromDataStream (\fBSickLMS5xxMessage\fP & sick_message)\fBSickIOException\fP"
+
+.PP
+Acquires the next message from the \fBSickLMS5xx\fP byte stream\&. A method for extracting a single message from the stream
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&sick_message\fP The returned message object 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file SickLMS5xxBufferMonitor\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

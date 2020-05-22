@@ -1,0 +1,4 @@
+<map id="rtmgr.MyDialogCarPedestrian" name="rtmgr.MyDialogCarPedestrian">
+<area shape="rect" id="node3" href="$classdata__preprocessor_1_1_my_dialog_car_pedestrian.html" title="data_preprocessor.MyDialog\lCarPedestrian" alt="" coords="355,5,543,47"/>
+<area shape="rect" id="node4" href="$classruntime__manager__dialog_1_1_my_dialog_car_pedestrian.html" title="runtime_manager_dialog.My\lDialogCarPedestrian" alt="" coords="356,71,541,112"/>
+</map>

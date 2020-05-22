@@ -1,0 +1,31 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_data_packages_map_file__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_data_packages_map_file__r_e_a_d_m_e \- map_file package 
+
+.SS "\fBpoints_map_filter\fP"
+.PP
+.SS "feature"
+.PP
+points_map_filter_node subscribe pointcloud maps and current pose, the node extract pointcloud near to the current pose\&.
+.PP
+.SS "subscribed topics"
+.PP
+/points_map (sensor_msgs/PointCloud2) : Raw pointcloud map\&. This topic usually comes from points_map_loader\&. /current_pose (geometry_msgs/PoseStamped) : Current pose of the car\&. This topic usually comes from pose_relay node\&.
+.PP
+.SS "published topics"
+.PP
+/points_map/filtered (sensor_msgs/PointCloud2) : Filtered pointcloud submap\&.
+.PP
+.SS "parameters"
+.PP
+load_grid_size (double) : grid size of submap\&. load_trigger_distance (double) : if the car moves load_trigger_distance(m), the map filter publish filtered submap\&.
+.PP
+.SS "how it works"
+.PP
+map_filter_node relay /points_map topic until it recieves /current_pose topic\&. Then, the /current_pose topic recieved, the map_filter_node publish submap\&.
+.PP
+.SS "demonstration"
+.PP
+\fC\fP 

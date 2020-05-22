@@ -1,0 +1,27 @@
+var classdatatypes_1_1_position3_d =
+[
+    [ "Position3D", "classdatatypes_1_1_position3_d.html#a24ce4296113d03bce8c0828e1af9eddd", null ],
+    [ "Position3D", "classdatatypes_1_1_position3_d.html#a0945d3e427c297cbc03ea1cb50844f45", null ],
+    [ "Position3D", "classdatatypes_1_1_position3_d.html#a976d643f907e9d7b78640fddf3aa3416", null ],
+    [ "getPitchAngle", "classdatatypes_1_1_position3_d.html#a50d8f522d1df560879ae1f7ea419c3ca", null ],
+    [ "getRollAngle", "classdatatypes_1_1_position3_d.html#a231b5fe19f46aa765adc1ed53e1d1d32", null ],
+    [ "getUsedMemory", "classdatatypes_1_1_position3_d.html#a62fdc7c9b50cb62f93beaaf0767f1809", null ],
+    [ "getX", "classdatatypes_1_1_position3_d.html#a3e65fb849170449f06643a4995bd49a1", null ],
+    [ "getY", "classdatatypes_1_1_position3_d.html#a01391be297978ff39336bbc79fc0e260", null ],
+    [ "getYawAngle", "classdatatypes_1_1_position3_d.html#ae78bc2973fa3f306f7228ab6124cbbd1", null ],
+    [ "getZ", "classdatatypes_1_1_position3_d.html#a72bcea95dffeb1b752f7cff9ca82e406", null ],
+    [ "normalizeAngles", "classdatatypes_1_1_position3_d.html#aed4df338bb660c75457e21f99546288f", null ],
+    [ "operator==", "classdatatypes_1_1_position3_d.html#ac60347bc4a40fd7ced13cdc81f3cfb63", null ],
+    [ "set", "classdatatypes_1_1_position3_d.html#a960a502911bcce8e5d6070e7d00a3488", null ],
+    [ "setPitchAngle", "classdatatypes_1_1_position3_d.html#a0904d7e10c32cf8a1244a74185748ee1", null ],
+    [ "setRollAngle", "classdatatypes_1_1_position3_d.html#a973c108e22b82e9f09285e79895b483f", null ],
+    [ "setX", "classdatatypes_1_1_position3_d.html#a351ba8d4aaba91063ec94e7e50c24c52", null ],
+    [ "setY", "classdatatypes_1_1_position3_d.html#a0fea2661cf71a9f9ab5aba2183bdca3c", null ],
+    [ "setYawAngle", "classdatatypes_1_1_position3_d.html#a50887bcfd766f414cc534dea467a9bac", null ],
+    [ "setZ", "classdatatypes_1_1_position3_d.html#addbcd9bb62844d3b452d905858e7c6eb", null ],
+    [ "toPoint2D", "classdatatypes_1_1_position3_d.html#aa895449330d667f290c3dbcefe27caf5", null ],
+    [ "toPoint3D", "classdatatypes_1_1_position3_d.html#a8851b39c47ff0d06e51363f2c8aefff2", null ],
+    [ "toPosition3D", "classdatatypes_1_1_position3_d.html#ad7f59b32ac1925e6730f82e13dafcc8a", null ],
+    [ "toString", "classdatatypes_1_1_position3_d.html#abc06f0e900ab622862b6e75f3a3ec7fa", null ],
+    [ "transformToVehicle", "classdatatypes_1_1_position3_d.html#a72675702f306900c0a64da3b4463a6cd", null ]
+];

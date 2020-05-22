@@ -1,0 +1,187 @@
+.TH "Yolo3" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Yolo3 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBYoloDetectorClasses\fP { \fBPERSON\fP, \fBBICYCLE\fP, \fBCAR\fP, \fBMOTORBIKE\fP, \fBAEROPLANE\fP, \fBBUS\fP, \fBTRAIN\fP, \fBTRUCK\fP, \fBBOAT\fP, \fBTRAFFIC_LIGHT\fP, \fBFIRE_HYDRANT\fP, \fBSTOP_SIGN\fP, \fBPARKING_METER\fP, \fBBENCH\fP, \fBBIRD\fP, \fBCAT\fP, \fBDOG\fP, \fBHORSE\fP, \fBSHEEP\fP, \fBCOW\fP, \fBELEPHANT\fP, \fBBEAR\fP, \fBZEBRA\fP, \fBGIRAFFE\fP, \fBBACKPACK\fP, \fBUMBRELLA\fP, \fBHANDBAG\fP, \fBTIE\fP, \fBSUITCASE\fP, \fBFRISBEE\fP, \fBSKIS\fP, \fBSNOWBOARD\fP, \fBSPORTS_BALL\fP, \fBKITE\fP, \fBBASEBALL_BAT\fP, \fBBASEBALL_GLOVE\fP, \fBSKATEBOARD\fP, \fBSURFBOARD\fP, \fBTENNIS_RACKET\fP, \fBBOTTLE\fP, \fBWINE_GLASS\fP, \fBCUP\fP, \fBFORK\fP, \fBKNIFE\fP, \fBSPOON\fP, \fBBOWL\fP, \fBBANANA\fP, \fBAPPLE\fP, \fBSANDWICH\fP, \fBORANGE\fP, \fBBROCCOLI\fP, \fBCARROT\fP, \fBHOT_DOG\fP, \fBPIZZA\fP, \fBDONUT\fP, \fBCAKE\fP, \fBCHAIR\fP, \fBSOFA\fP, \fBPOTTEDPLANT\fP, \fBBED\fP, \fBDININGTABLE\fP, \fBTOILET\fP, \fBTVMONITOR\fP, \fBLAPTOP\fP, \fBMOUSE\fP, \fBREMOTE\fP, \fBKEYBOARD\fP, \fBCELL_PHONE\fP, \fBMICROWAVE\fP, \fBOVEN\fP, \fBTOASTER\fP, \fBSINK\fP, \fBREFRIGERATOR\fP, \fBBOOK\fP, \fBCLOCK\fP, \fBVASE\fP, \fBSCISSORS\fP, \fBTEDDY_BEAR\fP, \fBHAIR_DRIER\fP, \fBTOOTHBRUSH\fP }"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBYolo3::YoloDetectorClasses\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPERSON \fP\fP
+.TP
+\fB\fIBICYCLE \fP\fP
+.TP
+\fB\fICAR \fP\fP
+.TP
+\fB\fIMOTORBIKE \fP\fP
+.TP
+\fB\fIAEROPLANE \fP\fP
+.TP
+\fB\fIBUS \fP\fP
+.TP
+\fB\fITRAIN \fP\fP
+.TP
+\fB\fITRUCK \fP\fP
+.TP
+\fB\fIBOAT \fP\fP
+.TP
+\fB\fITRAFFIC_LIGHT \fP\fP
+.TP
+\fB\fIFIRE_HYDRANT \fP\fP
+.TP
+\fB\fISTOP_SIGN \fP\fP
+.TP
+\fB\fIPARKING_METER \fP\fP
+.TP
+\fB\fIBENCH \fP\fP
+.TP
+\fB\fIBIRD \fP\fP
+.TP
+\fB\fICAT \fP\fP
+.TP
+\fB\fIDOG \fP\fP
+.TP
+\fB\fIHORSE \fP\fP
+.TP
+\fB\fISHEEP \fP\fP
+.TP
+\fB\fICOW \fP\fP
+.TP
+\fB\fIELEPHANT \fP\fP
+.TP
+\fB\fIBEAR \fP\fP
+.TP
+\fB\fIZEBRA \fP\fP
+.TP
+\fB\fIGIRAFFE \fP\fP
+.TP
+\fB\fIBACKPACK \fP\fP
+.TP
+\fB\fIUMBRELLA \fP\fP
+.TP
+\fB\fIHANDBAG \fP\fP
+.TP
+\fB\fITIE \fP\fP
+.TP
+\fB\fISUITCASE \fP\fP
+.TP
+\fB\fIFRISBEE \fP\fP
+.TP
+\fB\fISKIS \fP\fP
+.TP
+\fB\fISNOWBOARD \fP\fP
+.TP
+\fB\fISPORTS_BALL \fP\fP
+.TP
+\fB\fIKITE \fP\fP
+.TP
+\fB\fIBASEBALL_BAT \fP\fP
+.TP
+\fB\fIBASEBALL_GLOVE \fP\fP
+.TP
+\fB\fISKATEBOARD \fP\fP
+.TP
+\fB\fISURFBOARD \fP\fP
+.TP
+\fB\fITENNIS_RACKET \fP\fP
+.TP
+\fB\fIBOTTLE \fP\fP
+.TP
+\fB\fIWINE_GLASS \fP\fP
+.TP
+\fB\fICUP \fP\fP
+.TP
+\fB\fIFORK \fP\fP
+.TP
+\fB\fIKNIFE \fP\fP
+.TP
+\fB\fISPOON \fP\fP
+.TP
+\fB\fIBOWL \fP\fP
+.TP
+\fB\fIBANANA \fP\fP
+.TP
+\fB\fIAPPLE \fP\fP
+.TP
+\fB\fISANDWICH \fP\fP
+.TP
+\fB\fIORANGE \fP\fP
+.TP
+\fB\fIBROCCOLI \fP\fP
+.TP
+\fB\fICARROT \fP\fP
+.TP
+\fB\fIHOT_DOG \fP\fP
+.TP
+\fB\fIPIZZA \fP\fP
+.TP
+\fB\fIDONUT \fP\fP
+.TP
+\fB\fICAKE \fP\fP
+.TP
+\fB\fICHAIR \fP\fP
+.TP
+\fB\fISOFA \fP\fP
+.TP
+\fB\fIPOTTEDPLANT \fP\fP
+.TP
+\fB\fIBED \fP\fP
+.TP
+\fB\fIDININGTABLE \fP\fP
+.TP
+\fB\fITOILET \fP\fP
+.TP
+\fB\fITVMONITOR \fP\fP
+.TP
+\fB\fILAPTOP \fP\fP
+.TP
+\fB\fIMOUSE \fP\fP
+.TP
+\fB\fIREMOTE \fP\fP
+.TP
+\fB\fIKEYBOARD \fP\fP
+.TP
+\fB\fICELL_PHONE \fP\fP
+.TP
+\fB\fIMICROWAVE \fP\fP
+.TP
+\fB\fIOVEN \fP\fP
+.TP
+\fB\fITOASTER \fP\fP
+.TP
+\fB\fISINK \fP\fP
+.TP
+\fB\fIREFRIGERATOR \fP\fP
+.TP
+\fB\fIBOOK \fP\fP
+.TP
+\fB\fICLOCK \fP\fP
+.TP
+\fB\fIVASE \fP\fP
+.TP
+\fB\fISCISSORS \fP\fP
+.TP
+\fB\fITEDDY_BEAR \fP\fP
+.TP
+\fB\fIHAIR_DRIER \fP\fP
+.TP
+\fB\fITOOTHBRUSH \fP\fP
+.PP
+Definition at line 9 of file rect_class_score\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

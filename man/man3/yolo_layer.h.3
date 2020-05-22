@@ -1,0 +1,59 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/yolo_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/yolo_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'darknet\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_yolo_layer\fP (int batch, int w, int h, int n, int total, int *mask, int classes)"
+.br
+.ti -1c
+.RI "void \fBforward_yolo_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_yolo_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBresize_yolo_layer\fP (\fBlayer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "int \fByolo_num_detections\fP (\fBlayer\fP l, float thresh)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_yolo_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 242 of file yolo_layer\&.c\&.
+.SS "void forward_yolo_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 132 of file yolo_layer\&.c\&.
+.SS "\fBlayer\fP make_yolo_layer (int batch, int w, int h, int n, int total, int * mask, int classes)"
+
+.PP
+Definition at line 13 of file yolo_layer\&.c\&.
+.SS "void resize_yolo_layer (\fBlayer\fP * l, int w, int h)"
+
+.PP
+Definition at line 63 of file yolo_layer\&.c\&.
+.SS "int yolo_num_detections (\fBlayer\fP l, float thresh)"
+
+.PP
+Definition at line 275 of file yolo_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

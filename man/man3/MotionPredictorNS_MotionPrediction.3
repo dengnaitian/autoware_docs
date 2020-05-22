@@ -1,0 +1,620 @@
+.TH "MotionPredictorNS::MotionPrediction" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MotionPredictorNS::MotionPrediction \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_motion_predictor_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMotionPrediction\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~MotionPrediction\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetTrackedObjects\fP (const autoware_msgs::DetectedObjectArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetStepForwardSignals\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBVisualizePrediction\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP (ros::NodeHandle &_nh)"
+.br
+.ti -1c
+.RI "void \fBGenerateCurbsObstacles\fP (std::vector< \fBPlannerHNS::DetectedObject\fP > &curb_obstacles)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bGoNextStep\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ControllerParams\fP \fBm_ControlParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::MAP_SOURCE_TYPE\fP \fBm_MapType\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_MapPath\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_TrackedObjects\fP"
+.br
+.ti -1c
+.RI "bool \fBbTrackedObjects\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBbMap\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bEnableCurbObstacles\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBcurr_curbs_obstacles\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorPrediction\fP \fBm_PredictBeh\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObjectArray \fBm_PredictedResultsResults\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_VisualizationTimer\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_all_pred_paths\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_particles_points\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedTrajectoriesDummy\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedTrajectoriesActual\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedParticlesDummy\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedParticlesActual\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_CurbsDummy\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_CurbsActual\fP"
+.br
+.ti -1c
+.RI "double \fBm_DistanceBetweenCurbs\fP"
+.br
+.ti -1c
+.RI "double \fBm_VisualizationTime\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_SensingTimer\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_predicted_objects_trajectories\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PredictedTrajectoriesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_CurbsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_ParticlesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_tracked_objects\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_StepSignal\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 52 of file op_motion_predictor_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MotionPredictorNS::MotionPrediction::MotionPrediction ()"
+
+.PP
+Definition at line 24 of file op_motion_predictor_core\&.cpp\&.
+.SS "MotionPredictorNS::MotionPrediction::~MotionPrediction ()\fC [virtual]\fP"
+
+.PP
+Definition at line 87 of file op_motion_predictor_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 185 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 169 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 193 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetStepForwardSignals (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetTrackedObjects (const autoware_msgs::DetectedObjectArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 201 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 175 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)"
+
+.PP
+Definition at line 502 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)"
+
+.PP
+Definition at line 558 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)"
+
+.PP
+Definition at line 537 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)"
+
+.PP
+Definition at line 488 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)"
+
+.PP
+Definition at line 495 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)"
+
+.PP
+Definition at line 474 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMLines (const vector_map_msgs::LineArray & msg)"
+
+.PP
+Definition at line 509 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)"
+
+.PP
+Definition at line 565 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)"
+
+.PP
+Definition at line 481 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)"
+
+.PP
+Definition at line 544 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)"
+
+.PP
+Definition at line 523 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)"
+
+.PP
+Definition at line 516 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)"
+
+.PP
+Definition at line 530 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)"
+
+.PP
+Definition at line 551 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::GenerateCurbsObstacles (std::vector< \fBPlannerHNS::DetectedObject\fP > & curb_obstacles)\fC [protected]\fP"
+
+.PP
+Definition at line 265 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::MainLoop ()"
+
+.PP
+Definition at line 400 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::UpdatePlanningParams (ros::NodeHandle & _nh)\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_motion_predictor_core\&.cpp\&.
+.SS "void MotionPredictorNS::MotionPrediction::VisualizePrediction ()\fC [protected]\fP"
+
+.PP
+Definition at line 304 of file op_motion_predictor_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool MotionPredictorNS::MotionPrediction::bMap\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_motion_predictor_core\&.h\&.
+.SS "bool MotionPredictorNS::MotionPrediction::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file op_motion_predictor_core\&.h\&.
+.SS "bool MotionPredictorNS::MotionPrediction::bTrackedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_motion_predictor_core\&.h\&.
+.SS "bool MotionPredictorNS::MotionPrediction::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file op_motion_predictor_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> MotionPredictorNS::MotionPrediction::curr_curbs_obstacles\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_motion_predictor_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > MotionPredictorNS::MotionPrediction::m_all_pred_paths\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_motion_predictor_core\&.h\&.
+.SS "bool MotionPredictorNS::MotionPrediction::m_bEnableCurbObstacles\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file op_motion_predictor_core\&.h\&.
+.SS "bool MotionPredictorNS::MotionPrediction::m_bGoNextStep\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP MotionPredictorNS::MotionPrediction::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 63 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::ControllerParams\fP MotionPredictorNS::MotionPrediction::m_ControlParams\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_CurbsActual\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_CurbsDummy\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP MotionPredictorNS::MotionPrediction::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 55 of file op_motion_predictor_core\&.h\&.
+.SS "double MotionPredictorNS::MotionPrediction::m_DistanceBetweenCurbs\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP MotionPredictorNS::MotionPrediction::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file op_motion_predictor_core\&.h\&.
+.SS "std::string MotionPredictorNS::MotionPrediction::m_MapPath\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file op_motion_predictor_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP MotionPredictorNS::MotionPrediction::m_MapRaw"
+
+.PP
+Definition at line 134 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::MAP_SOURCE_TYPE\fP MotionPredictorNS::MotionPrediction::m_MapType\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file op_motion_predictor_core\&.h\&.
+.SS "geometry_msgs::Pose MotionPredictorNS::MotionPrediction::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file op_motion_predictor_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> MotionPredictorNS::MotionPrediction::m_particles_points\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP MotionPredictorNS::MotionPrediction::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorPrediction\fP MotionPredictorNS::MotionPrediction::m_PredictBeh\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_PredictedParticlesActual\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_PredictedParticlesDummy\fC [protected]\fP"
+
+.PP
+Definition at line 88 of file op_motion_predictor_core\&.h\&.
+.SS "autoware_msgs::DetectedObjectArray MotionPredictorNS::MotionPrediction::m_PredictedResultsResults\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_PredictedTrajectoriesActual\fC [protected]\fP"
+
+.PP
+Definition at line 86 of file op_motion_predictor_core\&.h\&.
+.SS "visualization_msgs::MarkerArray MotionPredictorNS::MotionPrediction::m_PredictedTrajectoriesDummy\fC [protected]\fP"
+
+.PP
+Definition at line 85 of file op_motion_predictor_core\&.h\&.
+.SS "timespec MotionPredictorNS::MotionPrediction::m_SensingTimer\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file op_motion_predictor_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> MotionPredictorNS::MotionPrediction::m_TrackedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_motion_predictor_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP MotionPredictorNS::MotionPrediction::m_VehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file op_motion_predictor_core\&.h\&.
+.SS "double MotionPredictorNS::MotionPrediction::m_VisualizationTime\fC [protected]\fP"
+
+.PP
+Definition at line 95 of file op_motion_predictor_core\&.h\&.
+.SS "timespec MotionPredictorNS::MotionPrediction::m_VisualizationTimer\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file op_motion_predictor_core\&.h\&.
+.SS "ros::NodeHandle MotionPredictorNS::MotionPrediction::nh\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Publisher MotionPredictorNS::MotionPrediction::pub_CurbsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Publisher MotionPredictorNS::MotionPrediction::pub_ParticlesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 104 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Publisher MotionPredictorNS::MotionPrediction::pub_predicted_objects_trajectories\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Publisher MotionPredictorNS::MotionPrediction::pub_PredictedTrajectoriesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 111 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_cross_walk"
+
+.PP
+Definition at line 148 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_curbs"
+
+.PP
+Definition at line 145 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_dt_lanes"
+
+.PP
+Definition at line 138 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_edges"
+
+.PP
+Definition at line 146 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_intersect"
+
+.PP
+Definition at line 139 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_lanes"
+
+.PP
+Definition at line 136 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_lines"
+
+.PP
+Definition at line 141 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_nodes"
+
+.PP
+Definition at line 149 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_points"
+
+.PP
+Definition at line 137 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_signals"
+
+.PP
+Definition at line 143 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_StepSignal\fC [protected]\fP"
+
+.PP
+Definition at line 112 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_stop_line"
+
+.PP
+Definition at line 142 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_tracked_objects\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_vectors"
+
+.PP
+Definition at line 144 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sub_way_areas"
+
+.PP
+Definition at line 147 of file op_motion_predictor_core\&.h\&.
+.SS "ros::Subscriber MotionPredictorNS::MotionPrediction::sup_area"
+
+.PP
+Definition at line 140 of file op_motion_predictor_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

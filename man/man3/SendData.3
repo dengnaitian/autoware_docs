@@ -1,0 +1,79 @@
+.TH "SendData" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SendData \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <obj_db\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSendData\fP ()"
+.br
+.ti -1c
+.RI "\fBSendData\fP (const std::string &host_name, int port)"
+.br
+.ti -1c
+.RI "int \fBSender\fP (const std::string &value, std::string &res) const "
+.br
+.ti -1c
+.RI "\fBSendData\fP ()"
+.br
+.ti -1c
+.RI "\fBSendData\fP (const std::string &host_name, int port, char *sshuser, std::string &sshpubkey, std::string &sshprivatekey, int sshport, std::string &sshtunnelhost)"
+.br
+.ti -1c
+.RI "int \fBSender\fP (const std::string &value, std::string &res, int insert_num)"
+.br
+.ti -1c
+.RI "int \fBConnectDB\fP ()"
+.br
+.ti -1c
+.RI "int \fBDisconnectDB\fP (const char *msg)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file obj_db\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SendData::SendData ()"
+
+.PP
+Definition at line 31 of file SendData\&.cpp\&.
+.SS "SendData::SendData (const std::string & host_name, int port)\fC [explicit]\fP"
+
+.PP
+Definition at line 36 of file SendData\&.cpp\&.
+.SS "SendData::SendData ()"
+
+.SS "SendData::SendData (const std::string & host_name, int port, char * sshuser, std::string & sshpubkey, std::string & sshprivatekey, int sshport, std::string & sshtunnelhost)\fC [explicit]\fP"
+
+.PP
+Definition at line 43 of file SendData\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SendData::ConnectDB ()"
+
+.PP
+Definition at line 56 of file SendData\&.cpp\&.
+.SS "int SendData::DisconnectDB (const char * msg)"
+
+.PP
+Definition at line 151 of file SendData\&.cpp\&.
+.SS "int SendData::Sender (const std::string & value, std::string & res) const"
+
+.PP
+Definition at line 41 of file SendData\&.cpp\&.
+.SS "int SendData::Sender (const std::string & value, std::string & res, int insert_num)"
+
+.PP
+Definition at line 187 of file SendData\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

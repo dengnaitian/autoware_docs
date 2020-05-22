@@ -1,0 +1,4 @@
+var namespaceautoware__launcher_1_1gui_1_1simulation_1_1rosbag =
+[
+    [ "AwRosbagSimulatorWidget", "classautoware__launcher_1_1gui_1_1simulation_1_1rosbag_1_1_aw_rosbag_simulator_widget.html", "classautoware__launcher_1_1gui_1_1simulation_1_1rosbag_1_1_aw_rosbag_simulator_widget" ]
+];

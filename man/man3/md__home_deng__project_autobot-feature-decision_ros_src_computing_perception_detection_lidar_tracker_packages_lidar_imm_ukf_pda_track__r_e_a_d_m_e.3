@@ -1,0 +1,68 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_tracker_packages_lidar_imm_ukf_pda_track__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_tracker_packages_lidar_imm_ukf_pda_track__r_e_a_d_m_e \- IMM-UKF-PDA Tracker 
+Autoware package based on IMM-UKF-PDA tracker\&.
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch lidar_tracker imm_ukf_pda_tracker\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Detection/ lidar_detector -> \fCimm_ukf_pda_tracker\fP
+.PP
+.SS "Reference"
+.PP
+A\&. Arya Senna Abdul Rachman, 3D-LIDAR Multi Object Tracking for Autonomous Driving\&. 2017\&. \fCpaper\fP
+.PP
+M\&. Schreire, Bayesian environment representation, prediction, and criticality assessment for driver assistance systems\&. 2017\&. \fCpaper\fP
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+\fCeucledian_cluster\fP node\&.
+.IP "\(bu" 2
+\fCray_ground_filter\fP node\&.
+.IP "\(bu" 2
+\fC/tf\fP topic\&. Below video is from Suginami data which contais /tf topic: (\fCautoware-20180205150908\&.bag\fP)\&. You can download it from ROSBAG STORE for free\&. Otherwise, you need to do localization with a map to produce /tf topic from \fCvelodyne\fP to \fCworld\fP\&.
+.IP "\(bu" 2
+\fCwayarea\fP info from vectormap if is possible\&.
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters for \fCimm_ukf_pda_tracker\fP
+.PP
+ParameterTypeDescription  \fCinput topic\fP*String* Input topic(type: autoware_msgs::CloudClusterArray)\&. Default \fC/cloud cluster\fP\&. \fCoutput topic\fP*String*Output topic(type: autoware_msgs::CloudClusterArray)\&. Default \fC/tracking_cluster_array\fP\&. \fCpointcloud frame\fP*String*Pointcloud frame\&. Default \fCvelodyne\fP\&. \fClife time thres\fP*Int*The minimum frames for targets to be visualized\&. Default \fC8\fP\&. \fCgating thres\fP*Double*The value of gate threshold for measurement validation\&. Default \fC9\&.22\fP\&. \fCgate probability\fP*Double*The probability that the gate contains the true measurement\&. Default \fC0\&.99\fP\&. \fCdetection probability\fP*Double*The probability that a target is detected\&. Default \fC0\&.9\fP\&. \fCdistance thres\fP*Double*The distance threshold for associating bounding box over frames\&. Default \fC100\fP\&. \fCstatic velocity thres\fP*Double*The velocity threshold for classifying static/dynamic\&. Default \fC0\&.5\fP\&. \fCvelocity_explosion thres\fP*Double*The threshold for stopping kalman filter update\&. Default \fC1000\fP\&. \fCuse_sukf\fP*bool*Use standard kalman filter\&. Default \fCfalse\fP\&. \fCis_debug\fP*bool*Turning on debu mode\&. Publishing rosmarkers for debug\&. Default \fCfalse\fP\&. 
+.PP
+\fBLaunch\fP file available parameters for \fCvisualize_detected_objects\fP
+.PP
+ParameterTypeDescription  \fCinput_topic\fP*String* Input topic(type: autoware_msgs::CloudClusterArray)\&. Default \fC/tracking_cluster_array\fP\&. \fCpointcloud frame\fP*String*Pointcloud frame\&. Default \fCvelodyne\fP\&. 
+.PP
+.SS "Subscribed topics"
+.PP
+Node: imm_ukf_pda_tracker
+.PP
+TopicTypeObjective  \fC/detection/lidar_objects\fP\fCautoware_msgs::DetectedObjectArray\fPSegmented pointcloud from a clustering algorithm like eucledian cluster\&. \fC/tf\fP\fCtf\fPTracking objects in \fCworld\fP coordinate\&. Node: visualize_detected_objects
+.PP
+TopicTypeObjective  \fC/detected_objects\fP\fCautoware_msgs::DetectedObjectArray\fPObjects with tracking info\&. 
+.SS "Published topics"
+.PP
+Node: imm_ukf_pda_tracker
+.PP
+TopicTypeObjective  \fC/detected_objects\fP\fCautoware_msgs::DetectedObjectArray\fPAdded info like velocity, yaw ,yaw_rate and static/dynamic class to DetectedObject msg\&. \fC/bounding_boxes_tracked\fP\fCjsk_recognition_msgs::BoundingBoxArray\fPVisualze bounsing box nicely in rviz by JSK bounding box\&. Label contains information about static/dynamic class Node: visualize_detected_objects
+.PP
+TopicTypeObjective  \fC/detected_objects/velocity_arrow\fP\fCvisualization_msgs::Marker\fPVisualize velocity and yaw of the targets\&. \fC/detected_objects/target_id\fP\fCvisualization_msgs::Marker\fPVisualize targets' id\&. 
+.PP
+.SS "Video"
+.PP
+\fC\fP.PP
+.SS "Benchmark"
+.PP
+Please notice that benchmark scripts are in another repository\&. You can tune parameters by using benchmark based on KITTI dataset\&. The repository is \fChere\fP\&. 

@@ -1,0 +1,92 @@
+.TH "datatypes::Fields" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Fields \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Fields\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBFieldParameter\fP * > \fBFieldVector\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFields\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Fields\fP ()"
+.br
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBFieldParameter\fP *field)"
+.br
+.ti -1c
+.RI "const \fBFieldParameter\fP & \fBgetField\fP (\fBUINT16\fP fieldNumber) const "
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetNumberOfValidFields\fP ()"
+.br
+.ti -1c
+.RI "const \fBFieldVector\fP & \fBgetFields\fP () const "
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file Fields\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBFieldParameter\fP*> \fBdatatypes::Fields::FieldVector\fP"
+
+.PP
+Definition at line 30 of file Fields\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Fields::Fields ()\fC [inline]\fP"
+
+.PP
+Definition at line 32 of file Fields\&.hpp\&.
+.SS "virtual datatypes::Fields::~Fields ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 34 of file Fields\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::Fields::add (\fBFieldParameter\fP * field)"
+
+.PP
+Definition at line 278 of file Fields\&.cpp\&.
+.SS "const \fBFieldParameter\fP & datatypes::Fields::getField (\fBUINT16\fP fieldNumber) const"
+
+.PP
+Definition at line 254 of file Fields\&.cpp\&.
+.SS "const \fBFieldVector\fP& datatypes::Fields::getFields () const\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file Fields\&.hpp\&.
+.SS "\fBUINT16\fP datatypes::Fields::getNumberOfValidFields ()"
+
+.PP
+Definition at line 298 of file Fields\&.cpp\&.
+.SS "const \fBUINT32\fP datatypes::Fields::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 283 of file Fields\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,4 @@
+<map id="PlannerHNS::Crossing" name="PlannerHNS::Crossing">
+<area shape="rect" id="node2" href="$class_planner_h_n_s_1_1_road_segment.html" title="PlannerHNS::RoadSegment" alt="" coords="5,109,192,136"/>
+<area shape="rect" id="node3" href="$class_planner_h_n_s_1_1_boundary.html" title="PlannerHNS::Boundary" alt="" coords="19,199,178,225"/>
+</map>

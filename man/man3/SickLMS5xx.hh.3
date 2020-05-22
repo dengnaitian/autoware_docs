@@ -1,0 +1,148 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickLMS5xx.hh" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickLMS5xx.hh \- Defines the SickLMS5xx class for working with the Sick LMS5xx laser range finders\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include 'SickLIDAR\&.hh'\fP
+.br
+\fC#include 'SickLMS5xxBufferMonitor\&.hh'\fP
+.br
+\fC#include 'SickLMS5xxMessage\&.hh'\fP
+.br
+\fC#include 'SickException\&.hh'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBSickToolbox::SickLMS5xx\fP"
+.br
+.RI "\fIProvides a simple driver interface for working with the Sick LD-OEM/Sick LD-LRS long-range models via Ethernet\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBSickToolbox\fP"
+.br
+.RI "\fIEncapsulates the Sick LIDAR Matlab/C++ toolbox\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEFAULT_SICK_LMS_5XX_IP_ADDRESS\fP   '192\&.168\&.0\&.1'"
+.br
+.RI "\fIDefault IP Address\&. \fP"
+.ti -1c
+.RI "#define \fBDEFAULT_SICK_LMS_5XX_TCP_PORT\fP   (2111)"
+.br
+.RI "\fISick LMS 5xx TCP/IP Port\&. \fP"
+.ti -1c
+.RI "#define \fBDEFAULT_SICK_LMS_5XX_CONNECT_TIMEOUT\fP   (1000000)"
+.br
+.RI "\fIMax time for establishing connection (usecs) \fP"
+.ti -1c
+.RI "#define \fBDEFAULT_SICK_LMS_5XX_MESSAGE_TIMEOUT\fP   (5000000)"
+.br
+.RI "\fIMax time for reply (usecs) \fP"
+.ti -1c
+.RI "#define \fBDEFAULT_SICK_LMS_5XX_STATUS_TIMEOUT\fP   (60000000)"
+.br
+.RI "\fIMax time it should take to change status\&. \fP"
+.ti -1c
+.RI "#define \fBSICK_LMS_5XX_SCAN_AREA_MIN_ANGLE\fP   (\-50000)"
+.br
+.RI "\fI-5 degrees (1/10000) degree \fP"
+.ti -1c
+.RI "#define \fBSICK_LMS_5XX_SCAN_AREA_MAX_ANGLE\fP   (1850000)"
+.br
+.RI "\fI185 degrees (1/10000) degree \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef SickLMS5xx::sick_lms_5xx_status_t \fBSickToolbox::sick_lms_5xx_status_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_status_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef SickLMS5xx::sick_lms_5xx_scan_format_t \fBSickToolbox::sick_lms_5xx_scan_format_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_format_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef SickLMS5xx::sick_lms_5xx_scan_freq_t \fBSickToolbox::sick_lms_5xx_scan_freq_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_freq_t\fP a bit easier\&. \fP"
+.ti -1c
+.RI "typedef SickLMS5xx::sick_lms_5xx_scan_res_t \fBSickToolbox::sick_lms_5xx_scan_res_t\fP"
+.br
+.RI "\fIMakes working w/ \fBSickLMS5xx::sick_lms_5xx_scan_res_t\fP a bit easier\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the SickLMS5xx class for working with the Sick LMS5xx laser range finders\&. 
+
+Code by Jason C\&. Derenick and Christopher R\&. Mansley\&. Contact jasonder(at)seas(dot)upenn(dot)edu
+.PP
+The Sick LIDAR Matlab/C++ Toolbox Copyright (c) 2008, Jason C\&. Derenick and Thomas H\&. Miller All rights reserved\&.
+.PP
+This software is released under a BSD Open-Source License\&. See http://sicktoolbox.sourceforge.net 
+.PP
+Definition in file \fBSickLMS5xx\&.hh\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULT_SICK_LMS_5XX_CONNECT_TIMEOUT   (1000000)"
+
+.PP
+Max time for establishing connection (usecs) 
+.PP
+Definition at line 22 of file SickLMS5xx\&.hh\&.
+.SS "#define DEFAULT_SICK_LMS_5XX_IP_ADDRESS   '192\&.168\&.0\&.1'"
+
+.PP
+Default IP Address\&. 
+.PP
+Definition at line 20 of file SickLMS5xx\&.hh\&.
+.SS "#define DEFAULT_SICK_LMS_5XX_MESSAGE_TIMEOUT   (5000000)"
+
+.PP
+Max time for reply (usecs) 
+.PP
+Definition at line 23 of file SickLMS5xx\&.hh\&.
+.SS "#define DEFAULT_SICK_LMS_5XX_STATUS_TIMEOUT   (60000000)"
+
+.PP
+Max time it should take to change status\&. 
+.PP
+Definition at line 24 of file SickLMS5xx\&.hh\&.
+.SS "#define DEFAULT_SICK_LMS_5XX_TCP_PORT   (2111)"
+
+.PP
+Sick LMS 5xx TCP/IP Port\&. 
+.PP
+Definition at line 21 of file SickLMS5xx\&.hh\&.
+.SS "#define SICK_LMS_5XX_SCAN_AREA_MAX_ANGLE   (1850000)"
+
+.PP
+185 degrees (1/10000) degree 
+.PP
+Definition at line 27 of file SickLMS5xx\&.hh\&.
+.SS "#define SICK_LMS_5XX_SCAN_AREA_MIN_ANGLE   (\-50000)"
+
+.PP
+-5 degrees (1/10000) degree 
+.PP
+Definition at line 26 of file SickLMS5xx\&.hh\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,93 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/gemm.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/gemm.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'gemm\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgemm_bin\fP (int M, int N, int K, float ALPHA, char *A, int lda, float *B, int ldb, float *C, int ldc)"
+.br
+.ti -1c
+.RI "float * \fBrandom_matrix\fP (int rows, int cols)"
+.br
+.ti -1c
+.RI "void \fBtime_random_matrix\fP (int TA, int TB, int m, int \fBk\fP, int n)"
+.br
+.ti -1c
+.RI "void \fBgemm\fP (int TA, int TB, int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float BETA, float *C, int ldc)"
+.br
+.ti -1c
+.RI "void \fBgemm_nn\fP (int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float *C, int ldc)"
+.br
+.ti -1c
+.RI "void \fBgemm_nt\fP (int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float *C, int ldc)"
+.br
+.ti -1c
+.RI "void \fBgemm_tn\fP (int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float *C, int ldc)"
+.br
+.ti -1c
+.RI "void \fBgemm_tt\fP (int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float *C, int ldc)"
+.br
+.ti -1c
+.RI "void \fBgemm_cpu\fP (int TA, int TB, int M, int N, int K, float ALPHA, float *A, int lda, float *B, int ldb, float BETA, float *C, int ldc)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void gemm (int TA, int TB, int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float BETA, float * C, int ldc)"
+
+.PP
+Definition at line 65 of file gemm\&.c\&.
+.SS "void gemm_bin (int M, int N, int K, float ALPHA, char * A, int lda, float * B, int ldb, float * C, int ldc)"
+
+.PP
+Definition at line 8 of file gemm\&.c\&.
+.SS "void gemm_cpu (int TA, int TB, int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float BETA, float * C, int ldc)"
+
+.PP
+Definition at line 145 of file gemm\&.c\&.
+.SS "void gemm_nn (int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float * C, int ldc)"
+
+.PP
+Definition at line 74 of file gemm\&.c\&.
+.SS "void gemm_nt (int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float * C, int ldc)"
+
+.PP
+Definition at line 91 of file gemm\&.c\&.
+.SS "void gemm_tn (int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float * C, int ldc)"
+
+.PP
+Definition at line 109 of file gemm\&.c\&.
+.SS "void gemm_tt (int M, int N, int K, float ALPHA, float * A, int lda, float * B, int ldb, float * C, int ldc)"
+
+.PP
+Definition at line 126 of file gemm\&.c\&.
+.SS "float* random_matrix (int rows, int cols)"
+
+.PP
+Definition at line 30 of file gemm\&.c\&.
+.SS "void time_random_matrix (int TA, int TB, int m, int k, int n)"
+
+.PP
+Definition at line 40 of file gemm\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,73 @@
+.TH "RegionTLRSSDROSNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RegionTLRSSDROSNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <region_tlr_ssd\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegionTLRSSDROSNode\fP ()"
+.br
+.ti -1c
+.RI "\fB~RegionTLRSSDROSNode\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunRecognition\fP ()"
+.br
+.ti -1c
+.RI "void \fBImageRawCallback\fP (const sensor_msgs::Image &\fBimage\fP)"
+.br
+.ti -1c
+.RI "void \fBROISignalCallback\fP (const autoware_msgs::Signals::ConstPtr &extracted_pos)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBContext\fP > \fBcontexts_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file region_tlr_ssd\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RegionTLRSSDROSNode::RegionTLRSSDROSNode ()"
+
+.PP
+Definition at line 15 of file region_tlr_ssd\&.cpp\&.
+.SS "RegionTLRSSDROSNode::~RegionTLRSSDROSNode ()"
+
+.PP
+Definition at line 35 of file region_tlr_ssd\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RegionTLRSSDROSNode::ImageRawCallback (const sensor_msgs::Image & image)"
+
+.PP
+Definition at line 61 of file region_tlr_ssd\&.cpp\&.
+.SS "void RegionTLRSSDROSNode::ROISignalCallback (const autoware_msgs::Signals::ConstPtr & extracted_pos)"
+
+.PP
+Definition at line 73 of file region_tlr_ssd\&.cpp\&.
+.SS "void RegionTLRSSDROSNode::RunRecognition ()"
+
+.PP
+Definition at line 42 of file region_tlr_ssd\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBContext\fP> RegionTLRSSDROSNode::contexts_"
+
+.PP
+Definition at line 26 of file region_tlr_ssd\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

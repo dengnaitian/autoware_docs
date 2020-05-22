@@ -1,0 +1,86 @@
+.TH "recorder" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+recorder \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetargs\fP ()"
+.br
+.ti -1c
+.RI "def \fBsigterm\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = \fBcommon\&.genlogger\fP()"
+.br
+.ti -1c
+.RI "bool \fBis_shutdown\fP = False"
+.br
+.ti -1c
+.RI "\fBargs\fP = \fBgetargs\fP()"
+.br
+.ti -1c
+.RI "string \fBtopics\fP = '\-\-all'"
+.br
+.ti -1c
+.RI "string \fBprefix\fP = '{}/{}'"
+.br
+.ti -1c
+.RI "string \fBcmd\fP = 'rosbag record \-\-\fBsplit\fP \-\-size {} \-o {} {}'"
+.br
+.ti -1c
+.RI "\fBpid\fP = \fBcommon\&.execmd\fP(\fBcmd\fP, blocking=False)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def recorder\&.getargs ()"
+
+.PP
+Definition at line 8 of file recorder\&.py\&.
+.SS "def recorder\&.sigterm ()"
+
+.PP
+Definition at line 24 of file recorder\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "recorder\&.args = \fBgetargs\fP()"
+
+.PP
+Definition at line 28 of file recorder\&.py\&.
+.SS "recorder\&.cmd = 'rosbag record \-\-\fBsplit\fP \-\-size {} \-o {} {}'"
+
+.PP
+Definition at line 40 of file recorder\&.py\&.
+.SS "bool recorder\&.is_shutdown = False"
+
+.PP
+Definition at line 23 of file recorder\&.py\&.
+.SS "recorder\&.logger = \fBcommon\&.genlogger\fP()"
+
+.PP
+Definition at line 6 of file recorder\&.py\&.
+.SS "recorder\&.pid = \fBcommon\&.execmd\fP(\fBcmd\fP, blocking=False)"
+
+.PP
+Definition at line 43 of file recorder\&.py\&.
+.SS "string recorder\&.prefix = '{}/{}'"
+
+.PP
+Definition at line 36 of file recorder\&.py\&.
+.SS "string recorder\&.topics = '\-\-all'"
+
+.PP
+Definition at line 30 of file recorder\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

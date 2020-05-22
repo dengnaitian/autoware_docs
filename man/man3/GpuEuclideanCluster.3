@@ -1,0 +1,90 @@
+.TH "GpuEuclideanCluster" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GpuEuclideanCluster \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <gpu_euclidean_clustering\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGClusterIndex\fP"
+.br
+.ti -1c
+.RI "struct \fBSamplePointListXYZ\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGpuEuclideanCluster\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInputPoints\fP (float *x, float *y, float *z, int size)"
+.br
+.ti -1c
+.RI "void \fBsetThreshold\fP (double threshold)"
+.br
+.ti -1c
+.RI "void \fBsetMinClusterPts\fP (int min_cluster_pts)"
+.br
+.ti -1c
+.RI "void \fBsetMaxClusterPts\fP (int max_cluster_pts)"
+.br
+.ti -1c
+.RI "void \fBextractClustersOld\fP ()"
+.br
+.ti -1c
+.RI "void \fBextractClusters\fP ()"
+.br
+.ti -1c
+.RI "void \fBextractClusters2\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBGClusterIndex\fP > \fBgetOutput\fP ()"
+.br
+.ti -1c
+.RI "\fBSamplePointListXYZ\fP \fBgenerateSample\fP ()"
+.br
+.ti -1c
+.RI "\fB~GpuEuclideanCluster\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file gpu_euclidean_clustering\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GpuEuclideanCluster::GpuEuclideanCluster ()"
+
+.SS "GpuEuclideanCluster::~GpuEuclideanCluster ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void GpuEuclideanCluster::extractClusters ()"
+
+.SS "void GpuEuclideanCluster::extractClusters2 ()"
+
+.SS "void GpuEuclideanCluster::extractClustersOld ()"
+
+.SS "\fBSamplePointListXYZ\fP GpuEuclideanCluster::generateSample ()"
+
+.SS "std::vector<\fBGClusterIndex\fP> GpuEuclideanCluster::getOutput ()"
+
+.SS "void GpuEuclideanCluster::setInputPoints (float * x, float * y, float * z, int size)"
+
+.SS "void GpuEuclideanCluster::setMaxClusterPts (int max_cluster_pts)"
+
+.SS "void GpuEuclideanCluster::setMinClusterPts (int min_cluster_pts)"
+
+.SS "void GpuEuclideanCluster::setThreshold (double threshold)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

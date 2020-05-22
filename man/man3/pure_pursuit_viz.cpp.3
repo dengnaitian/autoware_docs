@@ -1,0 +1,50 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/pure_pursuit/pure_pursuit_viz.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/pure_pursuit/pure_pursuit_viz.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'pure_pursuit_viz\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBwaypoint_follower\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "visualization_msgs::Marker \fBwaypoint_follower::displayNextWaypoint\fP (\fBgeometry_msgs::Point\fP position)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBwaypoint_follower::displayNextTarget\fP (\fBgeometry_msgs::Point\fP target)"
+.br
+.ti -1c
+.RI "double \fBwaypoint_follower::calcRadius\fP (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBwaypoint_follower::generateTrajectoryCircle\fP (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBwaypoint_follower::displayTrajectoryCircle\fP (std::vector< \fBgeometry_msgs::Point\fP > traj_circle_array)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBwaypoint_follower::displaySearchRadius\fP (\fBgeometry_msgs::Point\fP current_pose, double search_radius)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBwaypoint_follower::MAP_FRAME\fP = 'map'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

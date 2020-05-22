@@ -1,0 +1,397 @@
+.TH "vector_map" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vector_map \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBHandle\fP"
+.br
+.ti -1c
+.RI "class \fBKey\fP"
+.br
+.ti -1c
+.RI "class \fBVectorMap\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBcategory_t\fP = unsigned long long"
+.br
+.ti -1c
+.RI "template<class T , class U > using \fBUpdater\fP = std::function< void(\fBstd::map\fP< \fBKey\fP< T >, T > &, const U &)>"
+.br
+.ti -1c
+.RI "template<class T > using \fBCallback\fP = std::function< void(const T &)>"
+.br
+.ti -1c
+.RI "template<class T > using \fBFilter\fP = std::function< bool(const T &)>"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCategory\fP : category_t { \fBNONE\fP = 0LLU, \fBPOINT\fP = 1LLU << 0, \fBVECTOR\fP = 1LLU << 1, \fBLINE\fP = 1LLU << 2, \fBAREA\fP = 1LLU << 3, \fBPOLE\fP = 1LLU << 4, \fBBOX\fP = 1LLU << 5, \fBDTLANE\fP = 1LLU << 6, \fBNODE\fP = 1LLU << 7, \fBLANE\fP = 1LLU << 8, \fBWAY_AREA\fP = 1LLU << 9, \fBROAD_EDGE\fP = 1LLU << 10, \fBGUTTER\fP = 1LLU << 11, \fBCURB\fP = 1LLU << 12, \fBWHITE_LINE\fP = 1LLU << 13, \fBSTOP_LINE\fP = 1LLU << 14, \fBZEBRA_ZONE\fP = 1LLU << 15, \fBCROSS_WALK\fP = 1LLU << 16, \fBROAD_MARK\fP = 1LLU << 17, \fBROAD_POLE\fP = 1LLU << 18, \fBROAD_SIGN\fP = 1LLU << 19, \fBSIGNAL\fP = 1LLU << 20, \fBSTREET_LIGHT\fP = 1LLU << 21, \fBUTILITY_POLE\fP = 1LLU << 22, \fBGUARD_RAIL\fP = 1LLU << 23, \fBSIDE_WALK\fP = 1LLU << 24, \fBDRIVE_ON_PORTION\fP = 1LLU << 25, \fBCROSS_ROAD\fP = 1LLU << 26, \fBSIDE_STRIP\fP = 1LLU << 27, \fBCURVE_MIRROR\fP = 1LLU << 28, \fBWALL\fP = 1LLU << 29, \fBFENCE\fP = 1LLU << 30, \fBRAIL_CROSSING\fP = 1LLU << 31, \fBALL\fP = (1LLU << 32) - 1 }"
+.br
+.ti -1c
+.RI "enum \fBColor\fP : int { \fBBLACK\fP, \fBGRAY\fP, \fBLIGHT_RED\fP, \fBLIGHT_GREEN\fP, \fBLIGHT_BLUE\fP, \fBLIGHT_YELLOW\fP, \fBLIGHT_CYAN\fP, \fBLIGHT_MAGENTA\fP, \fBRED\fP, \fBGREEN\fP, \fBBLUE\fP, \fBYELLOW\fP, \fBCYAN\fP, \fBMAGENTA\fP, \fBWHITE\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > std::vector< T > \fBparse\fP (const std::string &csv_file)"
+.br
+.ti -1c
+.RI "std_msgs::ColorRGBA \fBcreateColorRGBA\fP (\fBColor\fP color)"
+.br
+.ti -1c
+.RI "void \fBenableMarker\fP (visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "void \fBdisableMarker\fP (visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "bool \fBisValidMarker\fP (const visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreateMarker\fP (const std::string &ns, int id, int type)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreatePointMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBPoint\fP &point)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreateVectorMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBVectorMap\fP &vmap, const \fBVector\fP &vector)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreateLineMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBVectorMap\fP &vmap, const \fBLine\fP &line)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreateAreaMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBVectorMap\fP &vmap, const \fBArea\fP &area)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreatePoleMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBVectorMap\fP &vmap, const Pole &pole)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBcreateBoxMarker\fP (const std::string &ns, int id, \fBColor\fP color, const \fBVectorMap\fP &vmap, const Box &\fBbox\fP)"
+.br
+.ti -1c
+.RI "double \fBconvertDegreeToRadian\fP (double degree)"
+.br
+.ti -1c
+.RI "double \fBconvertRadianToDegree\fP (double radian)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBconvertPointToGeomPoint\fP (const \fBPoint\fP &point)"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBconvertGeomPointToPoint\fP (const \fBgeometry_msgs::Point\fP &geom_point)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Quaternion\fP \fBconvertVectorToGeomQuaternion\fP (const \fBVector\fP &vector)"
+.br
+.ti -1c
+.RI "\fBVector\fP \fBconvertGeomQuaternionToVector\fP (const \fBgeometry_msgs::Quaternion\fP &geom_quaternion)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBCOLOR_VALUE_MIN\fP = 0\&.0"
+.br
+.ti -1c
+.RI "const double \fBCOLOR_VALUE_MAX\fP = 1\&.0"
+.br
+.ti -1c
+.RI "const double \fBCOLOR_VALUE_MEDIAN\fP = 0\&.5"
+.br
+.ti -1c
+.RI "const double \fBCOLOR_VALUE_LIGHT_LOW\fP = 0\&.56"
+.br
+.ti -1c
+.RI "const double \fBCOLOR_VALUE_LIGHT_HIGH\fP = 0\&.93"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_POINT\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_VECTOR\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_VECTOR_LENGTH\fP = 0\&.64"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_LINE\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_AREA\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBMAKER_SCALE_BOX\fP = 0\&.08"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "template<class T > using \fBvector_map::Callback\fP = typedef std::function<void(const T&)>"
+
+.PP
+Definition at line 229 of file vector_map\&.h\&.
+.SS "using \fBvector_map::category_t\fP = typedef unsigned long long"
+
+.PP
+Definition at line 127 of file vector_map\&.h\&.
+.SS "template<class T > using \fBvector_map::Filter\fP = typedef std::function<bool(const T&)>"
+
+.PP
+Definition at line 232 of file vector_map\&.h\&.
+.SS "template<class T , class U > using \fBvector_map::Updater\fP = typedef std::function<void(\fBstd::map\fP<\fBKey\fP<T>, T>&, const U&)>"
+
+.PP
+Definition at line 226 of file vector_map\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBvector_map::Category\fP : \fBcategory_t\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIPOINT \fP\fP
+.TP
+\fB\fIVECTOR \fP\fP
+.TP
+\fB\fILINE \fP\fP
+.TP
+\fB\fIAREA \fP\fP
+.TP
+\fB\fIPOLE \fP\fP
+.TP
+\fB\fIBOX \fP\fP
+.TP
+\fB\fIDTLANE \fP\fP
+.TP
+\fB\fINODE \fP\fP
+.TP
+\fB\fILANE \fP\fP
+.TP
+\fB\fIWAY_AREA \fP\fP
+.TP
+\fB\fIROAD_EDGE \fP\fP
+.TP
+\fB\fIGUTTER \fP\fP
+.TP
+\fB\fICURB \fP\fP
+.TP
+\fB\fIWHITE_LINE \fP\fP
+.TP
+\fB\fISTOP_LINE \fP\fP
+.TP
+\fB\fIZEBRA_ZONE \fP\fP
+.TP
+\fB\fICROSS_WALK \fP\fP
+.TP
+\fB\fIROAD_MARK \fP\fP
+.TP
+\fB\fIROAD_POLE \fP\fP
+.TP
+\fB\fIROAD_SIGN \fP\fP
+.TP
+\fB\fISIGNAL \fP\fP
+.TP
+\fB\fISTREET_LIGHT \fP\fP
+.TP
+\fB\fIUTILITY_POLE \fP\fP
+.TP
+\fB\fIGUARD_RAIL \fP\fP
+.TP
+\fB\fISIDE_WALK \fP\fP
+.TP
+\fB\fIDRIVE_ON_PORTION \fP\fP
+.TP
+\fB\fICROSS_ROAD \fP\fP
+.TP
+\fB\fISIDE_STRIP \fP\fP
+.TP
+\fB\fICURVE_MIRROR \fP\fP
+.TP
+\fB\fIWALL \fP\fP
+.TP
+\fB\fIFENCE \fP\fP
+.TP
+\fB\fIRAIL_CROSSING \fP\fP
+.TP
+\fB\fIALL \fP\fP
+.PP
+Definition at line 129 of file vector_map\&.h\&.
+.SS "enum \fBvector_map::Color\fP : int"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBLACK \fP\fP
+.TP
+\fB\fIGRAY \fP\fP
+.TP
+\fB\fILIGHT_RED \fP\fP
+.TP
+\fB\fILIGHT_GREEN \fP\fP
+.TP
+\fB\fILIGHT_BLUE \fP\fP
+.TP
+\fB\fILIGHT_YELLOW \fP\fP
+.TP
+\fB\fILIGHT_CYAN \fP\fP
+.TP
+\fB\fILIGHT_MAGENTA \fP\fP
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIBLUE \fP\fP
+.TP
+\fB\fIYELLOW \fP\fP
+.TP
+\fB\fICYAN \fP\fP
+.TP
+\fB\fIMAGENTA \fP\fP
+.TP
+\fB\fIWHITE \fP\fP
+.PP
+Definition at line 174 of file vector_map\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "double vector_map::convertDegreeToRadian (double degree)"
+
+.PP
+Definition at line 1580 of file vector_map\&.cpp\&.
+.SS "\fBPoint\fP vector_map::convertGeomPointToPoint (const \fBgeometry_msgs::Point\fP & geom_point)"
+
+.PP
+Definition at line 1601 of file vector_map\&.cpp\&.
+.SS "\fBVector\fP vector_map::convertGeomQuaternionToVector (const \fBgeometry_msgs::Quaternion\fP & geom_quaternion)"
+
+.PP
+Definition at line 1619 of file vector_map\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP vector_map::convertPointToGeomPoint (const \fBPoint\fP & point)"
+
+.PP
+Definition at line 1590 of file vector_map\&.cpp\&.
+.SS "double vector_map::convertRadianToDegree (double radian)"
+
+.PP
+Definition at line 1585 of file vector_map\&.cpp\&.
+.SS "\fBgeometry_msgs::Quaternion\fP vector_map::convertVectorToGeomQuaternion (const \fBVector\fP & vector)"
+
+.PP
+Definition at line 1612 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createAreaMarker (const std::string & ns, int id, \fBColor\fP color, const \fBVectorMap\fP & vmap, const \fBArea\fP & area)"
+
+.PP
+Definition at line 1420 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createBoxMarker (const std::string & ns, int id, \fBColor\fP color, const \fBVectorMap\fP & vmap, const Box & box)"
+
+.PP
+Definition at line 1508 of file vector_map\&.cpp\&.
+.SS "std_msgs::ColorRGBA vector_map::createColorRGBA (\fBColor\fP color)"
+
+.PP
+Definition at line 1231 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createLineMarker (const std::string & ns, int id, \fBColor\fP color, const \fBVectorMap\fP & vmap, const \fBLine\fP & line)"
+
+.PP
+Definition at line 1393 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createMarker (const std::string & ns, int id, int type)"
+
+.PP
+Definition at line 1334 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createPointMarker (const std::string & ns, int id, \fBColor\fP color, const \fBPoint\fP & point)"
+
+.PP
+Definition at line 1350 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createPoleMarker (const std::string & ns, int id, \fBColor\fP color, const \fBVectorMap\fP & vmap, const Pole & pole)"
+
+.PP
+Definition at line 1471 of file vector_map\&.cpp\&.
+.SS "visualization_msgs::Marker vector_map::createVectorMarker (const std::string & ns, int id, \fBColor\fP color, const \fBVectorMap\fP & vmap, const \fBVector\fP & vector)"
+
+.PP
+Definition at line 1369 of file vector_map\&.cpp\&.
+.SS "void vector_map::disableMarker (visualization_msgs::Marker & marker)"
+
+.PP
+Definition at line 1317 of file vector_map\&.cpp\&.
+.SS "void vector_map::enableMarker (visualization_msgs::Marker & marker)"
+
+.PP
+Definition at line 1312 of file vector_map\&.cpp\&.
+.SS "bool vector_map::isValidMarker (const visualization_msgs::Marker & marker)"
+
+.PP
+Definition at line 1322 of file vector_map\&.cpp\&.
+.SS "template<class T > std::vector<T> vector_map::parse (const std::string & csv_file)"
+
+.PP
+Definition at line 296 of file vector_map\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const double vector_map::COLOR_VALUE_LIGHT_HIGH = 0\&.93"
+
+.PP
+Definition at line 1229 of file vector_map\&.cpp\&.
+.SS "const double vector_map::COLOR_VALUE_LIGHT_LOW = 0\&.56"
+
+.PP
+Definition at line 1228 of file vector_map\&.cpp\&.
+.SS "const double vector_map::COLOR_VALUE_MAX = 1\&.0"
+
+.PP
+Definition at line 1226 of file vector_map\&.cpp\&.
+.SS "const double vector_map::COLOR_VALUE_MEDIAN = 0\&.5"
+
+.PP
+Definition at line 1227 of file vector_map\&.cpp\&.
+.SS "const double vector_map::COLOR_VALUE_MIN = 0\&.0"
+
+.PP
+Definition at line 1225 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_AREA = 0\&.08"
+
+.PP
+Definition at line 1331 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_BOX = 0\&.08"
+
+.PP
+Definition at line 1332 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_LINE = 0\&.08"
+
+.PP
+Definition at line 1330 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_POINT = 0\&.08"
+
+.PP
+Definition at line 1327 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_VECTOR = 0\&.08"
+
+.PP
+Definition at line 1328 of file vector_map\&.cpp\&.
+.SS "const double vector_map::MAKER_SCALE_VECTOR_LENGTH = 0\&.64"
+
+.PP
+Definition at line 1329 of file vector_map\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

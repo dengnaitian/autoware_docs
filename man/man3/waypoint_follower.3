@@ -1,0 +1,125 @@
+.TH "waypoint_follower" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waypoint_follower \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPurePursuit\fP"
+.br
+.ti -1c
+.RI "class \fBPurePursuitNode\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMode\fP : int32_t { \fBMode::waypoint\fP, \fBMode::dialog\fP, \fBMode::unknown\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBconvertCurvatureToSteeringAngle\fP (const double &wheel_base, const double &kappa)"
+.br
+.ti -1c
+.RI "template<class T > std::underlying_type< T >::type \fBenumToInteger\fP (T \fBt\fP)"
+.br
+.ti -1c
+.RI "double \fBkmph2mps\fP (double velocity_kmph)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayNextWaypoint\fP (\fBgeometry_msgs::Point\fP position)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayNextTarget\fP (\fBgeometry_msgs::Point\fP target)"
+.br
+.ti -1c
+.RI "double \fBcalcRadius\fP (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBgenerateTrajectoryCircle\fP (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayTrajectoryCircle\fP (std::vector< \fBgeometry_msgs::Point\fP > traj_circle_array)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplaySearchRadius\fP (\fBgeometry_msgs::Point\fP current_pose, double search_radius)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBMAP_FRAME\fP = 'map'"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBwaypoint_follower::Mode\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIwaypoint \fP\fP
+.TP
+\fB\fIdialog \fP\fP
+.TP
+\fB\fIunknown \fP\fP
+.PP
+Definition at line 40 of file pure_pursuit_core\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "double waypoint_follower::calcRadius (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+
+.PP
+Definition at line 68 of file pure_pursuit_viz\&.cpp\&.
+.SS "double waypoint_follower::convertCurvatureToSteeringAngle (const double & wheel_base, const double & kappa)"
+
+.PP
+Definition at line 265 of file pure_pursuit_core\&.cpp\&.
+.SS "visualization_msgs::Marker waypoint_follower::displayNextTarget (\fBgeometry_msgs::Point\fP target)"
+
+.PP
+Definition at line 45 of file pure_pursuit_viz\&.cpp\&.
+.SS "visualization_msgs::Marker waypoint_follower::displayNextWaypoint (\fBgeometry_msgs::Point\fP position)"
+
+.PP
+Definition at line 23 of file pure_pursuit_viz\&.cpp\&.
+.SS "visualization_msgs::Marker waypoint_follower::displaySearchRadius (\fBgeometry_msgs::Point\fP current_pose, double search_radius)"
+
+.PP
+Definition at line 175 of file pure_pursuit_viz\&.cpp\&.
+.SS "visualization_msgs::Marker waypoint_follower::displayTrajectoryCircle (std::vector< \fBgeometry_msgs::Point\fP > traj_circle_array)"
+
+.PP
+Definition at line 140 of file pure_pursuit_viz\&.cpp\&.
+.SS "template<class T > std::underlying_type<T>::type waypoint_follower::enumToInteger (T t)"
+
+.PP
+Definition at line 49 of file pure_pursuit_core\&.h\&.
+.SS "std::vector< \fBgeometry_msgs::Point\fP > waypoint_follower::generateTrajectoryCircle (\fBgeometry_msgs::Point\fP target, geometry_msgs::Pose current_pose)"
+
+.PP
+Definition at line 84 of file pure_pursuit_viz\&.cpp\&.
+.SS "double waypoint_follower::kmph2mps (double velocity_kmph)\fC [inline]\fP"
+
+.PP
+Definition at line 116 of file pure_pursuit_core\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const std::string waypoint_follower::MAP_FRAME = 'map'"
+
+.PP
+Definition at line 21 of file pure_pursuit_viz\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

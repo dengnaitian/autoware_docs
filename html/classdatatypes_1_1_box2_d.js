@@ -1,0 +1,28 @@
+var classdatatypes_1_1_box2_d =
+[
+    [ "value_type", "classdatatypes_1_1_box2_d.html#a185f6927b0a21787264f4e63de0c0bee", null ],
+    [ "Box2D", "classdatatypes_1_1_box2_d.html#aacdf14eb6ec902acbbd688c3f805b26d", null ],
+    [ "Box2D", "classdatatypes_1_1_box2_d.html#a1c01050b7e4ccd8ec7df359e2c6a1b23", null ],
+    [ "Box2D", "classdatatypes_1_1_box2_d.html#a915b3520094181bec27e102dd872c514", null ],
+    [ "containsPoint", "classdatatypes_1_1_box2_d.html#a6041beb6a1396a0c0d08550f2dcf1329", null ],
+    [ "distanceFromOutline", "classdatatypes_1_1_box2_d.html#a1a8456a155998f8e90da558477075af0", null ],
+    [ "distanceFromOutline", "classdatatypes_1_1_box2_d.html#a905b19c131b270f4b339e479e78bca50", null ],
+    [ "distanceFromOutline", "classdatatypes_1_1_box2_d.html#ae2730b1414db8a592caa000d85ad258e", null ],
+    [ "getBoundingAngles", "classdatatypes_1_1_box2_d.html#a099985c8c309f54c721aea78beede781", null ],
+    [ "getCenter", "classdatatypes_1_1_box2_d.html#a0370e3e0d7dadefba0f87bf8a6cf6d28", null ],
+    [ "getRotation", "classdatatypes_1_1_box2_d.html#ab5a71776ff0dddb5ed79c1f617c16f67", null ],
+    [ "getSize", "classdatatypes_1_1_box2_d.html#a66195f6a298e224080166c3c4689b148", null ],
+    [ "getUsedMemory", "classdatatypes_1_1_box2_d.html#a6f3958803941bd5fcc5242fbef2a916a", null ],
+    [ "moveBy", "classdatatypes_1_1_box2_d.html#a012c9a6c4fab1fbfa6f08ab60ffe2e2d", null ],
+    [ "movedBy", "classdatatypes_1_1_box2_d.html#a0da7c3f5800761e6cc05769907213fde", null ],
+    [ "setCenter", "classdatatypes_1_1_box2_d.html#a82365aedc2e2b77137cf20f159ba5c79", null ],
+    [ "setCenter", "classdatatypes_1_1_box2_d.html#ab5af34ec77b1d2b416618825ea2fd7ea", null ],
+    [ "setRotation", "classdatatypes_1_1_box2_d.html#a39285ae5bdb007bc862ad6c5af059bd7", null ],
+    [ "setSize", "classdatatypes_1_1_box2_d.html#af72480b868fae9d760ed88102c3dde3d", null ],
+    [ "setSize", "classdatatypes_1_1_box2_d.html#a3caa9a041982789379f0e2ae4b9296fa", null ],
+    [ "toBoundingBox", "classdatatypes_1_1_box2_d.html#a5b4d71a562a622409968a5b06f6fa964", null ],
+    [ "toPolygon", "classdatatypes_1_1_box2_d.html#a1902a290cea266d274d2de546aff155a", null ],
+    [ "toString", "classdatatypes_1_1_box2_d.html#ae9e02140c02773b3207c5b4df49b5cd8", null ],
+    [ "operator!=", "classdatatypes_1_1_box2_d.html#a5f2e7f27f411c96ade6f08a285e1d3cf", null ],
+    [ "operator==", "classdatatypes_1_1_box2_d.html#a3ae549ed437c8e7a3402aaa338e58556", null ]
+];

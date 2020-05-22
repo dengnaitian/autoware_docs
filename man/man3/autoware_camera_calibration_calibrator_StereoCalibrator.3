@@ -1,0 +1,299 @@
+.TH "autoware_camera_calibration.calibrator.StereoCalibrator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.calibrator.StereoCalibrator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBautoware_camera_calibration\&.calibrator\&.Calibrator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, args, kwargs)"
+.br
+.ti -1c
+.RI "def \fBcal\fP (self, limages, rimages)"
+.br
+.ti -1c
+.RI "def \fBcollect_corners\fP (self, limages, rimages)"
+.br
+.ti -1c
+.RI "def \fBcal_fromcorners\fP (self, good)"
+.br
+.ti -1c
+.RI "def \fBset_alpha\fP (self, a)"
+.br
+.ti -1c
+.RI "def \fBas_message\fP (self)"
+.br
+.ti -1c
+.RI "def \fBfrom_message\fP (self, msgs, alpha=0\&.0)"
+.br
+.ti -1c
+.RI "def \fBreport\fP (self)"
+.br
+.ti -1c
+.RI "def \fBost\fP (self)"
+.br
+.ti -1c
+.RI "def \fByaml\fP (self, suffix, info)"
+.br
+.ti -1c
+.RI "def \fBepipolar_error_from_images\fP (self, limage, rimage)"
+.br
+.ti -1c
+.RI "def \fBepipolar_error\fP (self, lcorners, rcorners)"
+.br
+.ti -1c
+.RI "def \fBchessboard_size_from_images\fP (self, limage, rimage)"
+.br
+.ti -1c
+.RI "def \fBchessboard_size\fP (self, lcorners, rcorners, board, msg=None)"
+.br
+.ti -1c
+.RI "def \fBhandle_msg\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBdo_calibration\fP (self, dump=False)"
+.br
+.ti -1c
+.RI "def \fBdo_tarfile_save\fP (self, tf)"
+.br
+.ti -1c
+.RI "def \fBdo_tarfile_calibration\fP (self, filename)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBl\fP"
+.br
+.ti -1c
+.RI "\fBr\fP"
+.br
+.ti -1c
+.RI "\fBsize\fP"
+.br
+.ti -1c
+.RI "\fBcalibrated\fP"
+.br
+.ti -1c
+.RI "\fBT\fP"
+.br
+.ti -1c
+.RI "\fBR\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_mono\fP = False"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Calibration class for stereo cameras::
+
+    limages = [cv2.imread("left%d.png") for i in range(8)]
+    rimages = [cv2.imread("right%d.png") for i in range(8)]
+    sc = StereoCalibrator()
+    sc.cal(limages, rimages)
+    print sc.as_message()
+
+.fi
+.PP
+ 
+.PP
+Definition at line 917 of file calibrator\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.__init__ ( self,  args,  kwargs)"
+
+.PP
+Definition at line 930 of file calibrator\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.as_message ( self)"
+
+.PP
+.nf
+Return the camera calibration as a pair of CameraInfo messages, for left
+and right cameras respectively.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1031 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.cal ( self,  limages,  rimages)"
+
+.PP
+.nf
+:param limages: source left images containing chessboards
+:type limages: list of :class:`cvMat`
+:param rimages: source right images containing chessboards
+:type rimages: list of :class:`cvMat`
+
+Find chessboards in images, and runs the OpenCV calibration solver.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 940 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.cal_fromcorners ( self,  good)"
+
+.PP
+Definition at line 971 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.chessboard_size ( self,  lcorners,  rcorners,  board,  msg = \fCNone\fP)"
+
+.PP
+.nf
+Compute the square edge length from two sets of matching undistorted points
+given the current calibration.
+:param msg: a tuple of (left_msg, right_msg)
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1102 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.chessboard_size_from_images ( self,  limage,  rimage)"
+
+.PP
+Definition at line 1091 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.collect_corners ( self,  limages,  rimages)"
+
+.PP
+.nf
+For a sequence of left and right images, find pairs of images where both
+left and right have a chessboard, and return  their corners as a list of pairs.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 956 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.do_calibration ( self,  dump = \fCFalse\fP)"
+
+.PP
+Definition at line 1198 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.do_tarfile_calibration ( self,  filename)"
+
+.PP
+Definition at line 1235 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.do_tarfile_save ( self,  tf)"
+
+.PP
+.nf
+Write images and calibration solution to a tarfile object 
+.fi
+.PP
+ 
+.PP
+Definition at line 1213 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.epipolar_error ( self,  lcorners,  rcorners)"
+
+.PP
+.nf
+Compute the epipolar error from two sets of matching undistorted points
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1084 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.epipolar_error_from_images ( self,  limage,  rimage)"
+
+.PP
+.nf
+Detect the checkerboard in both images and compute the epipolar error.
+Mainly for use in tests.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1069 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.from_message ( self,  msgs,  alpha = \fC0\&.0\fP)"
+
+.PP
+.nf
+Initialize the camera calibration from a pair of CameraInfo messages.  
+.fi
+.PP
+ 
+.PP
+Definition at line 1040 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.handle_msg ( self,  msg)"
+
+.PP
+Definition at line 1128 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.ost ( self)"
+
+.PP
+Definition at line 1061 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.report ( self)"
+
+.PP
+Definition at line 1053 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.set_alpha ( self,  a)"
+
+.PP
+.nf
+Set the alpha value for the calibrated camera solution. The
+alpha value is a zoom, and ranges from 0 (zoomed in, all pixels
+in calibrated image are valid) to 1 (zoomed out, all pixels in
+original image are in calibrated image).
+
+.fi
+.PP
+ 
+.PP
+Definition at line 1008 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.yaml ( self,  suffix,  info)"
+
+.PP
+Definition at line 1065 of file calibrator\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.calibrated"
+
+.PP
+Definition at line 954 of file calibrator\&.py\&.
+.SS "bool autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.is_mono = False\fC [static]\fP"
+
+.PP
+Definition at line 928 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.l"
+
+.PP
+Definition at line 934 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.r"
+
+.PP
+Definition at line 935 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.R"
+
+.PP
+Definition at line 987 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.size"
+
+.PP
+Definition at line 950 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.StereoCalibrator\&.T"
+
+.PP
+Definition at line 986 of file calibrator\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

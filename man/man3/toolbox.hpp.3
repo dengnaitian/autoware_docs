@@ -1,0 +1,280 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/toolbox.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/toolbox.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include '\&.\&./BasicDatatypes\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBhexCharToValue\fP (char \fBc\fP)"
+.br
+.ti -1c
+.RI "char \fBconvertNibbleToHexChar\fP (int value, bool useLowerCaseLetters=false)"
+.br
+.ti -1c
+.RI "void \fBconvertUINT8toHexString\fP (\fBUINT8\fP byte, char *buffer)"
+.br
+.ti -1c
+.RI "void \fBconvertRGBtoHexString\fP (\fBUINT8\fP r, \fBUINT8\fP g, \fBUINT8\fP \fBb\fP, char *buffer)"
+.br
+.ti -1c
+.RI "double \fBmakeAngleValid\fP (double angle)"
+.br
+.ti -1c
+.RI "std::string \fBipTargetToString\fP (\fBUINT32\fP ipAddress, \fBUINT16\fP port)"
+.br
+.ti -1c
+.RI "std::string \fBipAdrToString\fP (\fBUINT32\fP ipAddress)"
+.br
+.ti -1c
+.RI "void \fBstringToIpTarget\fP (std::string ipAdrStr, \fBUINT32\fP &ipAddress, \fBUINT16\fP &port)"
+.br
+.ti -1c
+.RI "std::string \fBtoHexString\fP (\fBUINT32\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoHexString\fP (\fBUINT16\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoHexString\fP (\fBUINT8\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoHexStringNbble\fP (\fBUINT8\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP (\fBUINT32\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP (\fBINT32\fP val)"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP (double val, int digits_after_decimal_point)"
+.br
+.ti -1c
+.RI "std::string \fBdoubleToString\fP (double val, int digits_after_decimal_point)"
+.br
+.ti -1c
+.RI "std::string \fBdoubleToString\fP (double val, int digits_before_decimal_point, int digits_after_decimal_point)"
+.br
+.ti -1c
+.RI "std::string \fBconvertMeterToFeetAndInch\fP (double m)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBfromString\fP (const std::string &text)"
+.br
+.ti -1c
+.RI "std::string \fBtoLower\fP (const std::string &text)"
+.br
+.ti -1c
+.RI "void \fBtraceBuffer\fP (std::string headerText, \fBBYTE\fP *buffer, \fBUINT32\fP len)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBmemread_UINT32\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBmemread_UINT16\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBmemread_UINT8\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBmemread_INT32\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBmemread_INT16\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "float \fBmemread_float\fP (\fBBYTE\fP *&buffer)"
+.br
+.ti -1c
+.RI "std::string \fBmemread_string\fP (\fBBYTE\fP *&buffer, \fBUINT16\fP length)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_float\fP (\fBBYTE\fP *&buffer, float value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_INT32\fP (\fBBYTE\fP *&buffer, \fBINT32\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_UINT32\fP (\fBBYTE\fP *&buffer, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_INT16\fP (\fBBYTE\fP *&buffer, \fBINT16\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_UINT16\fP (\fBBYTE\fP *&buffer, \fBUINT16\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_INT8\fP (\fBBYTE\fP *&buffer, \fBINT8\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_UINT8\fP (\fBBYTE\fP *&buffer, \fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "void \fBmemwrite_string\fP (\fBBYTE\fP *&buffer, std::string text)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::string convertMeterToFeetAndInch (double m)"
+
+.PP
+Definition at line 125 of file toolbox\&.cpp\&.
+.SS "char convertNibbleToHexChar (int value, bool useLowerCaseLetters)"
+Konvertierung Zahlenwert -> Hex-Zeichen 
+.PP
+Definition at line 197 of file toolbox\&.cpp\&.
+.SS "void convertRGBtoHexString (\fBUINT8\fP r, \fBUINT8\fP g, \fBUINT8\fP b, char * buffer)"
+Konvertiert drei UINT8-Werte (R, G, B) in einen HEX-String, z\&.B\&.: R = 0x12, G=0x34, B=0x56 --> String = '123456' Buffer muss mindestens 6 Byte gross sein\&. 
+.PP
+Definition at line 240 of file toolbox\&.cpp\&.
+.SS "void convertUINT8toHexString (\fBUINT8\fP byte, char * buffer)"
+Konvertiert einen UINT8-Wert in einen 2-Byte-Hex-Wert, z\&.B\&.: b = 0x07, String = '07' Buffer muss mindestens 2 Byte gross sein\&. 
+.PP
+Definition at line 227 of file toolbox\&.cpp\&.
+.SS "std::string doubleToString (double val, int digits_after_decimal_point)"
+Konvertiere Double-Zahl in String\&. 
+.PP
+Definition at line 344 of file toolbox\&.cpp\&.
+.SS "std::string doubleToString (double val, int digits_before_decimal_point, int digits_after_decimal_point)"
+
+.SS "\fBUINT16\fP fromString (const std::string & text)"
+
+.PP
+Definition at line 158 of file toolbox\&.cpp\&.
+.SS "int hexCharToValue (char c)"
+Toolbox\&. Some useful functions\&.
+.PP
+Konvertierung eines Hex-Zeichens -> Zahlenwert\&. 
+.PP
+Definition at line 173 of file toolbox\&.cpp\&.
+.SS "std::string ipAdrToString (\fBUINT32\fP ipAddress)"
+
+.PP
+Definition at line 424 of file toolbox\&.cpp\&.
+.SS "std::string ipTargetToString (\fBUINT32\fP ipAddress, \fBUINT16\fP port)"
+
+.PP
+Definition at line 407 of file toolbox\&.cpp\&.
+.SS "double makeAngleValid (double angle)"
+Bringt den Winkel in den Bereich ]PI\&.\&.-PI] 
+.PP
+Definition at line 252 of file toolbox\&.cpp\&.
+.SS "float memread_float (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 523 of file toolbox\&.cpp\&.
+.SS "\fBINT16\fP memread_INT16 (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 474 of file toolbox\&.cpp\&.
+.SS "\fBINT32\fP memread_INT32 (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 485 of file toolbox\&.cpp\&.
+.SS "std::string memread_string (\fBBYTE\fP *& buffer, \fBUINT16\fP length)"
+
+.PP
+Definition at line 498 of file toolbox\&.cpp\&.
+.SS "\fBUINT16\fP memread_UINT16 (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 453 of file toolbox\&.cpp\&.
+.SS "\fBUINT32\fP memread_UINT32 (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 439 of file toolbox\&.cpp\&.
+.SS "\fBUINT8\fP memread_UINT8 (\fBBYTE\fP *& buffer)"
+
+.PP
+Definition at line 464 of file toolbox\&.cpp\&.
+.SS "void memwrite_float (\fBBYTE\fP *& buffer, float value)"
+
+.PP
+Definition at line 534 of file toolbox\&.cpp\&.
+.SS "void memwrite_INT16 (\fBBYTE\fP *& buffer, \fBINT16\fP value)"
+
+.PP
+Definition at line 567 of file toolbox\&.cpp\&.
+.SS "void memwrite_INT32 (\fBBYTE\fP *& buffer, \fBINT32\fP value)"
+
+.PP
+Definition at line 545 of file toolbox\&.cpp\&.
+.SS "void memwrite_INT8 (\fBBYTE\fP *& buffer, \fBINT8\fP value)"
+
+.PP
+Definition at line 595 of file toolbox\&.cpp\&.
+.SS "void memwrite_string (\fBBYTE\fP *& buffer, std::string text)"
+
+.PP
+Definition at line 604 of file toolbox\&.cpp\&.
+.SS "void memwrite_UINT16 (\fBBYTE\fP *& buffer, \fBUINT16\fP value)"
+
+.PP
+Definition at line 576 of file toolbox\&.cpp\&.
+.SS "void memwrite_UINT32 (\fBBYTE\fP *& buffer, \fBUINT32\fP value)"
+
+.PP
+Definition at line 554 of file toolbox\&.cpp\&.
+.SS "void memwrite_UINT8 (\fBBYTE\fP *& buffer, \fBUINT8\fP value)"
+
+.PP
+Definition at line 586 of file toolbox\&.cpp\&.
+.SS "void stringToIpTarget (std::string ipAdrStr, \fBUINT32\fP & ipAddress, \fBUINT16\fP & port)"
+
+.PP
+Definition at line 365 of file toolbox\&.cpp\&.
+.SS "std::string toHexString (\fBUINT32\fP val)"
+
+.PP
+Definition at line 71 of file toolbox\&.cpp\&.
+.SS "std::string toHexString (\fBUINT16\fP val)"
+
+.PP
+Definition at line 79 of file toolbox\&.cpp\&.
+.SS "std::string toHexString (\fBUINT8\fP val)"
+
+.PP
+Definition at line 89 of file toolbox\&.cpp\&.
+.SS "std::string toHexStringNbble (\fBUINT8\fP val)"
+
+.SS "std::string toLower (const std::string & text)"
+
+.PP
+Definition at line 101 of file toolbox\&.cpp\&.
+.SS "std::string toString (\fBUINT32\fP val)"
+
+.PP
+Definition at line 281 of file toolbox\&.cpp\&.
+.SS "std::string toString (\fBINT32\fP val)"
+
+.PP
+Definition at line 271 of file toolbox\&.cpp\&.
+.SS "std::string toString (double val, int digits_after_decimal_point)"
+
+.PP
+Definition at line 354 of file toolbox\&.cpp\&.
+.SS "void traceBuffer (std::string headerText, \fBBYTE\fP * buffer, \fBUINT32\fP len)"
+Toolbox\&. Some useful functions\&. 
+.PP
+Definition at line 20 of file toolbox\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,96 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_remove_background.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_tools/src/sick_ldmrs_remove_background.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <sick_ldmrs_msgs/sick_ldmrs_point_type\&.h>\fP
+.br
+\fC#include <pcl/point_cloud\&.h>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< \fBPointT\fP > \fBPointCloudT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallback\fP (const sensor_msgs::PointCloud2::ConstPtr &pc)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "ros::Publisher \fBpub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_bg\fP"
+.br
+.ti -1c
+.RI "double \fBmin_dist_ratio_\fP"
+.br
+.ti -1c
+.RI "PointCloudT::Ptr \fBcloud_bg_\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBpcl::PointCloud\fP<\fBPointT\fP> \fBPointCloudT\fP"
+
+.PP
+Definition at line 44 of file sick_ldmrs_remove_background\&.cpp\&.
+.SS "typedef \fBsick_ldmrs_msgs::SICK_LDMRS_Point\fP \fBPointT\fP"
+
+.PP
+Definition at line 43 of file sick_ldmrs_remove_background\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void callback (const sensor_msgs::PointCloud2::ConstPtr & pc)"
+
+.PP
+Definition at line 53 of file sick_ldmrs_remove_background\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 130 of file sick_ldmrs_remove_background\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "PointCloudT::Ptr cloud_bg_"
+
+.PP
+Definition at line 51 of file sick_ldmrs_remove_background\&.cpp\&.
+.SS "double min_dist_ratio_"
+
+.PP
+Definition at line 49 of file sick_ldmrs_remove_background\&.cpp\&.
+.SS "ros::Publisher pub"
+
+.PP
+Definition at line 46 of file sick_ldmrs_remove_background\&.cpp\&.
+.SS "ros::Publisher pub_bg"
+
+.PP
+Definition at line 47 of file sick_ldmrs_remove_background\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

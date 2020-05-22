@@ -1,0 +1,73 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/tlr_tuner/tunerBody.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/tlr_tuner/tunerBody.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <opencv2/opencv\&.hpp>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <cv_bridge/cv_bridge\&.h>\fP
+.br
+\fC#include <sensor_msgs/Image\&.h>\fP
+.br
+\fC#include <sensor_msgs/image_encodings\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBvalue_set\fP"
+.br
+.ti -1c
+.RI "struct \fBthresholds_set\fP"
+.br
+.ti -1c
+.RI "class \fBTunerBody\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEFAULT_SAT_LOWER\fP   ((double)0\&.37 * 255)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_SAT_UPPER\fP   (255)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_VAL_LOWER\fP   (90)"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_VAL_UPPER\fP   (255)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULT_SAT_LOWER   ((double)0\&.37 * 255)"
+
+.PP
+Definition at line 14 of file tunerBody\&.h\&.
+.SS "#define DEFAULT_SAT_UPPER   (255)"
+
+.PP
+Definition at line 15 of file tunerBody\&.h\&.
+.SS "#define DEFAULT_VAL_LOWER   (90)"
+
+.PP
+Definition at line 16 of file tunerBody\&.h\&.
+.SS "#define DEFAULT_VAL_UPPER   (255)"
+
+.PP
+Definition at line 17 of file tunerBody\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

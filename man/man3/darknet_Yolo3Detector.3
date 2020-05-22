@@ -1,0 +1,74 @@
+.TH "darknet::Yolo3Detector" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+darknet::Yolo3Detector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vision_darknet_detect\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBYolo3Detector\fP ()"
+.br
+.ti -1c
+.RI "void \fBload\fP (std::string &in_model_file, std::string &in_trained_file, double in_min_confidence, double in_nms_threshold)"
+.br
+.ti -1c
+.RI "\fB~Yolo3Detector\fP ()"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBconvert_image\fP (const sensor_msgs::ImageConstPtr &in_image_msg)"
+.br
+.ti -1c
+.RI "std::vector< \fBRectClassScore\fP< float > > \fBdetect\fP (\fBimage\fP &in_darknet_image)"
+.br
+.ti -1c
+.RI "uint32_t \fBget_network_width\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBget_network_height\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 62 of file vision_darknet_detect\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "darknet::Yolo3Detector::Yolo3Detector ()\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file vision_darknet_detect\&.h\&.
+.SS "darknet::Yolo3Detector::~Yolo3Detector ()"
+
+.PP
+Definition at line 52 of file vision_darknet_detect\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBimage\fP darknet::Yolo3Detector::convert_image (const sensor_msgs::ImageConstPtr & in_image_msg)"
+
+.PP
+Definition at line 62 of file vision_darknet_detect\&.cpp\&.
+.SS "std::vector< \fBRectClassScore\fP< float > > darknet::Yolo3Detector::detect (\fBimage\fP & in_darknet_image)"
+
+.PP
+Definition at line 57 of file vision_darknet_detect\&.cpp\&.
+.SS "uint32_t darknet::Yolo3Detector::get_network_height ()"
+
+.PP
+Definition at line 32 of file vision_darknet_detect\&.cpp\&.
+.SS "uint32_t darknet::Yolo3Detector::get_network_width ()"
+
+.PP
+Definition at line 36 of file vision_darknet_detect\&.cpp\&.
+.SS "void darknet::Yolo3Detector::load (std::string & in_model_file, std::string & in_trained_file, double in_min_confidence, double in_nms_threshold)"
+
+.PP
+Definition at line 40 of file vision_darknet_detect\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

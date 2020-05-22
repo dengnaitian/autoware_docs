@@ -1,0 +1,299 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_gps.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_gps.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk_gps\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmip_gps_llh_pos_byteswap\fP (\fBmip_gps_llh_pos\fP *llh_pos)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ecef_pos_byteswap\fP (\fBmip_gps_ecef_pos\fP *ecef_pos)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ned_vel_byteswap\fP (\fBmip_gps_ned_vel\fP *ned_vel)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ecef_vel_byteswap\fP (\fBmip_gps_ecef_vel\fP *ecef_vel)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_fix_info_byteswap\fP (\fBmip_gps_fix_info\fP *fix_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_sv_info_byteswap\fP (\fBmip_gps_sv_info\fP *sv_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dop_byteswap\fP (\fBmip_gps_dop\fP *dop)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_utc_time_byteswap\fP (\fBmip_gps_utc_time\fP *utc_time)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_time_byteswap\fP (\fBmip_gps_time\fP *gps_time)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_clock_info_byteswap\fP (\fBmip_gps_clock_info\fP *clock_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_hw_status_byteswap\fP (\fBmip_gps_hw_status\fP *hw_status)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dgps_info_byteswap\fP (\fBmip_gps_dgps_info\fP *dgps_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dgps_channel_status_byteswap\fP (\fBmip_gps_dgps_channel_status\fP *dgps_channel_status)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_gps\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void mip_gps_clock_info_byteswap (\fBmip_gps_clock_info\fP * clock_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Clock Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_clock_info\fP *clock_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 320 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dgps_channel_status_byteswap (\fBmip_gps_dgps_channel_status\fP * dgps_channel_status)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a DGPS Channel \fBStatus\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dgps_channel_status\fP *dgps_channel_status - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 399 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dgps_info_byteswap (\fBmip_gps_dgps_info\fP * dgps_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a DGPS Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dgps_info\fP *dgps_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 371 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dop_byteswap (\fBmip_gps_dop\fP * dop)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS DOP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dop\fP *dop - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 237 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ecef_pos_byteswap (\fBmip_gps_ecef_pos\fP * ecef_pos)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS ECEF Position Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ecef_pos\fP *ecef_pos - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 90 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ecef_vel_byteswap (\fBmip_gps_ecef_vel\fP * ecef_vel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS ECEF Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ecef_vel\fP *ecef_vel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 154 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_fix_info_byteswap (\fBmip_gps_fix_info\fP * fix_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Fix Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_fix_info\fP *fix_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 184 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_hw_status_byteswap (\fBmip_gps_hw_status\fP * hw_status)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Hardware \fBStatus\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_hw_status\fP *hw_status - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 347 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_llh_pos_byteswap (\fBmip_gps_llh_pos\fP * llh_pos)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS LLH Position Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_llh_pos\fP *llh_pos - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 60 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ned_vel_byteswap (\fBmip_gps_ned_vel\fP * ned_vel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS NED Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ned_vel\fP *ned_vel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 120 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_sv_info_byteswap (\fBmip_gps_sv_info\fP * sv_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS SV Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_sv_info\fP *sv_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 209 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_time_byteswap (\fBmip_gps_time\fP * gps_time)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS \fBTime\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_time\fP *gps_time - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 294 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_utc_time_byteswap (\fBmip_gps_utc_time\fP * utc_time)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS UTC \fBTime\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_utc_time\fP *utc_time - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 268 of file mip_sdk_gps\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

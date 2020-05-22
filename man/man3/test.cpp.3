@@ -1,0 +1,197 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/system/sync/test.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/system/sync/test.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include <ros/callback_queue\&.h>\fP
+.br
+\fC#include <boost/circular_buffer\&.hpp>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/select\&.h>\fP
+.br
+\fC#include <mqueue\&.h>\fP
+.br
+\fC#include <fcntl\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 't_sync_message\&.h'\fP
+.br
+\fC#include 'cv_tracker/obj_label\&.h'\fP
+.br
+\fC#include 'autoware_msgs/Centroids\&.h'\fP
+.br
+\fC#include 'visualization_msgs/MarkerArray\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_REQ_PUB\fP   1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "boost::circular_buffer< cv_tracker::obj_label > \fBobj_label_ringbuf\fP (10)"
+.br
+.ti -1c
+.RI "boost::circular_buffer< autoware_msgs::Centroids > \fBcluster_centroids_ringbuf\fP (10)"
+.br
+.ti -1c
+.RI "double \fBfabs_time_diff\fP (std_msgs::Header *timespec1, std_msgs::Header *timespec2)"
+.br
+.ti -1c
+.RI "double \fBget_time\fP (const std_msgs::Header *timespec)"
+.br
+.ti -1c
+.RI "void \fBpublish_msg\fP (cv_tracker::obj_label *\fBp_obj_label_buf\fP, autoware_msgs::Centroids *\fBp_cluster_centroids_buf\fP)"
+.br
+.ti -1c
+.RI "bool \fBpublish\fP ()"
+.br
+.ti -1c
+.RI "void \fBobj_label_callback\fP (const cv_tracker::obj_label::ConstPtr &obj_label_msg)"
+.br
+.ti -1c
+.RI "void \fBcluster_centroids_callback\fP (const autoware_msgs::Centroids::ConstPtr &cluster_centroids_msg)"
+.br
+.ti -1c
+.RI "void \fBobj_pose_callback\fP (const visualization_msgs::MarkerArray::ConstPtr &obj_pose_msg)"
+.br
+.ti -1c
+.RI "void * \fBthread\fP (void *args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbuf_flag\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBobj_label__pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBcluster_centroids__pub\fP"
+.br
+.ti -1c
+.RI "bool \fBobj_pose_flag\fP"
+.br
+.ti -1c
+.RI "cv_tracker::obj_label * \fBp_obj_label_buf\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::Centroids * \fBp_cluster_centroids_buf\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _REQ_PUB   1"
+
+.PP
+Definition at line 25 of file test\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void cluster_centroids_callback (const autoware_msgs::Centroids::ConstPtr & cluster_centroids_msg)"
+
+.PP
+Definition at line 162 of file test\&.cpp\&.
+.SS "boost::circular_buffer<autoware_msgs::Centroids> cluster_centroids_ringbuf (10)"
+
+.SS "double fabs_time_diff (std_msgs::Header * timespec1, std_msgs::Header * timespec2)"
+
+.PP
+Definition at line 39 of file test\&.cpp\&.
+.SS "double get_time (const std_msgs::Header * timespec)"
+
+.PP
+Definition at line 46 of file test\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 375 of file test\&.cpp\&.
+.SS "void obj_label_callback (const cv_tracker::obj_label::ConstPtr & obj_label_msg)"
+
+.PP
+Definition at line 144 of file test\&.cpp\&.
+.SS "boost::circular_buffer<cv_tracker::obj_label> obj_label_ringbuf (10)"
+
+.SS "void obj_pose_callback (const visualization_msgs::MarkerArray::ConstPtr & obj_pose_msg)"
+
+.PP
+Definition at line 340 of file test\&.cpp\&.
+.SS "bool publish ()"
+
+.PP
+Definition at line 62 of file test\&.cpp\&.
+.SS "void publish_msg (cv_tracker::obj_label * p_obj_label_buf, autoware_msgs::Centroids * p_cluster_centroids_buf)"
+
+.PP
+Definition at line 55 of file test\&.cpp\&.
+.SS "void* thread (void * args)"
+
+.PP
+Definition at line 349 of file test\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "bool buf_flag"
+
+.PP
+Definition at line 29 of file test\&.cpp\&.
+.SS "ros::Publisher cluster_centroids__pub"
+
+.PP
+Definition at line 35 of file test\&.cpp\&.
+.SS "pthread_mutex_t mutex"
+
+.PP
+Definition at line 30 of file test\&.cpp\&.
+.SS "ros::Publisher obj_label__pub"
+
+.PP
+Definition at line 34 of file test\&.cpp\&.
+.SS "bool obj_pose_flag"
+
+.PP
+Definition at line 36 of file test\&.cpp\&.
+.SS "autoware_msgs::Centroids* p_cluster_centroids_buf"
+
+.PP
+Definition at line 53 of file test\&.cpp\&.
+.SS "cv_tracker::obj_label* p_obj_label_buf"
+
+.PP
+Definition at line 52 of file test\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

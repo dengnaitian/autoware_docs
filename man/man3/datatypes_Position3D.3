@@ -1,0 +1,271 @@
+.TH "datatypes::Position3D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Position3D \- A Position with orientation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Position3D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPosition3D\fP ()"
+.br
+.RI "\fIEmpty constructor\&. \fP"
+.ti -1c
+.RI "\fBPosition3D\fP (value_type \fByaw\fP, value_type \fBpitch\fP, value_type \fBroll\fP, value_type x, value_type y, value_type z)"
+.br
+.RI "\fIConstructor with all values given\&. \fP"
+.ti -1c
+.RI "\fBPosition3D\fP (value_type \fByaw\fP, value_type \fBpitch\fP, value_type \fBroll\fP, const \fBPoint3D\fP &point)"
+.br
+.RI "\fIConstructor with all values given by a \fBPoint3D\fP\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "bool \fBtransformToVehicle\fP (\fBPoint3D\fP *pt)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPosition3D\fP &other) const "
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "value_type \fBgetYawAngle\fP () const "
+.br
+.RI "\fIYaw angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "value_type \fBgetPitchAngle\fP () const "
+.br
+.RI "\fIPitch angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "value_type \fBgetRollAngle\fP () const "
+.br
+.RI "\fIRoll angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "value_type \fBgetX\fP () const "
+.br
+.RI "\fIx-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "value_type \fBgetY\fP () const "
+.br
+.RI "\fIy-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "value_type \fBgetZ\fP () const "
+.br
+.RI "\fIz-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "\fBPosition3D\fP \fBtoPosition3D\fP () const "
+.br
+.RI "\fIReturns the content of this class, converted into a \fBPosition3D\fP object\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP \fBtoPoint3D\fP () const "
+.br
+.RI "\fIReturns the x/y/z components of this class, converted into a \fBPoint3D\fP object\&. \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBtoPoint2D\fP () const "
+.br
+.RI "\fIReturns the x/y components of this class, converted into a \fBPoint2D\fP object\&. \fP"
+.ti -1c
+.RI "void \fBsetX\fP (value_type x)"
+.br
+.RI "\fIx-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "void \fBsetY\fP (value_type y)"
+.br
+.RI "\fIy-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "void \fBsetZ\fP (value_type z)"
+.br
+.RI "\fIz-coordinate [m] of the sensor in the vehicle coordinate system \fP"
+.ti -1c
+.RI "void \fBsetYawAngle\fP (value_type angle)"
+.br
+.RI "\fIYaw angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "void \fBsetPitchAngle\fP (value_type angle)"
+.br
+.RI "\fIPitch angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "void \fBsetRollAngle\fP (value_type angle)"
+.br
+.RI "\fIRoll angle [rad] of the sensor in the vehicle coordinate system\&. \fP"
+.ti -1c
+.RI "\fBPosition3D\fP & \fBset\fP (value_type \fByaw\fP, value_type \fBpitch\fP, value_type \fBroll\fP, value_type x, value_type y, value_type z)"
+.br
+.RI "\fISet all values\&. \fP"
+.ti -1c
+.RI "void \fBnormalizeAngles\fP ()"
+.br
+.RI "\fINormalize all three internal angles to the range [-PI\&.\&.PI]\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A Position with orientation\&. 
+.PP
+Definition at line 149 of file Position3D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Position3D::Position3D ()"
+
+.PP
+Empty constructor\&. All values are initialized to zero\&. 
+.PP
+Definition at line 21 of file Position3D\&.cpp\&.
+.SS "datatypes::Position3D::Position3D (value_type yaw, value_type pitch, value_type roll, value_type x, value_type y, value_type z)"
+
+.PP
+Constructor with all values given\&. (Note: The angles are not yet normalized into the interval [-pi,pi]\&. If you require normalized angles here, you must call \fBnormalizeAngles()\fP yourself\&.) 
+.PP
+Definition at line 29 of file Position3D\&.cpp\&.
+.SS "datatypes::Position3D::Position3D (value_type yaw, value_type pitch, value_type roll, const \fBPoint3D\fP & point)"
+
+.PP
+Constructor with all values given by a \fBPoint3D\fP\&. Note: The \fBPoint3D\fP contains the values in double precision, but in this class they will be stored in float precision only\&.
+.PP
+(Note: The angles are not yet normalized into the interval [-pi,pi]\&. If you require normalized angles here, you must call \fBnormalizeAngles()\fP yourself\&.) 
+.PP
+Definition at line 38 of file Position3D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "value_type datatypes::Position3D::getPitchAngle () const\fC [inline]\fP"
+
+.PP
+Pitch angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 195 of file Position3D\&.hpp\&.
+.SS "value_type datatypes::Position3D::getRollAngle () const\fC [inline]\fP"
+
+.PP
+Roll angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 197 of file Position3D\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Position3D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 183 of file Position3D\&.hpp\&.
+.SS "value_type datatypes::Position3D::getX () const\fC [inline]\fP"
+
+.PP
+x-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 200 of file Position3D\&.hpp\&.
+.SS "value_type datatypes::Position3D::getY () const\fC [inline]\fP"
+
+.PP
+y-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 202 of file Position3D\&.hpp\&.
+.SS "value_type datatypes::Position3D::getYawAngle () const\fC [inline]\fP"
+
+.PP
+Yaw angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 193 of file Position3D\&.hpp\&.
+.SS "value_type datatypes::Position3D::getZ () const\fC [inline]\fP"
+
+.PP
+z-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 204 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::normalizeAngles ()"
+
+.PP
+Normalize all three internal angles to the range [-PI\&.\&.PI]\&. 
+.PP
+Definition at line 228 of file Position3D\&.cpp\&.
+.SS "bool datatypes::Position3D::operator== (const \fBPosition3D\fP & other) const"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 180 of file Position3D\&.cpp\&.
+.SS "\fBPosition3D\fP & datatypes::Position3D::set (value_type yaw, value_type pitch, value_type roll, value_type x, value_type y, value_type z)"
+
+.PP
+Set all values\&. (Note: The angles are not yet normalized into the interval [-pi,pi]\&. If you require normalized angles here, you must call \fBnormalizeAngles()\fP yourself\&.)
+.PP
+\fBReturns:\fP
+.RS 4
+A reference to this object after the new values have been set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 190 of file Position3D\&.cpp\&.
+.SS "void datatypes::Position3D::setPitchAngle (value_type angle)\fC [inline]\fP"
+
+.PP
+Pitch angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 224 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::setRollAngle (value_type angle)\fC [inline]\fP"
+
+.PP
+Roll angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 226 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::setX (value_type x)\fC [inline]\fP"
+
+.PP
+x-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 216 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::setY (value_type y)\fC [inline]\fP"
+
+.PP
+y-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 218 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::setYawAngle (value_type angle)\fC [inline]\fP"
+
+.PP
+Yaw angle [rad] of the sensor in the vehicle coordinate system\&. 
+.PP
+Definition at line 222 of file Position3D\&.hpp\&.
+.SS "void datatypes::Position3D::setZ (value_type z)\fC [inline]\fP"
+
+.PP
+z-coordinate [m] of the sensor in the vehicle coordinate system 
+.PP
+Definition at line 220 of file Position3D\&.hpp\&.
+.SS "\fBPoint2D\fP datatypes::Position3D::toPoint2D () const"
+
+.PP
+Returns the x/y components of this class, converted into a \fBPoint2D\fP object\&. 
+.PP
+Definition at line 207 of file Position3D\&.cpp\&.
+.SS "\fBPoint3D\fP datatypes::Position3D::toPoint3D () const"
+
+.PP
+Returns the x/y/z components of this class, converted into a \fBPoint3D\fP object\&. 
+.PP
+Definition at line 202 of file Position3D\&.cpp\&.
+.SS "\fBPosition3D\fP datatypes::Position3D::toPosition3D () const"
+
+.PP
+Returns the content of this class, converted into a \fBPosition3D\fP object\&. 
+.SS "std::string datatypes::Position3D::toString () const"
+
+.PP
+Definition at line 214 of file Position3D\&.cpp\&.
+.SS "bool datatypes::Position3D::transformToVehicle (\fBPoint3D\fP * pt)"
+
+.PP
+Definition at line 113 of file Position3D\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

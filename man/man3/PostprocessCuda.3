@@ -1,0 +1,105 @@
+.TH "PostprocessCuda" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PostprocessCuda \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <postprocess_cuda\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPostprocessCuda\fP (const float FLOAT_MIN, const float FLOAT_MAX, const int NUM_ANCHOR_X_INDS, const int NUM_ANCHOR_Y_INDS, const int NUM_ANCHOR_R_INDS, const float score_threshold, const int NUM_THREADS, const float nms_overlap_threshold, const int NUM_BOX_CORNERS, const int NUM_OUTPUT_BOX_FEATURE)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBdoPostprocessCuda\fP (const float *rpn_box_output, const float *rpn_cls_output, const float *rpn_dir_output, int *dev_anchor_mask, const float *dev_anchors_px, const float *dev_anchors_py, const float *dev_anchors_pz, const float *dev_anchors_dx, const float *dev_anchors_dy, const float *dev_anchors_dz, const float *dev_anchors_ro, float *dev_filtered_box, float *dev_filtered_score, int *dev_filtered_dir, float *dev_box_for_nms, int *dev_filter_count, std::vector< float > &out_detection)"
+.br
+.RI "\fIPostprocessing for the network output\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 34 of file postprocess_cuda\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PostprocessCuda::PostprocessCuda (const float FLOAT_MIN, const float FLOAT_MAX, const int NUM_ANCHOR_X_INDS, const int NUM_ANCHOR_Y_INDS, const int NUM_ANCHOR_R_INDS, const float score_threshold, const int NUM_THREADS, const float nms_overlap_threshold, const int NUM_BOX_CORNERS, const int NUM_OUTPUT_BOX_FEATURE)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIFLOAT_MIN\fP The lowest float value 
+.br
+\fIFLOAT_MAX\fP The maximum float value 
+.br
+\fINUM_ANCHOR_X_INDS\fP Number of x-indexes for anchors 
+.br
+\fINUM_ANCHOR_Y_INDS\fP Number of y-indexes for anchors 
+.br
+\fINUM_ANCHOR_R_INDS\fP Number of rotation-indexes for anchors 
+.br
+\fIscore_threshold\fP Score threshold for filtering output 
+.br
+\fINUM_THREADS\fP Number of threads when launching cuda kernel 
+.br
+\fInms_overlap_threshold\fP IOU threshold for NMS 
+.br
+\fINUM_BOX_CORNERS\fP Number of box's corner 
+.br
+\fINUM_OUTPUT_BOX_FEATURE\fP Number of output box's feature
+.RE
+.PP
+Captital variables never change after the compile, non-capital variables could be changed through rosparam 
+.SH "Member Function Documentation"
+.PP 
+.SS "void PostprocessCuda::doPostprocessCuda (const float * rpn_box_output, const float * rpn_cls_output, const float * rpn_dir_output, int * dev_anchor_mask, const float * dev_anchors_px, const float * dev_anchors_py, const float * dev_anchors_pz, const float * dev_anchors_dx, const float * dev_anchors_dy, const float * dev_anchors_dz, const float * dev_anchors_ro, float * dev_filtered_box, float * dev_filtered_score, int * dev_filtered_dir, float * dev_box_for_nms, int * dev_filter_count, std::vector< float > & out_detection)"
+
+.PP
+Postprocessing for the network output\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrpn_box_output\fP Box predictions from the network output 
+.br
+\fIrpn_cls_output\fP Class predictions from the network output 
+.br
+\fIrpn_dir_output\fP Direction predictions from the network output 
+.br
+\fIdev_anchor_mask\fP Anchor mask for filtering the network output 
+.br
+\fIdev_anchors_px\fP X-coordinate values for corresponding anchors 
+.br
+\fIdev_anchors_py\fP Y-coordinate values for corresponding anchors 
+.br
+\fIdev_anchors_pz\fP Z-coordinate values for corresponding anchors 
+.br
+\fIdev_anchors_dx\fP X-dimension values for corresponding anchors 
+.br
+\fIdev_anchors_dy\fP Y-dimension values for corresponding anchors 
+.br
+\fIdev_anchors_dz\fP Z-dimension values for corresponding anchors 
+.br
+\fIdev_anchors_ro\fP Rotation values for corresponding anchors 
+.br
+\fIdev_filtered_box\fP Filtered box predictions 
+.br
+\fIdev_filtered_score\fP Filtered score predictions 
+.br
+\fIdev_filtered_dir\fP Filtered direction predictions 
+.br
+\fIdev_box_for_nms\fP Decoded boxes in min_x min_y max_x max_y represenation from pose and dimension 
+.br
+\fIdev_filter_count\fP The number of filtered output 
+.br
+\fIout_detection\fP Output bounding boxes
+.RE
+.PP
+dev_* represents device memory allocated variables 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

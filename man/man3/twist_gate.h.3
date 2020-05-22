@@ -1,0 +1,92 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/include/twist_gate/twist_gate.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/include/twist_gate/twist_gate.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <memory>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <std_msgs/Int32\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include 'autoware_msgs/ControlCommandStamped\&.h'\fP
+.br
+\fC#include 'autoware_msgs/RemoteCmd\&.h'\fP
+.br
+\fC#include 'autoware_msgs/VehicleCmd\&.h'\fP
+.br
+\fC#include 'tablet_socket_msgs/gear_cmd\&.h'\fP
+.br
+\fC#include 'tablet_socket_msgs/mode_cmd\&.h'\fP
+.br
+\fC#include <autoware_health_checker/node_status_publisher\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTwistGate\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCMD_GEAR_D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCMD_GEAR_R\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCMD_GEAR_B\fP   3"
+.br
+.ti -1c
+.RI "#define \fBCMD_GEAR_N\fP   4"
+.br
+.ti -1c
+.RI "#define \fBCMD_GEAR_P\fP   5"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CMD_GEAR_B   3"
+
+.PP
+Definition at line 44 of file twist_gate\&.h\&.
+.SS "#define CMD_GEAR_D   1"
+
+.PP
+Definition at line 42 of file twist_gate\&.h\&.
+.SS "#define CMD_GEAR_N   4"
+
+.PP
+Definition at line 45 of file twist_gate\&.h\&.
+.SS "#define CMD_GEAR_P   5"
+
+.PP
+Definition at line 46 of file twist_gate\&.h\&.
+.SS "#define CMD_GEAR_R   2"
+
+.PP
+Definition at line 43 of file twist_gate\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

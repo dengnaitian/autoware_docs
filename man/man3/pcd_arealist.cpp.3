@@ -1,0 +1,103 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/map_tools/nodes/pcd_arealist/pcd_arealist.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/map_tools/nodes/pcd_arealist/pcd_arealist.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBArea\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBArea\fP > \fBAreaList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< std::vector< std::string > > \fBTbl\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwrite_csv\fP (const std::string &path, const \fBTbl\fP &tbl)"
+.br
+.ti -1c
+.RI "std::string \fBfmt\fP (double v)"
+.br
+.ti -1c
+.RI "void \fBwrite_arealist\fP (const std::string &path, const \fBAreaList\fP &areas)"
+.br
+.ti -1c
+.RI "int \fBcalc_area\fP (const std::string &path, struct \fBArea\fP *area)"
+.br
+.ti -1c
+.RI "void \fBadd_file\fP (const std::string &path, \fBAreaList\fP &areas)"
+.br
+.ti -1c
+.RI "void \fBadd_dir\fP (const std::string &path, \fBAreaList\fP &areas)"
+.br
+.ti -1c
+.RI "int \fBis_dir\fP (const std::string &path)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBArea\fP> \fBAreaList\fP"
+
+.PP
+Definition at line 29 of file pcd_arealist\&.cpp\&.
+.SS "typedef std::vector<std::vector<std::string> > \fBTbl\fP"
+
+.PP
+Definition at line 30 of file pcd_arealist\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void add_dir (const std::string & path, \fBAreaList\fP & areas)"
+
+.PP
+Definition at line 111 of file pcd_arealist\&.cpp\&.
+.SS "void add_file (const std::string & path, \fBAreaList\fP & areas)"
+
+.PP
+Definition at line 103 of file pcd_arealist\&.cpp\&.
+.SS "int calc_area (const std::string & path, struct \fBArea\fP * area)"
+
+.PP
+Definition at line 71 of file pcd_arealist\&.cpp\&.
+.SS "std::string fmt (double v)"
+
+.PP
+Definition at line 47 of file pcd_arealist\&.cpp\&.
+.SS "int is_dir (const std::string & path)"
+
+.PP
+Definition at line 125 of file pcd_arealist\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 135 of file pcd_arealist\&.cpp\&.
+.SS "void write_arealist (const std::string & path, const \fBAreaList\fP & areas)"
+
+.PP
+Definition at line 54 of file pcd_arealist\&.cpp\&.
+.SS "void write_csv (const std::string & path, const \fBTbl\fP & tbl)"
+
+.PP
+Definition at line 32 of file pcd_arealist\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

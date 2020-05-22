@@ -1,0 +1,118 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/matrix.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/matrix.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'matrix\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree_matrix\fP (\fBmatrix\fP m)"
+.br
+.ti -1c
+.RI "float \fBmatrix_topk_accuracy\fP (\fBmatrix\fP truth, \fBmatrix\fP guess, int \fBk\fP)"
+.br
+.ti -1c
+.RI "void \fBscale_matrix\fP (\fBmatrix\fP m, float scale)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBresize_matrix\fP (\fBmatrix\fP m, int size)"
+.br
+.ti -1c
+.RI "void \fBmatrix_add_matrix\fP (\fBmatrix\fP from, \fBmatrix\fP to)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBcopy_matrix\fP (\fBmatrix\fP m)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBmake_matrix\fP (int rows, int cols)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBhold_out_matrix\fP (\fBmatrix\fP *m, int n)"
+.br
+.ti -1c
+.RI "float * \fBpop_column\fP (\fBmatrix\fP *m, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBmatrix\fP \fBcsv_to_matrix\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBmatrix_to_csv\fP (\fBmatrix\fP m)"
+.br
+.ti -1c
+.RI "void \fBprint_matrix\fP (\fBmatrix\fP m)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBmatrix\fP copy_matrix (\fBmatrix\fP m)"
+
+.PP
+Definition at line 77 of file matrix\&.c\&.
+.SS "\fBmatrix\fP csv_to_matrix (char * filename)"
+
+.PP
+Definition at line 133 of file matrix\&.c\&.
+.SS "void free_matrix (\fBmatrix\fP m)"
+
+.PP
+Definition at line 10 of file matrix\&.c\&.
+.SS "\fBmatrix\fP hold_out_matrix (\fBmatrix\fP * m, int n)"
+
+.PP
+Definition at line 104 of file matrix\&.c\&.
+.SS "\fBmatrix\fP make_matrix (int rows, int cols)"
+
+.PP
+Definition at line 91 of file matrix\&.c\&.
+.SS "void matrix_add_matrix (\fBmatrix\fP from, \fBmatrix\fP to)"
+
+.PP
+Definition at line 66 of file matrix\&.c\&.
+.SS "void matrix_to_csv (\fBmatrix\fP m)"
+
+.PP
+Definition at line 161 of file matrix\&.c\&.
+.SS "float matrix_topk_accuracy (\fBmatrix\fP truth, \fBmatrix\fP guess, int k)"
+
+.PP
+Definition at line 17 of file matrix\&.c\&.
+.SS "float* pop_column (\fBmatrix\fP * m, int c)"
+
+.PP
+Definition at line 119 of file matrix\&.c\&.
+.SS "void print_matrix (\fBmatrix\fP m)"
+
+.PP
+Definition at line 174 of file matrix\&.c\&.
+.SS "\fBmatrix\fP resize_matrix (\fBmatrix\fP m, int size)"
+
+.PP
+Definition at line 47 of file matrix\&.c\&.
+.SS "void scale_matrix (\fBmatrix\fP m, float scale)"
+
+.PP
+Definition at line 37 of file matrix\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

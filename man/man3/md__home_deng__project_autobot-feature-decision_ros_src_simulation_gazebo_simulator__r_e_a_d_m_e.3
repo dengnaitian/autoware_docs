@@ -1,0 +1,149 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_simulation_gazebo_simulator__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_simulation_gazebo_simulator__r_e_a_d_m_e \- Overview 
+Autonomous driving car simulator based on gazebo\&. 
+.PP
+.SS "Sensors"
+.PP
+.IP "\(bu" 2
+velodyne (VLP-16, HDL-32E)
+.IP "\(bu" 2
+camera
+.IP "\(bu" 2
+imu
+.PP
+.PP
+.SS "Input, Output"
+.PP
+.IP "\(bu" 2
+Input :
+.IP "  \(bu" 4
+Autoware
+.IP "    \(bu" 6
+vehicle_cmd : select field twist_cmd (default) or ctrl_cmd
+.PP
+
+.IP "  \(bu" 4
+Debug
+.IP "    \(bu" 6
+cmd_vel : for teleop
+.PP
+
+.PP
+
+.IP "\(bu" 2
+Output :
+.IP "  \(bu" 4
+Autoware
+.IP "    \(bu" 6
+/vehicle_status : CAN data
+.IP "    \(bu" 6
+/image_raw : Image data
+.IP "    \(bu" 6
+/camera_info : Camera infomation
+.IP "    \(bu" 6
+/points_raw : Lidar data
+.IP "    \(bu" 6
+/imu : Imu data
+.PP
+
+.IP "  \(bu" 4
+Debug (Ground Truth)
+.IP "    \(bu" 6
+/gazebo_vehicle/pose : base_link pose
+.IP "    \(bu" 6
+/gazebo_vehicle/twist : base_link twist
+.IP "    \(bu" 6
+/gazebo_vehicle/velocity : vechicle velocity[m/s]
+.IP "    \(bu" 6
+/gazebo_vehicle/steering_angle : vehicle steering angle[rad]
+.IP "    \(bu" 6
+ground truth pose tf : default disable
+.PP
+
+.PP
+
+.PP
+.PP
+.SH "**Requirements**"
+.PP
+.PP
+.IP "\(bu" 2
+ROS (higher kinetic)
+.IP "\(bu" 2
+gazebo (higher version 7)
+.IP "\(bu" 2
+CUDA (Optional but requires GPU by default)
+.PP
+.PP
+.SH "Setup"
+.PP
+.PP
+.IP "1." 4
+upgrade gazebo version and download gazebo models(\fBonly once\fP)
+.IP "  \(bu" 4
+reason : https://bitbucket.org/DataspeedInc/velodyne_simulator/src/56d11e899ce0a198e7206298b3aaaf8004f3a2c6/gazebo_upgrade.md?fileviewer=file-view-default 
+.PP
+.nf
+1 $ rosrun vehicle_gazebo_simulation_launcher setup\&.sh
+
+.fi
+.PP
+
+.PP
+
+.PP
+.PP
+.SH "Some example"
+.PP
+.PP
+## \fBCitysim\fP : http://gazebosim.org/blog/car_sim 
+.PP
+.nf
+1 $ roslaunch vehicle_gazebo_simulation_launcher gazebo_launcher\&.launch world_name:=citysim_gazebo7 gpu:=true
+
+.fi
+.PP
+.PP
+If you use gazebo9, simulate traffic lights and moving objects\&. Build according to the \fCreadme\fP and execute the following command 
+.PP
+.nf
+1 $ roslaunch vehicle_gazebo_simulation_launcher gazebo_launcher\&.launch world_name:=citysim_gazebo9 gpu:=true
+
+.fi
+.PP
+.PP
+ ## \fBmcity(car_demo)\fP : https://github.com/osrf/car_demo 
+.PP
+.nf
+1 $ roslaunch vehicle_gazebo_simulation_launcher gazebo_launcher\&.launch world_name:=mcity gpu:=true
+
+.fi
+.PP
+ 
+.PP
+## \fBsimple\fP : 
+.PP
+.nf
+1 $ roslaunch vehicle_gazebo_simulation_launcher gazebo_launcher\&.launch world_name:=simple gpu:=true
+
+.fi
+.PP
+ \fC\fP
+.PP
+.SS "Download pointcloud map"
+.PP
+If you need pointcloud map and path files, you can \fCdownload\fP\&.
+.PP
+.SH "How to change vehicle info"
+.PP
+.PP
+You can customize sensor position and vehicle info\&.
+.IP "\(bu" 2
+sensor position: vehicle/vehicle_model/config/caibration\&.yaml
+.IP "\(bu" 2
+vehicle info: vehicle/vehicle_model/config/vehicle_info\&.yaml 
+.PP
+

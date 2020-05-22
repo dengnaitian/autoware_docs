@@ -1,0 +1,88 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_point_pillars__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_point_pillars__r_e_a_d_m_e \- \fBPoint\fP Pillars for 3D Object Detection: ver\&. 1\&.0 
+Call \fBPointPillars\fP for the inference\&.
+.PP
+Autoware package for \fBPoint\fP Pillars\&. \fCReferenced paper\fP\&.
+.PP
+.SS "Requirements"
+.PP
+CUDA Toolkit v9\&.0 or v10\&.0
+.PP
+CUDNN: Tested with v7\&.3\&.1
+.PP
+TensorRT: Tested with 5\&.0\&.2 -> \fCHow to install\fP
+.PP
+.SS "How to setup"
+.PP
+.IP "1." 4
+Install CUDA from this \fCwebsite\fP
+.IP "2." 4
+Install CUDNN
+.IP "3." 4
+\fCDownload\fP the TensorRT local repo file that matches the Ubuntu version you are using\&.
+.IP "4." 4
+Install TensorRT from the Debian local repo package\&.
+.PP
+.PP
+.PP
+.nf
+1 $ sudo dpkg -i  
+2 nv-tensorrt-repo-ubuntu1x04-cudax\&.x-trt5\&.x\&.x\&.x-ga-yyyymmdd_1-1_amd64\&.deb
+3 $ sudo apt-key add /var/nv-tensorrt-repo-cudax\&.x-trt5\&.x\&.x\&.x-ga-yyyymmdd/7fa2af80\&.pub
+4 
+5 $ sudo apt-get update
+6 $ sudo apt-get install tensorrt
+.fi
+.PP
+.PP
+.IP "4." 4
+Download the pretrained file from \fChere\fP\&.
+.PP
+.PP
+.PP
+.nf
+1 $ git clone git@github\&.com:cirpue49/kitti_pretrained_point_pillars\&.git
+.fi
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+\fBLaunch\fP file: \fCroslaunch lidar_point_pillars lidar_point_pillars\&.launch pfe_onnx_file:=/PATH/TO/FILE\&.onnx rpn_onnx_file:=/PATH/TO/FILE\&.onnx input_topic:=/points_raw\fP
+.IP "\(bu" 2
+You can launch it through the runtime manager in Computing tab, as well\&.
+.PP
+.PP
+## API 
+.PP
+.nf
+1 /**
+2 ** @param[in] in_points_array pointcloud array
+3 * @param[in] in_num_points Number of points
+4 * @param[out] out_detections Output bounding box from the network
+5 * 
+6 
+7 This is an interface for the algorithm\&.
+8 */
+9 void doInference(float* in_points_array, int in_num_points, std::vector<float> out_detections);
+
+.fi
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+ParameterTypeDescriptionDefault  \fCinput_topic\fP*String*Input topic Pointcloud\&. \fC/points_raw\fP \fCbaselink_support\fP*Bool*Whether to use baselink to adjust parameters\&. \fCTrue\fP \fCreproduce_result_mode\fP*Bool*Whether to enable reproducible result mode at the cost of the runtime\&. \fCFalse\fP \fCscore_threshold\fP*Float*Minimum score required to include the result [0,1]0\&.5 \fCnms_overlap_threshold\fP*Float*Minimum IOU required to have when applying NMS [0,1]0\&.5 \fCpfe_onnx_file\fP*String* Path to the PFE onnx file \fCrpn_onnx_file\fP*String* Path to the RPN onnx file 
+.SS "Outputs"
+.PP
+TopicTypeDescription  \fC/detection/lidar_detector/objects\fP\fCautoware_msgs/DetectedObjetArray\fPArray of Detected Objects in Autoware format 
+.SS "Notes"
+.PP
+.IP "\(bu" 2
+To display the results in Rviz \fCobjects_visualizer\fP is required\&. (\fBLaunch\fP file launches automatically this node)\&.
+.IP "\(bu" 2
+Pretrained models are available \fChere\fP, trained with the help of the KITTI dataset\&. For this reason, these are not suitable for commercial purposes\&. Derivative works are bound to the BY-NC-SA 3\&.0 License\&. (https://creativecommons.org/licenses/by-nc-sa/3.0/) 
+.PP
+

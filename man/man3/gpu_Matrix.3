@@ -1,0 +1,243 @@
+.TH "gpu::Matrix" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::Matrix \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Matrix\&.h>\fP
+.PP
+Inherited by \fBgpu::MatrixDevice\fP, and \fBgpu::MatrixHost\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrix\fP ()"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrix\fP (int \fBrows\fP, int \fBcols\fP, int \fBoffset\fP, double *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP int \fBrows\fP () const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP int \fBcols\fP () const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP int \fBoffset\fP () const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double * \fBbuffer\fP () const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetRows\fP (int \fBrows\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetCols\fP (int \fBcols\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetOffset\fP (int \fBoffset\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetBuffer\fP (double *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetCellVal\fP (int \fBrow\fP, int \fBcol\fP, double val)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBcopy\fP (\fBMatrix\fP &output)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBresize\fP (int \fBrows\fP, int \fBcols\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double * \fBcellAddr\fP (int \fBrow\fP, int \fBcol\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double * \fBcellAddr\fP (int index)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBoperator=\fP (const \fBMatrix\fP input)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double & \fBoperator()\fP (int \fBrow\fP, int \fBcol\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBset\fP (int \fBrow\fP, int \fBcol\fP, double val)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double & \fBoperator()\fP (int index)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP double \fBat\fP (int \fBrow\fP, int \fBcol\fP) const "
+.br
+.ti -1c
+.RI "\fBCUDAH\fP bool \fBoperator*=\fP (double val)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP bool \fBoperator/=\fP (double val)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP bool \fBtranspose\fP (\fBMatrix\fP &output)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP bool \fBinverse\fP (\fBMatrix\fP &output)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrix\fP \fBcol\fP (int index)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrix\fP \fBrow\fP (int index)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double * \fBbuffer_\fP"
+.br
+.ti -1c
+.RI "int \fBrows_\fP"
+.br
+.ti -1c
+.RI "int \fBcols_\fP"
+.br
+.ti -1c
+.RI "int \fBoffset_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file Matrix\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBCUDAH\fP gpu::Matrix::Matrix ()"
+
+.PP
+Definition at line 70 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP gpu::Matrix::Matrix (int rows, int cols, int offset, double * buffer)"
+
+.PP
+Definition at line 75 of file Matrix\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCUDAH\fP double gpu::Matrix::at (int row, int col) const"
+
+.PP
+Definition at line 158 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP double * gpu::Matrix::buffer () const"
+
+.PP
+Definition at line 94 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP double * gpu::Matrix::cellAddr (int row, int col)"
+
+.PP
+Definition at line 120 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP double * gpu::Matrix::cellAddr (int index)"
+
+.PP
+Definition at line 127 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP \fBMatrix\fP gpu::Matrix::col (int index)"
+
+.PP
+Definition at line 245 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP int gpu::Matrix::cols () const"
+
+.PP
+Definition at line 86 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::copy (\fBMatrix\fP & output)"
+
+.PP
+Definition at line 106 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP bool gpu::Matrix::inverse (\fBMatrix\fP & output)"
+
+.PP
+Definition at line 197 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP int gpu::Matrix::offset () const"
+
+.PP
+Definition at line 90 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP double & gpu::Matrix::operator() (int row, int col)"
+
+.PP
+Definition at line 146 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP double & gpu::Matrix::operator() (int index)"
+
+.PP
+Definition at line 154 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP bool gpu::Matrix::operator*= (double val)"
+
+.PP
+Definition at line 162 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP bool gpu::Matrix::operator/= (double val)"
+
+.PP
+Definition at line 172 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::operator= (const \fBMatrix\fP input)"
+
+.PP
+Definition at line 139 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::resize (int rows, int cols)"
+
+.PP
+Definition at line 115 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP \fBMatrix\fP gpu::Matrix::row (int index)"
+
+.PP
+Definition at line 249 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP int gpu::Matrix::rows () const"
+
+.PP
+Definition at line 82 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::set (int row, int col, double val)"
+
+.PP
+Definition at line 150 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::setBuffer (double * buffer)"
+
+.PP
+Definition at line 101 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::setCellVal (int row, int col, double val)"
+
+.PP
+Definition at line 102 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::setCols (int cols)"
+
+.PP
+Definition at line 99 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::setOffset (int offset)"
+
+.PP
+Definition at line 100 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP void gpu::Matrix::setRows (int rows)"
+
+.PP
+Definition at line 98 of file Matrix\&.h\&.
+.SS "\fBCUDAH\fP bool gpu::Matrix::transpose (\fBMatrix\fP & output)"
+
+.PP
+Definition at line 183 of file Matrix\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double* gpu::Matrix::buffer_\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file Matrix\&.h\&.
+.SS "int gpu::Matrix::cols_\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file Matrix\&.h\&.
+.SS "int gpu::Matrix::offset_\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file Matrix\&.h\&.
+.SS "int gpu::Matrix::rows_\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file Matrix\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,343 @@
+.TH "TrajectoryGeneratorNS::TrajectoryGen" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TrajectoryGeneratorNS::TrajectoryGen \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_trajectory_generator_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrajectoryGen\fP ()"
+.br
+.ti -1c
+.RI "\fB~TrajectoryGen\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetInitPose\fP (const geometry_msgs::PoseWithCovarianceStampedConstPtr &input)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetGlobalPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTargetGoalPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRivzGoalPose\fP (const geometry_msgs::PointStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP (ros::NodeHandle &_nh)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::PlannerH\fP \fBm_Planner\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_InitPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbInitPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_temp_path\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPaths\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPathSections\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBt_centerTrajectorySmoothed\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > > \fBm_RollOuts\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayGlobalPath\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_PlanningTimer\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalTrajectories\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalTrajectoriesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_initialpose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_GlobalPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_targetGoalPose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_goal_pose\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBtargetGoalPose\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewTargetGoalPose\fP = false"
+.br
+.ti -1c
+.RI "int \fBglobalPathIndex\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 38 of file op_trajectory_generator_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TrajectoryGeneratorNS::TrajectoryGen::TrajectoryGen ()"
+
+.PP
+Definition at line 24 of file op_trajectory_generator_core\&.cpp\&.
+.SS "TrajectoryGeneratorNS::TrajectoryGen::~TrajectoryGen ()"
+
+.PP
+Definition at line 66 of file op_trajectory_generator_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 173 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetGlobalPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+process received global waypoints, put them into m_GlobalPaths 
+.PP
+Definition at line 193 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetInitPose (const geometry_msgs::PoseWithCovarianceStampedConstPtr & input)\fC [protected]\fP"
+
+.PP
+Definition at line 142 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetRivzGoalPose (const geometry_msgs::PointStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 182 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetTargetGoalPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::MainLoop ()"
+
+.PP
+Definition at line 233 of file op_trajectory_generator_core\&.cpp\&.
+.SS "void TrajectoryGeneratorNS::TrajectoryGen::UpdatePlanningParams (ros::NodeHandle & _nh)\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_trajectory_generator_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool TrajectoryGeneratorNS::TrajectoryGen::bInitPos\fC [protected]\fP"
+
+.PP
+Definition at line 44 of file op_trajectory_generator_core\&.h\&.
+.SS "bool TrajectoryGeneratorNS::TrajectoryGen::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file op_trajectory_generator_core\&.h\&.
+.SS "bool TrajectoryGeneratorNS::TrajectoryGen::bNewTargetGoalPose = false\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file op_trajectory_generator_core\&.h\&.
+.SS "bool TrajectoryGeneratorNS::TrajectoryGen::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file op_trajectory_generator_core\&.h\&.
+.SS "bool TrajectoryGeneratorNS::TrajectoryGen::bWayGlobalPath\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file op_trajectory_generator_core\&.h\&.
+.SS "int TrajectoryGeneratorNS::TrajectoryGen::globalPathIndex = 0\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP TrajectoryGeneratorNS::TrajectoryGen::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 61 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP TrajectoryGeneratorNS::TrajectoryGen::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 46 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryGeneratorNS::TrajectoryGen::m_GlobalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryGeneratorNS::TrajectoryGen::m_GlobalPathSections\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP TrajectoryGeneratorNS::TrajectoryGen::m_InitPos\fC [protected]\fP"
+
+.PP
+Definition at line 43 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<std::string> TrajectoryGeneratorNS::TrajectoryGen::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file op_trajectory_generator_core\&.h\&.
+.SS "geometry_msgs::Pose TrajectoryGeneratorNS::TrajectoryGen::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 42 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::PlannerH\fP TrajectoryGeneratorNS::TrajectoryGen::m_Planner\fC [protected]\fP"
+
+.PP
+Definition at line 41 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP TrajectoryGeneratorNS::TrajectoryGen::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file op_trajectory_generator_core\&.h\&.
+.SS "struct timespec TrajectoryGeneratorNS::TrajectoryGen::m_PlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > > TrajectoryGeneratorNS::TrajectoryGen::m_RollOuts\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryGeneratorNS::TrajectoryGen::m_temp_path\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP TrajectoryGeneratorNS::TrajectoryGen::m_VehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::NodeHandle TrajectoryGeneratorNS::TrajectoryGen::nh\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Publisher TrajectoryGeneratorNS::TrajectoryGen::pub_LocalTrajectories\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Publisher TrajectoryGeneratorNS::TrajectoryGen::pub_LocalTrajectoriesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_GlobalPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_goal_pose\fC [protected]\fP"
+
+.PP
+Definition at line 88 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_initialpose\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_trajectory_generator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryGeneratorNS::TrajectoryGen::sub_targetGoalPose\fC [protected]\fP"
+
+.PP
+Definition at line 87 of file op_trajectory_generator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryGeneratorNS::TrajectoryGen::t_centerTrajectorySmoothed\fC [protected]\fP"
+
+.PP
+Definition at line 55 of file op_trajectory_generator_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP TrajectoryGeneratorNS::TrajectoryGen::targetGoalPose\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file op_trajectory_generator_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

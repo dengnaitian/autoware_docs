@@ -1,0 +1,677 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/data/packages/vector_map/include/vector_map/vector_map.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/data/packages/vector_map/include/vector_map/vector_map.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fstream>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <geometry_msgs/Point\&.h>\fP
+.br
+\fC#include <geometry_msgs/Quaternion\&.h>\fP
+.br
+\fC#include <visualization_msgs/Marker\&.h>\fP
+.br
+\fC#include <vector_map_msgs/PointArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/VectorArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/LineArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/AreaArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/PoleArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/BoxArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/DTLaneArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/NodeArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/LaneArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/WayAreaArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/RoadEdgeArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/GutterArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/CurbArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/WhiteLineArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/StopLineArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/ZebraZoneArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/CrossWalkArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/RoadMarkArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/RoadPoleArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/RoadSignArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/SignalArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/StreetLightArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/UtilityPoleArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/GuardRailArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/SideWalkArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/DriveOnPortionArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/CrossRoadArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/SideStripArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/CurveMirrorArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/WallArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/FenceArray\&.h>\fP
+.br
+\fC#include <vector_map_msgs/RailCrossingArray\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBvector_map::Key< T >\fP"
+.br
+.ti -1c
+.RI "class \fBvector_map::Handle< T, U >\fP"
+.br
+.ti -1c
+.RI "class \fBvector_map::VectorMap\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBvector_map\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBvector_map::category_t\fP = unsigned long long"
+.br
+.ti -1c
+.RI "template<class T , class U > using \fBvector_map::Updater\fP = std::function< void(\fBstd::map\fP< Key< T >, T > &, const U &)>"
+.br
+.ti -1c
+.RI "template<class T > using \fBvector_map::Callback\fP = std::function< void(const T &)>"
+.br
+.ti -1c
+.RI "template<class T > using \fBvector_map::Filter\fP = std::function< bool(const T &)>"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBvector_map::Category\fP : category_t { \fBvector_map::NONE\fP = 0LLU, \fBvector_map::POINT\fP = 1LLU << 0, \fBvector_map::VECTOR\fP = 1LLU << 1, \fBvector_map::LINE\fP = 1LLU << 2, \fBvector_map::AREA\fP = 1LLU << 3, \fBvector_map::POLE\fP = 1LLU << 4, \fBvector_map::BOX\fP = 1LLU << 5, \fBvector_map::DTLANE\fP = 1LLU << 6, \fBvector_map::NODE\fP = 1LLU << 7, \fBvector_map::LANE\fP = 1LLU << 8, \fBvector_map::WAY_AREA\fP = 1LLU << 9, \fBvector_map::ROAD_EDGE\fP = 1LLU << 10, \fBvector_map::GUTTER\fP = 1LLU << 11, \fBvector_map::CURB\fP = 1LLU << 12, \fBvector_map::WHITE_LINE\fP = 1LLU << 13, \fBvector_map::STOP_LINE\fP = 1LLU << 14, \fBvector_map::ZEBRA_ZONE\fP = 1LLU << 15, \fBvector_map::CROSS_WALK\fP = 1LLU << 16, \fBvector_map::ROAD_MARK\fP = 1LLU << 17, \fBvector_map::ROAD_POLE\fP = 1LLU << 18, \fBvector_map::ROAD_SIGN\fP = 1LLU << 19, \fBvector_map::SIGNAL\fP = 1LLU << 20, \fBvector_map::STREET_LIGHT\fP = 1LLU << 21, \fBvector_map::UTILITY_POLE\fP = 1LLU << 22, \fBvector_map::GUARD_RAIL\fP = 1LLU << 23, \fBvector_map::SIDE_WALK\fP = 1LLU << 24, \fBvector_map::DRIVE_ON_PORTION\fP = 1LLU << 25, \fBvector_map::CROSS_ROAD\fP = 1LLU << 26, \fBvector_map::SIDE_STRIP\fP = 1LLU << 27, \fBvector_map::CURVE_MIRROR\fP = 1LLU << 28, \fBvector_map::WALL\fP = 1LLU << 29, \fBvector_map::FENCE\fP = 1LLU << 30, \fBvector_map::RAIL_CROSSING\fP = 1LLU << 31, \fBvector_map::ALL\fP = (1LLU << 32) - 1 }"
+.br
+.ti -1c
+.RI "enum \fBvector_map::Color\fP : int { \fBvector_map::BLACK\fP, \fBvector_map::GRAY\fP, \fBvector_map::LIGHT_RED\fP, \fBvector_map::LIGHT_GREEN\fP, \fBvector_map::LIGHT_BLUE\fP, \fBvector_map::LIGHT_YELLOW\fP, \fBvector_map::LIGHT_CYAN\fP, \fBvector_map::LIGHT_MAGENTA\fP, \fBvector_map::RED\fP, \fBvector_map::GREEN\fP, \fBvector_map::BLUE\fP, \fBvector_map::YELLOW\fP, \fBvector_map::CYAN\fP, \fBvector_map::MAGENTA\fP, \fBvector_map::WHITE\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > std::vector< T > \fBvector_map::parse\fP (const std::string &csv_file)"
+.br
+.ti -1c
+.RI "std_msgs::ColorRGBA \fBvector_map::createColorRGBA\fP (Color color)"
+.br
+.ti -1c
+.RI "void \fBvector_map::enableMarker\fP (visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "void \fBvector_map::disableMarker\fP (visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "bool \fBvector_map::isValidMarker\fP (const visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createMarker\fP (const std::string &ns, int id, int type)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createPointMarker\fP (const std::string &ns, int id, Color color, const \fBPoint\fP &point)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createVectorMarker\fP (const std::string &ns, int id, Color color, const \fBVectorMap\fP &vmap, const \fBVector\fP &vector)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createLineMarker\fP (const std::string &ns, int id, Color color, const \fBVectorMap\fP &vmap, const \fBLine\fP &line)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createAreaMarker\fP (const std::string &ns, int id, Color color, const \fBVectorMap\fP &vmap, const \fBArea\fP &area)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createPoleMarker\fP (const std::string &ns, int id, Color color, const \fBVectorMap\fP &vmap, const Pole &pole)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBvector_map::createBoxMarker\fP (const std::string &ns, int id, Color color, const \fBVectorMap\fP &vmap, const Box &\fBbox\fP)"
+.br
+.ti -1c
+.RI "double \fBvector_map::convertDegreeToRadian\fP (double degree)"
+.br
+.ti -1c
+.RI "double \fBvector_map::convertRadianToDegree\fP (double radian)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBvector_map::convertPointToGeomPoint\fP (const \fBPoint\fP &point)"
+.br
+.ti -1c
+.RI "\fBPoint\fP \fBvector_map::convertGeomPointToPoint\fP (const \fBgeometry_msgs::Point\fP &geom_point)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Quaternion\fP \fBvector_map::convertVectorToGeomQuaternion\fP (const \fBVector\fP &vector)"
+.br
+.ti -1c
+.RI "\fBVector\fP \fBvector_map::convertGeomQuaternionToVector\fP (const \fBgeometry_msgs::Quaternion\fP &geom_quaternion)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBvector_map::Point\fP &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Vector &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Line &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Area &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Pole &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Box &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::DTLane &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Node &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Lane &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::WayArea &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::RoadEdge &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Gutter &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Curb &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::WhiteLine &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::StopLine &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::ZebraZone &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::CrossWalk &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::RoadMark &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::RoadPole &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::RoadSign &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Signal &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::StreetLight &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::UtilityPole &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::GuardRail &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::SideWalk &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::DriveOnPortion &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::CrossRoad &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::SideStrip &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::CurveMirror &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Wall &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::Fence &obj)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const vector_map::RailCrossing &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, \fBvector_map::Point\fP &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Vector &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Line &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Area &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Pole &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Box &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::DTLane &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Node &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Lane &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::WayArea &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::RoadEdge &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Gutter &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Curb &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::WhiteLine &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::StopLine &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::ZebraZone &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::CrossWalk &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::RoadMark &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::RoadPole &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::RoadSign &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Signal &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::StreetLight &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::UtilityPole &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::GuardRail &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::SideWalk &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::DriveOnPortion &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::CrossRoad &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::SideStrip &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::CurveMirror &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Wall &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::Fence &obj)"
+.br
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, vector_map::RailCrossing &obj)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const double \fBvector_map::COLOR_VALUE_MIN\fP = 0\&.0"
+.br
+.ti -1c
+.RI "const double \fBvector_map::COLOR_VALUE_MAX\fP = 1\&.0"
+.br
+.ti -1c
+.RI "const double \fBvector_map::COLOR_VALUE_MEDIAN\fP = 0\&.5"
+.br
+.ti -1c
+.RI "const double \fBvector_map::COLOR_VALUE_LIGHT_LOW\fP = 0\&.56"
+.br
+.ti -1c
+.RI "const double \fBvector_map::COLOR_VALUE_LIGHT_HIGH\fP = 0\&.93"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_POINT\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_VECTOR\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_VECTOR_LENGTH\fP = 0\&.64"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_LINE\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_AREA\fP = 0\&.08"
+.br
+.ti -1c
+.RI "const double \fBvector_map::MAKER_SCALE_BOX\fP = 0\&.08"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & os, const \fBvector_map::Point\fP & obj)"
+
+.PP
+Definition at line 1631 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Vector & obj)"
+
+.PP
+Definition at line 1646 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Line & obj)"
+
+.PP
+Definition at line 1655 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Area & obj)"
+
+.PP
+Definition at line 1665 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Pole & obj)"
+
+.PP
+Definition at line 1673 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Box & obj)"
+
+.PP
+Definition at line 1682 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::DTLane & obj)"
+
+.PP
+Definition at line 1693 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Node & obj)"
+
+.PP
+Definition at line 1708 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Lane & obj)"
+
+.PP
+Definition at line 1715 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::WayArea & obj)"
+
+.PP
+Definition at line 1743 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::RoadEdge & obj)"
+
+.PP
+Definition at line 1750 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Gutter & obj)"
+
+.PP
+Definition at line 1758 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Curb & obj)"
+
+.PP
+Definition at line 1767 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::WhiteLine & obj)"
+
+.PP
+Definition at line 1778 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::StopLine & obj)"
+
+.PP
+Definition at line 1789 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::ZebraZone & obj)"
+
+.PP
+Definition at line 1799 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::CrossWalk & obj)"
+
+.PP
+Definition at line 1807 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::RoadMark & obj)"
+
+.PP
+Definition at line 1817 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::RoadPole & obj)"
+
+.PP
+Definition at line 1826 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::RoadSign & obj)"
+
+.PP
+Definition at line 1834 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Signal & obj)"
+
+.PP
+Definition at line 1844 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::StreetLight & obj)"
+
+.PP
+Definition at line 1854 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::UtilityPole & obj)"
+
+.PP
+Definition at line 1863 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::GuardRail & obj)"
+
+.PP
+Definition at line 1871 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::SideWalk & obj)"
+
+.PP
+Definition at line 1880 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::DriveOnPortion & obj)"
+
+.PP
+Definition at line 1888 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::CrossRoad & obj)"
+
+.PP
+Definition at line 1896 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::SideStrip & obj)"
+
+.PP
+Definition at line 1904 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::CurveMirror & obj)"
+
+.PP
+Definition at line 1912 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Wall & obj)"
+
+.PP
+Definition at line 1922 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::Fence & obj)"
+
+.PP
+Definition at line 1930 of file vector_map\&.cpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, const vector_map::RailCrossing & obj)"
+
+.PP
+Definition at line 1938 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, \fBvector_map::Point\fP & obj)"
+
+.PP
+Definition at line 1946 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Vector & obj)"
+
+.PP
+Definition at line 1967 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Line & obj)"
+
+.PP
+Definition at line 1982 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Area & obj)"
+
+.PP
+Definition at line 1998 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Pole & obj)"
+
+.PP
+Definition at line 2012 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Box & obj)"
+
+.PP
+Definition at line 2027 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::DTLane & obj)"
+
+.PP
+Definition at line 2044 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Node & obj)"
+
+.PP
+Definition at line 2065 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Lane & obj)"
+
+.PP
+Definition at line 2078 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::WayArea & obj)"
+
+.PP
+Definition at line 2129 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::RoadEdge & obj)"
+
+.PP
+Definition at line 2142 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Gutter & obj)"
+
+.PP
+Definition at line 2156 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Curb & obj)"
+
+.PP
+Definition at line 2171 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::WhiteLine & obj)"
+
+.PP
+Definition at line 2188 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::StopLine & obj)"
+
+.PP
+Definition at line 2205 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::ZebraZone & obj)"
+
+.PP
+Definition at line 2221 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::CrossWalk & obj)"
+
+.PP
+Definition at line 2235 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::RoadMark & obj)"
+
+.PP
+Definition at line 2251 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::RoadPole & obj)"
+
+.PP
+Definition at line 2266 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::RoadSign & obj)"
+
+.PP
+Definition at line 2280 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Signal & obj)"
+
+.PP
+Definition at line 2296 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::StreetLight & obj)"
+
+.PP
+Definition at line 2312 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::UtilityPole & obj)"
+
+.PP
+Definition at line 2327 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::GuardRail & obj)"
+
+.PP
+Definition at line 2341 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::SideWalk & obj)"
+
+.PP
+Definition at line 2356 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::DriveOnPortion & obj)"
+
+.PP
+Definition at line 2370 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::CrossRoad & obj)"
+
+.PP
+Definition at line 2384 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::SideStrip & obj)"
+
+.PP
+Definition at line 2398 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::CurveMirror & obj)"
+
+.PP
+Definition at line 2412 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Wall & obj)"
+
+.PP
+Definition at line 2428 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::Fence & obj)"
+
+.PP
+Definition at line 2442 of file vector_map\&.cpp\&.
+.SS "std::istream& operator>> (std::istream & is, vector_map::RailCrossing & obj)"
+
+.PP
+Definition at line 2456 of file vector_map\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,233 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/include/algebra.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/include/algebra.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBE_ERROR\fP   0\&.001"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmux_matrix2d\fP (double s1[2][2], double \fBs2\fP[2][2], double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBmux_matrix3d\fP (double s1[3][3], double \fBs2\fP[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBmux_matrix\fP (double *s1, double *\fBs2\fP, double *dst, int in, int kn, int jn)"
+.br
+.ti -1c
+.RI "int \fBadd_matrix2d\fP (double s1[2][2], double \fBs2\fP[2][2], double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBadd_matrix3d\fP (double s1[3][3], double \fBs2\fP[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBadd_matrix6d\fP (double s1[6][6], double \fBs2\fP[6][6], double dst[6][6])"
+.br
+.ti -1c
+.RI "int \fBsub_matrix2d\fP (double s1[2][2], double \fBs2\fP[2][2], double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBsub_matrix3d\fP (double s1[3][3], double \fBs2\fP[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBidentity_matrix2d\fP (double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBidentity_matrix3d\fP (double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBidentity_matrix6d\fP (double dst[6][6])"
+.br
+.ti -1c
+.RI "int \fBzero_matrix2d\fP (double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBzero_matrix3d\fP (double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBzero_matrix6d\fP (double dst[6][6])"
+.br
+.ti -1c
+.RI "int \fBtranspose_matrix2d\fP (double s1[2][2], double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBtranspose_matrix3d\fP (double s1[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "double \fBdeterminant_matrix2d\fP (double mat[2][2])"
+.br
+.ti -1c
+.RI "double \fBdeterminant_matrix3d\fP (double mat[3][3])"
+.br
+.ti -1c
+.RI "int \fBinverse_matrix2d\fP (double mat[2][2], double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBinverse_matrix3d\fP (double mat[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBeigenvalue_matrix2d\fP (double mat[2][2], double *l1, double *l2)"
+.br
+.ti -1c
+.RI "int \fBeigenvalue_matrix3d\fP (double mat[3][3], double l1[2], double l2[2], double l3[2])"
+.br
+.ti -1c
+.RI "int \fBeigenvecter_matrix2d\fP (double mat[2][2], double *v1, double *v2, double *l1, double *l2)"
+.br
+.ti -1c
+.RI "int \fBeigenvecter_matrix3d\fP (double mat[3][3], double v[3][3], double *l)"
+.br
+.ti -1c
+.RI "int \fBmatrix2d_eigen\fP (double *v1, double *v2, double l1, double l2, double dst[2][2])"
+.br
+.ti -1c
+.RI "int \fBmatrix3d_eigen\fP (double v[3][3], double l1, double l2, double l3, double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBround_matrix3d\fP (double mat[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBginverse_matrix3d\fP (double mat[3][3], double dst[3][3])"
+.br
+.ti -1c
+.RI "int \fBginverse_matrix6d\fP (double mat[6][6], double dst[6][6])"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define E_ERROR   0\&.001"
+
+.PP
+Definition at line 23 of file algebra\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int add_matrix2d (double s1[2][2], double s2[2][2], double dst[2][2])"
+
+.PP
+Definition at line 73 of file algebra\&.cpp\&.
+.SS "int add_matrix3d (double s1[3][3], double s2[3][3], double dst[3][3])"
+
+.PP
+Definition at line 82 of file algebra\&.cpp\&.
+.SS "int add_matrix6d (double s1[6][6], double s2[6][6], double dst[6][6])"
+
+.PP
+Definition at line 94 of file algebra\&.cpp\&.
+.SS "double determinant_matrix2d (double mat[2][2])"
+
+.PP
+Definition at line 228 of file algebra\&.cpp\&.
+.SS "double determinant_matrix3d (double mat[3][3])"
+
+.PP
+Definition at line 233 of file algebra\&.cpp\&.
+.SS "int eigenvalue_matrix2d (double mat[2][2], double * l1, double * l2)"
+
+.PP
+Definition at line 282 of file algebra\&.cpp\&.
+.SS "int eigenvalue_matrix3d (double mat[3][3], double l1[2], double l2[2], double l3[2])"
+
+.PP
+Definition at line 327 of file algebra\&.cpp\&.
+.SS "int eigenvecter_matrix2d (double mat[2][2], double * v1, double * v2, double * l1, double * l2)"
+
+.PP
+Definition at line 476 of file algebra\&.cpp\&.
+.SS "int eigenvecter_matrix3d (double mat[3][3], double v[3][3], double * l)"
+
+.PP
+Definition at line 499 of file algebra\&.cpp\&.
+.SS "int ginverse_matrix3d (double mat[3][3], double dst[3][3])"
+
+.PP
+Definition at line 689 of file algebra\&.cpp\&.
+.SS "int ginverse_matrix6d (double mat[6][6], double dst[6][6])"
+
+.PP
+Definition at line 758 of file algebra\&.cpp\&.
+.SS "int identity_matrix2d (double dst[2][2])"
+
+.PP
+Definition at line 130 of file algebra\&.cpp\&.
+.SS "int identity_matrix3d (double dst[3][3])"
+
+.PP
+Definition at line 139 of file algebra\&.cpp\&.
+.SS "int identity_matrix6d (double dst[6][6])"
+
+.PP
+Definition at line 155 of file algebra\&.cpp\&.
+.SS "int inverse_matrix2d (double mat[2][2], double dst[2][2])"
+
+.PP
+Definition at line 240 of file algebra\&.cpp\&.
+.SS "int inverse_matrix3d (double mat[3][3], double dst[3][3])"
+
+.PP
+Definition at line 259 of file algebra\&.cpp\&.
+.SS "int matrix2d_eigen (double * v1, double * v2, double l1, double l2, double dst[2][2])"
+
+.PP
+Definition at line 605 of file algebra\&.cpp\&.
+.SS "int matrix3d_eigen (double v[3][3], double l1, double l2, double l3, double dst[3][3])"
+
+.PP
+Definition at line 627 of file algebra\&.cpp\&.
+.SS "int mux_matrix (double * s1, double * s2, double * dst, int in, int kn, int jn)"
+
+.PP
+Definition at line 54 of file algebra\&.cpp\&.
+.SS "int mux_matrix2d (double s1[2][2], double s2[2][2], double dst[2][2])"
+
+.PP
+Definition at line 28 of file algebra\&.cpp\&.
+.SS "int mux_matrix3d (double s1[3][3], double s2[3][3], double dst[3][3])"
+
+.PP
+Definition at line 37 of file algebra\&.cpp\&.
+.SS "int round_matrix3d (double mat[3][3], double dst[3][3])"
+
+.PP
+Definition at line 651 of file algebra\&.cpp\&.
+.SS "int sub_matrix2d (double s1[2][2], double s2[2][2], double dst[2][2])"
+
+.PP
+Definition at line 108 of file algebra\&.cpp\&.
+.SS "int sub_matrix3d (double s1[3][3], double s2[3][3], double dst[3][3])"
+
+.PP
+Definition at line 117 of file algebra\&.cpp\&.
+.SS "int transpose_matrix2d (double s1[2][2], double dst[2][2])"
+
+.PP
+Definition at line 206 of file algebra\&.cpp\&.
+.SS "int transpose_matrix3d (double s1[3][3], double dst[3][3])"
+
+.PP
+Definition at line 215 of file algebra\&.cpp\&.
+.SS "int zero_matrix2d (double dst[2][2])"
+
+.PP
+Definition at line 171 of file algebra\&.cpp\&.
+.SS "int zero_matrix3d (double dst[3][3])"
+
+.PP
+Definition at line 180 of file algebra\&.cpp\&.
+.SS "int zero_matrix6d (double dst[6][6])"
+
+.PP
+Definition at line 193 of file algebra\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,72 @@
+.TH "VectaCam" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VectaCam \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VectaCam\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVectaCam\fP (std::string in_camera_ip, unsigned int in_configuration_port, unsigned int in_data_port, std::string in_parameter_file)"
+.br
+.ti -1c
+.RI "void \fBGetImage\fP (cv::Mat &out_image)"
+.br
+.ti -1c
+.RI "virtual \fB~VectaCam\fP ()"
+.br
+.ti -1c
+.RI "void \fBStartCamera\fP ()"
+.br
+.ti -1c
+.RI "void \fBStopCamera\fP ()"
+.br
+.ti -1c
+.RI "long int \fBGetFrameNumber\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBGetFps\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 40 of file VectaCam\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VectaCam::VectaCam (std::string in_camera_ip, unsigned int in_configuration_port, unsigned int in_data_port, std::string in_parameter_file)"
+
+.PP
+Definition at line 3 of file VectaCam\&.cpp\&.
+.SS "VectaCam::~VectaCam ()\fC [virtual]\fP"
+
+.PP
+Definition at line 147 of file VectaCam\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string VectaCam::GetFps ()"
+
+.SS "long int VectaCam::GetFrameNumber ()"
+
+.PP
+Definition at line 164 of file VectaCam\&.cpp\&.
+.SS "void VectaCam::GetImage (cv::Mat & out_image)"
+
+.PP
+Definition at line 153 of file VectaCam\&.cpp\&.
+.SS "void VectaCam::StartCamera ()"
+
+.PP
+Definition at line 169 of file VectaCam\&.cpp\&.
+.SS "void VectaCam::StopCamera ()"
+
+.PP
+Definition at line 158 of file VectaCam\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

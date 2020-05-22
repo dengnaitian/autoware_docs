@@ -1,0 +1,396 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/GPU_init.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/GPU_init.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include 'for_use_GPU\&.h'\fP
+.br
+\fC#include 'drvapi_error_string\&.h'\fP
+.br
+\fC#include <cuda_runtime_api\&.h>\fP
+.br
+\fC#include 'switch_release\&.h'\fP
+.br
+\fC#include 'GPU_init\&.hpp'\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIZE_FEATP2\fP   100000000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_A_SIZE\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_B\fP   100000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_B_DIMS\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_ERROR_ARRAY\fP   100"
+.br
+.ti -1c
+.RI "#define \fBSIZE_C\fP   50000000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_PM\fP   10000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_DEF\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_NUMPART\fP   100"
+.br
+.ti -1c
+.RI "#define \fBSIZE_PIDX\fP   10000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_DID\fP   10000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_M\fP   30000000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_TMPM\fP   30000000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_TMPIX\fP   30000000"
+.br
+.ti -1c
+.RI "#define \fBSIZE_TMPIY\fP   30000000"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_init_cuda\fP (void)"
+.br
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_init_cuda_with_cubin\fP (const char *cubin_path)"
+.br
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_clean_cuda\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "CUdevice * \fBdev\fP"
+.br
+.ti -1c
+.RI "CUcontext * \fBctx\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_process_root\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_process_part\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_dt1d_x\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_dt1d_y\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_a_score\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_inverse_Q\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_hist\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_norm\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_calc_feat\fP"
+.br
+.ti -1c
+.RI "CUfunction * \fBfunc_resize\fP"
+.br
+.ti -1c
+.RI "CUmodule * \fBmodule\fP"
+.br
+.ti -1c
+.RI "int * \fBNR_MAXTHREADS_X\fP"
+.br
+.ti -1c
+.RI "int * \fBNR_MAXTHREADS_Y\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBA_SIZE_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfeatp2_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBB_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBB_dims_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfconvs_error_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBfconvs_C_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpart_C_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpart_error_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBpm_size_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBPIDX_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBdef_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBDID_4_array_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBnumpart_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBM_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpM_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpIx_dev\fP"
+.br
+.ti -1c
+.RI "CUdeviceptr * \fBtmpIy_dev\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SIZE_A_SIZE   1000"
+
+.PP
+Definition at line 27 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_B   100000"
+
+.PP
+Definition at line 28 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_B_DIMS   1000"
+
+.PP
+Definition at line 29 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_C   50000000"
+
+.PP
+Definition at line 31 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_DEF   1000"
+
+.PP
+Definition at line 33 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_DID   10000"
+
+.PP
+Definition at line 36 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_ERROR_ARRAY   100"
+
+.PP
+Definition at line 30 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_FEATP2   100000000"
+
+.PP
+Definition at line 26 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_M   30000000"
+
+.PP
+Definition at line 37 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_NUMPART   100"
+
+.PP
+Definition at line 34 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_PIDX   10000"
+
+.PP
+Definition at line 35 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_PM   10000"
+
+.PP
+Definition at line 32 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_TMPIX   30000000"
+
+.PP
+Definition at line 39 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_TMPIY   30000000"
+
+.PP
+Definition at line 40 of file GPU_init\&.cpp\&.
+.SS "#define SIZE_TMPM   30000000"
+
+.PP
+Definition at line 38 of file GPU_init\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void dpm_ttic_gpu_clean_cuda (void)"
+
+.PP
+Definition at line 359 of file GPU_init\&.cpp\&.
+.SS "void dpm_ttic_gpu_init_cuda (void)"
+
+.PP
+Definition at line 59 of file GPU_init\&.cpp\&.
+.SS "void dpm_ttic_gpu_init_cuda_with_cubin (const char * cubin_path)"
+
+.PP
+Definition at line 70 of file GPU_init\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "CUdeviceptr* A_SIZE_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * B_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * B_dims_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUcontext* ctx"
+
+.PP
+Definition at line 49 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * def_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdevice* dev"
+
+.PP
+Definition at line 48 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * DID_4_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * fconvs_C_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * fconvs_error_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * featp2_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_calc_a_score"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_calc_feat"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_calc_hist"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_calc_norm"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_dt1d_x"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_dt1d_y"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_inverse_Q"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_process_part"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction* func_process_root"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUfunction * func_resize"
+
+.PP
+Definition at line 50 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * M_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUmodule* module"
+
+.PP
+Definition at line 51 of file GPU_init\&.cpp\&.
+.SS "int* NR_MAXTHREADS_X"
+
+.PP
+Definition at line 52 of file GPU_init\&.cpp\&.
+.SS "int * NR_MAXTHREADS_Y"
+
+.PP
+Definition at line 52 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * numpart_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * part_C_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * part_error_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr* PIDX_array_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * pm_size_array_dev"
+
+.PP
+Definition at line 53 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * tmpIx_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * tmpIy_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SS "CUdeviceptr * tmpM_dev"
+
+.PP
+Definition at line 54 of file GPU_init\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

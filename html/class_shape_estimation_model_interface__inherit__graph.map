@@ -1,0 +1,5 @@
+<map id="ShapeEstimationModelInterface" name="ShapeEstimationModelInterface">
+<area shape="rect" id="node2" href="$class_bounding_box_model.html" title="BoundingBoxModel" alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$class_convex_hull_model.html" title="ConvexHullModel" alt="" coords="165,80,290,107"/>
+<area shape="rect" id="node4" href="$class_cylinder_model.html" title="CylinderModel" alt="" coords="315,80,420,107"/>
+</map>

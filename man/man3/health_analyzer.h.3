@@ -1,0 +1,90 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/system/autoware_health_checker/include/autoware_health_checker/health_analyzer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/system/autoware_health_checker/include/autoware_health_checker/health_analyzer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/package\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <autoware_health_checker/constants\&.h>\fP
+.br
+\fC#include <autoware_system_msgs/SystemStatus\&.h>\fP
+.br
+\fC#include <boost/foreach\&.hpp>\fP
+.br
+\fC#include <boost/graph/adjacency_list\&.hpp>\fP
+.br
+\fC#include <boost/graph/graph_utility\&.hpp>\fP
+.br
+\fC#include <boost/graph/graphviz\&.hpp>\fP
+.br
+\fC#include <boost/lexical_cast\&.hpp>\fP
+.br
+\fC#include <boost/property_tree/ptree\&.hpp>\fP
+.br
+\fC#include <boost/property_tree/xml_parser\&.hpp>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtopic_property\fP"
+.br
+.ti -1c
+.RI "struct \fBnode_property\fP"
+.br
+.ti -1c
+.RI "class \fBHealthAnalyzer\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::adjacency_list< boost::listS, boost::vecS, boost::bidirectionalS, \fBnode_property\fP, \fBtopic_property\fP > \fBgraph_t\fP"
+.br
+.ti -1c
+.RI "typedef graph_t::vertex_descriptor \fBvertex_t\fP"
+.br
+.ti -1c
+.RI "typedef graph_t::edge_descriptor \fBedge_t\fP"
+.br
+.ti -1c
+.RI "typedef boost::graph_traits< \fBgraph_t\fP >::adjacency_iterator \fBadjacency_iterator_t\fP"
+.br
+.ti -1c
+.RI "typedef boost::graph_traits< \fBgraph_t\fP >::out_edge_iterator \fBout_edge_iterator_t\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::graph_traits<\fBgraph_t\fP>::adjacency_iterator \fBadjacency_iterator_t\fP"
+
+.PP
+Definition at line 57 of file health_analyzer\&.h\&.
+.SS "typedef graph_t::edge_descriptor \fBedge_t\fP"
+
+.PP
+Definition at line 56 of file health_analyzer\&.h\&.
+.SS "typedef boost::adjacency_list<boost::listS, boost::vecS, boost::bidirectionalS, \fBnode_property\fP, \fBtopic_property\fP> \fBgraph_t\fP"
+
+.PP
+Definition at line 54 of file health_analyzer\&.h\&.
+.SS "typedef boost::graph_traits<\fBgraph_t\fP>::out_edge_iterator \fBout_edge_iterator_t\fP"
+
+.PP
+Definition at line 58 of file health_analyzer\&.h\&.
+.SS "typedef graph_t::vertex_descriptor \fBvertex_t\fP"
+
+.PP
+Definition at line 55 of file health_analyzer\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

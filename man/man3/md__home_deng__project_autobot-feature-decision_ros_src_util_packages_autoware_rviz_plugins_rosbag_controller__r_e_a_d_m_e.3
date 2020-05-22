@@ -1,0 +1,34 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_rviz_plugins_rosbag_controller__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_util_packages_autoware_rviz_plugins_rosbag_controller__r_e_a_d_m_e \- \fBStatus\fP 
+\fBDEVELOPMENT\fP
+.PP
+.SS "Description"
+.PP
+rivz plugin for rosbag recording (\fIrosbag play module will be added in the future\fP)
+.PP
+Two ways to set topics parameter for recording:
+.IP "1." 4
+Use \&.yaml configure file as ***configure_example\&.yaml*** file\&.
+.IP "2." 4
+Use ***Topic Refresh*** to real-time scan which topics are existing, then choose those you are interested in by checkboxes\&.
+.PP
+.PP
+\fBNote1\fP: Configure file and topic from checkboxes can be used at same time, even some topics are repeated (plugin will do duplicate checking when using both of them) \fBNote2\fP: If you want to clear configure file, you can restart plugin
+.PP
+.SS "Todos"
+.PP
+.IP "\(bu" 2
+[ ] Tests
+.PP
+.PP
+.SS "Steps to Test"
+.PP
+.IP "1." 4
+Start rviz and choose \fBPanels->Add New Panel->RosbagController\fP
+.IP "2." 4
+You can use the plugin to record rosbags with specified topics (do not specify any topics means recording all) 
+.PP
+

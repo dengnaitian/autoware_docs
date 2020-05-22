@@ -1,0 +1,10 @@
+<map id="ROSInterfaceBase" name="ROSInterfaceBase">
+<area shape="rect" id="node3" href="$class_r_o_s_pub.html" title="ROSPub\&lt; MSGTYPE \&gt;" alt="" coords="305,5,467,32"/>
+<area shape="rect" id="node4" href="$class_r_o_s_pub.html" title="ROSPub\&lt; sensor_msgs\l::LaserScan \&gt;" alt="" coords="304,57,468,98"/>
+<area shape="rect" id="node5" href="$class_r_o_s_pub.html" title="ROSPub\&lt; sensor_msgs\l::PointCloud2 \&gt;" alt="" coords="304,122,468,163"/>
+<area shape="rect" id="node6" href="$class_r_o_s_sub_base.html" title="ROSSubBase" alt="" coords="334,188,438,215"/>
+<area shape="rect" id="node9" href="$class_r_o_s_t_f_pub.html" title="ROSTFPub" alt="" coords="341,239,431,265"/>
+<area shape="rect" id="node10" href="$class_r_o_s_t_f_sub.html" title="ROSTFSub" alt="" coords="341,289,431,316"/>
+<area shape="rect" id="node7" href="$class_r_o_s_sub.html" title="ROSSub\&lt; MSGTYPE \&gt;" alt="" coords="517,159,680,185"/>
+<area shape="rect" id="node8" href="$class_r_o_s_sub.html" title="ROSSub\&lt; sensor_msgs\l::PointCloud2ConstPtr \&gt;" alt="" coords="516,210,681,251"/>
+</map>

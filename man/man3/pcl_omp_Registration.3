@@ -1,0 +1,1105 @@
+.TH "pcl_omp::Registration< PointSource, PointTarget, Scalar >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pcl_omp::Registration< PointSource, PointTarget, Scalar > \- \fB\fBRegistration\fP\fP represents the base registration class for general purpose, ICP-like methods\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <registration\&.h>\fP
+.PP
+Inherits PCLBase< PointSource >\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef Eigen::Matrix< Scalar, 4, 4 > \fBMatrix4\fP"
+.br
+.ti -1c
+.RI "typedef boost::shared_ptr< \fBRegistration\fP< PointSource, PointTarget, Scalar > > \fBPtr\fP"
+.br
+.ti -1c
+.RI "typedef boost::shared_ptr< const \fBRegistration\fP< PointSource, PointTarget, Scalar > > \fBConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::registration::CorrespondenceRejector::Ptr \fBCorrespondenceRejectorPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::search::KdTree< PointTarget > \fBKdTree\fP"
+.br
+.ti -1c
+.RI "typedef pcl::search::KdTree< PointTarget >::\fBPtr\fP \fBKdTreePtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::search::KdTree< PointSource > \fBKdTreeReciprocal\fP"
+.br
+.ti -1c
+.RI "typedef KdTreeReciprocal::Ptr \fBKdTreeReciprocalPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< PointSource > \fBPointCloudSource\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudSource::Ptr \fBPointCloudSourcePtr\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudSource::ConstPtr \fBPointCloudSourceConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBpcl::PointCloud\fP< PointTarget > \fBPointCloudTarget\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudTarget::Ptr \fBPointCloudTargetPtr\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudTarget::ConstPtr \fBPointCloudTargetConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef KdTree::PointRepresentationConstPtr \fBPointRepresentationConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::registration::TransformationEstimation< PointSource, PointTarget, Scalar > \fBTransformationEstimation\fP"
+.br
+.ti -1c
+.RI "typedef TransformationEstimation::Ptr \fBTransformationEstimationPtr\fP"
+.br
+.ti -1c
+.RI "typedef TransformationEstimation::ConstPtr \fBTransformationEstimationConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::registration::CorrespondenceEstimationBase< PointSource, PointTarget, Scalar > \fBCorrespondenceEstimation\fP"
+.br
+.ti -1c
+.RI "typedef CorrespondenceEstimation::Ptr \fBCorrespondenceEstimationPtr\fP"
+.br
+.ti -1c
+.RI "typedef CorrespondenceEstimation::ConstPtr \fBCorrespondenceEstimationConstPtr\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegistration\fP ()"
+.br
+.RI "\fIEmpty constructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~Registration\fP ()"
+.br
+.RI "\fIdestructor\&. \fP"
+.ti -1c
+.RI "void \fBsetTransformationEstimation\fP (const \fBTransformationEstimationPtr\fP &te)"
+.br
+.RI "\fIProvide a pointer to the transformation estimation object\&. (e\&.g\&., SVD, point to plane etc\&.) \fP"
+.ti -1c
+.RI "void \fBsetCorrespondenceEstimation\fP (const \fBCorrespondenceEstimationPtr\fP &ce)"
+.br
+.RI "\fIProvide a pointer to the correspondence estimation object\&. (e\&.g\&., regular, reciprocal, normal shooting etc\&.) \fP"
+.ti -1c
+.RI "void \fBsetInputCloud\fP (const \fBPointCloudSourceConstPtr\fP &cloud)"
+.br
+.RI "\fIProvide a pointer to the input source (e\&.g\&., the point cloud that we want to align to the target) \fP"
+.ti -1c
+.RI "\fBPointCloudSourceConstPtr\fP const \fBgetInputCloud\fP ()"
+.br
+.RI "\fIGet a pointer to the input point cloud dataset target\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetInputSource\fP (const \fBPointCloudSourceConstPtr\fP &cloud)"
+.br
+.RI "\fIProvide a pointer to the input source (e\&.g\&., the point cloud that we want to align to the target) \fP"
+.ti -1c
+.RI "\fBPointCloudSourceConstPtr\fP const \fBgetInputSource\fP ()"
+.br
+.RI "\fIGet a pointer to the input point cloud dataset target\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetInputTarget\fP (const \fBPointCloudTargetConstPtr\fP &cloud)"
+.br
+.RI "\fIProvide a pointer to the input target (e\&.g\&., the point cloud that we want to align the input source to) \fP"
+.ti -1c
+.RI "\fBPointCloudTargetConstPtr\fP const \fBgetInputTarget\fP ()"
+.br
+.RI "\fIGet a pointer to the input point cloud dataset target\&. \fP"
+.ti -1c
+.RI "void \fBsetSearchMethodTarget\fP (const \fBKdTreePtr\fP &\fBtree\fP, bool force_no_recompute=false)"
+.br
+.RI "\fIProvide a pointer to the search object used to find correspondences in the target cloud\&. \fP"
+.ti -1c
+.RI "\fBKdTreePtr\fP \fBgetSearchMethodTarget\fP () const "
+.br
+.RI "\fIGet a pointer to the search method used to find correspondences in the target cloud\&. \fP"
+.ti -1c
+.RI "void \fBsetSearchMethodSource\fP (const \fBKdTreeReciprocalPtr\fP &\fBtree\fP, bool force_no_recompute=false)"
+.br
+.RI "\fIProvide a pointer to the search object used to find correspondences in the source cloud (usually used by reciprocal correspondence finding)\&. \fP"
+.ti -1c
+.RI "\fBKdTreeReciprocalPtr\fP \fBgetSearchMethodSource\fP () const "
+.br
+.RI "\fIGet a pointer to the search method used to find correspondences in the source cloud\&. \fP"
+.ti -1c
+.RI "\fBMatrix4\fP \fBgetFinalTransformation\fP ()"
+.br
+.RI "\fIGet the final transformation matrix estimated by the registration method\&. \fP"
+.ti -1c
+.RI "\fBMatrix4\fP \fBgetLastIncrementalTransformation\fP ()"
+.br
+.RI "\fIGet the last incremental transformation matrix estimated by the registration method\&. \fP"
+.ti -1c
+.RI "void \fBsetMaximumIterations\fP (int nr_iterations)"
+.br
+.RI "\fISet the maximum number of iterations the internal optimization should run for\&. \fP"
+.ti -1c
+.RI "int \fBgetMaximumIterations\fP ()"
+.br
+.RI "\fIGet the maximum number of iterations the internal optimization should run for, as set by the user\&. \fP"
+.ti -1c
+.RI "void \fBsetRANSACIterations\fP (int ransac_iterations)"
+.br
+.RI "\fISet the number of iterations RANSAC should run for\&. \fP"
+.ti -1c
+.RI "double \fBgetRANSACIterations\fP ()"
+.br
+.RI "\fIGet the number of iterations RANSAC should run for, as set by the user\&. \fP"
+.ti -1c
+.RI "void \fBsetRANSACOutlierRejectionThreshold\fP (double inlier_threshold)"
+.br
+.RI "\fISet the inlier distance threshold for the internal RANSAC outlier rejection loop\&. \fP"
+.ti -1c
+.RI "double \fBgetRANSACOutlierRejectionThreshold\fP ()"
+.br
+.RI "\fIGet the inlier distance threshold for the internal outlier rejection loop as set by the user\&. \fP"
+.ti -1c
+.RI "void \fBsetMaxCorrespondenceDistance\fP (double distance_threshold)"
+.br
+.RI "\fISet the maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignment process\&. \fP"
+.ti -1c
+.RI "double \fBgetMaxCorrespondenceDistance\fP ()"
+.br
+.RI "\fIGet the maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignment process\&. \fP"
+.ti -1c
+.RI "void \fBsetTransformationEpsilon\fP (double epsilon)"
+.br
+.RI "\fISet the transformation epsilon (maximum allowable difference between two consecutive transformations) in order for an optimization to be considered as having converged to the final solution\&. \fP"
+.ti -1c
+.RI "double \fBgetTransformationEpsilon\fP ()"
+.br
+.RI "\fIGet the transformation epsilon (maximum allowable difference between two consecutive transformations) as set by the user\&. \fP"
+.ti -1c
+.RI "void \fBsetEuclideanFitnessEpsilon\fP (double epsilon)"
+.br
+.RI "\fISet the maximum allowed Euclidean error between two consecutive steps in the ICP loop, before the algorithm is considered to have converged\&. The error is estimated as the sum of the differences between correspondences in an Euclidean sense, divided by the number of correspondences\&. \fP"
+.ti -1c
+.RI "double \fBgetEuclideanFitnessEpsilon\fP ()"
+.br
+.RI "\fIGet the maximum allowed distance error before the algorithm will be considered to have converged, as set by the user\&. See \fBsetEuclideanFitnessEpsilon\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetPointRepresentation\fP (const \fBPointRepresentationConstPtr\fP &point_representation)"
+.br
+.RI "\fIProvide a boost shared pointer to the PointRepresentation to be used when comparing points\&. \fP"
+.ti -1c
+.RI "template<typename FunctionSignature > bool \fBregisterVisualizationCallback\fP (boost::function< FunctionSignature > &visualizerCallback)"
+.br
+.RI "\fIRegister the user callback function which will be called from registration thread in order to update point cloud obtained after each iteration\&. \fP"
+.ti -1c
+.RI "double \fBgetFitnessScore\fP (double max_range=std::numeric_limits< double >::max())"
+.br
+.RI "\fIObtain the Euclidean fitness score (e\&.g\&., sum of squared distances from the source to the target) \fP"
+.ti -1c
+.RI "double \fBgetFitnessScore\fP (const std::vector< float > &distances_a, const std::vector< float > &distances_b)"
+.br
+.RI "\fIObtain the Euclidean fitness score (e\&.g\&., sum of squared distances from the source to the target) from two sets of correspondence distances (distances between source and target points) \fP"
+.ti -1c
+.RI "bool \fBhasConverged\fP ()"
+.br
+.RI "\fIReturn the state of convergence after the last align run\&. \fP"
+.ti -1c
+.RI "void \fBalign\fP (\fBPointCloudSource\fP &output)"
+.br
+.RI "\fICall the registration algorithm which estimates the transformation and returns the transformed source (input) as \fIoutput\fP\&. \fP"
+.ti -1c
+.RI "void \fBalign\fP (\fBPointCloudSource\fP &output, const \fBMatrix4\fP &guess)"
+.br
+.RI "\fICall the registration algorithm which estimates the transformation and returns the transformed source (input) as \fIoutput\fP\&. \fP"
+.ti -1c
+.RI "const std::string & \fBgetClassName\fP () const "
+.br
+.RI "\fIAbstract class get name method\&. \fP"
+.ti -1c
+.RI "bool \fBinitCompute\fP ()"
+.br
+.RI "\fIInternal computation initalization\&. \fP"
+.ti -1c
+.RI "bool \fBinitComputeReciprocal\fP ()"
+.br
+.RI "\fIInternal computation when reciprocal lookup is needed\&. \fP"
+.ti -1c
+.RI "void \fBaddCorrespondenceRejector\fP (const \fBCorrespondenceRejectorPtr\fP &rejector)"
+.br
+.RI "\fIAdd a new correspondence rejector to the list\&. \fP"
+.ti -1c
+.RI "std::vector< \fBCorrespondenceRejectorPtr\fP > \fBgetCorrespondenceRejectors\fP ()"
+.br
+.RI "\fIGet the list of correspondence rejectors\&. \fP"
+.ti -1c
+.RI "bool \fBremoveCorrespondenceRejector\fP (unsigned int \fBi\fP)"
+.br
+.RI "\fIRemove the i-th correspondence rejector in the list\&. \fP"
+.ti -1c
+.RI "void \fBclearCorrespondenceRejectors\fP ()"
+.br
+.RI "\fIClear the list of correspondence rejectors\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsearchForNeighbors\fP (const \fBPointCloudSource\fP &cloud, int index, std::vector< int > &indices, std::vector< float > &distances)"
+.br
+.RI "\fISearch for the closest nearest neighbor of a given point\&. \fP"
+.ti -1c
+.RI "virtual void \fBcomputeTransformation\fP (\fBPointCloudSource\fP &output, const \fBMatrix4\fP &guess)=0"
+.br
+.RI "\fIAbstract transformation computation method with initial guess\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBreg_name_\fP"
+.br
+.RI "\fIThe registration method name\&. \fP"
+.ti -1c
+.RI "\fBKdTreePtr\fP \fBtree_\fP"
+.br
+.RI "\fIA pointer to the spatial search object\&. \fP"
+.ti -1c
+.RI "\fBKdTreeReciprocalPtr\fP \fBtree_reciprocal_\fP"
+.br
+.RI "\fIA pointer to the spatial search object of the source\&. \fP"
+.ti -1c
+.RI "int \fBnr_iterations_\fP"
+.br
+.RI "\fIThe number of iterations the internal optimization ran for (used internally)\&. \fP"
+.ti -1c
+.RI "int \fBmax_iterations_\fP"
+.br
+.RI "\fIThe maximum number of iterations the internal optimization should run for\&. The default value is 10\&. \fP"
+.ti -1c
+.RI "int \fBransac_iterations_\fP"
+.br
+.RI "\fIThe number of iterations RANSAC should run for\&. \fP"
+.ti -1c
+.RI "\fBPointCloudTargetConstPtr\fP \fBtarget_\fP"
+.br
+.RI "\fIThe input point cloud dataset target\&. \fP"
+.ti -1c
+.RI "\fBMatrix4\fP \fBfinal_transformation_\fP"
+.br
+.RI "\fIThe final transformation matrix estimated by the registration method after N iterations\&. \fP"
+.ti -1c
+.RI "\fBMatrix4\fP \fBtransformation_\fP"
+.br
+.RI "\fIThe transformation matrix estimated by the registration method\&. \fP"
+.ti -1c
+.RI "\fBMatrix4\fP \fBprevious_transformation_\fP"
+.br
+.RI "\fIThe previous transformation matrix estimated by the registration method (used internally)\&. \fP"
+.ti -1c
+.RI "double \fBtransformation_epsilon_\fP"
+.br
+.RI "\fIThe maximum difference between two consecutive transformations in order to consider convergence (user defined)\&. \fP"
+.ti -1c
+.RI "double \fBeuclidean_fitness_epsilon_\fP"
+.br
+.RI "\fIThe maximum allowed Euclidean error between two consecutive steps in the ICP loop, before the algorithm is considered to have converged\&. The error is estimated as the sum of the differences between correspondences in an Euclidean sense, divided by the number of correspondences\&. \fP"
+.ti -1c
+.RI "double \fBcorr_dist_threshold_\fP"
+.br
+.RI "\fIThe maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignement process\&. \fP"
+.ti -1c
+.RI "double \fBinlier_threshold_\fP"
+.br
+.RI "\fIThe inlier distance threshold for the internal RANSAC outlier rejection loop\&. The method considers a point to be an inlier, if the distance between the target data index and the transformed source index is smaller than the given inlier distance threshold\&. The default value is 0\&.05\&. \fP"
+.ti -1c
+.RI "bool \fBconverged_\fP"
+.br
+.RI "\fIHolds internal convergence state, given user parameters\&. \fP"
+.ti -1c
+.RI "int \fBmin_number_correspondences_\fP"
+.br
+.RI "\fIThe minimum number of correspondences that the algorithm needs before attempting to estimate the transformation\&. The default value is 3\&. \fP"
+.ti -1c
+.RI "pcl::CorrespondencesPtr \fBcorrespondences_\fP"
+.br
+.RI "\fIThe set of correspondences determined at this ICP step\&. \fP"
+.ti -1c
+.RI "\fBTransformationEstimationPtr\fP \fBtransformation_estimation_\fP"
+.br
+.RI "\fIA TransformationEstimation object, used to calculate the 4x4 rigid transformation\&. \fP"
+.ti -1c
+.RI "\fBCorrespondenceEstimationPtr\fP \fBcorrespondence_estimation_\fP"
+.br
+.RI "\fIA CorrespondenceEstimation object, used to estimate correspondences between the source and the target cloud\&. \fP"
+.ti -1c
+.RI "std::vector< \fBCorrespondenceRejectorPtr\fP > \fBcorrespondence_rejectors_\fP"
+.br
+.RI "\fIThe list of correspondence rejectors to use\&. \fP"
+.ti -1c
+.RI "bool \fBtarget_cloud_updated_\fP"
+.br
+.RI "\fIVariable that stores whether we have a new target cloud, meaning we need to pre-process it again\&. This way, we avoid rebuilding the kd-tree for the target cloud every time the determineCorrespondences () method is called\&. \fP"
+.ti -1c
+.RI "bool \fBsource_cloud_updated_\fP"
+.br
+.RI "\fIVariable that stores whether we have a new source cloud, meaning we need to pre-process it again\&. This way, we avoid rebuilding the reciprocal kd-tree for the source cloud every time the determineCorrespondences () method is called\&. \fP"
+.ti -1c
+.RI "bool \fBforce_no_recompute_\fP"
+.br
+.RI "\fIA flag which, if set, means the tree operating on the target cloud will never be recomputed\&. \fP"
+.ti -1c
+.RI "bool \fBforce_no_recompute_reciprocal_\fP"
+.br
+.RI "\fIA flag which, if set, means the tree operating on the source cloud will never be recomputed\&. \fP"
+.ti -1c
+.RI "boost::function< void(const \fBpcl::PointCloud\fP< PointSource > &cloud_src, const std::vector< int > &indices_src, const \fBpcl::PointCloud\fP< PointTarget > &cloud_tgt, const std::vector< int > &indices_tgt)> \fBupdate_visualizer_\fP"
+.br
+.RI "\fICallback function to update intermediate source point cloud position during it's registration to the target point cloud\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float>
+.br
+class pcl_omp::Registration< PointSource, PointTarget, Scalar >"
+\fB\fBRegistration\fP\fP represents the base registration class for general purpose, ICP-like methods\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Radu B\&. Rusu, Michael Dixon 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file registration\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef boost::shared_ptr< const \fBRegistration\fP<PointSource, PointTarget, Scalar> > \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBConstPtr\fP"
+
+.PP
+Definition at line 73 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::registration::CorrespondenceEstimationBase<PointSource, PointTarget, Scalar> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBCorrespondenceEstimation\fP"
+
+.PP
+Definition at line 96 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef CorrespondenceEstimation::ConstPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBCorrespondenceEstimationConstPtr\fP"
+
+.PP
+Definition at line 98 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef CorrespondenceEstimation::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBCorrespondenceEstimationPtr\fP"
+
+.PP
+Definition at line 97 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::registration::CorrespondenceRejector::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBCorrespondenceRejectorPtr\fP"
+
+.PP
+Definition at line 75 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::search::KdTree<PointTarget> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBKdTree\fP"
+
+.PP
+Definition at line 76 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::search::KdTree<PointTarget>::\fBPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBKdTreePtr\fP"
+
+.PP
+Definition at line 77 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::search::KdTree<PointSource> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBKdTreeReciprocal\fP"
+
+.PP
+Definition at line 79 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef KdTreeReciprocal::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBKdTreeReciprocalPtr\fP"
+
+.PP
+Definition at line 80 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef Eigen::Matrix<Scalar, 4, 4> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBMatrix4\fP"
+
+.PP
+Definition at line 65 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef \fBpcl::PointCloud\fP<PointSource> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudSource\fP"
+
+.PP
+Definition at line 82 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef PointCloudSource::ConstPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudSourceConstPtr\fP"
+
+.PP
+Definition at line 84 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef PointCloudSource::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudSourcePtr\fP"
+
+.PP
+Definition at line 83 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef \fBpcl::PointCloud\fP<PointTarget> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudTarget\fP"
+
+.PP
+Definition at line 86 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef PointCloudTarget::ConstPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudTargetConstPtr\fP"
+
+.PP
+Definition at line 88 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef PointCloudTarget::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudTargetPtr\fP"
+
+.PP
+Definition at line 87 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef KdTree::PointRepresentationConstPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointRepresentationConstPtr\fP"
+
+.PP
+Definition at line 90 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef boost::shared_ptr< \fBRegistration\fP<PointSource, PointTarget, Scalar> > \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPtr\fP"
+
+.PP
+Definition at line 72 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef pcl::registration::TransformationEstimation<PointSource, PointTarget, Scalar> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBTransformationEstimation\fP"
+
+.PP
+Definition at line 92 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef TransformationEstimation::ConstPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBTransformationEstimationConstPtr\fP"
+
+.PP
+Definition at line 94 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> typedef TransformationEstimation::Ptr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBTransformationEstimationPtr\fP"
+
+.PP
+Definition at line 93 of file registration\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBRegistration\fP ()\fC [inline]\fP"
+
+.PP
+Empty constructor\&. 
+.PP
+Definition at line 101 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> virtual \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::~\fBRegistration\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+destructor\&. 
+.PP
+Definition at line 132 of file registration\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::addCorrespondenceRejector (const \fBCorrespondenceRejectorPtr\fP & rejector)\fC [inline]\fP"
+
+.PP
+Add a new correspondence rejector to the list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrejector\fP the new correspondence rejector to concatenate
+.RE
+.PP
+Code example:
+.PP
+.PP
+.nf
+CorrespondenceRejectorDistance rej;
+rej\&.setInputCloud<PointXYZ> (keypoints_src);
+rej\&.setInputTarget<PointXYZ> (keypoints_tgt);
+rej\&.setMaximumDistance (1);
+rej\&.setInputCorrespondences (all_correspondences);
+
+// or\&.\&.\&.
+.fi
+.PP
+ 
+.PP
+Definition at line 450 of file registration\&.h\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::align (\fBPointCloudSource\fP & output)\fC [inline]\fP"
+
+.PP
+Call the registration algorithm which estimates the transformation and returns the transformed source (input) as \fIoutput\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP the resultant input transfomed point cloud dataset 
+.RE
+.PP
+
+.PP
+Definition at line 193 of file registration\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::align (\fBPointCloudSource\fP & output, const \fBMatrix4\fP & guess)\fC [inline]\fP"
+
+.PP
+Call the registration algorithm which estimates the transformation and returns the transformed source (input) as \fIoutput\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP the resultant input transfomed point cloud dataset 
+.br
+\fIguess\fP the initial gross estimation of the transformation 
+.RE
+.PP
+
+.PP
+Definition at line 200 of file registration\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::clearCorrespondenceRejectors ()\fC [inline]\fP"
+
+.PP
+Clear the list of correspondence rejectors\&. 
+.PP
+Definition at line 476 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> virtual void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::computeTransformation (\fBPointCloudSource\fP & output, const \fBMatrix4\fP & guess)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Abstract transformation computation method with initial guess\&. 
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> const std::string& \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getClassName () const\fC [inline]\fP"
+
+.PP
+Abstract class get name method\&. 
+.PP
+Definition at line 423 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> std::vector<\fBCorrespondenceRejectorPtr\fP> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getCorrespondenceRejectors ()\fC [inline]\fP"
+
+.PP
+Get the list of correspondence rejectors\&. 
+.PP
+Definition at line 457 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getEuclideanFitnessEpsilon ()\fC [inline]\fP"
+
+.PP
+Get the maximum allowed distance error before the algorithm will be considered to have converged, as set by the user\&. See \fBsetEuclideanFitnessEpsilon\fP\&. 
+.PP
+Definition at line 359 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBMatrix4\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getFinalTransformation ()\fC [inline]\fP"
+
+.PP
+Get the final transformation matrix estimated by the registration method\&. 
+.PP
+Definition at line 275 of file registration\&.h\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getFitnessScore (double max_range = \fCstd::numeric_limits<double>::max ()\fP)\fC [inline]\fP"
+
+.PP
+Obtain the Euclidean fitness score (e\&.g\&., sum of squared distances from the source to the target) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImax_range\fP maximum allowable distance between a point and its correspondence in the target (default: double::max) 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file registration\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getFitnessScore (const std::vector< float > & distances_a, const std::vector< float > & distances_b)\fC [inline]\fP"
+
+.PP
+Obtain the Euclidean fitness score (e\&.g\&., sum of squared distances from the source to the target) from two sets of correspondence distances (distances between source and target points) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdistances_a\fP the first set of distances between correspondences 
+.br
+\fIdistances_b\fP the second set of distances between correspondences 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file registration\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::\fBPointCloudSourceConstPtr\fP const \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getInputCloud ()"
+
+.PP
+Get a pointer to the input point cloud dataset target\&. 
+.PP
+Definition at line 51 of file registration\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBPointCloudSourceConstPtr\fP const \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getInputSource ()\fC [inline]\fP"
+
+.PP
+Get a pointer to the input point cloud dataset target\&. 
+.PP
+Definition at line 204 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBPointCloudTargetConstPtr\fP const \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getInputTarget ()\fC [inline]\fP"
+
+.PP
+Get a pointer to the input point cloud dataset target\&. 
+.PP
+Definition at line 214 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBMatrix4\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getLastIncrementalTransformation ()\fC [inline]\fP"
+
+.PP
+Get the last incremental transformation matrix estimated by the registration method\&. 
+.PP
+Definition at line 279 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getMaxCorrespondenceDistance ()\fC [inline]\fP"
+
+.PP
+Get the maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignment process\&. 
+.PP
+Definition at line 327 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> int \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getMaximumIterations ()\fC [inline]\fP"
+
+.PP
+Get the maximum number of iterations the internal optimization should run for, as set by the user\&. 
+.PP
+Definition at line 289 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getRANSACIterations ()\fC [inline]\fP"
+
+.PP
+Get the number of iterations RANSAC should run for, as set by the user\&. 
+.PP
+Definition at line 299 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getRANSACOutlierRejectionThreshold ()\fC [inline]\fP"
+
+.PP
+Get the inlier distance threshold for the internal outlier rejection loop as set by the user\&. 
+.PP
+Definition at line 313 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBKdTreeReciprocalPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getSearchMethodSource () const\fC [inline]\fP"
+
+.PP
+Get a pointer to the search method used to find correspondences in the source cloud\&. 
+.PP
+Definition at line 268 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBKdTreePtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getSearchMethodTarget () const\fC [inline]\fP"
+
+.PP
+Get a pointer to the search method used to find correspondences in the target cloud\&. 
+.PP
+Definition at line 240 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::getTransformationEpsilon ()\fC [inline]\fP"
+
+.PP
+Get the transformation epsilon (maximum allowable difference between two consecutive transformations) as set by the user\&. 
+.PP
+Definition at line 342 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::hasConverged ()\fC [inline]\fP"
+
+.PP
+Return the state of convergence after the last align run\&. 
+.PP
+Definition at line 404 of file registration\&.h\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::initCompute ()"
+
+.PP
+Internal computation initalization\&. 
+.PP
+Definition at line 71 of file registration\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::initComputeReciprocal ()"
+
+.PP
+Internal computation when reciprocal lookup is needed\&. 
+.PP
+Definition at line 102 of file registration\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> template<typename FunctionSignature > bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::registerVisualizationCallback (boost::function< FunctionSignature > & visualizerCallback)\fC [inline]\fP"
+
+.PP
+Register the user callback function which will be called from registration thread in order to update point cloud obtained after each iteration\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvisualizerCallback\fP reference of the user callback function 
+.RE
+.PP
+
+.PP
+Definition at line 375 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::removeCorrespondenceRejector (unsigned int i)\fC [inline]\fP"
+
+.PP
+Remove the i-th correspondence rejector in the list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP the position of the correspondence rejector in the list to remove 
+.RE
+.PP
+
+.PP
+Definition at line 466 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::searchForNeighbors (const \fBPointCloudSource\fP & cloud, int index, std::vector< int > & indices, std::vector< float > & distances)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Search for the closest nearest neighbor of a given point\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcloud\fP the point cloud dataset to use for nearest neighbor search 
+.br
+\fIindex\fP the index of the query point 
+.br
+\fIindices\fP the resultant vector of indices representing the k-nearest neighbors 
+.br
+\fIdistances\fP the resultant distances from the query point to the k-nearest neighbors 
+.RE
+.PP
+
+.PP
+Definition at line 587 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setCorrespondenceEstimation (const \fBCorrespondenceEstimationPtr\fP & ce)\fC [inline]\fP"
+
+.PP
+Provide a pointer to the correspondence estimation object\&. (e\&.g\&., regular, reciprocal, normal shooting etc\&.) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIce\fP is the pointer to the corresponding correspondence estimation object
+.RE
+.PP
+Code example:
+.PP
+.PP
+.nf
+CorrespondenceEstimation<PointXYZ, PointXYZ>::Ptr ce (new CorrespondenceEstimation<PointXYZ, PointXYZ>);
+ce->setInputSource (source);
+ce->setInputTarget (target);
+icp\&.setCorrespondenceEstimation (ce);
+// or\&.\&.\&.
+CorrespondenceEstimationNormalShooting<PointNormal, PointNormal, PointNormal>::Ptr cens (new CorrespondenceEstimationNormalShooting<PointNormal, PointNormal>);
+ce->setInputSource (source);
+ce->setInputTarget (target);
+ce->setSourceNormals (source);
+ce->setTargetNormals (target);
+icp\&.setCorrespondenceEstimation (cens);
+.fi
+.PP
+ 
+.PP
+Definition at line 174 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setEuclideanFitnessEpsilon (double epsilon)\fC [inline]\fP"
+
+.PP
+Set the maximum allowed Euclidean error between two consecutive steps in the ICP loop, before the algorithm is considered to have converged\&. The error is estimated as the sum of the differences between correspondences in an Euclidean sense, divided by the number of correspondences\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIepsilon\fP the maximum allowed distance error before the algorithm will be considered to have converged 
+.RE
+.PP
+
+.PP
+Definition at line 353 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setInputCloud (const \fBPointCloudSourceConstPtr\fP & cloud)"
+
+.PP
+Provide a pointer to the input source (e\&.g\&., the point cloud that we want to align to the target) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcloud\fP the input point cloud source 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file registration\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> virtual void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setInputSource (const \fBPointCloudSourceConstPtr\fP & cloud)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Provide a pointer to the input source (e\&.g\&., the point cloud that we want to align to the target) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcloud\fP the input point cloud source 
+.RE
+.PP
+
+.PP
+Definition at line 196 of file registration\&.h\&.
+.SS "template<typename PointSource , typename PointTarget , typename Scalar > void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setInputTarget (const \fBPointCloudTargetConstPtr\fP & cloud)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Provide a pointer to the input target (e\&.g\&., the point cloud that we want to align the input source to) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcloud\fP the input point cloud target 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBpcl_omp::NormalDistributionsTransform< PointSource, PointTarget >\fP\&.
+.PP
+Definition at line 58 of file registration\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setMaxCorrespondenceDistance (double distance_threshold)\fC [inline]\fP"
+
+.PP
+Set the maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignment process\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdistance_threshold\fP the maximum distance threshold between a point and its nearest neighbor correspondent in order to be considered in the alignment process 
+.RE
+.PP
+
+.PP
+Definition at line 321 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setMaximumIterations (int nr_iterations)\fC [inline]\fP"
+
+.PP
+Set the maximum number of iterations the internal optimization should run for\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInr_iterations\fP the maximum number of iterations the internal optimization should run for 
+.RE
+.PP
+
+.PP
+Definition at line 285 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setPointRepresentation (const \fBPointRepresentationConstPtr\fP & point_representation)\fC [inline]\fP"
+
+.PP
+Provide a boost shared pointer to the PointRepresentation to be used when comparing points\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpoint_representation\fP the PointRepresentation to be used by the k-D tree 
+.RE
+.PP
+
+.PP
+Definition at line 365 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setRANSACIterations (int ransac_iterations)\fC [inline]\fP"
+
+.PP
+Set the number of iterations RANSAC should run for\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIransac_iterations\fP is the number of iterations RANSAC should run for 
+.RE
+.PP
+
+.PP
+Definition at line 295 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setRANSACOutlierRejectionThreshold (double inlier_threshold)\fC [inline]\fP"
+
+.PP
+Set the inlier distance threshold for the internal RANSAC outlier rejection loop\&. The method considers a point to be an inlier, if the distance between the target data index and the transformed source index is smaller than the given inlier distance threshold\&. The value is set by default to 0\&.05m\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinlier_threshold\fP the inlier distance threshold for the internal RANSAC outlier rejection loop 
+.RE
+.PP
+
+.PP
+Definition at line 309 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setSearchMethodSource (const \fBKdTreeReciprocalPtr\fP & tree, bool force_no_recompute = \fCfalse\fP)\fC [inline]\fP"
+
+.PP
+Provide a pointer to the search object used to find correspondences in the source cloud (usually used by reciprocal correspondence finding)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP a pointer to the spatial search object\&. 
+.br
+\fIforce_no_recompute\fP If set to true, this tree will NEVER be recomputed, regardless of calls to setInputSource\&. Only use if you are extremely confident that the tree will be set correctly\&. 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setSearchMethodTarget (const \fBKdTreePtr\fP & tree, bool force_no_recompute = \fCfalse\fP)\fC [inline]\fP"
+
+.PP
+Provide a pointer to the search object used to find correspondences in the target cloud\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP a pointer to the spatial search object\&. 
+.br
+\fIforce_no_recompute\fP If set to true, this tree will NEVER be recomputed, regardless of calls to setInputTarget\&. Only use if you are confident that the tree will be set correctly\&. 
+.RE
+.PP
+
+.PP
+Definition at line 225 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setTransformationEpsilon (double epsilon)\fC [inline]\fP"
+
+.PP
+Set the transformation epsilon (maximum allowable difference between two consecutive transformations) in order for an optimization to be considered as having converged to the final solution\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIepsilon\fP the transformation epsilon in order for an optimization to be considered as having converged to the final solution\&. 
+.RE
+.PP
+
+.PP
+Definition at line 336 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> void \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::setTransformationEstimation (const \fBTransformationEstimationPtr\fP & te)\fC [inline]\fP"
+
+.PP
+Provide a pointer to the transformation estimation object\&. (e\&.g\&., SVD, point to plane etc\&.) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIte\fP is the pointer to the corresponding transformation estimation object
+.RE
+.PP
+Code example:
+.PP
+.PP
+.nf
+TransformationEstimationPointToPlaneLLS<PointXYZ, PointXYZ>::Ptr trans_lls (new TransformationEstimationPointToPlaneLLS<PointXYZ, PointXYZ>);
+icp\&.setTransformationEstimation (trans_lls);
+// or\&.\&.\&.
+TransformationEstimationSVD<PointXYZ, PointXYZ>::Ptr trans_svd (new TransformationEstimationSVD<PointXYZ, PointXYZ>);
+icp\&.setTransformationEstimation (trans_svd);
+.fi
+.PP
+ 
+.PP
+Definition at line 150 of file registration\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::converged_\fC [protected]\fP"
+
+.PP
+Holds internal convergence state, given user parameters\&. 
+.PP
+Definition at line 537 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::corr_dist_threshold_\fC [protected]\fP"
+
+.PP
+The maximum distance threshold between two correspondent points in source <-> target\&. If the distance is larger than this threshold, the points will be ignored in the alignement process\&. 
+.PP
+Definition at line 528 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBCorrespondenceEstimationPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::correspondence_estimation_\fC [protected]\fP"
+
+.PP
+A CorrespondenceEstimation object, used to estimate correspondences between the source and the target cloud\&. 
+.PP
+Definition at line 551 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> std::vector<\fBCorrespondenceRejectorPtr\fP> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::correspondence_rejectors_\fC [protected]\fP"
+
+.PP
+The list of correspondence rejectors to use\&. 
+.PP
+Definition at line 554 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> pcl::CorrespondencesPtr \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::correspondences_\fC [protected]\fP"
+
+.PP
+The set of correspondences determined at this ICP step\&. 
+.PP
+Definition at line 545 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::euclidean_fitness_epsilon_\fC [protected]\fP"
+
+.PP
+The maximum allowed Euclidean error between two consecutive steps in the ICP loop, before the algorithm is considered to have converged\&. The error is estimated as the sum of the differences between correspondences in an Euclidean sense, divided by the number of correspondences\&. 
+.PP
+Definition at line 523 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBMatrix4\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::final_transformation_\fC [protected]\fP"
+
+.PP
+The final transformation matrix estimated by the registration method after N iterations\&. 
+.PP
+Definition at line 506 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::force_no_recompute_\fC [protected]\fP"
+
+.PP
+A flag which, if set, means the tree operating on the target cloud will never be recomputed\&. 
+.PP
+Definition at line 566 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::force_no_recompute_reciprocal_\fC [protected]\fP"
+
+.PP
+A flag which, if set, means the tree operating on the source cloud will never be recomputed\&. 
+.PP
+Definition at line 570 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::inlier_threshold_\fC [protected]\fP"
+
+.PP
+The inlier distance threshold for the internal RANSAC outlier rejection loop\&. The method considers a point to be an inlier, if the distance between the target data index and the transformed source index is smaller than the given inlier distance threshold\&. The default value is 0\&.05\&. 
+.PP
+Definition at line 534 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> int \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::max_iterations_\fC [protected]\fP"
+
+.PP
+The maximum number of iterations the internal optimization should run for\&. The default value is 10\&. 
+.PP
+Definition at line 497 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> int \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::min_number_correspondences_\fC [protected]\fP"
+
+.PP
+The minimum number of correspondences that the algorithm needs before attempting to estimate the transformation\&. The default value is 3\&. 
+.PP
+Definition at line 542 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> int \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::nr_iterations_\fC [protected]\fP"
+
+.PP
+The number of iterations the internal optimization ran for (used internally)\&. 
+.PP
+Definition at line 492 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBMatrix4\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::previous_transformation_\fC [protected]\fP"
+
+.PP
+The previous transformation matrix estimated by the registration method (used internally)\&. 
+.PP
+Definition at line 512 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> int \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::ransac_iterations_\fC [protected]\fP"
+
+.PP
+The number of iterations RANSAC should run for\&. 
+.PP
+Definition at line 500 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> std::string \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::reg_name_\fC [protected]\fP"
+
+.PP
+The registration method name\&. 
+.PP
+Definition at line 483 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::source_cloud_updated_\fC [protected]\fP"
+
+.PP
+Variable that stores whether we have a new source cloud, meaning we need to pre-process it again\&. This way, we avoid rebuilding the reciprocal kd-tree for the source cloud every time the determineCorrespondences () method is called\&. 
+.PP
+Definition at line 563 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBPointCloudTargetConstPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::target_\fC [protected]\fP"
+
+.PP
+The input point cloud dataset target\&. 
+.PP
+Definition at line 503 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> bool \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::target_cloud_updated_\fC [protected]\fP"
+
+.PP
+Variable that stores whether we have a new target cloud, meaning we need to pre-process it again\&. This way, we avoid rebuilding the kd-tree for the target cloud every time the determineCorrespondences () method is called\&. 
+.PP
+Definition at line 559 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBMatrix4\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::transformation_\fC [protected]\fP"
+
+.PP
+The transformation matrix estimated by the registration method\&. 
+.PP
+Definition at line 509 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> double \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::transformation_epsilon_\fC [protected]\fP"
+
+.PP
+The maximum difference between two consecutive transformations in order to consider convergence (user defined)\&. 
+.PP
+Definition at line 517 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBTransformationEstimationPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::transformation_estimation_\fC [protected]\fP"
+
+.PP
+A TransformationEstimation object, used to calculate the 4x4 rigid transformation\&. 
+.PP
+Definition at line 548 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBKdTreePtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::tree_\fC [protected]\fP"
+
+.PP
+A pointer to the spatial search object\&. 
+.PP
+Definition at line 486 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> \fBKdTreeReciprocalPtr\fP \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::tree_reciprocal_\fC [protected]\fP"
+
+.PP
+A pointer to the spatial search object of the source\&. 
+.PP
+Definition at line 489 of file registration\&.h\&.
+.SS "template<typename PointSource, typename PointTarget, typename Scalar = float> boost::function<void(const \fBpcl::PointCloud\fP<PointSource> &cloud_src, const std::vector<int> &indices_src, const \fBpcl::PointCloud\fP<PointTarget> &cloud_tgt, const std::vector<int> &indices_tgt)> \fBpcl_omp::Registration\fP< PointSource, PointTarget, Scalar >::update_visualizer_\fC [protected]\fP"
+
+.PP
+Callback function to update intermediate source point cloud position during it's registration to the target point cloud\&. 
+.PP
+Definition at line 578 of file registration\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

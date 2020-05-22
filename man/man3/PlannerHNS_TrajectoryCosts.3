@@ -1,0 +1,164 @@
+.TH "PlannerHNS::TrajectoryCosts" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::TrajectoryCosts \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TrajectoryCosts\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrajectoryCosts\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TrajectoryCosts\fP ()"
+.br
+.ti -1c
+.RI "\fBTrajectoryCost\fP \fBDoOneStep\fP (const vector< vector< vector< \fBWayPoint\fP > > > &rollOuts, const vector< vector< \fBWayPoint\fP > > &totalPaths, const \fBWayPoint\fP &currState, const int &currTrajectoryIndex, const int &currLaneIndex, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo, const \fBVehicleState\fP &vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_PrevCostIndex\fP"
+.br
+.ti -1c
+.RI "vector< \fBTrajectoryCost\fP > \fBm_TrajectoryCosts\fP"
+.br
+.ti -1c
+.RI "\fBPlanningParams\fP \fBm_Params\fP"
+.br
+.ti -1c
+.RI "\fBPolygonShape\fP \fBm_SafetyBorder\fP"
+.br
+.ti -1c
+.RI "vector< \fBWayPoint\fP > \fBm_AllContourPoints\fP"
+.br
+.ti -1c
+.RI "vector< \fBWayPoint\fP > \fBm_CollisionPoints\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightPriority\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightTransition\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLong\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLat\fP"
+.br
+.ti -1c
+.RI "double \fBm_WeightLaneChange\fP"
+.br
+.ti -1c
+.RI "double \fBm_LateralSkipDistance\fP"
+.br
+.ti -1c
+.RI "bool \fBm_UpcomingLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBm_UpcomingRight\fP"
+.br
+.ti -1c
+.RI "bool \fBm_ForwardLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBm_ForwardRight\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file TrajectoryCosts\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::TrajectoryCosts::TrajectoryCosts ()"
+
+.PP
+Definition at line 13 of file TrajectoryCosts\&.cpp\&.
+.SS "PlannerHNS::TrajectoryCosts::~TrajectoryCosts ()\fC [virtual]\fP"
+
+.PP
+Definition at line 29 of file TrajectoryCosts\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTrajectoryCost\fP PlannerHNS::TrajectoryCosts::DoOneStep (const vector< vector< vector< \fBWayPoint\fP > > > & rollOuts, const vector< vector< \fBWayPoint\fP > > & totalPaths, const \fBWayPoint\fP & currState, const int & currTrajectoryIndex, const int & currLaneIndex, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo, const \fBVehicleState\fP & vehicleState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list)"
+
+.PP
+Definition at line 33 of file TrajectoryCosts\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "vector<\fBWayPoint\fP> PlannerHNS::TrajectoryCosts::m_AllContourPoints"
+
+.PP
+Definition at line 35 of file TrajectoryCosts\&.h\&.
+.SS "vector<\fBWayPoint\fP> PlannerHNS::TrajectoryCosts::m_CollisionPoints"
+
+.PP
+Definition at line 36 of file TrajectoryCosts\&.h\&.
+.SS "bool PlannerHNS::TrajectoryCosts::m_ForwardLeft"
+
+.PP
+Definition at line 46 of file TrajectoryCosts\&.h\&.
+.SS "bool PlannerHNS::TrajectoryCosts::m_ForwardRight"
+
+.PP
+Definition at line 47 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_LateralSkipDistance"
+
+.PP
+Definition at line 42 of file TrajectoryCosts\&.h\&.
+.SS "\fBPlanningParams\fP PlannerHNS::TrajectoryCosts::m_Params"
+
+.PP
+Definition at line 33 of file TrajectoryCosts\&.h\&.
+.SS "int PlannerHNS::TrajectoryCosts::m_PrevCostIndex"
+
+.PP
+Definition at line 31 of file TrajectoryCosts\&.h\&.
+.SS "\fBPolygonShape\fP PlannerHNS::TrajectoryCosts::m_SafetyBorder"
+
+.PP
+Definition at line 34 of file TrajectoryCosts\&.h\&.
+.SS "vector<\fBTrajectoryCost\fP> PlannerHNS::TrajectoryCosts::m_TrajectoryCosts"
+
+.PP
+Definition at line 32 of file TrajectoryCosts\&.h\&.
+.SS "bool PlannerHNS::TrajectoryCosts::m_UpcomingLeft"
+
+.PP
+Definition at line 44 of file TrajectoryCosts\&.h\&.
+.SS "bool PlannerHNS::TrajectoryCosts::m_UpcomingRight"
+
+.PP
+Definition at line 45 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_WeightLaneChange"
+
+.PP
+Definition at line 41 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_WeightLat"
+
+.PP
+Definition at line 40 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_WeightLong"
+
+.PP
+Definition at line 39 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_WeightPriority"
+
+.PP
+Definition at line 37 of file TrajectoryCosts\&.h\&.
+.SS "double PlannerHNS::TrajectoryCosts::m_WeightTransition"
+
+.PP
+Definition at line 38 of file TrajectoryCosts\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

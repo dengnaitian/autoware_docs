@@ -1,0 +1,96 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cluster2d.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/lidar_detector/packages/lidar_apollo_cnn_seg_detect/include/cluster2d.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <pcl_ros/point_cloud\&.h>\fP
+.br
+\fC#include 'caffe/caffe\&.hpp'\fP
+.br
+\fC#include 'util\&.h'\fP
+.br
+\fC#include 'disjoint_set\&.h'\fP
+.br
+\fC#include <autoware_msgs/DetectedObject\&.h>\fP
+.br
+\fC#include <autoware_msgs/DetectedObjectArray\&.h>\fP
+.br
+\fC#include <std_msgs/Header\&.h>\fP
+.br
+\fC#include 'opencv2/core/core\&.hpp'\fP
+.br
+\fC#include 'opencv2/imgproc/imgproc\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBObstacle\fP"
+.br
+.ti -1c
+.RI "class \fBCluster2D\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBObjectType\fP { \fBUNKNOWN\fP = 0, \fBUNKNOWN_MOVABLE\fP = 1, \fBUNKNOWN_UNMOVABLE\fP = 2, \fBPEDESTRIAN\fP = 3, \fBBICYCLE\fP = 4, \fBVEHICLE\fP = 5, \fBMAX_OBJECT_TYPE\fP = 6 }"
+.br
+.ti -1c
+.RI "enum \fBMetaType\fP { \fBMETA_UNKNOWN\fP, \fBMETA_SMALLMOT\fP, \fBMETA_BIGMOT\fP, \fBMETA_NONMOT\fP, \fBMETA_PEDESTRIAN\fP, \fBMAX_META_TYPE\fP }"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBMetaType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMETA_UNKNOWN \fP\fP
+.TP
+\fB\fIMETA_SMALLMOT \fP\fP
+.TP
+\fB\fIMETA_BIGMOT \fP\fP
+.TP
+\fB\fIMETA_NONMOT \fP\fP
+.TP
+\fB\fIMETA_PEDESTRIAN \fP\fP
+.TP
+\fB\fIMAX_META_TYPE \fP\fP
+.PP
+Definition at line 64 of file cluster2d\&.h\&.
+.SS "enum \fBObjectType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNKNOWN \fP\fP
+.TP
+\fB\fIUNKNOWN_MOVABLE \fP\fP
+.TP
+\fB\fIUNKNOWN_UNMOVABLE \fP\fP
+.TP
+\fB\fIPEDESTRIAN \fP\fP
+.TP
+\fB\fIBICYCLE \fP\fP
+.TP
+\fB\fIVEHICLE \fP\fP
+.TP
+\fB\fIMAX_OBJECT_TYPE \fP\fP
+.PP
+Definition at line 53 of file cluster2d\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

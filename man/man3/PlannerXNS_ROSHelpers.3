@@ -1,0 +1,116 @@
+.TH "PlannerXNS::ROSHelpers" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerXNS::ROSHelpers \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ROSHelpers\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSHelpers\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ROSHelpers\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBGetTransformFromTF\fP (const std::string parent_frame, const std::string child_frame, tf::StampedTransform &\fBtransform\fP)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowarePathFormat\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path, const int &iStart, autoware_msgs::Lane &trajectory)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHRectangleToAutowareRviz\fP (const std::vector< \fBPlannerHNS::GPSPoint\fP > &safety_rect, visualization_msgs::Marker &marker)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowareVisualizePathFormat\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &curr_path, const std::vector< std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > > &paths, const \fBPlannerHNS::LocalPlannerH\fP &localPlanner, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerHToAutowareVisualizePathFormat\fP (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &globalPaths, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromRoadNetworkToAutowareVisualizeMapFormat\fP (const \fBPlannerHNS::RoadNetwork\fP &\fBmap\fP, visualization_msgs::MarkerArray &markerArray)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromAutowareBoundingBoxObstaclesToPlannerH\fP (const jsk_recognition_msgs::BoundingBoxArray &detectedObstacles, std::vector< \fBPlannerHNS::DetectedObject\fP > &impObstacles)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromAutowareCloudClusterObstaclesToPlannerH\fP (const \fBPlannerHNS::WayPoint\fP &currState, const \fBPlannerHNS::CAR_BASIC_INFO\fP &car_info, const autoware_msgs::CloudClusterArray &clusters, std::vector< \fBPlannerHNS::DetectedObject\fP > &impObstacles, int &nOriginalPoints, int &nContourPoints)"
+.br
+.ti -1c
+.RI "static void \fBConvertFromPlannerObstaclesToAutoware\fP (const \fBPlannerHNS::WayPoint\fP &currState, const std::vector< \fBPlannerHNS::DetectedObject\fP > &trackedObstacles, visualization_msgs::MarkerArray &detectedPolygons)"
+.br
+.ti -1c
+.RI "static \fBPlannerHNS::SHIFT_POS\fP \fBConvertShiftFromAutowareToPlannerH\fP (const \fBPlannerXNS::AUTOWARE_SHIFT_POS\fP &shift)"
+.br
+.ti -1c
+.RI "static \fBPlannerXNS::AUTOWARE_SHIFT_POS\fP \fBConvertShiftFromPlannerHToAutoware\fP (const \fBPlannerHNS::SHIFT_POS\fP &shift)"
+.br
+.ti -1c
+.RI "static \fBPlannerXNS::AutowareBehaviorState\fP \fBConvertBehaviorStateFromPlannerHToAutoware\fP (const \fBPlannerHNS::BehaviorState\fP &beh)"
+.br
+.ti -1c
+.RI "static std::string \fBGetBehaviorNameFromCode\fP (const \fBPlannerHNS::STATE_TYPE\fP &behState)"
+.br
+.ti -1c
+.RI "static void \fBVisualizeBehaviorState\fP (const \fBPlannerHNS::WayPoint\fP &currState, const \fBPlannerHNS::BehaviorState\fP &beh, const bool &bGreenLight, const int &avoidDirection, visualization_msgs::Marker &behaviorMarker)"
+.br
+.ti -1c
+.RI "static void \fBUpdateRoadMap\fP (const \fBAutowareRoadNetwork\fP &src_map, \fBPlannerHNS::RoadNetwork\fP &out_map)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 171 of file ROSHelpers\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerXNS::ROSHelpers::ROSHelpers ()"
+
+.SS "virtual PlannerXNS::ROSHelpers::~ROSHelpers ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBPlannerXNS::AutowareBehaviorState\fP PlannerXNS::ROSHelpers::ConvertBehaviorStateFromPlannerHToAutoware (const \fBPlannerHNS::BehaviorState\fP & beh)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromAutowareBoundingBoxObstaclesToPlannerH (const jsk_recognition_msgs::BoundingBoxArray & detectedObstacles, std::vector< \fBPlannerHNS::DetectedObject\fP > & impObstacles)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromAutowareCloudClusterObstaclesToPlannerH (const \fBPlannerHNS::WayPoint\fP & currState, const \fBPlannerHNS::CAR_BASIC_INFO\fP & car_info, const autoware_msgs::CloudClusterArray & clusters, std::vector< \fBPlannerHNS::DetectedObject\fP > & impObstacles, int & nOriginalPoints, int & nContourPoints)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromPlannerHRectangleToAutowareRviz (const std::vector< \fBPlannerHNS::GPSPoint\fP > & safety_rect, visualization_msgs::Marker & marker)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromPlannerHToAutowarePathFormat (const std::vector< \fBPlannerHNS::WayPoint\fP > & path, const int & iStart, autoware_msgs::Lane & trajectory)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromPlannerHToAutowareVisualizePathFormat (const std::vector< \fBPlannerHNS::WayPoint\fP > & curr_path, const std::vector< std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > > & paths, const \fBPlannerHNS::LocalPlannerH\fP & localPlanner, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromPlannerHToAutowareVisualizePathFormat (const std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & globalPaths, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromPlannerObstaclesToAutoware (const \fBPlannerHNS::WayPoint\fP & currState, const std::vector< \fBPlannerHNS::DetectedObject\fP > & trackedObstacles, visualization_msgs::MarkerArray & detectedPolygons)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::ConvertFromRoadNetworkToAutowareVisualizeMapFormat (const \fBPlannerHNS::RoadNetwork\fP & map, visualization_msgs::MarkerArray & markerArray)\fC [static]\fP"
+
+.SS "static \fBPlannerHNS::SHIFT_POS\fP PlannerXNS::ROSHelpers::ConvertShiftFromAutowareToPlannerH (const \fBPlannerXNS::AUTOWARE_SHIFT_POS\fP & shift)\fC [static]\fP"
+
+.SS "static \fBPlannerXNS::AUTOWARE_SHIFT_POS\fP PlannerXNS::ROSHelpers::ConvertShiftFromPlannerHToAutoware (const \fBPlannerHNS::SHIFT_POS\fP & shift)\fC [static]\fP"
+
+.SS "static std::string PlannerXNS::ROSHelpers::GetBehaviorNameFromCode (const \fBPlannerHNS::STATE_TYPE\fP & behState)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::GetTransformFromTF (const std::string parent_frame, const std::string child_frame, tf::StampedTransform & transform)\fC [static]\fP"
+
+.SS "static void PlannerXNS::ROSHelpers::UpdateRoadMap (const \fBAutowareRoadNetwork\fP & src_map, \fBPlannerHNS::RoadNetwork\fP & out_map)\fC [static]\fP"
+
+.SS "void PlannerXNS::ROSHelpers::VisualizeBehaviorState (const \fBPlannerHNS::WayPoint\fP & currState, const \fBPlannerHNS::BehaviorState\fP & beh, const bool & bGreenLight, const int & avoidDirection, visualization_msgs::Marker & behaviorMarker)\fC [static]\fP"
+
+.PP
+Definition at line 533 of file ROSHelpers\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

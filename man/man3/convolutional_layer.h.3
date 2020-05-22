@@ -1,0 +1,151 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/convolutional_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/convolutional_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBconvolutional_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBconvolutional_layer\fP \fBmake_convolutional_layer\fP (int batch, int h, int w, int \fBc\fP, int n, int groups, int size, int stride, int padding, \fBACTIVATION\fP activation, int batch_normalize, int binary, int xnor, int adam)"
+.br
+.ti -1c
+.RI "void \fBresize_convolutional_layer\fP (\fBconvolutional_layer\fP *\fBlayer\fP, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_convolutional_layer\fP (const \fBconvolutional_layer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBupdate_convolutional_layer\fP (\fBconvolutional_layer\fP \fBlayer\fP, \fBupdate_args\fP a)"
+.br
+.ti -1c
+.RI "\fBimage\fP * \fBvisualize_convolutional_layer\fP (\fBconvolutional_layer\fP \fBlayer\fP, char *window, \fBimage\fP *prev_weights)"
+.br
+.ti -1c
+.RI "void \fBbinarize_weights\fP (float *weights, int n, int size, float *binary)"
+.br
+.ti -1c
+.RI "void \fBswap_binary\fP (\fBconvolutional_layer\fP *l)"
+.br
+.ti -1c
+.RI "void \fBbinarize_weights2\fP (float *weights, int n, int size, char *binary, float *scales)"
+.br
+.ti -1c
+.RI "void \fBbackward_convolutional_layer\fP (\fBconvolutional_layer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBadd_bias\fP (float *output, float *biases, int batch, int n, int size)"
+.br
+.ti -1c
+.RI "void \fBbackward_bias\fP (float *bias_updates, float *delta, int batch, int n, int size)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_convolutional_image\fP (\fBconvolutional_layer\fP \fBlayer\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_convolutional_delta\fP (\fBconvolutional_layer\fP \fBlayer\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_convolutional_weight\fP (\fBconvolutional_layer\fP \fBlayer\fP, int \fBi\fP)"
+.br
+.ti -1c
+.RI "int \fBconvolutional_out_height\fP (\fBconvolutional_layer\fP \fBlayer\fP)"
+.br
+.ti -1c
+.RI "int \fBconvolutional_out_width\fP (\fBconvolutional_layer\fP \fBlayer\fP)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBconvolutional_layer\fP"
+
+.PP
+Definition at line 10 of file convolutional_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void add_bias (float * output, float * biases, int batch, int n, int size)"
+
+.PP
+Definition at line 411 of file convolutional_layer\&.c\&.
+.SS "void backward_bias (float * bias_updates, float * delta, int batch, int n, int size)"
+
+.PP
+Definition at line 435 of file convolutional_layer\&.c\&.
+.SS "void backward_convolutional_layer (\fBconvolutional_layer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 483 of file convolutional_layer\&.c\&.
+.SS "void binarize_weights (float * weights, int n, int size, float * binary)"
+
+.PP
+Definition at line 28 of file convolutional_layer\&.c\&.
+.SS "void binarize_weights2 (float * weights, int n, int size, char * binary, float * scales)"
+
+.SS "int convolutional_out_height (\fBconvolutional_layer\fP layer)"
+
+.PP
+Definition at line 66 of file convolutional_layer\&.c\&.
+.SS "int convolutional_out_width (\fBconvolutional_layer\fP layer)"
+
+.PP
+Definition at line 71 of file convolutional_layer\&.c\&.
+.SS "void forward_convolutional_layer (const \fBconvolutional_layer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 445 of file convolutional_layer\&.c\&.
+.SS "\fBimage\fP get_convolutional_delta (\fBconvolutional_layer\fP layer)"
+
+.PP
+Definition at line 81 of file convolutional_layer\&.c\&.
+.SS "\fBimage\fP get_convolutional_image (\fBconvolutional_layer\fP layer)"
+
+.PP
+Definition at line 76 of file convolutional_layer\&.c\&.
+.SS "\fBimage\fP get_convolutional_weight (\fBconvolutional_layer\fP layer, int i)"
+
+.PP
+Definition at line 545 of file convolutional_layer\&.c\&.
+.SS "\fBconvolutional_layer\fP make_convolutional_layer (int batch, int h, int w, int c, int n, int groups, int size, int stride, int padding, \fBACTIVATION\fP activation, int batch_normalize, int binary, int xnor, int adam)"
+
+.PP
+Definition at line 176 of file convolutional_layer\&.c\&.
+.SS "void resize_convolutional_layer (\fBconvolutional_layer\fP * layer, int w, int h)"
+
+.PP
+Definition at line 370 of file convolutional_layer\&.c\&.
+.SS "void swap_binary (\fBconvolutional_layer\fP * l)"
+
+.PP
+Definition at line 15 of file convolutional_layer\&.c\&.
+.SS "void update_convolutional_layer (\fBconvolutional_layer\fP layer, \fBupdate_args\fP a)"
+
+.PP
+Definition at line 524 of file convolutional_layer\&.c\&.
+.SS "\fBimage\fP* visualize_convolutional_layer (\fBconvolutional_layer\fP layer, char * window, \fBimage\fP * prev_weights)"
+
+.PP
+Definition at line 594 of file convolutional_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

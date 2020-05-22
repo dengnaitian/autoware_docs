@@ -1,0 +1,137 @@
+.TH "sick_ldmrs_driver::SickLDMRS" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sick_ldmrs_driver::SickLDMRS \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sick_ldmrs_node\&.hpp>\fP
+.PP
+Inherits \fBapplication::BasicApplication\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickLDMRS\fP (\fBManager\fP *manager, boost::shared_ptr< diagnostic_updater::Updater > diagnostics)"
+.br
+.ti -1c
+.RI "virtual \fB~SickLDMRS\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "void \fBproduce_diagnostics\fP (diagnostic_updater::DiagnosticStatusWrapper &stat)"
+.br
+.ti -1c
+.RI "void \fBvalidate_config\fP (SickLDMRSDriverConfig &conf)"
+.br
+.ti -1c
+.RI "void \fBupdate_config\fP (SickLDMRSDriverConfig &new_config, uint32_t level=0)"
+.br
+.ti -1c
+.RI "void \fBpubObjects\fP (\fBdatatypes::ObjectList\fP &objects)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetData\fP (\fBBasicData\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBvalidate_flexres_resolution\fP (int &res)"
+.br
+.ti -1c
+.RI "void \fBvalidate_flexres_start_angle\fP (double &angle1, double &angle2)"
+.br
+.ti -1c
+.RI "bool \fBisUpsideDown\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintFlexResError\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBflexres_err_to_string\fP (const \fBUINT32\fP code) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "boost::shared_ptr< diagnostic_updater::Updater > \fBdiagnostics_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 65 of file sick_ldmrs_node\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "sick_ldmrs_driver::SickLDMRS::SickLDMRS (\fBManager\fP * manager, boost::shared_ptr< diagnostic_updater::Updater > diagnostics)"
+
+.PP
+Definition at line 62 of file sick_ldmrs_node\&.cpp\&.
+.SS "sick_ldmrs_driver::SickLDMRS::~SickLDMRS ()\fC [virtual]\fP"
+
+.PP
+Definition at line 87 of file sick_ldmrs_node\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string sick_ldmrs_driver::SickLDMRS::flexres_err_to_string (const \fBUINT32\fP code) const\fC [protected]\fP"
+
+.PP
+Definition at line 484 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::init (void)"
+
+.PP
+Definition at line 92 of file sick_ldmrs_node\&.cpp\&.
+.SS "bool sick_ldmrs_driver::SickLDMRS::isUpsideDown ()\fC [protected]\fP"
+
+.PP
+Definition at line 313 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::printFlexResError ()\fC [protected]\fP"
+
+.PP
+Definition at line 328 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::produce_diagnostics (diagnostic_updater::DiagnosticStatusWrapper & stat)"
+
+.PP
+Definition at line 102 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::pubObjects (\fBdatatypes::ObjectList\fP & objects)"
+
+.PP
+Definition at line 265 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::setData (\fBBasicData\fP & data)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBapplication::BasicApplication\fP\&.
+.PP
+Definition at line 117 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::update_config (SickLDMRSDriverConfig & new_config, uint32_t level = \fC0\fP)"
+
+.PP
+Definition at line 344 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::validate_config (SickLDMRSDriverConfig & conf)"
+
+.PP
+Definition at line 197 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::validate_flexres_resolution (int & res)\fC [protected]\fP"
+
+.PP
+Definition at line 235 of file sick_ldmrs_node\&.cpp\&.
+.SS "void sick_ldmrs_driver::SickLDMRS::validate_flexres_start_angle (double & angle1, double & angle2)\fC [protected]\fP"
+
+.PP
+Definition at line 256 of file sick_ldmrs_node\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "boost::shared_ptr<diagnostic_updater::Updater> sick_ldmrs_driver::SickLDMRS::diagnostics_\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file sick_ldmrs_node\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

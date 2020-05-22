@@ -1,0 +1,438 @@
+.TH "FFSteerControlNS::FFSteerControl" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FFSteerControlNS::FFSteerControl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ff_waypoint_follower_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFFSteerControl\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~FFSteerControl\fP ()"
+.br
+.ti -1c
+.RI "void \fBPlannerMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetTransformFromTF\fP (const std::string parent_frame, const std::string child_frame, tf::StampedTransform &\fBtransform\fP)"
+.br
+.ti -1c
+.RI "void \fBReadParamFromLaunchFile\fP (\fBPlannerHNS::CAR_BASIC_INFO\fP &\fBm_CarInfo\fP, \fBPlannerHNS::ControllerParams\fP &\fBm_ControlParams\fP)"
+.br
+.ti -1c
+.RI "void \fBdisplayFollowingInfo\fP (\fBPlannerHNS::WayPoint\fP &curr_pose, \fBPlannerHNS::WayPoint\fP &perp_pose, \fBPlannerHNS::WayPoint\fP &follow_pose)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBConvertBehaviorStateFromAutowareToPlannerH\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetInitPose\fP (const geometry_msgs::PoseWithCovarianceStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentVelocity\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetBehaviorState\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentTrajectory\fP (const autoware_msgs::LaneConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetOutsideControl\fP (const std_msgs::Int8 &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "timespec \fBm_Timer\fP"
+.br
+.ti -1c
+.RI "int \fBm_counter\fP"
+.br
+.ti -1c
+.RI "int \fBm_frequency\fP"
+.br
+.ti -1c
+.RI "int \fBm_bOutsideControl\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_InitPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbInitPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewTrajectory\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_FollowingTrajectory\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewBehaviorState\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_CurrentBehavior\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewVelocity\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::LocalPlannerH\fP \fBm_State\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_PlanningTimer\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_FollowPoint\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_PerpPoint\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_PrevStepTargetStatus\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_CurrVehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "\fBControlCommandParams\fP \fBm_CmdParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ControllerParams\fP \fBm_ControlParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBSimulationNS::TrajectoryFollower\fP \fBm_PredControl\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_VelocityAutoware\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_StatusAutoware\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuPose\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuVelocity\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_CurrPoseRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_FollowPointRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_VehicleCommand\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_ControlBoxOdom\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_VelocityRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_initialpose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_behavior_state\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_trajectory\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_OutsideControl\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 83 of file ff_waypoint_follower_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FFSteerControlNS::FFSteerControl::FFSteerControl ()"
+
+.PP
+Definition at line 30 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "FFSteerControlNS::FFSteerControl::~FFSteerControl ()\fC [virtual]\fP"
+
+.PP
+Definition at line 191 of file ff_waypoint_follower_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetBehaviorState (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 248 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 222 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetCurrentTrajectory (const autoware_msgs::LaneConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 254 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetCurrentVelocity (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 238 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetInitPose (const geometry_msgs::PoseWithCovarianceStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 206 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetOutsideControl (const std_msgs::Int8 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 199 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 293 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "\fBPlannerHNS::BehaviorState\fP FFSteerControlNS::FFSteerControl::ConvertBehaviorStateFromAutowareToPlannerH (const geometry_msgs::TwistStampedConstPtr & msg)"
+
+.PP
+Definition at line 375 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::displayFollowingInfo (\fBPlannerHNS::WayPoint\fP & curr_pose, \fBPlannerHNS::WayPoint\fP & perp_pose, \fBPlannerHNS::WayPoint\fP & follow_pose)"
+
+.PP
+Definition at line 329 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::GetTransformFromTF (const std::string parent_frame, const std::string child_frame, tf::StampedTransform & transform)"
+
+.PP
+Definition at line 310 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::PlannerMainLoop ()"
+
+.SS "Localization and \fBStatus\fP Reading Part "
+.PP
+.SS "Path Following Part "
+
+.PP
+Definition at line 423 of file ff_waypoint_follower_core\&.cpp\&.
+.SS "void FFSteerControlNS::FFSteerControl::ReadParamFromLaunchFile (\fBPlannerHNS::CAR_BASIC_INFO\fP & m_CarInfo, \fBPlannerHNS::ControllerParams\fP & m_ControlParams)"
+
+.PP
+Definition at line 154 of file ff_waypoint_follower_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool FFSteerControlNS::FFSteerControl::bInitPos\fC [protected]\fP"
+
+.PP
+Definition at line 98 of file ff_waypoint_follower_core\&.h\&.
+.SS "bool FFSteerControlNS::FFSteerControl::bNewBehaviorState\fC [protected]\fP"
+
+.PP
+Definition at line 104 of file ff_waypoint_follower_core\&.h\&.
+.SS "bool FFSteerControlNS::FFSteerControl::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file ff_waypoint_follower_core\&.h\&.
+.SS "bool FFSteerControlNS::FFSteerControl::bNewTrajectory\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file ff_waypoint_follower_core\&.h\&.
+.SS "bool FFSteerControlNS::FFSteerControl::bNewVelocity\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file ff_waypoint_follower_core\&.h\&.
+.SS "bool FFSteerControlNS::FFSteerControl::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file ff_waypoint_follower_core\&.h\&.
+.SS "int FFSteerControlNS::FFSteerControl::m_bOutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP FFSteerControlNS::FFSteerControl::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBControlCommandParams\fP FFSteerControlNS::FFSteerControl::m_CmdParams\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::ControllerParams\fP FFSteerControlNS::FFSteerControl::m_ControlParams\fC [protected]\fP"
+
+.PP
+Definition at line 122 of file ff_waypoint_follower_core\&.h\&.
+.SS "int FFSteerControlNS::FFSteerControl::m_counter\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP FFSteerControlNS::FFSteerControl::m_CurrentBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP FFSteerControlNS::FFSteerControl::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 99 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP FFSteerControlNS::FFSteerControl::m_CurrVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 115 of file ff_waypoint_follower_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> FFSteerControlNS::FFSteerControl::m_FollowingTrajectory\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP FFSteerControlNS::FFSteerControl::m_FollowPoint\fC [protected]\fP"
+
+.PP
+Definition at line 111 of file ff_waypoint_follower_core\&.h\&.
+.SS "int FFSteerControlNS::FFSteerControl::m_frequency\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP FFSteerControlNS::FFSteerControl::m_InitPos\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file ff_waypoint_follower_core\&.h\&.
+.SS "geometry_msgs::Pose FFSteerControlNS::FFSteerControl::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP FFSteerControlNS::FFSteerControl::m_PerpPoint\fC [protected]\fP"
+
+.PP
+Definition at line 112 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP FFSteerControlNS::FFSteerControl::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file ff_waypoint_follower_core\&.h\&.
+.SS "struct timespec FFSteerControlNS::FFSteerControl::m_PlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBSimulationNS::TrajectoryFollower\fP FFSteerControlNS::FFSteerControl::m_PredControl\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP FFSteerControlNS::FFSteerControl::m_PrevStepTargetStatus\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file ff_waypoint_follower_core\&.h\&.
+.SS "\fBPlannerHNS::LocalPlannerH\fP FFSteerControlNS::FFSteerControl::m_State\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file ff_waypoint_follower_core\&.h\&.
+.SS "timespec FFSteerControlNS::FFSteerControl::m_Timer\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::NodeHandle FFSteerControlNS::FFSteerControl::nh\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_ControlBoxOdom\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_CurrPoseRviz\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_FollowPointRviz\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_SimuPose\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_SimuVelocity\fC [protected]\fP"
+
+.PP
+Definition at line 132 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_StatusAutoware\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_VehicleCommand\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_VelocityAutoware\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Publisher FFSteerControlNS::FFSteerControl::pub_VelocityRviz\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_behavior_state\fC [protected]\fP"
+
+.PP
+Definition at line 143 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 141 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_current_trajectory\fC [protected]\fP"
+
+.PP
+Definition at line 144 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 142 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_initialpose\fC [protected]\fP"
+
+.PP
+Definition at line 140 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_OutsideControl\fC [protected]\fP"
+
+.PP
+Definition at line 147 of file ff_waypoint_follower_core\&.h\&.
+.SS "ros::Subscriber FFSteerControlNS::FFSteerControl::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 146 of file ff_waypoint_follower_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

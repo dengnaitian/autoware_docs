@@ -1,0 +1,236 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/kitti_pkg/kitti_player/src/kitti_player.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/kitti_pkg/kitti_player/src/kitti_player.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <boost/algorithm/string\&.hpp>\fP
+.br
+\fC#include <boost/format\&.hpp>\fP
+.br
+\fC#include <boost/lexical_cast\&.hpp>\fP
+.br
+\fC#include <boost/program_options\&.hpp>\fP
+.br
+\fC#include <boost/progress\&.hpp>\fP
+.br
+\fC#include <boost/tokenizer\&.hpp>\fP
+.br
+\fC#include <cv_bridge/cv_bridge\&.h>\fP
+.br
+\fC#include <image_transport/image_transport\&.h>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl_ros/point_cloud\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <sensor_msgs/distortion_models\&.h>\fP
+.br
+\fC#include <sensor_msgs/image_encodings\&.h>\fP
+.br
+\fC#include <sensor_msgs/Imu\&.h>\fP
+.br
+\fC#include <sensor_msgs/NavSatFix\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <stereo_msgs/DisparityImage\&.h>\fP
+.br
+\fC#include <tf/LinearMath/Transform\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBkitti_player_options\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBpublish_velodyne\fP (ros::Publisher &\fBpub\fP, string infile, std_msgs::Header *header)"
+.br
+.RI "\fIpublish_velodyne \fP"
+.ti -1c
+.RI "int \fBgetCalibration\fP (string dir_root, string camera_name, double *K, std::vector< double > &D, double *R, double *P)"
+.br
+.RI "\fIgetCalibration \fP"
+.ti -1c
+.RI "int \fBgetGPS\fP (string filename, sensor_msgs::NavSatFix *ros_msgGpsFix, std_msgs::Header *header)"
+.br
+.ti -1c
+.RI "int \fBgetIMU\fP (string filename, sensor_msgs::Imu *ros_msgImu, std_msgs::Header *header)"
+.br
+.ti -1c
+.RI "std_msgs::Header \fBparseTime\fP (string timestamp)"
+.br
+.RI "\fIparseTime \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.RI "\fIgetLaneDetection \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int getCalibration (string dir_root, string camera_name, double * K, std::vector< double > & D, double * R, double * P)"
+
+.PP
+getCalibration 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir_root\fP 
+.br
+\fIcamera_name\fP 
+.br
+\fIK\fP double K[9] - Calibration Matrix 
+.br
+\fID\fP double D[5] - Distortion Coefficients 
+.br
+\fIR\fP double R[9] - Rectification Matrix 
+.br
+\fIP\fP double P[12] - Projection Matrix Rectified (u,v,w) = P * R * (x,y,z,q) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1: file found, 0: file not found
+.RE
+.PP
+from: http://kitti.is.tue.mpg.de/kitti/devkit_raw_data.zip calib_cam_to_cam\&.txt: Camera-to-camera calibration
+.PP
+.IP "\(bu" 2
+S_xx: 1x2 size of image xx before rectification
+.IP "\(bu" 2
+K_xx: 3x3 calibration matrix of camera xx before rectification
+.IP "\(bu" 2
+D_xx: 1x5 distortion vector of camera xx before rectification
+.IP "\(bu" 2
+R_xx: 3x3 rotation matrix of camera xx (extrinsic)
+.IP "\(bu" 2
+T_xx: 3x1 translation vector of camera xx (extrinsic)
+.IP "\(bu" 2
+S_rect_xx: 1x2 size of image xx after rectification
+.IP "\(bu" 2
+R_rect_xx: 3x3 rectifying rotation to make image planes co-planar
+.IP "\(bu" 2
+P_rect_xx: 3x4 projection matrix after rectification 
+.PP
+
+.PP
+Definition at line 153 of file kitti_player\&.cpp\&.
+.SS "int getGPS (string filename, sensor_msgs::NavSatFix * ros_msgGpsFix, std_msgs::Header * header)"
+
+.PP
+Definition at line 230 of file kitti_player\&.cpp\&.
+.SS "int getIMU (string filename, sensor_msgs::Imu * ros_msgImu, std_msgs::Header * header)"
+
+.PP
+Definition at line 270 of file kitti_player\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+getLaneDetection 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinfile\fP 
+.br
+\fImsg_lines\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+main Kitti_player, a player for KITTI raw datasets 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargc\fP 
+.br
+\fIargv\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 and ros::shutdown at the end of the dataset, -1 if errors
+.RE
+.PP
+Allowed options: -h [ --help ] help message -d [ --directory ] arg \fIrequired\fP - path to the kitti dataset Directory -f [ --frequency ] arg (=1) set replay Frequency -a [ --all ] [=arg(=1)] (=0) replay All data -v [ --velodyne ] [=arg(=1)] (=0) replay Velodyne data -g [ --gps ] [=arg(=1)] (=0) replay Gps data -i [ --imu ] [=arg(=1)] (=0) replay Imu data -G [ --grayscale ] [=arg(=1)] (=0) replay Stereo Grayscale images -C [ --color ] [=arg(=1)] (=0) replay Stereo Color images -V [ --viewer ] [=arg(=1)] (=0) enable image viewer -T [ --timestamps ] [=arg(=1)] (=0) use KITTI timestamps -s [ --stereoDisp ] [=arg(=1)] (=0) use pre-calculated disparities -D [ --viewDisp ] [=arg(=1)] (=0) view loaded disparity images -l [ --laneDetect ] [=arg(=1)] (=0) send extra lanes message -F [ --frame ] [=arg(=0)] (=0) start playing at frame \&.\&.\&.
+.PP
+Datasets can be downloaded from: http://www.cvlibs.net/datasets/kitti/raw_data.php This sets the logger level; use this to disable all ROS prints
+.PP
+EXTRA 01\&. \fBLane\fP detections 
+.PP
+Definition at line 486 of file kitti_player\&.cpp\&.
+.SS "std_msgs::Header parseTime (string timestamp)"
+
+.PP
+parseTime 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItimestamp\fP in Epoch 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std_msgs::Header with input timpestamp converted from file input
+.RE
+.PP
+Epoch time conversion http://www.epochconverter.com/programming/functions-c.php 
+.PP
+Definition at line 331 of file kitti_player\&.cpp\&.
+.SS "int publish_velodyne (ros::Publisher & pub, string infile, std_msgs::Header * header)"
+
+.PP
+publish_velodyne 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpub\fP The ROS publisher as reference 
+.br
+\fIinfile\fP file with data to publish 
+.br
+\fIheader\fP Header to use to publish the message 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 if file is correctly readed, 0 otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 94 of file kitti_player\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

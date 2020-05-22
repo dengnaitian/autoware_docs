@@ -1,0 +1,97 @@
+.TH "UtilityHNS::AisanRoadEdgeFileReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::AisanRoadEdgeFileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAisanRoadEdge\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAisanRoadEdgeFileReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fBAisanRoadEdgeFileReader\fP (const vector_map_msgs::RoadEdgeArray &_roadEdges)"
+.br
+.ti -1c
+.RI "\fB~AisanRoadEdgeFileReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBAisanRoadEdge\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBAisanRoadEdge\fP > &data_list)"
+.br
+.ti -1c
+.RI "void \fBParseNextLine\fP (const vector_map_msgs::RoadEdge &_rec, \fBAisanRoadEdge\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBAisanRoadEdge\fP * \fBGetDataRowById\fP (int _lnid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBAisanRoadEdge\fP > \fBm_data_list\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 568 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdgeFileReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 579 of file DataRW\&.h\&.
+.SS "UtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdgeFileReader (const vector_map_msgs::RoadEdgeArray & _roadEdges)"
+
+.PP
+Definition at line 1756 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::AisanRoadEdgeFileReader::~AisanRoadEdgeFileReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 584 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAisanRoadEdgeFileReader::AisanRoadEdge\fP * UtilityHNS::AisanRoadEdgeFileReader::GetDataRowById (int _lnid)"
+
+.PP
+Definition at line 1792 of file DataRW\&.cpp\&.
+.SS "void UtilityHNS::AisanRoadEdgeFileReader::ParseNextLine (const vector_map_msgs::RoadEdge & _rec, \fBAisanRoadEdge\fP & data)"
+
+.PP
+Definition at line 1785 of file DataRW\&.cpp\&.
+.SS "int UtilityHNS::AisanRoadEdgeFileReader::ReadAllData (std::vector< \fBAisanRoadEdge\fP > & data_list)"
+
+.PP
+Definition at line 1834 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::AisanRoadEdgeFileReader::ReadNextLine (\fBAisanRoadEdge\fP & data)"
+
+.PP
+Definition at line 1815 of file DataRW\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBAisanRoadEdge\fP> UtilityHNS::AisanRoadEdgeFileReader::m_data_list"
+
+.PP
+Definition at line 590 of file DataRW\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

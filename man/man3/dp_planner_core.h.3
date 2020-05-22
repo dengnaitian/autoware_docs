@@ -1,0 +1,127 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/dp_planner/include/dp_planner_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/dp_planner/include/dp_planner_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <geometry_msgs/Vector3Stamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseArray\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <nav_msgs/OccupancyGrid\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <std_msgs/Int8\&.h>\fP
+.br
+\fC#include <std_msgs/Int32\&.h>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+\fC#include 'autoware_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'autoware_can_msgs/CANInfo\&.h'\fP
+.br
+\fC#include 'autoware_msgs/CloudCluster\&.h'\fP
+.br
+\fC#include 'autoware_msgs/CloudClusterArray\&.h'\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBox\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBoxArray\&.h>\fP
+.br
+\fC#include 'op_planner/RoadNetwork\&.h'\fP
+.br
+\fC#include 'op_planner/MappingHelpers\&.h'\fP
+.br
+\fC#include 'op_planner/PlanningHelpers\&.h'\fP
+.br
+\fC#include 'op_planner/LocalPlannerH\&.h'\fP
+.br
+\fC#include 'ROSHelpers\&.h'\fP
+.br
+\fC#include 'op_simu/SimpleTracker\&.h'\fP
+.br
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include <cv_bridge/cv_bridge\&.h>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/objdetect/objdetect\&.hpp>\fP
+.br
+\fC#include <opencv/highgui\&.h>\fP
+.br
+\fC#include <opencv2/imgproc/imgproc\&.hpp>\fP
+.br
+\fC#include <opencv2/contrib/contrib\&.hpp>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPlannerXNS::PlannerX\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBPlannerXNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIMU_OBSTACLE_WIDTH\fP   3\&.5"
+.br
+.ti -1c
+.RI "#define \fBSIMU_OBSTACLE_HEIGHT\fP   0\&.5"
+.br
+.ti -1c
+.RI "#define \fBSIMU_OBSTACLE_LENGTH\fP   2\&.0"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPlannerXNS::SIGNAL_TYPE\fP { \fBPlannerXNS::SIMULATION_SIGNAL\fP, \fBPlannerXNS::ROBOT_SIGNAL\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerXNS::MAP_SOURCE_TYPE\fP { \fBPlannerXNS::MAP_AUTOWARE\fP, \fBPlannerXNS::MAP_FOLDER\fP, \fBPlannerXNS::MAP_KML_FILE\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SIMU_OBSTACLE_HEIGHT   0\&.5"
+
+.PP
+Definition at line 68 of file dp_planner_core\&.h\&.
+.SS "#define SIMU_OBSTACLE_LENGTH   2\&.0"
+
+.PP
+Definition at line 69 of file dp_planner_core\&.h\&.
+.SS "#define SIMU_OBSTACLE_WIDTH   3\&.5"
+
+.PP
+Definition at line 67 of file dp_planner_core\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,114 @@
+.TH "datatypes::FieldDescription" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::FieldDescription \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FieldDescription\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.PP
+Inherited by \fBdatatypes::FieldRadial\fP, \fBdatatypes::FieldRectangle\fP, and \fBdatatypes::FieldSegmented\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFieldType\fP { \fBUndefined\fP = 0, \fBSegmented\fP = 1, \fBRectangle\fP = 2, \fBRadial\fP = 3, \fBDynamic\fP = 4 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFieldDescription\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcomputePolygon\fP ()=0"
+.br
+.ti -1c
+.RI "const \fBPolygon2D\fP & \fBgetFieldAsPolygon\fP () const "
+.br
+.ti -1c
+.RI "\fBFieldType\fP \fBgetFieldType\fP () const "
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBfieldTypeToString\fP (\fBFieldType\fP type)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBFieldType\fP \fBm_fieldType\fP"
+.br
+.ti -1c
+.RI "\fBPolygon2D\fP \fBm_fieldPolygon\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 21 of file FieldDescription\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::FieldDescription::FieldType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUndefined \fP\fP
+.TP
+\fB\fISegmented \fP\fP
+.TP
+\fB\fIRectangle \fP\fP
+.TP
+\fB\fIRadial \fP\fP
+.TP
+\fB\fIDynamic \fP\fP
+.PP
+Definition at line 24 of file FieldDescription\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::FieldDescription::FieldDescription ()"
+
+.PP
+Definition at line 14 of file FieldDescription\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void datatypes::FieldDescription::computePolygon ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBdatatypes::FieldRadial\fP, \fBdatatypes::FieldRectangle\fP, and \fBdatatypes::FieldSegmented\fP\&.
+.SS "std::string datatypes::FieldDescription::fieldTypeToString (\fBFieldType\fP type)\fC [static]\fP"
+
+.PP
+Definition at line 23 of file FieldDescription\&.cpp\&.
+.SS "const \fBPolygon2D\fP& datatypes::FieldDescription::getFieldAsPolygon () const\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file FieldDescription\&.hpp\&.
+.SS "\fBFieldType\fP datatypes::FieldDescription::getFieldType () const\fC [inline]\fP"
+
+.PP
+Definition at line 42 of file FieldDescription\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPolygon2D\fP datatypes::FieldDescription::m_fieldPolygon\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file FieldDescription\&.hpp\&.
+.SS "\fBFieldType\fP datatypes::FieldDescription::m_fieldType\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file FieldDescription\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

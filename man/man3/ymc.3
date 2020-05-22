@@ -1,0 +1,55 @@
+.TH "ymc" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ymc \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCanData\fP (unsigned char *\fBdata\fP, unsigned char d1, unsigned char d2, uint16_t d3, int16_t d4, unsigned char d5, unsigned char d6)"
+.br
+.ti -1c
+.RI "double \fBtranslateCanData\fP (const int id, const std::vector< std::string > &\fBdata\fP, int *mode)"
+.br
+.ti -1c
+.RI "void \fBreverse_byteorder_memcpy\fP (unsigned char *target, int16_t *source, size_t size)"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBsplitString\fP (const std::string &s)"
+.br
+.ti -1c
+.RI "int \fBkbhit\fP ()"
+.br
+.ti -1c
+.RI "double \fBcomputeTargetSteeringAngleDegree\fP (double angular_z, double velocity_mps, double wheel_base)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "double ymc::computeTargetSteeringAngleDegree (double angular_z, double velocity_mps, double wheel_base)"
+
+.PP
+Definition at line 88 of file g30esli_interface_util\&.h\&.
+.SS "int ymc::kbhit ()"
+
+.PP
+Definition at line 61 of file g30esli_interface_util\&.h\&.
+.SS "void ymc::reverse_byteorder_memcpy (unsigned char * target, int16_t * source, size_t size)"
+
+.PP
+Definition at line 32 of file g30esli_interface_util\&.h\&.
+.SS "void ymc::setCanData (unsigned char * data, unsigned char d1, unsigned char d2, uint16_t d3, int16_t d4, unsigned char d5, unsigned char d6)"
+
+.SS "std::vector<std::string> ymc::splitString (const std::string & s)"
+
+.PP
+Definition at line 42 of file g30esli_interface_util\&.h\&.
+.SS "double ymc::translateCanData (const int id, const std::vector< std::string > & data, int * mode)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

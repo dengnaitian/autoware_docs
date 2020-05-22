@@ -1,0 +1,72 @@
+.TH "PlannerXNS::PolygonGenerator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerXNS::PolygonGenerator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolygonGenerator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygonGenerator\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PolygonGenerator\fP ()"
+.br
+.ti -1c
+.RI "void \fBCheckConvexPoligon\fP (std::vector< \fBWayPoint\fP > &polygon)"
+.br
+.ti -1c
+.RI "\fBGPSPoint\fP \fBCalculateCentroid\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ > &cluster)"
+.br
+.ti -1c
+.RI "std::vector< \fBQuarterView\fP > \fBCreateQuarterViews\fP (const int &nResolution)"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBEstimateClusterPolygon\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ > &cluster, const \fBGPSPoint\fP &original_centroid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGPSPoint\fP \fBm_Centroid\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 97 of file PolygonGenerator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerXNS::PolygonGenerator::PolygonGenerator ()"
+
+.PP
+Definition at line 14 of file PolygonGenerator\&.cpp\&.
+.SS "virtual PlannerXNS::PolygonGenerator::~PolygonGenerator ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPlannerHNS::GPSPoint\fP PlannerXNS::PolygonGenerator::CalculateCentroid (const \fBpcl::PointCloud\fP< pcl::PointXYZ > & cluster)"
+
+.PP
+Definition at line 23 of file PolygonGenerator\&.cpp\&.
+.SS "void PlannerXNS::PolygonGenerator::CheckConvexPoligon (std::vector< \fBWayPoint\fP > & polygon)"
+
+.SS "std::vector<\fBQuarterView\fP> PlannerXNS::PolygonGenerator::CreateQuarterViews (const int & nResolution)"
+
+.SS "std::vector<\fBGPSPoint\fP> PlannerXNS::PolygonGenerator::EstimateClusterPolygon (const \fBpcl::PointCloud\fP< pcl::PointXYZ > & cluster, const \fBGPSPoint\fP & original_centroid)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGPSPoint\fP PlannerXNS::PolygonGenerator::m_Centroid"
+
+.PP
+Definition at line 102 of file PolygonGenerator\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

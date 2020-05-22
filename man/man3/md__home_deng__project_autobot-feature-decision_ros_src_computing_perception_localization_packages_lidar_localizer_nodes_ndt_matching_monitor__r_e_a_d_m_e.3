@@ -1,0 +1,37 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_localization_packages_lidar_localizer_nodes_ndt_matching_monitor__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_localization_packages_lidar_localizer_nodes_ndt_matching_monitor__r_e_a_d_m_e \- ndt_matching_monitor 
+Simple health monitoring and reinitialization for \fCndt_matching\fP localization node of \fCAutoware\fP
+.PP
+.SS "Introduction"
+.PP
+\fCndt_matching\fP publishes the current robot/vehicle position in the \fC/ndt_pose\fP topic and statistics in the \fC/ndt_stat\fP topic, such as score, execution time\&.
+.PP
+The score is the result of PCL's function \fCgetFitnessScore()\fP which measures how well an input point cloud matches the reference pointcloud, in other words the alignment error between the input scan and the reference map\&. This value can be used to infer the reliability of NDT\&.
+.PP
+\fCndt_matching_monitor\fP subscribes to \fC/ndt_stat\fP and \fC/ndt_pose\fP topics, and keeps a running average filter on the score value\&. When the filtered score is beyond some thresholds, \fCndt_matching_monitor\fP will issue the \fC/initialpose\fP topic (same as rviz) using the last known 'healty' pose to force \fC/ndt_matching\fP to initialize\&.
+.PP
+If a GNSS device is available, an automatic reinitialization will be triggered with it\&. \fCnmea2pose\fP node is required\&. Otherwise, a halt in localization will be started\&. To reset the halted status, use \fIInitial Pose\fP tool in RVIZ\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:\\ \fCroslaunch lidar_localizer ndt_matching_monitor\&.launch\fP
+.IP "\(bu" 2
+From Runtime manager:\\ Computing Tab -> lidar_localizer -> ndt_matching_monitor
+.PP
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCiteration_threshold_warn\fP*integer* Number of maximum iterations before notifying a warning\&. Default 10\&. \fCiteration_threshold_stop\fP*integer*Number of maximum iterations before notifying a warning\&. Default 32\&. \fCscore_delta_threshold\fP*double*Difference between consecutive scores to consider a safe match\&. Default 14\&.0 \fCmin_stable_samples\fP*integer*Minimum number of samples to start monitoring after a reset\&. Default 30 \fCfatal_time_threshold\fP*double*When no GNSS is available a prediction based on the previous samples will be employed\&. If reinitialization fails the algorithm will stop after n secs\&. Default 2 
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fCndt_stat\fP\fCautoware_msgs/ndt_stat\fPObtain NDT statistics: \fCscore\fP, \fCiterations\fP\&. \fCndt_pose\fP\fCgeometry_msgs/PoseStamped\fPObtain pose as calculated by \fCndt_matching_node\fP\&. \fCinitialpose\fP\fCgeometry_msgs/PoseWithCovarianceStamped\fPObtain pose from RVIZ to reinitialize in case of an unrecoverable error\&. \fCgnss_pose\fP\fCgeometry_msgs/Pose\fPIf a GNSS device is available it will be used to automatically try to reset NDT, requires \fCnmea2tfpose\fP\&. 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fCinitialpose\fP\fCgeometry_msgs/PoseWithCovarianceStamped\fPUsed to cause a reset or halt in \fCndt_matching\fP\&. \fC/ndt_monitor/ndt_info_text\fP\fCjsk_rviz_plugins/OverlayText\fPPublishes the text to be displayed in RVIZ with the help of \fCOverlayText\fP display type\&. \fC/ndt_monitor/ndt_status\fP\fCstd_msgs/String\fPPublishes the text for its later use in safety decision maker\&. 
+.SS "Contributing"
+.PP
+\fCndt_matching_monitor\fP is far from complete\&. For instance, the last known 'healthy' pose stated above is just the last \fC/ndt_pose\fP value\&. A Kalman or particle filter might be used to improve this node\&. 

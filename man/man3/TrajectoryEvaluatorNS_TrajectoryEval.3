@@ -1,0 +1,462 @@
+.TH "TrajectoryEvaluatorNS::TrajectoryEval" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TrajectoryEvaluatorNS::TrajectoryEval \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_trajectory_evaluator_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrajectoryEval\fP ()"
+.br
+.ti -1c
+.RI "\fB~TrajectoryEval\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetGlobalPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetLocalPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetPredictedObjects\fP (const autoware_msgs::DetectedObjectArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetBehaviorState\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetLeftLane\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRightLane\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP (ros::NodeHandle &_nh)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::TrajectoryDynamicCosts\fP \fBm_TrajectoryCostsCalculator\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::TrajectoryDynamicCosts\fP \fBm_NeighborLaneCostsCalculator\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bUseMoveingObjectsPrediction\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_temp_path\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPaths\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPathsToUse\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPathSections\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBt_centerTrajectorySmoothed\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayGlobalPath\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayGlobalPathToUse\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GeneratedRollOuts\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > > \fBm_GeneratedRollOutsVec\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_lane_changing_timer\fP"
+.br
+.ti -1c
+.RI "int \fBpreGlobalPathIndex\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBbRollOuts\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_PredictedObjects\fP"
+.br
+.ti -1c
+.RI "bool \fBbPredictedObjects\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_PlanningTimer\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_CurrentBehavior\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_CollisionsDummy\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_CollisionsActual\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_CollisionPointsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalWeightedTrajectoriesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalWeightedTrajectories\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrajectoryCost\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SafetyBorderRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_GlobalPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_LocalPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_predicted_objects\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_behavior\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_left_lane\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_right_lane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_left_lane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_right_lane\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 39 of file op_trajectory_evaluator_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TrajectoryEvaluatorNS::TrajectoryEval::TrajectoryEval ()"
+
+.PP
+Definition at line 24 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "TrajectoryEvaluatorNS::TrajectoryEval::~TrajectoryEval ()"
+
+.PP
+Definition at line 72 of file op_trajectory_evaluator_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetBehaviorState (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 298 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 141 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetGlobalPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetLeftLane (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 429 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetLocalPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 194 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetPredictedObjects (const autoware_msgs::DetectedObjectArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 278 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetRightLane (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 438 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::MainLoop ()"
+
+.PP
+Definition at line 303 of file op_trajectory_evaluator_core\&.cpp\&.
+.SS "void TrajectoryEvaluatorNS::TrajectoryEval::UpdatePlanningParams (ros::NodeHandle & _nh)\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_trajectory_evaluator_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bPredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bRollOuts\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bWayGlobalPath\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::bWayGlobalPathToUse\fC [protected]\fP"
+
+.PP
+Definition at line 61 of file op_trajectory_evaluator_core\&.h\&.
+.SS "bool TrajectoryEvaluatorNS::TrajectoryEval::m_bUseMoveingObjectsPrediction\fC [protected]\fP"
+
+.PP
+Definition at line 45 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP TrajectoryEvaluatorNS::TrajectoryEval::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file op_trajectory_evaluator_core\&.h\&.
+.SS "visualization_msgs::MarkerArray TrajectoryEvaluatorNS::TrajectoryEval::m_CollisionsActual\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_trajectory_evaluator_core\&.h\&.
+.SS "visualization_msgs::MarkerArray TrajectoryEvaluatorNS::TrajectoryEval::m_CollisionsDummy\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP TrajectoryEvaluatorNS::TrajectoryEval::m_CurrentBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP TrajectoryEvaluatorNS::TrajectoryEval::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryEvaluatorNS::TrajectoryEval::m_GeneratedRollOuts\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > > TrajectoryEvaluatorNS::TrajectoryEval::m_GeneratedRollOutsVec\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryEvaluatorNS::TrajectoryEval::m_GlobalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryEvaluatorNS::TrajectoryEval::m_GlobalPathSections\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > TrajectoryEvaluatorNS::TrajectoryEval::m_GlobalPathsToUse\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file op_trajectory_evaluator_core\&.h\&.
+.SS "timespec TrajectoryEvaluatorNS::TrajectoryEval::m_lane_changing_timer\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryEvaluatorNS::TrajectoryEval::m_left_lane\fC [protected]\fP"
+
+.PP
+Definition at line 107 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<std::string> TrajectoryEvaluatorNS::TrajectoryEval::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::TrajectoryDynamicCosts\fP TrajectoryEvaluatorNS::TrajectoryEval::m_NeighborLaneCostsCalculator\fC [protected]\fP"
+
+.PP
+Definition at line 44 of file op_trajectory_evaluator_core\&.h\&.
+.SS "geometry_msgs::Pose TrajectoryEvaluatorNS::TrajectoryEval::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP TrajectoryEvaluatorNS::TrajectoryEval::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_trajectory_evaluator_core\&.h\&.
+.SS "struct timespec TrajectoryEvaluatorNS::TrajectoryEval::m_PlanningTimer\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> TrajectoryEvaluatorNS::TrajectoryEval::m_PredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryEvaluatorNS::TrajectoryEval::m_right_lane\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryEvaluatorNS::TrajectoryEval::m_temp_path\fC [protected]\fP"
+
+.PP
+Definition at line 55 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::TrajectoryDynamicCosts\fP TrajectoryEvaluatorNS::TrajectoryEval::m_TrajectoryCostsCalculator\fC [protected]\fP"
+
+.PP
+Definition at line 43 of file op_trajectory_evaluator_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP TrajectoryEvaluatorNS::TrajectoryEval::m_VehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::NodeHandle TrajectoryEvaluatorNS::TrajectoryEval::nh\fC [protected]\fP"
+
+.PP
+Definition at line 86 of file op_trajectory_evaluator_core\&.h\&.
+.SS "int TrajectoryEvaluatorNS::TrajectoryEval::preGlobalPathIndex = 0\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Publisher TrajectoryEvaluatorNS::TrajectoryEval::pub_CollisionPointsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Publisher TrajectoryEvaluatorNS::TrajectoryEval::pub_LocalWeightedTrajectories\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Publisher TrajectoryEvaluatorNS::TrajectoryEval::pub_LocalWeightedTrajectoriesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Publisher TrajectoryEvaluatorNS::TrajectoryEval::pub_SafetyBorderRviz\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Publisher TrajectoryEvaluatorNS::TrajectoryEval::pub_TrajectoryCost\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 99 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_current_behavior\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 96 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_GlobalPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_left_lane\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_LocalPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_predicted_objects\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_right_lane\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file op_trajectory_evaluator_core\&.h\&.
+.SS "ros::Subscriber TrajectoryEvaluatorNS::TrajectoryEval::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 98 of file op_trajectory_evaluator_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> TrajectoryEvaluatorNS::TrajectoryEval::t_centerTrajectorySmoothed\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file op_trajectory_evaluator_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

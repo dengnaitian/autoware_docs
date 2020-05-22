@@ -1,0 +1,396 @@
+.TH "datatypes::EvalCase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::EvalCase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EvalCase\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBEvaluationStrategy\fP { \fBBLANKING\fP = 0, \fBPIXEL\fP = 1, \fBCONTOUR\fP = 2, \fBIO_MAPPING\fP = 3, \fBFOCALPOSITION\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBInputState\fP { \fBINPUT_INACTIVE\fP = 0, \fBINPUT_LOW_ACTIVE\fP = 1, \fBINPUT_HIGH_ACTIVE\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBManipulationPrevention\fP { \fBECS_INACTIVE\fP = 0, \fBECS_ACTIVE\fP = 1 }
+.RI "\fIManipulation prevention\&. If active, shadowing of field parts may trigger an event\&. \fP""
+.br
+.ti -1c
+.RI "enum \fBFilterType\fP { \fBUNFILTERED\fP = 0 }
+.RI "\fIkind of filter which is connected to evaluation case \fP""
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvalCase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~EvalCase\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetBlankingSize\fP () const "
+.br
+.ti -1c
+.RI "const std::string & \fBgetCaseName\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetCaseNumber\fP () const "
+.br
+.ti -1c
+.RI "const std::string & \fBgetComment\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetFieldNumber\fP () const "
+.br
+.ti -1c
+.RI "\fBFilterType\fP \fBgetFilterType\fP () const "
+.br
+.ti -1c
+.RI "const \fBUINT8\fP \fBgetLogicalInputState_as_UINT8\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetMaxRadialCorridor\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetMinFieldExp\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetOutputNumber\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetResponseTime\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetResponseTimeExtended\fP () const "
+.br
+.ti -1c
+.RI "\fBEvaluationStrategy\fP \fBgetStrategy\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetVersionNumberIntern\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisDistDependent\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisResultNegation\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetBlankingSize\fP (double blankingSize)"
+.br
+.ti -1c
+.RI "void \fBsetCaseName\fP (const std::string &caseName)"
+.br
+.ti -1c
+.RI "void \fBsetCaseNumber\fP (\fBUINT8\fP caseNumber)"
+.br
+.ti -1c
+.RI "void \fBsetComment\fP (const std::string &comment)"
+.br
+.ti -1c
+.RI "void \fBsetDistDependent\fP (bool distDependent)"
+.br
+.ti -1c
+.RI "bool \fBgetDistDependent\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetFieldNumber\fP (\fBUINT16\fP fieldNumber)"
+.br
+.ti -1c
+.RI "void \fBsetFilterType\fP (\fBFilterType\fP filterType)"
+.br
+.ti -1c
+.RI "void \fBsetMaxRadialCorridor\fP (double maxRadialCorridor)"
+.br
+.ti -1c
+.RI "void \fBsetMinFieldExp\fP (double minFieldExp)"
+.br
+.ti -1c
+.RI "void \fBsetOutputNumber\fP (\fBUINT8\fP outputNumber)"
+.br
+.ti -1c
+.RI "void \fBsetResponseTime\fP (\fBUINT32\fP responseTime)"
+.br
+.ti -1c
+.RI "void \fBsetResponseTimeExtended\fP (\fBUINT32\fP responseTimeExtended)"
+.br
+.ti -1c
+.RI "void \fBsetResultNegation\fP (bool resultNegation)"
+.br
+.ti -1c
+.RI "bool \fBgetResultNegation\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStrategy\fP (\fBEvaluationStrategy\fP strategy)"
+.br
+.ti -1c
+.RI "void \fBsetVersionNumber\fP (\fBUINT16\fP versionNumber)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetVersionNumber\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLogicalInputState_from_UINT8\fP (\fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBManipulationPrevention\fP \fBgetManipulationPrevention\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetManipulationPrevention\fP (\fBManipulationPrevention\fP manPrev)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBstrategyToString\fP (\fBEvaluationStrategy\fP strategy)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file EvalCase\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::EvalCase::EvaluationStrategy\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBLANKING \fP\fP
+.TP
+\fB\fIPIXEL \fP\fP
+.TP
+\fB\fICONTOUR \fP\fP
+.TP
+\fB\fIIO_MAPPING \fP\fP
+.TP
+\fB\fIFOCALPOSITION \fP\fP
+.PP
+Definition at line 23 of file EvalCase\&.hpp\&.
+.SS "enum \fBdatatypes::EvalCase::FilterType\fP"
+
+.PP
+kind of filter which is connected to evaluation case 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNFILTERED \fP\fP
+.PP
+Definition at line 65 of file EvalCase\&.hpp\&.
+.SS "enum \fBdatatypes::EvalCase::InputState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIINPUT_INACTIVE \fP\fP
+input is not relevant for this evaluation case 
+.TP
+\fB\fIINPUT_LOW_ACTIVE \fP\fP
+.TP
+\fB\fIINPUT_HIGH_ACTIVE \fP\fP
+.PP
+Definition at line 50 of file EvalCase\&.hpp\&.
+.SS "enum \fBdatatypes::EvalCase::ManipulationPrevention\fP"
+
+.PP
+Manipulation prevention\&. If active, shadowing of field parts may trigger an event\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIECS_INACTIVE \fP\fP
+.TP
+\fB\fIECS_ACTIVE \fP\fP
+.PP
+Definition at line 58 of file EvalCase\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::EvalCase::EvalCase ()"
+
+.PP
+Definition at line 16 of file EvalCase\&.cpp\&.
+.SS "datatypes::EvalCase::~EvalCase ()\fC [virtual]\fP"
+
+.PP
+Definition at line 23 of file EvalCase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double datatypes::EvalCase::getBlankingSize () const"
+
+.PP
+Definition at line 36 of file EvalCase\&.cpp\&.
+.SS "const std::string & datatypes::EvalCase::getCaseName () const"
+
+.PP
+Definition at line 41 of file EvalCase\&.cpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCase::getCaseNumber () const"
+
+.PP
+Definition at line 46 of file EvalCase\&.cpp\&.
+.SS "const std::string & datatypes::EvalCase::getComment () const"
+
+.PP
+Definition at line 51 of file EvalCase\&.cpp\&.
+.SS "bool datatypes::EvalCase::getDistDependent ()"
+
+.PP
+Definition at line 165 of file EvalCase\&.cpp\&.
+.SS "\fBUINT16\fP datatypes::EvalCase::getFieldNumber () const"
+
+.PP
+Definition at line 56 of file EvalCase\&.cpp\&.
+.SS "\fBEvalCase::FilterType\fP datatypes::EvalCase::getFilterType () const"
+
+.PP
+Definition at line 61 of file EvalCase\&.cpp\&.
+.SS "const \fBUINT8\fP datatypes::EvalCase::getLogicalInputState_as_UINT8 () const"
+
+.PP
+Definition at line 71 of file EvalCase\&.cpp\&.
+.SS "\fBEvalCase::ManipulationPrevention\fP datatypes::EvalCase::getManipulationPrevention () const"
+
+.PP
+Definition at line 246 of file EvalCase\&.cpp\&.
+.SS "double datatypes::EvalCase::getMaxRadialCorridor () const"
+
+.PP
+Definition at line 77 of file EvalCase\&.cpp\&.
+.SS "double datatypes::EvalCase::getMinFieldExp () const"
+
+.PP
+Definition at line 82 of file EvalCase\&.cpp\&.
+.SS "\fBUINT8\fP datatypes::EvalCase::getOutputNumber () const"
+
+.PP
+Definition at line 87 of file EvalCase\&.cpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCase::getResponseTime () const"
+
+.PP
+Definition at line 92 of file EvalCase\&.cpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCase::getResponseTimeExtended () const"
+
+.PP
+Definition at line 97 of file EvalCase\&.cpp\&.
+.SS "bool datatypes::EvalCase::getResultNegation ()"
+
+.PP
+Definition at line 220 of file EvalCase\&.cpp\&.
+.SS "\fBEvalCase::EvaluationStrategy\fP datatypes::EvalCase::getStrategy () const"
+
+.PP
+Definition at line 102 of file EvalCase\&.cpp\&.
+.SS "const \fBUINT32\fP datatypes::EvalCase::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 28 of file EvalCase\&.cpp\&.
+.SS "\fBUINT16\fP datatypes::EvalCase::getVersionNumber ()"
+
+.PP
+Definition at line 241 of file EvalCase\&.cpp\&.
+.SS "\fBUINT32\fP datatypes::EvalCase::getVersionNumberIntern () const"
+
+.PP
+Definition at line 107 of file EvalCase\&.cpp\&.
+.SS "bool datatypes::EvalCase::isDistDependent () const"
+
+.PP
+Definition at line 112 of file EvalCase\&.cpp\&.
+.SS "bool datatypes::EvalCase::isResultNegation () const"
+
+.PP
+Definition at line 117 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setBlankingSize (double blankingSize)"
+
+.PP
+Definition at line 122 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setCaseName (const std::string & caseName)"
+
+.PP
+Definition at line 133 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setCaseNumber (\fBUINT8\fP caseNumber)"
+
+.PP
+Definition at line 142 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setComment (const std::string & comment)"
+
+.PP
+Definition at line 151 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setDistDependent (bool distDependent)"
+
+.PP
+Definition at line 160 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setFieldNumber (\fBUINT16\fP fieldNumber)"
+
+.PP
+Definition at line 170 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setFilterType (\fBFilterType\fP filterType)"
+
+.PP
+Definition at line 175 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setLogicalInputState_from_UINT8 (\fBUINT8\fP value)"
+
+.PP
+Definition at line 260 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setManipulationPrevention (\fBEvalCase::ManipulationPrevention\fP manPrev)"
+
+.PP
+Definition at line 251 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setMaxRadialCorridor (double maxRadialCorridor)"
+
+.PP
+Definition at line 190 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setMinFieldExp (double minFieldExp)"
+
+.PP
+Definition at line 195 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setOutputNumber (\fBUINT8\fP outputNumber)"
+
+.PP
+Definition at line 200 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setResponseTime (\fBUINT32\fP responseTime)"
+
+.PP
+Definition at line 205 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setResponseTimeExtended (\fBUINT32\fP responseTimeExtended)"
+
+.PP
+Definition at line 210 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setResultNegation (bool resultNegation)"
+
+.PP
+Definition at line 215 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setStrategy (\fBEvaluationStrategy\fP strategy)"
+
+.PP
+Definition at line 225 of file EvalCase\&.cpp\&.
+.SS "void datatypes::EvalCase::setVersionNumber (\fBUINT16\fP versionNumber)"
+
+.PP
+Definition at line 233 of file EvalCase\&.cpp\&.
+.SS "static std::string datatypes::EvalCase::strategyToString (\fBEvaluationStrategy\fP strategy)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 32 of file EvalCase\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

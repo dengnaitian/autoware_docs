@@ -1,0 +1,77 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/cost_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/cost_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBcost_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCOST_TYPE\fP \fBget_cost_type\fP (char *s)"
+.br
+.ti -1c
+.RI "char * \fBget_cost_string\fP (\fBCOST_TYPE\fP a)"
+.br
+.ti -1c
+.RI "\fBcost_layer\fP \fBmake_cost_layer\fP (int batch, int inputs, \fBCOST_TYPE\fP type, float scale)"
+.br
+.ti -1c
+.RI "void \fBforward_cost_layer\fP (const \fBcost_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_cost_layer\fP (const \fBcost_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBresize_cost_layer\fP (\fBcost_layer\fP *l, int inputs)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBcost_layer\fP"
+
+.PP
+Definition at line 6 of file cost_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_cost_layer (const \fBcost_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 101 of file cost_layer\&.c\&.
+.SS "void forward_cost_layer (const \fBcost_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 82 of file cost_layer\&.c\&.
+.SS "char* get_cost_string (\fBCOST_TYPE\fP a)"
+
+.PP
+Definition at line 22 of file cost_layer\&.c\&.
+.SS "\fBCOST_TYPE\fP get_cost_type (char * s)"
+
+.PP
+Definition at line 10 of file cost_layer\&.c\&.
+.SS "\fBcost_layer\fP make_cost_layer (int batch, int inputs, \fBCOST_TYPE\fP type, float scale)"
+
+.PP
+Definition at line 41 of file cost_layer\&.c\&.
+.SS "void resize_cost_layer (\fBcost_layer\fP * l, int inputs)"
+
+.PP
+Definition at line 68 of file cost_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

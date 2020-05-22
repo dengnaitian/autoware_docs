@@ -1,0 +1,573 @@
+.TH "mtdevice.MTDevice" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mtdevice.MTDevice \- \fBMTDevice\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, port, baudrate=115200, \fBtimeout\fP=0\&.1, autoconf=True, config_mode=False)"
+.br
+.ti -1c
+.RI "def \fBwrite_msg\fP (self, mid, \fBdata\fP=[])"
+.br
+.RI "\fILow-level communication\&. \fP"
+.ti -1c
+.RI "def \fBwrite_msg_mk4\fP (self, mid, \fBdata\fP=[])"
+.br
+.RI "\fILow-level message sending function for MK4\&. \fP"
+.ti -1c
+.RI "def \fBread_data_msg\fP (self, buf=bytearray())"
+.br
+.RI "\fILow-level MTData receiving function\&. \fP"
+.ti -1c
+.RI "def \fBread_msg\fP (self)"
+.br
+.RI "\fILow-level message receiving function\&. \fP"
+.ti -1c
+.RI "def \fBwrite_ack\fP (self, mid, \fBdata\fP=[])"
+.br
+.RI "\fISend a message and read confirmation\&. \fP"
+.ti -1c
+.RI "def \fBReset\fP (self)"
+.br
+.RI "\fIHigh-level functions\&. \fP"
+.ti -1c
+.RI "def \fBReqDeviceId\fP (self)"
+.br
+.RI "\fIPlace MT device in configuration mode\&. \fP"
+.ti -1c
+.RI "def \fBGoToConfig\fP (self)"
+.br
+.RI "\fIPlace MT device in configuration mode\&. \fP"
+.ti -1c
+.RI "def \fBGoToMeasurement\fP (self)"
+.br
+.RI "\fIPlace MT device in measurement mode\&. \fP"
+.ti -1c
+.RI "def \fBRestoreFactoryDefaults\fP (self)"
+.br
+.RI "\fIRestore MT device configuration to factory defaults (soft version)\&. \fP"
+.ti -1c
+.RI "def \fBGetOutputMode\fP (self)"
+.br
+.RI "\fIGet current output mode\&. \fP"
+.ti -1c
+.RI "def \fBSetOutputMode\fP (self, \fBmode\fP)"
+.br
+.RI "\fISelect which information to output\&. \fP"
+.ti -1c
+.RI "def \fBGetOutputSettings\fP (self)"
+.br
+.RI "\fIGet current output mode\&. \fP"
+.ti -1c
+.RI "def \fBSetOutputSettings\fP (self, \fBsettings\fP)"
+.br
+.RI "\fISelect how to output the information\&. \fP"
+.ti -1c
+.RI "def \fBSetPeriod\fP (self, period)"
+.br
+.RI "\fISet the period of sampling\&. \fP"
+.ti -1c
+.RI "def \fBSetOutputSkipFactor\fP (self, skipfactor)"
+.br
+.RI "\fISet the output skip factor\&. \fP"
+.ti -1c
+.RI "def \fBReqDataLength\fP (self)"
+.br
+.RI "\fIGet data length\&. \fP"
+.ti -1c
+.RI "def \fBReqConfiguration\fP (self)"
+.br
+.RI "\fIAsk for the current configuration of the MT device\&. \fP"
+.ti -1c
+.RI "def \fBSetBaudrate\fP (self, brid)"
+.br
+.RI "\fISet the baudrate of the device using the baudrate id\&. \fP"
+.ti -1c
+.RI "def \fBReqAvailableScenarios\fP (self)"
+.br
+.RI "\fIRequest the available XKF scenarios on the device\&. \fP"
+.ti -1c
+.RI "def \fBReqCurrentScenario\fP (self)"
+.br
+.RI "\fIRequest the ID of the currently used XKF scenario\&. \fP"
+.ti -1c
+.RI "def \fBSetCurrentScenario\fP (self, scenario_id)"
+.br
+.RI "\fISets the XKF scenario to use\&. \fP"
+.ti -1c
+.RI "def \fBconfigureMti\fP (self, mtiSampleRate, mtiMode)"
+.br
+.RI "\fIHigh-level utility functions\&. \fP"
+.ti -1c
+.RI "def \fBgetMtiConfigBytes\fP (self, dataMessage, dataFs)"
+.br
+.ti -1c
+.RI "def \fBauto_config\fP (self)"
+.br
+.RI "\fIRead configuration from device\&. \fP"
+.ti -1c
+.RI "def \fBread_measurement\fP (self, \fBmode\fP=None, \fBsettings\fP=None)"
+.br
+.RI "\fIRead and parse a measurement packet\&. \fP"
+.ti -1c
+.RI "def \fBparse_MTData2\fP (self, \fBdata\fP)"
+.br
+.RI "\fIParse a new MTData2 message\&. \fP"
+.ti -1c
+.RI "def \fBChangeBaudrate\fP (self, baudrate)"
+.br
+.RI "\fIParse a legacy MTData message Change the baudrate, reset the device and reopen communication\&. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdevice\fP"
+.br
+.ti -1c
+.RI "\fBtimeout\fP"
+.br
+.RI "\fItimeout for communication \fP"
+.ti -1c
+.RI "\fBmode\fP"
+.br
+.RI "\fImode parameter of the IMU \fP"
+.ti -1c
+.RI "\fBsettings\fP"
+.br
+.RI "\fIsettings parameter of the IMU \fP"
+.ti -1c
+.RI "\fBlength\fP"
+.br
+.RI "\fIlength of the MTData message \fP"
+.ti -1c
+.RI "\fBheader\fP"
+.br
+.RI "\fIheader of the MTData message \fP"
+.ti -1c
+.RI "\fBscenarios\fP"
+.br
+.RI "\fIavailable XKF scenarios \fP"
+.ti -1c
+.RI "\fBscenario_label\fP"
+.br
+.RI "\fIcurrent XKF id \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMTDevice\fP class\&. 
+
+Xsens MT device communication object\&. 
+.PP
+.nf
+Xsens MT device communication object.
+.fi
+.PP
+ 
+.PP
+Definition at line 16 of file mtdevice\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def mtdevice\&.MTDevice\&.__init__ ( self,  port,  baudrate = \fC115200\fP,  timeout = \fC0\&.1\fP,  autoconf = \fCTrue\fP,  config_mode = \fCFalse\fP)"
+
+.PP
+.nf
+Open device.
+.fi
+.PP
+ 
+.PP
+Definition at line 20 of file mtdevice\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def mtdevice\&.MTDevice\&.auto_config ( self)"
+
+.PP
+Read configuration from device\&. 
+.PP
+.nf
+Read configuration from device.
+.fi
+.PP
+ 
+.PP
+Definition at line 535 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ChangeBaudrate ( self,  baudrate)"
+
+.PP
+Parse a legacy MTData message Change the baudrate, reset the device and reopen communication\&. 
+.PP
+.nf
+Change the baudrate, reset the device and reopen communication.
+.fi
+.PP
+ 
+.PP
+Definition at line 784 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.configureMti ( self,  mtiSampleRate,  mtiMode)"
+
+.PP
+High-level utility functions\&. Configure the mode and settings of the MT MK4 device\&. this configures the MK4 devices to publish Xsens sensorSample format 
+.PP
+.nf
+Configure the mode and settings of the MTMk4 device.
+.fi
+.PP
+ 
+.PP
+Definition at line 386 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.getMtiConfigBytes ( self,  dataMessage,  dataFs)"
+
+.PP
+Definition at line 527 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.GetOutputMode ( self)"
+
+.PP
+Get current output mode\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Get current output mode.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 230 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.GetOutputSettings ( self)"
+
+.PP
+Get current output mode\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Get current output mode.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 250 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.GoToConfig ( self)"
+
+.PP
+Place MT device in configuration mode\&. 
+.PP
+.nf
+Place MT device in configuration mode.
+.fi
+.PP
+ 
+.PP
+Definition at line 209 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.GoToMeasurement ( self)"
+
+.PP
+Place MT device in measurement mode\&. 
+.PP
+.nf
+Place MT device in measurement mode.
+.fi
+.PP
+ 
+.PP
+Definition at line 215 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.parse_MTData2 ( self,  data)"
+
+.PP
+Parse a new MTData2 message\&. 
+.PP
+Definition at line 561 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.read_data_msg ( self,  buf = \fCbytearray()\fP)"
+
+.PP
+Low-level MTData receiving function\&. Take advantage of known message length\&. 
+.PP
+.nf
+Low-level MTData receiving function.
+Take advantage of known message length.
+.fi
+.PP
+ 
+.PP
+Definition at line 90 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.read_measurement ( self,  mode = \fCNone\fP,  settings = \fCNone\fP)"
+
+.PP
+Read and parse a measurement packet\&. 
+.PP
+Definition at line 552 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.read_msg ( self)"
+
+.PP
+Low-level message receiving function\&. 
+.PP
+.nf
+Low-level message receiving function.
+.fi
+.PP
+ 
+.PP
+Definition at line 126 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ReqAvailableScenarios ( self)"
+
+.PP
+Request the available XKF scenarios on the device\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Request the available XKF scenarios on the device.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 327 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ReqConfiguration ( self)"
+
+.PP
+Ask for the current configuration of the MT device\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Ask for the current configuration of the MT device.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 300 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ReqCurrentScenario ( self)"
+
+.PP
+Request the ID of the currently used XKF scenario\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Request the ID of the currently used XKF scenario.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 346 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ReqDataLength ( self)"
+
+.PP
+Get data length\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Get data length.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 289 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.ReqDeviceId ( self)"
+
+.PP
+Place MT device in configuration mode\&. 
+.PP
+.nf
+Request Device ID.
+.fi
+.PP
+ 
+.PP
+Definition at line 203 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.Reset ( self)"
+
+.PP
+High-level functions\&. Reset MT device\&. 
+.PP
+.nf
+Reset MT device.
+.fi
+.PP
+ 
+.PP
+Definition at line 198 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.RestoreFactoryDefaults ( self)"
+
+.PP
+Restore MT device configuration to factory defaults (soft version)\&. 
+.PP
+.nf
+Restore MT device configuration to factory defaults (soft version).
+
+.fi
+.PP
+ 
+.PP
+Definition at line 221 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetBaudrate ( self,  brid)"
+
+.PP
+Set the baudrate of the device using the baudrate id\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Set the baudrate of the device using the baudrate id.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 314 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetCurrentScenario ( self,  scenario_id)"
+
+.PP
+Sets the XKF scenario to use\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Sets the XKF scenario to use.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 368 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetOutputMode ( self,  mode)"
+
+.PP
+Select which information to output\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Select which information to output.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 240 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetOutputSettings ( self,  settings)"
+
+.PP
+Select how to output the information\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Select how to output the information.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 260 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetOutputSkipFactor ( self,  skipfactor)"
+
+.PP
+Set the output skip factor\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Set the output skip factor.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 280 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.SetPeriod ( self,  period)"
+
+.PP
+Set the period of sampling\&. Assume the device is in Config state\&. 
+.PP
+.nf
+Set the period of sampling.
+Assume the device is in Config state.
+.fi
+.PP
+ 
+.PP
+Definition at line 271 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.write_ack ( self,  mid,  data = \fC[]\fP)"
+
+.PP
+Send a message and read confirmation\&. 
+.PP
+.nf
+Send a message a read confirmation.
+.fi
+.PP
+ 
+.PP
+Definition at line 180 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.write_msg ( self,  mid,  data = \fC[]\fP)"
+
+.PP
+Low-level communication\&. Low-level message sending function\&. 
+.PP
+.nf
+Low-level message sending function.
+.fi
+.PP
+ 
+.PP
+Definition at line 49 of file mtdevice\&.py\&.
+.SS "def mtdevice\&.MTDevice\&.write_msg_mk4 ( self,  mid,  data = \fC[]\fP)"
+
+.PP
+Low-level message sending function for MK4\&. 
+.PP
+.nf
+Low-level message sending function.
+.fi
+.PP
+ 
+.PP
+Definition at line 68 of file mtdevice\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "mtdevice\&.MTDevice\&.device"
+
+.PP
+Definition at line 24 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.header"
+
+.PP
+header of the MTData message 
+.PP
+Definition at line 40 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.length"
+
+.PP
+length of the MTData message 
+.PP
+Definition at line 38 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.mode"
+
+.PP
+mode parameter of the IMU 
+.PP
+Definition at line 34 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.scenario_label"
+
+.PP
+current XKF id current XKF label 
+.PP
+Definition at line 359 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.scenarios"
+
+.PP
+available XKF scenarios 
+.PP
+Definition at line 338 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.settings"
+
+.PP
+settings parameter of the IMU 
+.PP
+Definition at line 36 of file mtdevice\&.py\&.
+.SS "mtdevice\&.MTDevice\&.timeout"
+
+.PP
+timeout for communication 
+.PP
+Definition at line 29 of file mtdevice\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

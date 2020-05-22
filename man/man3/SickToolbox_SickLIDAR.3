@@ -1,0 +1,257 @@
+.TH "SickToolbox::SickLIDAR< SICK_MONITOR_CLASS, SICK_MSG_CLASS >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickLIDAR< SICK_MONITOR_CLASS, SICK_MSG_CLASS > \- Provides an abstract parent for all Sick LIDAR devices\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickLIDAR\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickLIDAR\fP ()"
+.br
+.RI "\fIInitializes the buffer monitor\&. \fP"
+.ti -1c
+.RI "bool \fBIsInitialized\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SickLIDAR\fP ()"
+.br
+.RI "\fIDestructor tears down buffer monitor\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fB_setupConnection\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fB_teardownConnection\fP ()=0"
+.br
+.ti -1c
+.RI "void \fB_startListening\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fIActivates the buffer monitor for the driver\&. \fP"
+.ti -1c
+.RI "void \fB_stopListening\fP ()  throw ( SickThreadException )"
+.br
+.RI "\fIActivates the buffer monitor for the driver\&. \fP"
+.ti -1c
+.RI "bool \fB_monitorRunning\fP () const "
+.br
+.ti -1c
+.RI "void \fB_setBlockingIO\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIA simple method for setting blocking I/O\&. \fP"
+.ti -1c
+.RI "void \fB_setNonBlockingIO\fP () const   throw ( SickIOException )"
+.br
+.RI "\fIA simple method for setting non-blocking I/O\&. \fP"
+.ti -1c
+.RI "void \fB_sendMessage\fP (const SICK_MSG_CLASS &sick_message, const unsigned int byte_interval) const   throw ( SickIOException )"
+.br
+.RI "\fISends a message to the Sick device\&. \fP"
+.ti -1c
+.RI "void \fB_recvMessage\fP (SICK_MSG_CLASS &sick_message, const unsigned int timeout_value) const   throw ( SickTimeoutException )"
+.br
+.RI "\fIAttempt to acquire the latest available message from the device\&. \fP"
+.ti -1c
+.RI "void \fB_recvMessage\fP (SICK_MSG_CLASS &sick_message, const uint8_t *const byte_sequence, const unsigned int byte_sequence_length, const unsigned int timeout_value) const   throw ( SickTimeoutException )"
+.br
+.RI "\fIAttempt to acquire a message having a payload beginning w/ the given byte sequence\&. \fP"
+.ti -1c
+.RI "double \fB_computeElapsedTime\fP (const struct timeval &beg_time, const struct timeval &end_time) const "
+.br
+.ti -1c
+.RI "virtual void \fB_sendMessageAndGetReply\fP (const SICK_MSG_CLASS &send_message, SICK_MSG_CLASS &recv_message, const uint8_t *const byte_sequence, const unsigned int byte_sequence_length, const unsigned int byte_interval, const unsigned int timeout_value, const unsigned int num_tries)  throw ( SickTimeoutException, SickIOException)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_sick_fd\fP"
+.br
+.ti -1c
+.RI "bool \fB_sick_initialized\fP"
+.br
+.ti -1c
+.RI "SICK_MONITOR_CLASS * \fB_sick_buffer_monitor\fP"
+.br
+.ti -1c
+.RI "bool \fB_sick_monitor_running\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS>
+.br
+class SickToolbox::SickLIDAR< SICK_MONITOR_CLASS, SICK_MSG_CLASS >"
+Provides an abstract parent for all Sick LIDAR devices\&. 
+.PP
+Definition at line 53 of file SickLIDAR\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::\fBSickLIDAR\fP ()"
+
+.PP
+Initializes the buffer monitor\&. The primary constructor 
+.PP
+Definition at line 132 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::~\fBSickLIDAR\fP ()\fC [virtual]\fP"
+
+.PP
+Destructor tears down buffer monitor\&. A virtual destructor 
+.PP
+Definition at line 149 of file SickLIDAR\&.hh\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> double \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_computeElapsedTime (const struct timeval & beg_time, const struct timeval & end_time) const\fC [inline]\fP, \fC [protected]\fP"
+An inline function for computing elapsed time 
+.PP
+Definition at line 115 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> bool \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_monitorRunning () const\fC [inline]\fP, \fC [protected]\fP"
+Indicates whether there is a monitor currently running 
+.PP
+Definition at line 93 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS> void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_recvMessage (SICK_MSG_CLASS & sick_message, const unsigned int timeout_value) const\fBSickTimeoutException\fP\fC [protected]\fP"
+
+.PP
+Attempt to acquire the latest available message from the device\&. Acquire the next message from the message container
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&sick_message\fP A reference to the container that will hold the most recent message 
+.br
+\fItimeout_value\fP The time in secs to wait before throwing a timeout error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if a new message was received, False otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 301 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS> void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_recvMessage (SICK_MSG_CLASS & sick_message, const uint8_t *const byte_sequence, const unsigned int byte_sequence_length, const unsigned int timeout_value) const\fBSickTimeoutException\fP\fC [protected]\fP"
+
+.PP
+Attempt to acquire a message having a payload beginning w/ the given byte sequence\&. Search the stream for a payload with a particular 'header' byte string
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&sick_message\fP A reference to the container that will hold the most recent message 
+.br
+\fI*byte_sequence\fP The byte sequence that is expected to lead off the payload in the packet (e\&.g\&. service codes, etc\&.\&.\&.) 
+.br
+\fIbyte_sequence_length\fP The number of bytes in the given byte_sequence 
+.br
+\fItimeout_value\fP The time in usecs to wait before throwing a timeout error 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if a new message was received, False otherwise
+.RE
+.PP
+NOTE: This method is intended to be a helper for _sendMessageAndGetReply 
+.PP
+Definition at line 337 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS> void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sendMessage (const SICK_MSG_CLASS & sick_message, const unsigned int byte_interval) const\fBSickIOException\fP\fC [protected]\fP"
+
+.PP
+Sends a message to the Sick device\&. Send a message to the Sick LD (allows specifying min time between transmitted bytes)
+.PP
+\fBParameters:\fP
+.RS 4
+\fI&sick_message\fP A reference to the well-formed message that is to be sent to the Sick 
+.br
+\fIbyte_interval\fP Minimum time in microseconds between transmitted bytes 
+.RE
+.PP
+
+.PP
+Definition at line 258 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS> void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sendMessageAndGetReply (const SICK_MSG_CLASS & send_message, SICK_MSG_CLASS & recv_message, const uint8_t *const byte_sequence, const unsigned int byte_sequence_length, const unsigned int byte_interval, const unsigned int timeout_value, const unsigned int num_tries) \fBSickTimeoutException\fP,\fBSickIOException\fP\fC [protected]\fP, \fC [virtual]\fP"
+Sends a request to the Sick and acquires looks for the reply
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsick_send_frame\fP A sick frame to be sent to the LMS 
+.br
+\fIsick_receive_frame\fP A sick frame to hold the response (expected or unexpected) of the LMS 
+.br
+\fInum_tries\fP The number of times to send the frame in the event the LMS fails to reply 
+.br
+\fItimeout\fP The epoch to wait before considering a sent frame lost 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the message was sent and the expected reply was received 
+.RE
+.PP
+
+.PP
+Definition at line 398 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_setBlockingIO () const\fBSickIOException\fP\fC [protected]\fP"
+
+.PP
+A simple method for setting blocking I/O\&. Make the associated file descriptor non blocking 
+.PP
+Definition at line 218 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_setNonBlockingIO () const\fBSickIOException\fP\fC [protected]\fP"
+
+.PP
+A simple method for setting non-blocking I/O\&. Make the associated file descriptor non blocking 
+.PP
+Definition at line 237 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> virtual void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_setupConnection ()\fC [protected]\fP, \fC [pure virtual]\fP"
+A method for setting up a general connection 
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_startListening ()\fBSickThreadException\fP\fC [protected]\fP"
+
+.PP
+Activates the buffer monitor for the driver\&. Starts the driver listening for messages 
+.PP
+Definition at line 162 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS , class SICK_MSG_CLASS > void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_stopListening ()\fBSickThreadException\fP\fC [protected]\fP"
+
+.PP
+Activates the buffer monitor for the driver\&. Stops the driver from listening 
+.PP
+Definition at line 190 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> virtual void \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_teardownConnection ()\fC [protected]\fP, \fC [pure virtual]\fP"
+A method for tearing down a connection to the Sick 
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> bool \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::IsInitialized ()\fC [inline]\fP"
+Indicates whether device is initialized 
+.PP
+Definition at line 61 of file SickLIDAR\&.hh\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> SICK_MONITOR_CLASS* \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sick_buffer_monitor\fC [protected]\fP"
+A pointer to the driver's buffer monitor 
+.PP
+Definition at line 75 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> int \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sick_fd\fC [protected]\fP"
+Sick device file descriptor 
+.PP
+Definition at line 69 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> bool \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sick_initialized\fC [protected]\fP"
+A flag to indicated whether the device is properly initialized 
+.PP
+Definition at line 72 of file SickLIDAR\&.hh\&.
+.SS "template<class SICK_MONITOR_CLASS, class SICK_MSG_CLASS> bool \fBSickToolbox::SickLIDAR\fP< SICK_MONITOR_CLASS, SICK_MSG_CLASS >::_sick_monitor_running\fC [protected]\fP"
+Indicates whether the Sick buffer monitor is running 
+.PP
+Definition at line 78 of file SickLIDAR\&.hh\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

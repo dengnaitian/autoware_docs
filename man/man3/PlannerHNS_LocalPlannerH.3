@@ -1,0 +1,479 @@
+.TH "PlannerHNS::LocalPlannerH" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::LocalPlannerH \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LocalPlannerH\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitBehaviorStates\fP ()"
+.br
+.ti -1c
+.RI "void \fBReInitializePlanner\fP (const \fBWayPoint\fP &start_pose)"
+.br
+.ti -1c
+.RI "void \fBSetSimulatedTargetOdometryReadings\fP (const double &velocity_d, const double &steering_d, const \fBSHIFT_POS\fP &shift_d)"
+.br
+.ti -1c
+.RI "double \fBGetSimulatedVelocity\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetSimulatedSteering\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetSimulatedShift\fP ()"
+.br
+.ti -1c
+.RI "\fBLocalPlannerH\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~LocalPlannerH\fP ()"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const \fBControllerParams\fP &ctrlParams, const \fBPlanningParams\fP &params, const \fBCAR_BASIC_INFO\fP &carInfo)"
+.br
+.ti -1c
+.RI "void \fBInitPolygons\fP ()"
+.br
+.ti -1c
+.RI "void \fBFirstLocalizeMe\fP (const \fBWayPoint\fP &initCarPos)"
+.br
+.ti -1c
+.RI "void \fBLocalizeMe\fP (const double &dt)"
+.br
+.ti -1c
+.RI "void \fBUpdateState\fP (const \fBVehicleState\fP &\fBstate\fP, const bool &bUseDelay=false)"
+.br
+.ti -1c
+.RI "void \fBCalculateImportantParameterForDecisionMaking\fP (const \fBVehicleState\fP &car_state, const int &goalID, const bool &bEmergencyStop, const vector< \fBTrafficLight\fP > &detectedLights, const \fBTrajectoryCost\fP &bestTrajectory)"
+.br
+.ti -1c
+.RI "\fBBehaviorState\fP \fBDoOneStep\fP (const double &dt, const \fBVehicleState\fP &\fBstate\fP, const std::vector< \fBDetectedObject\fP > &obj_list, const int &goalID, \fBRoadNetwork\fP &\fBmap\fP, const bool &bEmergencyStop, const std::vector< \fBTrafficLight\fP > &trafficLight, const bool &bLive=false)"
+.br
+.ti -1c
+.RI "void \fBSimulateOdoPosition\fP (const double &dt, const \fBVehicleState\fP &vehicleState)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBWayPoint\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBCAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBControllerParams\fP \fBm_ControlParams\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBm_CarShapePolygon\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBm_Path\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBm_OriginalLocalPath\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBm_TotalPath\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBWayPoint\fP > > \fBm_TotalOriginalPath\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBDetectedObject\fP > \fBm_PredictedTrajectoryObstacles\fP"
+.br
+.ti -1c
+.RI "int \fBm_iCurrentTotalPathId\fP"
+.br
+.ti -1c
+.RI "int \fBm_iSafeTrajectory\fP"
+.br
+.ti -1c
+.RI "double \fBm_InitialFollowingDistance\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< std::vector< \fBWayPoint\fP > > > \fBm_RollOuts\fP"
+.br
+.ti -1c
+.RI "std::string \fBcarId\fP"
+.br
+.ti -1c
+.RI "\fBLane\fP * \fBpLane\fP"
+.br
+.ti -1c
+.RI "double \fBm_SimulationSteeringDelayFactor\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_SteerDelayTimer\fP"
+.br
+.ti -1c
+.RI "double \fBm_PredictionTime\fP"
+.br
+.ti -1c
+.RI "double \fBm_CostCalculationTime\fP"
+.br
+.ti -1c
+.RI "double \fBm_BehaviorGenTime\fP"
+.br
+.ti -1c
+.RI "double \fBm_RollOutsGenerationTime\fP"
+.br
+.ti -1c
+.RI "int \fBm_PrevBrakingWayPoint\fP"
+.br
+.ti -1c
+.RI "\fBBehaviorStateMachine\fP * \fBm_pCurrentBehaviorState\fP"
+.br
+.ti -1c
+.RI "\fBForwardState\fP * \fBm_pGoToGoalState\fP"
+.br
+.ti -1c
+.RI "\fBStopState\fP * \fBm_pStopState\fP"
+.br
+.ti -1c
+.RI "\fBWaitState\fP * \fBm_pWaitState\fP"
+.br
+.ti -1c
+.RI "\fBInitState\fP * \fBm_pInitState\fP"
+.br
+.ti -1c
+.RI "\fBMissionAccomplishedState\fP * \fBm_pMissionCompleteState\fP"
+.br
+.ti -1c
+.RI "\fBGoalState\fP * \fBm_pGoalState\fP"
+.br
+.ti -1c
+.RI "\fBFollowState\fP * \fBm_pFollowState\fP"
+.br
+.ti -1c
+.RI "\fBSwerveState\fP * \fBm_pAvoidObstacleState\fP"
+.br
+.ti -1c
+.RI "\fBTrafficLightStopState\fP * \fBm_pTrafficLightStopState\fP"
+.br
+.ti -1c
+.RI "\fBTrafficLightWaitState\fP * \fBm_pTrafficLightWaitState\fP"
+.br
+.ti -1c
+.RI "\fBStopSignStopState\fP * \fBm_pStopSignStopState\fP"
+.br
+.ti -1c
+.RI "\fBStopSignWaitState\fP * \fBm_pStopSignWaitState\fP"
+.br
+.ti -1c
+.RI "\fBTrajectoryCosts\fP \fBm_TrajectoryCostsCalculatotor\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBm_SampledPoints\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBm_OdometryState\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentVelocity\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentVelocityD\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentSteering\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentSteeringD\fP"
+.br
+.ti -1c
+.RI "\fBSHIFT_POS\fP \fBm_CurrentShift\fP"
+.br
+.ti -1c
+.RI "\fBSHIFT_POS\fP \fBm_CurrentShiftD\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentAccSteerAngle\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentAccVelocity\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::PIDController\fP \fBm_pidVelocity\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::PIDController\fP \fBm_pidStopping\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file LocalPlannerH\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::LocalPlannerH::LocalPlannerH ()"
+
+.PP
+Definition at line 18 of file LocalPlannerH\&.cpp\&.
+.SS "PlannerHNS::LocalPlannerH::~LocalPlannerH ()\fC [virtual]\fP"
+
+.PP
+Definition at line 47 of file LocalPlannerH\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::LocalPlannerH::CalculateImportantParameterForDecisionMaking (const \fBVehicleState\fP & car_state, const int & goalID, const bool & bEmergencyStop, const vector< \fBTrafficLight\fP > & detectedLights, const \fBTrajectoryCost\fP & bestTrajectory)"
+
+.PP
+Definition at line 282 of file LocalPlannerH\&.cpp\&.
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerHNS::LocalPlannerH::DoOneStep (const double & dt, const \fBVehicleState\fP & state, const std::vector< \fBDetectedObject\fP > & obj_list, const int & goalID, \fBPlannerHNS::RoadNetwork\fP & map, const bool & bEmergencyStop, const std::vector< \fBTrafficLight\fP > & trafficLight, const bool & bLive = \fCfalse\fP)"
+
+.PP
+Definition at line 749 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::FirstLocalizeMe (const \fBWayPoint\fP & initCarPos)"
+
+.PP
+Definition at line 166 of file LocalPlannerH\&.cpp\&.
+.SS "double PlannerHNS::LocalPlannerH::GetSimulatedShift ()\fC [inline]\fP"
+
+.PP
+Definition at line 89 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::GetSimulatedSteering ()\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::GetSimulatedVelocity ()\fC [inline]\fP"
+
+.PP
+Definition at line 79 of file LocalPlannerH\&.h\&.
+.SS "void PlannerHNS::LocalPlannerH::Init (const \fBControllerParams\fP & ctrlParams, const \fBPlanningParams\fP & params, const \fBCAR_BASIC_INFO\fP & carInfo)"
+
+.PP
+Definition at line 63 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::InitBehaviorStates ()"
+
+.PP
+Definition at line 86 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::InitPolygons ()"
+
+.PP
+Definition at line 126 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::LocalizeMe (const double & dt)"
+
+.PP
+Definition at line 175 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::ReInitializePlanner (const \fBWayPoint\fP & start_pose)"
+
+.PP
+Definition at line 137 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::SetSimulatedTargetOdometryReadings (const double & velocity_d, const double & steering_d, const \fBSHIFT_POS\fP & shift_d)\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file LocalPlannerH\&.h\&.
+.SS "void PlannerHNS::LocalPlannerH::SimulateOdoPosition (const double & dt, const \fBVehicleState\fP & vehicleState)"
+
+.PP
+Definition at line 399 of file LocalPlannerH\&.cpp\&.
+.SS "void PlannerHNS::LocalPlannerH::UpdateState (const \fBVehicleState\fP & state, const bool & bUseDelay = \fCfalse\fP)"
+
+.PP
+Definition at line 202 of file LocalPlannerH\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string PlannerHNS::LocalPlannerH::carId"
+
+.PP
+Definition at line 38 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_BehaviorGenTime"
+
+.PP
+Definition at line 44 of file LocalPlannerH\&.h\&.
+.SS "\fBCAR_BASIC_INFO\fP PlannerHNS::LocalPlannerH::m_CarInfo"
+
+.PP
+Definition at line 24 of file LocalPlannerH\&.h\&.
+.SS "std::vector<\fBGPSPoint\fP> PlannerHNS::LocalPlannerH::m_CarShapePolygon"
+
+.PP
+Definition at line 26 of file LocalPlannerH\&.h\&.
+.SS "\fBControllerParams\fP PlannerHNS::LocalPlannerH::m_ControlParams"
+
+.PP
+Definition at line 25 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CostCalculationTime"
+
+.PP
+Definition at line 43 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentAccSteerAngle"
+
+.PP
+Definition at line 101 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentAccVelocity"
+
+.PP
+Definition at line 102 of file LocalPlannerH\&.h\&.
+.SS "\fBSHIFT_POS\fP PlannerHNS::LocalPlannerH::m_CurrentShift"
+
+.PP
+Definition at line 99 of file LocalPlannerH\&.h\&.
+.SS "\fBSHIFT_POS\fP PlannerHNS::LocalPlannerH::m_CurrentShiftD"
+
+.PP
+Definition at line 99 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentSteering"
+
+.PP
+Definition at line 98 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentSteeringD"
+
+.PP
+Definition at line 98 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentVelocity"
+
+.PP
+Definition at line 97 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_CurrentVelocityD"
+
+.PP
+Definition at line 97 of file LocalPlannerH\&.h\&.
+.SS "int PlannerHNS::LocalPlannerH::m_iCurrentTotalPathId"
+
+.PP
+Definition at line 32 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_InitialFollowingDistance"
+
+.PP
+Definition at line 34 of file LocalPlannerH\&.h\&.
+.SS "int PlannerHNS::LocalPlannerH::m_iSafeTrajectory"
+
+.PP
+Definition at line 33 of file LocalPlannerH\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::LocalPlannerH::m_OdometryState"
+
+.PP
+Definition at line 96 of file LocalPlannerH\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::LocalPlannerH::m_OriginalLocalPath"
+
+.PP
+Definition at line 28 of file LocalPlannerH\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::LocalPlannerH::m_Path"
+
+.PP
+Definition at line 27 of file LocalPlannerH\&.h\&.
+.SS "\fBSwerveState\fP* PlannerHNS::LocalPlannerH::m_pAvoidObstacleState"
+
+.PP
+Definition at line 56 of file LocalPlannerH\&.h\&.
+.SS "\fBBehaviorStateMachine\fP* PlannerHNS::LocalPlannerH::m_pCurrentBehaviorState"
+
+.PP
+Definition at line 48 of file LocalPlannerH\&.h\&.
+.SS "\fBFollowState\fP* PlannerHNS::LocalPlannerH::m_pFollowState"
+
+.PP
+Definition at line 55 of file LocalPlannerH\&.h\&.
+.SS "\fBGoalState\fP* PlannerHNS::LocalPlannerH::m_pGoalState"
+
+.PP
+Definition at line 54 of file LocalPlannerH\&.h\&.
+.SS "\fBForwardState\fP* PlannerHNS::LocalPlannerH::m_pGoToGoalState"
+
+.PP
+Definition at line 49 of file LocalPlannerH\&.h\&.
+.SS "\fBUtilityHNS::PIDController\fP PlannerHNS::LocalPlannerH::m_pidStopping"
+
+.PP
+Definition at line 106 of file LocalPlannerH\&.h\&.
+.SS "\fBUtilityHNS::PIDController\fP PlannerHNS::LocalPlannerH::m_pidVelocity"
+
+.PP
+Definition at line 105 of file LocalPlannerH\&.h\&.
+.SS "\fBInitState\fP* PlannerHNS::LocalPlannerH::m_pInitState"
+
+.PP
+Definition at line 52 of file LocalPlannerH\&.h\&.
+.SS "\fBMissionAccomplishedState\fP* PlannerHNS::LocalPlannerH::m_pMissionCompleteState"
+
+.PP
+Definition at line 53 of file LocalPlannerH\&.h\&.
+.SS "std::vector<\fBDetectedObject\fP> PlannerHNS::LocalPlannerH::m_PredictedTrajectoryObstacles"
+
+.PP
+Definition at line 31 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_PredictionTime"
+
+.PP
+Definition at line 42 of file LocalPlannerH\&.h\&.
+.SS "int PlannerHNS::LocalPlannerH::m_PrevBrakingWayPoint"
+
+.PP
+Definition at line 46 of file LocalPlannerH\&.h\&.
+.SS "\fBStopSignStopState\fP* PlannerHNS::LocalPlannerH::m_pStopSignStopState"
+
+.PP
+Definition at line 59 of file LocalPlannerH\&.h\&.
+.SS "\fBStopSignWaitState\fP* PlannerHNS::LocalPlannerH::m_pStopSignWaitState"
+
+.PP
+Definition at line 60 of file LocalPlannerH\&.h\&.
+.SS "\fBStopState\fP* PlannerHNS::LocalPlannerH::m_pStopState"
+
+.PP
+Definition at line 50 of file LocalPlannerH\&.h\&.
+.SS "\fBTrafficLightStopState\fP* PlannerHNS::LocalPlannerH::m_pTrafficLightStopState"
+
+.PP
+Definition at line 57 of file LocalPlannerH\&.h\&.
+.SS "\fBTrafficLightWaitState\fP* PlannerHNS::LocalPlannerH::m_pTrafficLightWaitState"
+
+.PP
+Definition at line 58 of file LocalPlannerH\&.h\&.
+.SS "\fBWaitState\fP* PlannerHNS::LocalPlannerH::m_pWaitState"
+
+.PP
+Definition at line 51 of file LocalPlannerH\&.h\&.
+.SS "std::vector<std::vector<std::vector<\fBWayPoint\fP> > > PlannerHNS::LocalPlannerH::m_RollOuts"
+
+.PP
+Definition at line 37 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_RollOutsGenerationTime"
+
+.PP
+Definition at line 45 of file LocalPlannerH\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::LocalPlannerH::m_SampledPoints"
+
+.PP
+Definition at line 66 of file LocalPlannerH\&.h\&.
+.SS "double PlannerHNS::LocalPlannerH::m_SimulationSteeringDelayFactor"
+
+.PP
+Definition at line 40 of file LocalPlannerH\&.h\&.
+.SS "timespec PlannerHNS::LocalPlannerH::m_SteerDelayTimer"
+
+.PP
+Definition at line 41 of file LocalPlannerH\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::LocalPlannerH::m_TotalOriginalPath"
+
+.PP
+Definition at line 30 of file LocalPlannerH\&.h\&.
+.SS "std::vector<std::vector<\fBWayPoint\fP> > PlannerHNS::LocalPlannerH::m_TotalPath"
+
+.PP
+Definition at line 29 of file LocalPlannerH\&.h\&.
+.SS "\fBTrajectoryCosts\fP PlannerHNS::LocalPlannerH::m_TrajectoryCostsCalculatotor"
+
+.PP
+Definition at line 62 of file LocalPlannerH\&.h\&.
+.SS "\fBLane\fP* PlannerHNS::LocalPlannerH::pLane"
+
+.PP
+Definition at line 39 of file LocalPlannerH\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::LocalPlannerH::state"
+
+.PP
+Definition at line 23 of file LocalPlannerH\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

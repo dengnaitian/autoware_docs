@@ -1,0 +1,259 @@
+.TH "gpu::GRegistration" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::GRegistration \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Registration\&.h>\fP
+.PP
+Inherited by \fBgpu::GNormalDistributionsTransform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGRegistration\fP ()"
+.br
+.ti -1c
+.RI "\fBGRegistration\fP (const \fBGRegistration\fP &other)"
+.br
+.ti -1c
+.RI "void \fBalign\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.ti -1c
+.RI "void \fBsetTransformationEpsilon\fP (double trans_eps)"
+.br
+.ti -1c
+.RI "double \fBgetTransformationEpsilon\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMaximumIterations\fP (int max_itr)"
+.br
+.ti -1c
+.RI "int \fBgetMaximumIterations\fP () const "
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBgetFinalTransformation\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetInputSource\fP (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBsetInputSource\fP (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+.br
+.ti -1c
+.RI "int \fBgetFinalNumIteration\fP () const "
+.br
+.ti -1c
+.RI "bool \fBhasConverged\fP () const "
+.br
+.ti -1c
+.RI "virtual \fB~GRegistration\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcomputeTransformation\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBtransformation_epsilon_\fP"
+.br
+.ti -1c
+.RI "int \fBmax_iterations_\fP"
+.br
+.ti -1c
+.RI "float * \fBx_\fP"
+.br
+.ti -1c
+.RI "float * \fBy_\fP"
+.br
+.ti -1c
+.RI "float * \fBz_\fP"
+.br
+.ti -1c
+.RI "int \fBpoints_number_\fP"
+.br
+.ti -1c
+.RI "float * \fBtrans_x_\fP"
+.br
+.ti -1c
+.RI "float * \fBtrans_y_\fP"
+.br
+.ti -1c
+.RI "float * \fBtrans_z_\fP"
+.br
+.ti -1c
+.RI "bool \fBconverged_\fP"
+.br
+.ti -1c
+.RI "int \fBnr_iterations_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBfinal_transformation_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBtransformation_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< float, 4, 4 > \fBprevious_transformation_\fP"
+.br
+.ti -1c
+.RI "bool \fBtarget_cloud_updated_\fP"
+.br
+.ti -1c
+.RI "float * \fBtarget_x_\fP"
+.br
+.ti -1c
+.RI "float * \fBtarget_y_\fP"
+.br
+.ti -1c
+.RI "float * \fBtarget_z_\fP"
+.br
+.ti -1c
+.RI "int \fBtarget_points_number_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_copied_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file Registration\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "gpu::GRegistration::GRegistration ()"
+
+.SS "gpu::GRegistration::GRegistration (const \fBGRegistration\fP & other)"
+
+.SS "virtual gpu::GRegistration::~GRegistration ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void gpu::GRegistration::align (const Eigen::Matrix< float, 4, 4 > & guess)"
+
+.SS "virtual void gpu::GRegistration::computeTransformation (const Eigen::Matrix< float, 4, 4 > & guess)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBgpu::GNormalDistributionsTransform\fP\&.
+.SS "int gpu::GRegistration::getFinalNumIteration () const"
+
+.SS "Eigen::Matrix<float, 4, 4> gpu::GRegistration::getFinalTransformation () const"
+
+.SS "int gpu::GRegistration::getMaximumIterations () const"
+
+.SS "double gpu::GRegistration::getTransformationEpsilon () const"
+
+.SS "bool gpu::GRegistration::hasConverged () const"
+
+.SS "void gpu::GRegistration::setInputSource (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+
+.SS "void gpu::GRegistration::setInputSource (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+
+.SS "void gpu::GRegistration::setInputTarget (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr input)"
+
+.SS "void gpu::GRegistration::setInputTarget (\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr input)"
+
+.SS "void gpu::GRegistration::setMaximumIterations (int max_itr)"
+
+.SS "void gpu::GRegistration::setTransformationEpsilon (double trans_eps)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool gpu::GRegistration::converged_\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file Registration\&.h\&.
+.SS "Eigen::Matrix<float, 4, 4> gpu::GRegistration::final_transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file Registration\&.h\&.
+.SS "bool gpu::GRegistration::is_copied_\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file Registration\&.h\&.
+.SS "int gpu::GRegistration::max_iterations_\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file Registration\&.h\&.
+.SS "int gpu::GRegistration::nr_iterations_\fC [protected]\fP"
+
+.PP
+Definition at line 63 of file Registration\&.h\&.
+.SS "int gpu::GRegistration::points_number_\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file Registration\&.h\&.
+.SS "Eigen::Matrix<float, 4, 4> gpu::GRegistration::previous_transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file Registration\&.h\&.
+.SS "bool gpu::GRegistration::target_cloud_updated_\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file Registration\&.h\&.
+.SS "int gpu::GRegistration::target_points_number_\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file Registration\&.h\&.
+.SS "float* gpu::GRegistration::target_x_\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::target_y_\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::target_z_\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file Registration\&.h\&.
+.SS "float* gpu::GRegistration::trans_x_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::trans_y_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::trans_z_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file Registration\&.h\&.
+.SS "Eigen::Matrix<float, 4, 4> gpu::GRegistration::transformation_\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file Registration\&.h\&.
+.SS "double gpu::GRegistration::transformation_epsilon_\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file Registration\&.h\&.
+.SS "float* gpu::GRegistration::x_\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::y_\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file Registration\&.h\&.
+.SS "float * gpu::GRegistration::z_\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file Registration\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

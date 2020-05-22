@@ -1,0 +1,192 @@
+.TH "SaveDepth" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SaveDepth \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <get_Depth\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBget_pcd\fP (const sensor_msgs::PointCloud2::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBget_image\fP (const sensor_msgs::Image &msg)"
+.br
+.ti -1c
+.RI "void \fBdepthConverter\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "void \fBcreate_depth\fP ()"
+.br
+.ti -1c
+.RI "void \fBread_CalibFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset_flags\fP ()"
+.br
+.ti -1c
+.RI "void \fBget_pcd\fP (const sensor_msgs::PointCloud2::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBget_image\fP (const sensor_msgs::Image &msg)"
+.br
+.ti -1c
+.RI "void \fBdepthConverter\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "void \fBcreate_depth\fP ()"
+.br
+.ti -1c
+.RI "void \fBread_CalibFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset_flags\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBsave_path_\fP"
+.br
+.ti -1c
+.RI "string \fBimage_topic_name_\fP"
+.br
+.ti -1c
+.RI "string \fBpc2_topic_name_\fP"
+.br
+.ti -1c
+.RI "string \fBcalib_path_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_image_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_pc2_\fP"
+.br
+.ti -1c
+.RI "sensor_msgs::PointCloud2 \fBpoints_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBimage_\fP"
+.br
+.ti -1c
+.RI "string \fBtime_stamp_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBCameraExtrinsicMat_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBCameraMat_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBDistCoeff_\fP"
+.br
+.ti -1c
+.RI "\fBcv::Size\fP \fBImageSize_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file get_Depth\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SaveDepth::create_depth ()"
+
+.PP
+Definition at line 74 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::create_depth ()"
+
+.SS "void SaveDepth::depthConverter (int argc, char * argv[])"
+
+.SS "void SaveDepth::depthConverter (int argc, char * argv[])"
+
+.PP
+Definition at line 185 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::get_image (const sensor_msgs::Image & msg)"
+
+.SS "void SaveDepth::get_image (const sensor_msgs::Image & msg)"
+
+.PP
+Definition at line 33 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::get_pcd (const sensor_msgs::PointCloud2::ConstPtr & msg)"
+
+.PP
+Definition at line 17 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::get_pcd (const sensor_msgs::PointCloud2::ConstPtr & msg)"
+
+.SS "void SaveDepth::read_CalibFile ()"
+
+.SS "void SaveDepth::read_CalibFile ()"
+
+.PP
+Definition at line 56 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::reset_flags ()"
+
+.PP
+Definition at line 69 of file get_Depth\&.cpp\&.
+.SS "void SaveDepth::reset_flags ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "string SaveDepth::calib_path_"
+
+.PP
+Definition at line 29 of file get_Depth\&.hpp\&.
+.SS "cv::Mat SaveDepth::CameraExtrinsicMat_"
+
+.PP
+Definition at line 36 of file get_Depth\&.hpp\&.
+.SS "cv::Mat SaveDepth::CameraMat_"
+
+.PP
+Definition at line 37 of file get_Depth\&.hpp\&.
+.SS "cv::Mat SaveDepth::DistCoeff_"
+
+.PP
+Definition at line 38 of file get_Depth\&.hpp\&.
+.SS "cv::Mat SaveDepth::image_"
+
+.PP
+Definition at line 34 of file get_Depth\&.hpp\&.
+.SS "string SaveDepth::image_topic_name_"
+
+.PP
+Definition at line 27 of file get_Depth\&.hpp\&.
+.SS "\fBcv::Size\fP SaveDepth::ImageSize_"
+
+.PP
+Definition at line 39 of file get_Depth\&.hpp\&.
+.SS "bool SaveDepth::is_image_"
+
+.PP
+Definition at line 30 of file get_Depth\&.hpp\&.
+.SS "bool SaveDepth::is_pc2_"
+
+.PP
+Definition at line 31 of file get_Depth\&.hpp\&.
+.SS "string SaveDepth::pc2_topic_name_"
+
+.PP
+Definition at line 28 of file get_Depth\&.hpp\&.
+.SS "sensor_msgs::PointCloud2 SaveDepth::points_"
+
+.PP
+Definition at line 32 of file get_Depth\&.hpp\&.
+.SS "string SaveDepth::save_path_"
+
+.PP
+Definition at line 26 of file get_Depth\&.hpp\&.
+.SS "string SaveDepth::time_stamp_"
+
+.PP
+Definition at line 35 of file get_Depth\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

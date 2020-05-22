@@ -1,0 +1,113 @@
+.TH "decision_maker::AutowareStatus" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+decision_maker::AutowareStatus \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <decision_maker_node\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAutowareStatus\fP (void)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstd::map\fP< std::string, bool > \fBEventFlags\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::LaneArray \fBusing_lane_array\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::LaneArray \fBbased_lane_array\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBfinalwaypoints\fP"
+.br
+.ti -1c
+.RI "int \fBclosest_waypoint\fP"
+.br
+.ti -1c
+.RI "int \fBobstacle_waypoint\fP"
+.br
+.ti -1c
+.RI "int \fBchange_flag\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBpose\fP"
+.br
+.ti -1c
+.RI "double \fBvelocity\fP"
+.br
+.ti -1c
+.RI "int \fBfound_stopsign_idx\fP"
+.br
+.ti -1c
+.RI "int \fBprev_stopped_wpidx\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 87 of file decision_maker_node\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "decision_maker::AutowareStatus::AutowareStatus (void)\fC [inline]\fP"
+
+.PP
+Definition at line 106 of file decision_maker_node\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_msgs::LaneArray decision_maker::AutowareStatus::based_lane_array"
+
+.PP
+Definition at line 93 of file decision_maker_node\&.hpp\&.
+.SS "int decision_maker::AutowareStatus::change_flag"
+
+.PP
+Definition at line 97 of file decision_maker_node\&.hpp\&.
+.SS "int decision_maker::AutowareStatus::closest_waypoint"
+
+.PP
+Definition at line 95 of file decision_maker_node\&.hpp\&.
+.SS "\fBstd::map\fP<std::string, bool> decision_maker::AutowareStatus::EventFlags"
+
+.PP
+Definition at line 89 of file decision_maker_node\&.hpp\&.
+.SS "autoware_msgs::Lane decision_maker::AutowareStatus::finalwaypoints"
+
+.PP
+Definition at line 94 of file decision_maker_node\&.hpp\&.
+.SS "int decision_maker::AutowareStatus::found_stopsign_idx"
+
+.PP
+Definition at line 103 of file decision_maker_node\&.hpp\&.
+.SS "int decision_maker::AutowareStatus::obstacle_waypoint"
+
+.PP
+Definition at line 96 of file decision_maker_node\&.hpp\&.
+.SS "geometry_msgs::Pose decision_maker::AutowareStatus::pose"
+
+.PP
+Definition at line 100 of file decision_maker_node\&.hpp\&.
+.SS "int decision_maker::AutowareStatus::prev_stopped_wpidx"
+
+.PP
+Definition at line 104 of file decision_maker_node\&.hpp\&.
+.SS "autoware_msgs::LaneArray decision_maker::AutowareStatus::using_lane_array"
+
+.PP
+Definition at line 92 of file decision_maker_node\&.hpp\&.
+.SS "double decision_maker::AutowareStatus::velocity"
+
+.PP
+Definition at line 101 of file decision_maker_node\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

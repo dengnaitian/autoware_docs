@@ -1,0 +1,333 @@
+.TH "PlannerHNS::BehaviorPrediction" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::BehaviorPrediction \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BehaviorPrediction\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBehaviorPrediction\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BehaviorPrediction\fP ()"
+.br
+.ti -1c
+.RI "void \fBDoOneStep\fP (const std::vector< \fBDetectedObject\fP > &obj_list, const \fBWayPoint\fP &currPose, const double &minSpeed, const double &maxDeceleration, \fBRoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "void \fBDeleteFromList\fP (std::vector< \fBObjParticles\fP * > &delete_me, const \fBObjParticles\fP *pElement)"
+.br
+.ti -1c
+.RI "void \fBDeleteTheRest\fP (std::vector< \fBObjParticles\fP * > &delete_me)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPassiveDecisionMaker\fP * > \fBm_d_makers\fP"
+.br
+.ti -1c
+.RI "double \fBm_MaxLaneDetectionDistance\fP"
+.br
+.ti -1c
+.RI "double \fBm_PredictionDistance\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bGenerateBranches\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bUseFixedPrediction\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bStepByStep\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bParticleFilter\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBObjParticles\fP > \fBm_temp_list\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBObjParticles\fP > \fBm_ParticleInfo\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBObjParticles\fP * > \fBm_temp_list_ii\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBObjParticles\fP * > \fBm_ParticleInfo_II\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_GenerationTimer\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_ResamplingTimer\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bCanDecide\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bFirstMove\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bDebugOut\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBFromIndicatorToNumber\fP (const \fBPlannerHNS::LIGHT_INDICATOR\fP &ind)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::LIGHT_INDICATOR\fP \fBFromNumbertoIndicator\fP (const int &num)"
+.br
+.ti -1c
+.RI "double \fBCalcIndicatorWeight\fP (\fBPlannerHNS::LIGHT_INDICATOR\fP p_ind, \fBPlannerHNS::LIGHT_INDICATOR\fP obj_ind)"
+.br
+.ti -1c
+.RI "double \fBCalcAccelerationWeight\fP (int p_acl, int obj_acl)"
+.br
+.ti -1c
+.RI "void \fBCalPredictionTimeForObject\fP (\fBObjParticles\fP *pCarPart)"
+.br
+.ti -1c
+.RI "void \fBPredictCurrentTrajectory\fP (\fBRoadNetwork\fP &\fBmap\fP, \fBObjParticles\fP *pCarPart)"
+.br
+.ti -1c
+.RI "void \fBFilterObservations\fP (const std::vector< \fBDetectedObject\fP > &obj_list, \fBRoadNetwork\fP &\fBmap\fP, std::vector< \fBDetectedObject\fP > &filtered_list)"
+.br
+.ti -1c
+.RI "void \fBExtractTrajectoriesFromMap\fP (const std::vector< \fBDetectedObject\fP > &obj_list, \fBRoadNetwork\fP &\fBmap\fP, std::vector< \fBObjParticles\fP * > &old_list)"
+.br
+.ti -1c
+.RI "void \fBCalculateCollisionTimes\fP (const double &minSpeed)"
+.br
+.ti -1c
+.RI "void \fBParticleFilterSteps\fP (std::vector< \fBObjParticles\fP * > &part_info)"
+.br
+.ti -1c
+.RI "void \fBSamplesFreshParticles\fP (\fBObjParticles\fP *pParts)"
+.br
+.ti -1c
+.RI "void \fBMoveParticles\fP (\fBObjParticles\fP *parts)"
+.br
+.ti -1c
+.RI "void \fBCalculateWeights\fP (\fBObjParticles\fP *pParts)"
+.br
+.ti -1c
+.RI "void \fBCalOnePartWeight\fP (\fBObjParticles\fP *pParts, \fBParticle\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBNormalizeOnePartWeight\fP (\fBObjParticles\fP *pParts, \fBParticle\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBCollectParticles\fP (\fBObjParticles\fP *pParts)"
+.br
+.ti -1c
+.RI "void \fBRemoveWeakParticles\fP (\fBObjParticles\fP *pParts)"
+.br
+.ti -1c
+.RI "void \fBFindBest\fP (\fBObjParticles\fP *pParts)"
+.br
+.ti -1c
+.RI "void \fBCalculateAveragesAndProbabilities\fP (\fBObjParticles\fP *pParts)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBsort_weights\fP (const \fBParticle\fP *p1, const \fBParticle\fP *p2)"
+.br
+.ti -1c
+.RI "static bool \fBsort_trajectories\fP (const std::pair< int, double > &p1, const std::pair< int, double > &p2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 782 of file BehaviorPrediction\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::BehaviorPrediction::BehaviorPrediction ()"
+
+.PP
+Definition at line 18 of file BehaviorPrediction\&.cpp\&.
+.SS "PlannerHNS::BehaviorPrediction::~BehaviorPrediction ()\fC [virtual]\fP"
+
+.PP
+Definition at line 33 of file BehaviorPrediction\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double PlannerHNS::BehaviorPrediction::CalcAccelerationWeight (int p_acl, int obj_acl)\fC [protected]\fP"
+
+.PP
+Definition at line 280 of file BehaviorPrediction\&.cpp\&.
+.SS "double PlannerHNS::BehaviorPrediction::CalcIndicatorWeight (\fBPlannerHNS::LIGHT_INDICATOR\fP p_ind, \fBPlannerHNS::LIGHT_INDICATOR\fP obj_ind)\fC [protected]\fP"
+
+.PP
+Definition at line 272 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CalculateAveragesAndProbabilities (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CalculateCollisionTimes (const double & minSpeed)\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CalculateWeights (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 400 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CalOnePartWeight (\fBObjParticles\fP * pParts, \fBParticle\fP & p)\fC [protected]\fP"
+
+.PP
+Definition at line 288 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CalPredictionTimeForObject (\fBObjParticles\fP * pCarPart)\fC [protected]\fP"
+
+.PP
+Definition at line 173 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::CollectParticles (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 631 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::DeleteFromList (std::vector< \fBObjParticles\fP * > & delete_me, const \fBObjParticles\fP * pElement)\fC [inline]\fP"
+
+.PP
+Definition at line 855 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::BehaviorPrediction::DeleteTheRest (std::vector< \fBObjParticles\fP * > & delete_me)\fC [inline]\fP"
+
+.PP
+Definition at line 867 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::BehaviorPrediction::DoOneStep (const std::vector< \fBDetectedObject\fP > & obj_list, const \fBWayPoint\fP & currPose, const double & minSpeed, const double & maxDeceleration, \fBRoadNetwork\fP & map)"
+
+.PP
+Definition at line 83 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::ExtractTrajectoriesFromMap (const std::vector< \fBDetectedObject\fP > & obj_list, \fBRoadNetwork\fP & map, std::vector< \fBObjParticles\fP * > & old_list)\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::FilterObservations (const std::vector< \fBDetectedObject\fP > & obj_list, \fBRoadNetwork\fP & map, std::vector< \fBDetectedObject\fP > & filtered_list)\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::FindBest (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 485 of file BehaviorPrediction\&.cpp\&.
+.SS "int PlannerHNS::BehaviorPrediction::FromIndicatorToNumber (const \fBPlannerHNS::LIGHT_INDICATOR\fP & ind)\fC [protected]\fP"
+
+.PP
+Definition at line 242 of file BehaviorPrediction\&.cpp\&.
+.SS "\fBPlannerHNS::LIGHT_INDICATOR\fP PlannerHNS::BehaviorPrediction::FromNumbertoIndicator (const int & num)\fC [protected]\fP"
+
+.PP
+Definition at line 258 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::MoveParticles (\fBObjParticles\fP * parts)\fC [protected]\fP"
+
+.PP
+Definition at line 650 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::NormalizeOnePartWeight (\fBObjParticles\fP * pParts, \fBParticle\fP & p)\fC [protected]\fP"
+
+.PP
+Definition at line 341 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::ParticleFilterSteps (std::vector< \fBObjParticles\fP * > & part_info)\fC [protected]\fP"
+
+.PP
+Definition at line 228 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::PredictCurrentTrajectory (\fBRoadNetwork\fP & map, \fBObjParticles\fP * pCarPart)\fC [protected]\fP"
+
+.PP
+Definition at line 181 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::RemoveWeakParticles (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 458 of file BehaviorPrediction\&.cpp\&.
+.SS "void PlannerHNS::BehaviorPrediction::SamplesFreshParticles (\fBObjParticles\fP * pParts)\fC [protected]\fP"
+
+.PP
+Definition at line 553 of file BehaviorPrediction\&.cpp\&.
+.SS "static bool PlannerHNS::BehaviorPrediction::sort_trajectories (const std::pair< int, double > & p1, const std::pair< int, double > & p2)\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 847 of file BehaviorPrediction\&.h\&.
+.SS "static bool PlannerHNS::BehaviorPrediction::sort_weights (const \fBParticle\fP * p1, const \fBParticle\fP * p2)\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 842 of file BehaviorPrediction\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlannerHNS::BehaviorPrediction::m_bCanDecide"
+
+.PP
+Definition at line 809 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bDebugOut"
+
+.PP
+Definition at line 811 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bFirstMove"
+
+.PP
+Definition at line 810 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bGenerateBranches"
+
+.PP
+Definition at line 793 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bParticleFilter"
+
+.PP
+Definition at line 796 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bStepByStep"
+
+.PP
+Definition at line 795 of file BehaviorPrediction\&.h\&.
+.SS "bool PlannerHNS::BehaviorPrediction::m_bUseFixedPrediction"
+
+.PP
+Definition at line 794 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBPassiveDecisionMaker\fP*> PlannerHNS::BehaviorPrediction::m_d_makers"
+
+.PP
+Definition at line 790 of file BehaviorPrediction\&.h\&.
+.SS "struct timespec PlannerHNS::BehaviorPrediction::m_GenerationTimer"
+
+.PP
+Definition at line 806 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::BehaviorPrediction::m_MaxLaneDetectionDistance"
+
+.PP
+Definition at line 791 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBObjParticles\fP> PlannerHNS::BehaviorPrediction::m_ParticleInfo"
+
+.PP
+Definition at line 801 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBObjParticles\fP*> PlannerHNS::BehaviorPrediction::m_ParticleInfo_II"
+
+.PP
+Definition at line 804 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::BehaviorPrediction::m_PredictionDistance"
+
+.PP
+Definition at line 792 of file BehaviorPrediction\&.h\&.
+.SS "timespec PlannerHNS::BehaviorPrediction::m_ResamplingTimer"
+
+.PP
+Definition at line 807 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBObjParticles\fP> PlannerHNS::BehaviorPrediction::m_temp_list"
+
+.PP
+Definition at line 800 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBObjParticles\fP*> PlannerHNS::BehaviorPrediction::m_temp_list_ii"
+
+.PP
+Definition at line 803 of file BehaviorPrediction\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

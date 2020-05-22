@@ -1,0 +1,158 @@
+.TH "VelocitySetPath" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VelocitySetPath \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <velocity_set_path\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVelocitySetPath\fP ()"
+.br
+.ti -1c
+.RI "\fB~VelocitySetPath\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeWaypointsForStopping\fP (int stop_waypoint, int obstacle_waypoint, int closest_waypoint, double deceleration)"
+.br
+.ti -1c
+.RI "void \fBavoidSuddenDeceleration\fP (double velocity_change_limit, double deceleration, int closest_waypoint)"
+.br
+.ti -1c
+.RI "void \fBavoidSuddenAcceleration\fP (double decelerationint, int closest_waypoint)"
+.br
+.ti -1c
+.RI "void \fBchangeWaypointsForDeceleration\fP (double deceleration, int closest_waypoint, int obstacle_waypoint)"
+.br
+.ti -1c
+.RI "void \fBsetTemporalWaypoints\fP (int temporal_waypoints_size, int closest_waypoint, geometry_msgs::PoseStamped control_pose)"
+.br
+.ti -1c
+.RI "void \fBinitializeNewWaypoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetFlag\fP ()"
+.br
+.ti -1c
+.RI "void \fBwaypointsCallback\fP (const autoware_msgs::LaneConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcurrentVelocityCallback\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "double \fBcalcInterval\fP (const int begin, const int end) const "
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBgetPrevWaypoints\fP () const "
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBgetNewWaypoints\fP () const "
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBgetTemporalWaypoints\fP () const "
+.br
+.ti -1c
+.RI "bool \fBgetSetPath\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetCurrentVelocity\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetPrevWaypointsSize\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetNewWaypointsSize\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file velocity_set_path\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VelocitySetPath::VelocitySetPath ()"
+
+.PP
+Definition at line 19 of file velocity_set_path\&.cpp\&.
+.SS "VelocitySetPath::~VelocitySetPath ()"
+
+.PP
+Definition at line 28 of file velocity_set_path\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void VelocitySetPath::avoidSuddenAcceleration (double decelerationint, int closest_waypoint)"
+
+.PP
+Definition at line 97 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::avoidSuddenDeceleration (double velocity_change_limit, double deceleration, int closest_waypoint)"
+
+.PP
+Definition at line 120 of file velocity_set_path\&.cpp\&.
+.SS "double VelocitySetPath::calcInterval (const int begin, const int end) const"
+
+.PP
+Definition at line 186 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::changeWaypointsForDeceleration (double deceleration, int closest_waypoint, int obstacle_waypoint)"
+
+.PP
+Definition at line 70 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::changeWaypointsForStopping (int stop_waypoint, int obstacle_waypoint, int closest_waypoint, double deceleration)"
+
+.PP
+Definition at line 148 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::currentVelocityCallback (const geometry_msgs::TwistStampedConstPtr & msg)"
+
+.PP
+Definition at line 226 of file velocity_set_path\&.cpp\&.
+.SS "double VelocitySetPath::getCurrentVelocity () const\fC [inline]\fP"
+
+.PP
+Definition at line 75 of file velocity_set_path\&.h\&.
+.SS "autoware_msgs::Lane VelocitySetPath::getNewWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file velocity_set_path\&.h\&.
+.SS "int VelocitySetPath::getNewWaypointsSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file velocity_set_path\&.h\&.
+.SS "autoware_msgs::Lane VelocitySetPath::getPrevWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 55 of file velocity_set_path\&.h\&.
+.SS "int VelocitySetPath::getPrevWaypointsSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file velocity_set_path\&.h\&.
+.SS "bool VelocitySetPath::getSetPath () const\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file velocity_set_path\&.h\&.
+.SS "autoware_msgs::Lane VelocitySetPath::getTemporalWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file velocity_set_path\&.h\&.
+.SS "void VelocitySetPath::initializeNewWaypoints ()"
+
+.PP
+Definition at line 181 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::resetFlag ()"
+
+.PP
+Definition at line 211 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::setTemporalWaypoints (int temporal_waypoints_size, int closest_waypoint, geometry_msgs::PoseStamped control_pose)"
+
+.PP
+Definition at line 43 of file velocity_set_path\&.cpp\&.
+.SS "void VelocitySetPath::waypointsCallback (const autoware_msgs::LaneConstPtr & msg)"
+
+.PP
+Definition at line 217 of file velocity_set_path\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,61 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/softmax_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/softmax_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBsoftmax_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsoftmax_array\fP (float *input, int n, float temp, float *output)"
+.br
+.ti -1c
+.RI "\fBsoftmax_layer\fP \fBmake_softmax_layer\fP (int batch, int inputs, int groups)"
+.br
+.ti -1c
+.RI "void \fBforward_softmax_layer\fP (const \fBsoftmax_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_softmax_layer\fP (const \fBsoftmax_layer\fP l, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBsoftmax_layer\fP"
+
+.PP
+Definition at line 6 of file softmax_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_softmax_layer (const \fBsoftmax_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 59 of file softmax_layer\&.c\&.
+.SS "void forward_softmax_layer (const \fBsoftmax_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 39 of file softmax_layer\&.c\&.
+.SS "\fBsoftmax_layer\fP make_softmax_layer (int batch, int inputs, int groups)"
+
+.PP
+Definition at line 11 of file softmax_layer\&.c\&.
+.SS "void softmax_array (float * input, int n, float temp, float * output)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

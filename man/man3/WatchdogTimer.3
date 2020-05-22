@@ -1,0 +1,82 @@
+.TH "WatchdogTimer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WatchdogTimer \- A timer object to compare elapsed time against a timeout value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WatchdogTimer\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWatchdogTimer\fP ()"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~WatchdogTimer\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "void \fBstart\fP (\fBUINT32\fP seconds)"
+.br
+.RI "\fIRestarts the timer\&. Call this as 'ok' signal\&. \fP"
+.ti -1c
+.RI "void \fBstart\fP (const \fBTimeDuration\fP interval)"
+.br
+.RI "\fIInitializes and starts the timer\&. interval = time in [s]\&. \fP"
+.ti -1c
+.RI "bool \fBisElapsed\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A timer object to compare elapsed time against a timeout value\&. 
+.PP
+Definition at line 16 of file WatchdogTimer\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WatchdogTimer::WatchdogTimer ()"
+
+.PP
+Constructor\&. Konstruktor\&.
+.PP
+Der eigentliche Ablauf wird mit \fBstart()\fP gestartet! 
+.PP
+Definition at line 14 of file WatchdogTimer\&.cpp\&.
+.SS "WatchdogTimer::~WatchdogTimer ()\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 20 of file WatchdogTimer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool WatchdogTimer::isElapsed ()"
+Abfrage, ob der \fBTimer\fP abgelaufen ist\&. 
+.PP
+Definition at line 37 of file WatchdogTimer\&.cpp\&.
+.SS "void WatchdogTimer::reset ()"
+OK-Meldung der Applikation zum Ruecksetzen des Timers\&. 
+.PP
+Definition at line 52 of file WatchdogTimer\&.cpp\&.
+.SS "void WatchdogTimer::start (\fBUINT32\fP seconds)"
+
+.PP
+Restarts the timer\&. Call this as 'ok' signal\&. 
+.SS "void WatchdogTimer::start (const \fBTimeDuration\fP interval)"
+
+.PP
+Initializes and starts the timer\&. interval = time in [s]\&. Start the \fBTimer\fP\&. 
+.PP
+Definition at line 28 of file WatchdogTimer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

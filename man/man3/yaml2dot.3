@@ -1,0 +1,294 @@
+.TH "yaml2dot" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+yaml2dot \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBget_rospack\fP ()"
+.br
+.ti -1c
+.RI "def \fBget_cluster\fP (name, clusters)"
+.br
+.ti -1c
+.RI "def \fBcheck_topics\fP (\fBtopics\fP, \fBpkg\fP, \fBdata\fP)"
+.br
+.ti -1c
+.RI "def \fBget_topic_info\fP (\fBconf\fP)"
+.br
+.ti -1c
+.RI "def \fBis_inner_topic\fP (topic, \fBtopics\fP)"
+.br
+.ti -1c
+.RI "def \fBis_one_leaf\fP (topic, \fBtopics\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBparser\fP = argparse\&.ArgumentParser(description='Convert YAML into DOT')"
+.br
+.ti -1c
+.RI "\fBnargs\fP"
+.br
+.ti -1c
+.RI "\fBtype\fP"
+.br
+.ti -1c
+.RI "\fBhelp\fP"
+.br
+.ti -1c
+.RI "\fBdefault\fP"
+.br
+.ti -1c
+.RI "\fBofile\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP"
+.br
+.ti -1c
+.RI "\fBTrue\fP"
+.br
+.ti -1c
+.RI "\fBFalse\fP"
+.br
+.ti -1c
+.RI "\fBargs\fP = parser\&.parse_args()"
+.br
+.ti -1c
+.RI "\fBpkgs\fP = \fBget_rospack\fP()"
+.br
+.ti -1c
+.RI "\fBfargs\fP = pkgs\&.keys()"
+.br
+.ti -1c
+.RI "\fBgraph0\fP = pygraphviz\&.AGraph(directed=\fBTrue\fP, rankdir='LR', compound=\fBTrue\fP)"
+.br
+.ti -1c
+.RI "int \fBgraph_nr\fP = 0"
+.br
+.ti -1c
+.RI "int \fBnode_nr\fP = 0"
+.br
+.ti -1c
+.RI "dictionary \fBconf\fP = {}"
+.br
+.ti -1c
+.RI "string \fBcname\fP = 'cluster%d'"
+.br
+.ti -1c
+.RI "\fBpkg\fP = \fBpkgs\fP[\fBrfile\fP]ifrfileinpkgselsecname"
+.br
+.ti -1c
+.RI "\fBnodes\fP = yaml\&.load(file(\fBrfile\fP))"
+.br
+.ti -1c
+.RI "\fBtopics\fP = \fBget_topic_info\fP(\fBconf\fP)"
+.br
+.ti -1c
+.RI "\fBrfile\fP = \fBpkg\fP['file']"
+.br
+.ti -1c
+.RI "\fBgraph\fP = graph0\&.add_subgraph(name=\fBcname\fP)"
+.br
+.ti -1c
+.RI "\fBn0\fP = None"
+.br
+.ti -1c
+.RI "\fBshape\fP"
+.br
+.ti -1c
+.RI "\fBpub\fP"
+.br
+.ti -1c
+.RI "\fBltail\fP"
+.br
+.ti -1c
+.RI "\fBsub\fP"
+.br
+.ti -1c
+.RI "\fBlhead\fP"
+.br
+.ti -1c
+.RI "\fBpath\fP"
+.br
+.ti -1c
+.RI "\fBoutput\fP"
+.br
+.ti -1c
+.RI "\fBformat\fP"
+.br
+.ti -1c
+.RI "\fBprog\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def yaml2dot\&.check_topics ( topics,  pkg,  data)"
+
+.PP
+Definition at line 29 of file yaml2dot\&.py\&.
+.SS "def yaml2dot\&.get_cluster ( name,  clusters)"
+
+.PP
+Definition at line 23 of file yaml2dot\&.py\&.
+.SS "def yaml2dot\&.get_rospack ()"
+
+.PP
+Definition at line 12 of file yaml2dot\&.py\&.
+.SS "def yaml2dot\&.get_topic_info ( conf)"
+
+.PP
+Definition at line 37 of file yaml2dot\&.py\&.
+.SS "def yaml2dot\&.is_inner_topic ( topic,  topics)"
+
+.PP
+Definition at line 51 of file yaml2dot\&.py\&.
+.SS "def yaml2dot\&.is_one_leaf ( topic,  topics)"
+
+.PP
+Definition at line 55 of file yaml2dot\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "yaml2dot\&.args = parser\&.parse_args()"
+
+.PP
+Definition at line 74 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.cname = 'cluster%d'"
+
+.PP
+Definition at line 92 of file yaml2dot\&.py\&.
+.SS "dictionary yaml2dot\&.conf = {}"
+
+.PP
+Definition at line 90 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.const"
+
+.PP
+Definition at line 72 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.default"
+
+.PP
+Definition at line 66 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.False"
+
+.PP
+Definition at line 72 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.fargs = pkgs\&.keys()"
+
+.PP
+Definition at line 79 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.format"
+
+.PP
+Definition at line 149 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.graph = graph0\&.add_subgraph(name=\fBcname\fP)"
+
+.PP
+Definition at line 107 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.graph0 = pygraphviz\&.AGraph(directed=\fBTrue\fP, rankdir='LR', compound=\fBTrue\fP)"
+
+.PP
+Definition at line 85 of file yaml2dot\&.py\&.
+.SS "int yaml2dot\&.graph_nr = 0"
+
+.PP
+Definition at line 86 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.help"
+
+.PP
+Definition at line 65 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.lhead"
+
+.PP
+Definition at line 144 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.ltail"
+
+.PP
+Definition at line 130 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.n0 = None"
+
+.PP
+Definition at line 111 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.nargs"
+
+.PP
+Definition at line 64 of file yaml2dot\&.py\&.
+.SS "int yaml2dot\&.node_nr = 0"
+
+.PP
+Definition at line 87 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.nodes = yaml\&.load(file(\fBrfile\fP))"
+
+.PP
+Definition at line 94 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.ofile"
+\fBInitial value:\fP
+.PP
+.nf
+1 = os\&.path\&.expanduser(
+2     datetime\&.now()\&.strftime('~/\&.autoware/autoware-graph-%Y%m%d\&.pdf'))
+.fi
+.PP
+Definition at line 68 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.output"
+
+.PP
+Definition at line 149 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.parser = argparse\&.ArgumentParser(description='Convert YAML into DOT')"
+
+.PP
+Definition at line 63 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.path"
+
+.PP
+Definition at line 149 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.pkg = \fBpkgs\fP[\fBrfile\fP]ifrfileinpkgselsecname"
+
+.PP
+Definition at line 93 of file yaml2dot\&.py\&.
+.SS "dictionary yaml2dot\&.pkgs = \fBget_rospack\fP()"
+
+.PP
+Definition at line 78 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.prog"
+
+.PP
+Definition at line 149 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.pub"
+
+.PP
+Definition at line 121 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.rfile = \fBpkg\fP['file']"
+
+.PP
+Definition at line 105 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.shape"
+
+.PP
+Definition at line 115 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.sub"
+
+.PP
+Definition at line 135 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.topics = \fBget_topic_info\fP(\fBconf\fP)"
+
+.PP
+Definition at line 100 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.True"
+
+.PP
+Definition at line 72 of file yaml2dot\&.py\&.
+.SS "yaml2dot\&.type"
+
+.PP
+Definition at line 64 of file yaml2dot\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

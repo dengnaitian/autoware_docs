@@ -1,0 +1,427 @@
+.TH "AdasNS::Adas" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AdasNS::Adas \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adas_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAdas\fP ()"
+.br
+.ti -1c
+.RI "\fB~Adas\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetPredictedObjects\fP (const autoware_msgs::DetectedObjectArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcheckPath\fP (const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, std::vector< \fBPlannerHNS::WayPoint\fP > &path, \fBPlannerHNS::CAR_BASIC_INFO\fP &carInfo, const \fBPlannerHNS::WayPoint\fP &currState, \fBPlannerHNS::TrajectoryCost\fP &trajectoryCost)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBbMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_PredictedObjects\fP"
+.br
+.ti -1c
+.RI "bool \fBbPredictedObjects\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_PredictedPaths\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedTrajectoriesDummy\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_PredictedTrajectoriesActual\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_predicted_objects\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_predicted_path_rviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_AEB\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 45 of file adas_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AdasNS::Adas::Adas ()"
+default init 
+.PP
+Definition at line 15 of file adas_core\&.cpp\&.
+.SS "AdasNS::Adas::~Adas ()"
+
+.PP
+Definition at line 64 of file adas_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AdasNS::Adas::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+callback functions 
+.PP
+Definition at line 68 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetPredictedObjects (const autoware_msgs::DetectedObjectArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 271 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 327 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 306 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 257 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 264 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 243 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMLines (const vector_map_msgs::LineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 278 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 334 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 250 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 313 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 292 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 285 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 299 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 320 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::checkPath (const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, std::vector< \fBPlannerHNS::WayPoint\fP > & path, \fBPlannerHNS::CAR_BASIC_INFO\fP & carInfo, const \fBPlannerHNS::WayPoint\fP & currState, \fBPlannerHNS::TrajectoryCost\fP & trajectoryCost)\fC [protected]\fP"
+
+.PP
+Definition at line 188 of file adas_core\&.cpp\&.
+.SS "void AdasNS::Adas::MainLoop ()"
+
+.PP
+Definition at line 113 of file adas_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool AdasNS::Adas::bMap\fC [protected]\fP"
+
+.PP
+Definition at line 48 of file adas_core\&.h\&.
+.SS "bool AdasNS::Adas::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 50 of file adas_core\&.h\&.
+.SS "bool AdasNS::Adas::bPredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file adas_core\&.h\&.
+.SS "bool AdasNS::Adas::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file adas_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP AdasNS::Adas::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 58 of file adas_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP AdasNS::Adas::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 49 of file adas_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP AdasNS::Adas::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 47 of file adas_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP AdasNS::Adas::m_MapRaw\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file adas_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> AdasNS::Adas::m_PredictedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 55 of file adas_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > AdasNS::Adas::m_PredictedPaths\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file adas_core\&.h\&.
+.SS "visualization_msgs::MarkerArray AdasNS::Adas::m_PredictedTrajectoriesActual\fC [protected]\fP"
+
+.PP
+Definition at line 62 of file adas_core\&.h\&.
+.SS "visualization_msgs::MarkerArray AdasNS::Adas::m_PredictedTrajectoriesDummy\fC [protected]\fP"
+
+.PP
+Definition at line 61 of file adas_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP AdasNS::Adas::m_VehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file adas_core\&.h\&.
+.SS "ros::NodeHandle AdasNS::Adas::nh\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file adas_core\&.h\&.
+.SS "ros::Publisher AdasNS::Adas::pub_AEB\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file adas_core\&.h\&.
+.SS "ros::Publisher AdasNS::Adas::pub_predicted_path_rviz\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_cross_walk\fC [protected]\fP"
+
+.PP
+Definition at line 95 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_curbs\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_current_pose\fC [protected]\fP"
+subscribers 
+.PP
+Definition at line 68 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_dt_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 85 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_edges\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_intersect\fC [protected]\fP"
+
+.PP
+Definition at line 86 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_lines\fC [protected]\fP"
+
+.PP
+Definition at line 88 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_nodes\fC [protected]\fP"
+
+.PP
+Definition at line 96 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_points\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_predicted_objects\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_signals\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_stop_line\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_vectors\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sub_way_areas\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file adas_core\&.h\&.
+.SS "ros::Subscriber AdasNS::Adas::sup_area\fC [protected]\fP"
+
+.PP
+Definition at line 87 of file adas_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

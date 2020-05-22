@@ -1,0 +1,26 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_region_tlr_ssd__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_region_tlr_ssd__r_e_a_d_m_e \- Setup region_tlr_ssd 
+0\&. Refer \&.\&./\&.\&./\&.\&./cv_tracker/nodes/ssd/README\&.md 'this-README' to install Caffe for \fBSSD\fP\&. The compilation process for \fCregion_tlr_ssd\fP assumes that \fBSSD\fP Caffe has been installed under \fC~/ssdcaffe/\fP\&. Otherwise, specify your Caffe install path in \fCCMakeLists\&.txt\fP for \fCtrafficlight_recognizer\fP package or the compiler will skip compilation of this node\&.
+.PP
+.IP "1." 4
+Compile Autoware
+.IP "2." 4
+Download and decompress \fCtrained data\fP(or use your own) under \fCAutoware/ros/src/computing/perception/detection/packages/rtrafficlight_recognizer/data\fP\&.
+.PP
+Decompression result will be like followings: 
+.PP
+.nf
+1 Autoware/ros/src/computing/perception/detection/packages/trafficlight_recognizer/data
+2 ├── Autoware_tlr_SSD_300x300_iter_60000\&.caffemodel
+3 └── deploy\&.prototxt
+
+.fi
+.PP
+ Specify your caffemodel and prototxt file name in \fCAutoware/ros/src/computing/perception/detection/packages/trafficlight_recognizer/launch/traffic_recognition_ssd\&.launch\fP, if you use your own\&.
+.IP "3." 4
+That's it! 
+.PP
+

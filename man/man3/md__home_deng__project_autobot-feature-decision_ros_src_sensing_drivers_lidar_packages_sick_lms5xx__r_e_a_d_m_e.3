@@ -1,0 +1,39 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_lidar_packages_sick_lms5xx__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_lidar_packages_sick_lms5xx__r_e_a_d_m_e \- Lidar Sick Package 
+
+.SS "Steps to Execute the Package"
+.PP
+.SS "Using Runtime \fBManager\fP"
+.PP
+.IP "1." 4
+Go to the \fCSensing\fP Tab\&.
+.PP
+.IP "1." 4
+Click on the \fCconfig\fP button next to the SICK LMS511 label\&.
+.PP
+.IP "1." 4
+Write the current IP address of the SICK LMS511 that you wish to connect\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP the node, clicking on the checkbox\&.
+.PP
+.PP
+.SS "Using the command line"
+.PP
+In a sourced terminal, execute \fCroslaunch sick_driver lms511\&.launch ip:=XXX\&.YYY\&.ZZZ\&.WWW\fP\&.
+.PP
+.SS "To confirm that data is coming from the LiDAR"
+.PP
+.IP "1." 4
+Open RViz\&.
+.PP
+.IP "1." 4
+Change the fixed frame to \fCsick\fP\&.
+.PP
+.IP "1." 4
+Add topic type Scan, with the name \fC/scan\fP\&. 
+.PP
+

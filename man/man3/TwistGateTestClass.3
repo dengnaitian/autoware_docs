@@ -1,0 +1,276 @@
+.TH "TwistGateTestClass" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TwistGateTestClass \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <test_twist_gate\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTwistGateTestClass\fP ()"
+.br
+.ti -1c
+.RI "void \fBtgSpinOnce\fP ()"
+.br
+.ti -1c
+.RI "void \fBtgResetVehicleCmdMsg\fP ()"
+.br
+.ti -1c
+.RI "autoware_msgs::VehicleCmd \fBsetTgTwistGateMsg\fP (double d_value, int i_value)"
+.br
+.ti -1c
+.RI "autoware_msgs::VehicleCmd \fBgetTgTwistGateMsg\fP ()"
+.br
+.ti -1c
+.RI "void \fBpublishTwistCmd\fP (double linear_x, double angular_z)"
+.br
+.ti -1c
+.RI "void \fBpublishControlCmd\fP (double linear_vel, double linear_acc, double steer_angle)"
+.br
+.ti -1c
+.RI "void \fBpublishRemoteCmd\fP (autoware_msgs::RemoteCmd remote_cmd)"
+.br
+.ti -1c
+.RI "void \fBpublishModeCmd\fP (int mode)"
+.br
+.ti -1c
+.RI "void \fBpublishGearCmd\fP (int gear)"
+.br
+.ti -1c
+.RI "void \fBpublishAccelCmd\fP (int accel)"
+.br
+.ti -1c
+.RI "void \fBpublishSteerCmd\fP (int steer)"
+.br
+.ti -1c
+.RI "void \fBpublishBrakeCmd\fP (int brake)"
+.br
+.ti -1c
+.RI "void \fBpublishLampCmd\fP (int lamp_l, int lamp_r)"
+.br
+.ti -1c
+.RI "void \fBpublishDecisionMakerState\fP (std::string states)"
+.br
+.ti -1c
+.RI "void \fBvehicleCmdCallback\fP (autoware_msgs::VehicleCmd msg)"
+.br
+.ti -1c
+.RI "void \fBstateCmdCallback\fP (std_msgs::String msg)"
+.br
+.ti -1c
+.RI "autoware_msgs::VehicleCmd \fBgetTwistGateMsg\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetIsStateDriveFlag\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTwistGate\fP * \fBtg\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::VehicleCmd \fBcb_vehicle_cmd\fP"
+.br
+.ti -1c
+.RI "std_msgs::String \fBcb_state_cmd\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBtwist_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBcontrol_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBremote_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBmode_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBgear_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBaccel_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBsteer_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBbrake_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBlamp_cmd_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBdecision_maker_state_publisher\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBvehicle_cmd_subscriber\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBstate_cmd_subscriber\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file test_twist_gate\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TwistGateTestClass::TwistGateTestClass ()\fC [inline]\fP"
+
+.PP
+Definition at line 24 of file test_twist_gate\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool TwistGateTestClass::getIsStateDriveFlag ()\fC [inline]\fP"
+
+.PP
+Definition at line 164 of file test_twist_gate\&.hpp\&.
+.SS "autoware_msgs::VehicleCmd TwistGateTestClass::getTgTwistGateMsg ()\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file test_twist_gate\&.hpp\&.
+.SS "autoware_msgs::VehicleCmd TwistGateTestClass::getTwistGateMsg ()\fC [inline]\fP"
+
+.PP
+Definition at line 162 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishAccelCmd (int accel)\fC [inline]\fP"
+
+.PP
+Definition at line 114 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishBrakeCmd (int brake)\fC [inline]\fP"
+
+.PP
+Definition at line 130 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishControlCmd (double linear_vel, double linear_acc, double steer_angle)\fC [inline]\fP"
+
+.PP
+Definition at line 83 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishDecisionMakerState (std::string states)\fC [inline]\fP"
+
+.PP
+Definition at line 147 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishGearCmd (int gear)\fC [inline]\fP"
+
+.PP
+Definition at line 106 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishLampCmd (int lamp_l, int lamp_r)\fC [inline]\fP"
+
+.PP
+Definition at line 138 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishModeCmd (int mode)\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishRemoteCmd (autoware_msgs::RemoteCmd remote_cmd)\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishSteerCmd (int steer)\fC [inline]\fP"
+
+.PP
+Definition at line 122 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::publishTwistCmd (double linear_x, double angular_z)\fC [inline]\fP"
+
+.PP
+Definition at line 74 of file test_twist_gate\&.hpp\&.
+.SS "autoware_msgs::VehicleCmd TwistGateTestClass::setTgTwistGateMsg (double d_value, int i_value)\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::stateCmdCallback (std_msgs::String msg)\fC [inline]\fP"
+
+.PP
+Definition at line 158 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::tgResetVehicleCmdMsg ()\fC [inline]\fP"
+
+.PP
+Definition at line 54 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::tgSpinOnce ()\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file test_twist_gate\&.hpp\&.
+.SS "void TwistGateTestClass::vehicleCmdCallback (autoware_msgs::VehicleCmd msg)\fC [inline]\fP"
+
+.PP
+Definition at line 154 of file test_twist_gate\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ros::Publisher TwistGateTestClass::accel_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::brake_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "std_msgs::String TwistGateTestClass::cb_state_cmd"
+
+.PP
+Definition at line 46 of file test_twist_gate\&.hpp\&.
+.SS "autoware_msgs::VehicleCmd TwistGateTestClass::cb_vehicle_cmd"
+
+.PP
+Definition at line 45 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::control_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::decision_maker_state_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::gear_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::lamp_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::mode_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::NodeHandle TwistGateTestClass::nh"
+
+.PP
+Definition at line 48 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::remote_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Subscriber TwistGateTestClass::state_cmd_subscriber"
+
+.PP
+Definition at line 50 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::steer_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "\fBTwistGate\fP* TwistGateTestClass::tg"
+
+.PP
+Definition at line 44 of file test_twist_gate\&.hpp\&.
+.SS "ros::Publisher TwistGateTestClass::twist_cmd_publisher"
+
+.PP
+Definition at line 49 of file test_twist_gate\&.hpp\&.
+.SS "ros::Subscriber TwistGateTestClass::vehicle_cmd_subscriber"
+
+.PP
+Definition at line 50 of file test_twist_gate\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

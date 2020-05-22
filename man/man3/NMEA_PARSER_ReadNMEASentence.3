@@ -1,0 +1,237 @@
+.TH "NMEA_PARSER::ReadNMEASentence" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NMEA_PARSER::ReadNMEASentence \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ReadNMEASentence\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "string \fBGetField\fP (const string dataString, \fBuint\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBParse\fP (char letter)"
+.br
+.ti -1c
+.RI "\fBReadNMEASentence\fP ()"
+.br
+.ti -1c
+.RI "\fB~ReadNMEASentence\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   char \fBstatus\fP"
+.br
+.ti -1c
+.RI "   double \fBlatitude\fP"
+.br
+.ti -1c
+.RI "   double \fBlongitude\fP"
+.br
+.ti -1c
+.RI "   double \fBgroundSpeed\fP"
+.br
+.ti -1c
+.RI "   double \fBdirection\fP"
+.br
+.ti -1c
+.RI "   double \fBmagVariation\fP"
+.br
+.ti -1c
+.RI "   int \fByear\fP"
+.br
+.ti -1c
+.RI "   int \fBmonth\fP"
+.br
+.ti -1c
+.RI "   int \fBday\fP"
+.br
+.ti -1c
+.RI "   int \fBhour\fP"
+.br
+.ti -1c
+.RI "   int \fBmin\fP"
+.br
+.ti -1c
+.RI "   int \fBsec\fP"
+.br
+.ti -1c
+.RI "   \fBuint\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "} \fBgxrmc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBhour\fP"
+.br
+.ti -1c
+.RI "   int \fBmin\fP"
+.br
+.ti -1c
+.RI "   int \fBsec\fP"
+.br
+.ti -1c
+.RI "   double \fBlatitude\fP"
+.br
+.ti -1c
+.RI "   double \fBlongitude\fP"
+.br
+.ti -1c
+.RI "   char \fBmode\fP"
+.br
+.ti -1c
+.RI "   int \fBsatellites\fP"
+.br
+.ti -1c
+.RI "   double \fBhdop\fP"
+.br
+.ti -1c
+.RI "   double \fBaltitude\fP"
+.br
+.ti -1c
+.RI "   \fBuint\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "} \fBgpgga\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   double \fBtrueHeading\fP"
+.br
+.ti -1c
+.RI "   \fBuint\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "} \fBhehdt\fP"
+.br
+.ti -1c
+.RI "\fBuint\fP \fBcommandCount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file ReadNMEASentence\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "NMEA_PARSER::ReadNMEASentence::ReadNMEASentence ()"
+
+.PP
+Definition at line 108 of file ReadNMEASentence\&.cpp\&.
+.SS "NMEA_PARSER::ReadNMEASentence::~ReadNMEASentence ()"
+
+.PP
+Definition at line 120 of file ReadNMEASentence\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "string NMEA_PARSER::ReadNMEASentence::GetField (const string dataString, \fBuint\fP * pos)"
+
+.PP
+Definition at line 124 of file ReadNMEASentence\&.cpp\&.
+.SS "void NMEA_PARSER::ReadNMEASentence::Parse (char letter)"
+
+.PP
+Definition at line 21 of file ReadNMEASentence\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double NMEA_PARSER::ReadNMEASentence::altitude"
+
+.PP
+Definition at line 73 of file ReadNMEASentence\&.h\&.
+.SS "\fBuint\fP NMEA_PARSER::ReadNMEASentence::commandCount"
+
+.PP
+Definition at line 86 of file ReadNMEASentence\&.h\&.
+.SS "\fBuint\fP NMEA_PARSER::ReadNMEASentence::count"
+
+.PP
+Definition at line 60 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::day"
+
+.PP
+Definition at line 56 of file ReadNMEASentence\&.h\&.
+.SS "double NMEA_PARSER::ReadNMEASentence::direction"
+
+.PP
+Definition at line 52 of file ReadNMEASentence\&.h\&.
+.SS "struct { \&.\&.\&. }   NMEA_PARSER::ReadNMEASentence::gpgga"
+
+.SS "double NMEA_PARSER::ReadNMEASentence::groundSpeed"
+
+.PP
+Definition at line 51 of file ReadNMEASentence\&.h\&.
+.SS "struct { \&.\&.\&. }   NMEA_PARSER::ReadNMEASentence::gxrmc"
+
+.SS "double NMEA_PARSER::ReadNMEASentence::hdop"
+
+.PP
+Definition at line 72 of file ReadNMEASentence\&.h\&.
+.SS "struct { \&.\&.\&. }   NMEA_PARSER::ReadNMEASentence::hehdt"
+
+.SS "int NMEA_PARSER::ReadNMEASentence::hour"
+
+.PP
+Definition at line 57 of file ReadNMEASentence\&.h\&.
+.SS "double NMEA_PARSER::ReadNMEASentence::latitude"
+
+.PP
+Definition at line 49 of file ReadNMEASentence\&.h\&.
+.SS "double NMEA_PARSER::ReadNMEASentence::longitude"
+
+.PP
+Definition at line 50 of file ReadNMEASentence\&.h\&.
+.SS "double NMEA_PARSER::ReadNMEASentence::magVariation"
+
+.PP
+Definition at line 53 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::min"
+
+.PP
+Definition at line 58 of file ReadNMEASentence\&.h\&.
+.SS "char NMEA_PARSER::ReadNMEASentence::mode"
+
+.PP
+Definition at line 70 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::month"
+
+.PP
+Definition at line 55 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::satellites"
+
+.PP
+Definition at line 71 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::sec"
+
+.PP
+Definition at line 59 of file ReadNMEASentence\&.h\&.
+.SS "char NMEA_PARSER::ReadNMEASentence::status"
+
+.PP
+Definition at line 48 of file ReadNMEASentence\&.h\&.
+.SS "double NMEA_PARSER::ReadNMEASentence::trueHeading"
+
+.PP
+Definition at line 81 of file ReadNMEASentence\&.h\&.
+.SS "int NMEA_PARSER::ReadNMEASentence::year"
+
+.PP
+Definition at line 54 of file ReadNMEASentence\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

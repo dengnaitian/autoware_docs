@@ -1,0 +1,69 @@
+.TH "devices::SopasAnswer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::SopasAnswer \- Class that encapsulates a buffer that was sent as return to a sync call\&. (variable / method)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SopasBase\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSopasAnswer\fP (const \fBBYTE\fP *answer, \fBUINT32\fP answerLength)"
+.br
+.RI "\fIConstructor\&. Copies the content of the answer into the buffer of this object\&. \fP"
+.ti -1c
+.RI "\fB~SopasAnswer\fP ()"
+.br
+.RI "\fIDestructor\&. Frees the memory for the copied buffer\&. \fP"
+.ti -1c
+.RI "\fBBYTE\fP * \fBgetBuffer\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBsize\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class that encapsulates a buffer that was sent as return to a sync call\&. (variable / method) 
+.PP
+Definition at line 484 of file SopasBase\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::SopasAnswer::SopasAnswer (const \fBBYTE\fP * answer, \fBUINT32\fP answerLength)"
+
+.PP
+Constructor\&. Copies the content of the answer into the buffer of this object\&. 
+.PP
+Definition at line 2347 of file SopasBase\&.cpp\&.
+.SS "devices::SopasAnswer::~SopasAnswer ()"
+
+.PP
+Destructor\&. Frees the memory for the copied buffer\&. 
+.PP
+Definition at line 2360 of file SopasBase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBYTE\fP* devices::SopasAnswer::getBuffer ()\fC [inline]\fP"
+
+.PP
+Definition at line 493 of file SopasBase\&.hpp\&.
+.SS "bool devices::SopasAnswer::isValid ()\fC [inline]\fP"
+
+.PP
+Definition at line 497 of file SopasBase\&.hpp\&.
+.SS "\fBUINT32\fP devices::SopasAnswer::size ()\fC [inline]\fP"
+
+.PP
+Definition at line 495 of file SopasBase\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

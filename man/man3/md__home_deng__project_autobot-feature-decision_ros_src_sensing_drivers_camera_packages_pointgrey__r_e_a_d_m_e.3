@@ -1,0 +1,98 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_camera_packages_pointgrey__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_camera_packages_pointgrey__r_e_a_d_m_e \- Autoware \fBPoint\fP Grey Camera Drivers Package 
+This package allows the capture of an image stream from \fBPoint\fP Grey cameras\&. It has been tested successfully with Grasshopper3 and LadyBug5 devices on both Ubuntu 14\&.04 and 16\&.04\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "\(bu" 2
+FlyCapture SDK or Spinnaker SDK provided by \fBPoint\fP Grey\&. 
+.PP
+
+.PP
+.PP
+.SS "Grasshopper3"
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:\\ \fCroslaunch autoware_pointgrey_drivers grasshopper3\&.launch\fP
+.IP "\(bu" 2
+From Runtime manager:\\ Sensing Tab -> Cameras -> PointGrey Grasshopper3
+.PP
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCfps\fP*integer* Defines the frames per second at which to attempt image stream acquisition\&. \fCmode\fP*integer*Camera Mode - please check your camera for valid modes (0,1,2,\&.\&.\&.,31)\&. \fCformat\fP*string*Pixel Format, which can be either \fCraw\fP or \fCrgb\fP\&. \fCraw\fP will publish the default bayer format according to your camera sensor\&. Both modes have 8 bits per pixel per channel\&. \fCtimeout\fP*integer*Timeout in miliseconds\&. Default 1000 ms\&. \fCCalibrationFile\fP*string*Path to an Autoware-compatible calibration file to be published in the \fCcamera_info\fP topic related to this camera\&. 
+.SS "Ladybug"
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:\\ \fCroslaunch autoware_pointgrey_drivers ladybug\&.launch\fP
+.IP "\(bu" 2
+From Runtime manager:\\ Sensing Tab -> Cameras -> PointGrey Ladybug5
+.PP
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCSCALE\fP*float*Defines the downscale ratio (between 0\&.1 and 1\&.0)\&. \fCCalibrationFile\fP*string*Path to an Autoware-compatible calibration file to be published in the \fCcamera_info\fP topic related to this camera\&. 
+.SS "Notes"
+.PP
+.IP "\(bu" 2
+The FlyCapture SDK must be obtained from \fBPoint\fP Grey's website\&.\\ https://www.ptgrey.com/flycapture-sdk
+.PP
+.PP
+.SS "FLIR ADK"
+.PP
+Execute from \fCAutoware/ros\fP base path\&.
+.PP
+.IP "1." 4
+\fCrosdep update\fP
+.PP
+.IP "1." 4
+\fCrosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO\fP
+.PP
+.IP "1." 4
+\fC\&./catkin_make_release\fP
+.PP
+.IP "1." 4
+\fC\&./run\fP
+.PP
+.IP "1." 4
+Connect your camera
+.PP
+.IP "1." 4
+Confirm the camera has been detected using \fCv4l2-ctl --list-devices\fP
+.PP
+.IP "1." 4
+Select from \fISensing\fP tab / \fICameras\fP -> FLIR ADK
+.PP
+.IP "1." 4
+Press the \fC[config]\fP button and write the device name reported by \fCv4l2-ctl --list-devices\fP\&.
+.PP
+.IP "1." 4
+Click the \fIFLIR ADK\fP checkbox
+.PP
+.IP "1." 4
+Open Rviz and add image topic \fC/flir_adk/camera/image_raw\fP
+.PP
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCDEVICE\fP*string* Name of the system device in the form \fC/dev/videoX\fP\&. Obtain the correct name using \fCv4l2-ctl --list-devices\fP\&. \fCFPS\fP*integer*Frame per second\&. Default 30\&. \fCWIDTH\fP*integer*Image width of the stream (Default 640)\&. \fCHEIGHT\fP*integer*Image height of the camera (Default 512)\&. \fCNS\fP*string*Namespace to add as prefix\&. Default \fCflir_adk\fP\&. 
+.SS "Spinnaker"
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:\\ \fCroslaunch autoware_pointgrey_drivers spinnaker\&.launch\fP
+.IP "\(bu" 2
+From Runtime manager:\\ Sensing Tab -> Cameras -> PointGrey Spinnaker
+.PP
+.PP
+.SS "\fBParameters\fP available"
+.PP
+ParameterTypeDescription  \fCfps\fP*integer* Frame per second (Default 60)\&. \fCwidth\fP*integer*Image width of the stream (Default 1440)\&. \fCheight\fP*integer*Image height of the camera (Default 1080)\&. \fCdltl\fP*integer*DeviceLinkThroughputLimit (Default 100000000)\&. 

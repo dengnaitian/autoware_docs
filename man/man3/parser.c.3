@@ -1,0 +1,447 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/parser.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/parser.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include 'activation_layer\&.h'\fP
+.br
+\fC#include 'logistic_layer\&.h'\fP
+.br
+\fC#include 'l2norm_layer\&.h'\fP
+.br
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'avgpool_layer\&.h'\fP
+.br
+\fC#include 'batchnorm_layer\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'connected_layer\&.h'\fP
+.br
+\fC#include 'deconvolutional_layer\&.h'\fP
+.br
+\fC#include 'convolutional_layer\&.h'\fP
+.br
+\fC#include 'cost_layer\&.h'\fP
+.br
+\fC#include 'crnn_layer\&.h'\fP
+.br
+\fC#include 'crop_layer\&.h'\fP
+.br
+\fC#include 'detection_layer\&.h'\fP
+.br
+\fC#include 'dropout_layer\&.h'\fP
+.br
+\fC#include 'gru_layer\&.h'\fP
+.br
+\fC#include 'list\&.h'\fP
+.br
+\fC#include 'local_layer\&.h'\fP
+.br
+\fC#include 'maxpool_layer\&.h'\fP
+.br
+\fC#include 'normalization_layer\&.h'\fP
+.br
+\fC#include 'option_list\&.h'\fP
+.br
+\fC#include 'parser\&.h'\fP
+.br
+\fC#include 'region_layer\&.h'\fP
+.br
+\fC#include 'yolo_layer\&.h'\fP
+.br
+\fC#include 'reorg_layer\&.h'\fP
+.br
+\fC#include 'rnn_layer\&.h'\fP
+.br
+\fC#include 'route_layer\&.h'\fP
+.br
+\fC#include 'upsample_layer\&.h'\fP
+.br
+\fC#include 'shortcut_layer\&.h'\fP
+.br
+\fC#include 'softmax_layer\&.h'\fP
+.br
+\fC#include 'lstm_layer\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBsection\fP"
+.br
+.ti -1c
+.RI "struct \fBsize_params\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBsize_params\fP \fBsize_params\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlist\fP * \fBread_cfg\fP (char *filename)"
+.br
+.ti -1c
+.RI "\fBLAYER_TYPE\fP \fBstring_to_layer_type\fP (char *type)"
+.br
+.ti -1c
+.RI "void \fBfree_section\fP (\fBsection\fP *s)"
+.br
+.ti -1c
+.RI "void \fBparse_data\fP (char *\fBdata\fP, float *a, int n)"
+.br
+.ti -1c
+.RI "\fBlocal_layer\fP \fBparse_local\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_deconvolutional\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBconvolutional_layer\fP \fBparse_convolutional\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_crnn\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_rnn\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_gru\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_lstm\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_connected\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBsoftmax_layer\fP \fBparse_softmax\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "int * \fBparse_yolo_mask\fP (char *a, int *num)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_yolo\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_region\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBdetection_layer\fP \fBparse_detection\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBcost_layer\fP \fBparse_cost\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBcrop_layer\fP \fBparse_crop\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_reorg\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBmaxpool_layer\fP \fBparse_maxpool\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBavgpool_layer\fP \fBparse_avgpool\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBdropout_layer\fP \fBparse_dropout\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_normalization\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_batchnorm\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_shortcut\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params, \fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_l2norm\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_logistic\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_activation\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params)"
+.br
+.ti -1c
+.RI "\fBlayer\fP \fBparse_upsample\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params, \fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBroute_layer\fP \fBparse_route\fP (\fBlist\fP *\fBoptions\fP, \fBsize_params\fP params, \fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "\fBlearning_rate_policy\fP \fBget_policy\fP (char *s)"
+.br
+.ti -1c
+.RI "void \fBparse_net_options\fP (\fBlist\fP *\fBoptions\fP, \fBnetwork\fP *net)"
+.br
+.ti -1c
+.RI "int \fBis_network\fP (\fBsection\fP *s)"
+.br
+.ti -1c
+.RI "\fBnetwork\fP * \fBparse_network_cfg\fP (char *filename)"
+.br
+.ti -1c
+.RI "void \fBsave_convolutional_weights_binary\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBsave_convolutional_weights\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBsave_batchnorm_weights\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBsave_connected_weights\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBsave_weights_upto\fP (\fBnetwork\fP *net, char *filename, int cutoff)"
+.br
+.ti -1c
+.RI "void \fBsave_weights\fP (\fBnetwork\fP *net, char *filename)"
+.br
+.ti -1c
+.RI "void \fBtranspose_matrix\fP (float *a, int rows, int cols)"
+.br
+.ti -1c
+.RI "void \fBload_connected_weights\fP (\fBlayer\fP l, FILE *fp, int transpose)"
+.br
+.ti -1c
+.RI "void \fBload_batchnorm_weights\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBload_convolutional_weights_binary\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBload_convolutional_weights\fP (\fBlayer\fP l, FILE *fp)"
+.br
+.ti -1c
+.RI "void \fBload_weights_upto\fP (\fBnetwork\fP *net, char *filename, int start, int cutoff)"
+.br
+.ti -1c
+.RI "void \fBload_weights\fP (\fBnetwork\fP *net, char *filename)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBsize_params\fP  \fBsize_params\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "void free_section (\fBsection\fP * s)"
+
+.PP
+Definition at line 87 of file parser\&.c\&.
+.SS "\fBlearning_rate_policy\fP get_policy (char * s)"
+
+.PP
+Definition at line 630 of file parser\&.c\&.
+.SS "int is_network (\fBsection\fP * s)"
+
+.PP
+Definition at line 724 of file parser\&.c\&.
+.SS "void load_batchnorm_weights (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 1107 of file parser\&.c\&.
+.SS "void load_connected_weights (\fBlayer\fP l, FILE * fp, int transpose)"
+
+.PP
+Definition at line 1083 of file parser\&.c\&.
+.SS "void load_convolutional_weights (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 1149 of file parser\&.c\&.
+.SS "void load_convolutional_weights_binary (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 1119 of file parser\&.c\&.
+.SS "void load_weights (\fBnetwork\fP * net, char * filename)"
+
+.PP
+Definition at line 1292 of file parser\&.c\&.
+.SS "void load_weights_upto (\fBnetwork\fP * net, char * filename, int start, int cutoff)"
+
+.PP
+Definition at line 1202 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_activation (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 566 of file parser\&.c\&.
+.SS "\fBavgpool_layer\fP parse_avgpool (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 488 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_batchnorm (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 521 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_connected (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 257 of file parser\&.c\&.
+.SS "\fBconvolutional_layer\fP parse_convolutional (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 177 of file parser\&.c\&.
+.SS "\fBcost_layer\fP parse_cost (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 417 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_crnn (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 207 of file parser\&.c\&.
+.SS "\fBcrop_layer\fP parse_crop (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 429 of file parser\&.c\&.
+.SS "void parse_data (char * data, float * a, int n)"
+
+.PP
+Definition at line 103 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_deconvolutional (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 151 of file parser\&.c\&.
+.SS "\fBdetection_layer\fP parse_detection (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 393 of file parser\&.c\&.
+.SS "\fBdropout_layer\fP parse_dropout (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 501 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_gru (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 236 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_l2norm (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 547 of file parser\&.c\&.
+.SS "\fBlocal_layer\fP parse_local (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 130 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_logistic (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 557 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_lstm (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 247 of file parser\&.c\&.
+.SS "\fBmaxpool_layer\fP parse_maxpool (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 471 of file parser\&.c\&.
+.SS "void parse_net_options (\fBlist\fP * options, \fBnetwork\fP * net)"
+
+.PP
+Definition at line 643 of file parser\&.c\&.
+.SS "\fBnetwork\fP* parse_network_cfg (char * filename)"
+
+.PP
+Definition at line 730 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_normalization (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 511 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_region (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 341 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_reorg (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 453 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_rnn (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 222 of file parser\&.c\&.
+.SS "\fBroute_layer\fP parse_route (\fBlist\fP * options, \fBsize_params\fP params, \fBnetwork\fP * net)"
+
+.PP
+Definition at line 589 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_shortcut (\fBlist\fP * options, \fBsize_params\fP params, \fBnetwork\fP * net)"
+
+.PP
+Definition at line 527 of file parser\&.c\&.
+.SS "\fBsoftmax_layer\fP parse_softmax (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 268 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_upsample (\fBlist\fP * options, \fBsize_params\fP params, \fBnetwork\fP * net)"
+
+.PP
+Definition at line 580 of file parser\&.c\&.
+.SS "\fBlayer\fP parse_yolo (\fBlist\fP * options, \fBsize_params\fP params)"
+
+.PP
+Definition at line 303 of file parser\&.c\&.
+.SS "int* parse_yolo_mask (char * a, int * num)"
+
+.PP
+Definition at line 282 of file parser\&.c\&.
+.SS "\fBlist\fP* read_cfg (char * filename)"
+
+.PP
+Definition at line 876 of file parser\&.c\&.
+.SS "void save_batchnorm_weights (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 964 of file parser\&.c\&.
+.SS "void save_connected_weights (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 976 of file parser\&.c\&.
+.SS "void save_convolutional_weights (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 943 of file parser\&.c\&.
+.SS "void save_convolutional_weights_binary (\fBlayer\fP l, FILE * fp)"
+
+.PP
+Definition at line 911 of file parser\&.c\&.
+.SS "void save_weights (\fBnetwork\fP * net, char * filename)"
+
+.PP
+Definition at line 1065 of file parser\&.c\&.
+.SS "void save_weights_upto (\fBnetwork\fP * net, char * filename, int cutoff)"
+
+.PP
+Definition at line 992 of file parser\&.c\&.
+.SS "\fBLAYER_TYPE\fP string_to_layer_type (char * type)"
+
+.PP
+Definition at line 46 of file parser\&.c\&.
+.SS "void transpose_matrix (float * a, int rows, int cols)"
+
+.PP
+Definition at line 1070 of file parser\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,88 @@
+.TH "SickToolbox::SickException" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickException \- Provides a base exception class from which to derive other Sick exceptions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickException\&.hh>\fP
+.PP
+Inherits exception\&.
+.PP
+Inherited by \fBSickToolbox::SickBadChecksumException\fP, \fBSickToolbox::SickConfigException\fP, \fBSickToolbox::SickErrorException\fP, \fBSickToolbox::SickIOException\fP, \fBSickToolbox::SickThreadException\fP, and \fBSickToolbox::SickTimeoutException\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickException\fP (const std::string general_str)"
+.br
+.RI "\fIA standard constructor\&. \fP"
+.ti -1c
+.RI "\fBSickException\fP (const std::string general_str, const std::string detailed_str)"
+.br
+.RI "\fIA standard constructor\&. \fP"
+.ti -1c
+.RI "virtual const char * \fBwhat\fP () const   throw ()"
+.br
+.RI "\fIFrom the standard exception library\&. \fP"
+.ti -1c
+.RI "\fB~SickException\fP ()  throw ()"
+.br
+.RI "\fIA destructor\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a base exception class from which to derive other Sick exceptions\&. 
+.PP
+Definition at line 30 of file SickException\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SickToolbox::SickException::SickException (const std::string general_str)\fC [inline]\fP"
+
+.PP
+A standard constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgeneral_str\fP A descriptive 'general' string 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file SickException\&.hh\&.
+.SS "SickToolbox::SickException::SickException (const std::string general_str, const std::string detailed_str)\fC [inline]\fP"
+
+.PP
+A standard constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgeneral_str\fP A descriptive 'general' string 
+.br
+\fIdetailed_str\fP A more detailed description 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file SickException\&.hh\&.
+.SS "SickToolbox::SickException::~SickException ()\fC [inline]\fP"
+
+.PP
+A destructor\&. 
+.PP
+Definition at line 61 of file SickException\&.hh\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual const char* SickToolbox::SickException::what () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+From the standard exception library\&. 
+.PP
+Definition at line 54 of file SickException\&.hh\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

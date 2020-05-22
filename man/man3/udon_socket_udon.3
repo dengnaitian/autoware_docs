@@ -1,0 +1,79 @@
+.TH "udon_socket::udon" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+udon_socket::udon \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBLocation\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "ssize_t \fBsend_request\fP (int fd)"
+.br
+.ti -1c
+.RI "ssize_t \fBsend_response\fP (int fd)"
+.br
+.ti -1c
+.RI "ssize_t \fBsend_mode\fP (int fd, std::int32_t mode)"
+.br
+.ti -1c
+.RI "ssize_t \fBsend_location\fP (int fd, const \fBLocation\fP &location)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr std::int32_t \fBMODE_NORMAL\fP = 0"
+.br
+.ti -1c
+.RI "constexpr std::int32_t \fBMODE_AUTO\fP = 1"
+.br
+.ti -1c
+.RI "constexpr std::int32_t \fBMODE_ERROR\fP = 2"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "ssize_t udon_socket::udon::send_location (int fd, const \fBLocation\fP & location)"
+
+.PP
+Definition at line 115 of file udon\&.cpp\&.
+.SS "ssize_t udon_socket::udon::send_mode (int fd, std::int32_t mode)"
+
+.PP
+Definition at line 106 of file udon\&.cpp\&.
+.SS "ssize_t udon_socket::udon::send_request (int fd)"
+
+.PP
+Definition at line 89 of file udon\&.cpp\&.
+.SS "ssize_t udon_socket::udon::send_response (int fd)"
+
+.PP
+Definition at line 98 of file udon\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr std::int32_t udon_socket::udon::MODE_AUTO = 1"
+
+.PP
+Definition at line 29 of file udon\&.hpp\&.
+.SS "constexpr std::int32_t udon_socket::udon::MODE_ERROR = 2"
+
+.PP
+Definition at line 30 of file udon\&.hpp\&.
+.SS "constexpr std::int32_t udon_socket::udon::MODE_NORMAL = 0"
+
+.PP
+Definition at line 28 of file udon\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

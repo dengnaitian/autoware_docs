@@ -1,0 +1,82 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/connected_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/connected_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'connected_layer\&.h'\fP
+.br
+\fC#include 'convolutional_layer\&.h'\fP
+.br
+\fC#include 'batchnorm_layer\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'gemm\&.h'\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_connected_layer\fP (int batch, int inputs, int outputs, \fBACTIVATION\fP activation, int batch_normalize, int adam)"
+.br
+.ti -1c
+.RI "void \fBupdate_connected_layer\fP (\fBlayer\fP l, \fBupdate_args\fP a)"
+.br
+.ti -1c
+.RI "void \fBforward_connected_layer\fP (\fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_connected_layer\fP (\fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBdenormalize_connected_layer\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "void \fBstatistics_connected_layer\fP (\fBlayer\fP l)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_connected_layer (\fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 169 of file connected_layer\&.c\&.
+.SS "void denormalize_connected_layer (\fBlayer\fP l)"
+
+.PP
+Definition at line 199 of file connected_layer\&.c\&.
+.SS "void forward_connected_layer (\fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 151 of file connected_layer\&.c\&.
+.SS "\fBlayer\fP make_connected_layer (int batch, int inputs, int outputs, \fBACTIVATION\fP activation, int batch_normalize, int adam)"
+
+.PP
+Definition at line 14 of file connected_layer\&.c\&.
+.SS "void statistics_connected_layer (\fBlayer\fP l)"
+
+.PP
+Definition at line 215 of file connected_layer\&.c\&.
+.SS "void update_connected_layer (\fBlayer\fP l, \fBupdate_args\fP a)"
+
+.PP
+Definition at line 132 of file connected_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

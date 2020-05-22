@@ -1,0 +1,267 @@
+.TH "PlannerHNS::WayPoint" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::WayPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWayPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP (const double &x, const double &y, const double &z, const double &a)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGPSPoint\fP \fBpos\fP"
+.br
+.ti -1c
+.RI "\fBRotation\fP \fBrot\fP"
+.br
+.ti -1c
+.RI "double \fBv\fP"
+.br
+.ti -1c
+.RI "double \fBcost\fP"
+.br
+.ti -1c
+.RI "double \fBtimeCost\fP"
+.br
+.ti -1c
+.RI "double \fBtotalReward\fP"
+.br
+.ti -1c
+.RI "double \fBcollisionCost\fP"
+.br
+.ti -1c
+.RI "double \fBlaneChangeCost\fP"
+.br
+.ti -1c
+.RI "int \fBlaneId\fP"
+.br
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBLeftPointId\fP"
+.br
+.ti -1c
+.RI "int \fBRightPointId\fP"
+.br
+.ti -1c
+.RI "int \fBLeftLnId\fP"
+.br
+.ti -1c
+.RI "int \fBRightLnId\fP"
+.br
+.ti -1c
+.RI "int \fBstopLineID\fP"
+.br
+.ti -1c
+.RI "\fBDIRECTION_TYPE\fP \fBbDir\fP"
+.br
+.ti -1c
+.RI "\fBSTATE_TYPE\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBBEH_STATE_TYPE\fP \fBbeh_state\fP"
+.br
+.ti -1c
+.RI "int \fBiOriginalIndex\fP"
+.br
+.ti -1c
+.RI "\fBLane\fP * \fBpLane\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP * \fBpLeft\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP * \fBpRight\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBtoIds\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBfromIds\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP * > \fBpFronts\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP * > \fBpBacks\fP"
+.br
+.ti -1c
+.RI "std::vector< std::pair< \fBACTION_TYPE\fP, double > > \fBactionCost\fP"
+.br
+.ti -1c
+.RI "int \fBoriginalMapID\fP"
+.br
+.ti -1c
+.RI "int \fBgid\fP"
+.br
+.ti -1c
+.RI "bool \fBbEnableLeftChange\fP"
+.br
+.ti -1c
+.RI "bool \fBbEnableRightChange\fP"
+.br
+.ti -1c
+.RI "bool \fBbBlocked\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 379 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::WayPoint::WayPoint ()\fC [inline]\fP"
+
+.PP
+Definition at line 420 of file RoadNetwork\&.h\&.
+.SS "PlannerHNS::WayPoint::WayPoint (const double & x, const double & y, const double & z, const double & a)\fC [inline]\fP"
+
+.PP
+Definition at line 450 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::pair<\fBACTION_TYPE\fP, double> > PlannerHNS::WayPoint::actionCost"
+
+.PP
+Definition at line 409 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::WayPoint::bBlocked"
+
+.PP
+Definition at line 418 of file RoadNetwork\&.h\&.
+.SS "\fBDIRECTION_TYPE\fP PlannerHNS::WayPoint::bDir"
+
+.PP
+Definition at line 397 of file RoadNetwork\&.h\&.
+.SS "\fBBEH_STATE_TYPE\fP PlannerHNS::WayPoint::beh_state"
+
+.PP
+Definition at line 399 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::WayPoint::bEnableLeftChange"
+
+.PP
+Definition at line 414 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::WayPoint::bEnableRightChange"
+
+.PP
+Definition at line 415 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::collisionCost"
+
+.PP
+Definition at line 388 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::cost"
+
+.PP
+Definition at line 385 of file RoadNetwork\&.h\&.
+.SS "std::vector<int> PlannerHNS::WayPoint::fromIds"
+
+.PP
+Definition at line 406 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::gid"
+
+.PP
+Definition at line 412 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::id"
+
+.PP
+Definition at line 391 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::iOriginalIndex"
+
+.PP
+Definition at line 400 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::laneChangeCost"
+
+.PP
+Definition at line 389 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::laneId"
+
+.PP
+Definition at line 390 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::LeftLnId"
+
+.PP
+Definition at line 394 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::LeftPointId"
+
+.PP
+Definition at line 392 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::originalMapID"
+
+.PP
+Definition at line 411 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBWayPoint\fP*> PlannerHNS::WayPoint::pBacks"
+
+.PP
+Definition at line 408 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBWayPoint\fP*> PlannerHNS::WayPoint::pFronts"
+
+.PP
+Definition at line 407 of file RoadNetwork\&.h\&.
+.SS "\fBLane\fP* PlannerHNS::WayPoint::pLane"
+
+.PP
+Definition at line 402 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP* PlannerHNS::WayPoint::pLeft"
+
+.PP
+Definition at line 403 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::WayPoint::pos"
+
+.PP
+Definition at line 382 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP* PlannerHNS::WayPoint::pRight"
+
+.PP
+Definition at line 404 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::RightLnId"
+
+.PP
+Definition at line 395 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::RightPointId"
+
+.PP
+Definition at line 393 of file RoadNetwork\&.h\&.
+.SS "\fBRotation\fP PlannerHNS::WayPoint::rot"
+
+.PP
+Definition at line 383 of file RoadNetwork\&.h\&.
+.SS "\fBSTATE_TYPE\fP PlannerHNS::WayPoint::state"
+
+.PP
+Definition at line 398 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::WayPoint::stopLineID"
+
+.PP
+Definition at line 396 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::timeCost"
+
+.PP
+Definition at line 386 of file RoadNetwork\&.h\&.
+.SS "std::vector<int> PlannerHNS::WayPoint::toIds"
+
+.PP
+Definition at line 405 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::totalReward"
+
+.PP
+Definition at line 387 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::WayPoint::v"
+
+.PP
+Definition at line 384 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

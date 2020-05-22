@@ -1,0 +1,120 @@
+.TH "autoware_camera_calibration.camera_checker.CameraCheckerNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.camera_checker.CameraCheckerNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, chess_size, dim, approximate=0)"
+.br
+.ti -1c
+.RI "def \fBqueue_monocular\fP (self, msg, cmsg)"
+.br
+.ti -1c
+.RI "def \fBqueue_stereo\fP (self, lmsg, lcmsg, rmsg, rcmsg)"
+.br
+.ti -1c
+.RI "def \fBmkgray\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBimage_corners\fP (self, im)"
+.br
+.ti -1c
+.RI "def \fBhandle_monocular\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBhandle_stereo\fP (self, msg)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBboard\fP"
+.br
+.ti -1c
+.RI "\fBbr\fP"
+.br
+.ti -1c
+.RI "\fBq_mono\fP"
+.br
+.ti -1c
+.RI "\fBq_stereo\fP"
+.br
+.ti -1c
+.RI "\fBmc\fP"
+.br
+.ti -1c
+.RI "\fBsc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 95 of file camera_checker\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.__init__ ( self,  chess_size,  dim,  approximate = \fC0\fP)"
+
+.PP
+Definition at line 97 of file camera_checker\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.handle_monocular ( self,  msg)"
+
+.PP
+Definition at line 166 of file camera_checker\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.handle_stereo ( self,  msg)"
+
+.PP
+Definition at line 197 of file camera_checker\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.image_corners ( self,  im)"
+
+.PP
+Definition at line 159 of file camera_checker\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.mkgray ( self,  msg)"
+
+.PP
+Definition at line 156 of file camera_checker\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.queue_monocular ( self,  msg,  cmsg)"
+
+.PP
+Definition at line 150 of file camera_checker\&.py\&.
+.SS "def autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.queue_stereo ( self,  lmsg,  lcmsg,  rmsg,  rcmsg)"
+
+.PP
+Definition at line 153 of file camera_checker\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.board"
+
+.PP
+Definition at line 98 of file camera_checker\&.py\&.
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.br"
+
+.PP
+Definition at line 134 of file camera_checker\&.py\&.
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.mc"
+
+.PP
+Definition at line 147 of file camera_checker\&.py\&.
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.q_mono"
+
+.PP
+Definition at line 136 of file camera_checker\&.py\&.
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.q_stereo"
+
+.PP
+Definition at line 137 of file camera_checker\&.py\&.
+.SS "autoware_camera_calibration\&.camera_checker\&.CameraCheckerNode\&.sc"
+
+.PP
+Definition at line 148 of file camera_checker\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

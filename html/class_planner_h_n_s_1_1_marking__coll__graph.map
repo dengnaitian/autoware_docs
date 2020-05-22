@@ -1,0 +1,8 @@
+<map id="PlannerHNS::Marking" name="PlannerHNS::Marking">
+<area shape="rect" id="node2" href="$class_planner_h_n_s_1_1_g_p_s_point.html" title="PlannerHNS::GPSPoint" alt="" coords="5,111,167,137"/>
+<area shape="rect" id="node3" href="$class_planner_h_n_s_1_1_lane.html" title="PlannerHNS::Lane" alt="" coords="190,111,321,137"/>
+<area shape="rect" id="node7" href="$class_planner_h_n_s_1_1_waiting_line.html" title="PlannerHNS::WaitingLine" alt="" coords="221,201,391,228"/>
+<area shape="rect" id="node4" href="$class_planner_h_n_s_1_1_road_segment.html" title="PlannerHNS::RoadSegment" alt="" coords="423,5,610,32"/>
+<area shape="rect" id="node5" href="$class_planner_h_n_s_1_1_crossing.html" title="PlannerHNS::Crossing" alt="" coords="439,111,594,137"/>
+<area shape="rect" id="node6" href="$class_planner_h_n_s_1_1_boundary.html" title="PlannerHNS::Boundary" alt="" coords="635,111,793,137"/>
+</map>

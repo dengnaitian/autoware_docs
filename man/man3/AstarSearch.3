@@ -1,0 +1,80 @@
+.TH "AstarSearch" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AstarSearch \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <astar_search\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAstarSearch\fP ()"
+.br
+.ti -1c
+.RI "\fB~AstarSearch\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP (const nav_msgs::OccupancyGrid &costmap)"
+.br
+.ti -1c
+.RI "bool \fBmakePlan\fP (const geometry_msgs::Pose &start_pose, const geometry_msgs::Pose &goal_pose)"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "const nav_msgs::Path & \fBgetPath\fP () const "
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 34 of file astar_search\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AstarSearch::AstarSearch ()"
+
+.PP
+Definition at line 19 of file astar_search\&.cpp\&.
+.SS "AstarSearch::~AstarSearch ()"
+
+.PP
+Definition at line 51 of file astar_search\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const nav_msgs::Path& AstarSearch::getPath () const\fC [inline]\fP"
+
+.PP
+Definition at line 45 of file astar_search\&.h\&.
+.SS "void AstarSearch::initialize (const nav_msgs::OccupancyGrid & costmap)"
+
+.PP
+Definition at line 145 of file astar_search\&.cpp\&.
+.SS "bool AstarSearch::makePlan (const geometry_msgs::Pose & start_pose, const geometry_msgs::Pose & goal_pose)"
+
+.PP
+Definition at line 197 of file astar_search\&.cpp\&.
+.SS "void AstarSearch::reset ()"
+
+.PP
+Definition at line 681 of file astar_search\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 36 of file astar_search\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

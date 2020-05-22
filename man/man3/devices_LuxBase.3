@@ -1,0 +1,296 @@
+.TH "devices::LuxBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::LuxBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LuxBase\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBOnScanReceiveCallbackFunction\fP) (void *)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmemreadLE\fP (\fBBYTE\fP *&buffer, \fBUINT16\fP &value)"
+.br
+.ti -1c
+.RI "void \fBmemreadLE\fP (\fBBYTE\fP *&buffer, \fBUINT32\fP &value)"
+.br
+.ti -1c
+.RI "\fBLuxBase\fP (\fBManager\fP *manager, const \fBUINT8\fP deviceID, const std::string longName, std::string ipAddress, \fBUINT16\fP tcpPortNumber, double scanFrequency, double scanStartAngle, double scanEndAngle, double offsetX, double offsetY, double offsetZ, double yawAngle, double pitchAngle, double rollAngle, bool beVerbose, std::string inputFileName)"
+.br
+.ti -1c
+.RI "virtual \fB~LuxBase\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBinitFile\fP (\fBFile::DisconnectFunction\fP function, void *obj)"
+.br
+.ti -1c
+.RI "virtual bool \fBinitTcp\fP (\fBTcp::DisconnectFunction\fP function, void *obj)"
+.br
+.ti -1c
+.RI "virtual bool \fBrun\fP (bool weWantScanData=true, bool weWantObjectData=true)"
+.br
+.ti -1c
+.RI "virtual bool \fBisRunning\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBstop\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetOnScanReceiveCallbackFunction\fP (\fBOnScanReceiveCallbackFunction\fP function, void *obj)"
+.br
+.ti -1c
+.RI "bool \fBcmd_getStatus\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcmd_stopMeasure\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcmd_startMeasure\fP (bool weWantScanData=true, bool weWantObjectData=true)"
+.br
+.ti -1c
+.RI "bool \fBcmd_getParameter\fP (\fBMrsParameterId\fP parameter, \fBUINT32\fP *value)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setParameter\fP (\fBMrsParameterId\fP parameter, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setMountingPos\fP (\fBPosition3D\fP mp)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setScanAngles\fP (double startAngle, double endAngle)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setSyncAngleOffset\fP (double syncAngle)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setScanFrequency\fP (double scanFreq)"
+.br
+.ti -1c
+.RI "bool \fBcmd_setDataOutputFlags\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcmd_saveConfiguration\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcmd_setNtpTimestamp\fP (\fBUINT32\fP seconds, \fBUINT32\fP fractionalSec)"
+.br
+.ti -1c
+.RI "std::string \fBgetFPGAVersion\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetFirmwareVersion\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetFPGAError\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetDSPError\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetTemperature\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetScannerStatus\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetSerialNumber\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetErrorRegister1\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetErrorRegister2\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetWarnRegister1\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBgetWarnRegister2\fP ()"
+.br
+.ti -1c
+.RI "void \fBdumpHeader\fP ()"
+.br
+.ti -1c
+.RI "void \fBdumpMessage\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBUINT32\fP \fBANGULAR_TICKS_PER_ROTATION\fP = 11520"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 129 of file LuxBase\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef void(* devices::LuxBase::OnScanReceiveCallbackFunction) (void *)"
+
+.PP
+Definition at line 132 of file LuxBase\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::LuxBase::LuxBase (\fBManager\fP * manager, const \fBUINT8\fP deviceID, const std::string longName, std::string ipAddress, \fBUINT16\fP tcpPortNumber, double scanFrequency, double scanStartAngle, double scanEndAngle, double offsetX, double offsetY, double offsetZ, double yawAngle, double pitchAngle, double rollAngle, bool beVerbose, std::string inputFileName)"
+
+.PP
+Definition at line 50 of file LuxBase\&.cpp\&.
+.SS "devices::LuxBase::~LuxBase ()\fC [virtual]\fP"
+
+.PP
+Definition at line 94 of file LuxBase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool devices::LuxBase::cmd_getParameter (\fBMrsParameterId\fP parameter, \fBUINT32\fP * value)"
+
+.PP
+Definition at line 851 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_getStatus ()"
+Request the staus message from the scanner\&. 
+.PP
+Definition at line 570 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_saveConfiguration ()"
+
+.PP
+Definition at line 937 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setDataOutputFlags ()"
+
+.PP
+Definition at line 906 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setMountingPos (\fBPosition3D\fP mp)"
+
+.PP
+Definition at line 314 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setNtpTimestamp (\fBUINT32\fP seconds, \fBUINT32\fP fractionalSec)"
+
+.PP
+Definition at line 732 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setParameter (\fBMrsParameterId\fP parameter, \fBUINT32\fP value)"
+
+.PP
+Definition at line 810 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setScanAngles (double startAngle, double endAngle)"
+
+.PP
+Definition at line 462 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setScanFrequency (double scanFreq)"
+
+.PP
+Definition at line 417 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_setSyncAngleOffset (double syncAngle)"
+
+.PP
+Definition at line 538 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_startMeasure (bool weWantScanData = \fCtrue\fP, bool weWantObjectData = \fCtrue\fP)"
+
+.PP
+Definition at line 952 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::cmd_stopMeasure ()"
+
+.PP
+Definition at line 690 of file LuxBase\&.cpp\&.
+.SS "void devices::LuxBase::dumpHeader ()"
+
+.PP
+Definition at line 2278 of file LuxBase\&.cpp\&.
+.SS "void devices::LuxBase::dumpMessage ()"
+
+.PP
+Definition at line 2292 of file LuxBase\&.cpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getDSPError ()\fC [inline]\fP"
+
+.PP
+Definition at line 294 of file LuxBase\&.hpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getErrorRegister1 ()\fC [inline]\fP"
+
+.PP
+Definition at line 299 of file LuxBase\&.hpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getErrorRegister2 ()\fC [inline]\fP"
+
+.PP
+Definition at line 300 of file LuxBase\&.hpp\&.
+.SS "std::string devices::LuxBase::getFirmwareVersion ()\fC [inline]\fP"
+
+.PP
+Definition at line 292 of file LuxBase\&.hpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getFPGAError ()\fC [inline]\fP"
+
+.PP
+Definition at line 293 of file LuxBase\&.hpp\&.
+.SS "std::string devices::LuxBase::getFPGAVersion ()\fC [inline]\fP"
+
+.PP
+Definition at line 291 of file LuxBase\&.hpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getScannerStatus ()\fC [inline]\fP"
+
+.PP
+Definition at line 296 of file LuxBase\&.hpp\&.
+.SS "std::string devices::LuxBase::getSerialNumber ()"
+
+.PP
+Definition at line 1170 of file LuxBase\&.cpp\&.
+.SS "double devices::LuxBase::getTemperature ()"
+
+.PP
+Definition at line 1147 of file LuxBase\&.cpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getWarnRegister1 ()\fC [inline]\fP"
+
+.PP
+Definition at line 301 of file LuxBase\&.hpp\&.
+.SS "\fBUINT16\fP devices::LuxBase::getWarnRegister2 ()\fC [inline]\fP"
+
+.PP
+Definition at line 302 of file LuxBase\&.hpp\&.
+.SS "bool devices::LuxBase::initFile (\fBFile::DisconnectFunction\fP function, void * obj)\fC [virtual]\fP"
+
+.PP
+Definition at line 236 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::initTcp (\fBTcp::DisconnectFunction\fP function, void * obj)\fC [virtual]\fP"
+
+.PP
+Definition at line 118 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::isRunning ()\fC [virtual]\fP"
+
+.PP
+Definition at line 304 of file LuxBase\&.cpp\&.
+.SS "void devices::LuxBase::memreadLE (\fBBYTE\fP *& buffer, \fBUINT16\fP & value)"
+
+.PP
+Definition at line 1028 of file LuxBase\&.cpp\&.
+.SS "void devices::LuxBase::memreadLE (\fBBYTE\fP *& buffer, \fBUINT32\fP & value)"
+
+.PP
+Definition at line 1037 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::run (bool weWantScanData = \fCtrue\fP, bool weWantObjectData = \fCtrue\fP)\fC [virtual]\fP"
+
+.PP
+Definition at line 2611 of file LuxBase\&.cpp\&.
+.SS "void devices::LuxBase::setOnScanReceiveCallbackFunction (\fBOnScanReceiveCallbackFunction\fP function, void * obj)"
+
+.PP
+Definition at line 108 of file LuxBase\&.cpp\&.
+.SS "bool devices::LuxBase::stop ()\fC [virtual]\fP"
+
+.PP
+Definition at line 2772 of file LuxBase\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBUINT32\fP devices::LuxBase::ANGULAR_TICKS_PER_ROTATION = 11520\fC [static]\fP"
+
+.PP
+Definition at line 307 of file LuxBase\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

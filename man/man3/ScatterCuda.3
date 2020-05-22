@@ -1,0 +1,69 @@
+.TH "ScatterCuda" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ScatterCuda \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <scatter_cuda\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScatterCuda\fP (const int NUM_THREADS, const int MAX_NUM_PILLARS, const int GRID_X_SIZE, const int GRID_Y_SIZE)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBdoScatterCuda\fP (const int pillar_count, int *x_coors, int *y_coors, float *pfe_output, float *scattered_feature)"
+.br
+.RI "\fICall scatter cuda kernel\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file scatter_cuda\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ScatterCuda::ScatterCuda (const int NUM_THREADS, const int MAX_NUM_PILLARS, const int GRID_X_SIZE, const int GRID_Y_SIZE)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fINUM_THREADS\fP The number of threads to launch cuda kernel 
+.br
+\fIMAX_NUM_PILLARS\fP Maximum number of pillars 
+.br
+\fIGRID_X_SIZE\fP Number of pillars in x-coordinate 
+.br
+\fIGRID_Y_SIZE\fP Number of pillars in y-coordinate
+.RE
+.PP
+Captital variables never change after the compile 
+.SH "Member Function Documentation"
+.PP 
+.SS "void ScatterCuda::doScatterCuda (const int pillar_count, int * x_coors, int * y_coors, float * pfe_output, float * scattered_feature)"
+
+.PP
+Call scatter cuda kernel\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpillar_count\fP The valid number of pillars 
+.br
+\fIx_coors\fP X-coordinate indexes for corresponding pillars 
+.br
+\fIy_coors\fP Y-coordinate indexes for corresponding pillars 
+.br
+\fIpfe_output\fP Output from Pillar Feature Extractor 
+.br
+\fIscattered_feature\fP Gridmap representation for pillars' feature
+.RE
+.PP
+Allocate pillars in gridmap based on index(coordinates) information 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

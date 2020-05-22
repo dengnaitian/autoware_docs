@@ -1,0 +1,70 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/activations.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/activations.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBget_activation_string\fP (\fBACTIVATION\fP a)"
+.br
+.ti -1c
+.RI "\fBACTIVATION\fP \fBget_activation\fP (char *s)"
+.br
+.ti -1c
+.RI "float \fBactivate\fP (float x, \fBACTIVATION\fP a)"
+.br
+.ti -1c
+.RI "void \fBactivate_array\fP (float *x, const int n, const \fBACTIVATION\fP a)"
+.br
+.ti -1c
+.RI "float \fBgradient\fP (float x, \fBACTIVATION\fP a)"
+.br
+.ti -1c
+.RI "void \fBgradient_array\fP (const float *x, const int n, const \fBACTIVATION\fP a, float *delta)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "float activate (float x, \fBACTIVATION\fP a)"
+
+.PP
+Definition at line 62 of file activations\&.c\&.
+.SS "void activate_array (float * x, const int n, const \fBACTIVATION\fP a)"
+
+.PP
+Definition at line 95 of file activations\&.c\&.
+.SS "\fBACTIVATION\fP get_activation (char * s)"
+
+.PP
+Definition at line 43 of file activations\&.c\&.
+.SS "char* get_activation_string (\fBACTIVATION\fP a)"
+
+.PP
+Definition at line 8 of file activations\&.c\&.
+.SS "float gradient (float x, \fBACTIVATION\fP a)"
+
+.PP
+Definition at line 103 of file activations\&.c\&.
+.SS "void gradient_array (const float * x, const int n, const \fBACTIVATION\fP a, float * delta)"
+
+.PP
+Definition at line 136 of file activations\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

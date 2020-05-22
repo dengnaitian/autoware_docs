@@ -1,0 +1,399 @@
+.TH "CrossWalk" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CrossWalk \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <libvelocity_set\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcrossWalkCallback\fP (const vector_map::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBareaCallback\fP (const vector_map::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBlineCallback\fP (const vector_map::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBpointCallback\fP (const vector_map::PointArray &msg)"
+.br
+.ti -1c
+.RI "int \fBcountAreaSize\fP () const "
+.br
+.ti -1c
+.RI "void \fBgetAID\fP (std::unordered_map< int, std::vector< int >> &aid_crosswalk) const "
+.br
+.ti -1c
+.RI "void \fBcalcDetectionArea\fP (const std::unordered_map< int, std::vector< int >> &bdid2aid_map)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcalcCenterofGravity\fP (const int &aid) const "
+.br
+.ti -1c
+.RI "double \fBcalcCrossWalkWidth\fP (const int &aid) const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoint\fP (const int &pid) const "
+.br
+.ti -1c
+.RI "void \fBcalcCenterPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCrossWalkPoints\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetSize\fP () const "
+.br
+.ti -1c
+.RI "std::vector< int > \fBgetBDID\fP () const "
+.br
+.ti -1c
+.RI "\fBCrossWalkPoints\fP \fBgetDetectionPoints\fP (const int &id) const "
+.br
+.ti -1c
+.RI "void \fBsetDetectionWaypoint\fP (const int &num)"
+.br
+.ti -1c
+.RI "int \fBgetDetectionWaypoint\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetDetectionCrossWalkID\fP (const int &id)"
+.br
+.ti -1c
+.RI "int \fBgetDetectionCrossWalkID\fP () const "
+.br
+.ti -1c
+.RI "\fBCrossWalk\fP ()"
+.br
+.ti -1c
+.RI "void \fBcrossWalkCallback\fP (const vector_map::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBareaCallback\fP (const vector_map::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBlineCallback\fP (const vector_map::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBpointCallback\fP (const vector_map::PointArray &msg)"
+.br
+.ti -1c
+.RI "int \fBcountAreaSize\fP () const "
+.br
+.ti -1c
+.RI "void \fBgetAID\fP (std::unordered_map< int, std::vector< int >> &aid_crosswalk) const "
+.br
+.ti -1c
+.RI "void \fBcalcDetectionArea\fP (const std::unordered_map< int, std::vector< int >> &bdid2aid_map)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcalcCenterofGravity\fP (const int &aid) const "
+.br
+.ti -1c
+.RI "double \fBcalcCrossWalkWidth\fP (const int &aid) const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoint\fP (const int &pid) const "
+.br
+.ti -1c
+.RI "void \fBcalcCenterPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCrossWalkPoints\fP ()"
+.br
+.ti -1c
+.RI "int \fBfindClosestCrosswalk\fP (const int closest_waypoint, const autoware_msgs::Lane &lane, const int search_distance)"
+.br
+.ti -1c
+.RI "int \fBgetSize\fP () const "
+.br
+.ti -1c
+.RI "std::vector< int > \fBgetBDID\fP () const "
+.br
+.ti -1c
+.RI "\fBCrossWalkPoints\fP \fBgetDetectionPoints\fP (const int &id) const "
+.br
+.ti -1c
+.RI "void \fBsetDetectionWaypoint\fP (const int &num)"
+.br
+.ti -1c
+.RI "int \fBgetDetectionWaypoint\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetDetectionCrossWalkID\fP (const int &id)"
+.br
+.ti -1c
+.RI "int \fBgetDetectionCrossWalkID\fP () const "
+.br
+.ti -1c
+.RI "void \fBinitDetectionCrossWalkIDs\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddDetectionCrossWalkIDs\fP (const int &id)"
+.br
+.ti -1c
+.RI "std::vector< int > \fBgetDetectionCrossWalkIDs\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetMultipleDetectionFlag\fP (const bool _multiple_flag)"
+.br
+.ti -1c
+.RI "bool \fBisMultipleDetection\fP () const "
+.br
+.ti -1c
+.RI "\fBCrossWalk\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBloaded_crosswalk\fP"
+.br
+.ti -1c
+.RI "bool \fBloaded_area\fP"
+.br
+.ti -1c
+.RI "bool \fBloaded_line\fP"
+.br
+.ti -1c
+.RI "bool \fBloaded_point\fP"
+.br
+.ti -1c
+.RI "bool \fBloaded_all\fP"
+.br
+.ti -1c
+.RI "bool \fBset_points\fP"
+.br
+.ti -1c
+.RI "vector_map::CrossWalkArray \fBcrosswalk_\fP"
+.br
+.ti -1c
+.RI "vector_map::AreaArray \fBarea_\fP"
+.br
+.ti -1c
+.RI "vector_map::LineArray \fBline_\fP"
+.br
+.ti -1c
+.RI "vector_map::PointArray \fBpoint_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 29 of file libvelocity_set\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CrossWalk::CrossWalk ()\fC [inline]\fP"
+
+.PP
+Definition at line 93 of file libvelocity_set\&.h\&.
+.SS "CrossWalk::CrossWalk ()\fC [inline]\fP"
+
+.PP
+Definition at line 134 of file libvelocity_set\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void CrossWalk::addDetectionCrossWalkIDs (const int & id)\fC [inline]\fP"
+
+.PP
+Definition at line 113 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::areaCallback (const vector_map::AreaArray & msg)"
+
+.PP
+Definition at line 35 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::areaCallback (const vector_map::AreaArray & msg)"
+
+.SS "\fBgeometry_msgs::Point\fP CrossWalk::calcCenterofGravity (const int & aid) const"
+
+.PP
+Definition at line 89 of file libvelocity_set\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP CrossWalk::calcCenterofGravity (const int & aid) const"
+
+.SS "void CrossWalk::calcCenterPoints ()"
+
+.PP
+Definition at line 213 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::calcCenterPoints ()"
+
+.SS "double CrossWalk::calcCrossWalkWidth (const int & aid) const"
+
+.PP
+Definition at line 142 of file libvelocity_set\&.cpp\&.
+.SS "double CrossWalk::calcCrossWalkWidth (const int & aid) const"
+
+.SS "void CrossWalk::calcDetectionArea (const std::unordered_map< int, std::vector< int >> & bdid2aid_map)"
+
+.PP
+Definition at line 197 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::calcDetectionArea (const std::unordered_map< int, std::vector< int >> & bdid2aid_map)"
+
+.SS "int CrossWalk::countAreaSize () const"
+
+.PP
+Definition at line 178 of file libvelocity_set\&.cpp\&.
+.SS "int CrossWalk::countAreaSize () const"
+
+.SS "void CrossWalk::crossWalkCallback (const vector_map::CrossWalkArray & msg)"
+
+.PP
+Definition at line 23 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::crossWalkCallback (const vector_map::CrossWalkArray & msg)"
+
+.SS "int CrossWalk::findClosestCrosswalk (const int closest_waypoint, const autoware_msgs::Lane & lane, const int search_distance)"
+
+.PP
+Definition at line 251 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::getAID (std::unordered_map< int, std::vector< int >> & aid_crosswalk) const"
+
+.PP
+Definition at line 188 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::getAID (std::unordered_map< int, std::vector< int >> & aid_crosswalk) const"
+
+.SS "std::vector<int> CrossWalk::getBDID () const\fC [inline]\fP"
+
+.PP
+Definition at line 68 of file libvelocity_set\&.h\&.
+.SS "std::vector<int> CrossWalk::getBDID () const\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file libvelocity_set\&.h\&.
+.SS "int CrossWalk::getDetectionCrossWalkID () const\fC [inline]\fP"
+
+.PP
+Definition at line 88 of file libvelocity_set\&.h\&.
+.SS "int CrossWalk::getDetectionCrossWalkID () const\fC [inline]\fP"
+
+.PP
+Definition at line 104 of file libvelocity_set\&.h\&.
+.SS "std::vector<int> CrossWalk::getDetectionCrossWalkIDs () const\fC [inline]\fP"
+
+.PP
+Definition at line 121 of file libvelocity_set\&.h\&.
+.SS "\fBCrossWalkPoints\fP CrossWalk::getDetectionPoints (const int & id) const\fC [inline]\fP"
+
+.PP
+Definition at line 72 of file libvelocity_set\&.h\&.
+.SS "\fBCrossWalkPoints\fP CrossWalk::getDetectionPoints (const int & id) const\fC [inline]\fP"
+
+.PP
+Definition at line 88 of file libvelocity_set\&.h\&.
+.SS "int CrossWalk::getDetectionWaypoint () const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file libvelocity_set\&.h\&.
+.SS "int CrossWalk::getDetectionWaypoint () const\fC [inline]\fP"
+
+.PP
+Definition at line 96 of file libvelocity_set\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP CrossWalk::getPoint (const int & pid) const"
+
+.PP
+Definition at line 71 of file libvelocity_set\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP CrossWalk::getPoint (const int & pid) const"
+
+.SS "int CrossWalk::getSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 64 of file libvelocity_set\&.h\&.
+.SS "int CrossWalk::getSize () const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::initDetectionCrossWalkIDs ()\fC [inline]\fP"
+
+.PP
+Definition at line 109 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::isMultipleDetection () const\fC [inline]\fP"
+
+.PP
+Definition at line 129 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::lineCallback (const vector_map::LineArray & msg)"
+
+.PP
+Definition at line 47 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::lineCallback (const vector_map::LineArray & msg)"
+
+.SS "void CrossWalk::pointCallback (const vector_map::PointArray & msg)"
+
+.PP
+Definition at line 59 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::pointCallback (const vector_map::PointArray & msg)"
+
+.SS "void CrossWalk::setCrossWalkPoints ()"
+
+.PP
+Definition at line 234 of file libvelocity_set\&.cpp\&.
+.SS "void CrossWalk::setCrossWalkPoints ()"
+
+.SS "void CrossWalk::setDetectionCrossWalkID (const int & id)\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::setDetectionCrossWalkID (const int & id)\fC [inline]\fP"
+
+.PP
+Definition at line 100 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::setDetectionWaypoint (const int & num)\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::setDetectionWaypoint (const int & num)\fC [inline]\fP"
+
+.PP
+Definition at line 92 of file libvelocity_set\&.h\&.
+.SS "void CrossWalk::setMultipleDetectionFlag (const bool _multiple_flag)\fC [inline]\fP"
+
+.PP
+Definition at line 125 of file libvelocity_set\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "vector_map::AreaArray CrossWalk::area_"
+
+.PP
+Definition at line 47 of file libvelocity_set\&.h\&.
+.SS "vector_map::CrossWalkArray CrossWalk::crosswalk_"
+
+.PP
+Definition at line 46 of file libvelocity_set\&.h\&.
+.SS "vector_map::LineArray CrossWalk::line_"
+
+.PP
+Definition at line 48 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::loaded_all"
+
+.PP
+Definition at line 44 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::loaded_area"
+
+.PP
+Definition at line 41 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::loaded_crosswalk"
+
+.PP
+Definition at line 40 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::loaded_line"
+
+.PP
+Definition at line 42 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::loaded_point"
+
+.PP
+Definition at line 43 of file libvelocity_set\&.h\&.
+.SS "vector_map::PointArray CrossWalk::point_"
+
+.PP
+Definition at line 49 of file libvelocity_set\&.h\&.
+.SS "bool CrossWalk::set_points"
+
+.PP
+Definition at line 45 of file libvelocity_set\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

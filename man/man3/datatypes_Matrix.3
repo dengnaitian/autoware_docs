@@ -1,0 +1,60 @@
+.TH "datatypes::Matrix" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Matrix \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Position3D\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix\fP (\fBUINT16\fP numOfRows, \fBUINT16\fP numOfColumns)"
+.br
+.ti -1c
+.RI "\fB~Matrix\fP ()"
+.br
+.ti -1c
+.RI "const double \fBoperator()\fP (const \fBUINT16\fP rowNr, const \fBUINT16\fP columnNr) const "
+.br
+.ti -1c
+.RI "double & \fBoperator()\fP (const \fBUINT16\fP rowNr, const \fBUINT16\fP columnNr)"
+.br
+.ti -1c
+.RI "const \fBVector\fP \fBoperator*\fP (\fBVector\fP &vector)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 68 of file Position3D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Matrix::Matrix (\fBUINT16\fP numOfRows, \fBUINT16\fP numOfColumns)"
+
+.PP
+Definition at line 75 of file Position3D\&.cpp\&.
+.SS "datatypes::Matrix::~Matrix ()"
+
+.PP
+Definition at line 95 of file Position3D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "const double datatypes::Matrix::operator() (const \fBUINT16\fP rowNr, const \fBUINT16\fP columnNr) const\fC [inline]\fP"
+
+.PP
+Definition at line 86 of file Position3D\&.hpp\&.
+.SS "double & datatypes::Matrix::operator() (const \fBUINT16\fP rowNr, const \fBUINT16\fP columnNr)\fC [inline]\fP"
+
+.PP
+Definition at line 93 of file Position3D\&.hpp\&.
+.SS "const \fBVector\fP datatypes::Matrix::operator* (\fBVector\fP & vector)\fC [inline]\fP"
+
+.PP
+Definition at line 100 of file Position3D\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

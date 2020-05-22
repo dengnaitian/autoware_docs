@@ -1,0 +1,206 @@
+.TH "get_Depth.DepthConverter" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+get_Depth.DepthConverter \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBcalibration_path\fP, \fBsave_path\fP)"
+.br
+.ti -1c
+.RI "def \fBcallback\fP (self)"
+.br
+.ti -1c
+.RI "def \fBto_distance_image\fP (self, img_mat, curr_image)"
+.br
+.ti -1c
+.RI "def \fBimg_loader\fP (self, image_msg)"
+.br
+.ti -1c
+.RI "def \fBpc2_loader\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBreset_flags\fP (self)"
+.br
+.ti -1c
+.RI "def \fBprocess\fP (self, \fBimage\fP, pointcloud)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcalibration_path\fP"
+.br
+.ti -1c
+.RI "\fBsave_path\fP"
+.br
+.ti -1c
+.RI "\fBCAMERA_EXTRINSIC_MAT\fP"
+.br
+.ti -1c
+.RI "\fBCAMERA_MAT\fP"
+.br
+.ti -1c
+.RI "\fBDIST_COEFF\fP"
+.br
+.ti -1c
+.RI "\fBinv_r_T\fP"
+.br
+.ti -1c
+.RI "\fBinv_t_T\fP"
+.br
+.ti -1c
+.RI "\fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBheight\fP"
+.br
+.ti -1c
+.RI "\fBindex\fP"
+.br
+.ti -1c
+.RI "\fBin_callback\fP"
+.br
+.ti -1c
+.RI "\fBcv_image\fP"
+.br
+.ti -1c
+.RI "\fBcloud\fP"
+.br
+.ti -1c
+.RI "\fBcloud_ready\fP"
+.br
+.ti -1c
+.RI "\fBimg_ready\fP"
+.br
+.ti -1c
+.RI "\fBsub_mat_size\fP"
+.br
+.ti -1c
+.RI "\fBmat_ratio\fP"
+.br
+.ti -1c
+.RI "\fBmax_color_val\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file get_Depth\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def get_Depth\&.DepthConverter\&.__init__ ( self,  calibration_path,  save_path)"
+
+.PP
+Definition at line 15 of file get_Depth\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def get_Depth\&.DepthConverter\&.callback ( self)"
+
+.PP
+Definition at line 44 of file get_Depth\&.py\&.
+.SS "def get_Depth\&.DepthConverter\&.img_loader ( self,  image_msg)"
+
+.PP
+Definition at line 158 of file get_Depth\&.py\&.
+.SS "def get_Depth\&.DepthConverter\&.pc2_loader ( self,  msg)"
+
+.PP
+Definition at line 163 of file get_Depth\&.py\&.
+.SS "def get_Depth\&.DepthConverter\&.process ( self,  image,  pointcloud)"
+
+.PP
+Definition at line 172 of file get_Depth\&.py\&.
+.SS "def get_Depth\&.DepthConverter\&.reset_flags ( self)"
+
+.PP
+Definition at line 167 of file get_Depth\&.py\&.
+.SS "def get_Depth\&.DepthConverter\&.to_distance_image ( self,  img_mat,  curr_image)"
+
+.PP
+Definition at line 107 of file get_Depth\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "get_Depth\&.DepthConverter\&.calibration_path"
+
+.PP
+Definition at line 16 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.CAMERA_EXTRINSIC_MAT"
+
+.PP
+Definition at line 18 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.CAMERA_MAT"
+
+.PP
+Definition at line 19 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.cloud"
+
+.PP
+Definition at line 37 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.cloud_ready"
+
+.PP
+Definition at line 38 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.cv_image"
+
+.PP
+Definition at line 36 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.DIST_COEFF"
+
+.PP
+Definition at line 20 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.height"
+
+.PP
+Definition at line 33 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.img_ready"
+
+.PP
+Definition at line 39 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.in_callback"
+
+.PP
+Definition at line 35 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.index"
+
+.PP
+Definition at line 34 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.inv_r_T"
+
+.PP
+Definition at line 23 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.inv_t_T"
+
+.PP
+Definition at line 24 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.mat_ratio"
+
+.PP
+Definition at line 41 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.max_color_val"
+
+.PP
+Definition at line 42 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.save_path"
+
+.PP
+Definition at line 17 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.sub_mat_size"
+
+.PP
+Definition at line 40 of file get_Depth\&.py\&.
+.SS "get_Depth\&.DepthConverter\&.width"
+
+.PP
+Definition at line 32 of file get_Depth\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

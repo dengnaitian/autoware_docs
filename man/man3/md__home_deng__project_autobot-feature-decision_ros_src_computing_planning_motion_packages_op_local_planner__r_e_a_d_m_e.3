@@ -1,0 +1,72 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_local_planner__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_local_planner__r_e_a_d_m_e \- OpenPlanner - Local Planner 
+previously known as dp_planner, now it is a collection of node with each task of local planning is separated\&. for more details about OpenPlanner check our paper \fCOpen Source Integrated Planner for Autonomous Navigation in Highly Dynamic Environments\fP
+.PP
+to run the local planner user needs to run all nodes in 'OpenPlanner - Local planning' for more details about how to run \fCcheck tutorial video\fP
+.PP
+.SS "op_common_params"
+.PP
+This node loads the common parameters for the local planner, these parameters are using by op_trajectory_generator, op_motion_predictor, op_trajectory_evaluator, op_behavior_selector and lidar_kf_contour_track\&.
+.PP
+.SS "Outputs"
+.PP
+Loads the common parameters for the local planning
+.PP
+.SS "Options"
+.PP
+.IP "\(bu" 2
+loads params included in the launch file\&.
+.IP "\(bu" 2
+Creates folders for logging and saving important data for all nodes of OpenPlanner folder structure:
+.PP
+.PP
+/home/user/autoware_openplanner_logs
+.IP "\(bu" 2
+/BehaviorsLogs
+.IP "\(bu" 2
+/ControlLogs
+.IP "\(bu" 2
+/GlobalPathLogs
+.IP "\(bu" 2
+/PredictionResults
+.IP "\(bu" 2
+/SimulatedCar1
+.IP "\(bu" 2
+/SimulatedCar2
+.IP "\(bu" 2
+/SimulatedCar3
+.IP "\(bu" 2
+/SimulatedCar4
+.IP "\(bu" 2
+/SimulatedCar5
+.IP "\(bu" 2
+/SimulationData
+.IP "\(bu" 2
+/TrackingLogs
+.IP "\(bu" 2
+/TrajectoriesLogs
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_local_planner op_common_params\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Local planning -> op_common_params
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+\fCcheck paper\fP 
+.PP
+

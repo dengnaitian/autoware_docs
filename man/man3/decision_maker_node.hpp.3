@@ -1,0 +1,119 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/decision/packages/decision_maker/include/decision_maker/decision_maker_node.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/decision/packages/decision_maker/include/decision_maker/decision_maker_node.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unordered_map>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <ros/spinner\&.h>\fP
+.br
+\fC#include <std_msgs/Float64\&.h>\fP
+.br
+\fC#include <std_msgs/Float64MultiArray\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <random>\fP
+.br
+\fC#include <geometry_msgs/Point\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBoxArray\&.h>\fP
+.br
+\fC#include <jsk_rviz_plugins/OverlayText\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <std_msgs/Int32\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <visualization_msgs/MarkerArray\&.h>\fP
+.br
+\fC#include <autoware_config_msgs/ConfigDecisionMaker\&.h>\fP
+.br
+\fC#include <autoware_msgs/CloudClusterArray\&.h>\fP
+.br
+\fC#include <autoware_msgs/Lane\&.h>\fP
+.br
+\fC#include <autoware_msgs/LaneArray\&.h>\fP
+.br
+\fC#include <autoware_msgs/State\&.h>\fP
+.br
+\fC#include <autoware_msgs/TrafficLight\&.h>\fP
+.br
+\fC#include <autoware_msgs/VehicleCmd\&.h>\fP
+.br
+\fC#include <autoware_msgs/Waypoint\&.h>\fP
+.br
+\fC#include <vector_map/vector_map\&.h>\fP
+.br
+\fC#include <amathutils_lib/amathutils\&.hpp>\fP
+.br
+\fC#include <cross_road_area\&.hpp>\fP
+.br
+\fC#include <decision_maker_param\&.hpp>\fP
+.br
+\fC#include <state_machine_lib/state_context\&.hpp>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdecision_maker::AutowareStatus\fP"
+.br
+.ti -1c
+.RI "class \fBdecision_maker::DecisionMakerNode\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdecision_maker\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBdecision_maker::cstring_t\fP = const std::string"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBdecision_maker::E_Lamp\fP : int32_t { \fBdecision_maker::E_Lamp::LAMP_EMPTY\fP = -1, \fBdecision_maker::E_Lamp::LAMP_CLEAR\fP = 0, \fBdecision_maker::E_Lamp::LAMP_RIGHT\fP = 1, \fBdecision_maker::E_Lamp::LAMP_LEFT\fP = 2, \fBdecision_maker::E_Lamp::LAMP_HAZARD\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBdecision_maker::E_Control\fP : int32_t { \fBdecision_maker::E_Control::KEEP\fP = -1, \fBdecision_maker::E_Control::STOP\fP = 1, \fBdecision_maker::E_Control::DECELERATE\fP = 2, \fBdecision_maker::E_Control::ACCELERATE\fP = 3, \fBdecision_maker::E_Control::OTHERS\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBdecision_maker::E_ChangeFlags\fP : int32_t { \fBdecision_maker::E_ChangeFlags::STRAIGHT\fP, \fBdecision_maker::E_ChangeFlags::RIGHT\fP, \fBdecision_maker::E_ChangeFlags::LEFT\fP, \fBdecision_maker::E_ChangeFlags::UNKNOWN\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBdecision_maker::hasvMap\fP (void)"
+.br
+.ti -1c
+.RI "template<class T > std::underlying_type< T >::type \fBdecision_maker::enumToInteger\fP (T \fBt\fP)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,128 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_decision_packages_decision_maker__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_decision_packages_decision_maker__r_e_a_d_m_e \- Decision Maker 
+
+.SS "Overview"
+.PP
+\fBThis feature is experimental\&.\fP Autoware package that manages the Vehicle status, given Mission(waypoints) status, and Driving(Motion) status\&. Each status is managed by state machine\&.
+.PP
+.SS "Vehicle"
+.PP
+.PP
+.SS "Mission"
+.PP
+.PP
+.SS "Driving"
+.PP
+.PP
+.SS "Runtime \fBManager\fP \fBParameters\fP"
+.PP
+ParameterTypeDescription  auto_mission_reloadBool(default: \fIfalse\fP)
+.br
+If this is set true, decision maker automatically reloads mission as new mission after previous mission is completed\&. auto_engageBool(default: \fIfalse\fP)
+.br
+If this is set true, decision maker automatically engage immediately after ready to drive\&. auto_mission_changeBool(default: \fIfalse\fP)
+.br
+If this is set true, decision maker automatically change the mission(waypoint) without state_cmd when new mission is loaded while driving\&. use_fmsBool(default: \fIfalse\fP)
+.br
+This must be true in order to incoorporate with \fCAutoware Management System\fP disuse_vector_mapBool(default: \fIfalse\fP)
+.br
+ If set \fItrue\fP, \fBdecision_maker\fP will exit 'MapInitState' even if vector map is not successfully loaded\&. num_of_steer_behindInt(default: \fI20\fP)
+.br
+ lookup distance along waypoints to determine steering state(straight, turning right, or turning left) change_threshold_distDouble(default: \fI1\fP)
+.br
+ This is relevent only if \fIuse_fms\fP is \fItrue\fP\&.
+.br
+ If the distance from vehicle to closest waypoint in the new mission is further than \fIchange_threshold_dist\fP [m], mission change fails\&. change_threshold_angleDouble(default:\fI15\fP)
+.br
+This is relevent only if \fIuse_fms\fP is \fItrue\fP\&.
+.br
+ If the angle from vehicle to closest waypoint in the new mission is further than this \fIchange_threshold_dist\fP [deg], mission change fails\&. time_to_avoidanceDouble(default: \fI3\fP)
+.br
+ If the vehicle is stuck for \fItime_to_avoidance\fP seconds (e\&.g\&. due to obstacles), the state transits to from 'Go' to 'Avoidance'\&. goal_threshold_distDouble(default: \fI3\fP)
+.br
+ Threshold used to check if vehicle has reached to the goal (i\&.e\&. end of waypoints)\&. The vehicle must be less than \fIgoal_threshold_dist\fP [m] to the goal\&. goal_threshold_velDouble(default: \fI0\&.1\fP)
+.br
+ Threshold used to check if vehicle has reached to the goal (i\&.e\&. end of waypoints)\&. The vehicle must be less than \fIgoal_threshold_vel\fP [m/s] to be treated as goal arrival\&. 
+.SS "ROS \fBParameters\fP"
+.PP
+ParameterTypeDescription  state_vehicle_file_namestringfile that defines vehicle state transition state_mission_file_namestringfile that defines mission state transition state_drive_file_namestringfile that defines drive state transition stopline_reset_countintThis parameter is used if the vehicle stops at the stop line and moves backward without crossing the stop line\&. When the vehicle moves backward by this count of the waypoints, the stop line is recognized again\&. 
+.PP
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  /based/lane_waypoints_arrayautoware_msgs/LaneArraywaypoints for the vehicle to follow\&. (e\&.g\&. waypoints given from waypoint_loader node) /change_flagstd_msgs/Int32Vehicle will try to change lane if this flag is set\&. Publishes /lamp_cmd to change blinkers according to this flag\&. (0=straight, 1=right, 2=left) /closest_waypointstd_msgs/Int32Closest waypoint index in waypoints given by /based/lane_waypoints_array\&. /config/decision_makerautoware_config_msgs::ConfigDecisionMaker<td>\fBParameters\fP set from runtime manager /current_posegeometry_msgs/PoseStampedCurrent pose of vehicle /current_velocitygeometry_msgs/TwistStampedCurrent velocity of vehicle /filtered_pointssensor_msgs/PointCloud2Used to check if sensor data is ready\&. This is meant to give pointcloud data used for ndt_matching\&. /final_waypointsautoware_msgs/Laneresultant waypoints from planner nodes, e\&.g\&. from velocity_set node\&. /obstacle_waypointstd_msgs/Int32\fBObstacle\fP waypoint index\&. Used in 'Go' state\&. /state_cmdstd_msgs/StringDecision_maker will try to transit state according to the key given through this topic\&. /vector_map_info/areavector_map_msgs/AreaArray\fBArea\fP information from vector map\&. 
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/cross_roadvector_map_msgs/CrossRoadArrayCross road information from vector map\&. 
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/linevector_map_msgs/LineArray\fBLine\fP information from vector map\&. 
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/pointvector_map_msgs/PointArray\fBPoint\fP information from vector map\&.
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/road_signvector_map_msgs/RoadSignArrayRoad sign information from vector map\&. 
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/stop_linevector_map_msgs/StopLineArrayStop line information from vector map\&.
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. /vector_map_info/vectorvector_map_msgs/VectorArray\fBVector\fP information from vector map\&. 
+.br
+This is ignored unless area, cross_road, line, point, road_sign, stop_line, and vector are subscribed\&. 
+.PP
+.SS "Published topics"
+.PP
+TopicTypeObjective  /decision_maker/available_transitionstd_msgs/Stringavailable transition from current state /decision_maker/operator_help_textjsk_rviz_plugins/OverlayTextHelp message during operation /decision_maker/statestd_msgs/Stringcurrent state for 'Vehicle', 'Mission', and 'Drive' state machine\&. /decision_maker/state_msgautoware_msgs/Statecurrent state for 'Vehicle', 'Mission', and 'Drive' state machine with header\&. /lamp_cmdautoware_msgs/LampCmdblinker command to vehicle (0=straight, 1=right, 2=left) /lane_waypoints_arrayautoware_msgs/LaneArraywaypoints passed down to following planners\&. (e\&.g\&. lane_rule) /light_color_managedautoware_msgs/TrafficLightmeant to publish light_color status\&. Not implemented yet\&. /decision_maker/state_overlayjsk_rviz_plugins/OverlayTextCurrent state as overlay_txt\&. /state/stopline_wpidxstd_msgs/Int32Index of waypoint for the vehicle to stop\&. /decision_maker/target_velocity_arraystd_msgs/Float64MultiArrayArray of target velocity obtained from final_waypoints\&. 
+.PP
+.SS "\fBState\fP Description"
+.PP
+.SS "Vehicle States"
+.PP
+\fBState\fP nameRequired topicDescriptionImplementation  Init-The parent state of the following states\&.- SensorInit/filtered_pointsWaits until all sensors are ready\&.Waits until /filtered_points is received unless wf_simulator node is launched\&. MapInitWaits until vector map is readyWaits until \fBvector_map\fP is subscribed if disuse_vector_map is set false\&. LocalizationInit/current_poseWaits until localizer is ready Waits until current_pose is converged\&. (i\&.e\&. ndt_matching is stable\&.) PlanningInit/closest_waypointWaits unil planners are ready Subscriber is set for /closest_waypoint\&. VehicleInit-Waits until vehicle is ready for departure\&.No implementation goes directly to vehilce ready state\&. VehicleReady-Vehicle is ready to move\&.Exits to VehicleEmergency when \fCemergency\fP key is given by state_cmd from other states, or if \fCemergency_flag\fP is set true by other states\&. VehicleEmergency-Emergency is detected somewhere in the system\&. Waits until \fCreturn_from_emergency\fP or \fCreturn_to_ready\fP key is by /state_cmd (e\&.g\&. by DecisionMakerPanel) 
+.SS "Mission States"
+.PP
+\fBState\fP nameRequired topicDescriptionImplementation  WaitVehicleReady-Waits until vehicle setup is doneWaits until vehicle_is_ready key is given from Vehicle \fBState\fP Machine WaitOrder/based_lane_arraywayits until mission is given\&. waits until base_lane_array is received\&. MissionCheck/final_waypoints
+.br
+ /current_waypointWaits until all the planners are ready\&. Waits until /final_waypoints (from planner nodes) and /current_waypoint are received\&. DriveReady-Given Mission is approved and vehicle is ready to move\&. Waits until engage or mission_canceled key is given\&. Driving-The vehicle is driving\&. According to the planner nodesSets operation_start key\&. Goes to MissionAborted in case of emergency\&. DrivingMissionChange/based/lane_waypoints_arrayWaits for new mission while the vehicle keeps driving\&. Waits until new /based/lane_waypoints_array is sent from management system\&. Then, checks if the waypoint is compatible or not depending on change_threshold_dist and change_threshold_angle parameters\&. Publish the new mission as /lane_waypoints_array if compatible\&. MissionChangeSucceeded-New waypoints are compatible and vehicle will start following the new mission\&. Throws return_to_driving key after 1 second if use_fms is set false\&. MissionChangeFailed-New waypoints are NOT compatible and vehicle will continue following the old mission\&. Throws return_to_driving key after 1 second if use_fms is set false\&. MissionComplete-Vehicle has reached the goal\&.If use_fms is false and auto_mission_reload is true, go to MissionCheck state\&. Otherwise, got to WaitOrder state after 1 second\&. MissionAborted-Mission is aborted by other nodes(e\&.g\&. by AMS)\&. Throws operation_end to Drving \fBState\fP Machine\&. Then, go to wait order automatically if use_fms is false, otherwise waits until goto_wait_order key is given by management system\&. 
+.SS "Driving States"
+.PP
+\fBState\fP nameRequired topicDescriptionImplementation  WaitReady-Waits until vehicle setup is doneWaits until vehicle_is_ready key is given from Vehicle \fBState\fP Machine WaitEngage-Waits for engage button in DecisionMakerPanel to be pressedWaits until engage key is given by DecisionMakerPanel DriveEmergency-Vehicle is stopping due to emergency Throws mission_aborted key Drive/closest_waypointVehicle drives according to the waypointmission_aborted key if waypoint is far from the vehicle\&.(i\&.e\&. vehicle moves out of the waypoint) Throws arrived_goal key if vehicle is near the end of the waypoints\&. LaneArea/final_waypointsVehicle is driving within lanesThrows on_bus_stop key if waypoint state has bus stop event, otherwise, throws on_cruise key\&. Cruise-Vehicle Drives along the waypointThrows on_left_turn, on_right_turn, on_straight, lane_change_left, or lane_change_right key depending on waypoint state and change flags\&. Straight-Vehicle is driving along lane (i\&.e\&. not turning at intersection)publish /lamp_cmd to clear blinkers Stop-vehicle is stopping since stop signal is sent from other nodes (e\&.g\&. by stop button on decisionMakerPanel)Publishes /state/stopline_wpidx with the index = closest_waypoint + 1\&. Wait-Vehilce is waiting (e\&.g\&. due to safety reason)Publishes /state/stopline_wpidx with the index = closest_waypoint + 1\&. Go-Vehicle is movingThrows found_stopline if stopline is nearby\&. Throws completely_stopped if vehicle stops due to obstacle\&. StopLine/vector_map_info/stop_lineVehicle is stopping due to stop lineThrows clear key after vehicle stops for 0\&.5 seconds\&. LeftTurn-Vehicle is turning left at intersection\&. Change blinker to left\&. Publish /lamp_cmd to change blinker\&. L_Stop-Same as Stop \fBState\fPSame as Stop \fBState\fP L_Wait-Same as Wait \fBState\fPSame as Wait \fBState\fP L_Go-Same as Go \fBState\fPSame as Go \fBState\fP L_StopLine-Same as StopLine \fBState\fPSame as StopLine \fBState\fP RightTurn-Vehicle is turning right at intersection\&. Change blinker to right\&. Publish /lamp_cmd to change blinker\&. R_Stop-Same as Stop \fBState\fPSame as Stop \fBState\fP R_Wait-Same as Wait \fBState\fPSame as Wait \fBState\fP R_Go-Same as Go \fBState\fPSame as Go \fBState\fP R_StopLine-Same as StopLine \fBState\fPSame as StopLine \fBState\fP Back-Vehicle is moving backwardsPublish /lamp_cmd to clear blinkers B_Stop-Same as Stop \fBState\fPSame as Stop \fBState\fP B_Wait-Same as Wait \fBState\fPSame as Wait \fBState\fP B_Go-Same as Go \fBState\fPSame as Go \fBState\fP B_StopLine-Same as StopLine \fBState\fPSame as StopLine \fBState\fP LeftLaneChange-Vehicle is switching to left lanepublish /lamp_cmd to change blinker to left\&. CheckLeftLane-Check if it is safe to change lane to leftNo implementation\&. ChangeToLeft-Change to left laneNo implementation\&. RightLaneChange-Vehicle is switching to right lanepublish /lamp_cmd to change blinker to right\&. CheckRightLane-Check if it is safe to change lane to leftNo implementation\&. ChangeToRight-Change to left laneNo implementation\&. BusStop-Vehicle is approaching to bus stop(not supported yet)No implementation\&. PullIn-Vehicle is pulling in to bus stoppublish /lamp_cmd to change blinker to left\&. PullOut-Vehicle is pulling out from bus stoppublish /lamp_cmd to change blinker to right\&. FreeArea-Vehicle is driving in free space(e\&.g\&. parking area)(not supported yet)No implementation\&. Parking-Vehicle is parkingPublish /lamp_cmd to change blinker to hazard\&. 
+.PP
+.SS "Basic Usage in Autoware"
+.PP
+.SS "Start Driving"
+.PP
+.IP "1." 4
+\fBLaunch\fP Autoware and localization on real vehicle or wf_simulator
+.IP "2." 4
+\fBLaunch\fP \fC\fBdecision_maker\fP\fP and \fBlane_planner\fP, astar_planner, \fBwaypoint_follower\fP
+.IP "3." 4
+When \fCVehicleReady\fP and \fCWaitOrder\fP state, launch \fCwaypoint_loader\fP
+.IP "4." 4
+On \fCDriveReady\fP state, push \fCEngage\fP button on DecisionMakerPannel
+.IP "5." 4
+When the vehicle reaches the end of waypoint and stops, state Mission state transits to \fCWaitOrder\fP via the \fCMissionComplete\fP
+.IP "6." 4
+You can repeat from 3\&. with other waypoint
+.PP
+.PP
+.SS "\fBLane\fP change"
+.PP
+.IP "1." 4
+Start Normal driving with waypoint files necessary for lane change
+.IP "2." 4
+On \fCCheckLeft\fP or \fCRightLane\fP state, push \fCExecute LaneChange\fP button on DecisionMakerPannel
+.IP "3." 4
+The vehicle start lane change
+.PP
+.PP
+.SS "Driving mission change"
+.PP
+.IP "1." 4
+Prepare waypoint files to change, and start Normal driving
+.IP "2." 4
+On \fCDriving\fP state, push \fCRequest mission change\fP button on DecisionMakerPannel
+.IP "3." 4
+When the state becomes \fCDrivingMissionChange\fP, please load another waypoint for change
+.IP "4." 4
+If it is possible to change the waypoint will switch, otherwise it will not be changed 
+.PP
+

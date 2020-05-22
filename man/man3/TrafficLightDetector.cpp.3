@@ -1,0 +1,85 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/region_tlr/TrafficLightDetector.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/region_tlr/TrafficLightDetector.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'TrafficLight\&.h'\fP
+.br
+\fC#include 'RegionTLR\&.h'\fP
+.br
+\fC#include 'TrafficLightDetector\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBregionCandidate\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBLACK\fP   CV_RGB(0, 0, 0)"
+.br
+.ti -1c
+.RI "#define \fBWHITE\fP   CV_RGB(255, 255, 255)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetBrightnessRatioInCircle\fP (const cv::Mat &input, const \fBcv::Point\fP center, const int radius)"
+.br
+.ti -1c
+.RI "int \fBgetCurrentLightsCode\fP (bool display_red, bool display_yellow, bool display_green)"
+.br
+.ti -1c
+.RI "\fBLightState\fP \fBdetermineState\fP (\fBLightState\fP previousState, int currentLightsCode, int *stateJudgeCount)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBthresholdSet\fP \fBthSet\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BLACK   CV_RGB(0, 0, 0)"
+
+.PP
+Definition at line 5 of file TrafficLightDetector\&.cpp\&.
+.SS "#define WHITE   CV_RGB(255, 255, 255)"
+
+.PP
+Definition at line 6 of file TrafficLightDetector\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBLightState\fP determineState (\fBLightState\fP previousState, int currentLightsCode, int * stateJudgeCount)"
+
+.PP
+Definition at line 485 of file TrafficLightDetector\&.cpp\&.
+.SS "double getBrightnessRatioInCircle (const cv::Mat & input, const \fBcv::Point\fP center, const int radius)"
+
+.PP
+Definition at line 464 of file TrafficLightDetector\&.cpp\&.
+.SS "int getCurrentLightsCode (bool display_red, bool display_yellow, bool display_green)"
+
+.PP
+Definition at line 481 of file TrafficLightDetector\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBthresholdSet\fP thSet"
+
+.PP
+Definition at line 24 of file region_tlr\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,1325 @@
+.TH "layer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+layer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <darknet\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLAYER_TYPE\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBACTIVATION\fP \fBactivation\fP"
+.br
+.ti -1c
+.RI "\fBCOST_TYPE\fP \fBcost_type\fP"
+.br
+.ti -1c
+.RI "void(* \fBforward\fP )(struct \fBlayer\fP, struct \fBnetwork\fP)"
+.br
+.ti -1c
+.RI "void(* \fBbackward\fP )(struct \fBlayer\fP, struct \fBnetwork\fP)"
+.br
+.ti -1c
+.RI "void(* \fBupdate\fP )(struct \fBlayer\fP, \fBupdate_args\fP)"
+.br
+.ti -1c
+.RI "void(* \fBforward_gpu\fP )(struct \fBlayer\fP, struct \fBnetwork\fP)"
+.br
+.ti -1c
+.RI "void(* \fBbackward_gpu\fP )(struct \fBlayer\fP, struct \fBnetwork\fP)"
+.br
+.ti -1c
+.RI "void(* \fBupdate_gpu\fP )(struct \fBlayer\fP, \fBupdate_args\fP)"
+.br
+.ti -1c
+.RI "int \fBbatch_normalize\fP"
+.br
+.ti -1c
+.RI "int \fBshortcut\fP"
+.br
+.ti -1c
+.RI "int \fBbatch\fP"
+.br
+.ti -1c
+.RI "int \fBforced\fP"
+.br
+.ti -1c
+.RI "int \fBflipped\fP"
+.br
+.ti -1c
+.RI "int \fBinputs\fP"
+.br
+.ti -1c
+.RI "int \fBoutputs\fP"
+.br
+.ti -1c
+.RI "int \fBnweights\fP"
+.br
+.ti -1c
+.RI "int \fBnbiases\fP"
+.br
+.ti -1c
+.RI "int \fBextra\fP"
+.br
+.ti -1c
+.RI "int \fBtruths\fP"
+.br
+.ti -1c
+.RI "int \fBh\fP"
+.br
+.ti -1c
+.RI "int \fBw\fP"
+.br
+.ti -1c
+.RI "int \fBc\fP"
+.br
+.ti -1c
+.RI "int \fBout_h\fP"
+.br
+.ti -1c
+.RI "int \fBout_w\fP"
+.br
+.ti -1c
+.RI "int \fBout_c\fP"
+.br
+.ti -1c
+.RI "int \fBn\fP"
+.br
+.ti -1c
+.RI "int \fBmax_boxes\fP"
+.br
+.ti -1c
+.RI "int \fBgroups\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBside\fP"
+.br
+.ti -1c
+.RI "int \fBstride\fP"
+.br
+.ti -1c
+.RI "int \fBreverse\fP"
+.br
+.ti -1c
+.RI "int \fBflatten\fP"
+.br
+.ti -1c
+.RI "int \fBspatial\fP"
+.br
+.ti -1c
+.RI "int \fBpad\fP"
+.br
+.ti -1c
+.RI "int \fBsqrt\fP"
+.br
+.ti -1c
+.RI "int \fBflip\fP"
+.br
+.ti -1c
+.RI "int \fBindex\fP"
+.br
+.ti -1c
+.RI "int \fBbinary\fP"
+.br
+.ti -1c
+.RI "int \fBxnor\fP"
+.br
+.ti -1c
+.RI "int \fBsteps\fP"
+.br
+.ti -1c
+.RI "int \fBhidden\fP"
+.br
+.ti -1c
+.RI "int \fBtruth\fP"
+.br
+.ti -1c
+.RI "float \fBsmooth\fP"
+.br
+.ti -1c
+.RI "float \fBdot\fP"
+.br
+.ti -1c
+.RI "float \fBangle\fP"
+.br
+.ti -1c
+.RI "float \fBjitter\fP"
+.br
+.ti -1c
+.RI "float \fBsaturation\fP"
+.br
+.ti -1c
+.RI "float \fBexposure\fP"
+.br
+.ti -1c
+.RI "float \fBshift\fP"
+.br
+.ti -1c
+.RI "float \fBratio\fP"
+.br
+.ti -1c
+.RI "float \fBlearning_rate_scale\fP"
+.br
+.ti -1c
+.RI "float \fBclip\fP"
+.br
+.ti -1c
+.RI "int \fBsoftmax\fP"
+.br
+.ti -1c
+.RI "int \fBclasses\fP"
+.br
+.ti -1c
+.RI "int \fBcoords\fP"
+.br
+.ti -1c
+.RI "int \fBbackground\fP"
+.br
+.ti -1c
+.RI "int \fBrescore\fP"
+.br
+.ti -1c
+.RI "int \fBobjectness\fP"
+.br
+.ti -1c
+.RI "int \fBjoint\fP"
+.br
+.ti -1c
+.RI "int \fBnoadjust\fP"
+.br
+.ti -1c
+.RI "int \fBreorg\fP"
+.br
+.ti -1c
+.RI "int \fBlog\fP"
+.br
+.ti -1c
+.RI "int \fBtanh\fP"
+.br
+.ti -1c
+.RI "int * \fBmask\fP"
+.br
+.ti -1c
+.RI "int \fBtotal\fP"
+.br
+.ti -1c
+.RI "float \fBalpha\fP"
+.br
+.ti -1c
+.RI "float \fBbeta\fP"
+.br
+.ti -1c
+.RI "float \fBkappa\fP"
+.br
+.ti -1c
+.RI "float \fBcoord_scale\fP"
+.br
+.ti -1c
+.RI "float \fBobject_scale\fP"
+.br
+.ti -1c
+.RI "float \fBnoobject_scale\fP"
+.br
+.ti -1c
+.RI "float \fBmask_scale\fP"
+.br
+.ti -1c
+.RI "float \fBclass_scale\fP"
+.br
+.ti -1c
+.RI "int \fBbias_match\fP"
+.br
+.ti -1c
+.RI "int \fBrandom\fP"
+.br
+.ti -1c
+.RI "float \fBignore_thresh\fP"
+.br
+.ti -1c
+.RI "float \fBtruth_thresh\fP"
+.br
+.ti -1c
+.RI "float \fBthresh\fP"
+.br
+.ti -1c
+.RI "float \fBfocus\fP"
+.br
+.ti -1c
+.RI "int \fBclassfix\fP"
+.br
+.ti -1c
+.RI "int \fBabsolute\fP"
+.br
+.ti -1c
+.RI "int \fBonlyforward\fP"
+.br
+.ti -1c
+.RI "int \fBstopbackward\fP"
+.br
+.ti -1c
+.RI "int \fBdontload\fP"
+.br
+.ti -1c
+.RI "int \fBdontsave\fP"
+.br
+.ti -1c
+.RI "int \fBdontloadscales\fP"
+.br
+.ti -1c
+.RI "float \fBtemperature\fP"
+.br
+.ti -1c
+.RI "float \fBprobability\fP"
+.br
+.ti -1c
+.RI "float \fBscale\fP"
+.br
+.ti -1c
+.RI "char * \fBcweights\fP"
+.br
+.ti -1c
+.RI "int * \fBindexes\fP"
+.br
+.ti -1c
+.RI "int * \fBinput_layers\fP"
+.br
+.ti -1c
+.RI "int * \fBinput_sizes\fP"
+.br
+.ti -1c
+.RI "int * \fBmap\fP"
+.br
+.ti -1c
+.RI "float * \fBrand\fP"
+.br
+.ti -1c
+.RI "float * \fBcost\fP"
+.br
+.ti -1c
+.RI "float * \fBstate\fP"
+.br
+.ti -1c
+.RI "float * \fBprev_state\fP"
+.br
+.ti -1c
+.RI "float * \fBforgot_state\fP"
+.br
+.ti -1c
+.RI "float * \fBforgot_delta\fP"
+.br
+.ti -1c
+.RI "float * \fBstate_delta\fP"
+.br
+.ti -1c
+.RI "float * \fBcombine_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBcombine_delta_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBconcat\fP"
+.br
+.ti -1c
+.RI "float * \fBconcat_delta\fP"
+.br
+.ti -1c
+.RI "float * \fBbinary_weights\fP"
+.br
+.ti -1c
+.RI "float * \fBbiases\fP"
+.br
+.ti -1c
+.RI "float * \fBbias_updates\fP"
+.br
+.ti -1c
+.RI "float * \fBscales\fP"
+.br
+.ti -1c
+.RI "float * \fBscale_updates\fP"
+.br
+.ti -1c
+.RI "float * \fBweights\fP"
+.br
+.ti -1c
+.RI "float * \fBweight_updates\fP"
+.br
+.ti -1c
+.RI "float * \fBdelta\fP"
+.br
+.ti -1c
+.RI "float * \fBoutput\fP"
+.br
+.ti -1c
+.RI "float * \fBloss\fP"
+.br
+.ti -1c
+.RI "float * \fBsquared\fP"
+.br
+.ti -1c
+.RI "float * \fBnorms\fP"
+.br
+.ti -1c
+.RI "float * \fBspatial_mean\fP"
+.br
+.ti -1c
+.RI "float * \fBmean\fP"
+.br
+.ti -1c
+.RI "float * \fBvariance\fP"
+.br
+.ti -1c
+.RI "float * \fBmean_delta\fP"
+.br
+.ti -1c
+.RI "float * \fBvariance_delta\fP"
+.br
+.ti -1c
+.RI "float * \fBrolling_mean\fP"
+.br
+.ti -1c
+.RI "float * \fBrolling_variance\fP"
+.br
+.ti -1c
+.RI "float * \fBx\fP"
+.br
+.ti -1c
+.RI "float * \fBx_norm\fP"
+.br
+.ti -1c
+.RI "float * \fBm\fP"
+.br
+.ti -1c
+.RI "float * \fBv\fP"
+.br
+.ti -1c
+.RI "float * \fBbias_m\fP"
+.br
+.ti -1c
+.RI "float * \fBbias_v\fP"
+.br
+.ti -1c
+.RI "float * \fBscale_m\fP"
+.br
+.ti -1c
+.RI "float * \fBscale_v\fP"
+.br
+.ti -1c
+.RI "float * \fBz_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBr_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBh_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBprev_state_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBtemp_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBtemp2_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBtemp3_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBdh_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBhh_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBprev_cell_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBcell_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBf_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBi_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBg_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBo_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBc_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBdc_cpu\fP"
+.br
+.ti -1c
+.RI "float * \fBbinary_input\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBself_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBoutput_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBreset_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBupdate_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_gate_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_gate_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_save_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_save_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_state_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_state_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_z_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_z_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_r_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_r_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBinput_h_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBstate_h_layer\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwz\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBuz\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwr\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBur\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwh\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBuh\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBuo\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwo\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBuf\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwf\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBui\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwi\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBug\fP"
+.br
+.ti -1c
+.RI "struct \fBlayer\fP * \fBwg\fP"
+.br
+.ti -1c
+.RI "\fBtree\fP * \fBsoftmax_tree\fP"
+.br
+.ti -1c
+.RI "size_t \fBworkspace_size\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 118 of file darknet\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int layer::absolute"
+
+.PP
+Definition at line 199 of file darknet\&.h\&.
+.SS "\fBACTIVATION\fP layer::activation"
+
+.PP
+Definition at line 120 of file darknet\&.h\&.
+.SS "float layer::alpha"
+
+.PP
+Definition at line 183 of file darknet\&.h\&.
+.SS "float layer::angle"
+
+.PP
+Definition at line 161 of file darknet\&.h\&.
+.SS "int layer::background"
+
+.PP
+Definition at line 172 of file darknet\&.h\&.
+.SS "void(* layer::backward) (struct \fBlayer\fP, struct \fBnetwork\fP)"
+
+.PP
+Definition at line 123 of file darknet\&.h\&.
+.SS "void(* layer::backward_gpu) (struct \fBlayer\fP, struct \fBnetwork\fP)"
+
+.PP
+Definition at line 126 of file darknet\&.h\&.
+.SS "int layer::batch"
+
+.PP
+Definition at line 130 of file darknet\&.h\&.
+.SS "int layer::batch_normalize"
+
+.PP
+Definition at line 128 of file darknet\&.h\&.
+.SS "float layer::beta"
+
+.PP
+Definition at line 184 of file darknet\&.h\&.
+.SS "float* layer::bias_m"
+
+.PP
+Definition at line 262 of file darknet\&.h\&.
+.SS "int layer::bias_match"
+
+.PP
+Definition at line 192 of file darknet\&.h\&.
+.SS "float* layer::bias_updates"
+
+.PP
+Definition at line 232 of file darknet\&.h\&.
+.SS "float* layer::bias_v"
+
+.PP
+Definition at line 263 of file darknet\&.h\&.
+.SS "float* layer::biases"
+
+.PP
+Definition at line 231 of file darknet\&.h\&.
+.SS "int layer::binary"
+
+.PP
+Definition at line 154 of file darknet\&.h\&.
+.SS "float* layer::binary_input"
+
+.PP
+Definition at line 288 of file darknet\&.h\&.
+.SS "float* layer::binary_weights"
+
+.PP
+Definition at line 229 of file darknet\&.h\&.
+.SS "int layer::c"
+
+.PP
+Definition at line 139 of file darknet\&.h\&.
+.SS "float* layer::c_cpu"
+
+.PP
+Definition at line 285 of file darknet\&.h\&.
+.SS "float* layer::cell_cpu"
+
+.PP
+Definition at line 280 of file darknet\&.h\&.
+.SS "float layer::class_scale"
+
+.PP
+Definition at line 191 of file darknet\&.h\&.
+.SS "int layer::classes"
+
+.PP
+Definition at line 170 of file darknet\&.h\&.
+.SS "int layer::classfix"
+
+.PP
+Definition at line 198 of file darknet\&.h\&.
+.SS "float layer::clip"
+
+.PP
+Definition at line 168 of file darknet\&.h\&.
+.SS "float* layer::combine_cpu"
+
+.PP
+Definition at line 223 of file darknet\&.h\&.
+.SS "float* layer::combine_delta_cpu"
+
+.PP
+Definition at line 224 of file darknet\&.h\&.
+.SS "float* layer::concat"
+
+.PP
+Definition at line 226 of file darknet\&.h\&.
+.SS "float* layer::concat_delta"
+
+.PP
+Definition at line 227 of file darknet\&.h\&.
+.SS "float layer::coord_scale"
+
+.PP
+Definition at line 187 of file darknet\&.h\&.
+.SS "int layer::coords"
+
+.PP
+Definition at line 171 of file darknet\&.h\&.
+.SS "float* layer::cost"
+
+.PP
+Definition at line 217 of file darknet\&.h\&.
+.SS "\fBCOST_TYPE\fP layer::cost_type"
+
+.PP
+Definition at line 121 of file darknet\&.h\&.
+.SS "char* layer::cweights"
+
+.PP
+Definition at line 211 of file darknet\&.h\&.
+.SS "float* layer::dc_cpu"
+
+.PP
+Definition at line 286 of file darknet\&.h\&.
+.SS "float* layer::delta"
+
+.PP
+Definition at line 240 of file darknet\&.h\&.
+.SS "float* layer::dh_cpu"
+
+.PP
+Definition at line 277 of file darknet\&.h\&.
+.SS "int layer::dontload"
+
+.PP
+Definition at line 203 of file darknet\&.h\&.
+.SS "int layer::dontloadscales"
+
+.PP
+Definition at line 205 of file darknet\&.h\&.
+.SS "int layer::dontsave"
+
+.PP
+Definition at line 204 of file darknet\&.h\&.
+.SS "float layer::dot"
+
+.PP
+Definition at line 160 of file darknet\&.h\&.
+.SS "float layer::exposure"
+
+.PP
+Definition at line 164 of file darknet\&.h\&.
+.SS "int layer::extra"
+
+.PP
+Definition at line 137 of file darknet\&.h\&.
+.SS "float* layer::f_cpu"
+
+.PP
+Definition at line 281 of file darknet\&.h\&.
+.SS "int layer::flatten"
+
+.PP
+Definition at line 148 of file darknet\&.h\&.
+.SS "int layer::flip"
+
+.PP
+Definition at line 152 of file darknet\&.h\&.
+.SS "int layer::flipped"
+
+.PP
+Definition at line 132 of file darknet\&.h\&.
+.SS "float layer::focus"
+
+.PP
+Definition at line 197 of file darknet\&.h\&.
+.SS "int layer::forced"
+
+.PP
+Definition at line 131 of file darknet\&.h\&.
+.SS "float* layer::forgot_delta"
+
+.PP
+Definition at line 221 of file darknet\&.h\&.
+.SS "float* layer::forgot_state"
+
+.PP
+Definition at line 220 of file darknet\&.h\&.
+.SS "void(* layer::forward) (struct \fBlayer\fP, struct \fBnetwork\fP)"
+
+.PP
+Definition at line 122 of file darknet\&.h\&.
+.SS "void(* layer::forward_gpu) (struct \fBlayer\fP, struct \fBnetwork\fP)"
+
+.PP
+Definition at line 125 of file darknet\&.h\&.
+.SS "float* layer::g_cpu"
+
+.PP
+Definition at line 283 of file darknet\&.h\&.
+.SS "int layer::groups"
+
+.PP
+Definition at line 143 of file darknet\&.h\&.
+.SS "int layer::h"
+
+.PP
+Definition at line 139 of file darknet\&.h\&.
+.SS "float* layer::h_cpu"
+
+.PP
+Definition at line 270 of file darknet\&.h\&.
+.SS "float* layer::hh_cpu"
+
+.PP
+Definition at line 278 of file darknet\&.h\&.
+.SS "int layer::hidden"
+
+.PP
+Definition at line 157 of file darknet\&.h\&.
+.SS "float* layer::i_cpu"
+
+.PP
+Definition at line 282 of file darknet\&.h\&.
+.SS "float layer::ignore_thresh"
+
+.PP
+Definition at line 194 of file darknet\&.h\&.
+.SS "int layer::index"
+
+.PP
+Definition at line 153 of file darknet\&.h\&.
+.SS "int* layer::indexes"
+
+.PP
+Definition at line 212 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_gate_layer"
+
+.PP
+Definition at line 298 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_h_layer"
+
+.PP
+Definition at line 311 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_layer"
+
+.PP
+Definition at line 290 of file darknet\&.h\&.
+.SS "int* layer::input_layers"
+
+.PP
+Definition at line 213 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_r_layer"
+
+.PP
+Definition at line 308 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_save_layer"
+
+.PP
+Definition at line 300 of file darknet\&.h\&.
+.SS "int* layer::input_sizes"
+
+.PP
+Definition at line 214 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_state_layer"
+
+.PP
+Definition at line 302 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::input_z_layer"
+
+.PP
+Definition at line 305 of file darknet\&.h\&.
+.SS "int layer::inputs"
+
+.PP
+Definition at line 133 of file darknet\&.h\&.
+.SS "float layer::jitter"
+
+.PP
+Definition at line 162 of file darknet\&.h\&.
+.SS "int layer::joint"
+
+.PP
+Definition at line 175 of file darknet\&.h\&.
+.SS "float layer::kappa"
+
+.PP
+Definition at line 185 of file darknet\&.h\&.
+.SS "float layer::learning_rate_scale"
+
+.PP
+Definition at line 167 of file darknet\&.h\&.
+.SS "int layer::log"
+
+.PP
+Definition at line 178 of file darknet\&.h\&.
+.SS "float* layer::loss"
+
+.PP
+Definition at line 242 of file darknet\&.h\&.
+.SS "float* layer::m"
+
+.PP
+Definition at line 259 of file darknet\&.h\&.
+.SS "int* layer::map"
+
+.PP
+Definition at line 215 of file darknet\&.h\&.
+.SS "int* layer::mask"
+
+.PP
+Definition at line 180 of file darknet\&.h\&.
+.SS "float layer::mask_scale"
+
+.PP
+Definition at line 190 of file darknet\&.h\&.
+.SS "int layer::max_boxes"
+
+.PP
+Definition at line 142 of file darknet\&.h\&.
+.SS "float* layer::mean"
+
+.PP
+Definition at line 247 of file darknet\&.h\&.
+.SS "float* layer::mean_delta"
+
+.PP
+Definition at line 250 of file darknet\&.h\&.
+.SS "int layer::n"
+
+.PP
+Definition at line 141 of file darknet\&.h\&.
+.SS "int layer::nbiases"
+
+.PP
+Definition at line 136 of file darknet\&.h\&.
+.SS "int layer::noadjust"
+
+.PP
+Definition at line 176 of file darknet\&.h\&.
+.SS "float layer::noobject_scale"
+
+.PP
+Definition at line 189 of file darknet\&.h\&.
+.SS "float* layer::norms"
+
+.PP
+Definition at line 244 of file darknet\&.h\&.
+.SS "int layer::nweights"
+
+.PP
+Definition at line 135 of file darknet\&.h\&.
+.SS "float* layer::o_cpu"
+
+.PP
+Definition at line 284 of file darknet\&.h\&.
+.SS "float layer::object_scale"
+
+.PP
+Definition at line 188 of file darknet\&.h\&.
+.SS "int layer::objectness"
+
+.PP
+Definition at line 174 of file darknet\&.h\&.
+.SS "int layer::onlyforward"
+
+.PP
+Definition at line 201 of file darknet\&.h\&.
+.SS "int layer::out_c"
+
+.PP
+Definition at line 140 of file darknet\&.h\&.
+.SS "int layer::out_h"
+
+.PP
+Definition at line 140 of file darknet\&.h\&.
+.SS "int layer::out_w"
+
+.PP
+Definition at line 140 of file darknet\&.h\&.
+.SS "float* layer::output"
+
+.PP
+Definition at line 241 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::output_layer"
+
+.PP
+Definition at line 292 of file darknet\&.h\&.
+.SS "int layer::outputs"
+
+.PP
+Definition at line 134 of file darknet\&.h\&.
+.SS "int layer::pad"
+
+.PP
+Definition at line 150 of file darknet\&.h\&.
+.SS "float* layer::prev_cell_cpu"
+
+.PP
+Definition at line 279 of file darknet\&.h\&.
+.SS "float* layer::prev_state"
+
+.PP
+Definition at line 219 of file darknet\&.h\&.
+.SS "float* layer::prev_state_cpu"
+
+.PP
+Definition at line 271 of file darknet\&.h\&.
+.SS "float layer::probability"
+
+.PP
+Definition at line 208 of file darknet\&.h\&.
+.SS "float* layer::r_cpu"
+
+.PP
+Definition at line 269 of file darknet\&.h\&.
+.SS "float* layer::rand"
+
+.PP
+Definition at line 216 of file darknet\&.h\&.
+.SS "int layer::random"
+
+.PP
+Definition at line 193 of file darknet\&.h\&.
+.SS "float layer::ratio"
+
+.PP
+Definition at line 166 of file darknet\&.h\&.
+.SS "int layer::reorg"
+
+.PP
+Definition at line 177 of file darknet\&.h\&.
+.SS "int layer::rescore"
+
+.PP
+Definition at line 173 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::reset_layer"
+
+.PP
+Definition at line 294 of file darknet\&.h\&.
+.SS "int layer::reverse"
+
+.PP
+Definition at line 147 of file darknet\&.h\&.
+.SS "float* layer::rolling_mean"
+
+.PP
+Definition at line 253 of file darknet\&.h\&.
+.SS "float* layer::rolling_variance"
+
+.PP
+Definition at line 254 of file darknet\&.h\&.
+.SS "float layer::saturation"
+
+.PP
+Definition at line 163 of file darknet\&.h\&.
+.SS "float layer::scale"
+
+.PP
+Definition at line 209 of file darknet\&.h\&.
+.SS "float* layer::scale_m"
+
+.PP
+Definition at line 264 of file darknet\&.h\&.
+.SS "float* layer::scale_updates"
+
+.PP
+Definition at line 235 of file darknet\&.h\&.
+.SS "float* layer::scale_v"
+
+.PP
+Definition at line 265 of file darknet\&.h\&.
+.SS "float* layer::scales"
+
+.PP
+Definition at line 234 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::self_layer"
+
+.PP
+Definition at line 291 of file darknet\&.h\&.
+.SS "float layer::shift"
+
+.PP
+Definition at line 165 of file darknet\&.h\&.
+.SS "int layer::shortcut"
+
+.PP
+Definition at line 129 of file darknet\&.h\&.
+.SS "int layer::side"
+
+.PP
+Definition at line 145 of file darknet\&.h\&.
+.SS "int layer::size"
+
+.PP
+Definition at line 144 of file darknet\&.h\&.
+.SS "float layer::smooth"
+
+.PP
+Definition at line 159 of file darknet\&.h\&.
+.SS "int layer::softmax"
+
+.PP
+Definition at line 169 of file darknet\&.h\&.
+.SS "\fBtree\fP* layer::softmax_tree"
+
+.PP
+Definition at line 329 of file darknet\&.h\&.
+.SS "int layer::spatial"
+
+.PP
+Definition at line 149 of file darknet\&.h\&.
+.SS "float* layer::spatial_mean"
+
+.PP
+Definition at line 246 of file darknet\&.h\&.
+.SS "int layer::sqrt"
+
+.PP
+Definition at line 151 of file darknet\&.h\&.
+.SS "float* layer::squared"
+
+.PP
+Definition at line 243 of file darknet\&.h\&.
+.SS "float* layer::state"
+
+.PP
+Definition at line 218 of file darknet\&.h\&.
+.SS "float* layer::state_delta"
+
+.PP
+Definition at line 222 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_gate_layer"
+
+.PP
+Definition at line 299 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_h_layer"
+
+.PP
+Definition at line 312 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_layer"
+
+.PP
+Definition at line 296 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_r_layer"
+
+.PP
+Definition at line 309 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_save_layer"
+
+.PP
+Definition at line 301 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_state_layer"
+
+.PP
+Definition at line 303 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::state_z_layer"
+
+.PP
+Definition at line 306 of file darknet\&.h\&.
+.SS "int layer::steps"
+
+.PP
+Definition at line 156 of file darknet\&.h\&.
+.SS "int layer::stopbackward"
+
+.PP
+Definition at line 202 of file darknet\&.h\&.
+.SS "int layer::stride"
+
+.PP
+Definition at line 146 of file darknet\&.h\&.
+.SS "int layer::tanh"
+
+.PP
+Definition at line 179 of file darknet\&.h\&.
+.SS "float* layer::temp2_cpu"
+
+.PP
+Definition at line 274 of file darknet\&.h\&.
+.SS "float* layer::temp3_cpu"
+
+.PP
+Definition at line 275 of file darknet\&.h\&.
+.SS "float* layer::temp_cpu"
+
+.PP
+Definition at line 273 of file darknet\&.h\&.
+.SS "float layer::temperature"
+
+.PP
+Definition at line 207 of file darknet\&.h\&.
+.SS "float layer::thresh"
+
+.PP
+Definition at line 196 of file darknet\&.h\&.
+.SS "int layer::total"
+
+.PP
+Definition at line 181 of file darknet\&.h\&.
+.SS "int layer::truth"
+
+.PP
+Definition at line 158 of file darknet\&.h\&.
+.SS "float layer::truth_thresh"
+
+.PP
+Definition at line 195 of file darknet\&.h\&.
+.SS "int layer::truths"
+
+.PP
+Definition at line 138 of file darknet\&.h\&.
+.SS "\fBLAYER_TYPE\fP layer::type"
+
+.PP
+Definition at line 119 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::uf"
+
+.PP
+Definition at line 322 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::ug"
+
+.PP
+Definition at line 326 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::uh"
+
+.PP
+Definition at line 319 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::ui"
+
+.PP
+Definition at line 324 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::uo"
+
+.PP
+Definition at line 320 of file darknet\&.h\&.
+.SS "void(* layer::update) (struct \fBlayer\fP, \fBupdate_args\fP)"
+
+.PP
+Definition at line 124 of file darknet\&.h\&.
+.SS "void(* layer::update_gpu) (struct \fBlayer\fP, \fBupdate_args\fP)"
+
+.PP
+Definition at line 127 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::update_layer"
+
+.PP
+Definition at line 295 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::ur"
+
+.PP
+Definition at line 317 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::uz"
+
+.PP
+Definition at line 315 of file darknet\&.h\&.
+.SS "float* layer::v"
+
+.PP
+Definition at line 260 of file darknet\&.h\&.
+.SS "float* layer::variance"
+
+.PP
+Definition at line 248 of file darknet\&.h\&.
+.SS "float* layer::variance_delta"
+
+.PP
+Definition at line 251 of file darknet\&.h\&.
+.SS "int layer::w"
+
+.PP
+Definition at line 139 of file darknet\&.h\&.
+.SS "float* layer::weight_updates"
+
+.PP
+Definition at line 238 of file darknet\&.h\&.
+.SS "float* layer::weights"
+
+.PP
+Definition at line 237 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wf"
+
+.PP
+Definition at line 323 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wg"
+
+.PP
+Definition at line 327 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wh"
+
+.PP
+Definition at line 318 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wi"
+
+.PP
+Definition at line 325 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wo"
+
+.PP
+Definition at line 321 of file darknet\&.h\&.
+.SS "size_t layer::workspace_size"
+
+.PP
+Definition at line 331 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wr"
+
+.PP
+Definition at line 316 of file darknet\&.h\&.
+.SS "struct \fBlayer\fP* layer::wz"
+
+.PP
+Definition at line 314 of file darknet\&.h\&.
+.SS "float* layer::x"
+
+.PP
+Definition at line 256 of file darknet\&.h\&.
+.SS "float* layer::x_norm"
+
+.PP
+Definition at line 257 of file darknet\&.h\&.
+.SS "int layer::xnor"
+
+.PP
+Definition at line 155 of file darknet\&.h\&.
+.SS "float* layer::z_cpu"
+
+.PP
+Definition at line 268 of file darknet\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

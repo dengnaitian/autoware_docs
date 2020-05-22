@@ -1,0 +1,72 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_velocity_visualizer/waypoint_velocity_visualizer.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_maker/nodes/waypoint_velocity_visualizer/waypoint_velocity_visualizer.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <ros/console\&.h>\fP
+.br
+\fC#include <visualization_msgs/MarkerArray\&.h>\fP
+.br
+\fC#include <std_msgs/Int32\&.h>\fP
+.br
+\fC#include <std_msgs/ColorRGBA\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <message_filters/subscriber\&.h>\fP
+.br
+\fC#include <message_filters/synchronizer\&.h>\fP
+.br
+\fC#include <message_filters/sync_policies/approximate_time\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <boost/circular_buffer\&.hpp>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+\fC#include 'autoware_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'autoware_config_msgs/ConfigLaneStop\&.h'\fP
+.br
+\fC#include 'autoware_msgs/TrafficLight\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWaypointVelocityVisualizer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 389 of file waypoint_velocity_visualizer\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

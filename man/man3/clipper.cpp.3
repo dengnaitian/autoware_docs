@@ -1,0 +1,346 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_tracker/packages/vision_beyond_track/lib/clipper.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_tracker/packages/vision_beyond_track/lib/clipper.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'clipper\&.hpp'\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <ostream>\fP
+.br
+\fC#include <functional>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBClipperLib::TEdge\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::IntersectNode\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::LocalMinimum\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::OutRec\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::OutPt\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::Join\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::LocMinSorter\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::Int128\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBClipperLib\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHORIZONTAL\fP   (\-1\&.0E+40)"
+.br
+.ti -1c
+.RI "#define \fBTOLERANCE\fP   (1\&.0e\-20)"
+.br
+.ti -1c
+.RI "#define \fBNEAR_ZERO\fP(val)   (((val) > \-\fBTOLERANCE\fP) && ((val) < \fBTOLERANCE\fP))"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBClipperLib::Direction\fP { \fBClipperLib::dRightToLeft\fP, \fBClipperLib::dLeftToRight\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::NodeType\fP { \fBClipperLib::ntAny\fP, \fBClipperLib::ntOpen\fP, \fBClipperLib::ntClosed\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "cInt \fBClipperLib::Round\fP (double val)"
+.br
+.ti -1c
+.RI "cInt \fBClipperLib::Abs\fP (cInt val)"
+.br
+.ti -1c
+.RI "Int128 \fBClipperLib::Int128Mul\fP (long64 lhs, long64 rhs)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::Orientation\fP (const Path &poly)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::Area\fP (const Path &poly)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::Area\fP (const OutPt *op)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::Area\fP (const OutRec &outRec)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::PointIsVertex\fP (const IntPoint &Pt, OutPt *pp)"
+.br
+.ti -1c
+.RI "int \fBClipperLib::PointInPolygon\fP (const IntPoint &pt, const Path &path)"
+.br
+.ti -1c
+.RI "int \fBClipperLib::PointInPolygon\fP (const IntPoint &pt, OutPt *op)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::Poly2ContainsPoly1\fP (OutPt *OutPt1, OutPt *OutPt2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::SlopesEqual\fP (const TEdge &e1, const TEdge &e2, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::SlopesEqual\fP (const IntPoint pt1, const IntPoint pt2, const IntPoint pt3, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::SlopesEqual\fP (const IntPoint pt1, const IntPoint pt2, const IntPoint pt3, const IntPoint pt4, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::IsHorizontal\fP (TEdge &e)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::GetDx\fP (const IntPoint pt1, const IntPoint pt2)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SetDx\fP (TEdge &e)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SwapSides\fP (TEdge &Edge1, TEdge &Edge2)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SwapPolyIndexes\fP (TEdge &Edge1, TEdge &Edge2)"
+.br
+.ti -1c
+.RI "cInt \fBClipperLib::TopX\fP (TEdge &edge, const cInt currentY)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::IntersectPoint\fP (TEdge &Edge1, TEdge &Edge2, IntPoint &ip)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReversePolyPtLinks\fP (OutPt *pp)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::DisposeOutPts\fP (OutPt *&pp)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::InitEdge\fP (TEdge *e, TEdge *eNext, TEdge *ePrev, const IntPoint &Pt)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::InitEdge2\fP (TEdge &e, PolyType Pt)"
+.br
+.ti -1c
+.RI "TEdge * \fBClipperLib::RemoveEdge\fP (TEdge *e)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReverseHorizontal\fP (TEdge &e)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SwapPoints\fP (IntPoint &pt1, IntPoint &pt2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::GetOverlapSegment\fP (IntPoint pt1a, IntPoint pt1b, IntPoint pt2a, IntPoint pt2b, IntPoint &pt1, IntPoint &pt2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::FirstIsBottomPt\fP (const OutPt *btmPt1, const OutPt *btmPt2)"
+.br
+.ti -1c
+.RI "OutPt * \fBClipperLib::GetBottomPt\fP (OutPt *pp)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::Pt2IsBetweenPt1AndPt3\fP (const IntPoint pt1, const IntPoint pt2, const IntPoint pt3)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::HorzSegmentsOverlap\fP (cInt seg1a, cInt seg1b, cInt seg2a, cInt seg2b)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::RangeTest\fP (const IntPoint &Pt, bool &useFullRange)"
+.br
+.ti -1c
+.RI "TEdge * \fBClipperLib::FindNextLocMin\fP (TEdge *E)"
+.br
+.ti -1c
+.RI "OutRec * \fBClipperLib::GetLowermostRec\fP (OutRec *outRec1, OutRec *outRec2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::OutRec1RightOfOutRec2\fP (OutRec *outRec1, OutRec *outRec2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::IsMinima\fP (TEdge *e)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::IsMaxima\fP (TEdge *e, const cInt Y)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::IsIntermediate\fP (TEdge *e, const cInt Y)"
+.br
+.ti -1c
+.RI "TEdge * \fBClipperLib::GetMaximaPair\fP (TEdge *e)"
+.br
+.ti -1c
+.RI "TEdge * \fBClipperLib::GetMaximaPairEx\fP (TEdge *e)"
+.br
+.ti -1c
+.RI "TEdge * \fBClipperLib::GetNextInAEL\fP (TEdge *e, Direction dir)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::GetHorzDirection\fP (TEdge &HorzEdge, Direction &Dir, cInt &Left, cInt &Right)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::IntersectListSort\fP (IntersectNode *node1, IntersectNode *node2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::EdgesAdjacent\fP (const IntersectNode &inode)"
+.br
+.ti -1c
+.RI "int \fBClipperLib::PointCount\fP (OutPt *Pts)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SwapIntersectNodes\fP (IntersectNode &int1, IntersectNode &int2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::E2InsertsBeforeE1\fP (TEdge &e1, TEdge &e2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::GetOverlap\fP (const cInt a1, const cInt a2, const cInt b1, const cInt b2, cInt &Left, cInt &Right)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::UpdateOutPtIdxs\fP (OutRec &outrec)"
+.br
+.ti -1c
+.RI "OutPt * \fBClipperLib::DupOutPt\fP (OutPt *outPt, bool InsertAfter)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::JoinHorz\fP (OutPt *op1, OutPt *op1b, OutPt *op2, OutPt *op2b, const IntPoint Pt, bool DiscardLeft)"
+.br
+.ti -1c
+.RI "DoublePoint \fBClipperLib::GetUnitNormal\fP (const IntPoint &pt1, const IntPoint &pt2)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReversePath\fP (Path &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReversePaths\fP (Paths &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygon\fP (const Path &in_poly, Paths &out_polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygons\fP (const Paths &in_polys, Paths &out_polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygons\fP (Paths &polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::DistanceSqrd\fP (const IntPoint &pt1, const IntPoint &pt2)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::DistanceFromLineSqrd\fP (const IntPoint &pt, const IntPoint &ln1, const IntPoint &ln2)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::SlopesNearCollinear\fP (const IntPoint &pt1, const IntPoint &pt2, const IntPoint &pt3, double distSqrd)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::PointsAreClose\fP (IntPoint pt1, IntPoint pt2, double distSqrd)"
+.br
+.ti -1c
+.RI "OutPt * \fBClipperLib::ExcludeOp\fP (OutPt *op)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygon\fP (const Path &in_poly, Path &out_poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygon\fP (Path &poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygons\fP (const Paths &in_polys, Paths &out_polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygons\fP (Paths &polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::Minkowski\fP (const Path &poly, const Path &path, Paths &solution, bool isSum, bool isClosed)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiSum\fP (const Path &pattern, const Path &path, Paths &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::TranslatePath\fP (const Path &input, Path &output, const IntPoint delta)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiSum\fP (const Path &pattern, const Paths &paths, Paths &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiDiff\fP (const Path &poly1, const Path &poly2, Paths &solution)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::AddPolyNodeToPaths\fP (const PolyNode &polynode, NodeType nodetype, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::PolyTreeToPaths\fP (const PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ClosedPathsFromPolyTree\fP (const PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::OpenPathsFromPolyTree\fP (PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const IntPoint &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const Path &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const Paths &\fBp\fP)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HORIZONTAL   (\-1\&.0E+40)"
+
+.PP
+Definition at line 66 of file clipper\&.cpp\&.
+.SS "#define NEAR_ZERO(val)   (((val) > \-\fBTOLERANCE\fP) && ((val) < \fBTOLERANCE\fP))"
+
+.PP
+Definition at line 68 of file clipper\&.cpp\&.
+.SS "#define TOLERANCE   (1\&.0e\-20)"
+
+.PP
+Definition at line 67 of file clipper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

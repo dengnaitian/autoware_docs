@@ -1,0 +1,58 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_mission_packages_op_global_planner__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_mission_packages_op_global_planner__r_e_a_d_m_e \- OpenPlanner - Global Planner 
+
+.SS "op_global_planner"
+.PP
+This node generate global path from start point to target point(s) on a map\&. Planning cost is distance only\&. the algorithm could be extended to handle other costs such as turning right and left busy lanes in the dynamic map\&. it supports autoware vector map, and special designed \&.kml maps\&.
+.PP
+.SS "Outputs"
+.PP
+Global path from start to goal, if multiple goals are set, replanning is automatic when the vehicle reaches the end one goal\&.
+.PP
+.SS "Options"
+.PP
+\fBLane\fP change is avilable (parralel lanes are detected automatically) Start/Goal(s) are set from Rviz, and saved to \&.csv files, if rviz param is disables, start/goal(s) will be loaded from \&.csv file at\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+vector map
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_global_planner op_global_planner\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Mission Planning -> OpenPlanner - Global Planner -> op_global_planner
+.PP
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Publications: 
+2  * /lane_waypoints_array [autoware_msgs::LaneArray]
+3  * /global_waypoints_rviz [visualization_msgs::MarkerArray]
+4  * /op_destinations_rviz [visualization_msgs::MarkerArray]
+5  * /vector_map_center_lines_rviz [visualization_msgs::MarkerArray]
+6 
+7 Subscriptions: 
+8  * /initialpose [geometry_msgs::PoseWithCovarianceStamped]
+9  * /move_base_simple/goal [geometry_msgs::PoseStamped]
+10  * /current_pose [geometry_msgs::PoseStamped]
+11  * /current_velocity [geometry_msgs::TwistStamped]
+12  * /vector_map_info/* 
+.fi
+.PP
+.PP
+ 

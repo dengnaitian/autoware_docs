@@ -1,0 +1,48 @@
+.TH "ShapeEstimationModelInterface" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ShapeEstimationModelInterface \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <model_interface\&.hpp>\fP
+.PP
+Inherited by \fBBoundingBoxModel\fP, \fBConvexHullModel\fP, and \fBCylinderModel\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShapeEstimationModelInterface\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ShapeEstimationModelInterface\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBestimate\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ > &cluster, autoware_msgs::DetectedObject &ouput)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file model_interface\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ShapeEstimationModelInterface::ShapeEstimationModelInterface ()\fC [inline]\fP"
+
+.PP
+Definition at line 30 of file model_interface\&.hpp\&.
+.SS "virtual ShapeEstimationModelInterface::~ShapeEstimationModelInterface ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 32 of file model_interface\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool ShapeEstimationModelInterface::estimate (const \fBpcl::PointCloud\fP< pcl::PointXYZ > & cluster, autoware_msgs::DetectedObject & ouput)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBBoundingBoxModel\fP, \fBCylinderModel\fP, and \fBConvexHullModel\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

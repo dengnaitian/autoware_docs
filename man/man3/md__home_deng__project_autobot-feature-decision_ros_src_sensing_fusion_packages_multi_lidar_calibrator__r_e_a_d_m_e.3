@@ -1,0 +1,62 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_multi_lidar_calibrator__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_fusion_packages_multi_lidar_calibrator__r_e_a_d_m_e \- Multi LiDAR Calibrator 
+This package allows to obtain the extrinsic calibration between two PointClouds with the help of the NDT algorithm\&.
+.PP
+The \fCmulti_lidar_calibrator\fP node receives two \fCPointCloud2\fP messages (parent and child), and an initialization pose\&. If possible, the transformation required to transform the child to the parent point cloud is calculated, and output to the terminal\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "1." 4
+\fBYou'll need to provide an initial guess, otherwise the transformation won't converge\&.\fP
+.IP "2." 4
+In a sourced terminal:
+.PP
+.PP
+Using rosrun
+.PP
+\fCrosrun multi_lidar_calibrator multi_lidar_calibrator _points_child_src:=/lidar_child/points_raw _points_parent_src:=/lidar_parent/points_raw _x:=0\&.0 _y:=0\&.0 _z:=0\&.0 _roll:=0\&.0 _pitch:=0\&.0 _yaw:=0\&.0\fP
+.PP
+Using roslaunch
+.PP
+\fCroslaunch multi_lidar_calibrator multi_lidar_calibrator points_child_src:=/lidar_child/points_raw points_parent_src:=/lidar_parent/points_raw x:=0\&.0 y:=0\&.0 z:=0\&.0 roll:=0\&.0 pitch:=0\&.0 yaw:=0\&.0\fP
+.PP
+.IP "3." 4
+Play a rosbag with both lidar data \fC/lidar_child/points_raw\fP and \fC/lidar_parent/points_raw\fP
+.IP "4." 4
+The resulting transformation will be shown in the terminal as shown in the \fIOutput\fP section\&.
+.IP "5." 4
+Open RViz and set the fixed frame to the Parent
+.IP "6." 4
+Add both point cloud \fC/lidar_parent/points_raw\fP and \fC/points_calibrated\fP
+.IP "7." 4
+If the algorithm converged, both PointClouds will be shown in rviz\&.
+.PP
+.PP
+.SS "Input topics"
+.PP
+ParameterTypeDescription  \fCpoints_parent_src\fP*String* PointCloud topic name to subscribe and synchronize with the child\&. \fCpoints_child_src\fP*String*PointCloud topic name to subscribe and synchronize with the parent\&. \fCvoxel_size\fP*double*Size of the Voxel used to downsample the CHILD pointcloud\&. Default: 0\&.5 \fCndt_epsilon\fP*double*The transformation epsilon in order for an optimization to be considered as having converged to the final solution\&. Default: 0\&.01 \fCndt_step_size\fP*double*Set/change the newton line search maximum step length\&. Default: 0\&.1 \fCndt_resolution\fP*double*Size of the Voxel used to downsample the PARENT pointcloud\&. Default: 1\&.0 \fCndt_iterations\fP*double*The maximum number of iterations the internal optimization should run for\&. Default: 400 \fCx\fP*double*Initial Guess of the transformation x\&. Meters \fCy\fP*double*Initial Guess of the transformation y\&. Meters \fCz\fP*double*Initial Guess of the transformation z\&. Meters \fCroll\fP*double*Initial Guess of the transformation roll\&. Radians \fCpitch\fP*double*Initial Guess of the transformation pitch\&. Radians \fCyaw\fP*double*Initial Guess of the transformation yaw\&. Radians 
+.SS "Output"
+.PP
+.IP "1." 4
+Child \fBPoint\fP cloud transformed to the Parent frame and published in \fC/points_calibrated\fP\&.
+.PP
+.IP "1." 4
+Output in the terminal showing the X,Y,Z,Yaw,Pitch,Roll transformation between child and parent\&. These values can be used later with the \fCstatic_transform_publisher\fP\&.
+.PP
+.PP
+.SS "Output example:"
+.PP
+.PP
+.nf
+1 transformation from ChildFrame to ParentFrame
+2 This transformation can be replicated using:
+3 
+4 rosrun tf static_transform_publisher 1\&.7096 -0\&.101048 -0\&.56108 1\&.5708 0\&.00830573  0\&.843 /ParentFrame /ChildFrame 10
+.fi
+.PP
+ The figure below shows two lidar sensors calibrated by this node\&. One is shown in gray while the other is show in blue\&. Image obtained from rviz\&.
+.PP
+ 

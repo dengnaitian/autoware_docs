@@ -1,0 +1,88 @@
+.TH "PlannerHNS::PlannerH" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::PlannerH \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlannerH\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerH\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PlannerH\fP ()"
+.br
+.ti -1c
+.RI "void \fBGenerateRunoffTrajectory\fP (const std::vector< std::vector< \fBWayPoint\fP > > &referencePaths, const \fBWayPoint\fP &carPos, const bool &bEnableLaneChange, const double &speed, const double &microPlanDistance, const double &maxSpeed, const double &minSpeed, const double &carTipMargin, const double &rollInMargin, const double &rollInSpeedFactor, const double &pathDensity, const double &rollOutDensity, const int &rollOutNumber, const double &SmoothDataWeight, const double &SmoothWeight, const double &SmoothTolerance, const double &speedProfileFactor, const bool &bHeadingSmooth, const int &iCurrGlobalPath, const int &iCurrLocalTraj, std::vector< std::vector< std::vector< \fBWayPoint\fP > > > &rollOutsPaths, std::vector< \fBWayPoint\fP > &sampledPoints)"
+.br
+.ti -1c
+.RI "double \fBPlanUsingDP\fP (const \fBWayPoint\fP &carPos, const \fBWayPoint\fP &goalPos, const double &maxPlanningDistance, const bool bEnableLaneChange, const std::vector< int > &globalPath, \fBRoadNetwork\fP &\fBmap\fP, std::vector< std::vector< \fBWayPoint\fP > > &paths, std::vector< \fBWayPoint\fP * > *all_cell_to_delete=0)"
+.br
+.ti -1c
+.RI "double \fBPlanUsingDPRandom\fP (const \fBWayPoint\fP &start, const double &maxPlanningDistance, \fBRoadNetwork\fP &\fBmap\fP, std::vector< std::vector< \fBWayPoint\fP > > &paths)"
+.br
+.ti -1c
+.RI "double \fBPredictPlanUsingDP\fP (\fBLane\fP *lane, const \fBWayPoint\fP &carPos, const double &maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > &paths)"
+.br
+.ti -1c
+.RI "double \fBPredictPlanUsingDP\fP (const \fBWayPoint\fP &startPose, \fBWayPoint\fP *closestWP, const double &maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > &paths, const bool &bFindBranches=true)"
+.br
+.ti -1c
+.RI "double \fBPredictTrajectoriesUsingDP\fP (const \fBWayPoint\fP &startPose, std::vector< \fBWayPoint\fP * > closestWPs, const double &maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > &paths, const bool &bFindBranches=true, const bool bDirectionBased=false, const bool pathDensity=1\&.0)"
+.br
+.ti -1c
+.RI "void \fBDeleteWaypoints\fP (std::vector< \fBWayPoint\fP * > &wps)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 20 of file PlannerH\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::PlannerH::PlannerH ()"
+
+.PP
+Definition at line 16 of file PlannerH\&.cpp\&.
+.SS "PlannerHNS::PlannerH::~PlannerH ()\fC [virtual]\fP"
+
+.PP
+Definition at line 21 of file PlannerH\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::PlannerH::DeleteWaypoints (std::vector< \fBWayPoint\fP * > & wps)"
+
+.PP
+Definition at line 481 of file PlannerH\&.cpp\&.
+.SS "void PlannerHNS::PlannerH::GenerateRunoffTrajectory (const std::vector< std::vector< \fBWayPoint\fP > > & referencePaths, const \fBWayPoint\fP & carPos, const bool & bEnableLaneChange, const double & speed, const double & microPlanDistance, const double & maxSpeed, const double & minSpeed, const double & carTipMargin, const double & rollInMargin, const double & rollInSpeedFactor, const double & pathDensity, const double & rollOutDensity, const int & rollOutNumber, const double & SmoothDataWeight, const double & SmoothWeight, const double & SmoothTolerance, const double & speedProfileFactor, const bool & bHeadingSmooth, const int & iCurrGlobalPath, const int & iCurrLocalTraj, std::vector< std::vector< std::vector< \fBWayPoint\fP > > > & rollOutsPaths, std::vector< \fBWayPoint\fP > & sampledPoints)"
+
+.PP
+Definition at line 25 of file PlannerH\&.cpp\&.
+.SS "double PlannerHNS::PlannerH::PlanUsingDP (const \fBWayPoint\fP & carPos, const \fBWayPoint\fP & goalPos, const double & maxPlanningDistance, const bool bEnableLaneChange, const std::vector< int > & globalPath, \fBRoadNetwork\fP & map, std::vector< std::vector< \fBWayPoint\fP > > & paths, std::vector< \fBWayPoint\fP * > * all_cell_to_delete = \fC0\fP)"
+
+.PP
+Definition at line 134 of file PlannerH\&.cpp\&.
+.SS "double PlannerHNS::PlannerH::PlanUsingDPRandom (const \fBWayPoint\fP & start, const double & maxPlanningDistance, \fBRoadNetwork\fP & map, std::vector< std::vector< \fBWayPoint\fP > > & paths)"
+
+.PP
+Definition at line 65 of file PlannerH\&.cpp\&.
+.SS "double PlannerHNS::PlannerH::PredictPlanUsingDP (\fBPlannerHNS::Lane\fP * l, const \fBWayPoint\fP & carPos, const double & maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > & paths)"
+
+.PP
+Definition at line 279 of file PlannerH\&.cpp\&.
+.SS "double PlannerHNS::PlannerH::PredictPlanUsingDP (const \fBWayPoint\fP & startPose, \fBWayPoint\fP * closestWP, const double & maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > & paths, const bool & bFindBranches = \fCtrue\fP)"
+
+.PP
+Definition at line 422 of file PlannerH\&.cpp\&.
+.SS "double PlannerHNS::PlannerH::PredictTrajectoriesUsingDP (const \fBWayPoint\fP & startPose, std::vector< \fBWayPoint\fP * > closestWPs, const double & maxPlanningDistance, std::vector< std::vector< \fBWayPoint\fP > > & paths, const bool & bFindBranches = \fCtrue\fP, const bool bDirectionBased = \fCfalse\fP, const bool pathDensity = \fC1\&.0\fP)"
+
+.PP
+Definition at line 334 of file PlannerH\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

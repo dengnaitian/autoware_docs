@@ -1,0 +1,1054 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/mip_sdk_gps.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/mip_sdk_gps.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip\&.h'\fP
+.br
+\fC#include 'mip_sdk_interface\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_mip_gps_llh_pos\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_ecef_pos\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_ned_vel\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_ecef_vel\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_fix_info\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_sv_info\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_dop\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_utc_time\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_time\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_clock_info\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_hw_status\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_dgps_info\fP"
+.br
+.ti -1c
+.RI "struct \fB_mip_gps_dgps_channel_status\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_SET\fP   0x81"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_NMEA\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_UBX\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_LLH_POS\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_ECEF_POS\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_NED_VELOCITY\fP   0x05"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_ECEF_VELOCITY\fP   0x06"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_DOP\fP   0x07"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_UTC_TIME\fP   0x08"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_GPS_TIME\fP   0x09"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_CLOCK_INFO\fP   0x0A"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_FIX_INFO\fP   0x0B"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_SV_INFO\fP   0x0C"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DATA_HW_STATUS\fP   0x0D"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_POS_LAT_LON_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_POS_ELLIPSOID_HEIGHT_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_MSL_HEIGHT_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_POS_HORIZONTAL_ACCURACY_VALID\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_POS_VERTICAL_ACCURACY_VALID\fP   0x0010"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_LLH_POS_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_POS_POSITION_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_POS_ACCURACY_ESTIMATE_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_POS_PACKET_VALID\fP   (\fBMIP_GPS_ECEF_POS_POSITION_VALID\fP | \fBMIP_GPS_ECEF_POS_ACCURACY_ESTIMATE_VALID\fP)"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_VELOCITY_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_SPEED_3D_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_GROUND_SPEED_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_HEADING_VALID\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_SPEED_ACCURACY_VALID\fP   0x0010"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_HEADING_ACCURACY_VALID\fP   0x0020"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_NED_VEL_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_VEL_VELOCITY_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_VEL_ACCURACY_ESTIMATE_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ECEF_VEL_PACKET_VALID\fP   (\fBMIP_GPS_ECEF_VEL_VELOCITY_VALID\fP | \fBMIP_GPS_ECEF_VEL_ACCURACY_ESTIMATE_VALID\fP)"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_INFO_FIX_TYPE_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_INFO_NUM_SV_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_INFO_FIX_FLAGS_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_INFO_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_TYPE_3D\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_TYPE_2D\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_TYPE_TIME_ONLY\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_TYPE_NONE\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_FIX_TYPE_INVALID\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_MAX_SV_NUMBER\fP   32"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_CHANNEL_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_SV_ID_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_CARRIER_NOISE_RATIO_VALID\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_AZIMUTH_VALID\fP   0x0010"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_ELEVATION_VALID\fP   0x0020"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_SV_FLAGS_VALID\fP   0x0040"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_INFO_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_FLAG_USED_FOR_NAVIGATION\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SV_FLAG_HEALTH\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_GDOP_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_PDOP_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_HDOP_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_VDOP_VALID\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_TDOP_VALID\fP   0x0010"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_NDOP_VALID\fP   0x0020"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_EDOP_VALID\fP   0x0040"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_DOP_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_UTC_TIME_GPS_TIME_DATE_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_UTC_TIME_LEAP_SECONDS_KNOWN_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_UTC_TIME_PACKET_VALID\fP   (\fBMIP_GPS_UTC_TIME_GPS_TIME_DATE_VALID\fP | \fBMIP_GPS_UTC_TIME_LEAP_SECONDS_KNOWN_VALID\fP)"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_TIME_TOW_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_TIME_WEEK_NUMBER_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_TIME_PACKET_VALID\fP   (\fBMIP_GPS_TIME_TOW_VALID\fP | \fBMIP_GPS_TIME_WEEK_NUMBER_VALID\fP)"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_CLOCK_INFO_BIAS_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_CLOCK_INFO_DRIFT_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_CLOCK_INFO_ACCURACY_ESTIMATE_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_CLOCK_INFO_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_HW_STATUS_SENSOR_STATE_VALID\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_HW_STATUS_ANTENNA_STATE_VALID\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_HW_STATUS_ANTENNA_POWER_VALID\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_HW_STATUS_PACKET_VALID\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SENSOR_STATE_OFF\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SENSOR_STATE_ON\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_SENSOR_STATE_UNKNOWN\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_STATE_INIT\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_STATE_SHORT\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_STATE_OPEN\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_STATE_GOOD\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_STATE_UNKNOWN\fP   0x05"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_POWER_OFF\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_POWER_ON\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_GPS_ANTENNA_POWER_UNKNOWN\fP   0x02"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fB_mip_gps_llh_pos\fP \fBmip_gps_llh_pos\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_ecef_pos\fP \fBmip_gps_ecef_pos\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_ned_vel\fP \fBmip_gps_ned_vel\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_ecef_vel\fP \fBmip_gps_ecef_vel\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_fix_info\fP \fBmip_gps_fix_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_sv_info\fP \fBmip_gps_sv_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_dop\fP \fBmip_gps_dop\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_utc_time\fP \fBmip_gps_utc_time\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_time\fP \fBmip_gps_time\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_clock_info\fP \fBmip_gps_clock_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_hw_status\fP \fBmip_gps_hw_status\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_dgps_info\fP \fBmip_gps_dgps_info\fP"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_gps_dgps_channel_status\fP \fBmip_gps_dgps_channel_status\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmip_gps_llh_pos_byteswap\fP (\fBmip_gps_llh_pos\fP *llh_pos)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ecef_pos_byteswap\fP (\fBmip_gps_ecef_pos\fP *ecef_pos)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ned_vel_byteswap\fP (\fBmip_gps_ned_vel\fP *ned_vel)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_ecef_vel_byteswap\fP (\fBmip_gps_ecef_vel\fP *ecef_vel)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_fix_info_byteswap\fP (\fBmip_gps_fix_info\fP *fix_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_sv_info_byteswap\fP (\fBmip_gps_sv_info\fP *sv_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dop_byteswap\fP (\fBmip_gps_dop\fP *dop)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_utc_time_byteswap\fP (\fBmip_gps_utc_time\fP *utc_time)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_time_byteswap\fP (\fBmip_gps_time\fP *gps_time)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_clock_info_byteswap\fP (\fBmip_gps_clock_info\fP *clock_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_hw_status_byteswap\fP (\fBmip_gps_hw_status\fP *hw_status)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dgps_info_byteswap\fP (\fBmip_gps_dgps_info\fP *dgps_info)"
+.br
+.ti -1c
+.RI "void \fBmip_gps_dgps_channel_status_byteswap\fP (\fBmip_gps_dgps_channel_status\fP *dgps_channel_status)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_gps\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MIP_GPS_ANTENNA_POWER_OFF   0x00"
+
+.PP
+Definition at line 260 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_POWER_ON   0x01"
+
+.PP
+Definition at line 261 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_POWER_UNKNOWN   0x02"
+
+.PP
+Definition at line 262 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_STATE_GOOD   0x04"
+
+.PP
+Definition at line 257 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_STATE_INIT   0x01"
+
+.PP
+Definition at line 254 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_STATE_OPEN   0x03"
+
+.PP
+Definition at line 256 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_STATE_SHORT   0x02"
+
+.PP
+Definition at line 255 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ANTENNA_STATE_UNKNOWN   0x05"
+
+.PP
+Definition at line 258 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_CLOCK_INFO_ACCURACY_ESTIMATE_VALID   0x0004"
+
+.PP
+Definition at line 232 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_CLOCK_INFO_BIAS_VALID   0x0001"
+
+.PP
+Definition at line 230 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_CLOCK_INFO_DRIFT_VALID   0x0002"
+
+.PP
+Definition at line 231 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_CLOCK_INFO_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_CLOCK_INFO_BIAS_VALID | MIP_GPS_CLOCK_INFO_DRIFT_VALID | \\
+                                         MIP_GPS_CLOCK_INFO_ACCURACY_ESTIMATE_VALID)
+.fi
+.PP
+Definition at line 234 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_CLOCK_INFO   0x0A"
+
+.PP
+Definition at line 85 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_DOP   0x07"
+
+.PP
+Definition at line 82 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_ECEF_POS   0x04"
+
+.PP
+Definition at line 79 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_ECEF_VELOCITY   0x06"
+
+.PP
+Definition at line 81 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_FIX_INFO   0x0B"
+
+.PP
+Definition at line 86 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_GPS_TIME   0x09"
+
+.PP
+Definition at line 84 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_HW_STATUS   0x0D"
+
+.PP
+Definition at line 88 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_LLH_POS   0x03"
+
+.PP
+Definition at line 78 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_NED_VELOCITY   0x05"
+
+.PP
+Definition at line 80 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_NMEA   0x01"
+
+.PP
+Definition at line 71 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_SET   0x81"
+
+.PP
+Definition at line 58 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_SV_INFO   0x0C"
+
+.PP
+Definition at line 87 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_UBX   0x02"
+
+.PP
+Definition at line 72 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DATA_UTC_TIME   0x08"
+
+.PP
+Definition at line 83 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_EDOP_VALID   0x0040"
+
+.PP
+Definition at line 199 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_GDOP_VALID   0x0001"
+
+.PP
+Definition at line 193 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_HDOP_VALID   0x0004"
+
+.PP
+Definition at line 195 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_NDOP_VALID   0x0020"
+
+.PP
+Definition at line 198 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_DOP_GDOP_VALID | MIP_GPS_DOP_PDOP_VALID | MIP_GPS_DOP_HDOP_VALID | \\
+                                   MIP_GPS_DOP_VDOP_VALID | MIP_GPS_DOP_TDOP_VALID | MIP_GPS_DOP_NDOP_VALID | \\
+                                   MIP_GPS_DOP_EDOP_VALID)
+.fi
+.PP
+Definition at line 201 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_PDOP_VALID   0x0002"
+
+.PP
+Definition at line 194 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_TDOP_VALID   0x0010"
+
+.PP
+Definition at line 197 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_DOP_VDOP_VALID   0x0008"
+
+.PP
+Definition at line 196 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_POS_ACCURACY_ESTIMATE_VALID   0x0002"
+
+.PP
+Definition at line 118 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_POS_PACKET_VALID   (\fBMIP_GPS_ECEF_POS_POSITION_VALID\fP | \fBMIP_GPS_ECEF_POS_ACCURACY_ESTIMATE_VALID\fP)"
+
+.PP
+Definition at line 120 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_POS_POSITION_VALID   0x0001"
+
+.PP
+Definition at line 117 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_VEL_ACCURACY_ESTIMATE_VALID   0x0002"
+
+.PP
+Definition at line 144 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_VEL_PACKET_VALID   (\fBMIP_GPS_ECEF_VEL_VELOCITY_VALID\fP | \fBMIP_GPS_ECEF_VEL_ACCURACY_ESTIMATE_VALID\fP)"
+
+.PP
+Definition at line 146 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_ECEF_VEL_VELOCITY_VALID   0x0001"
+
+.PP
+Definition at line 143 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_INFO_FIX_FLAGS_VALID   0x0004"
+
+.PP
+Definition at line 155 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_INFO_FIX_TYPE_VALID   0x0001"
+
+.PP
+Definition at line 153 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_INFO_NUM_SV_VALID   0x0002"
+
+.PP
+Definition at line 154 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_INFO_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_FIX_INFO_FIX_TYPE_VALID | MIP_GPS_FIX_INFO_NUM_SV_VALID | \\
+                                       MIP_GPS_FIX_INFO_FIX_FLAGS_VALID)
+.fi
+.PP
+Definition at line 157 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_TYPE_2D   0x01"
+
+.PP
+Definition at line 161 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_TYPE_3D   0x00"
+
+.PP
+Definition at line 160 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_TYPE_INVALID   0x04"
+
+.PP
+Definition at line 164 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_TYPE_NONE   0x03"
+
+.PP
+Definition at line 163 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_FIX_TYPE_TIME_ONLY   0x02"
+
+.PP
+Definition at line 162 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_HW_STATUS_ANTENNA_POWER_VALID   0x0004"
+
+.PP
+Definition at line 243 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_HW_STATUS_ANTENNA_STATE_VALID   0x0002"
+
+.PP
+Definition at line 242 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_HW_STATUS_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_HW_STATUS_SENSOR_STATE_VALID  | \\
+                                        MIP_GPS_HW_STATUS_ANTENNA_STATE_VALID | \\
+                                        MIP_GPS_HW_STATUS_ANTENNA_POWER_VALID)
+.fi
+.PP
+Definition at line 245 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_HW_STATUS_SENSOR_STATE_VALID   0x0001"
+
+.PP
+Definition at line 241 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_MSL_HEIGHT_VALID   0x0004"
+
+.PP
+Definition at line 104 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_POS_ELLIPSOID_HEIGHT_VALID   0x0002"
+
+.PP
+Definition at line 103 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_POS_HORIZONTAL_ACCURACY_VALID   0x0008"
+
+.PP
+Definition at line 105 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_POS_LAT_LON_VALID   0x0001"
+
+.PP
+Definition at line 102 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_POS_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_LLH_POS_LAT_LON_VALID | MIP_GPS_LLH_POS_ELLIPSOID_HEIGHT_VALID    |\\
+                                        MIP_GPS_LLH_MSL_HEIGHT_VALID  | MIP_GPS_LLH_POS_HORIZONTAL_ACCURACY_VALID |\\
+                                        MIP_GPS_LLH_POS_VERTICAL_ACCURACY_VALID)
+.fi
+.PP
+Definition at line 108 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_LLH_POS_VERTICAL_ACCURACY_VALID   0x0010"
+
+.PP
+Definition at line 106 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_GROUND_SPEED_VALID   0x0004"
+
+.PP
+Definition at line 129 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_HEADING_ACCURACY_VALID   0x0020"
+
+.PP
+Definition at line 132 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_HEADING_VALID   0x0008"
+
+.PP
+Definition at line 130 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_NED_VEL_VELOCITY_VALID       | MIP_GPS_NED_VEL_SPEED_3D_VALID | \\
+                                      MIP_GPS_NED_VEL_GROUND_SPEED_VALID   | MIP_GPS_NED_VEL_HEADING_VALID  | \\
+                                      MIP_GPS_NED_VEL_SPEED_ACCURACY_VALID | MIP_GPS_NED_VEL_HEADING_ACCURACY_VALID)
+.fi
+.PP
+Definition at line 134 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_SPEED_3D_VALID   0x0002"
+
+.PP
+Definition at line 128 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_SPEED_ACCURACY_VALID   0x0010"
+
+.PP
+Definition at line 131 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_NED_VEL_VELOCITY_VALID   0x0001"
+
+.PP
+Definition at line 127 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SENSOR_STATE_OFF   0x00"
+
+.PP
+Definition at line 250 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SENSOR_STATE_ON   0x01"
+
+.PP
+Definition at line 251 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SENSOR_STATE_UNKNOWN   0x02"
+
+.PP
+Definition at line 252 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_FLAG_HEALTH   0x02"
+
+.PP
+Definition at line 186 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_FLAG_USED_FOR_NAVIGATION   0x01"
+
+.PP
+Definition at line 185 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_AZIMUTH_VALID   0x0010"
+
+.PP
+Definition at line 177 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_CARRIER_NOISE_RATIO_VALID   0x0008"
+
+.PP
+Definition at line 176 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_CHANNEL_VALID   0x0001"
+
+.PP
+Definition at line 174 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_ELEVATION_VALID   0x0020"
+
+.PP
+Definition at line 178 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_MAX_SV_NUMBER   32"
+
+.PP
+Definition at line 172 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_PACKET_VALID"
+\fBValue:\fP
+.PP
+.nf
+(MIP_GPS_SV_INFO_CHANNEL_VALID             | MIP_GPS_SV_INFO_SV_ID_VALID   | \\
+                                      MIP_GPS_SV_INFO_CARRIER_NOISE_RATIO_VALID | MIP_GPS_SV_INFO_AZIMUTH_VALID | \\
+                                      MIP_GPS_SV_INFO_ELEVATION_VALID           | MIP_GPS_SV_INFO_SV_FLAGS_VALID)
+.fi
+.PP
+Definition at line 181 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_SV_FLAGS_VALID   0x0040"
+
+.PP
+Definition at line 179 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_SV_INFO_SV_ID_VALID   0x0002"
+
+.PP
+Definition at line 175 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_TIME_PACKET_VALID   (\fBMIP_GPS_TIME_TOW_VALID\fP | \fBMIP_GPS_TIME_WEEK_NUMBER_VALID\fP)"
+
+.PP
+Definition at line 223 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_TIME_TOW_VALID   0x0001"
+
+.PP
+Definition at line 220 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_TIME_WEEK_NUMBER_VALID   0x0002"
+
+.PP
+Definition at line 221 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_UTC_TIME_GPS_TIME_DATE_VALID   0x0001"
+
+.PP
+Definition at line 210 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_UTC_TIME_LEAP_SECONDS_KNOWN_VALID   0x0002"
+
+.PP
+Definition at line 211 of file mip_sdk_gps\&.h\&.
+.SS "#define MIP_GPS_UTC_TIME_PACKET_VALID   (\fBMIP_GPS_UTC_TIME_GPS_TIME_DATE_VALID\fP | \fBMIP_GPS_UTC_TIME_LEAP_SECONDS_KNOWN_VALID\fP)"
+
+.PP
+Definition at line 213 of file mip_sdk_gps\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_mip_gps_clock_info\fP \fBmip_gps_clock_info\fP"
+
+.SS "typedef struct \fB_mip_gps_dgps_channel_status\fP \fBmip_gps_dgps_channel_status\fP"
+
+.SS "typedef struct \fB_mip_gps_dgps_info\fP \fBmip_gps_dgps_info\fP"
+
+.SS "typedef struct \fB_mip_gps_dop\fP \fBmip_gps_dop\fP"
+
+.SS "typedef struct \fB_mip_gps_ecef_pos\fP \fBmip_gps_ecef_pos\fP"
+
+.SS "typedef struct \fB_mip_ecef_vel\fP \fBmip_gps_ecef_vel\fP"
+
+.SS "typedef struct \fB_mip_fix_info\fP \fBmip_gps_fix_info\fP"
+
+.SS "typedef struct \fB_mip_gps_hw_status\fP \fBmip_gps_hw_status\fP"
+
+.SS "typedef struct \fB_mip_gps_llh_pos\fP \fBmip_gps_llh_pos\fP"
+
+.SS "typedef struct \fB_mip_gps_ned_vel\fP \fBmip_gps_ned_vel\fP"
+
+.SS "typedef struct \fB_mip_gps_sv_info\fP \fBmip_gps_sv_info\fP"
+
+.SS "typedef struct \fB_mip_gps_time\fP \fBmip_gps_time\fP"
+
+.SS "typedef struct \fB_mip_gps_utc_time\fP \fBmip_gps_utc_time\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "void mip_gps_clock_info_byteswap (\fBmip_gps_clock_info\fP * clock_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Clock Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_clock_info\fP *clock_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 320 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dgps_channel_status_byteswap (\fBmip_gps_dgps_channel_status\fP * dgps_channel_status)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a DGPS Channel \fBStatus\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dgps_channel_status\fP *dgps_channel_status - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 399 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dgps_info_byteswap (\fBmip_gps_dgps_info\fP * dgps_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a DGPS Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dgps_info\fP *dgps_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 371 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_dop_byteswap (\fBmip_gps_dop\fP * dop)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS DOP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_dop\fP *dop - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 237 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ecef_pos_byteswap (\fBmip_gps_ecef_pos\fP * ecef_pos)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS ECEF Position Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ecef_pos\fP *ecef_pos - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 90 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ecef_vel_byteswap (\fBmip_gps_ecef_vel\fP * ecef_vel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS ECEF Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ecef_vel\fP *ecef_vel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 154 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_fix_info_byteswap (\fBmip_gps_fix_info\fP * fix_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Fix Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_fix_info\fP *fix_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 184 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_hw_status_byteswap (\fBmip_gps_hw_status\fP * hw_status)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS Hardware \fBStatus\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_hw_status\fP *hw_status - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 347 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_llh_pos_byteswap (\fBmip_gps_llh_pos\fP * llh_pos)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS LLH Position Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_llh_pos\fP *llh_pos - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 60 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_ned_vel_byteswap (\fBmip_gps_ned_vel\fP * ned_vel)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS NED Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_ned_vel\fP *ned_vel - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 120 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_sv_info_byteswap (\fBmip_gps_sv_info\fP * sv_info)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS SV Info Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_sv_info\fP *sv_info - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 209 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_time_byteswap (\fBmip_gps_time\fP * gps_time)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS \fBTime\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_time\fP *gps_time - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 294 of file mip_sdk_gps\&.c\&.
+.SS "void mip_gps_utc_time_byteswap (\fBmip_gps_utc_time\fP * utc_time)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a GPS UTC \fBTime\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_gps_utc_time\fP *utc_time - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 268 of file mip_sdk_gps\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

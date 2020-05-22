@@ -1,0 +1,215 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/system/sync/computing/perception/detection/packages/cv_tracker/nodes/test/copy.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/system/sync/computing/perception/detection/packages/cv_tracker/nodes/test/copy.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 't_sync_message\&.h'\fP
+.br
+\fC#include 'sensor_msgs/Image\&.h'\fP
+.br
+\fC#include 'sensor_msgs/PointCloud2\&.h'\fP
+.br
+\fC#include 'autoware_msgs/ImageObj\&.h'\fP
+.br
+\fC#include 'autoware_msgs/PointsImage\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_REQ_PUB\fP   1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "boost::circular_buffer< sensor_msgs::Image > \fBimage_raw_ringbuf\fP (3)"
+.br
+.ti -1c
+.RI "boost::circular_buffer< sensor_msgs::PointCloud2 > \fBpoints_raw_ringbuf\fP (3)"
+.br
+.ti -1c
+.RI "double \fBfabs_time_diff\fP (std_msgs::Header *timespec1, std_msgs::Header *timespec2)"
+.br
+.ti -1c
+.RI "double \fBget_time\fP (const std_msgs::Header *timespec)"
+.br
+.ti -1c
+.RI "void \fBimage_raw_callback\fP (const sensor_msgs::Image::ConstPtr &image_raw_msg)"
+.br
+.ti -1c
+.RI "void \fBpoints_raw_callback\fP (const sensor_msgs::PointCloud2::ConstPtr &points_raw_msg)"
+.br
+.ti -1c
+.RI "void \fBpublish_msg\fP (sensor_msgs::Image *\fBp_image_raw_buf\fP, sensor_msgs::PointCloud2 *\fBp_points_raw_buf\fP)"
+.br
+.ti -1c
+.RI "bool \fBpublish\fP ()"
+.br
+.ti -1c
+.RI "void \fBobj_person__image_obj_callback\fP (const autoware_msgs::ImageObj::ConstPtr &image_obj_msg)"
+.br
+.ti -1c
+.RI "void \fBobj_car__image_obj_callback\fP (const autoware_msgs::ImageObj::ConstPtr &image_obj_msg)"
+.br
+.ti -1c
+.RI "void \fBpoints_image_callback\fP (const autoware_msgs::PointsImage::ConstPtr &points_image_msg)"
+.br
+.ti -1c
+.RI "void \fBvscan_image_callback\fP (const autoware_msgs::PointsImage::ConstPtr &points_image_msg)"
+.br
+.ti -1c
+.RI "void * \fBthread\fP (void *args)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbuf_flag\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBimage_raw_pub\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpoints_raw_pub\fP"
+.br
+.ti -1c
+.RI "bool \fBobj_person__image_obj_flag\fP"
+.br
+.ti -1c
+.RI "bool \fBobj_car__image_obj_flag\fP"
+.br
+.ti -1c
+.RI "bool \fBpoints_image_flag\fP"
+.br
+.ti -1c
+.RI "bool \fBvscan_image_flag\fP"
+.br
+.ti -1c
+.RI "sensor_msgs::Image * \fBp_image_raw_buf\fP"
+.br
+.ti -1c
+.RI "sensor_msgs::PointCloud2 * \fBp_points_raw_buf\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _REQ_PUB   1"
+
+.PP
+Definition at line 11 of file copy\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "double fabs_time_diff (std_msgs::Header * timespec1, std_msgs::Header * timespec2)"
+
+.PP
+Definition at line 28 of file copy\&.cpp\&.
+.SS "double get_time (const std_msgs::Header * timespec)"
+
+.PP
+Definition at line 35 of file copy\&.cpp\&.
+.SS "void image_raw_callback (const sensor_msgs::Image::ConstPtr & image_raw_msg)"
+
+.PP
+Definition at line 44 of file copy\&.cpp\&.
+.SS "boost::circular_buffer<sensor_msgs::Image> image_raw_ringbuf (3)"
+
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 434 of file copy\&.cpp\&.
+.SS "void obj_car__image_obj_callback (const autoware_msgs::ImageObj::ConstPtr & image_obj_msg)"
+
+.PP
+Definition at line 313 of file copy\&.cpp\&.
+.SS "void obj_person__image_obj_callback (const autoware_msgs::ImageObj::ConstPtr & image_obj_msg)"
+
+.PP
+Definition at line 286 of file copy\&.cpp\&.
+.SS "void points_image_callback (const autoware_msgs::PointsImage::ConstPtr & points_image_msg)"
+
+.PP
+Definition at line 340 of file copy\&.cpp\&.
+.SS "void points_raw_callback (const sensor_msgs::PointCloud2::ConstPtr & points_raw_msg)"
+
+.PP
+Definition at line 57 of file copy\&.cpp\&.
+.SS "boost::circular_buffer<sensor_msgs::PointCloud2> points_raw_ringbuf (3)"
+
+.SS "bool publish ()"
+
+.PP
+Definition at line 78 of file copy\&.cpp\&.
+.SS "void publish_msg (sensor_msgs::Image * p_image_raw_buf, sensor_msgs::PointCloud2 * p_points_raw_buf)"
+
+.PP
+Definition at line 71 of file copy\&.cpp\&.
+.SS "void* thread (void * args)"
+
+.PP
+Definition at line 394 of file copy\&.cpp\&.
+.SS "void vscan_image_callback (const autoware_msgs::PointsImage::ConstPtr & points_image_msg)"
+
+.PP
+Definition at line 367 of file copy\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "bool buf_flag"
+
+.PP
+Definition at line 15 of file copy\&.cpp\&.
+.SS "ros::Publisher image_raw_pub"
+
+.PP
+Definition at line 20 of file copy\&.cpp\&.
+.SS "pthread_mutex_t mutex"
+
+.PP
+Definition at line 16 of file copy\&.cpp\&.
+.SS "bool obj_car__image_obj_flag"
+
+.PP
+Definition at line 23 of file copy\&.cpp\&.
+.SS "bool obj_person__image_obj_flag"
+
+.PP
+Definition at line 22 of file copy\&.cpp\&.
+.SS "sensor_msgs::Image* p_image_raw_buf"
+
+.PP
+Definition at line 41 of file copy\&.cpp\&.
+.SS "sensor_msgs::PointCloud2* p_points_raw_buf"
+
+.PP
+Definition at line 42 of file copy\&.cpp\&.
+.SS "bool points_image_flag"
+
+.PP
+Definition at line 24 of file copy\&.cpp\&.
+.SS "ros::Publisher points_raw_pub"
+
+.PP
+Definition at line 21 of file copy\&.cpp\&.
+.SS "bool vscan_image_flag"
+
+.PP
+Definition at line 25 of file copy\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

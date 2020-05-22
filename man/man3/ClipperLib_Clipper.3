@@ -1,0 +1,102 @@
+.TH "ClipperLib::Clipper" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib::Clipper \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clipper\&.hpp>\fP
+.PP
+Inherits \fBClipperLib::ClipperBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClipper\fP (int initOptions=0)"
+.br
+.ti -1c
+.RI "bool \fBExecute\fP (\fBClipType\fP clipType, \fBPaths\fP &solution, \fBPolyFillType\fP fillType=\fBpftEvenOdd\fP)"
+.br
+.ti -1c
+.RI "bool \fBExecute\fP (\fBClipType\fP clipType, \fBPaths\fP &solution, \fBPolyFillType\fP subjFillType, \fBPolyFillType\fP clipFillType)"
+.br
+.ti -1c
+.RI "bool \fBExecute\fP (\fBClipType\fP clipType, \fBPolyTree\fP &polytree, \fBPolyFillType\fP fillType=\fBpftEvenOdd\fP)"
+.br
+.ti -1c
+.RI "bool \fBExecute\fP (\fBClipType\fP clipType, \fBPolyTree\fP &polytree, \fBPolyFillType\fP subjFillType, \fBPolyFillType\fP clipFillType)"
+.br
+.ti -1c
+.RI "bool \fBReverseSolution\fP ()"
+.br
+.ti -1c
+.RI "void \fBReverseSolution\fP (bool value)"
+.br
+.ti -1c
+.RI "bool \fBStrictlySimple\fP ()"
+.br
+.ti -1c
+.RI "void \fBStrictlySimple\fP (bool value)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBExecuteInternal\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 371 of file clipper\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClipperLib::Clipper::Clipper (int initOptions = \fC0\fP)"
+
+.PP
+Definition at line 1617 of file clipper\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool ClipperLib::Clipper::Execute (\fBClipType\fP clipType, \fBPaths\fP & solution, \fBPolyFillType\fP fillType = \fC\fBpftEvenOdd\fP\fP)"
+
+.PP
+Definition at line 1639 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Clipper::Execute (\fBClipType\fP clipType, \fBPaths\fP & solution, \fBPolyFillType\fP subjFillType, \fBPolyFillType\fP clipFillType)"
+
+.PP
+Definition at line 1651 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Clipper::Execute (\fBClipType\fP clipType, \fBPolyTree\fP & polytree, \fBPolyFillType\fP fillType = \fC\fBpftEvenOdd\fP\fP)"
+
+.PP
+Definition at line 1645 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Clipper::Execute (\fBClipType\fP clipType, \fBPolyTree\fP & polytree, \fBPolyFillType\fP subjFillType, \fBPolyFillType\fP clipFillType)"
+
+.PP
+Definition at line 1673 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Clipper::ExecuteInternal ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 1708 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Clipper::ReverseSolution ()\fC [inline]\fP"
+
+.PP
+Definition at line 394 of file clipper\&.hpp\&.
+.SS "void ClipperLib::Clipper::ReverseSolution (bool value)\fC [inline]\fP"
+
+.PP
+Definition at line 399 of file clipper\&.hpp\&.
+.SS "bool ClipperLib::Clipper::StrictlySimple ()\fC [inline]\fP"
+
+.PP
+Definition at line 404 of file clipper\&.hpp\&.
+.SS "void ClipperLib::Clipper::StrictlySimple (bool value)\fC [inline]\fP"
+
+.PP
+Definition at line 409 of file clipper\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

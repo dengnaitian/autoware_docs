@@ -1,0 +1,201 @@
+.TH "GLViewer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GLViewer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <glviewer\&.h>\fP
+.PP
+Inherits QGLWidget\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBmousePositionSignal\fP (QMouseEvent *event, \fBCAMERAPARAMETERS\fP *parameters)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGLViewer\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~GLViewer\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddDisplayList\fP (GLuint listid)"
+.br
+.ti -1c
+.RI "void \fBaddDisplayLists\fP (GLuint listid, GLuint num)"
+.br
+.ti -1c
+.RI "void \fBenableShow\fP (GLuint listid, bool show, bool islistid=0)"
+.br
+.ti -1c
+.RI "void \fBdeleteDisplayList\fP (GLuint listid, bool islistid=0)"
+.br
+.ti -1c
+.RI "void \fBclearDisplayList\fP ()"
+.br
+.ti -1c
+.RI "int \fBlistSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCameraPose\fP (Eigen::Matrix4d \fBtransform\fP)"
+.br
+.ti -1c
+.RI "Eigen::Matrix4d \fBgetCameraPose\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (QColor color)"
+.br
+.ti -1c
+.RI "void \fBsetDisplayListScale\fP (GLuint listid, double sx, double sy, double sz, bool islistid=1)"
+.br
+.ti -1c
+.RI "void \fBsetDisplayListRotation\fP (GLuint listid, double rx, double ry, double rz, bool islistid=1)"
+.br
+.ti -1c
+.RI "void \fBsetDisplayListTranslation\fP (GLuint listid, double tx, double ty, double tz, bool islistid=1)"
+.br
+.ti -1c
+.RI "void \fBsetDisplayListTransform\fP (GLuint listid, Eigen::Matrix4d \fBtransform\fP, bool islistid=1)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitializeGL\fP ()"
+.br
+.ti -1c
+.RI "void \fBpaintGL\fP ()"
+.br
+.ti -1c
+.RI "void \fBresizeGL\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBkeyPressEvent\fP (QKeyEvent *event)"
+.br
+.ti -1c
+.RI "void \fBmousePressEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "void \fBmouseReleaseEvent\fP (QMouseEvent *event)"
+.br
+.ti -1c
+.RI "void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "void \fBmouseMoveEvent\fP (QMouseEvent *event)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 55 of file glviewer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GLViewer::GLViewer (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 21 of file glviewer\&.cpp\&.
+.SS "GLViewer::~GLViewer ()"
+
+.PP
+Definition at line 43 of file glviewer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GLViewer::addDisplayList (GLuint listid)"
+
+.PP
+Definition at line 374 of file glviewer\&.cpp\&.
+.SS "void GLViewer::addDisplayLists (GLuint listid, GLuint num)"
+
+.PP
+Definition at line 392 of file glviewer\&.cpp\&.
+.SS "void GLViewer::clearDisplayList ()"
+
+.PP
+Definition at line 450 of file glviewer\&.cpp\&.
+.SS "void GLViewer::deleteDisplayList (GLuint listid, bool islistid = \fC0\fP)"
+
+.PP
+Definition at line 428 of file glviewer\&.cpp\&.
+.SS "void GLViewer::enableShow (GLuint listid, bool show, bool islistid = \fC0\fP)"
+
+.PP
+Definition at line 406 of file glviewer\&.cpp\&.
+.SS "Eigen::Matrix4d GLViewer::getCameraPose ()"
+
+.PP
+Definition at line 468 of file glviewer\&.cpp\&.
+.SS "void GLViewer::initializeGL ()\fC [protected]\fP"
+
+.PP
+Definition at line 55 of file glviewer\&.cpp\&.
+.SS "void GLViewer::keyPressEvent (QKeyEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file glviewer\&.cpp\&.
+.SS "int GLViewer::listSize ()"
+
+.PP
+Definition at line 456 of file glviewer\&.cpp\&.
+.SS "void GLViewer::mouseMoveEvent (QMouseEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 368 of file glviewer\&.cpp\&.
+.SS "void GLViewer::mousePositionSignal (QMouseEvent * event, \fBCAMERAPARAMETERS\fP * parameters)\fC [signal]\fP"
+
+.SS "void GLViewer::mousePressEvent (QMouseEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 340 of file glviewer\&.cpp\&.
+.SS "void GLViewer::mouseReleaseEvent (QMouseEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 347 of file glviewer\&.cpp\&.
+.SS "void GLViewer::paintGL ()\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file glviewer\&.cpp\&.
+.SS "void GLViewer::resizeGL (int width, int height)\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setBackground (QColor color)"
+
+.PP
+Definition at line 473 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setCameraPose (Eigen::Matrix4d transform)"
+
+.PP
+Definition at line 461 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setDisplayListRotation (GLuint listid, double rx, double ry, double rz, bool islistid = \fC1\fP)"
+
+.PP
+Definition at line 508 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setDisplayListScale (GLuint listid, double sx, double sy, double sz, bool islistid = \fC1\fP)"
+
+.PP
+Definition at line 482 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setDisplayListTransform (GLuint listid, Eigen::Matrix4d transform, bool islistid = \fC1\fP)"
+
+.PP
+Definition at line 560 of file glviewer\&.cpp\&.
+.SS "void GLViewer::setDisplayListTranslation (GLuint listid, double tx, double ty, double tz, bool islistid = \fC1\fP)"
+
+.PP
+Definition at line 534 of file glviewer\&.cpp\&.
+.SS "void GLViewer::wheelEvent (QWheelEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 353 of file glviewer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

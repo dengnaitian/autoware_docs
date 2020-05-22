@@ -1,0 +1,83 @@
+.TH "PointsToCostmap" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PointsToCostmap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <points_to_costmap\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPointsToCostmap\fP ()"
+.br
+.ti -1c
+.RI "\fB~PointsToCostmap\fP ()"
+.br
+.ti -1c
+.RI "grid_map::Matrix \fBmakeCostmapFromSensorPoints\fP (const double maximum_height_thres, const double minimum_height_thres, const double grid_min_value, const double grid_max_value, const grid_map::GridMap &gridmap, const std::string &gridmap_layer_name, const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr &in_sensor_points)"
+.br
+.RI "\fIcalculate cost from sensor points \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file points_to_costmap\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PointsToCostmap::PointsToCostmap ()"
+
+.PP
+Definition at line 34 of file points_to_costmap\&.cpp\&.
+.SS "PointsToCostmap::~PointsToCostmap ()"
+
+.PP
+Definition at line 38 of file points_to_costmap\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "grid_map::Matrix PointsToCostmap::makeCostmapFromSensorPoints (const double maximum_height_thres, const double minimum_height_thres, const double grid_min_value, const double grid_max_value, const grid_map::GridMap & gridmap, const std::string & gridmap_layer_name, const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr & in_sensor_points)"
+
+.PP
+calculate cost from sensor points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImaximum_height_thres\fP Maximum height threshold for pointcloud data 
+.br
+\fIminimum_height_thres\fP Minimum height threshold for pointcloud data 
+.br
+\fIgrid_min_value\fP Minimum cost for costmap 
+.br
+\fIgrid_max_value\fP Maximum cost fot costmap 
+.br
+\fIgridmap\fP costmap based on gridmap 
+.br
+\fIgridmap_layer_name\fP gridmap layer name for gridmap 
+.br
+\fIin_sensor_points\fP subscribed pointcloud 
+.br
+\fIcalculated\fP cost in grid_map::Matrix format 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file points_to_costmap\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 62 of file points_to_costmap\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

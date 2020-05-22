@@ -1,0 +1,212 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/memsic/nodes/vg440/vg440_node.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/memsic/nodes/vg440/vg440_node.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <boost/array\&.hpp>\fP
+.br
+\fC#include <boost/asio\&.hpp>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <iomanip>\fP
+.br
+\fC#include <boost/thread\&.hpp>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <boost/lambda/lambda\&.hpp>\fP
+.br
+\fC#include <boost/asio/deadline_timer\&.hpp>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sensor_msgs/Imu\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBmmtimer\fP"
+.br
+.ti -1c
+.RI "struct \fBQUEUE_TYPE\fP"
+.br
+.ti -1c
+.RI "struct \fBXBOW_PACKET\fP"
+.br
+.ti -1c
+.RI "struct \fBSNAV1Msg\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBprocess_xbow_packet\fP (\fBQUEUE_TYPE\fP *queue_ptr, \fBXBOW_PACKET\fP *result)"
+.br
+.ti -1c
+.RI "unsigned short \fBcalcCRC\fP (\fBQUEUE_TYPE\fP *queue_ptr, unsigned int startIndex, unsigned int num)"
+.br
+.ti -1c
+.RI "void \fBInitialize\fP (\fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "int \fBAddQueue\fP (char item, \fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "int \fBDeleteQueue\fP (char *item, \fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "char \fBpeekByte\fP (\fBQUEUE_TYPE\fP *queue_ptr, unsigned int index)"
+.br
+.ti -1c
+.RI "unsigned short \fBpeekWord\fP (\fBQUEUE_TYPE\fP *queue_ptr, unsigned int index)"
+.br
+.ti -1c
+.RI "int \fBPop\fP (\fBQUEUE_TYPE\fP *queue_ptr, int numToPop)"
+.br
+.ti -1c
+.RI "int \fBSize\fP (\fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "int \fBEmpty\fP (\fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "int \fBFull\fP (\fBQUEUE_TYPE\fP *queue_ptr)"
+.br
+.ti -1c
+.RI "unsigned short \fBcalcCRC\fP (unsigned char *byte_ptr, unsigned int num)"
+.br
+.ti -1c
+.RI "short \fBMKShort\fP (const unsigned char *\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBMKInt\fP (const unsigned char *\fBdata\fP)"
+.br
+.ti -1c
+.RI "bool \fBMsgToNav1\fP (const unsigned char *\fBdata\fP, \fBSNAV1Msg\fP &sMsg)"
+.br
+.ti -1c
+.RI "void \fBNav1ToROSImu\fP (const \fBSNAV1Msg\fP &rNav1, sensor_msgs::Imu &ImuData)"
+.br
+.ti -1c
+.RI "void \fBRunVG440\fP (const std::string &rsPort, int nBaudRate, const std::string &rsTopic, const std::string &rsFrame)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBMAXQUEUE\fP = 500"
+.br
+.ti -1c
+.RI "\fBQUEUE_TYPE\fP \fBcirc_buf\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int AddQueue (char item, \fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 183 of file vg440_node\&.cpp\&.
+.SS "unsigned short calcCRC (\fBQUEUE_TYPE\fP * queue_ptr, unsigned int startIndex, unsigned int num)"
+
+.PP
+Definition at line 142 of file vg440_node\&.cpp\&.
+.SS "unsigned short calcCRC (unsigned char * byte_ptr, unsigned int num)"
+
+.PP
+Definition at line 155 of file vg440_node\&.cpp\&.
+.SS "int DeleteQueue (char * item, \fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 207 of file vg440_node\&.cpp\&.
+.SS "int Empty (\fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 287 of file vg440_node\&.cpp\&.
+.SS "int Full (\fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 296 of file vg440_node\&.cpp\&.
+.SS "void Initialize (\fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 171 of file vg440_node\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 433 of file vg440_node\&.cpp\&.
+.SS "int MKInt (const unsigned char * data)\fC [inline]\fP"
+
+.PP
+Definition at line 304 of file vg440_node\&.cpp\&.
+.SS "short MKShort (const unsigned char * data)\fC [inline]\fP"
+
+.PP
+Definition at line 301 of file vg440_node\&.cpp\&.
+.SS "bool MsgToNav1 (const unsigned char * data, \fBSNAV1Msg\fP & sMsg)"
+
+.PP
+Definition at line 330 of file vg440_node\&.cpp\&.
+.SS "void Nav1ToROSImu (const \fBSNAV1Msg\fP & rNav1, sensor_msgs::Imu & ImuData)"
+
+.PP
+Definition at line 351 of file vg440_node\&.cpp\&.
+.SS "char peekByte (\fBQUEUE_TYPE\fP * queue_ptr, unsigned int index)"
+
+.PP
+Definition at line 230 of file vg440_node\&.cpp\&.
+.SS "unsigned short peekWord (\fBQUEUE_TYPE\fP * queue_ptr, unsigned int index)"
+
+.PP
+Definition at line 244 of file vg440_node\&.cpp\&.
+.SS "int Pop (\fBQUEUE_TYPE\fP * queue_ptr, int numToPop)"
+
+.PP
+Definition at line 260 of file vg440_node\&.cpp\&.
+.SS "int process_xbow_packet (\fBQUEUE_TYPE\fP * queue_ptr, \fBXBOW_PACKET\fP * result)"
+
+.PP
+Definition at line 78 of file vg440_node\&.cpp\&.
+.SS "void RunVG440 (const std::string & rsPort, int nBaudRate, const std::string & rsTopic, const std::string & rsFrame)"
+
+.PP
+Definition at line 363 of file vg440_node\&.cpp\&.
+.SS "int Size (\fBQUEUE_TYPE\fP * queue_ptr)"
+
+.PP
+Definition at line 278 of file vg440_node\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBQUEUE_TYPE\fP circ_buf"
+
+.PP
+Definition at line 57 of file vg440_node\&.cpp\&.
+.SS "const int MAXQUEUE = 500"
+
+.PP
+Definition at line 42 of file vg440_node\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,80 @@
+.TH "vector_map::Handle< T, U >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vector_map::Handle< T, U > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vector_map\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHandle\fP ()"
+.br
+.ti -1c
+.RI "void \fBregisterSubscriber\fP (ros::NodeHandle &nh, const std::string &topic_name)"
+.br
+.ti -1c
+.RI "void \fBregisterUpdater\fP (const \fBUpdater\fP< T, U > &update)"
+.br
+.ti -1c
+.RI "void \fBregisterCallback\fP (const \fBCallback\fP< U > &cb)"
+.br
+.ti -1c
+.RI "T \fBfindByKey\fP (const \fBKey\fP< T > &key) const "
+.br
+.ti -1c
+.RI "std::vector< T > \fBfindByFilter\fP (const \fBFilter\fP< T > &filter) const "
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T, class U>
+.br
+class vector_map::Handle< T, U >"
+
+.PP
+Definition at line 235 of file vector_map\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T, class U> \fBvector_map::Handle\fP< T, U >::\fBHandle\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 251 of file vector_map\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T, class U> bool \fBvector_map::Handle\fP< T, U >::empty () const\fC [inline]\fP"
+
+.PP
+Definition at line 289 of file vector_map\&.h\&.
+.SS "template<class T, class U> std::vector<T> \fBvector_map::Handle\fP< T, U >::findByFilter (const \fBFilter\fP< T > & filter) const\fC [inline]\fP"
+
+.PP
+Definition at line 278 of file vector_map\&.h\&.
+.SS "template<class T, class U> T \fBvector_map::Handle\fP< T, U >::findByKey (const \fBKey\fP< T > & key) const\fC [inline]\fP"
+
+.PP
+Definition at line 270 of file vector_map\&.h\&.
+.SS "template<class T, class U> void \fBvector_map::Handle\fP< T, U >::registerCallback (const \fBCallback\fP< U > & cb)\fC [inline]\fP"
+
+.PP
+Definition at line 265 of file vector_map\&.h\&.
+.SS "template<class T, class U> void \fBvector_map::Handle\fP< T, U >::registerSubscriber (ros::NodeHandle< T, U > & nh, const std::string & topic_name)\fC [inline]\fP"
+
+.PP
+Definition at line 255 of file vector_map\&.h\&.
+.SS "template<class T, class U> void \fBvector_map::Handle\fP< T, U >::registerUpdater (const \fBUpdater\fP< T, U > & update)\fC [inline]\fP"
+
+.PP
+Definition at line 260 of file vector_map\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

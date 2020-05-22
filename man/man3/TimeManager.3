@@ -1,0 +1,156 @@
+.TH "TimeManager" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TimeManager \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTimeManager\fP (int)"
+.br
+.ti -1c
+.RI "void \fBimage_raw_callback\fP (const sensor_msgs::Image::ConstPtr &image_raw_msg)"
+.br
+.ti -1c
+.RI "void \fBpoints_raw_callback\fP (const sensor_msgs::PointCloud2::ConstPtr &points_raw_msg)"
+.br
+.ti -1c
+.RI "void \fBpoints_image_callback\fP (const autoware_msgs::PointsImage::ConstPtr &points_image_msg)"
+.br
+.ti -1c
+.RI "void \fBvscan_points_callback\fP (const sensor_msgs::PointCloud2::ConstPtr &vscan_points_msg)"
+.br
+.ti -1c
+.RI "void \fBvscan_image_callback\fP (const autoware_msgs::PointsImage::ConstPtr &vscan_image_msg)"
+.br
+.ti -1c
+.RI "void \fBimage_obj_callback\fP (const autoware_msgs::ImageObj::ConstPtr &image_obj_msg)"
+.br
+.ti -1c
+.RI "void \fBimage_obj_ranged_callback\fP (const autoware_msgs::ImageObjRanged::ConstPtr &image_obj_ranged_msg)"
+.br
+.ti -1c
+.RI "void \fBimage_obj_tracked_callback\fP (const autoware_msgs::ImageObjTracked::ConstPtr &image_obj_tracked_msg)"
+.br
+.ti -1c
+.RI "void \fBcurrent_pose_callback\fP (const geometry_msgs::PoseStamped::ConstPtr &current_pose_msg)"
+.br
+.ti -1c
+.RI "void \fBobj_label_callback\fP (const autoware_msgs::ObjLabel::ConstPtr &obj_label_msg)"
+.br
+.ti -1c
+.RI "void \fBcluster_centroids_callback\fP (const autoware_msgs::Centroids::ConstPtr &cluster_centroids_msg)"
+.br
+.ti -1c
+.RI "void \fBobj_pose_callback\fP (const std_msgs::Time::ConstPtr &obj_pose_timestamp_msg)"
+.br
+.ti -1c
+.RI "void \fBsync_image_obj_ranged_callback\fP (const autoware_msgs::ImageObj::ConstPtr &sync_image_obj_msg)"
+.br
+.ti -1c
+.RI "void \fBsync_image_obj_tracked_callback\fP (const autoware_msgs::ImageObjRanged::ConstPtr &sync_image_obj_ranged_msg)"
+.br
+.ti -1c
+.RI "void \fBsync_obj_label_callback\fP (const autoware_msgs::ImageObjTracked::ConstPtr &sync_image_obj_tracked_msg)"
+.br
+.ti -1c
+.RI "void \fBsync_obj_pose_callback\fP (const autoware_msgs::ObjLabel::ConstPtr &sync_obj_label_msg)"
+.br
+.ti -1c
+.RI "void \fBtime_diff_callback\fP (const autoware_msgs::SyncTimeDiff::ConstPtr &time_diff_msg)"
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file time_monitor\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TimeManager::TimeManager (int buffer_size)"
+
+.PP
+Definition at line 189 of file time_monitor\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TimeManager::cluster_centroids_callback (const autoware_msgs::Centroids::ConstPtr & cluster_centroids_msg)"
+
+.PP
+Definition at line 291 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::current_pose_callback (const geometry_msgs::PoseStamped::ConstPtr & current_pose_msg)"
+
+.PP
+Definition at line 281 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::image_obj_callback (const autoware_msgs::ImageObj::ConstPtr & image_obj_msg)"
+
+.PP
+Definition at line 266 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::image_obj_ranged_callback (const autoware_msgs::ImageObjRanged::ConstPtr & image_obj_ranged_msg)"
+
+.PP
+Definition at line 271 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::image_obj_tracked_callback (const autoware_msgs::ImageObjTracked::ConstPtr & image_obj_tracked_msg)"
+
+.PP
+Definition at line 276 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::image_raw_callback (const sensor_msgs::Image::ConstPtr & image_raw_msg)"
+
+.PP
+Definition at line 241 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::obj_label_callback (const autoware_msgs::ObjLabel::ConstPtr & obj_label_msg)"
+
+.PP
+Definition at line 286 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::obj_pose_callback (const std_msgs::Time::ConstPtr & obj_pose_timestamp_msg)"
+
+.PP
+Definition at line 353 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::points_image_callback (const autoware_msgs::PointsImage::ConstPtr & points_image_msg)"
+
+.PP
+Definition at line 251 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::points_raw_callback (const sensor_msgs::PointCloud2::ConstPtr & points_raw_msg)"
+
+.PP
+Definition at line 246 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::run (void)"
+
+.PP
+Definition at line 429 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::sync_image_obj_ranged_callback (const autoware_msgs::ImageObj::ConstPtr & sync_image_obj_msg)"
+
+.PP
+Definition at line 297 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::sync_image_obj_tracked_callback (const autoware_msgs::ImageObjRanged::ConstPtr & sync_image_obj_ranged_msg)"
+
+.PP
+Definition at line 302 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::sync_obj_label_callback (const autoware_msgs::ImageObjTracked::ConstPtr & sync_image_obj_tracked_msg)"
+
+.PP
+Definition at line 307 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::sync_obj_pose_callback (const autoware_msgs::ObjLabel::ConstPtr & sync_obj_label_msg)"
+
+.PP
+Definition at line 312 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::time_diff_callback (const autoware_msgs::SyncTimeDiff::ConstPtr & time_diff_msg)"
+
+.PP
+Definition at line 318 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::vscan_image_callback (const autoware_msgs::PointsImage::ConstPtr & vscan_image_msg)"
+
+.PP
+Definition at line 261 of file time_monitor\&.cpp\&.
+.SS "void TimeManager::vscan_points_callback (const sensor_msgs::PointCloud2::ConstPtr & vscan_points_msg)"
+
+.PP
+Definition at line 256 of file time_monitor\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,84 @@
+.TH "FileSystemOperator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FileSystemOperator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <file_system_operator\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLightState\fP { \fBGREEN\fP, \fBYELLOW\fP, \fBRED\fP, \fBUNKNOWN\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFileSystemOperator\fP ()"
+.br
+.ti -1c
+.RI "\fB~FileSystemOperator\fP ()"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, std::string > \fBGetImageList\fP (const std::string diectory_path)"
+.br
+.ti -1c
+.RI "void \fBCheckPreSavedData\fP (std::string target_dir_name)"
+.br
+.ti -1c
+.RI "void \fBWriteStateToFile\fP (std::string folder_name, std::string file_name, \fBLightState\fP state, int image_height, int image_width, int image_depth, int x_start, int y_start, int x_end, int y_end)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file file_system_operator\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBFileSystemOperator::LightState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIYELLOW \fP\fP
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIUNKNOWN \fP\fP
+.PP
+Definition at line 13 of file file_system_operator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FileSystemOperator::FileSystemOperator ()"
+
+.PP
+Definition at line 12 of file file_system_operator\&.cpp\&.
+.SS "FileSystemOperator::~FileSystemOperator ()"
+
+.PP
+Definition at line 17 of file file_system_operator\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void FileSystemOperator::CheckPreSavedData (std::string target_dir_name)"
+
+.PP
+Definition at line 51 of file file_system_operator\&.cpp\&.
+.SS "\fBstd::map\fP< int, std::string > FileSystemOperator::GetImageList (const std::string diectory_path)"
+
+.PP
+Definition at line 23 of file file_system_operator\&.cpp\&.
+.SS "void FileSystemOperator::WriteStateToFile (std::string folder_name, std::string file_name, \fBLightState\fP state, int image_height, int image_width, int image_depth, int x_start, int y_start, int x_end, int y_end)"
+
+.PP
+Definition at line 123 of file file_system_operator\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

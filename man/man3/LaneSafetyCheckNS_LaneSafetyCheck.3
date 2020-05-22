@@ -1,0 +1,539 @@
+.TH "LaneSafetyCheckNS::LaneSafetyCheck" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LaneSafetyCheckNS::LaneSafetyCheck \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_lanesafety_check_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLaneSafetyCheck\fP ()"
+.br
+.ti -1c
+.RI "\fB~LaneSafetyCheck\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWhiteLines\fP (const vector_map_msgs::WhiteLineArray &msg)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_white_line\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetLocalTrajectoryCost\fP (const autoware_msgs::LaneConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP (ros::NodeHandle &_nh)"
+.br
+.ti -1c
+.RI "void \fBExtractNeighbourLanes\fP ()"
+.br
+.ti -1c
+.RI "void \fBVisualizeNeighborLanes\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &left_lanes, std::vector< \fBPlannerHNS::WayPoint\fP > &right_lanes, bool bUpcomingLeft=false, bool bForwardLeft=false, bool bUpcomingRight=false, bool bForwardRight=false)"
+.br
+.ti -1c
+.RI "void \fBInitMarkerSetting\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "int \fBm_PlanningDistance\fP"
+.br
+.ti -1c
+.RI "int \fBm_planningDistance\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBneighbor_lane_safety_array\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBneighbor_lane_waypoint_marker_safe\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBneighbor_lane_waypoint_marker_unsafe\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::MAP_SOURCE_TYPE\fP \fBm_MapType\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_MapPath\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBbMap\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::TrajectoryCost\fP \fBm_TrajectoryBestCost\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_neighborLanes_rviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_LeftBackwardLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_LeftForwardLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_LeftLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_RightBackwardLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_RightForwardLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_RightLane\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_neighborLane\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LeftLane\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_RightLane\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 64 of file op_lanesafety_check_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LaneSafetyCheckNS::LaneSafetyCheck::LaneSafetyCheck ()"
+
+.PP
+Definition at line 24 of file op_lanesafety_check_core\&.cpp\&.
+.SS "LaneSafetyCheckNS::LaneSafetyCheck::~LaneSafetyCheck ()"
+
+.PP
+Definition at line 67 of file op_lanesafety_check_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 139 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetLocalTrajectoryCost (const autoware_msgs::LaneConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)"
+
+.PP
+Definition at line 583 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)"
+
+.PP
+Definition at line 639 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)"
+
+.PP
+Definition at line 618 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)"
+
+.PP
+Definition at line 569 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)"
+
+.PP
+Definition at line 576 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)"
+
+.PP
+Definition at line 555 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMLines (const vector_map_msgs::LineArray & msg)"
+
+.PP
+Definition at line 590 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)"
+
+.PP
+Definition at line 646 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)"
+
+.PP
+Definition at line 562 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)"
+
+.PP
+Definition at line 625 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)"
+
+.PP
+Definition at line 604 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)"
+
+.PP
+Definition at line 597 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)"
+
+.PP
+Definition at line 611 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)"
+
+.PP
+Definition at line 632 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::callbackGetVMWhiteLines (const vector_map_msgs::WhiteLineArray & msg)"
+
+.PP
+Definition at line 653 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::ExtractNeighbourLanes ()\fC [protected]\fP"
+
+.PP
+Definition at line 661 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::InitMarkerSetting ()\fC [protected]\fP"
+
+.PP
+Definition at line 725 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::MainLoop ()"
+
+.PP
+Definition at line 480 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::UpdatePlanningParams (ros::NodeHandle & _nh)\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_lanesafety_check_core\&.cpp\&.
+.SS "void LaneSafetyCheckNS::LaneSafetyCheck::VisualizeNeighborLanes (std::vector< \fBPlannerHNS::WayPoint\fP > & left_lanes, std::vector< \fBPlannerHNS::WayPoint\fP > & right_lanes, bool bUpcomingLeft = \fCfalse\fP, bool bForwardLeft = \fCfalse\fP, bool bUpcomingRight = \fCfalse\fP, bool bForwardRight = \fCfalse\fP)\fC [protected]\fP"
+
+.PP
+Definition at line 763 of file op_lanesafety_check_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool LaneSafetyCheckNS::LaneSafetyCheck::bMap\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_lanesafety_check_core\&.h\&.
+.SS "bool LaneSafetyCheckNS::LaneSafetyCheck::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP LaneSafetyCheckNS::LaneSafetyCheck::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP LaneSafetyCheckNS::LaneSafetyCheck::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_LeftBackwardLane\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_LeftForwardLane\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_LeftLane\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<std::string> LaneSafetyCheckNS::LaneSafetyCheck::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 88 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP LaneSafetyCheckNS::LaneSafetyCheck::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_lanesafety_check_core\&.h\&.
+.SS "std::string LaneSafetyCheckNS::LaneSafetyCheck::m_MapPath\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP LaneSafetyCheckNS::LaneSafetyCheck::m_MapRaw"
+
+.PP
+Definition at line 154 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBPlannerHNS::MAP_SOURCE_TYPE\fP LaneSafetyCheckNS::LaneSafetyCheck::m_MapType\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > LaneSafetyCheckNS::LaneSafetyCheck::m_neighborLane\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file op_lanesafety_check_core\&.h\&.
+.SS "geometry_msgs::Pose LaneSafetyCheckNS::LaneSafetyCheck::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 68 of file op_lanesafety_check_core\&.h\&.
+.SS "int LaneSafetyCheckNS::LaneSafetyCheck::m_PlanningDistance\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file op_lanesafety_check_core\&.h\&.
+.SS "int LaneSafetyCheckNS::LaneSafetyCheck::m_planningDistance\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_RightBackwardLane\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_RightForwardLane\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file op_lanesafety_check_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> LaneSafetyCheckNS::LaneSafetyCheck::m_RightLane\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file op_lanesafety_check_core\&.h\&.
+.SS "\fBPlannerHNS::TrajectoryCost\fP LaneSafetyCheckNS::LaneSafetyCheck::m_TrajectoryBestCost\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_lanesafety_check_core\&.h\&.
+.SS "visualization_msgs::MarkerArray LaneSafetyCheckNS::LaneSafetyCheck::neighbor_lane_safety_array\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file op_lanesafety_check_core\&.h\&.
+.SS "visualization_msgs::Marker LaneSafetyCheckNS::LaneSafetyCheck::neighbor_lane_waypoint_marker_safe\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_lanesafety_check_core\&.h\&.
+.SS "visualization_msgs::Marker LaneSafetyCheckNS::LaneSafetyCheck::neighbor_lane_waypoint_marker_unsafe\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::NodeHandle LaneSafetyCheckNS::LaneSafetyCheck::nh\fC [protected]\fP"
+
+.PP
+Definition at line 115 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Publisher LaneSafetyCheckNS::LaneSafetyCheck::pub_LeftLane\fC [protected]\fP"
+
+.PP
+Definition at line 131 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Publisher LaneSafetyCheckNS::LaneSafetyCheck::pub_neighborLanes_rviz\fC [protected]\fP"
+
+.PP
+Definition at line 118 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Publisher LaneSafetyCheckNS::LaneSafetyCheck::pub_RightLane\fC [protected]\fP"
+
+.PP
+Definition at line 132 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_cross_walk"
+
+.PP
+Definition at line 168 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_curbs"
+
+.PP
+Definition at line 165 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 122 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_dt_lanes"
+
+.PP
+Definition at line 158 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_edges"
+
+.PP
+Definition at line 166 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_intersect"
+
+.PP
+Definition at line 159 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_lanes"
+
+.PP
+Definition at line 156 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_lines"
+
+.PP
+Definition at line 161 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_nodes"
+
+.PP
+Definition at line 169 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_points"
+
+.PP
+Definition at line 157 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_signals"
+
+.PP
+Definition at line 163 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_stop_line"
+
+.PP
+Definition at line 162 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_vectors"
+
+.PP
+Definition at line 164 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_way_areas"
+
+.PP
+Definition at line 167 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sub_white_line"
+
+.PP
+Definition at line 170 of file op_lanesafety_check_core\&.h\&.
+.SS "ros::Subscriber LaneSafetyCheckNS::LaneSafetyCheck::sup_area"
+
+.PP
+Definition at line 160 of file op_lanesafety_check_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

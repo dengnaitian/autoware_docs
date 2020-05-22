@@ -1,0 +1,128 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/baumer/nodes/vlg22/src/bgapi_init.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/baumer/nodes/vlg22/src/bgapi_init.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cv\&.h>\fP
+.br
+\fC#include <highgui\&.h>\fP
+.br
+\fC#include <opencv2/imgproc/imgproc\&.hpp>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/image_encodings\&.h>\fP
+.br
+\fC#include <sensor_msgs/Image\&.h>\fP
+.br
+\fC#include <sensor_msgs/CameraInfo\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBVLG22_DEFAULT_EXPOSURE\fP   20000"
+.br
+.ti -1c
+.RI "#define \fBVLG22_MAX_EXPOSURE\fP   150000"
+.br
+.ti -1c
+.RI "#define \fBVLG22_MIN_EXPOSURE\fP   5000"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBinit_systems\fP (int *system_count, std::vector< BGAPI::System * > *externppSystem)"
+.br
+.ti -1c
+.RI "int \fBinit_cameras\fP (int system_count, std::vector< BGAPI::System * > *externppSystem, int *pCurrSystem, int &numCameras, std::vector< BGAPI::Camera * > &cameraObjects)"
+.br
+.ti -1c
+.RI "int \fBrelease_systems\fP (std::vector< BGAPI::System * > *ppSystem)"
+.br
+.ti -1c
+.RI "int \fBrelease_images\fP (std::vector< BGAPI::Image * > *ppImage)"
+.br
+.ti -1c
+.RI "bool \fBsetup_cameras\fP (std::vector< BGAPI::Camera * > &cameraObjects, std::string camera_pixel_format_str)"
+.br
+.ti -1c
+.RI "bool \fBstart_cameras\fP (std::vector< BGAPI::Camera * > &cameraObjects)"
+.br
+.ti -1c
+.RI "void \fBstop_cameras\fP (std::vector< BGAPI::Camera * > &cameraObjects)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define VLG22_DEFAULT_EXPOSURE   20000"
+
+.PP
+Definition at line 27 of file bgapi_init\&.h\&.
+.SS "#define VLG22_MAX_EXPOSURE   150000"
+
+.PP
+Definition at line 28 of file bgapi_init\&.h\&.
+.SS "#define VLG22_MIN_EXPOSURE   5000"
+
+.PP
+Definition at line 29 of file bgapi_init\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "int init_cameras (int system_count, std::vector< BGAPI::System * > * externppSystem, int * pCurrSystem, int & numCameras, std::vector< BGAPI::Camera * > & cameraObjects)"
+
+.PP
+Definition at line 223 of file bgapi_init\&.cpp\&.
+.SS "int init_systems (int * system_count, std::vector< BGAPI::System * > * externppSystem)"
+
+.PP
+Definition at line 5 of file bgapi_init\&.cpp\&.
+.SS "int release_images (std::vector< BGAPI::Image * > * ppImage)"
+
+.PP
+Definition at line 326 of file bgapi_init\&.cpp\&.
+.SS "int release_systems (std::vector< BGAPI::System * > * ppSystem)"
+
+.PP
+Definition at line 310 of file bgapi_init\&.cpp\&.
+.SS "bool setup_cameras (std::vector< BGAPI::Camera * > & cameraObjects, std::string camera_pixel_format_str)"
+
+.PP
+Definition at line 70 of file bgapi_init\&.cpp\&.
+.SS "bool start_cameras (std::vector< BGAPI::Camera * > & cameraObjects)"
+
+.PP
+Definition at line 53 of file bgapi_init\&.cpp\&.
+.SS "void stop_cameras (std::vector< BGAPI::Camera * > & cameraObjects)"
+
+.PP
+Definition at line 40 of file bgapi_init\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,25 @@
+var classbeyondtrack_1_1_detection =
+[
+    [ "Detection", "classbeyondtrack_1_1_detection.html#aa4351c1a3122c84577a9b6bc8f8f5bb9", null ],
+    [ "Detection", "classbeyondtrack_1_1_detection.html#a5b12d657c3dc866ff9f1024f7e0e62a1", null ],
+    [ "propagate_cur_det", "classbeyondtrack_1_1_detection.html#a301e015a1a5f9413c80327f74d63ad9f", null ],
+    [ "propagate_prev_det", "classbeyondtrack_1_1_detection.html#aa343b4c7de310de9fa26db698ddafc82", null ],
+    [ "B1Q", "classbeyondtrack_1_1_detection.html#aa5c2ef2f12c0e94ebb67cb018448ffbd", null ],
+    [ "bbox_", "classbeyondtrack_1_1_detection.html#a5a682c77e318927e39d341bf79257543", null ],
+    [ "bvolume_", "classbeyondtrack_1_1_detection.html#a30317275066b1032ef15f0c785aeb5c0", null ],
+    [ "bvolume_proj_", "classbeyondtrack_1_1_detection.html#af7a1bee37353e3f4e0c34bc6c3f6e287", null ],
+    [ "cd_2d_", "classbeyondtrack_1_1_detection.html#a6c2420abf6b42b60cacad03df2d02d10", null ],
+    [ "cd_2d_convhull_clip_", "classbeyondtrack_1_1_detection.html#ad48d34bf3aafa88ea36a69c647832267", null ],
+    [ "cd_3d_convhull_", "classbeyondtrack_1_1_detection.html#a1ce5d460a00bc442d97d055114852647", null ],
+    [ "cd_3d_convhull_clip_", "classbeyondtrack_1_1_detection.html#a6f0317830bf238d5caa111bbf8b2e073", null ],
+    [ "cd_area_", "classbeyondtrack_1_1_detection.html#af24a7cbc97f8aa8d33a11a07555d051f", null ],
+    [ "class_type_", "classbeyondtrack_1_1_detection.html#a2d29b52d3ef12dde57da874ccfd0afd3", null ],
+    [ "object_id_", "classbeyondtrack_1_1_detection.html#a1f6e192be2369b849e10b149f2d14149", null ],
+    [ "origin_", "classbeyondtrack_1_1_detection.html#a6d3b81cb7f66d28fd518429ec825df3e", null ],
+    [ "pd_2d_convhull_", "classbeyondtrack_1_1_detection.html#af24900138150789d27a04e9f47afc3b2", null ],
+    [ "pd_2d_convhull_clip_", "classbeyondtrack_1_1_detection.html#a685443522ce4c1979fe5175425b12cc8", null ],
+    [ "pd_3d_convhull_", "classbeyondtrack_1_1_detection.html#a30449089499b51cfc4c0c0503929dc6e", null ],
+    [ "pd_3d_convhull_clip_", "classbeyondtrack_1_1_detection.html#a00113f608568ff5bbada0aa90fb88b48", null ],
+    [ "sigma_3D", "classbeyondtrack_1_1_detection.html#a197ae25aa10e9000355117f33fd0e342", null ],
+    [ "yaw_", "classbeyondtrack_1_1_detection.html#a2935a2f2afcf89c1f3f92b93acdebe7a", null ]
+];

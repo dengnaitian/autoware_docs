@@ -1,0 +1,84 @@
+.TH "PoseTFNS::PoseToTF" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PoseTFNS::PoseToTF \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_pose2tf_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPoseToTF\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PoseToTF\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::Subscriber \fBsub_ndt_pose\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_reset_time\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file op_pose2tf_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PoseTFNS::PoseToTF::PoseToTF ()"
+
+.PP
+Definition at line 25 of file op_pose2tf_core\&.cpp\&.
+.SS "PoseTFNS::PoseToTF::~PoseToTF ()\fC [virtual]\fP"
+
+.PP
+Definition at line 38 of file op_pose2tf_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PoseTFNS::PoseToTF::callbackGetPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 42 of file op_pose2tf_core\&.cpp\&.
+.SS "void PoseTFNS::PoseToTF::MainLoop ()"
+
+.PP
+Definition at line 63 of file op_pose2tf_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ros::NodeHandle PoseTFNS::PoseToTF::nh\fC [protected]\fP"
+
+.PP
+Definition at line 39 of file op_pose2tf_core\&.h\&.
+.SS "ros::Publisher PoseTFNS::PoseToTF::pub_reset_time\fC [protected]\fP"
+
+.PP
+Definition at line 38 of file op_pose2tf_core\&.h\&.
+.SS "ros::Subscriber PoseTFNS::PoseToTF::sub_ndt_pose\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file op_pose2tf_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

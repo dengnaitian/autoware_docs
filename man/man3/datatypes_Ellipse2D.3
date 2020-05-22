@@ -1,0 +1,297 @@
+.TH "datatypes::Ellipse2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Ellipse2D \- A rotated 2-dimensional ellipse in the plane\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Ellipse2D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.PP
+Inherited by \fBdatatypes::Circle2D\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBPoint2D::value_type\fP \fBvalue_type\fP"
+.br
+.RI "\fIThe type of the stored x, y coordinates, and the rotation\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEllipse2D\fP ()"
+.br
+.RI "\fIConstructor for an all-zero \fBEllipse2D\fP\&. \fP"
+.ti -1c
+.RI "\fBEllipse2D\fP (const \fBPoint2D\fP &center, const \fBPoint2D\fP &radius, \fBvalue_type\fP rotation=0\&.0)"
+.br
+.RI "\fIConstructor with specified center point, radius, and rotation\&. \fP"
+.ti -1c
+.RI "\fBEllipse2D\fP (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP x_radius, \fBvalue_type\fP y_radius, \fBvalue_type\fP rotation=0\&.0)"
+.br
+.RI "\fIConstructor with all values given\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this ellipse\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetCenter\fP () const "
+.br
+.RI "\fIReturns the center point of this Ellipse\&. \fP"
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetRadius\fP () const "
+.br
+.RI "\fIReturns the radius of this Ellipse\&. \fP"
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetRotation\fP () const "
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBSetter methods for changing this ellipse\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetCenter\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.RI "\fISets the center point of this \fBEllipse2D\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetCenter\fP (\fBvalue_type\fP x, \fBvalue_type\fP y)"
+.br
+.RI "\fISets the center point of this \fBEllipse2D\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetRadius\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.RI "\fISets the radius of this Ellipse\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "void \fBsetRadius\fP (\fBvalue_type\fP x_length, \fBvalue_type\fP y_width)"
+.br
+.RI "\fISets the radius of this \fBEllipse2D\fP\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "void \fBsetRotation\fP (\fBvalue_type\fP r)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBGeometrical relations to other objects\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBcontainsPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns true if the given \fBPoint2D\fP is inside this ellipse or on its outline\&. \fP"
+.in -1c
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint2D\fP \fBm_center\fP"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP \fBm_radius\fP"
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBm_rotation\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEllipse2D\fP &, const \fBEllipse2D\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBEllipse2D\fP &, const \fBEllipse2D\fP &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A rotated 2-dimensional ellipse in the plane\&. 
+
+This ellipse is defined by its center point, the rotation of the ellipse's main (x) axis measured from the global x-axis, and the radius of the ellipse's x- and y-axis\&.
+.PP
+The rotation denotes the rotation of this ellipse' x-axis compared to the original x-axis\&. The two radii denote the radius length of this ellipse in the ellipse' coordinate system, i\&.e\&. the distance from the center point to each outline\&.
+.PP
+The size argument must be non-negative\&. The rotation argument must be in the range [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.PP
+Definition at line 30 of file Ellipse2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBPoint2D::value_type\fP \fBdatatypes::Ellipse2D::value_type\fP"
+
+.PP
+The type of the stored x, y coordinates, and the rotation\&. 
+.PP
+Definition at line 34 of file Ellipse2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Ellipse2D::Ellipse2D ()"
+
+.PP
+Constructor for an all-zero \fBEllipse2D\fP\&. 
+.PP
+Definition at line 18 of file Ellipse2D\&.cpp\&.
+.SS "datatypes::Ellipse2D::Ellipse2D (const \fBPoint2D\fP & center, const \fBPoint2D\fP & radius, \fBvalue_type\fP rotation = \fC0\&.0\fP)"
+
+.PP
+Constructor with specified center point, radius, and rotation\&. 
+.PP
+\fBNote:\fP
+.RS 4
+The radius components must be non-negative, otherwise an assertion will fail\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcenter\fP The center point 
+.br
+\fIradius\fP The size of the ellipse in the ellipse' coordinate system\&. Must be non-negative\&.
+.br
+\fIrotation\fP The rotation of the ellipse' coordinate system around its center point in [radians]\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file Ellipse2D\&.cpp\&.
+.SS "datatypes::Ellipse2D::Ellipse2D (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP x_radius, \fBvalue_type\fP y_radius, \fBvalue_type\fP rotation = \fC0\&.0\fP)"
+
+.PP
+Constructor with all values given\&. Constructor with all values given: x/y of center point, x/y of size (where the x coordinate of the size is in the same direction as the x axis of the coordinate system, rotated by the rotation argument; the y coordinate accordingly), and rotation\&.
+.PP
+\fBNote:\fP
+.RS 4
+The x_size and y_size must be non-negative\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx_center\fP X-coordinate of center point 
+.br
+\fIy_center\fP Y-coordinate of center point
+.br
+\fIx_radius\fP The radius of the ellipse in X-direction in the ellipse' coordinate system\&. Must be non-negative\&. 
+.br
+\fIy_radius\fP The radius of the ellipse in Y-direction in the ellipse' coordinate system\&. Must be non-negative\&.
+.br
+\fIrotation\fP The rotation of the ellipse' coordinate system around its center point in [radians]\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file Ellipse2D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool datatypes::Ellipse2D::containsPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns true if the given \fBPoint2D\fP is inside this ellipse or on its outline\&. (Note: This function is relatively cheap - it needs two sinus operations, four multiplications and a bunch of comparisons\&.) 
+.PP
+Definition at line 66 of file Ellipse2D\&.cpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Ellipse2D::getCenter () const\fC [inline]\fP"
+
+.PP
+Returns the center point of this Ellipse\&. 
+.PP
+Definition at line 88 of file Ellipse2D\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Ellipse2D::getRadius () const\fC [inline]\fP"
+
+.PP
+Returns the radius of this Ellipse\&. The returned radius denotes the radius of the ellipse in x-direction \fBPoint2D::getX()\fP and y-direction \fBPoint2D::getY()\fP, where the x-direction is rotated against the original x-axis by \fBgetRotation()\fP\&. 
+.PP
+Definition at line 97 of file Ellipse2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Ellipse2D::getRotation () const\fC [inline]\fP"
+Returns the rotation angle of this \fBEllipse2D\fP in [radians], counter clock wise\&.
+.PP
+The rotation of the ellipse' coordinate system around its center point\&. Must be in the interval [-pi,pi] 
+.PP
+Definition at line 104 of file Ellipse2D\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Ellipse2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Reimplemented in \fBdatatypes::Circle2D\fP\&.
+.PP
+Definition at line 82 of file Ellipse2D\&.hpp\&.
+.SS "void datatypes::Ellipse2D::setCenter (const \fBPoint2D\fP & p)\fC [inline]\fP"
+
+.PP
+Sets the center point of this \fBEllipse2D\fP\&. 
+.PP
+Definition at line 113 of file Ellipse2D\&.hpp\&.
+.SS "void datatypes::Ellipse2D::setCenter (\fBvalue_type\fP x, \fBvalue_type\fP y)\fC [inline]\fP"
+
+.PP
+Sets the center point of this \fBEllipse2D\fP\&. 
+.PP
+Definition at line 116 of file Ellipse2D\&.hpp\&.
+.SS "void datatypes::Ellipse2D::setRadius (const \fBPoint2D\fP & p)"
+
+.PP
+Sets the radius of this Ellipse\&. Must be non-negative\&. 
+.PP
+Definition at line 49 of file Ellipse2D\&.cpp\&.
+.SS "void datatypes::Ellipse2D::setRadius (\fBvalue_type\fP x_length, \fBvalue_type\fP y_width)"
+
+.PP
+Sets the radius of this \fBEllipse2D\fP\&. Must be non-negative\&. 
+.PP
+Definition at line 54 of file Ellipse2D\&.cpp\&.
+.SS "void datatypes::Ellipse2D::setRotation (\fBvalue_type\fP r)"
+Sets the rotation angle of this Ellipse in [radians], counter clock wise\&.
+.PP
+The rotation of the ellipse' coordinate system around its center point\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.PP
+Definition at line 60 of file Ellipse2D\&.cpp\&.
+.SS "std::string datatypes::Ellipse2D::toString () const"
+
+.PP
+Definition at line 145 of file Ellipse2D\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBEllipse2D\fP & b1, const \fBEllipse2D\fP & b2)\fC [friend]\fP"
+
+.PP
+Definition at line 170 of file Ellipse2D\&.hpp\&.
+.SS "bool operator== (const \fBEllipse2D\fP & b1, const \fBEllipse2D\fP & b2)\fC [friend]\fP"
+
+.PP
+Definition at line 161 of file Ellipse2D\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPoint2D\fP datatypes::Ellipse2D::m_center\fC [protected]\fP"
+
+.PP
+Definition at line 36 of file Ellipse2D\&.hpp\&.
+.SS "\fBPoint2D\fP datatypes::Ellipse2D::m_radius\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file Ellipse2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Ellipse2D::m_rotation\fC [protected]\fP"
+
+.PP
+Definition at line 38 of file Ellipse2D\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

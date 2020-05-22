@@ -1,0 +1,156 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/nodes/pos_downloader/pos_downloader.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/nodes/pos_downloader/pos_downloader.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include 'std_msgs/String\&.h'\fP
+.br
+\fC#include <jsk_rviz_plugins/Pictogram\&.h>\fP
+.br
+\fC#include <jsk_rviz_plugins/PictogramArray\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <ctime>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <gnss/geo_pos_conv\&.hpp>\fP
+.br
+\fC#include <pos_db\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMYNAME\fP   'pos_downloader'"
+.br
+.ti -1c
+.RI "#define \fBPICTOGRAMNAME\fP   'mo_pictograms'"
+.br
+.ti -1c
+.RI "#define \fBSTARTTIME\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBDELAYSEC\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBPOSUP_DZ\fP   (40)"
+.br
+.ti -1c
+.RI "#define \fBPEDESTRIAN_DZ\fP   (\-2)"
+.br
+.ti -1c
+.RI "#define \fBDOWNLOAD_PERIOD\fP   (250)"
+.br
+.ti -1c
+.RI "#define \fBTOTAL_LIFETIME\fP   (10\&.0)"
+.br
+.ti -1c
+.RI "#define \fBTYPE_OWN\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBTYPE_CAR\fP   (2)"
+.br
+.ti -1c
+.RI "#define \fBTYPE_PEDESTRIAN\fP   (3)"
+.br
+.ti -1c
+.RI "#define \fBANON_MARKER_ID_MIN\fP   (2)"
+.br
+.ti -1c
+.RI "#define \fBANON_MARKER_ID_MAX\fP   (0x7f000000)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ANON_MARKER_ID_MAX   (0x7f000000)"
+
+.PP
+Definition at line 59 of file pos_downloader\&.cpp\&.
+.SS "#define ANON_MARKER_ID_MIN   (2)"
+
+.PP
+Definition at line 58 of file pos_downloader\&.cpp\&.
+.SS "#define DELAYSEC   (0)"
+
+.PP
+Definition at line 48 of file pos_downloader\&.cpp\&.
+.SS "#define DOWNLOAD_PERIOD   (250)"
+
+.PP
+Definition at line 51 of file pos_downloader\&.cpp\&.
+.SS "#define MYNAME   'pos_downloader'"
+
+.PP
+Definition at line 45 of file pos_downloader\&.cpp\&.
+.SS "#define PEDESTRIAN_DZ   (\-2)"
+
+.PP
+Definition at line 50 of file pos_downloader\&.cpp\&.
+.SS "#define PICTOGRAMNAME   'mo_pictograms'"
+
+.PP
+Definition at line 46 of file pos_downloader\&.cpp\&.
+.SS "#define POSUP_DZ   (40)"
+
+.PP
+Definition at line 49 of file pos_downloader\&.cpp\&.
+.SS "#define STARTTIME   (0)"
+
+.PP
+Definition at line 47 of file pos_downloader\&.cpp\&.
+.SS "#define TOTAL_LIFETIME   (10\&.0)"
+
+.PP
+Definition at line 52 of file pos_downloader\&.cpp\&.
+.SS "#define TYPE_CAR   (2)"
+
+.PP
+Definition at line 55 of file pos_downloader\&.cpp\&.
+.SS "#define TYPE_OWN   (1)"
+
+.PP
+Definition at line 54 of file pos_downloader\&.cpp\&.
+.SS "#define TYPE_PEDESTRIAN   (3)"
+
+.PP
+Definition at line 56 of file pos_downloader\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 517 of file pos_downloader\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

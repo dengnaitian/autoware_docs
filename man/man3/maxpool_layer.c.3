@@ -1,0 +1,66 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/maxpool_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/maxpool_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'maxpool_layer\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBimage\fP \fBget_maxpool_image\fP (\fBmaxpool_layer\fP l)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_maxpool_delta\fP (\fBmaxpool_layer\fP l)"
+.br
+.ti -1c
+.RI "\fBmaxpool_layer\fP \fBmake_maxpool_layer\fP (int batch, int h, int w, int \fBc\fP, int size, int stride, int padding)"
+.br
+.ti -1c
+.RI "void \fBresize_maxpool_layer\fP (\fBmaxpool_layer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBforward_maxpool_layer\fP (const \fBmaxpool_layer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_maxpool_layer\fP (const \fBmaxpool_layer\fP l, \fBnetwork\fP net)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_maxpool_layer (const \fBmaxpool_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 116 of file maxpool_layer\&.c\&.
+.SS "void forward_maxpool_layer (const \fBmaxpool_layer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 79 of file maxpool_layer\&.c\&.
+.SS "\fBimage\fP get_maxpool_delta (\fBmaxpool_layer\fP l)"
+
+.PP
+Definition at line 13 of file maxpool_layer\&.c\&.
+.SS "\fBimage\fP get_maxpool_image (\fBmaxpool_layer\fP l)"
+
+.PP
+Definition at line 5 of file maxpool_layer\&.c\&.
+.SS "\fBmaxpool_layer\fP make_maxpool_layer (int batch, int h, int w, int c, int size, int stride, int padding)"
+
+.PP
+Definition at line 21 of file maxpool_layer\&.c\&.
+.SS "void resize_maxpool_layer (\fBmaxpool_layer\fP * l, int w, int h)"
+
+.PP
+Definition at line 54 of file maxpool_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

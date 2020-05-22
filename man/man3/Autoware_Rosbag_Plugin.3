@@ -1,0 +1,174 @@
+.TH "Autoware_Rosbag_Plugin" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Autoware_Rosbag_Plugin \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <autoware_rosbag_plugin\&.h>\fP
+.PP
+Inherits Panel\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBRecordParam\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAutoware_Rosbag_Plugin\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~Autoware_Rosbag_Plugin\fP ()"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_edit_record_filename_textChanged\fP (const QString &arg1)"
+.br
+.ti -1c
+.RI "void \fBon_button_record_save_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_button_record_start_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_button_record_stop_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBtimeShow\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_botton_topic_refresh_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_button_record_configure_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_checkBox_split_size_stateChanged\fP (int arg1)"
+.br
+.ti -1c
+.RI "void \fBon_checkBox_split_duration_stateChanged\fP (int arg1)"
+.br
+.ti -1c
+.RI "void \fBon_lineEdit_duration_textEdited\fP (const QString &arg1)"
+.br
+.ti -1c
+.RI "void \fBon_lineEdit_size_textEdited\fP (const QString &arg1)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBrecordReq\fP (\fBRecordParam\fP &recoParam)"
+.br
+.ti -1c
+.RI "int \fBdoRecord\fP (\fBrosbag_controller::RecorderOptions\fP &opt)"
+.br
+.ti -1c
+.RI "void \fBupdateRecordTime\fP (ros::Duration record_time_duration_)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "boost::scoped_ptr< \fBrosbag_controller::Recorder\fP > \fBrecorder_\fP"
+.br
+.ti -1c
+.RI "boost::scoped_ptr< \fBrosbag_controller::RecorderOptions\fP > \fBrecorder_opts_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 58 of file autoware_rosbag_plugin\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Autoware_Rosbag_Plugin::Autoware_Rosbag_Plugin (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 56 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "Autoware_Rosbag_Plugin::~Autoware_Rosbag_Plugin ()"
+
+.PP
+Definition at line 74 of file autoware_rosbag_plugin\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int Autoware_Rosbag_Plugin::doRecord (\fBrosbag_controller::RecorderOptions\fP & opt)\fC [protected]\fP"
+
+.PP
+Definition at line 262 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_botton_topic_refresh_clicked ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 320 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_button_record_configure_clicked ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 395 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_button_record_save_clicked ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 93 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_button_record_start_clicked ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 136 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_button_record_stop_clicked ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 282 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_checkBox_split_duration_stateChanged (int arg1)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 462 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_checkBox_split_size_stateChanged (int arg1)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 446 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_edit_record_filename_textChanged (const QString & arg1)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 83 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_lineEdit_duration_textEdited (const QString & arg1)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 478 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::on_lineEdit_size_textEdited (const QString & arg1)\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 483 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "int Autoware_Rosbag_Plugin::recordReq (\fBRecordParam\fP & recoParam)\fC [protected]\fP"
+
+.PP
+Definition at line 190 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::timeShow ()\fC [protected]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 310 of file autoware_rosbag_plugin\&.cpp\&.
+.SS "void Autoware_Rosbag_Plugin::updateRecordTime (ros::Duration record_time_duration_)\fC [protected]\fP"
+
+.PP
+Definition at line 298 of file autoware_rosbag_plugin\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "boost::scoped_ptr<\fBrosbag_controller::Recorder\fP> Autoware_Rosbag_Plugin::recorder_\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file autoware_rosbag_plugin\&.h\&.
+.SS "boost::scoped_ptr<\fBrosbag_controller::RecorderOptions\fP> Autoware_Rosbag_Plugin::recorder_opts_\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file autoware_rosbag_plugin\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

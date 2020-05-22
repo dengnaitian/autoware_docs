@@ -1,0 +1,245 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/blas.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/blas.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'darknet\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBflatten\fP (float *x, int size, int layers, int batch, int forward)"
+.br
+.ti -1c
+.RI "void \fBpm\fP (int M, int N, float *A)"
+.br
+.ti -1c
+.RI "float * \fBrandom_matrix\fP (int rows, int cols)"
+.br
+.ti -1c
+.RI "void \fBtime_random_matrix\fP (int TA, int TB, int m, int \fBk\fP, int n)"
+.br
+.ti -1c
+.RI "void \fBreorg_cpu\fP (float *x, int w, int h, int \fBc\fP, int batch, int stride, int forward, float *out)"
+.br
+.ti -1c
+.RI "void \fBtest_blas\fP ()"
+.br
+.ti -1c
+.RI "void \fBinter_cpu\fP (int NX, float *X, int NY, float *Y, int B, float *OUT)"
+.br
+.ti -1c
+.RI "void \fBdeinter_cpu\fP (int NX, float *X, int NY, float *Y, int B, float *OUT)"
+.br
+.ti -1c
+.RI "void \fBmult_add_into_cpu\fP (int N, float *X, float *Y, float *\fBZ\fP)"
+.br
+.ti -1c
+.RI "void \fBconst_cpu\fP (int N, float ALPHA, float *X, int INCX)"
+.br
+.ti -1c
+.RI "void \fBconstrain_gpu\fP (int N, float ALPHA, float *X, int INCX)"
+.br
+.ti -1c
+.RI "void \fBpow_cpu\fP (int N, float ALPHA, float *X, int INCX, float *Y, int INCY)"
+.br
+.ti -1c
+.RI "void \fBmul_cpu\fP (int N, float *X, int INCX, float *Y, int INCY)"
+.br
+.ti -1c
+.RI "int \fBtest_gpu_blas\fP ()"
+.br
+.ti -1c
+.RI "void \fBshortcut_cpu\fP (int batch, int w1, int h1, int c1, float *add, int w2, int h2, int c2, float s1, float \fBs2\fP, float *out)"
+.br
+.ti -1c
+.RI "void \fBmean_cpu\fP (float *x, int batch, int filters, int spatial, float *mean)"
+.br
+.ti -1c
+.RI "void \fBvariance_cpu\fP (float *x, float *mean, int batch, int filters, int spatial, float *variance)"
+.br
+.ti -1c
+.RI "void \fBscale_bias\fP (float *output, float *scales, int batch, int n, int size)"
+.br
+.ti -1c
+.RI "void \fBbackward_scale_cpu\fP (float *x_norm, float *delta, int batch, int n, int size, float *scale_updates)"
+.br
+.ti -1c
+.RI "void \fBmean_delta_cpu\fP (float *delta, float *variance, int batch, int filters, int spatial, float *mean_delta)"
+.br
+.ti -1c
+.RI "void \fBvariance_delta_cpu\fP (float *x, float *delta, float *mean, float *variance, int batch, int filters, int spatial, float *variance_delta)"
+.br
+.ti -1c
+.RI "void \fBnormalize_delta_cpu\fP (float *x, float *mean, float *variance, float *mean_delta, float *variance_delta, int batch, int filters, int spatial, float *delta)"
+.br
+.ti -1c
+.RI "void \fBl2normalize_cpu\fP (float *x, float *dx, int batch, int filters, int spatial)"
+.br
+.ti -1c
+.RI "void \fBsmooth_l1_cpu\fP (int n, float *pred, float *truth, float *delta, float *\fBerror\fP)"
+.br
+.ti -1c
+.RI "void \fBl2_cpu\fP (int n, float *pred, float *truth, float *delta, float *\fBerror\fP)"
+.br
+.ti -1c
+.RI "void \fBl1_cpu\fP (int n, float *pred, float *truth, float *delta, float *\fBerror\fP)"
+.br
+.ti -1c
+.RI "void \fBlogistic_x_ent_cpu\fP (int n, float *pred, float *truth, float *delta, float *\fBerror\fP)"
+.br
+.ti -1c
+.RI "void \fBsoftmax_x_ent_cpu\fP (int n, float *pred, float *truth, float *delta, float *\fBerror\fP)"
+.br
+.ti -1c
+.RI "void \fBweighted_sum_cpu\fP (float *a, float *\fBb\fP, float *s, int num, float *\fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBweighted_delta_cpu\fP (float *a, float *\fBb\fP, float *s, float *da, float *db, float *ds, int n, float *dc)"
+.br
+.ti -1c
+.RI "void \fBsoftmax\fP (float *input, int n, float temp, int stride, float *output)"
+.br
+.ti -1c
+.RI "void \fBsoftmax_cpu\fP (float *input, int n, int batch, int batch_offset, int groups, int group_offset, int stride, float temp, float *output)"
+.br
+.ti -1c
+.RI "void \fBupsample_cpu\fP (float *in, int w, int h, int \fBc\fP, int batch, int stride, int forward, float scale, float *out)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void backward_scale_cpu (float * x_norm, float * delta, int batch, int n, int size, float * scale_updates)"
+
+.PP
+Definition at line 72 of file batchnorm_layer\&.c\&.
+.SS "void const_cpu (int N, float ALPHA, float * X, int INCX)"
+
+.PP
+Definition at line 160 of file blas\&.c\&.
+.SS "void constrain_gpu (int N, float ALPHA, float * X, int INCX)"
+
+.SS "void deinter_cpu (int NX, float * X, int NY, float * Y, int B, float * OUT)"
+
+.PP
+Definition at line 196 of file blas\&.c\&.
+.SS "void flatten (float * x, int size, int layers, int batch, int forward)"
+
+.PP
+Definition at line 32 of file blas\&.c\&.
+.SS "void inter_cpu (int NX, float * X, int NY, float * Y, int B, float * OUT)"
+
+.PP
+Definition at line 212 of file blas\&.c\&.
+.SS "void l1_cpu (int n, float * pred, float * truth, float * delta, float * error)"
+
+.PP
+Definition at line 255 of file blas\&.c\&.
+.SS "void l2_cpu (int n, float * pred, float * truth, float * delta, float * error)"
+
+.PP
+Definition at line 287 of file blas\&.c\&.
+.SS "void l2normalize_cpu (float * x, float * dx, int batch, int filters, int spatial)"
+
+.PP
+Definition at line 126 of file blas\&.c\&.
+.SS "void logistic_x_ent_cpu (int n, float * pred, float * truth, float * delta, float * error)"
+
+.PP
+Definition at line 276 of file blas\&.c\&.
+.SS "void mean_cpu (float * x, int batch, int filters, int spatial, float * mean)"
+
+.PP
+Definition at line 94 of file blas\&.c\&.
+.SS "void mean_delta_cpu (float * delta, float * variance, int batch, int filters, int spatial, float * mean_delta)"
+
+.PP
+Definition at line 87 of file batchnorm_layer\&.c\&.
+.SS "void mul_cpu (int N, float * X, int INCX, float * Y, int INCY)"
+
+.PP
+Definition at line 166 of file blas\&.c\&.
+.SS "void mult_add_into_cpu (int N, float * X, float * Y, float * Z)"
+
+.PP
+Definition at line 232 of file blas\&.c\&.
+.SS "void normalize_delta_cpu (float * x, float * mean, float * variance, float * mean_delta, float * variance_delta, int batch, int filters, int spatial, float * delta)"
+
+.PP
+Definition at line 117 of file batchnorm_layer\&.c\&.
+.SS "void pm (int M, int N, float * A)"
+
+.PP
+Definition at line 200 of file utils\&.c\&.
+.SS "void pow_cpu (int N, float ALPHA, float * X, int INCX, float * Y, int INCY)"
+
+.PP
+Definition at line 172 of file blas\&.c\&.
+.SS "float* random_matrix (int rows, int cols)"
+
+.PP
+Definition at line 30 of file gemm\&.c\&.
+.SS "void reorg_cpu (float * x, int w, int h, int c, int batch, int stride, int forward, float * out)"
+
+.PP
+Definition at line 9 of file blas\&.c\&.
+.SS "void scale_bias (float * output, float * scales, int batch, int n, int size)"
+
+.PP
+Definition at line 423 of file convolutional_layer\&.c\&.
+.SS "void shortcut_cpu (int batch, int w1, int h1, int c1, float * add, int w2, int h2, int c2, float s1, float s2, float * out)"
+
+.PP
+Definition at line 68 of file blas\&.c\&.
+.SS "void smooth_l1_cpu (int n, float * pred, float * truth, float * delta, float * error)"
+
+.PP
+Definition at line 238 of file blas\&.c\&.
+.SS "void softmax (float * input, int n, float temp, int stride, float * output)"
+
+.PP
+Definition at line 305 of file blas\&.c\&.
+.SS "void softmax_cpu (float * input, int n, int batch, int batch_offset, int groups, int group_offset, int stride, float temp, float * output)"
+
+.PP
+Definition at line 324 of file blas\&.c\&.
+.SS "void softmax_x_ent_cpu (int n, float * pred, float * truth, float * delta, float * error)"
+
+.PP
+Definition at line 265 of file blas\&.c\&.
+.SS "void test_blas ()"
+
+.SS "int test_gpu_blas ()"
+
+.SS "void time_random_matrix (int TA, int TB, int m, int k, int n)"
+
+.PP
+Definition at line 40 of file gemm\&.c\&.
+.SS "void upsample_cpu (float * in, int w, int h, int c, int batch, int stride, int forward, float scale, float * out)"
+
+.PP
+Definition at line 334 of file blas\&.c\&.
+.SS "void variance_cpu (float * x, float * mean, int batch, int filters, int spatial, float * variance)"
+
+.PP
+Definition at line 110 of file blas\&.c\&.
+.SS "void variance_delta_cpu (float * x, float * delta, float * mean, float * variance, int batch, int filters, int spatial, float * variance_delta)"
+
+.PP
+Definition at line 102 of file batchnorm_layer\&.c\&.
+.SS "void weighted_delta_cpu (float * a, float * b, float * s, float * da, float * db, float * ds, int n, float * dc)"
+
+.PP
+Definition at line 58 of file blas\&.c\&.
+.SS "void weighted_sum_cpu (float * a, float * b, float * s, int num, float * c)"
+
+.PP
+Definition at line 50 of file blas\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

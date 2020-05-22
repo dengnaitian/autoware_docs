@@ -1,0 +1,101 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/obstacle_detection.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/obstacle_detection.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include <opencv/highgui\&.h>\fP
+.br
+\fC#include <opencv/cxcore\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <sys/resource\&.h>\fP
+.br
+\fC#include <libdpm_ttic/dpm_ttic\&.hpp>\fP
+.br
+\fC#include 'for_use_GPU\&.h'\fP
+.br
+\fC#include 'load_model\&.hpp'\fP
+.br
+\fC#include 'detect\&.hpp'\fP
+.br
+\fC#include 'GPU_init\&.hpp'\fP
+.br
+\fC#include 'common\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_init_cuda\fP (const std::string &cubin_path)"
+.br
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_cleanup_cuda\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "struct timeval tv_memcpy_start \fBtv_memcpy_end\fP"
+.br
+.ti -1c
+.RI "float \fBtime_memcpy\fP"
+.br
+.ti -1c
+.RI "struct timeval tv_kernel_start \fBtv_kernel_end\fP"
+.br
+.ti -1c
+.RI "float \fBtime_kernel\fP"
+.br
+.ti -1c
+.RI "int \fBdevice_num\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void dpm_ttic_gpu_cleanup_cuda ()"
+
+.PP
+Definition at line 59 of file obstacle_detection\&.cpp\&.
+.SS "void dpm_ttic_gpu_init_cuda (const std::string & cubin_path)"
+
+.PP
+Definition at line 54 of file obstacle_detection\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int device_num"
+
+.PP
+Definition at line 52 of file obstacle_detection\&.cpp\&.
+.SS "float time_kernel"
+
+.PP
+Definition at line 50 of file obstacle_detection\&.cpp\&.
+.SS "float time_memcpy"
+
+.PP
+Definition at line 48 of file obstacle_detection\&.cpp\&.
+.SS "struct timeval tv_kernel_start tv_kernel_end"
+
+.PP
+Definition at line 49 of file obstacle_detection\&.cpp\&.
+.SS "struct timeval tv_memcpy_start tv_memcpy_end"
+
+.PP
+Definition at line 47 of file obstacle_detection\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

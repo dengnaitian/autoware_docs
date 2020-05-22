@@ -1,0 +1,212 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/RoadNetwork.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/RoadNetwork.h \- Definition of OpenPlanner's data types\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include 'op_utility/UtilityH\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPlannerHNS::ObjTimeStamp\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::GPSPoint\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::RECTANGLE\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::PolygonShape\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::MapItem\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Obstacle\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::DrivableArea\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Rotation\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::WayPoint\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::WhiteLine\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::RelativeInfo\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Boundary\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Curb\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Crossing\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::StopLine\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::WaitingLine\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::TrafficSign\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::TrafficLight\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Marking\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::RoadSegment\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::Lane\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::RoadNetwork\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::VehicleState\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::BehaviorState\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::DetectedObject\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::PlanningParams\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::HMIPreCalculatedConditions\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::PreCalculatedConditions\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::TrajectoryCost\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::OccupancyToGridMap\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::ParticleInfo\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBPlannerHNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBOPENPLANNER_ENABLE_LOGS\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPlannerHNS::DIRECTION_TYPE\fP { \fBPlannerHNS::FORWARD_DIR\fP, \fBPlannerHNS::FORWARD_LEFT_DIR\fP, \fBPlannerHNS::FORWARD_RIGHT_DIR\fP, \fBPlannerHNS::BACKWARD_DIR\fP, \fBPlannerHNS::BACKWARD_LEFT_DIR\fP, \fBPlannerHNS::BACKWARD_RIGHT_DIR\fP, \fBPlannerHNS::STANDSTILL_DIR\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::OBSTACLE_TYPE\fP { \fBPlannerHNS::SIDEWALK\fP, \fBPlannerHNS::TREE\fP, \fBPlannerHNS::CAR\fP, \fBPlannerHNS::TRUCK\fP, \fBPlannerHNS::HOUSE\fP, \fBPlannerHNS::PEDESTRIAN\fP, \fBPlannerHNS::CYCLIST\fP, \fBPlannerHNS::GENERAL_OBSTACLE\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::DRIVABLE_TYPE\fP { \fBPlannerHNS::DIRT\fP, \fBPlannerHNS::TARMAC\fP, \fBPlannerHNS::PARKINGAREA\fP, \fBPlannerHNS::INDOOR\fP, \fBPlannerHNS::GENERAL_AREA\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::GLOBAL_STATE_TYPE\fP { \fBPlannerHNS::G_WAITING_STATE\fP, \fBPlannerHNS::G_PLANING_STATE\fP, \fBPlannerHNS::G_FORWARD_STATE\fP, \fBPlannerHNS::G_BRANCHING_STATE\fP, \fBPlannerHNS::G_FINISH_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::STATE_TYPE\fP { \fBPlannerHNS::INITIAL_STATE\fP, \fBPlannerHNS::WAITING_STATE\fP, \fBPlannerHNS::FORWARD_STATE\fP, \fBPlannerHNS::STOPPING_STATE\fP, \fBPlannerHNS::EMERGENCY_STATE\fP, \fBPlannerHNS::TRAFFIC_LIGHT_STOP_STATE\fP, \fBPlannerHNS::TRAFFIC_LIGHT_WAIT_STATE\fP, \fBPlannerHNS::STOP_SIGN_STOP_STATE\fP, \fBPlannerHNS::STOP_SIGN_WAIT_STATE\fP, \fBPlannerHNS::FOLLOW_STATE\fP, \fBPlannerHNS::LANE_CHANGE_STATE\fP, \fBPlannerHNS::OBSTACLE_AVOIDANCE_STATE\fP, \fBPlannerHNS::GOAL_STATE\fP, \fBPlannerHNS::FINISH_STATE\fP, \fBPlannerHNS::YIELDING_STATE\fP, \fBPlannerHNS::BRANCH_LEFT_STATE\fP, \fBPlannerHNS::BRANCH_RIGHT_STATE\fP, \fBPlannerHNS::STOP_LINE_STOP_STATE\fP, \fBPlannerHNS::STOP_LINE_WAIT_STATE\fP, \fBPlannerHNS::LANE_CHANGE_LEFT_STATE\fP, \fBPlannerHNS::LANE_CHANGE_RIGHT_STATE\fP, \fBPlannerHNS::PARK_IN_LANE_STATE\fP, \fBPlannerHNS::PARK_ON_SIDE_STATE\fP, \fBPlannerHNS::MERGE_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::LIGHT_INDICATOR\fP { \fBPlannerHNS::INDICATOR_LEFT\fP, \fBPlannerHNS::INDICATOR_RIGHT\fP, \fBPlannerHNS::INDICATOR_BOTH\fP, \fBPlannerHNS::INDICATOR_NONE\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::SHIFT_POS\fP { \fBPlannerHNS::SHIFT_POS_PP\fP = 0x60, \fBPlannerHNS::SHIFT_POS_RR\fP = 0x40, \fBPlannerHNS::SHIFT_POS_NN\fP = 0x20, \fBPlannerHNS::SHIFT_POS_DD\fP = 0x10, \fBPlannerHNS::SHIFT_POS_BB\fP = 0xA0, \fBPlannerHNS::SHIFT_POS_SS\fP = 0x0f, \fBPlannerHNS::SHIFT_POS_UU\fP = 0xff }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::ACTION_TYPE\fP { \fBPlannerHNS::FORWARD_ACTION\fP, \fBPlannerHNS::BACKWARD_ACTION\fP, \fBPlannerHNS::STOP_ACTION\fP, \fBPlannerHNS::LEFT_TURN_ACTION\fP, \fBPlannerHNS::RIGHT_TURN_ACTION\fP, \fBPlannerHNS::U_TURN_ACTION\fP, \fBPlannerHNS::SWERVE_ACTION\fP, \fBPlannerHNS::OVERTACK_ACTION\fP, \fBPlannerHNS::START_ACTION\fP, \fBPlannerHNS::SLOWDOWN_ACTION\fP, \fBPlannerHNS::CHANGE_DESTINATION\fP, \fBPlannerHNS::WAITING_ACTION\fP, \fBPlannerHNS::DESTINATION_REACHED\fP, \fBPlannerHNS::UNKOWN_ACTION\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::BEH_STATE_TYPE\fP { \fBPlannerHNS::BEH_FORWARD_STATE\fP =0, \fBPlannerHNS::BEH_STOPPING_STATE\fP =1, \fBPlannerHNS::BEH_BRANCH_LEFT_STATE\fP =2, \fBPlannerHNS::BEH_BRANCH_RIGHT_STATE\fP =3, \fBPlannerHNS::BEH_YIELDING_STATE\fP =4, \fBPlannerHNS::BEH_ACCELERATING_STATE\fP =5, \fBPlannerHNS::BEH_SLOWDOWN_STATE\fP =6 }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::SEGMENT_TYPE\fP { \fBPlannerHNS::NORMAL_ROAD_SEG\fP, \fBPlannerHNS::INTERSECTION_ROAD_SEG\fP, \fBPlannerHNS::UTURN_ROAD_SEG\fP, \fBPlannerHNS::EXIT_ROAD_SEG\fP, \fBPlannerHNS::MERGE_ROAD_SEG\fP, \fBPlannerHNS::HIGHWAY_ROAD_SEG\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::RoadSegmentType\fP { \fBPlannerHNS::NORMAL_ROAD\fP, \fBPlannerHNS::INTERSECTION_ROAD\fP, \fBPlannerHNS::UTURN_ROAD\fP, \fBPlannerHNS::EXIT_ROAD\fP, \fBPlannerHNS::MERGE_ROAD\fP, \fBPlannerHNS::HIGHWAY_ROAD\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::MARKING_TYPE\fP { \fBPlannerHNS::UNKNOWN_MARK\fP, \fBPlannerHNS::TEXT_MARK\fP, \fBPlannerHNS::AF_MARK\fP, \fBPlannerHNS::AL_MARK\fP, \fBPlannerHNS::AR_MARK\fP, \fBPlannerHNS::AFL_MARK\fP, \fBPlannerHNS::AFR_MARK\fP, \fBPlannerHNS::ALR_MARK\fP, \fBPlannerHNS::UTURN_MARK\fP, \fBPlannerHNS::NOUTURN_MARK\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::TrafficSignTypes\fP { \fBPlannerHNS::UNKNOWN_SIGN\fP, \fBPlannerHNS::STOP_SIGN\fP, \fBPlannerHNS::MAX_SPEED_SIGN\fP, \fBPlannerHNS::MIN_SPEED_SIGN\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::ForceCmdTypes\fP { \fBPlannerHNS::UNKNOWN_CMD_TYPE\fP, \fBPlannerHNS::ParkOnSide\fP, \fBPlannerHNS::ParkInLane\fP, \fBPlannerHNS::OverTake\fP, \fBPlannerHNS::MergeNoVehicle\fP, \fBPlannerHNS::MergeWithVechile\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::OVERTAKE_PROC\fP { \fBPlannerHNS::UNKNOWN_PROC\fP, \fBPlannerHNS::ABOUT_TO_LEFT\fP, \fBPlannerHNS::CHANGING_LEFT\fP, \fBPlannerHNS::CHANGING_RIGHT\fP, \fBPlannerHNS::OVERTAKE_FORWARD\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::TrafficLightState\fP { \fBPlannerHNS::UNKNOWN_LIGHT\fP, \fBPlannerHNS::RED_LIGHT\fP, \fBPlannerHNS::GREEN_LIGHT\fP, \fBPlannerHNS::YELLOW_LIGHT\fP, \fBPlannerHNS::LEFT_GREEN\fP, \fBPlannerHNS::FORWARD_GREEN\fP, \fBPlannerHNS::RIGHT_GREEN\fP, \fBPlannerHNS::FLASH_YELLOW\fP, \fBPlannerHNS::FLASH_RED\fP }"
+.br
+.ti -1c
+.RI "enum \fBPlannerHNS::LaneType\fP { \fBPlannerHNS::NORMAL_LANE\fP, \fBPlannerHNS::MERGE_LANE\fP, \fBPlannerHNS::EXIT_LANE\fP, \fBPlannerHNS::BUS_LANE\fP, \fBPlannerHNS::BUS_STOP_LANE\fP, \fBPlannerHNS::EMERGENCY_LANE\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition of OpenPlanner's data types\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Hatem Darweesh 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+May 19, 2016 
+.RE
+.PP
+
+.PP
+Definition in file \fBRoadNetwork\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define OPENPLANNER_ENABLE_LOGS"
+
+.PP
+Definition at line 16 of file RoadNetwork\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

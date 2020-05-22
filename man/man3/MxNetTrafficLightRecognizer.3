@@ -1,0 +1,53 @@
+.TH "MxNetTrafficLightRecognizer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MxNetTrafficLightRecognizer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mxnet_traffic_light_recognizer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMxNetTrafficLightRecognizer\fP ()"
+.br
+.ti -1c
+.RI "\fB~MxNetTrafficLightRecognizer\fP ()"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const char *in_network_definition_buffer, const char *in_pretrained_model_buffer, int in_pretrained_model_length, const bool in_use_gpu, const unsigned int in_gpu_id)"
+.br
+.ti -1c
+.RI "\fBLightState\fP \fBRecognizeLightState\fP (const cv::Mat &in_image, double in_score_threshold)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file mxnet_traffic_light_recognizer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MxNetTrafficLightRecognizer::MxNetTrafficLightRecognizer ()"
+
+.PP
+Definition at line 3 of file mxnet_traffic_light_recognizer\&.cpp\&.
+.SS "MxNetTrafficLightRecognizer::~MxNetTrafficLightRecognizer ()"
+
+.PP
+Definition at line 7 of file mxnet_traffic_light_recognizer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MxNetTrafficLightRecognizer::Init (const char * in_network_definition_buffer, const char * in_pretrained_model_buffer, int in_pretrained_model_length, const bool in_use_gpu, const unsigned int in_gpu_id)"
+
+.PP
+Definition at line 12 of file mxnet_traffic_light_recognizer\&.cpp\&.
+.SS "\fBLightState\fP MxNetTrafficLightRecognizer::RecognizeLightState (const cv::Mat & in_image, double in_score_threshold)"
+
+.PP
+Definition at line 89 of file mxnet_traffic_light_recognizer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

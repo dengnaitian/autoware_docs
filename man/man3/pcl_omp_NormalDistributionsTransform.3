@@ -1,0 +1,1054 @@
+.TH "pcl_omp::NormalDistributionsTransform< PointSource, PointTarget >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pcl_omp::NormalDistributionsTransform< PointSource, PointTarget > \- A 3D Normal Distribution Transform registration implementation for point cloud data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ndt\&.h>\fP
+.PP
+Inherits \fBpcl_omp::Registration< PointSource, PointTarget >\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::shared_ptr< \fBNormalDistributionsTransform\fP< PointSource, PointTarget > > \fBPtr\fP"
+.br
+.ti -1c
+.RI "typedef boost::shared_ptr< const \fBNormalDistributionsTransform\fP< PointSource, PointTarget > > \fBConstPtr\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNormalDistributionsTransform\fP ()"
+.br
+.RI "\fIConstructor\&. Sets \fBoutlier_ratio_\fP to 0\&.35, \fBstep_size_\fP to 0\&.05 and \fBresolution_\fP to 1\&.0\&. \fP"
+.ti -1c
+.RI "virtual \fB~NormalDistributionsTransform\fP ()"
+.br
+.RI "\fIEmpty destructor\&. \fP"
+.ti -1c
+.RI "void \fBsetInputTarget\fP (const \fBPointCloudTargetConstPtr\fP &cloud)"
+.br
+.RI "\fIProvide a pointer to the input target (e\&.g\&., the point cloud that we want to align the input source to)\&. \fP"
+.ti -1c
+.RI "void \fBsetResolution\fP (float resolution)"
+.br
+.RI "\fISet/change the voxel grid resolution\&. \fP"
+.ti -1c
+.RI "float \fBgetResolution\fP () const "
+.br
+.RI "\fIGet voxel grid resolution\&. \fP"
+.ti -1c
+.RI "double \fBgetStepSize\fP () const "
+.br
+.RI "\fIGet the newton line search maximum step length\&. \fP"
+.ti -1c
+.RI "void \fBsetStepSize\fP (double \fBstep_size\fP)"
+.br
+.RI "\fISet/change the newton line search maximum step length\&. \fP"
+.ti -1c
+.RI "double \fBgetOulierRatio\fP () const "
+.br
+.RI "\fIGet the point cloud outlier ratio\&. \fP"
+.ti -1c
+.RI "void \fBsetOulierRatio\fP (double outlier_ratio)"
+.br
+.RI "\fISet/change the point cloud outlier ratio\&. \fP"
+.ti -1c
+.RI "double \fBgetTransformationProbability\fP () const "
+.br
+.RI "\fIGet the registration alignment probability\&. \fP"
+.ti -1c
+.RI "int \fBgetFinalNumIteration\fP () const "
+.br
+.RI "\fIGet the number of iterations required to calculate alignment\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBconvertTransform\fP (const Eigen::Matrix< double, 6, 1 > &x, Eigen::Affine3f &trans)"
+.br
+.RI "\fIConvert 6 element transformation vector to affine transformation\&. \fP"
+.ti -1c
+.RI "static void \fBconvertTransform\fP (const Eigen::Matrix< double, 6, 1 > &x, Eigen::Matrix4f &trans)"
+.br
+.RI "\fIConvert 6 element transformation vector to transformation matrix\&. \fP"
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBRegistration\fP< PointSource, PointTarget >::\fBPointCloudSource\fP \fBPointCloudSource\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudSource::Ptr \fBPointCloudSourcePtr\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudSource::ConstPtr \fBPointCloudSourceConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef \fBRegistration\fP< PointSource, PointTarget >::\fBPointCloudTarget\fP \fBPointCloudTarget\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudTarget::Ptr \fBPointCloudTargetPtr\fP"
+.br
+.ti -1c
+.RI "typedef PointCloudTarget::ConstPtr \fBPointCloudTargetConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::PointIndices::Ptr \fBPointIndicesPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::PointIndices::ConstPtr \fBPointIndicesConstPtr\fP"
+.br
+.ti -1c
+.RI "typedef pcl::VoxelGridCovariance< PointTarget > \fBTargetGrid\fP"
+.br
+.RI "\fITypename of searchable voxel grid containing mean and covariance\&. \fP"
+.ti -1c
+.RI "typedef \fBTargetGrid\fP * \fBTargetGridPtr\fP"
+.br
+.RI "\fITypename of pointer to searchable voxel grid\&. \fP"
+.ti -1c
+.RI "typedef const \fBTargetGrid\fP * \fBTargetGridConstPtr\fP"
+.br
+.RI "\fITypename of const pointer to searchable voxel grid\&. \fP"
+.ti -1c
+.RI "typedef TargetGrid::LeafConstPtr \fBTargetGridLeafConstPtr\fP"
+.br
+.RI "\fITypename of const pointer to searchable voxel grid leaf\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcomputeTransformation\fP (\fBPointCloudSource\fP &output)"
+.br
+.RI "\fIEstimate the transformation and returns the transformed source (input) as output\&. \fP"
+.ti -1c
+.RI "virtual void \fBcomputeTransformation\fP (\fBPointCloudSource\fP &output, const Eigen::Matrix4f &guess)"
+.br
+.RI "\fIEstimate the transformation and returns the transformed source (input) as output\&. \fP"
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.RI "\fIInitiate covariance voxel structure\&. \fP"
+.ti -1c
+.RI "double \fBcomputeDerivatives\fP (Eigen::Matrix< double, 6, 1 > &score_gradient, Eigen::Matrix< double, 6, 6 > &hessian, \fBPointCloudSource\fP &trans_cloud, Eigen::Matrix< double, 6, 1 > &\fBp\fP, bool compute_hessian=true)"
+.br
+.RI "\fICompute derivatives of probability function w\&.r\&.t\&. the transformation vector\&. \fP"
+.ti -1c
+.RI "double \fBupdateDerivatives\fP (Eigen::Matrix< double, 6, 1 > &score_gradient, Eigen::Matrix< double, 6, 6 > &hessian, Eigen::Vector3d &x_trans, Eigen::Matrix3d &c_inv, bool compute_hessian=true)"
+.br
+.RI "\fICompute individual point contirbutions to derivatives of probability function w\&.r\&.t\&. the transformation vector\&. \fP"
+.ti -1c
+.RI "void \fBcomputeAngleDerivatives\fP (Eigen::Matrix< double, 6, 1 > &\fBp\fP, bool compute_hessian=true)"
+.br
+.RI "\fIPrecompute anglular components of derivatives\&. \fP"
+.ti -1c
+.RI "void \fBcomputePointDerivatives\fP (Eigen::Vector3d &x, bool compute_hessian=true)"
+.br
+.RI "\fICompute point derivatives\&. \fP"
+.ti -1c
+.RI "void \fBcomputeHessian\fP (Eigen::Matrix< double, 6, 6 > &hessian, \fBPointCloudSource\fP &trans_cloud, Eigen::Matrix< double, 6, 1 > &\fBp\fP)"
+.br
+.RI "\fICompute hessian of probability function w\&.r\&.t\&. the transformation vector\&. \fP"
+.ti -1c
+.RI "void \fBupdateHessian\fP (Eigen::Matrix< double, 6, 6 > &hessian, Eigen::Vector3d &x_trans, Eigen::Matrix3d &c_inv)"
+.br
+.RI "\fICompute individual point contirbutions to hessian of probability function w\&.r\&.t\&. the transformation vector\&. \fP"
+.ti -1c
+.RI "double \fBcomputeStepLengthMT\fP (const Eigen::Matrix< double, 6, 1 > &x, Eigen::Matrix< double, 6, 1 > &step_dir, double step_init, double step_max, double step_min, double &score, Eigen::Matrix< double, 6, 1 > &score_gradient, Eigen::Matrix< double, 6, 6 > &hessian, \fBPointCloudSource\fP &trans_cloud)"
+.br
+.RI "\fICompute line search step length and update transform and probability derivatives using More-Thuente method\&. \fP"
+.ti -1c
+.RI "bool \fBupdateIntervalMT\fP (double &a_l, double &f_l, double &g_l, double &a_u, double &f_u, double &g_u, double a_t, double f_t, double g_t)"
+.br
+.RI "\fIUpdate interval of possible step lengths for More-Thuente method, $ I $ in More-Thuente (1994) \fP"
+.ti -1c
+.RI "double \fBtrialValueSelectionMT\fP (double a_l, double f_l, double g_l, double a_u, double f_u, double g_u, double a_t, double f_t, double g_t)"
+.br
+.RI "\fISelect new trial value for More-Thuente method\&. \fP"
+.ti -1c
+.RI "double \fBauxilaryFunction_PsiMT\fP (double a, double f_a, double f_0, double g_0, double mu=1\&.e\-4)"
+.br
+.RI "\fIAuxilary function used to determin endpoints of More-Thuente interval\&. \fP"
+.ti -1c
+.RI "double \fBauxilaryFunction_dPsiMT\fP (double g_a, double g_0, double mu=1\&.e\-4)"
+.br
+.RI "\fIAuxilary function derivative used to determin endpoints of More-Thuente interval\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTargetGrid\fP \fBtarget_cells_\fP"
+.br
+.RI "\fIThe voxel grid generated from target cloud containing point means and covariances\&. \fP"
+.ti -1c
+.RI "float \fBresolution_\fP"
+.br
+.RI "\fIThe side length of voxels\&. \fP"
+.ti -1c
+.RI "double \fBstep_size_\fP"
+.br
+.RI "\fIThe maximum step length\&. \fP"
+.ti -1c
+.RI "double \fBoutlier_ratio_\fP"
+.br
+.RI "\fIThe ratio of outliers of points w\&.r\&.t\&. a normal distribution, Equation 6\&.7 [Magnusson 2009]\&. \fP"
+.ti -1c
+.RI "double \fBgauss_d1_\fP"
+.br
+.RI "\fIThe normalization constants used fit the point distribution to a normal distribution, Equation 6\&.8 [Magnusson 2009]\&. \fP"
+.ti -1c
+.RI "double \fBgauss_d2_\fP"
+.br
+.ti -1c
+.RI "double \fBtrans_probability_\fP"
+.br
+.RI "\fIThe probability score of the transform applied to the input cloud, Equation 6\&.9 and 6\&.10 [Magnusson 2009]\&. \fP"
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_a_\fP"
+.br
+.RI "\fIPrecomputed Angular Gradient\&. \fP"
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_b_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_c_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_d_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_e_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_f_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_g_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBj_ang_h_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_a2_\fP"
+.br
+.RI "\fIPrecomputed Angular Hessian\&. \fP"
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_a3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_b2_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_b3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_c2_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_c3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_d1_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_d2_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_d3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_e1_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_e2_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_e3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_f1_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_f2_\fP"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBh_ang_f3_\fP"
+.br
+.ti -1c
+.RI "Eigen::Matrix< double, 3, 6 > \fBpoint_gradient_\fP"
+.br
+.RI "\fIThe first order derivative of the transformation of a point w\&.r\&.t\&. the transform vector, $ J_E $ in Equation 6\&.18 [Magnusson 2009]\&. \fP"
+.ti -1c
+.RI "Eigen::Matrix< double, 18, 6 > \fBpoint_hessian_\fP"
+.br
+.RI "\fIThe second order derivative of the transformation of a point w\&.r\&.t\&. the transform vector, $ H_E $ in Equation 6\&.20 [Magnusson 2009]\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSource, typename PointTarget>
+.br
+class pcl_omp::NormalDistributionsTransform< PointSource, PointTarget >"
+A 3D Normal Distribution Transform registration implementation for point cloud data\&. 
+
+
+.PP
+\fBNote:\fP
+.RS 4
+For more information please see \fBMagnusson, M\&. (2009)\&. The Three-Dimensional Normal-Distributions Transform — an Efﬁcient Representation for \fBRegistration\fP, Surface Analysis, and Loop Detection\&. PhD thesis, Orebro University\&. Orebro Studies in Technology 36\&.\fP, \fBMore, J\&., and Thuente, D\&. (1994)\&. \fBLine\fP Search Algorithm with Guaranteed Sufficient Decrease In ACM Transactions on Mathematical Software\&.\fP and Sun, W\&. and Yuan, Y, (2006) Optimization Theory and Methods: Nonlinear Programming\&. 89-100 
+.PP
+Math refactored by Todor Stoyanov\&. 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Brian Okorn (Space and Naval Warfare Systems Center Pacific) 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file ndt\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget> typedef boost::shared_ptr< const \fBNormalDistributionsTransform\fP<PointSource, PointTarget> > \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBConstPtr\fP"
+
+.PP
+Definition at line 93 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef \fBRegistration\fP<PointSource, PointTarget>::\fBPointCloudSource\fP \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudSource\fP\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef PointCloudSource::ConstPtr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudSourceConstPtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef PointCloudSource::Ptr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudSourcePtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef \fBRegistration\fP<PointSource, PointTarget>::\fBPointCloudTarget\fP \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudTarget\fP\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef PointCloudTarget::ConstPtr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudTargetConstPtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef PointCloudTarget::Ptr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointCloudTargetPtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef pcl::PointIndices::ConstPtr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointIndicesConstPtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef pcl::PointIndices::Ptr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPointIndicesPtr\fP\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef boost::shared_ptr< \fBNormalDistributionsTransform\fP<PointSource, PointTarget> > \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBPtr\fP"
+
+.PP
+Definition at line 92 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef pcl::VoxelGridCovariance<PointTarget> \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBTargetGrid\fP\fC [protected]\fP"
+
+.PP
+Typename of searchable voxel grid containing mean and covariance\&. 
+.PP
+Definition at line 81 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef const \fBTargetGrid\fP* \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBTargetGridConstPtr\fP\fC [protected]\fP"
+
+.PP
+Typename of const pointer to searchable voxel grid\&. 
+.PP
+Definition at line 85 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef TargetGrid::LeafConstPtr \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBTargetGridLeafConstPtr\fP\fC [protected]\fP"
+
+.PP
+Typename of const pointer to searchable voxel grid leaf\&. 
+.PP
+Definition at line 87 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> typedef \fBTargetGrid\fP* \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBTargetGridPtr\fP\fC [protected]\fP"
+
+.PP
+Typename of pointer to searchable voxel grid\&. 
+.PP
+Definition at line 83 of file ndt\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSource , typename PointTarget > \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::\fBNormalDistributionsTransform\fP ()"
+
+.PP
+Constructor\&. Sets \fBoutlier_ratio_\fP to 0\&.35, \fBstep_size_\fP to 0\&.05 and \fBresolution_\fP to 1\&.0\&. 
+.PP
+Definition at line 46 of file ndt\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget> virtual \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::~\fBNormalDistributionsTransform\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Empty destructor\&. 
+.PP
+Definition at line 102 of file ndt\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::auxilaryFunction_dPsiMT (double g_a, double g_0, double mu = \fC1\&.e\-4\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Auxilary function derivative used to determin endpoints of More-Thuente interval\&. 
+.PP
+\fBNote:\fP
+.RS 4
+$ \psi'(\alpha) $, derivative of Equation 1\&.6 (Moore, Thuente 1994) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIg_a\fP function gradient at step length a, $ \phi'(\alpha) $ in More-Thuente (1994) 
+.br
+\fIg_0\fP initial function gradiant, $ \phi'(0) $ in More-Thuente (1994) 
+.br
+\fImu\fP the step length, constant $ \mu $ in Equation 1\&.1 [More, Thuente 1994] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+sufficent decrease derivative 
+.RE
+.PP
+
+.PP
+Definition at line 414 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::auxilaryFunction_PsiMT (double a, double f_a, double f_0, double g_0, double mu = \fC1\&.e\-4\fP)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Auxilary function used to determin endpoints of More-Thuente interval\&. 
+.PP
+\fBNote:\fP
+.RS 4
+$ \psi(\alpha) $ in Equation 1\&.6 (Moore, Thuente 1994) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP the step length, $ \alpha $ in More-Thuente (1994) 
+.br
+\fIf_a\fP function value at step length a, $ \phi(\alpha) $ in More-Thuente (1994) 
+.br
+\fIf_0\fP initial function value, $ \phi(0) $ in Moore-Thuente (1994) 
+.br
+\fIg_0\fP initial function gradiant, $ \phi'(0) $ in More-Thuente (1994) 
+.br
+\fImu\fP the step length, constant $ \mu $ in Equation 1\&.1 [More, Thuente 1994] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+sufficent decrease value 
+.RE
+.PP
+
+.PP
+Definition at line 401 of file ndt\&.h\&.
+.SS "template<typename PointSource , typename PointTarget > void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeAngleDerivatives (Eigen::Matrix< double, 6, 1 > & p, bool compute_hessian = \fCtrue\fP)\fC [protected]\fP"
+
+.PP
+Precompute anglular components of derivatives\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.19 and 6\&.21 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP the current transform vector 
+.br
+\fIcompute_hessian\fP flag to calculate hessian, unnessissary for step calculation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 303 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeDerivatives (Eigen::Matrix< double, 6, 1 > & score_gradient, Eigen::Matrix< double, 6, 6 > & hessian, \fBPointCloudSource\fP & trans_cloud, Eigen::Matrix< double, 6, 1 > & p, bool compute_hessian = \fCtrue\fP)\fC [protected]\fP"
+
+.PP
+Compute derivatives of probability function w\&.r\&.t\&. the transformation vector\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.10, 6\&.12 and 6\&.13 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscore_gradient\fP the gradient vector of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fIhessian\fP the hessian matrix of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fItrans_cloud\fP transformed point cloud 
+.br
+\fIp\fP the current transform vector 
+.br
+\fIcompute_hessian\fP flag to calculate hessian, unnessissary for step calculation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 178 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeHessian (Eigen::Matrix< double, 6, 6 > & hessian, \fBPointCloudSource\fP & trans_cloud, Eigen::Matrix< double, 6, 1 > & p)\fC [protected]\fP"
+
+.PP
+Compute hessian of probability function w\&.r\&.t\&. the transformation vector\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.13 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhessian\fP the hessian matrix of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fItrans_cloud\fP transformed point cloud 
+.br
+\fIp\fP the current transform vector 
+.RE
+.PP
+
+.PP
+Definition at line 467 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computePointDerivatives (Eigen::Vector3d & x, bool compute_hessian = \fCtrue\fP)\fC [protected]\fP"
+
+.PP
+Compute point derivatives\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.18-21 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP point from the input cloud 
+.br
+\fIcompute_hessian\fP flag to calculate hessian, unnessissary for step calculation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 380 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeStepLengthMT (const Eigen::Matrix< double, 6, 1 > & x, Eigen::Matrix< double, 6, 1 > & step_dir, double step_init, double step_max, double step_min, double & score, Eigen::Matrix< double, 6, 1 > & score_gradient, Eigen::Matrix< double, 6, 6 > & hessian, \fBPointCloudSource\fP & trans_cloud)\fC [protected]\fP"
+
+.PP
+Compute line search step length and update transform and probability derivatives using More-Thuente method\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Search Algorithm [More, Thuente 1994] 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP initial transformation vector, $ x $ in Equation 1\&.3 (Moore, Thuente 1994) and $ \vec{p} $ in Algorithm 2 [Magnusson 2009] 
+.br
+\fIstep_dir\fP descent direction, $ p $ in Equation 1\&.3 (Moore, Thuente 1994) and $ \delta \vec{p} $ normalized in Algorithm 2 [Magnusson 2009] 
+.br
+\fIstep_init\fP initial step length estimate, $ \alpha_0 $ in Moore-Thuente (1994) and the noramal of $ \delta \vec{p} $ in Algorithm 2 [Magnusson 2009] 
+.br
+\fIstep_max\fP maximum step length, $ \alpha_max $ in Moore-Thuente (1994) 
+.br
+\fIstep_min\fP minimum step length, $ \alpha_min $ in Moore-Thuente (1994) 
+.br
+\fIscore\fP final score function value, $ f(x + \alpha p) $ in Equation 1\&.3 (Moore, Thuente 1994) and $ score $ in Algorithm 2 [Magnusson 2009] 
+.br
+\fIscore_gradient\fP gradient of score function w\&.r\&.t\&. transformation vector, $ f'(x + \alpha p) $ in Moore-Thuente (1994) and $ \vec{g} $ in Algorithm 2 [Magnusson 2009] 
+.br
+\fIhessian\fP hessian of score function w\&.r\&.t\&. transformation vector, $ f''(x + \alpha p) $ in Moore-Thuente (1994) and $ H $ in Algorithm 2 [Magnusson 2009] 
+.br
+\fItrans_cloud\fP transformed point cloud, $ X $ transformed by $ T(\vec{p},\vec{x}) $ in Algorithm 2 [Magnusson 2009] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+final step length 
+.RE
+.PP
+
+.PP
+Definition at line 674 of file ndt\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget> virtual void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeTransformation (\fBPointCloudSource\fP & output)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Estimate the transformation and returns the transformed source (input) as output\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP the resultant input transfomed point cloud dataset 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file ndt\&.h\&.
+.SS "template<typename PointSource , typename PointTarget > void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::computeTransformation (\fBPointCloudSource\fP & output, const Eigen::Matrix4f & guess)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Estimate the transformation and returns the transformed source (input) as output\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP the resultant input transfomed point cloud dataset 
+.br
+\fIguess\fP the initial gross estimation of the transformation 
+.RE
+.PP
+
+.PP
+Definition at line 78 of file ndt\&.hpp\&.
+.SS "template<typename PointSource, typename PointTarget> static void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::convertTransform (const Eigen::Matrix< double, 6, 1 > & x, Eigen::Affine3f & trans)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Convert 6 element transformation vector to affine transformation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP transformation vector of the form [x, y, z, roll, pitch, yaw] 
+.br
+\fItrans\fP affine transform corresponding to given transfomation vector 
+.RE
+.PP
+
+.PP
+Definition at line 197 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> static void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::convertTransform (const Eigen::Matrix< double, 6, 1 > & x, Eigen::Matrix4f & trans)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Convert 6 element transformation vector to transformation matrix\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP transformation vector of the form [x, y, z, roll, pitch, yaw] 
+.br
+\fItrans\fP 4x4 transformation matrix corresponding to given transfomation vector 
+.RE
+.PP
+
+.PP
+Definition at line 210 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> int \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::getFinalNumIteration () const\fC [inline]\fP"
+
+.PP
+Get the number of iterations required to calculate alignment\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+final number of iterations 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::getOulierRatio () const\fC [inline]\fP"
+
+.PP
+Get the point cloud outlier ratio\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+outlier ratio 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> float \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::getResolution () const\fC [inline]\fP"
+
+.PP
+Get voxel grid resolution\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+side length of voxels 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::getStepSize () const\fC [inline]\fP"
+
+.PP
+Get the newton line search maximum step length\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+maximum step length 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::getTransformationProbability () const\fC [inline]\fP"
+
+.PP
+Get the registration alignment probability\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+transformation probability 
+.RE
+.PP
+
+.PP
+Definition at line 178 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::init ()\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Initiate covariance voxel structure\&. 
+.PP
+Definition at line 254 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::setInputTarget (const \fBPointCloudTargetConstPtr\fP & cloud)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Provide a pointer to the input target (e\&.g\&., the point cloud that we want to align the input source to)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcloud\fP the input point cloud target 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBpcl_omp::Registration< PointSource, PointTarget >\fP\&.
+.PP
+Definition at line 108 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::setOulierRatio (double outlier_ratio)\fC [inline]\fP"
+
+.PP
+Set/change the point cloud outlier ratio\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutlier_ratio\fP outlier ratio 
+.RE
+.PP
+
+.PP
+Definition at line 169 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::setResolution (float resolution)\fC [inline]\fP"
+
+.PP
+Set/change the voxel grid resolution\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresolution\fP side length of voxels 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::setStepSize (double step_size)\fC [inline]\fP"
+
+.PP
+Set/change the newton line search maximum step length\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstep_size\fP maximum step length 
+.RE
+.PP
+
+.PP
+Definition at line 151 of file ndt\&.h\&.
+.SS "template<typename PointSource , typename PointTarget > double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::trialValueSelectionMT (double a_l, double f_l, double g_l, double a_u, double f_u, double g_u, double a_t, double f_t, double g_t)\fC [protected]\fP"
+
+.PP
+Select new trial value for More-Thuente method\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Trial Value Selection [More, Thuente 1994], $ \psi(\alpha_k) $ is used for $ f_k $ and $ g_k $ until some value satifies the test $ \psi(\alpha_k) \leq 0 $ and $ \phi'(\alpha_k) \geq 0 $ then $ \phi(\alpha_k) $ is used from then on\&. 
+.PP
+Interpolation Minimizer equations from Optimization Theory and Methods: Nonlinear Programming By Wenyu Sun, Ya-xiang Yuan (89-100)\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa_l\fP first endpoint of interval $ I $, $ \alpha_l $ in Moore-Thuente (1994) 
+.br
+\fIf_l\fP value at first endpoint, $ f_l $ in Moore-Thuente (1994) 
+.br
+\fIg_l\fP derivative at first endpoint, $ g_l $ in Moore-Thuente (1994) 
+.br
+\fIa_u\fP second endpoint of interval $ I $, $ \alpha_u $ in Moore-Thuente (1994) 
+.br
+\fIf_u\fP value at second endpoint, $ f_u $ in Moore-Thuente (1994) 
+.br
+\fIg_u\fP derivative at second endpoint, $ g_u $ in Moore-Thuente (1994) 
+.br
+\fIa_t\fP previous trial value, $ \alpha_t $ in Moore-Thuente (1994) 
+.br
+\fIf_t\fP value at previous trial value, $ f_t $ in Moore-Thuente (1994) 
+.br
+\fIg_t\fP derivative at previous trial value, $ g_t $ in Moore-Thuente (1994) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+new trial value 
+.RE
+.PP
+
+.PP
+Definition at line 591 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::updateDerivatives (Eigen::Matrix< double, 6, 1 > & score_gradient, Eigen::Matrix< double, 6, 6 > & hessian, Eigen::Vector3d & x_trans, Eigen::Matrix3d & c_inv, bool compute_hessian = \fCtrue\fP)\fC [protected]\fP"
+
+.PP
+Compute individual point contirbutions to derivatives of probability function w\&.r\&.t\&. the transformation vector\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.10, 6\&.12 and 6\&.13 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscore_gradient\fP the gradient vector of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fIhessian\fP the hessian matrix of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fIx_trans\fP transformed point minus mean of occupied covariance voxel 
+.br
+\fIc_inv\fP covariance of occupied covariance voxel 
+.br
+\fIcompute_hessian\fP flag to calculate hessian, unnessissary for step calculation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 421 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > void \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::updateHessian (Eigen::Matrix< double, 6, 6 > & hessian, Eigen::Vector3d & x_trans, Eigen::Matrix3d & c_inv)\fC [protected]\fP"
+
+.PP
+Compute individual point contirbutions to hessian of probability function w\&.r\&.t\&. the transformation vector\&. 
+.PP
+\fBNote:\fP
+.RS 4
+Equation 6\&.13 [Magnusson 2009]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhessian\fP the hessian matrix of the probability function w\&.r\&.t\&. the transformation vector 
+.br
+\fIx_trans\fP transformed point minus mean of occupied covariance voxel 
+.br
+\fIc_inv\fP covariance of occupied covariance voxel 
+.RE
+.PP
+
+.PP
+Definition at line 519 of file ndt\&.hpp\&.
+.SS "template<typename PointSource , typename PointTarget > bool \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::updateIntervalMT (double & a_l, double & f_l, double & g_l, double & a_u, double & f_u, double & g_u, double a_t, double f_t, double g_t)\fC [protected]\fP"
+
+.PP
+Update interval of possible step lengths for More-Thuente method, $ I $ in More-Thuente (1994) 
+.PP
+\fBNote:\fP
+.RS 4
+Updating Algorithm until some value satifies $ \psi(\alpha_k) \leq 0 $ and $ \phi'(\alpha_k) \geq 0 $ and Modified Updating Algorithm from then on [More, Thuente 1994]\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa_l\fP first endpoint of interval $ I $, $ \alpha_l $ in Moore-Thuente (1994) 
+.br
+\fIf_l\fP value at first endpoint, $ f_l $ in Moore-Thuente (1994), $ \psi(\alpha_l) $ for Update Algorithm and $ \phi(\alpha_l) $ for Modified Update Algorithm 
+.br
+\fIg_l\fP derivative at first endpoint, $ g_l $ in Moore-Thuente (1994), $ \psi'(\alpha_l) $ for Update Algorithm and $ \phi'(\alpha_l) $ for Modified Update Algorithm 
+.br
+\fIa_u\fP second endpoint of interval $ I $, $ \alpha_u $ in Moore-Thuente (1994) 
+.br
+\fIf_u\fP value at second endpoint, $ f_u $ in Moore-Thuente (1994), $ \psi(\alpha_u) $ for Update Algorithm and $ \phi(\alpha_u) $ for Modified Update Algorithm 
+.br
+\fIg_u\fP derivative at second endpoint, $ g_u $ in Moore-Thuente (1994), $ \psi'(\alpha_u) $ for Update Algorithm and $ \phi'(\alpha_u) $ for Modified Update Algorithm 
+.br
+\fIa_t\fP trial value, $ \alpha_t $ in Moore-Thuente (1994) 
+.br
+\fIf_t\fP value at trial value, $ f_t $ in Moore-Thuente (1994), $ \psi(\alpha_t) $ for Update Algorithm and $ \phi(\alpha_t) $ for Modified Update Algorithm 
+.br
+\fIg_t\fP derivative at trial value, $ g_t $ in Moore-Thuente (1994), $ \psi'(\alpha_t) $ for Update Algorithm and $ \phi'(\alpha_t) $ for Modified Update Algorithm 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+if interval converges 
+.RE
+.PP
+
+.PP
+Definition at line 550 of file ndt\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::gauss_d1_\fC [protected]\fP"
+
+.PP
+The normalization constants used fit the point distribution to a normal distribution, Equation 6\&.8 [Magnusson 2009]\&. 
+.PP
+Definition at line 434 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::gauss_d2_\fC [protected]\fP"
+
+.PP
+Definition at line 434 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_a2_\fC [protected]\fP"
+
+.PP
+Precomputed Angular Hessian\&. The precomputed angular derivatives for the hessian of a transformation vector, Equation 6\&.19 [Magnusson 2009]\&. 
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_a3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_b2_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_b3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_c2_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_c3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_d1_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_d2_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_d3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_e1_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_e2_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_e3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_f1_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_f2_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::h_ang_f3_\fC [protected]\fP"
+
+.PP
+Definition at line 449 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_a_\fC [protected]\fP"
+
+.PP
+Precomputed Angular Gradient\&. The precomputed angular derivatives for the jacobian of a transformation vector, Equation 6\&.19 [Magnusson 2009]\&. 
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_b_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_c_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_d_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_e_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_f_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_g_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Vector3d \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::j_ang_h_\fC [protected]\fP"
+
+.PP
+Definition at line 443 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::outlier_ratio_\fC [protected]\fP"
+
+.PP
+The ratio of outliers of points w\&.r\&.t\&. a normal distribution, Equation 6\&.7 [Magnusson 2009]\&. 
+.PP
+Definition at line 431 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Matrix<double, 3, 6> \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::point_gradient_\fC [protected]\fP"
+
+.PP
+The first order derivative of the transformation of a point w\&.r\&.t\&. the transform vector, $ J_E $ in Equation 6\&.18 [Magnusson 2009]\&. 
+.PP
+Definition at line 457 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> Eigen::Matrix<double, 18, 6> \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::point_hessian_\fC [protected]\fP"
+
+.PP
+The second order derivative of the transformation of a point w\&.r\&.t\&. the transform vector, $ H_E $ in Equation 6\&.20 [Magnusson 2009]\&. 
+.PP
+Definition at line 460 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> float \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::resolution_\fC [protected]\fP"
+
+.PP
+The side length of voxels\&. 
+.PP
+Definition at line 425 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::step_size_\fC [protected]\fP"
+
+.PP
+The maximum step length\&. 
+.PP
+Definition at line 428 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> \fBTargetGrid\fP \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::target_cells_\fC [protected]\fP"
+
+.PP
+The voxel grid generated from target cloud containing point means and covariances\&. 
+.PP
+Definition at line 420 of file ndt\&.h\&.
+.SS "template<typename PointSource, typename PointTarget> double \fBpcl_omp::NormalDistributionsTransform\fP< PointSource, PointTarget >::trans_probability_\fC [protected]\fP"
+
+.PP
+The probability score of the transform applied to the input cloud, Equation 6\&.9 and 6\&.10 [Magnusson 2009]\&. 
+.PP
+Definition at line 437 of file ndt\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

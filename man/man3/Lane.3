@@ -1,0 +1,218 @@
+.TH "Lane" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Lane \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vector_map\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLane\fP ()"
+.br
+.ti -1c
+.RI "\fBLane\fP (CvPoint a, CvPoint \fBb\fP, float \fBangle\fP, float kl, float bl)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBlnid\fP"
+.br
+.ti -1c
+.RI "int \fBdid\fP"
+.br
+.ti -1c
+.RI "int \fBblid\fP"
+.br
+.ti -1c
+.RI "int \fBflid\fP"
+.br
+.ti -1c
+.RI "int \fBbnid\fP"
+.br
+.ti -1c
+.RI "int \fBfnid\fP"
+.br
+.ti -1c
+.RI "int \fBjct\fP"
+.br
+.ti -1c
+.RI "int \fBblid2\fP"
+.br
+.ti -1c
+.RI "int \fBblid3\fP"
+.br
+.ti -1c
+.RI "int \fBblid4\fP"
+.br
+.ti -1c
+.RI "int \fBflid2\fP"
+.br
+.ti -1c
+.RI "int \fBflid3\fP"
+.br
+.ti -1c
+.RI "int \fBflid4\fP"
+.br
+.ti -1c
+.RI "int \fBclossid\fP"
+.br
+.ti -1c
+.RI "double \fBspan\fP"
+.br
+.ti -1c
+.RI "int \fBlcnt\fP"
+.br
+.ti -1c
+.RI "int \fBlno\fP"
+.br
+.ti -1c
+.RI "CvPoint \fBp0\fP"
+.br
+.ti -1c
+.RI "CvPoint \fBp1\fP"
+.br
+.ti -1c
+.RI "float \fBangle\fP"
+.br
+.ti -1c
+.RI "int \fBvotes\fP"
+.br
+.ti -1c
+.RI "bool \fBvisited\fP"
+.br
+.ti -1c
+.RI "bool \fBfound\fP"
+.br
+.ti -1c
+.RI "float \fBk\fP"
+.br
+.ti -1c
+.RI "float \fBb\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file vector_map\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Lane::Lane ()\fC [inline]\fP"
+
+.PP
+Definition at line 67 of file vision_lane_detect\&.cpp\&.
+.SS "Lane::Lane (CvPoint a, CvPoint b, float angle, float kl, float bl)\fC [inline]\fP"
+
+.PP
+Definition at line 68 of file vision_lane_detect\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float Lane::angle"
+
+.PP
+Definition at line 71 of file vision_lane_detect\&.cpp\&.
+.SS "float Lane::b"
+
+.PP
+Definition at line 74 of file vision_lane_detect\&.cpp\&.
+.SS "int Lane::blid"
+
+.PP
+Definition at line 83 of file vector_map\&.h\&.
+.SS "int Lane::blid2"
+
+.PP
+Definition at line 88 of file vector_map\&.h\&.
+.SS "int Lane::blid3"
+
+.PP
+Definition at line 89 of file vector_map\&.h\&.
+.SS "int Lane::blid4"
+
+.PP
+Definition at line 90 of file vector_map\&.h\&.
+.SS "int Lane::bnid"
+
+.PP
+Definition at line 85 of file vector_map\&.h\&.
+.SS "int Lane::clossid"
+
+.PP
+Definition at line 94 of file vector_map\&.h\&.
+.SS "int Lane::did"
+
+.PP
+Definition at line 82 of file vector_map\&.h\&.
+.SS "int Lane::flid"
+
+.PP
+Definition at line 84 of file vector_map\&.h\&.
+.SS "int Lane::flid2"
+
+.PP
+Definition at line 91 of file vector_map\&.h\&.
+.SS "int Lane::flid3"
+
+.PP
+Definition at line 92 of file vector_map\&.h\&.
+.SS "int Lane::flid4"
+
+.PP
+Definition at line 93 of file vector_map\&.h\&.
+.SS "int Lane::fnid"
+
+.PP
+Definition at line 86 of file vector_map\&.h\&.
+.SS "bool Lane::found"
+
+.PP
+Definition at line 73 of file vision_lane_detect\&.cpp\&.
+.SS "int Lane::jct"
+
+.PP
+Definition at line 87 of file vector_map\&.h\&.
+.SS "float Lane::k"
+
+.PP
+Definition at line 74 of file vision_lane_detect\&.cpp\&.
+.SS "int Lane::lcnt"
+
+.PP
+Definition at line 96 of file vector_map\&.h\&.
+.SS "int Lane::lnid"
+
+.PP
+Definition at line 81 of file vector_map\&.h\&.
+.SS "int Lane::lno"
+
+.PP
+Definition at line 97 of file vector_map\&.h\&.
+.SS "CvPoint Lane::p0"
+
+.PP
+Definition at line 70 of file vision_lane_detect\&.cpp\&.
+.SS "CvPoint Lane::p1"
+
+.PP
+Definition at line 70 of file vision_lane_detect\&.cpp\&.
+.SS "double Lane::span"
+
+.PP
+Definition at line 95 of file vector_map\&.h\&.
+.SS "bool Lane::visited"
+
+.PP
+Definition at line 73 of file vision_lane_detect\&.cpp\&.
+.SS "int Lane::votes"
+
+.PP
+Definition at line 72 of file vision_lane_detect\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

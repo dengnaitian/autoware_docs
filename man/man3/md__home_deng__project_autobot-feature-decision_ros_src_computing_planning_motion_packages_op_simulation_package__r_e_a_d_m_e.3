@@ -1,0 +1,132 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_simulation_package__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_simulation_package__r_e_a_d_m_e \- OpenPlanner - Simulator 
+Collection of nodes developed to help testing planning algorithm, it could be used with any planner\&. it consists of three main modules (perception simulator, traffic lights simulator, vehicle simulator)
+.PP
+\fCDemo Movie\fP
+.PP
+.SS "op_car_simulator_i"
+.PP
+This node simulate a vehicle and its motion, it uses global planning and local planning libraries exactly as OpenPlanner with minor differences\&. user can launch any number of simulated vehicles with simple customization\&. currently there are 5 simulated vehicles as an example in autoware\&.
+.PP
+_i represents the id of the simulated vehicle\&.
+.PP
+.SS "Outputs"
+.PP
+simulated vehicle position, TF and its dimentions\&.
+.PP
+.SS "Options"
+.PP
+.IP "\(bu" 2
+plan and move from start position to goal position\&.
+.IP "\(bu" 2
+start and goal position are recorder so it starts automatically every time use launches the node\&.
+.IP "\(bu" 2
+user can set auto replay , which start the vehicle again when it arrives to the goal\&.
+.IP "\(bu" 2
+user can log all simulated vehicles internal state
+.IP "\(bu" 2
+could be controlled by game wheel manually
+.IP "\(bu" 2
+motion could be controled frame by frame for testing with time intervals (0\&.1) second\&.
+.PP
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+\fBVector\fP map
+.PP
+.IP "1." 4
+Start/Goal points
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_simulation_package op_car_simulator_i\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Simulator -> op_car_simulator_i
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+similar to Local planner parameters
+.PP
+.PP
+.SS "op_signs_simulator"
+.PP
+This node simulates traffic lights for only one intersection with interchangable traffic lights\&. user can specify two sets of traffic lights, and the node will switch between them (green, red), yellow is considered as red\&.
+.PP
+.SS "Outputs"
+.PP
+.IP "\(bu" 2
+/roi_signal [autoware_msgs::Signals]
+.PP
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+vector map with signal information\&.
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_simulation_package op_signs_simulator\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Simulator -> op_signs_simulator
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+Ids and time for traffic signs first set
+.IP "\(bu" 2
+Ids and time for traffic signs second set
+.PP
+.PP
+.SS "op_perception_simulator"
+.PP
+This node emulate the object detection using LIDAR data similar to (lidar_euclidean_cluster_detect)\&. The node receives position and dimention from op_car_simulator_i then generate noisy point cloud for each vehicle, then send all data as one cluster_cloud to lidar_kf_contour_track
+.PP
+.SS "Outputs"
+.PP
+.IP "\(bu" 2
+/cloud_clusters [autoware_msgs::CloudClusterArray]
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_simulation_package op_perception_simulator\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Simulator -> op_perception_simulator
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+Maximum number of vehicles that will be simulated 
+.PP
+

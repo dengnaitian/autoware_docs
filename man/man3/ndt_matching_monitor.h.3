@@ -1,0 +1,113 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/packages/lidar_localizer/nodes/ndt_matching_monitor/ndt_matching_monitor.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/packages/lidar_localizer/nodes/ndt_matching_monitor/ndt_matching_monitor.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <queue>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/Float32\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include <std_msgs/Bool\&.h>\fP
+.br
+\fC#include <nav_msgs/Odometry\&.h>\fP
+.br
+\fC#include <sensor_msgs/Imu\&.h>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <pcl/io/io\&.h>\fP
+.br
+\fC#include <pcl/io/pcd_io\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <pcl_ros/point_cloud\&.h>\fP
+.br
+\fC#include <pcl_ros/transforms\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseWithCovarianceStamped\&.h>\fP
+.br
+\fC#include <jsk_rviz_plugins/OverlayText\&.h>\fP
+.br
+\fC#include <autoware_msgs/NDTStat\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBROSNDTMatchingMonitor\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__APP_NAME__\fP   'ROSNDTMatchingMonitor'"
+.br
+.ti -1c
+.RI "#define \fBNDT_THRESHOLD_ITERATION_WARN\fP   10"
+.br
+.ti -1c
+.RI "#define \fBNDT_THRESHOLD_ITERATION_STOP\fP   32"
+.br
+.ti -1c
+.RI "#define \fBNDT_THRESHOLD_SCORE_MAX_DELTA\fP   14\&."
+.br
+.ti -1c
+.RI "#define \fBNDT_MIN_STABLE_SAMPLES\fP   30"
+.br
+.ti -1c
+.RI "#define \fBNDT_TIME_TO_FATAL_PREDICTIONS\fP   2\&."
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __APP_NAME__   'ROSNDTMatchingMonitor'"
+
+.PP
+Definition at line 56 of file ndt_matching_monitor\&.h\&.
+.SS "#define NDT_MIN_STABLE_SAMPLES   30"
+
+.PP
+Definition at line 61 of file ndt_matching_monitor\&.h\&.
+.SS "#define NDT_THRESHOLD_ITERATION_STOP   32"
+
+.PP
+Definition at line 59 of file ndt_matching_monitor\&.h\&.
+.SS "#define NDT_THRESHOLD_ITERATION_WARN   10"
+
+.PP
+Definition at line 58 of file ndt_matching_monitor\&.h\&.
+.SS "#define NDT_THRESHOLD_SCORE_MAX_DELTA   14\&."
+
+.PP
+Definition at line 60 of file ndt_matching_monitor\&.h\&.
+.SS "#define NDT_TIME_TO_FATAL_PREDICTIONS   2\&."
+
+.PP
+Definition at line 62 of file ndt_matching_monitor\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

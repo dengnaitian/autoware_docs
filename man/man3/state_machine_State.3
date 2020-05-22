@@ -1,0 +1,165 @@
+.TH "state_machine::State" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+state_machine::State \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <state\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBState\fP (std::string _state_name, uint64_t _state_id, std::shared_ptr< \fBState\fP > _parent_state=NULL)"
+.br
+.ti -1c
+.RI "\fB~State\fP ()"
+.br
+.ti -1c
+.RI "void \fBonUpdate\fP (void)"
+.br
+.ti -1c
+.RI "void \fBonEntry\fP (void)"
+.br
+.ti -1c
+.RI "void \fBonExit\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetCallbackUpdate\fP (std::function< void(const std::string &)> _f)"
+.br
+.ti -1c
+.RI "void \fBsetCallbackEntry\fP (std::function< void(const std::string &)> _f)"
+.br
+.ti -1c
+.RI "void \fBsetCallbackExit\fP (std::function< void(const std::string &)> _f)"
+.br
+.ti -1c
+.RI "void \fBshowStateName\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetParent\fP (std::shared_ptr< \fBState\fP > _parent)"
+.br
+.ti -1c
+.RI "void \fBsetChild\fP (std::shared_ptr< \fBState\fP > _child)"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBState\fP > \fBgetParent\fP ()"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBState\fP > \fBgetChild\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetStateName\fP (void)"
+.br
+.ti -1c
+.RI "void \fBaddTransition\fP (const std::string key, const uint64_t val)"
+.br
+.ti -1c
+.RI "uint64_t \fBgetTansitionVal\fP (std::string key) const "
+.br
+.ti -1c
+.RI "const \fBstd::map\fP< std::string, uint64_t > & \fBgetTransitionMap\fP (void)"
+.br
+.ti -1c
+.RI "uint64_t \fBgetStateID\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetEnteredKey\fP (const std::string &key)"
+.br
+.ti -1c
+.RI "std::string \fBgetEnteredKey\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file state\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "state_machine::State::State (std::string _state_name, uint64_t _state_id, std::shared_ptr< \fBState\fP > _parent_state = \fCNULL\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 37 of file state\&.hpp\&.
+.SS "state_machine::State::~State ()\fC [inline]\fP"
+
+.PP
+Definition at line 49 of file state\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void state_machine::State::addTransition (const std::string key, const uint64_t val)\fC [inline]\fP"
+
+.PP
+Definition at line 123 of file state\&.hpp\&.
+.SS "std::shared_ptr<\fBState\fP> state_machine::State::getChild ()\fC [inline]\fP"
+
+.PP
+Definition at line 114 of file state\&.hpp\&.
+.SS "std::string state_machine::State::getEnteredKey (void)\fC [inline]\fP"
+
+.PP
+Definition at line 146 of file state\&.hpp\&.
+.SS "std::shared_ptr<\fBState\fP> state_machine::State::getParent ()\fC [inline]\fP"
+
+.PP
+Definition at line 110 of file state\&.hpp\&.
+.SS "uint64_t state_machine::State::getStateID (void)\fC [inline]\fP"
+
+.PP
+Definition at line 138 of file state\&.hpp\&.
+.SS "std::string state_machine::State::getStateName (void)\fC [inline]\fP"
+
+.PP
+Definition at line 118 of file state\&.hpp\&.
+.SS "uint64_t state_machine::State::getTansitionVal (std::string key) const\fC [inline]\fP"
+
+.PP
+Definition at line 128 of file state\&.hpp\&.
+.SS "const \fBstd::map\fP<std::string, uint64_t>& state_machine::State::getTransitionMap (void)\fC [inline]\fP"
+
+.PP
+Definition at line 133 of file state\&.hpp\&.
+.SS "void state_machine::State::onEntry (void)\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file state\&.hpp\&.
+.SS "void state_machine::State::onExit (void)\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file state\&.hpp\&.
+.SS "void state_machine::State::onUpdate (void)\fC [inline]\fP"
+
+.PP
+Definition at line 53 of file state\&.hpp\&.
+.SS "void state_machine::State::setCallbackEntry (std::function< void(const std::string &)> _f)\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file state\&.hpp\&.
+.SS "void state_machine::State::setCallbackExit (std::function< void(const std::string &)> _f)\fC [inline]\fP"
+
+.PP
+Definition at line 89 of file state\&.hpp\&.
+.SS "void state_machine::State::setCallbackUpdate (std::function< void(const std::string &)> _f)\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file state\&.hpp\&.
+.SS "void state_machine::State::setChild (std::shared_ptr< \fBState\fP > _child)\fC [inline]\fP"
+
+.PP
+Definition at line 104 of file state\&.hpp\&.
+.SS "void state_machine::State::setEnteredKey (const std::string & key)\fC [inline]\fP"
+
+.PP
+Definition at line 142 of file state\&.hpp\&.
+.SS "void state_machine::State::setParent (std::shared_ptr< \fBState\fP > _parent)\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file state\&.hpp\&.
+.SS "void state_machine::State::showStateName (void)\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file state\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

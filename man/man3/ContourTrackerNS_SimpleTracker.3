@@ -1,0 +1,164 @@
+.TH "ContourTrackerNS::SimpleTracker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ContourTrackerNS::SimpleTracker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleTracker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDoOneStep\fP (const \fBPlannerHNS::WayPoint\fP &currPose, const std::vector< \fBPlannerHNS::DetectedObject\fP > &obj_list, const \fBTRACKING_TYPE\fP &type=\fBSIMPLE_TRACKER\fP)"
+.br
+.ti -1c
+.RI "\fBSimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitSimpleTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitializeInterestRegions\fP (std::vector< \fBInterestCircle\fP * > &regions)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_DetectedObjects\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBInterestCircle\fP * > \fBm_InterestRegions\fP"
+.br
+.ti -1c
+.RI "std::vector< std::pair< \fBPlannerHNS::WayPoint\fP, \fBPlannerHNS::WayPoint\fP > > \fBm_MatchList\fP"
+.br
+.ti -1c
+.RI "double \fBm_dt\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_DISTANCE\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bUseCenterOnly\fP"
+.br
+.ti -1c
+.RI "double \fBm_MaxKeepTime\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bFirstCall\fP"
+.br
+.ti -1c
+.RI "int \fBm_nMinTrustAppearances\fP"
+.br
+.ti -1c
+.RI "double \fBm_Horizon\fP"
+.br
+.ti -1c
+.RI "double \fBm_CirclesResolution\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_SIZE_DIFF\fP"
+.br
+.ti -1c
+.RI "double \fBm_MAX_ASSOCIATION_ANGLE_DIFF\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bEnableStepByStep\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 398 of file SimpleTracker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ContourTrackerNS::SimpleTracker::SimpleTracker ()"
+
+.PP
+Definition at line 34 of file SimpleTracker\&.cpp\&.
+.SS "ContourTrackerNS::SimpleTracker::~SimpleTracker ()\fC [virtual]\fP"
+
+.PP
+Definition at line 57 of file SimpleTracker\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ContourTrackerNS::SimpleTracker::DoOneStep (const \fBPlannerHNS::WayPoint\fP & currPose, const std::vector< \fBPlannerHNS::DetectedObject\fP > & obj_list, const \fBTRACKING_TYPE\fP & type = \fC\fBSIMPLE_TRACKER\fP\fP)"
+
+.PP
+Definition at line 109 of file SimpleTracker\&.cpp\&.
+.SS "void ContourTrackerNS::SimpleTracker::InitializeInterestRegions (std::vector< \fBInterestCircle\fP * > & regions)"
+
+.PP
+Definition at line 73 of file SimpleTracker\&.cpp\&.
+.SS "void ContourTrackerNS::SimpleTracker::InitSimpleTracker ()"
+
+.PP
+Definition at line 51 of file SimpleTracker\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool ContourTrackerNS::SimpleTracker::m_bEnableStepByStep"
+
+.PP
+Definition at line 423 of file SimpleTracker\&.h\&.
+.SS "bool ContourTrackerNS::SimpleTracker::m_bFirstCall"
+
+.PP
+Definition at line 417 of file SimpleTracker\&.h\&.
+.SS "bool ContourTrackerNS::SimpleTracker::m_bUseCenterOnly"
+
+.PP
+Definition at line 415 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_CirclesResolution"
+
+.PP
+Definition at line 420 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> ContourTrackerNS::SimpleTracker::m_DetectedObjects"
+
+.PP
+Definition at line 401 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_dt"
+
+.PP
+Definition at line 413 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_Horizon"
+
+.PP
+Definition at line 419 of file SimpleTracker\&.h\&.
+.SS "std::vector<\fBInterestCircle\fP*> ContourTrackerNS::SimpleTracker::m_InterestRegions"
+
+.PP
+Definition at line 402 of file SimpleTracker\&.h\&.
+.SS "std::vector<std::pair<\fBPlannerHNS::WayPoint\fP, \fBPlannerHNS::WayPoint\fP> > ContourTrackerNS::SimpleTracker::m_MatchList"
+
+.PP
+Definition at line 403 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_MAX_ASSOCIATION_ANGLE_DIFF"
+
+.PP
+Definition at line 422 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_MAX_ASSOCIATION_DISTANCE"
+
+.PP
+Definition at line 414 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_MAX_ASSOCIATION_SIZE_DIFF"
+
+.PP
+Definition at line 421 of file SimpleTracker\&.h\&.
+.SS "double ContourTrackerNS::SimpleTracker::m_MaxKeepTime"
+
+.PP
+Definition at line 416 of file SimpleTracker\&.h\&.
+.SS "int ContourTrackerNS::SimpleTracker::m_nMinTrustAppearances"
+
+.PP
+Definition at line 418 of file SimpleTracker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

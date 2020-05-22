@@ -1,0 +1,272 @@
+.TH "ClipperLib::ClipperBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib::ClipperBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clipper\&.hpp>\fP
+.PP
+Inherited by \fBClipperLib::Clipper\fP\fC [virtual]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClipperBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ClipperBase\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBAddPath\fP (const \fBPath\fP &pg, \fBPolyType\fP PolyTyp, bool Closed)"
+.br
+.ti -1c
+.RI "bool \fBAddPaths\fP (const \fBPaths\fP &ppg, \fBPolyType\fP PolyTyp, bool Closed)"
+.br
+.ti -1c
+.RI "virtual void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "\fBIntRect\fP \fBGetBounds\fP ()"
+.br
+.ti -1c
+.RI "bool \fBPreserveCollinear\fP ()"
+.br
+.ti -1c
+.RI "void \fBPreserveCollinear\fP (bool value)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBLocalMinimum\fP > \fBMinimaList\fP"
+.br
+.ti -1c
+.RI "typedef std::priority_queue< \fBcInt\fP > \fBScanbeamList\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDisposeLocalMinimaList\fP ()"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBAddBoundsToLML\fP (\fBTEdge\fP *e, bool IsClosed)"
+.br
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBProcessBound\fP (\fBTEdge\fP *E, bool IsClockwise)"
+.br
+.ti -1c
+.RI "void \fBInsertScanbeam\fP (const \fBcInt\fP Y)"
+.br
+.ti -1c
+.RI "bool \fBPopScanbeam\fP (\fBcInt\fP &Y)"
+.br
+.ti -1c
+.RI "bool \fBLocalMinimaPending\fP ()"
+.br
+.ti -1c
+.RI "bool \fBPopLocalMinima\fP (\fBcInt\fP Y, const \fBLocalMinimum\fP *&locMin)"
+.br
+.ti -1c
+.RI "\fBOutRec\fP * \fBCreateOutRec\fP ()"
+.br
+.ti -1c
+.RI "void \fBDisposeAllOutRecs\fP ()"
+.br
+.ti -1c
+.RI "void \fBDisposeOutRec\fP (PolyOutList::size_type index)"
+.br
+.ti -1c
+.RI "void \fBSwapPositionsInAEL\fP (\fBTEdge\fP *edge1, \fBTEdge\fP *edge2)"
+.br
+.ti -1c
+.RI "void \fBDeleteFromAEL\fP (\fBTEdge\fP *e)"
+.br
+.ti -1c
+.RI "void \fBUpdateEdgeIntoAEL\fP (\fBTEdge\fP *&e)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "MinimaList::iterator \fBm_CurrentLM\fP"
+.br
+.ti -1c
+.RI "\fBMinimaList\fP \fBm_MinimaList\fP"
+.br
+.ti -1c
+.RI "bool \fBm_UseFullRange\fP"
+.br
+.ti -1c
+.RI "\fBEdgeList\fP \fBm_edges\fP"
+.br
+.ti -1c
+.RI "bool \fBm_PreserveCollinear\fP"
+.br
+.ti -1c
+.RI "bool \fBm_HasOpenPaths\fP"
+.br
+.ti -1c
+.RI "\fBPolyOutList\fP \fBm_PolyOuts\fP"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBm_ActiveEdges\fP"
+.br
+.ti -1c
+.RI "\fBScanbeamList\fP \fBm_Scanbeam\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 302 of file clipper\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBLocalMinimum\fP> \fBClipperLib::ClipperBase::MinimaList\fP\fC [protected]\fP"
+
+.PP
+Definition at line 355 of file clipper\&.hpp\&.
+.SS "typedef std::priority_queue<\fBcInt\fP> \fBClipperLib::ClipperBase::ScanbeamList\fP\fC [protected]\fP"
+
+.PP
+Definition at line 366 of file clipper\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClipperLib::ClipperBase::ClipperBase ()"
+
+.PP
+Definition at line 964 of file clipper\&.cpp\&.
+.SS "ClipperLib::ClipperBase::~ClipperBase ()\fC [virtual]\fP"
+
+.PP
+Definition at line 971 of file clipper\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTEdge\fP* ClipperLib::ClipperBase::AddBoundsToLML (\fBTEdge\fP * e, bool IsClosed)\fC [protected]\fP"
+
+.SS "bool ClipperLib::ClipperBase::AddPath (const \fBPath\fP & pg, \fBPolyType\fP PolyTyp, bool Closed)\fC [virtual]\fP"
+
+.PP
+Definition at line 1139 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::ClipperBase::AddPaths (const \fBPaths\fP & ppg, \fBPolyType\fP PolyTyp, bool Closed)"
+
+.PP
+Definition at line 1336 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::Clear ()\fC [virtual]\fP"
+
+.PP
+Definition at line 1346 of file clipper\&.cpp\&.
+.SS "\fBOutRec\fP * ClipperLib::ClipperBase::CreateOutRec ()\fC [protected]\fP"
+
+.PP
+Definition at line 1510 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::DeleteFromAEL (\fBTEdge\fP * e)\fC [protected]\fP"
+
+.PP
+Definition at line 1493 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::DisposeAllOutRecs ()\fC [protected]\fP"
+
+.PP
+Definition at line 1475 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::DisposeLocalMinimaList ()\fC [protected]\fP"
+
+.PP
+Definition at line 1393 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::DisposeOutRec (PolyOutList::size_type index)\fC [protected]\fP"
+
+.PP
+Definition at line 1483 of file clipper\&.cpp\&.
+.SS "\fBIntRect\fP ClipperLib::ClipperBase::GetBounds ()"
+
+.PP
+Definition at line 1410 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::InsertScanbeam (const \fBcInt\fP Y)\fC [protected]\fP"
+
+.PP
+Definition at line 1455 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::ClipperBase::LocalMinimaPending ()\fC [protected]\fP"
+
+.PP
+Definition at line 1608 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::ClipperBase::PopLocalMinima (\fBcInt\fP Y, const \fBLocalMinimum\fP *& locMin)\fC [protected]\fP"
+
+.PP
+Definition at line 1400 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::ClipperBase::PopScanbeam (\fBcInt\fP & Y)\fC [protected]\fP"
+
+.PP
+Definition at line 1461 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::ClipperBase::PreserveCollinear ()\fC [inline]\fP"
+
+.PP
+Definition at line 317 of file clipper\&.hpp\&.
+.SS "void ClipperLib::ClipperBase::PreserveCollinear (bool value)\fC [inline]\fP"
+
+.PP
+Definition at line 322 of file clipper\&.hpp\&.
+.SS "\fBTEdge\fP * ClipperLib::ClipperBase::ProcessBound (\fBTEdge\fP * E, bool IsClockwise)\fC [protected]\fP"
+
+.PP
+Definition at line 1014 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::Reset ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 1360 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::SwapPositionsInAEL (\fBTEdge\fP * edge1, \fBTEdge\fP * edge2)\fC [protected]\fP"
+
+.PP
+Definition at line 1525 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperBase::UpdateEdgeIntoAEL (\fBTEdge\fP *& e)\fC [protected]\fP"
+
+.PP
+Definition at line 1581 of file clipper\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBTEdge\fP* ClipperLib::ClipperBase::m_ActiveEdges\fC [protected]\fP"
+
+.PP
+Definition at line 364 of file clipper\&.hpp\&.
+.SS "MinimaList::iterator ClipperLib::ClipperBase::m_CurrentLM\fC [protected]\fP"
+
+.PP
+Definition at line 356 of file clipper\&.hpp\&.
+.SS "\fBEdgeList\fP ClipperLib::ClipperBase::m_edges\fC [protected]\fP"
+
+.PP
+Definition at line 360 of file clipper\&.hpp\&.
+.SS "bool ClipperLib::ClipperBase::m_HasOpenPaths\fC [protected]\fP"
+
+.PP
+Definition at line 362 of file clipper\&.hpp\&.
+.SS "\fBMinimaList\fP ClipperLib::ClipperBase::m_MinimaList\fC [protected]\fP"
+
+.PP
+Definition at line 357 of file clipper\&.hpp\&.
+.SS "\fBPolyOutList\fP ClipperLib::ClipperBase::m_PolyOuts\fC [protected]\fP"
+
+.PP
+Definition at line 363 of file clipper\&.hpp\&.
+.SS "bool ClipperLib::ClipperBase::m_PreserveCollinear\fC [protected]\fP"
+
+.PP
+Definition at line 361 of file clipper\&.hpp\&.
+.SS "\fBScanbeamList\fP ClipperLib::ClipperBase::m_Scanbeam\fC [protected]\fP"
+
+.PP
+Definition at line 367 of file clipper\&.hpp\&.
+.SS "bool ClipperLib::ClipperBase::m_UseFullRange\fC [protected]\fP"
+
+.PP
+Definition at line 359 of file clipper\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,225 @@
+.TH "cpu::VoxelGrid< PointSourceType >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cpu::VoxelGrid< PointSourceType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VoxelGrid\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVoxelGrid\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInput\fP (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr input)"
+.br
+.ti -1c
+.RI "void \fBradiusSearch\fP (PointSourceType query_point, float radius, std::vector< int > &voxel_ids, int max_nn=INT_MAX)"
+.br
+.ti -1c
+.RI "int \fBgetVoxelNum\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxZ\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinZ\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridZ\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLeafSize\fP (float voxel_x, float voxel_y, float voxel_z)"
+.br
+.ti -1c
+.RI "double \fBnearestNeighborDistance\fP (PointSourceType query_point, float max_range)"
+.br
+.ti -1c
+.RI "Eigen::Vector3d \fBgetCentroid\fP (int voxel_id) const "
+.br
+.ti -1c
+.RI "Eigen::Matrix3d \fBgetCovariance\fP (int voxel_id) const "
+.br
+.ti -1c
+.RI "Eigen::Matrix3d \fBgetInverseCovariance\fP (int voxel_id) const "
+.br
+.ti -1c
+.RI "void \fBupdate\fP (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr new_cloud)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSourceType>
+.br
+class cpu::VoxelGrid< PointSourceType >"
+
+.PP
+Definition at line 17 of file VoxelGrid\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSourceType > \fBcpu::VoxelGrid\fP< PointSourceType >::\fBVoxelGrid\fP ()"
+
+.PP
+Definition at line 18 of file VoxelGrid\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSourceType > Eigen::Vector3d \fBcpu::VoxelGrid\fP< PointSourceType >::getCentroid (int voxel_id) const"
+
+.PP
+Definition at line 209 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType> Eigen::Matrix3d \fBcpu::VoxelGrid\fP< PointSourceType >::getCovariance (int voxel_id) const"
+
+.SS "template<typename PointSourceType > Eigen::Matrix3d \fBcpu::VoxelGrid\fP< PointSourceType >::getInverseCovariance (int voxel_id) const"
+
+.PP
+Definition at line 215 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxBX () const"
+
+.PP
+Definition at line 155 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxBY () const"
+
+.PP
+Definition at line 161 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxBZ () const"
+
+.PP
+Definition at line 167 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxX () const"
+
+.PP
+Definition at line 101 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxY () const"
+
+.PP
+Definition at line 107 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMaxZ () const"
+
+.PP
+Definition at line 113 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMinBX () const"
+
+.PP
+Definition at line 173 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMinBY () const"
+
+.PP
+Definition at line 179 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getMinBZ () const"
+
+.PP
+Definition at line 185 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMinX () const"
+
+.PP
+Definition at line 119 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMinY () const"
+
+.PP
+Definition at line 125 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getMinZ () const"
+
+.PP
+Definition at line 131 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getVgridX () const"
+
+.PP
+Definition at line 191 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getVgridY () const"
+
+.PP
+Definition at line 197 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getVgridZ () const"
+
+.PP
+Definition at line 203 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > int \fBcpu::VoxelGrid\fP< PointSourceType >::getVoxelNum () const"
+
+.PP
+Definition at line 95 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getVoxelX () const"
+
+.PP
+Definition at line 137 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getVoxelY () const"
+
+.PP
+Definition at line 143 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > float \fBcpu::VoxelGrid\fP< PointSourceType >::getVoxelZ () const"
+
+.PP
+Definition at line 149 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > double \fBcpu::VoxelGrid\fP< PointSourceType >::nearestNeighborDistance (PointSourceType query_point, float max_range)"
+
+.PP
+Definition at line 521 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::VoxelGrid\fP< PointSourceType >::radiusSearch (PointSourceType query_point, float radius, std::vector< int > & voxel_ids, int max_nn = \fCINT_MAX\fP)"
+
+.PP
+Definition at line 406 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::VoxelGrid\fP< PointSourceType >::setInput (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr input)"
+
+.PP
+Definition at line 310 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::VoxelGrid\fP< PointSourceType >::setLeafSize (float voxel_x, float voxel_y, float voxel_z)"
+
+.PP
+Definition at line 221 of file VoxelGrid\&.cpp\&.
+.SS "template<typename PointSourceType > void \fBcpu::VoxelGrid\fP< PointSourceType >::update (typename \fBpcl::PointCloud\fP< PointSourceType >::Ptr new_cloud)"
+
+.PP
+Definition at line 677 of file VoxelGrid\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

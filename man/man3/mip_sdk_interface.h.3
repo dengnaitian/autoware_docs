@@ -1,0 +1,720 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/mip_sdk_interface.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Include/mip_sdk_interface.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip\&.h'\fP
+.br
+\fC#include 'mip_sdk_config\&.h'\fP
+.br
+\fC#include 'mip_sdk_user_functions\&.h'\fP
+.br
+\fC#include 'ring_buffer\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_mip_interface\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_INPUT_RING_BUFFER_SIZE\fP   \fBMIP_MAX_PACKET_SIZE\fP"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_CALLBACK_VALID_PACKET\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_CALLBACK_CHECKSUM_ERROR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_CALLBACK_TIMEOUT\fP   2"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_OK\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_ERROR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_TIMEOUT\fP   0"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_NO_TIMEOUT\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_INITIALIZED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBMIP_INTERFACE_UNINITIALIZED\fP   0"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBparser_callback_ptr\fP) (void *, \fBu8\fP *, \fBu16\fP, \fBu8\fP)"
+.br
+.ti -1c
+.RI "typedef struct \fB_mip_interface\fP \fBmip_interface\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_init\fP (const char *portstr, \fBu32\fP baudrate, \fBmip_interface\fP *device_interface, \fBu32\fP packet_timeout_val)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_close\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_add_descriptor_set_callback\fP (\fBmip_interface\fP *device_interface, \fBu8\fP data_set, void *user_ptr, void(*packet_callback)(void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type))"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_delete_descriptor_set_callback\fP (\fBmip_interface\fP *device_interface, \fBu8\fP data_set)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_update\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_send_command\fP (\fBmip_interface\fP *device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP *command_data, \fBu16\fP command_data_size, \fBu8\fP wait_for_response, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_send_preformatted_command\fP (\fBmip_interface\fP *device_interface, \fBu8\fP *command, \fBu16\fP command_size, \fBu8\fP wait_for_response, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_send_command_with_response\fP (\fBmip_interface\fP *device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP *command_data, \fBu16\fP command_data_size, \fBu8\fP **response_data, \fBu16\fP *response_data_size, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_send_preformatted_command_with_response\fP (\fBmip_interface\fP *device_interface, \fBu8\fP *command, \fBu16\fP command_size, \fBu8\fP **response_data, \fBu16\fP *response_data_size, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_write\fP (\fBmip_interface\fP *device_interface, \fBu8\fP *\fBdata\fP, \fBu32\fP num_bytes, \fBu32\fP *bytes_written)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_interface_write_blocking\fP (\fBmip_interface\fP *device_interface, \fBu8\fP *\fBdata\fP, \fBu32\fP num_bytes, \fBu32\fP *bytes_written, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fB__mip_interface_parse_input_buffer\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fB__mip_interface_find_callback\fP (\fBmip_interface\fP *device_interface, \fBu8\fP data_set, void **callback_user_ptr, \fBparser_callback_ptr\fP *callback_function)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fB__mip_interface_time_timeout\fP (\fBu32\fP initial_time, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fB__mip_interface_wait_for_response\fP (\fBmip_interface\fP *device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP *acknack_response, \fBu8\fP **response_data, \fBu16\fP *response_data_size, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "void \fB__mip_interface_command_response_handler\fP (void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_interface\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MIP_INTERFACE_CALLBACK_CHECKSUM_ERROR   1"
+
+.PP
+Definition at line 59 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_CALLBACK_TIMEOUT   2"
+
+.PP
+Definition at line 60 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_CALLBACK_VALID_PACKET   0"
+
+.PP
+Definition at line 58 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_ERROR   1"
+
+.PP
+Definition at line 63 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_INITIALIZED   1"
+
+.PP
+Definition at line 68 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_INPUT_RING_BUFFER_SIZE   \fBMIP_MAX_PACKET_SIZE\fP"
+
+.PP
+Definition at line 55 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_NO_TIMEOUT   1"
+
+.PP
+Definition at line 66 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_OK   0"
+
+.PP
+Definition at line 62 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_TIMEOUT   0"
+
+.PP
+Definition at line 65 of file mip_sdk_interface\&.h\&.
+.SS "#define MIP_INTERFACE_UNINITIALIZED   0"
+
+.PP
+Definition at line 69 of file mip_sdk_interface\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_mip_interface\fP \fBmip_interface\fP"
+
+.SS "typedef void(* parser_callback_ptr) (void *, \fBu8\fP *, \fBu16\fP, \fBu8\fP)"
+
+.PP
+Definition at line 71 of file mip_sdk_interface\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void __mip_interface_command_response_handler (void * user_ptr, \fBu8\fP * packet, \fBu16\fP packet_size, \fBu8\fP callback_type)"
+
+.SH "DESCRIPTION"
+.PP
+Command-Response Handler\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *user_ptr - Pointer to the user data for this callback\&. 
+.br
+\fIu8\fP *packet - The MIP packet that matches the waiting command set\&. 
+.br
+\fIu16\fP packet_size - Size of the MIP packet\&. 
+.br
+\fIu8\fP callback_type - Type of callback\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This is an internal function\&. 
+.PP
+Definition at line 721 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP __mip_interface_find_callback (\fBmip_interface\fP * device_interface, \fBu8\fP data_set, void ** callback_user_ptr, \fBparser_callback_ptr\fP * callback_function)"
+
+.SH "DESCRIPTION"
+.PP
+Find the callback info for the provided dataset\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.br
+\fIu8\fP data_set - dataset to search for\&. 
+.br
+\fIvoid\fP *callback_user_ptr - pointer to the user data for the callback\&. 
+.br
+\fIparser_callback_ptr\fP callback_function - pointer to callback function\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The callback could not be located or there was an error\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The callback was located\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This is an internal function\&. 
+.PP
+Definition at line 628 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP __mip_interface_parse_input_buffer (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+Processes the bytes in the input buffer and triggers the callback function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP Interface not initialized\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP Parser ran\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This is an internal function\&. 
+.PP
+Definition at line 435 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP __mip_interface_time_timeout (\fBu32\fP initial_time, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Check for a timeout condition\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu32\fP initial_time - the start time to check against in milliseconds\&. 
+.br
+\fIu32\fP timeout_ms - the timeout period in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_TIMEOUT\fP The timeout has occured\&.
+.br
+.br
+\fIMIP_INTERFACE_NO_TIMEOUT\fP No timeout\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This is an internal function\&. 
+.PP
+Definition at line 679 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP __mip_interface_wait_for_response (\fBmip_interface\fP * device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP * acknack_response, \fBu8\fP ** response_data, \fBu16\fP * response_data_size, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Wait for a Command-Response\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - a pointer to the mip_interface structure\&. 
+.br
+\fIu8\fP command_set - the command set we are waiting for\&. 
+.br
+\fIu8\fP command_descriptor - the command descriptor we are waiting for\&. 
+.br
+\fIu8\fP *acknack_response - the resulting ack/nack response from the device\&. 
+.br
+\fIu8\fP **response_data - a pointer to a pointer to the response data, NULL if no data field exists\&. 
+.br
+\fIu16\fP *response_data_size - size of the response data, 0 if no data field exists\&. 
+.br
+\fIu32\fP timeout_ms - the timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_OK\fP If a response was received\&.
+.br
+.br
+\fIMIP_INTERFACE_ERROR\fP If the response was not received in the timeout period\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This is an internal function\&. 
+.PP
+Definition at line 1045 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_add_descriptor_set_callback (\fBmip_interface\fP * device_interface, \fBu8\fP data_set, void * user_ptr, void(*)(void *user_ptr, \fBu8\fP *packet, \fBu16\fP packet_size, \fBu8\fP callback_type) packet_callback)"
+
+.SH "DESCRIPTION"
+.PP
+Add a callback for the provided descriptor set\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.br
+\fIu8\fP data_set - data set used to trigger the callback\&. 
+.br
+\fIvoid\fP *user_ptr - pointer to the user data, which is passed to the callback\&. 
+.br
+\fIvoid\fP (*packet_callback) - function pointer for packet callback function\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The callback could not be added\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The callback was added successfully\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 240 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_close (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+MIP Interface Close function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The interface was not closed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The interface was successfully closed\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 141 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_delete_descriptor_set_callback (\fBmip_interface\fP * device_interface, \fBu8\fP data_set)"
+
+.SH "DESCRIPTION"
+.PP
+Delete the callback for the provided descriptor set if it exists\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.br
+\fIu8\fP data_set - data set to remove callbacks\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The callback could not be removed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The callback was removed successfully\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 286 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_init (const char * portstr, \fBu32\fP baudrate, \fBmip_interface\fP * device_interface, \fBu32\fP packet_timeout_val)"
+
+.SH "DESCRIPTION"
+.PP
+MIP Interface Initialization function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIu32\fP com_port - The port to interface to\&. 
+.br
+\fIu32\fP baudrate - The baudrate of the port\&. 
+.br
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu32\fP packet_timeout_val - Timeout for the incoming packet in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The interface was not initialized\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The interface was successfully initialized\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 69 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_send_command (\fBmip_interface\fP * device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP * command_data, \fBu16\fP command_data_size, \fBu8\fP wait_for_response, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Send a MIP command and optionally wait for the response data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - a pointer to the mip_interface structure\&. 
+.br
+\fIu8\fP command_set - command set\&. 
+.br
+\fIu8\fP command_descriptor - command descriptor\&. 
+.br
+\fIu8\fP *command_data - preformatted command data\&. 
+.br
+\fIu16\fP command_data_size - size of command data\&. 
+.br
+\fIu8\fP wait_for_response - 1: The function will wait for the response, 0: it will not wait\&. 
+.br
+\fIu32\fP timeout_ms - the timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_OK\fP If a response was received and ACK'd or no resonse requested\&.
+.br
+.br
+\fIMIP_INTERFACE_ERROR\fP If the response was not received in the timeout period or NACK'd\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 802 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_send_command_with_response (\fBmip_interface\fP * device_interface, \fBu8\fP command_set, \fBu8\fP command_descriptor, \fBu8\fP * command_data, \fBu16\fP command_data_size, \fBu8\fP ** response_data, \fBu16\fP * response_data_size, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Send a MIP command and wait for the response data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - a pointer to the mip_interface structure\&. 
+.br
+\fIu8\fP command_set - command set\&. 
+.br
+\fIu8\fP command_descriptor - command descriptor\&. 
+.br
+\fIu8\fP *command_data - preformatted command data\&. 
+.br
+\fIu16\fP command_data_size - size of command data\&. 
+.br
+\fIu8\fP **response_data - pointer to a pointer that will point to the beginning of the response\&. 
+.br
+\fIu16\fP *response_data_size - size of the response data\&. 
+.br
+\fIu32\fP timeout_ms - the timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_OK\fP If a response was received and ACK'd\&.
+.br
+.br
+\fIMIP_INTERFACE_ERROR\fP If the response was not received in the timeout period or NACK'd\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fCresponse_data\fP will point to an internal buffer within the MIP interface\&.
+.br
+The user should copy the information to their own buffer before manipulation\&. 
+.PP
+Definition at line 924 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_send_preformatted_command (\fBmip_interface\fP * device_interface, \fBu8\fP * command, \fBu16\fP command_size, \fBu8\fP wait_for_response, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Send a pre-formatted command and wait for the response data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - a pointer to the mip_interface structure\&. 
+.br
+\fIu8\fP *command - preformatted MIP command\&. 
+.br
+\fIu16\fP command_size - size of MIP command\&. 
+.br
+\fIu8\fP wait_for_response - 1: The function will wait for the response, 0: it will not wait\&. 
+.br
+\fIu32\fP timeout_ms - the timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_OK\fP If a response was received and ACK'd or no resonse requested\&.
+.br
+.br
+\fIMIP_INTERFACE_ERROR\fP If the response was not received in the timeout period or NACK'd\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None\&. 
+.PP
+Definition at line 843 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_send_preformatted_command_with_response (\fBmip_interface\fP * device_interface, \fBu8\fP * command, \fBu16\fP command_size, \fBu8\fP ** response_data, \fBu16\fP * response_data_size, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Send a pre-formatted command and wait for the response data\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - a pointer to the mip_interface structure\&. 
+.br
+\fIu8\fP *command - preformatted MIP command\&. 
+.br
+\fIu16\fP command_size - size of MIP command\&. 
+.br
+\fIu8\fP **response_data - pointer to a pointer that will point to the beginning of the response\&. 
+.br
+\fIu16\fP *response_data_size - size of the response data\&. 
+.br
+\fIu32\fP timeout_ms - the timeout in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_OK\fP If a response was received and ACK'd\&.
+.br
+.br
+\fIMIP_INTERFACE_ERROR\fP If the response was not received in the timeout period or NACK'd\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+\fCresponse_data\fP will point to an internal buffer within the MIP interface\&.
+.br
+The user should copy the information to their own buffer before manipulation\&. 
+.PP
+Definition at line 971 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_update (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+MIP Interface Update function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP The interface was not initialized\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The update step completed\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This function should be called regularly (e\&.g\&. every step of a minor cycle\&.)
+.br
+This is the main loop of the interface\&. 
+.PP
+Definition at line 174 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_write (\fBmip_interface\fP * device_interface, \fBu8\fP * data, \fBu32\fP num_bytes, \fBu32\fP * bytes_written)"
+
+.SH "DESCRIPTION"
+.PP
+Writes \fCnum_bytes\fP of \fCdata\fP to the device interface\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.br
+\fIu8\fP *data - pointer to data buffer to be written\&. 
+.br
+\fIu32\fP num_bytes - the number of bytes to be written\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP Data not written or less than num_bytes written\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP Data written\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This function is used to write bytes from a device to the interface,
+.br
+which will then be parsed\&. 
+.PP
+Definition at line 335 of file mip_sdk_inteface\&.c\&.
+.SS "\fBu16\fP mip_interface_write_blocking (\fBmip_interface\fP * device_interface, \fBu8\fP * data, \fBu32\fP num_bytes, \fBu32\fP * bytes_written, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Writes \fCnum_bytes\fP of \fCdata\fP to the device interface, blocks until the space is available\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - pointer to the mip interface structure\&. 
+.br
+\fIu8\fP *data - pointer to data buffer to be written\&. 
+.br
+\fIu32\fP num_bytes - the number of bytes to be written\&. 
+.br
+\fIu32\fP timeout_ms - the timeout for the write in milliseconds\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP Data not written or less than num_bytes written\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP Data written\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+This function is used to write bytes from a source into the interface,
+.br
+which will then be parsed\&. 
+.PP
+Definition at line 391 of file mip_sdk_inteface\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

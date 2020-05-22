@@ -1,0 +1,62 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/sopas/colab.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/sopas/colab.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'colab\&.hpp'\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cassert>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <limits>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBcolab\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcolab::addStringToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, const std::string &stringValue)"
+.br
+.ti -1c
+.RI "void \fBcolab::addStringToBuffer\fP (\fBBYTE\fP *buffer, const std::string &stringValue)"
+.br
+.ti -1c
+.RI "std::string \fBcolab::getStringFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos, \fBUINT16\fP length)"
+.br
+.ti -1c
+.RI "std::string \fBcolab::getStringFromBuffer\fP (\fBBYTE\fP *&buffer, \fBUINT16\fP length)"
+.br
+.ti -1c
+.RI "std::string \fBcolab::getCommandStringFromBuffer\fP (\fBUINT8\fP *buffer)"
+.br
+.ti -1c
+.RI "std::string \fBcolab::getIdentifierFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &nextData, \fBUINT16\fP bufferLength)"
+.br
+.ti -1c
+.RI "void \fBcolab::addFrameToBuffer\fP (\fBUINT8\fP *sendBuffer, \fBUINT8\fP *cmdBuffer, \fBUINT16\fP *len)"
+.br
+.ti -1c
+.RI "double \fBcolab::getDoubleFromBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP &pos)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolab::decodeUINT16\fP (\fBBYTE\fP *buffer)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

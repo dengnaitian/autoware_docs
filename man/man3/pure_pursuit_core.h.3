@@ -1,0 +1,70 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/pure_pursuit/pure_pursuit_core.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/pure_pursuit/pure_pursuit_core.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/Float32\&.h>\fP
+.br
+\fC#include <visualization_msgs/Marker\&.h>\fP
+.br
+\fC#include 'autoware_config_msgs/ConfigWaypointFollower\&.h'\fP
+.br
+\fC#include 'autoware_msgs/ControlCommandStamped\&.h'\fP
+.br
+\fC#include 'autoware_msgs/Lane\&.h'\fP
+.br
+\fC#include 'pure_pursuit\&.h'\fP
+.br
+\fC#include 'pure_pursuit_viz\&.h'\fP
+.br
+\fC#include <autoware_health_checker/node_status_publisher\&.h>\fP
+.br
+\fC#include <memory>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBwaypoint_follower::PurePursuitNode\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBwaypoint_follower\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBwaypoint_follower::Mode\fP : int32_t { \fBwaypoint_follower::Mode::waypoint\fP, \fBwaypoint_follower::Mode::dialog\fP, \fBwaypoint_follower::Mode::unknown\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > std::underlying_type< T >::type \fBwaypoint_follower::enumToInteger\fP (T \fBt\fP)"
+.br
+.ti -1c
+.RI "double \fBwaypoint_follower::convertCurvatureToSteeringAngle\fP (const double &wheel_base, const double &kappa)"
+.br
+.ti -1c
+.RI "double \fBwaypoint_follower::kmph2mps\fP (double velocity_kmph)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

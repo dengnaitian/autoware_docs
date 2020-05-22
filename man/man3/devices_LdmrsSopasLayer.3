@@ -1,0 +1,332 @@
+.TH "devices::LdmrsSopasLayer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+devices::LdmrsSopasLayer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LdmrsSopasLayer\&.hpp>\fP
+.PP
+Inherits \fBdevices::SopasBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLdmrsSopasLayer\fP (\fBManager\fP *manager, const \fBUINT8\fP deviceID, std::string ipAddress, \fBUINT16\fP portNumber, bool weWantFieldData, bool weWantScanData, bool readOnlyMode)"
+.br
+.ti -1c
+.RI "virtual \fB~LdmrsSopasLayer\fP ()"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (\fBTcp::DisconnectFunction\fP function, void *obj)"
+.br
+.ti -1c
+.RI "bool \fBrun\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_login\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_logout\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_subscribeEvalCaseResults\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_unSubscribeEvalCaseResults\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_subscribeScanData\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_unSubscribeScanData\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_startMeasure\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_stopMeasure\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_readFields\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_readEvalCases\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_readSerialNumber\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_readScanConfig\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_writeField\fP (\fBUINT16\fP fieldNum, const \fBFieldParameter\fP &para)"
+.br
+.ti -1c
+.RI "bool \fBaction_writeEvalCases\fP (const \fBEvalCases\fP &evalCases)"
+.br
+.ti -1c
+.RI "bool \fBaction_flashFieldParameters\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaction_flashMrsParameters\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisFieldDataSubscribed\fP () const "
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBScanFreqEnum\fP { \fBScanFreq1250\fP = 0, \fBScanFreq2500\fP = 1, \fBScanFreq5000\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBSopasVariableByIndex_LDMRS\fP { \fBindex_var_DeviceIdent\fP = 0x00, \fBindex_var_SOPASVersion\fP = 0x01, \fBindex_var_LocationName\fP = 0x02, \fBindex_var_SerialNumber\fP = 0x03, \fBindex_var_FirmwareVersion\fP = 0x04, \fBindex_var_Scanning\fP = 0x05, \fBindex_var_SopasInfo\fP = 0x06, \fBindex_var_InternalFeedback\fP = 0x07, \fBindex_var_TestScanFrequency\fP = 0x08, \fBindex_var_CIDChecksum\fP = 0x09, \fBindex_var_TestScanActive\fP = 0x0a, \fBindex_var_ScanDataConfig\fP = 0x0b, \fBindex_var_AngleDataConfig\fP = 0x0c, \fBindex_var_LayerEchoConfig\fP = 0x0d, \fBindex_var_ScanConfig\fP = 0x0e, \fBindex_var_MeasMode\fP = 0x0f, \fBindex_var_ApplRange\fP = 0x10, \fBindex_var_DataOutputRange\fP = 0x11, \fBindex_var_AutoStartMeasure\fP = 0x12, \fBindex_var_field000\fP = 0x003d, \fBindex_var_field001\fP = 0x003e, \fBindex_var_field002\fP = 0x003f, \fBindex_var_field003\fP = 0x0040, \fBindex_var_field004\fP = 0x0041, \fBindex_var_field005\fP = 0x0042, \fBindex_var_field006\fP = 0x0043, \fBindex_var_field007\fP = 0x0044, \fBindex_var_field008\fP = 0x0045, \fBindex_var_field009\fP = 0x0046, \fBindex_var_field010\fP = 0x0047, \fBindex_var_field011\fP = 0x0048, \fBindex_var_field012\fP = 0x0049, \fBindex_var_field013\fP = 0x004a, \fBindex_var_field014\fP = 0x004b, \fBindex_var_field015\fP = 0x004c, \fBindex_var_numOfParamFields\fP = 0x004d, \fBindex_var_evalCaseParam\fP = 0x004e }"
+.br
+.ti -1c
+.RI "enum \fBSopasMethodByIndex_LDMRS\fP { \fBindex_meth_SetAccessMode\fP = 0x0000, \fBindex_meth_GetAccessMode\fP = 0x0001, \fBindex_meth_Run\fP = 0x0002, \fBindex_meth_FlashFieldParameters\fP = 0x0003, \fBindex_meth_GetDescription\fP = 0x0004, \fBindex_meth_CheckPassword\fP = 0x0005, \fBindex_meth_MthdFlashLUXParameters\fP = 0x0006, \fBindex_meth_mStartMeasure\fP = 0x000b, \fBindex_meth_mStopMeasure\fP = 0x000c }"
+.br
+.ti -1c
+.RI "enum \fBSopasEventByIndex_LDMRS\fP { \fBindex_event_Scanning\fP = 0x0000, \fBindex_event_ScanDataMonitor\fP = 0x0011, \fBindex_event_aEvalCaseResult\fP = 0x0029 }"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBUINT16\fP \fBMAX_NUM_OF_FIELDS\fP = 16"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file LdmrsSopasLayer\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdevices::LdmrsSopasLayer::ScanFreqEnum\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIScanFreq1250 \fP\fP
+.TP
+\fB\fIScanFreq2500 \fP\fP
+.TP
+\fB\fIScanFreq5000 \fP\fP
+.PP
+Definition at line 69 of file LdmrsSopasLayer\&.hpp\&.
+.SS "enum \fBdevices::LdmrsSopasLayer::SopasEventByIndex_LDMRS\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIindex_event_Scanning \fP\fP
+.TP
+\fB\fIindex_event_ScanDataMonitor \fP\fP
+.TP
+\fB\fIindex_event_aEvalCaseResult \fP\fP
+.PP
+Definition at line 134 of file LdmrsSopasLayer\&.hpp\&.
+.SS "enum \fBdevices::LdmrsSopasLayer::SopasMethodByIndex_LDMRS\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIindex_meth_SetAccessMode \fP\fP
+.TP
+\fB\fIindex_meth_GetAccessMode \fP\fP
+.TP
+\fB\fIindex_meth_Run \fP\fP
+.TP
+\fB\fIindex_meth_FlashFieldParameters \fP\fP
+.TP
+\fB\fIindex_meth_GetDescription \fP\fP
+.TP
+\fB\fIindex_meth_CheckPassword \fP\fP
+.TP
+\fB\fIindex_meth_MthdFlashLUXParameters \fP\fP
+.TP
+\fB\fIindex_meth_mStartMeasure \fP\fP
+.TP
+\fB\fIindex_meth_mStopMeasure \fP\fP
+.PP
+Definition at line 121 of file LdmrsSopasLayer\&.hpp\&.
+.SS "enum \fBdevices::LdmrsSopasLayer::SopasVariableByIndex_LDMRS\fP\fC [protected]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIindex_var_DeviceIdent \fP\fP
+.TP
+\fB\fIindex_var_SOPASVersion \fP\fP
+.TP
+\fB\fIindex_var_LocationName \fP\fP
+.TP
+\fB\fIindex_var_SerialNumber \fP\fP
+.TP
+\fB\fIindex_var_FirmwareVersion \fP\fP
+.TP
+\fB\fIindex_var_Scanning \fP\fP
+.TP
+\fB\fIindex_var_SopasInfo \fP\fP
+.TP
+\fB\fIindex_var_InternalFeedback \fP\fP
+.TP
+\fB\fIindex_var_TestScanFrequency \fP\fP
+.TP
+\fB\fIindex_var_CIDChecksum \fP\fP
+.TP
+\fB\fIindex_var_TestScanActive \fP\fP
+.TP
+\fB\fIindex_var_ScanDataConfig \fP\fP
+.TP
+\fB\fIindex_var_AngleDataConfig \fP\fP
+.TP
+\fB\fIindex_var_LayerEchoConfig \fP\fP
+.TP
+\fB\fIindex_var_ScanConfig \fP\fP
+.TP
+\fB\fIindex_var_MeasMode \fP\fP
+.TP
+\fB\fIindex_var_ApplRange \fP\fP
+.TP
+\fB\fIindex_var_DataOutputRange \fP\fP
+.TP
+\fB\fIindex_var_AutoStartMeasure \fP\fP
+.TP
+\fB\fIindex_var_field000 \fP\fP
+.TP
+\fB\fIindex_var_field001 \fP\fP
+.TP
+\fB\fIindex_var_field002 \fP\fP
+.TP
+\fB\fIindex_var_field003 \fP\fP
+.TP
+\fB\fIindex_var_field004 \fP\fP
+.TP
+\fB\fIindex_var_field005 \fP\fP
+.TP
+\fB\fIindex_var_field006 \fP\fP
+.TP
+\fB\fIindex_var_field007 \fP\fP
+.TP
+\fB\fIindex_var_field008 \fP\fP
+.TP
+\fB\fIindex_var_field009 \fP\fP
+.TP
+\fB\fIindex_var_field010 \fP\fP
+.TP
+\fB\fIindex_var_field011 \fP\fP
+.TP
+\fB\fIindex_var_field012 \fP\fP
+.TP
+\fB\fIindex_var_field013 \fP\fP
+.TP
+\fB\fIindex_var_field014 \fP\fP
+.TP
+\fB\fIindex_var_field015 \fP\fP
+.TP
+\fB\fIindex_var_numOfParamFields \fP\fP
+.TP
+\fB\fIindex_var_evalCaseParam \fP\fP
+.PP
+Definition at line 77 of file LdmrsSopasLayer\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "devices::LdmrsSopasLayer::LdmrsSopasLayer (\fBManager\fP * manager, const \fBUINT8\fP deviceID, std::string ipAddress, \fBUINT16\fP portNumber, bool weWantFieldData, bool weWantScanData, bool readOnlyMode)"
+
+.PP
+Definition at line 20 of file LdmrsSopasLayer\&.cpp\&.
+.SS "devices::LdmrsSopasLayer::~LdmrsSopasLayer ()\fC [virtual]\fP"
+
+.PP
+Definition at line 41 of file LdmrsSopasLayer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool devices::LdmrsSopasLayer::action_flashFieldParameters ()"
+
+.PP
+Definition at line 186 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_flashMrsParameters ()"
+
+.PP
+Definition at line 242 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_login ()"
+
+.PP
+Definition at line 300 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_logout ()"
+
+.PP
+Definition at line 363 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_readEvalCases ()"
+
+.PP
+Definition at line 579 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_readFields ()"
+
+.PP
+Definition at line 879 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_readScanConfig ()"
+
+.PP
+Definition at line 532 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_readSerialNumber ()"
+
+.SS "bool devices::LdmrsSopasLayer::action_startMeasure ()"
+
+.SS "bool devices::LdmrsSopasLayer::action_stopMeasure ()"
+
+.SS "bool devices::LdmrsSopasLayer::action_subscribeEvalCaseResults ()"
+
+.PP
+Definition at line 427 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_subscribeScanData ()"
+
+.PP
+Definition at line 478 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_unSubscribeEvalCaseResults ()"
+
+.PP
+Definition at line 455 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_unSubscribeScanData ()"
+
+.PP
+Definition at line 512 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_writeEvalCases (const \fBEvalCases\fP & evalCases)"
+
+.PP
+Definition at line 839 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::action_writeField (\fBUINT16\fP fieldNum, const \fBFieldParameter\fP & para)"
+
+.PP
+Definition at line 798 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::init (\fBTcp::DisconnectFunction\fP function, void * obj)"
+
+.PP
+Definition at line 47 of file LdmrsSopasLayer\&.cpp\&.
+.SS "bool devices::LdmrsSopasLayer::isFieldDataSubscribed () const\fC [inline]\fP"
+
+.PP
+Definition at line 60 of file LdmrsSopasLayer\&.hpp\&.
+.SS "bool devices::LdmrsSopasLayer::run (void)"
+
+.PP
+Definition at line 139 of file LdmrsSopasLayer\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBUINT16\fP devices::LdmrsSopasLayer::MAX_NUM_OF_FIELDS = 16\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 118 of file LdmrsSopasLayer\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

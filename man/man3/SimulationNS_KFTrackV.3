@@ -1,0 +1,108 @@
+.TH "SimulationNS::KFTrackV" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SimulationNS::KFTrackV \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleTracker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "long \fBGetTrackID\fP ()"
+.br
+.ti -1c
+.RI "\fBKFTrackV\fP (double x, double y, double a, long id, double _dt, int _MinAppearanceCount=1)"
+.br
+.ti -1c
+.RI "void \fBUpdateTracking\fP (double _dt, const \fBPlannerHNS::DetectedObject\fP &oldObj, \fBPlannerHNS::DetectedObject\fP &predObj)"
+.br
+.ti -1c
+.RI "void \fBPredictTracking\fP (double _dt, const \fBPlannerHNS::DetectedObject\fP &oldObj, \fBPlannerHNS::DetectedObject\fP &predObj)"
+.br
+.ti -1c
+.RI "void \fBUpdateAssociateOnly\fP (double _dt, const \fBPlannerHNS::DetectedObject\fP &oldObj, \fBPlannerHNS::DetectedObject\fP &predObj)"
+.br
+.ti -1c
+.RI "virtual \fB~KFTrackV\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_bUpdated\fP"
+.br
+.ti -1c
+.RI "int \fBregion_id\fP"
+.br
+.ti -1c
+.RI "double \fBforget_time\fP"
+.br
+.ti -1c
+.RI "int \fBm_iLife\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::DetectedObject\fP \fBobj\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 67 of file SimpleTracker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SimulationNS::KFTrackV::KFTrackV (double x, double y, double a, long id, double _dt, int _MinAppearanceCount = \fC1\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 90 of file SimpleTracker\&.h\&.
+.SS "virtual SimulationNS::KFTrackV::~KFTrackV ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 401 of file SimpleTracker\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "long SimulationNS::KFTrackV::GetTrackID ()\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file SimpleTracker\&.h\&.
+.SS "void SimulationNS::KFTrackV::PredictTracking (double _dt, const \fBPlannerHNS::DetectedObject\fP & oldObj, \fBPlannerHNS::DetectedObject\fP & predObj)\fC [inline]\fP"
+
+.PP
+Definition at line 247 of file SimpleTracker\&.h\&.
+.SS "void SimulationNS::KFTrackV::UpdateAssociateOnly (double _dt, const \fBPlannerHNS::DetectedObject\fP & oldObj, \fBPlannerHNS::DetectedObject\fP & predObj)\fC [inline]\fP"
+
+.PP
+Definition at line 362 of file SimpleTracker\&.h\&.
+.SS "void SimulationNS::KFTrackV::UpdateTracking (double _dt, const \fBPlannerHNS::DetectedObject\fP & oldObj, \fBPlannerHNS::DetectedObject\fP & predObj)\fC [inline]\fP"
+
+.PP
+Definition at line 142 of file SimpleTracker\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double SimulationNS::KFTrackV::forget_time"
+
+.PP
+Definition at line 80 of file SimpleTracker\&.h\&.
+.SS "int SimulationNS::KFTrackV::m_bUpdated"
+
+.PP
+Definition at line 78 of file SimpleTracker\&.h\&.
+.SS "int SimulationNS::KFTrackV::m_iLife"
+
+.PP
+Definition at line 81 of file SimpleTracker\&.h\&.
+.SS "\fBPlannerHNS::DetectedObject\fP SimulationNS::KFTrackV::obj"
+
+.PP
+Definition at line 82 of file SimpleTracker\&.h\&.
+.SS "int SimulationNS::KFTrackV::region_id"
+
+.PP
+Definition at line 79 of file SimpleTracker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

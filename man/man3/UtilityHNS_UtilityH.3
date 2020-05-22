@@ -1,0 +1,155 @@
+.TH "UtilityHNS::UtilityH" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::UtilityH \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UtilityH\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityH\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~UtilityH\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static double \fBFixNegativeAngle\fP (const double &a)"
+.br
+.ti -1c
+.RI "static double \fBSplitPositiveAngle\fP (const double &a)"
+.br
+.ti -1c
+.RI "static double \fBInverseAngle\fP (const double &a)"
+.br
+.ti -1c
+.RI "static double \fBAngleBetweenTwoAnglesPositive\fP (const double &a1, const double &a2)"
+.br
+.ti -1c
+.RI "static double \fBGetCircularAngle\fP (const double &prevContAngle, const double &prevAngle, const double &currAngle)"
+.br
+.ti -1c
+.RI "static void \fBGetTickCount\fP (struct timespec &\fBt\fP)"
+.br
+.ti -1c
+.RI "static std::string \fBGetFilePrefixHourMinuteSeconds\fP ()"
+.br
+.ti -1c
+.RI "static double \fBGetTimeDiffNow\fP (const struct timespec &old_t)"
+.br
+.ti -1c
+.RI "static double \fBGetTimeDiff\fP (const struct timespec &old_t, const struct timespec &curr_t)"
+.br
+.ti -1c
+.RI "static std::string \fBGetDateTimeStr\fP ()"
+.br
+.ti -1c
+.RI "static int \fBtsCompare\fP (struct timespec time1, struct timespec time2, int micro_tolerance=10)"
+.br
+.ti -1c
+.RI "static int \fBGetSign\fP (double x)"
+.br
+.ti -1c
+.RI "static std::string \fBGetHomeDirectory\fP ()"
+.br
+.ti -1c
+.RI "static double \fBGetMomentumScaleFactor\fP (const double &v)"
+.br
+.ti -1c
+.RI "static timespec \fBGetTimeSpec\fP (const time_t &srcT)"
+.br
+.ti -1c
+.RI "static time_t \fBGetLongTime\fP (const struct timespec &srcT)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file UtilityH\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::UtilityH::UtilityH ()"
+
+.PP
+Definition at line 22 of file UtilityH\&.cpp\&.
+.SS "UtilityHNS::UtilityH::~UtilityH ()\fC [virtual]\fP"
+
+.PP
+Definition at line 26 of file UtilityH\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double UtilityHNS::UtilityH::AngleBetweenTwoAnglesPositive (const double & a1, const double & a2)\fC [static]\fP"
+
+.PP
+Definition at line 112 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::FixNegativeAngle (const double & a)\fC [static]\fP"
+
+.PP
+Definition at line 60 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::GetCircularAngle (const double & prevContAngle, const double & prevAngle, const double & currAngle)\fC [static]\fP"
+
+.PP
+Definition at line 124 of file UtilityH\&.cpp\&.
+.SS "string UtilityHNS::UtilityH::GetDateTimeStr ()\fC [static]\fP"
+
+.PP
+Definition at line 181 of file UtilityH\&.cpp\&.
+.SS "string UtilityHNS::UtilityH::GetFilePrefixHourMinuteSeconds ()\fC [static]\fP"
+
+.PP
+Definition at line 159 of file UtilityH\&.cpp\&.
+.SS "std::string UtilityHNS::UtilityH::GetHomeDirectory ()\fC [static]\fP"
+
+.PP
+Definition at line 30 of file UtilityH\&.cpp\&.
+.SS "time_t UtilityHNS::UtilityH::GetLongTime (const struct timespec & srcT)\fC [static]\fP"
+
+.PP
+Definition at line 228 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::GetMomentumScaleFactor (const double & v)\fC [static]\fP"
+
+.PP
+Definition at line 37 of file UtilityH\&.cpp\&.
+.SS "int UtilityHNS::UtilityH::GetSign (double x)\fC [static]\fP"
+
+.PP
+Definition at line 52 of file UtilityH\&.cpp\&.
+.SS "void UtilityHNS::UtilityH::GetTickCount (struct timespec & t)\fC [static]\fP"
+
+.PP
+Definition at line 142 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::GetTimeDiff (const struct timespec & old_t, const struct timespec & curr_t)\fC [static]\fP"
+
+.PP
+Definition at line 147 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::GetTimeDiffNow (const struct timespec & old_t)\fC [static]\fP"
+
+.PP
+Definition at line 152 of file UtilityH\&.cpp\&.
+.SS "timespec UtilityHNS::UtilityH::GetTimeSpec (const time_t & srcT)\fC [static]\fP"
+
+.PP
+Definition at line 220 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::InverseAngle (const double & a)\fC [static]\fP"
+
+.PP
+Definition at line 100 of file UtilityH\&.cpp\&.
+.SS "double UtilityHNS::UtilityH::SplitPositiveAngle (const double & a)\fC [static]\fP"
+
+.PP
+Definition at line 79 of file UtilityH\&.cpp\&.
+.SS "int UtilityHNS::UtilityH::tsCompare (struct timespec time1, struct timespec time2, int micro_tolerance = \fC10\fP)\fC [static]\fP"
+
+.PP
+Definition at line 202 of file UtilityH\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

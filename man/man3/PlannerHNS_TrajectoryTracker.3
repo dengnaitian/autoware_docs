@@ -1,0 +1,325 @@
+.TH "PlannerHNS::TrajectoryTracker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::TrajectoryTracker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BehaviorPrediction\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTrajectoryTracker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TrajectoryTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitDecision\fP ()"
+.br
+.ti -1c
+.RI "\fBTrajectoryTracker\fP (const \fBTrajectoryTracker\fP &obj)"
+.br
+.ti -1c
+.RI "\fBTrajectoryTracker\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &path, const unsigned int &_index)"
+.br
+.ti -1c
+.RI "void \fBUpdatePathAndIndex\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &_path, const unsigned int &_index)"
+.br
+.ti -1c
+.RI "double \fBCalcMatchingPercentage\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &_path)"
+.br
+.ti -1c
+.RI "void \fBInsertNewParticle\fP (const \fBParticle\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBDeleteParticle\fP (const \fBParticle\fP &\fBp\fP, const int &_i)"
+.br
+.ti -1c
+.RI "void \fBCalcAverages\fP ()"
+.br
+.ti -1c
+.RI "void \fBCalcProbabilities\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBindex\fP"
+.br
+.ti -1c
+.RI "\fBBEH_STATE_TYPE\fP \fBbeh\fP"
+.br
+.ti -1c
+.RI "\fBBEH_STATE_TYPE\fP \fBbest_beh\fP"
+.br
+.ti -1c
+.RI "double \fBbest_p\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBids\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBpath_ids\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP \fBpath_last_pose\fP"
+.br
+.ti -1c
+.RI "double \fBrms_error\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBtrajectory\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP > \fBm_ForwardPart\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP > \fBm_StopPart\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP > \fBm_YieldPart\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP > \fBm_LeftPart\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP > \fBm_RightPart\fP"
+.br
+.ti -1c
+.RI "\fBBehaviorState\fP \fBm_CurrBehavior\fP"
+.br
+.ti -1c
+.RI "int \fBnAliveStop\fP"
+.br
+.ti -1c
+.RI "int \fBnAliveYield\fP"
+.br
+.ti -1c
+.RI "int \fBnAliveForward\fP"
+.br
+.ti -1c
+.RI "int \fBnAliveLeft\fP"
+.br
+.ti -1c
+.RI "int \fBnAliveRight\fP"
+.br
+.ti -1c
+.RI "double \fBpStop\fP"
+.br
+.ti -1c
+.RI "double \fBpYield\fP"
+.br
+.ti -1c
+.RI "double \fBpForward\fP"
+.br
+.ti -1c
+.RI "double \fBpLeft\fP"
+.br
+.ti -1c
+.RI "double \fBpRight\fP"
+.br
+.ti -1c
+.RI "double \fBw_avg_forward\fP"
+.br
+.ti -1c
+.RI "double \fBw_avg_stop\fP"
+.br
+.ti -1c
+.RI "double \fBw_avg_yield\fP"
+.br
+.ti -1c
+.RI "double \fBw_avg_left\fP"
+.br
+.ti -1c
+.RI "double \fBw_avg_right\fP"
+.br
+.ti -1c
+.RI "\fBPassiveDecisionMaker\fP \fBm_SinglePathDecisionMaker\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 106 of file BehaviorPrediction\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::TrajectoryTracker::TrajectoryTracker ()\fC [inline]\fP"
+
+.PP
+Definition at line 146 of file BehaviorPrediction\&.h\&.
+.SS "virtual PlannerHNS::TrajectoryTracker::~TrajectoryTracker ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 172 of file BehaviorPrediction\&.h\&.
+.SS "PlannerHNS::TrajectoryTracker::TrajectoryTracker (const \fBTrajectoryTracker\fP & obj)\fC [inline]\fP"
+
+.PP
+Definition at line 180 of file BehaviorPrediction\&.h\&.
+.SS "PlannerHNS::TrajectoryTracker::TrajectoryTracker (std::vector< \fBPlannerHNS::WayPoint\fP > & path, const unsigned int & _index)\fC [inline]\fP"
+
+.PP
+Definition at line 219 of file BehaviorPrediction\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::TrajectoryTracker::CalcAverages ()\fC [inline]\fP"
+
+.PP
+Definition at line 431 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::CalcMatchingPercentage (const std::vector< \fBPlannerHNS::WayPoint\fP > & _path)\fC [inline]\fP"
+
+.PP
+Definition at line 290 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::TrajectoryTracker::CalcProbabilities ()\fC [inline]\fP"
+
+.PP
+Definition at line 479 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::TrajectoryTracker::DeleteParticle (const \fBParticle\fP & p, const int & _i)\fC [inline]\fP"
+
+.PP
+Definition at line 402 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::TrajectoryTracker::InitDecision ()\fC [inline]\fP"
+
+.PP
+Definition at line 176 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::TrajectoryTracker::InsertNewParticle (const \fBParticle\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 368 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::TrajectoryTracker::UpdatePathAndIndex (std::vector< \fBPlannerHNS::WayPoint\fP > & _path, const unsigned int & _index)\fC [inline]\fP"
+
+.PP
+Definition at line 265 of file BehaviorPrediction\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBBEH_STATE_TYPE\fP PlannerHNS::TrajectoryTracker::beh"
+
+.PP
+Definition at line 110 of file BehaviorPrediction\&.h\&.
+.SS "\fBBEH_STATE_TYPE\fP PlannerHNS::TrajectoryTracker::best_beh"
+
+.PP
+Definition at line 111 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::best_p"
+
+.PP
+Definition at line 112 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<int> PlannerHNS::TrajectoryTracker::ids"
+
+.PP
+Definition at line 113 of file BehaviorPrediction\&.h\&.
+.SS "unsigned int PlannerHNS::TrajectoryTracker::index"
+
+.PP
+Definition at line 109 of file BehaviorPrediction\&.h\&.
+.SS "\fBBehaviorState\fP PlannerHNS::TrajectoryTracker::m_CurrBehavior"
+
+.PP
+Definition at line 124 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP> PlannerHNS::TrajectoryTracker::m_ForwardPart"
+
+.PP
+Definition at line 119 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP> PlannerHNS::TrajectoryTracker::m_LeftPart"
+
+.PP
+Definition at line 122 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP> PlannerHNS::TrajectoryTracker::m_RightPart"
+
+.PP
+Definition at line 123 of file BehaviorPrediction\&.h\&.
+.SS "\fBPassiveDecisionMaker\fP PlannerHNS::TrajectoryTracker::m_SinglePathDecisionMaker"
+
+.PP
+Definition at line 144 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP> PlannerHNS::TrajectoryTracker::m_StopPart"
+
+.PP
+Definition at line 120 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP> PlannerHNS::TrajectoryTracker::m_YieldPart"
+
+.PP
+Definition at line 121 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::TrajectoryTracker::nAliveForward"
+
+.PP
+Definition at line 128 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::TrajectoryTracker::nAliveLeft"
+
+.PP
+Definition at line 129 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::TrajectoryTracker::nAliveRight"
+
+.PP
+Definition at line 130 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::TrajectoryTracker::nAliveStop"
+
+.PP
+Definition at line 126 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::TrajectoryTracker::nAliveYield"
+
+.PP
+Definition at line 127 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<int> PlannerHNS::TrajectoryTracker::path_ids"
+
+.PP
+Definition at line 114 of file BehaviorPrediction\&.h\&.
+.SS "\fBWayPoint\fP PlannerHNS::TrajectoryTracker::path_last_pose"
+
+.PP
+Definition at line 115 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::pForward"
+
+.PP
+Definition at line 134 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::pLeft"
+
+.PP
+Definition at line 135 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::pRight"
+
+.PP
+Definition at line 136 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::pStop"
+
+.PP
+Definition at line 132 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::pYield"
+
+.PP
+Definition at line 133 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::rms_error"
+
+.PP
+Definition at line 116 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::TrajectoryTracker::trajectory"
+
+.PP
+Definition at line 117 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::w_avg_forward"
+
+.PP
+Definition at line 138 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::w_avg_left"
+
+.PP
+Definition at line 141 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::w_avg_right"
+
+.PP
+Definition at line 142 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::w_avg_stop"
+
+.PP
+Definition at line 139 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::TrajectoryTracker::w_avg_yield"
+
+.PP
+Definition at line 140 of file BehaviorPrediction\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,74 @@
+.TH "MqttSender" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MqttSender \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMqttSender\fP ()"
+.br
+.ti -1c
+.RI "\fB~MqttSender\fP ()"
+.br
+.ti -1c
+.RI "void \fBcanInfoCallback\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBon_connect\fP (struct mosquitto *mosq, void *obj, int result)"
+.br
+.ti -1c
+.RI "static void \fBon_disconnect\fP (struct mosquitto *mosq, void *obj, int rc)"
+.br
+.ti -1c
+.RI "static void \fBon_publish\fP (struct mosquitto *mosq, void *userdata, int mid)"
+.br
+.ti -1c
+.RI "static void \fBload_config\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 49 of file mqtt_sender\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MqttSender::MqttSender ()"
+
+.PP
+Definition at line 92 of file mqtt_sender\&.cpp\&.
+.SS "MqttSender::~MqttSender ()"
+
+.PP
+Definition at line 127 of file mqtt_sender\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MqttSender::canInfoCallback (const autoware_can_msgs::CANInfoConstPtr & msg)"
+
+.PP
+Definition at line 275 of file mqtt_sender\&.cpp\&.
+.SS "static void MqttSender::load_config ()\fC [static]\fP"
+
+.PP
+Definition at line 143 of file mqtt_sender\&.cpp\&.
+.SS "void MqttSender::on_connect (struct mosquitto * mosq, void * obj, int result)\fC [static]\fP"
+
+.PP
+Definition at line 133 of file mqtt_sender\&.cpp\&.
+.SS "void MqttSender::on_disconnect (struct mosquitto * mosq, void * obj, int rc)\fC [static]\fP"
+
+.PP
+Definition at line 138 of file mqtt_sender\&.cpp\&.
+.SS "static void MqttSender::on_publish (struct mosquitto * mosq, void * userdata, int mid)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

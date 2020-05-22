@@ -1,0 +1,30 @@
+<map id="datatypes::BasicData" name="datatypes::BasicData">
+<area shape="rect" id="node2" href="$classdatatypes_1_1_box2_d.html" title="A rotated 2&#45;dimensional box in the plane. " alt="" coords="233,5,359,32"/>
+<area shape="rect" id="node3" href="$classdatatypes_1_1_ellipse2_d.html" title="A rotated 2&#45;dimensional ellipse in the plane. " alt="" coords="225,56,367,83"/>
+<area shape="rect" id="node5" href="$classdatatypes_1_1_eval_case.html" title="datatypes::EvalCase" alt="" coords="224,107,368,133"/>
+<area shape="rect" id="node6" href="$classdatatypes_1_1_eval_case_result.html" title="datatypes::EvalCaseResult" alt="" coords="205,157,387,184"/>
+<area shape="rect" id="node7" href="$classdatatypes_1_1_eval_case_results.html" title="datatypes::EvalCaseResults" alt="" coords="201,208,391,235"/>
+<area shape="rect" id="node8" href="$classdatatypes_1_1_eval_cases.html" title="datatypes::EvalCases" alt="" coords="221,259,371,285"/>
+<area shape="rect" id="node9" href="$classdatatypes_1_1_field_description.html" title="datatypes::FieldDescription" alt="" coords="205,309,387,336"/>
+<area shape="rect" id="node14" href="$classdatatypes_1_1_field_parameter.html" title="datatypes::FieldParameter" alt="" coords="209,360,383,387"/>
+<area shape="rect" id="node15" href="$classdatatypes_1_1_fields.html" title="datatypes::Fields" alt="" coords="235,411,357,437"/>
+<area shape="rect" id="node16" href="$classdatatypes_1_1_line2_d.html" title="A line in the two&#45;dimensional plane, composed out of two points. " alt="" coords="232,461,360,488"/>
+<area shape="rect" id="node17" href="$classdatatypes_1_1_measurement_list.html" title="datatypes::MeasurementList" alt="" coords="203,512,389,539"/>
+<area shape="rect" id="node18" href="$classdatatypes_1_1_msg.html" title="datatypes::Msg" alt="" coords="240,563,352,589"/>
+<area shape="rect" id="node19" href="$classdatatypes_1_1_object_list.html" title="datatypes::ObjectList" alt="" coords="223,613,369,640"/>
+<area shape="rect" id="node20" href="$classdatatypes_1_1_point2_d.html" title="datatypes::Point2D" alt="" coords="229,664,363,691"/>
+<area shape="rect" id="node21" href="$classdatatypes_1_1_point3_d.html" title="This class defines a point in the three&#45;dimensional plane. " alt="" coords="229,715,363,741"/>
+<area shape="rect" id="node22" href="$classdatatypes_1_1_polygon2_d.html" title="A polygon of 2D&#45;points. " alt="" coords="221,765,371,792"/>
+<area shape="rect" id="node23" href="$classdatatypes_1_1_polygon3_d.html" title="datatypes::Polygon3D" alt="" coords="221,816,371,843"/>
+<area shape="rect" id="node24" href="$classdatatypes_1_1_position3_d.html" title="A Position with orientation. " alt="" coords="221,867,371,893"/>
+<area shape="rect" id="node25" href="$classdatatypes_1_1_position_w_g_s84.html" title="datatypes::PositionWGS84" alt="" coords="206,917,386,944"/>
+<area shape="rect" id="node26" href="$classdatatypes_1_1_scan.html" title="datatypes::Scan" alt="" coords="237,968,355,995"/>
+<area shape="rect" id="node27" href="$classdatatypes_1_1_scanner_info.html" title="datatypes::ScannerInfo" alt="" coords="217,1019,375,1045"/>
+<area shape="rect" id="node28" href="$classdatatypes_1_1_sensor_state_info.html" title="datatypes::SensorStateInfo" alt="" coords="205,1069,387,1096"/>
+<area shape="rect" id="node29" href="$classdatatypes_1_1_trigger.html" title="Class for a simple serializable trigger signal. " alt="" coords="233,1120,359,1147"/>
+<area shape="rect" id="node4" href="$classdatatypes_1_1_circle2_d.html" title="A circle in the plane. " alt="" coords="460,56,599,83"/>
+<area shape="rect" id="node10" href="$classdatatypes_1_1_field_radial.html" title="datatypes::FieldRadial" alt="" coords="453,259,605,285"/>
+<area shape="rect" id="node11" href="$classdatatypes_1_1_field_rectangle.html" title="datatypes::FieldRectangle" alt="" coords="442,309,617,336"/>
+<area shape="rect" id="node13" href="$classdatatypes_1_1_field_segmented.html" title="datatypes::FieldSegmented" alt="" coords="439,360,620,387"/>
+<area shape="rect" id="node12" href="$classdatatypes_1_1_field_dynamic.html" title="datatypes::FieldDynamic" alt="" coords="668,309,835,336"/>
+</map>

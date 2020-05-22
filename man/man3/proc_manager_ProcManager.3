@@ -1,0 +1,85 @@
+.TH "proc_manager.ProcManager" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+proc_manager.ProcManager \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "def \fBset_nice\fP (self, pid, value)"
+.br
+.ti -1c
+.RI "def \fBset_cpu_affinity\fP (self, pid, cpus)"
+.br
+.ti -1c
+.RI "def \fBset_scheduling_policy\fP (self, pid, policy, priority)"
+.br
+.ti -1c
+.RI "def \fBget_ftrace\fP (self, \fBsec\fP, pids)"
+.br
+.ti -1c
+.RI "def \fBget_ftrace_cont\fP (self, conn, interval, pids)"
+.br
+.ti -1c
+.RI "def \fBrun\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsock\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file proc_manager\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def proc_manager\&.ProcManager\&.__init__ ( self)"
+
+.PP
+Definition at line 38 of file proc_manager\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def proc_manager\&.ProcManager\&.get_ftrace ( self,  sec,  pids)"
+
+.PP
+Definition at line 153 of file proc_manager\&.py\&.
+.SS "def proc_manager\&.ProcManager\&.get_ftrace_cont ( self,  conn,  interval,  pids)"
+
+.PP
+Definition at line 167 of file proc_manager\&.py\&.
+.SS "def proc_manager\&.ProcManager\&.run ( self)"
+
+.PP
+Definition at line 209 of file proc_manager\&.py\&.
+.SS "def proc_manager\&.ProcManager\&.set_cpu_affinity ( self,  pid,  cpus)"
+
+.PP
+Definition at line 68 of file proc_manager\&.py\&.
+.SS "def proc_manager\&.ProcManager\&.set_nice ( self,  pid,  value)"
+
+.PP
+Definition at line 49 of file proc_manager\&.py\&.
+.SS "def proc_manager\&.ProcManager\&.set_scheduling_policy ( self,  pid,  policy,  priority)"
+
+.PP
+Definition at line 96 of file proc_manager\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "proc_manager\&.ProcManager\&.sock"
+
+.PP
+Definition at line 39 of file proc_manager\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

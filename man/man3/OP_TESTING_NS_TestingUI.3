@@ -1,0 +1,142 @@
+.TH "OP_TESTING_NS::TestingUI" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OP_TESTING_NS::TestingUI \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_bag_player_core\&.h>\fP
+.PP
+Inherits \fBOP_TESTING_NS::DrawObjBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTestingUI\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TestingUI\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitNode\fP (const \fBBagReaderParams\fP &params, const int &mode)"
+.br
+.ti -1c
+.RI "void \fBDrawSimu\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnKeyboardPress\fP (const int &sKey, const unsigned char &key)"
+.br
+.ti -1c
+.RI "void \fBSimulationModeMainLoop\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBm_VehicleTargetStateAccelerator\fP"
+.br
+.ti -1c
+.RI "double \fBm_VehicleTargetStateBrake\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bStepForward\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bPredStepForward\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bGenerateSignal\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuStepSignal\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuGenSignal\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PredStepSignal\fP"
+.br
+.ti -1c
+.RI "\fBTESTING_MODE\fP \fBm_TestMode\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 51 of file op_bag_player_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OP_TESTING_NS::TestingUI::TestingUI ()"
+
+.PP
+Definition at line 36 of file op_bag_player_core\&.cpp\&.
+.SS "OP_TESTING_NS::TestingUI::~TestingUI ()\fC [virtual]\fP"
+
+.PP
+Definition at line 50 of file op_bag_player_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OP_TESTING_NS::TestingUI::DrawSimu ()\fC [virtual]\fP"
+
+.PP
+Implements \fBOP_TESTING_NS::DrawObjBase\fP\&.
+.PP
+Definition at line 54 of file op_bag_player_core\&.cpp\&.
+.SS "void OP_TESTING_NS::TestingUI::InitNode (const \fBBagReaderParams\fP & params, const int & mode)"
+
+.PP
+Definition at line 253 of file op_bag_player_core\&.cpp\&.
+.SS "void OP_TESTING_NS::TestingUI::OnKeyboardPress (const int & sKey, const unsigned char & key)\fC [virtual]\fP"
+
+.PP
+Implements \fBOP_TESTING_NS::DrawObjBase\fP\&.
+.PP
+Definition at line 288 of file op_bag_player_core\&.cpp\&.
+.SS "void OP_TESTING_NS::TestingUI::SimulationModeMainLoop ()"
+
+.PP
+Definition at line 101 of file op_bag_player_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool OP_TESTING_NS::TestingUI::m_bGenerateSignal"
+
+.PP
+Definition at line 67 of file op_bag_player_core\&.h\&.
+.SS "bool OP_TESTING_NS::TestingUI::m_bPredStepForward"
+
+.PP
+Definition at line 66 of file op_bag_player_core\&.h\&.
+.SS "bool OP_TESTING_NS::TestingUI::m_bStepForward"
+
+.PP
+Definition at line 65 of file op_bag_player_core\&.h\&.
+.SS "\fBTESTING_MODE\fP OP_TESTING_NS::TestingUI::m_TestMode"
+
+.PP
+Definition at line 72 of file op_bag_player_core\&.h\&.
+.SS "double OP_TESTING_NS::TestingUI::m_VehicleTargetStateAccelerator"
+
+.PP
+Definition at line 62 of file op_bag_player_core\&.h\&.
+.SS "double OP_TESTING_NS::TestingUI::m_VehicleTargetStateBrake"
+
+.PP
+Definition at line 63 of file op_bag_player_core\&.h\&.
+.SS "ros::Publisher OP_TESTING_NS::TestingUI::pub_PredStepSignal"
+
+.PP
+Definition at line 71 of file op_bag_player_core\&.h\&.
+.SS "ros::Publisher OP_TESTING_NS::TestingUI::pub_SimuGenSignal"
+
+.PP
+Definition at line 70 of file op_bag_player_core\&.h\&.
+.SS "ros::Publisher OP_TESTING_NS::TestingUI::pub_SimuStepSignal"
+
+.PP
+Definition at line 69 of file op_bag_player_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,263 @@
+.TH "SickToolbox::SickMessage< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickMessage< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH > \- Provides an abstract parent for all Sick messages\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickMessage\&.hh>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickMessage\fP ()"
+.br
+.RI "\fIA default constructor\&. \fP"
+.ti -1c
+.RI "void \fBBuildMessage\fP (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+.br
+.RI "\fIConstructs a Sick message given the parameter values\&. \fP"
+.ti -1c
+.RI "virtual void \fBParseMessage\fP (const uint8_t *const message_buffer)=0"
+.br
+.RI "\fIParses a sequence of bytes into a Sick message\&. \fP"
+.ti -1c
+.RI "void \fBGetMessage\fP (uint8_t *const message_buffer) const "
+.br
+.RI "\fIGet the message as a sequence of well-formed bytes\&. \fP"
+.ti -1c
+.RI "unsigned int \fBGetMessageLength\fP () const "
+.br
+.ti -1c
+.RI "void \fBGetPayload\fP (uint8_t *const payload_buffer) const "
+.br
+.RI "\fIGet the payload contents as a sequence of well-formed bytes\&. \fP"
+.ti -1c
+.RI "void \fBGetPayloadAsCStr\fP (char *const payload_str) const "
+.br
+.ti -1c
+.RI "void \fBGetPayloadSubregion\fP (uint8_t *const payload_sub_buffer, const unsigned int start_idx, const unsigned int stop_idx) const "
+.br
+.RI "\fIGet a specified sub-region of the payload buffer\&. \fP"
+.ti -1c
+.RI "unsigned int \fBGetPayloadLength\fP () const "
+.br
+.ti -1c
+.RI "bool \fBIsPopulated\fP () const "
+.br
+.ti -1c
+.RI "virtual void \fBClear\fP ()"
+.br
+.RI "\fIReset all internal fields and buffers\&. \fP"
+.ti -1c
+.RI "virtual void \fBPrint\fP () const "
+.br
+.RI "\fIPrint data about this object\&. \fP"
+.ti -1c
+.RI "virtual \fB~SickMessage\fP ()"
+.br
+.RI "\fIA destructor\&. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const unsigned int \fBMESSAGE_HEADER_LENGTH\fP = MSG_HEADER_LENGTH"
+.br
+.ti -1c
+.RI "static const unsigned int \fBMESSAGE_TRAILER_LENGTH\fP = MSG_TRAILER_LENGTH"
+.br
+.ti -1c
+.RI "static const unsigned int \fBMESSAGE_PAYLOAD_MAX_LENGTH\fP = MSG_PAYLOAD_MAX_LENGTH"
+.br
+.ti -1c
+.RI "static const unsigned int \fBMESSAGE_MAX_LENGTH\fP = \fBMESSAGE_HEADER_LENGTH\fP + \fBMESSAGE_PAYLOAD_MAX_LENGTH\fP + \fBMESSAGE_TRAILER_LENGTH\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fB_payload_length\fP"
+.br
+.ti -1c
+.RI "unsigned int \fB_message_length\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_message_buffer\fP [\fBMESSAGE_MAX_LENGTH\fP]"
+.br
+.ti -1c
+.RI "bool \fB_populated\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH>
+.br
+class SickToolbox::SickMessage< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >"
+Provides an abstract parent for all Sick messages\&. 
+.PP
+Definition at line 32 of file SickMessage\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::\fBSickMessage\fP ()"
+
+.PP
+A default constructor\&. A standard constructor 
+.PP
+Definition at line 103 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::~\fBSickMessage\fP ()\fC [virtual]\fP"
+
+.PP
+A destructor\&. A virtual destructor 
+.PP
+Definition at line 226 of file SickMessage\&.hh\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::BuildMessage (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+
+.PP
+Constructs a Sick message given the parameter values\&. Construct a well-formed Sick message
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*payload_buffer\fP The payload of the message as an array of bytes 
+.br
+\fIpayload_length\fP The length of the payload in bytes 
+.RE
+.PP
+
+.PP
+Definition at line 111 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::Clear ()\fC [virtual]\fP"
+
+.PP
+Reset all internal fields and buffers\&. Clear the contents of the message container/object 
+.PP
+Reimplemented in \fBSickToolbox::SickLMS5xxMessage\fP\&.
+.PP
+Definition at line 185 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetMessage (uint8_t *const message_buffer) const"
+
+.PP
+Get the message as a sequence of well-formed bytes\&. Returns a copy of the raw message buffer
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*message_buffer\fP Destination buffer for message contents 
+.RE
+.PP
+
+.PP
+Definition at line 147 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetMessageLength () const\fC [inline]\fP"
+Resturns the total message length in bytes 
+.PP
+Definition at line 55 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetPayload (uint8_t *const payload_buffer) const"
+
+.PP
+Get the payload contents as a sequence of well-formed bytes\&. Returns a copy of the raw message payload
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*payload_buffer\fP Destination buffer for message payload contents 
+.RE
+.PP
+
+.PP
+Definition at line 156 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetPayloadAsCStr (char *const payload_buffer) const"
+Returns a copy of the payload as a C String 
+.PP
+Definition at line 162 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetPayloadLength () const\fC [inline]\fP"
+Returns the total payload length in bytes 
+.PP
+Definition at line 68 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::GetPayloadSubregion (uint8_t *const payload_sub_buffer, const unsigned int start_idx, const unsigned int stop_idx) const"
+
+.PP
+Get a specified sub-region of the payload buffer\&. Returns a subregion of the payload specified by indices
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*payload_sub_buffer\fP Destination buffer for message payload contents 
+.br
+\fI*start_idx\fP The 0-indexed starting location for copying 
+.br
+\fI*stop_idx\fP The 0-indexed stopping location for copying 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> bool \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::IsPopulated () const\fC [inline]\fP"
+Indicates whether the message container is populated 
+.PP
+Definition at line 71 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::ParseMessage (const uint8_t *const message_buffer)\fC [pure virtual]\fP"
+
+.PP
+Parses a sequence of bytes into a Sick message\&. Populates fields given a sequence of bytes representing a raw message
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*message_buffer\fP A well-formed message to be parsed into the class' fields 
+.RE
+.PP
+
+.PP
+Implemented in \fBSickToolbox::SickLMS5xxMessage\fP\&.
+.PP
+Definition at line 133 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> void \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::Print () const\fC [virtual]\fP"
+
+.PP
+Print data about this object\&. Print the contents of the message 
+.PP
+Reimplemented in \fBSickToolbox::SickLMS5xxMessage\fP\&.
+.PP
+Definition at line 201 of file SickMessage\&.hh\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> uint8_t \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::_message_buffer[\fBMESSAGE_MAX_LENGTH\fP]\fC [protected]\fP"
+The message as a raw sequence of bytes 
+.PP
+Definition at line 91 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::_message_length\fC [protected]\fP"
+The length of the message in bytes 
+.PP
+Definition at line 88 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::_payload_length\fC [protected]\fP"
+The length of the message payload in bytes 
+.PP
+Definition at line 85 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> bool \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::_populated\fC [protected]\fP"
+Indicates whether the message container/object is populated 
+.PP
+Definition at line 94 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> const unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::MESSAGE_HEADER_LENGTH = MSG_HEADER_LENGTH\fC [static]\fP"
+Some constants to make things more manageable 
+.PP
+Definition at line 37 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> const unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::MESSAGE_MAX_LENGTH = \fBMESSAGE_HEADER_LENGTH\fP + \fBMESSAGE_PAYLOAD_MAX_LENGTH\fP + \fBMESSAGE_TRAILER_LENGTH\fP\fC [static]\fP"
+
+.PP
+Definition at line 40 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> const unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::MESSAGE_PAYLOAD_MAX_LENGTH = MSG_PAYLOAD_MAX_LENGTH\fC [static]\fP"
+
+.PP
+Definition at line 39 of file SickMessage\&.hh\&.
+.SS "template<unsigned int MSG_HEADER_LENGTH, unsigned int MSG_PAYLOAD_MAX_LENGTH, unsigned int MSG_TRAILER_LENGTH> const unsigned int \fBSickToolbox::SickMessage\fP< MSG_HEADER_LENGTH, MSG_PAYLOAD_MAX_LENGTH, MSG_TRAILER_LENGTH >::MESSAGE_TRAILER_LENGTH = MSG_TRAILER_LENGTH\fC [static]\fP"
+
+.PP
+Definition at line 38 of file SickMessage\&.hh\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

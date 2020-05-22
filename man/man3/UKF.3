@@ -1,0 +1,985 @@
+.TH "UKF" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UKF \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ukf\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUKF\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateYawWithHighProb\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP (const Eigen::VectorXd &z, const double timestamp, const int target_ind)"
+.br
+.ti -1c
+.RI "void \fBupdateModeProb\fP (const std::vector< double > &lambda_vec)"
+.br
+.ti -1c
+.RI "void \fBmergeEstimationAndCovariance\fP ()"
+.br
+.ti -1c
+.RI "void \fBmixingProbability\fP ()"
+.br
+.ti -1c
+.RI "void \fBinteraction\fP ()"
+.br
+.ti -1c
+.RI "void \fBpredictionSUKF\fP (const double dt, const bool has_subscribed_vectormap)"
+.br
+.ti -1c
+.RI "void \fBpredictionIMMUKF\fP (const double dt, const bool has_subscribed_vectormap)"
+.br
+.ti -1c
+.RI "void \fBfindMaxZandS\fP (Eigen::VectorXd &max_det_z, Eigen::MatrixXd &max_det_s)"
+.br
+.ti -1c
+.RI "void \fBupdateMeasurementForCTRV\fP (const std::vector< autoware_msgs::DetectedObject > &object_vec)"
+.br
+.ti -1c
+.RI "void \fBuppateForCTRV\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateEachMotion\fP (const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > &object_vec, std::vector< double > &lambda_vec)"
+.br
+.ti -1c
+.RI "void \fBupdateSUKF\fP (const std::vector< autoware_msgs::DetectedObject > &object_vec)"
+.br
+.ti -1c
+.RI "void \fBupdateIMMUKF\fP (const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > &object_vec)"
+.br
+.ti -1c
+.RI "void \fBctrv\fP (const double p_x, const double p_y, const double v, const double \fByaw\fP, const double yawd, const double delta_t, std::vector< double > &state)"
+.br
+.ti -1c
+.RI "void \fBcv\fP (const double p_x, const double p_y, const double v, const double \fByaw\fP, const double yawd, const double delta_t, std::vector< double > &state)"
+.br
+.ti -1c
+.RI "void \fBrandomMotion\fP (const double p_x, const double p_y, const double v, const double \fByaw\fP, const double yawd, const double delta_t, std::vector< double > &state)"
+.br
+.ti -1c
+.RI "void \fBinitCovarQs\fP (const double dt, const double \fByaw\fP)"
+.br
+.ti -1c
+.RI "void \fBpredictionMotion\fP (const double delta_t, const int model_ind)"
+.br
+.ti -1c
+.RI "void \fBcheckLaneDirectionAvailability\fP (const autoware_msgs::DetectedObject &in_object, const double lane_direction_chi_thres, const bool use_sukf)"
+.br
+.ti -1c
+.RI "void \fBpredictionLidarMeasurement\fP (const int motion_ind, const int num_meas_state)"
+.br
+.ti -1c
+.RI "double \fBcalculateNIS\fP (const autoware_msgs::DetectedObject &in_object, const int motion_ind)"
+.br
+.ti -1c
+.RI "bool \fBisLaneDirectionAvailable\fP (const autoware_msgs::DetectedObject &in_object, const int motion_ind, const double lane_direction_chi_thres)"
+.br
+.ti -1c
+.RI "void \fBupdateKalmanGain\fP (const int motion_ind)"
+.br
+.ti -1c
+.RI "double \fBnormalizeAngle\fP (const double angle)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const bool use_sukf, const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > &object_vec)"
+.br
+.ti -1c
+.RI "void \fBprediction\fP (const bool use_sukf, const bool has_subscribed_vectormap, const double dt)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBukf_id_\fP"
+.br
+.ti -1c
+.RI "int \fBnum_state_\fP"
+.br
+.ti -1c
+.RI "int \fBnum_lidar_state_\fP"
+.br
+.ti -1c
+.RI "int \fBnum_lidar_direction_state_\fP"
+.br
+.ti -1c
+.RI "int \fBnum_motion_model_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_merge_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBp_merge_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBp_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBp_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBp_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_sig_pred_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_sig_pred_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBx_sig_pred_rm_\fP"
+.br
+.ti -1c
+.RI "long long \fBtime_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_a_cv_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_a_ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_a_rm_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_ctrv_yawdd_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_cv_yawdd_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_rm_yawdd_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_laspx_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_laspy_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBweights_c_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBweights_s_\fP"
+.br
+.ti -1c
+.RI "double \fBlambda_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_cv2cv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_ctrv2cv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_rm2cv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_cv2ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_ctrv2ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_rm2ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_cv2rm_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_ctrv2rm_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_rm2rm_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_cv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_match_prob_rm_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_prob_cv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_prob_ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBmode_prob_rm_\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBp1_\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBp2_\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBp3_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_rm_\fP"
+.br
+.ti -1c
+.RI "double \fBpd_\fP"
+.br
+.ti -1c
+.RI "double \fBpg_\fP"
+.br
+.ti -1c
+.RI "int \fBlifetime_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_static_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_stable_\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObject \fBobject_\fP"
+.br
+.ti -1c
+.RI "std::string \fBlabel_\fP"
+.br
+.ti -1c
+.RI "double \fBmin_assiciation_distance_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBinit_meas_\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBvel_history_\fP"
+.br
+.ti -1c
+.RI "double \fBx_merge_yaw_\fP"
+.br
+.ti -1c
+.RI "int \fBtracking_num_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBcv_meas_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBctrv_meas_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBrm_meas_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBq_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBq_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBq_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBr_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBr_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBr_rm_\fP"
+.br
+.ti -1c
+.RI "double \fBnis_cv_\fP"
+.br
+.ti -1c
+.RI "double \fBnis_ctrv_\fP"
+.br
+.ti -1c
+.RI "double \fBnis_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_x_sig_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_x_sig_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_x_sig_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_z_sig_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_z_sig_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_z_sig_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBnew_z_pred_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBnew_z_pred_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBnew_z_pred_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_s_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_s_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBnew_s_rm_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_direction_cv_available_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_direction_ctrv_available_\fP"
+.br
+.ti -1c
+.RI "bool \fBis_direction_rm_available_\fP"
+.br
+.ti -1c
+.RI "double \fBstd_lane_direction_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBlidar_direction_r_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBlidar_direction_r_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBlidar_direction_r_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_lidar_direction_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_lidar_direction_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBz_pred_lidar_direction_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_lidar_direction_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_lidar_direction_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBs_lidar_direction_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_lidar_direction_cv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_lidar_direction_ctrv_\fP"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBk_lidar_direction_rm_\fP"
+.br
+.ti -1c
+.RI "Eigen::VectorXd \fBlidar_direction_ctrv_meas_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 46 of file ukf\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UKF::UKF ()"
+Constructor
+.PP
+Initializes Unscented Kalman filter 
+.PP
+Definition at line 22 of file ukf\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double UKF::calculateNIS (const autoware_msgs::DetectedObject & in_object, const int motion_ind)"
+
+.PP
+Definition at line 1262 of file ukf\&.cpp\&.
+.SS "void UKF::checkLaneDirectionAvailability (const autoware_msgs::DetectedObject & in_object, const double lane_direction_chi_thres, const bool use_sukf)"
+
+.PP
+Definition at line 1304 of file ukf\&.cpp\&.
+.SS "void UKF::ctrv (const double p_x, const double p_y, const double v, const double yaw, const double yawd, const double delta_t, std::vector< double > & state)"
+
+.PP
+Definition at line 770 of file ukf\&.cpp\&.
+.SS "void UKF::cv (const double p_x, const double p_y, const double v, const double yaw, const double yawd, const double delta_t, std::vector< double > & state)"
+
+.PP
+Definition at line 803 of file ukf\&.cpp\&.
+.SS "void UKF::findMaxZandS (Eigen::VectorXd & max_det_z, Eigen::MatrixXd & max_det_s)"
+
+.PP
+Definition at line 444 of file ukf\&.cpp\&.
+.SS "void UKF::initCovarQs (const double dt, const double yaw)"
+
+.PP
+Definition at line 839 of file ukf\&.cpp\&.
+.SS "void UKF::initialize (const Eigen::VectorXd & z, const double timestamp, const int target_ind)"
+
+.PP
+Definition at line 198 of file ukf\&.cpp\&.
+.SS "void UKF::interaction ()"
+
+.PP
+Definition at line 349 of file ukf\&.cpp\&.
+.SS "bool UKF::isLaneDirectionAvailable (const autoware_msgs::DetectedObject & in_object, const int motion_ind, const double lane_direction_chi_thres)"
+
+.PP
+Definition at line 1289 of file ukf\&.cpp\&.
+.SS "void UKF::mergeEstimationAndCovariance ()"
+
+.PP
+Definition at line 315 of file ukf\&.cpp\&.
+.SS "void UKF::mixingProbability ()"
+
+.PP
+Definition at line 331 of file ukf\&.cpp\&.
+.SS "double UKF::normalizeAngle (const double angle)"
+
+.PP
+Definition at line 188 of file ukf\&.cpp\&.
+.SS "void UKF::prediction (const bool use_sukf, const bool has_subscribed_vectormap, const double dt)"
+
+.PP
+Definition at line 1318 of file ukf\&.cpp\&.
+.SS "void UKF::predictionIMMUKF (const double dt, const bool has_subscribed_vectormap)"
+
+.PP
+Definition at line 412 of file ukf\&.cpp\&.
+.SS "void UKF::predictionLidarMeasurement (const int motion_ind, const int num_meas_state)"
+
+.PP
+Definition at line 1155 of file ukf\&.cpp\&.
+.SS "void UKF::predictionMotion (const double delta_t, const int model_ind)"
+
+.PP
+Definition at line 881 of file ukf\&.cpp\&.
+.SS "void UKF::predictionSUKF (const double dt, const bool has_subscribed_vectormap)"
+
+.PP
+Definition at line 392 of file ukf\&.cpp\&.
+.SS "void UKF::randomMotion (const double p_x, const double p_y, const double v, const double yaw, const double yawd, const double delta_t, std::vector< double > & state)"
+
+.PP
+Definition at line 821 of file ukf\&.cpp\&.
+.SS "void UKF::update (const bool use_sukf, const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > & object_vec)"
+
+.PP
+Definition at line 1330 of file ukf\&.cpp\&.
+.SS "void UKF::updateEachMotion (const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > & object_vec, std::vector< double > & lambda_vec)"
+
+.PP
+Definition at line 478 of file ukf\&.cpp\&.
+.SS "void UKF::updateIMMUKF (const double detection_probability, const double gate_probability, const double gating_thres, const std::vector< autoware_msgs::DetectedObject > & object_vec)"
+
+.PP
+Definition at line 749 of file ukf\&.cpp\&.
+.SS "void UKF::updateKalmanGain (const int motion_ind)"
+
+.PP
+Definition at line 1024 of file ukf\&.cpp\&.
+.SS "void UKF::updateMeasurementForCTRV (const std::vector< autoware_msgs::DetectedObject > & object_vec)"
+
+.PP
+Definition at line 680 of file ukf\&.cpp\&.
+.SS "void UKF::updateModeProb (const std::vector< double > & lambda_vec)"
+
+.PP
+Definition at line 270 of file ukf\&.cpp\&.
+.SS "void UKF::updateSUKF (const std::vector< autoware_msgs::DetectedObject > & object_vec)"
+
+.PP
+Definition at line 736 of file ukf\&.cpp\&.
+.SS "void UKF::updateYawWithHighProb ()"
+
+.PP
+Definition at line 288 of file ukf\&.cpp\&.
+.SS "void UKF::uppateForCTRV ()"
+
+.PP
+Definition at line 718 of file ukf\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Eigen::VectorXd UKF::ctrv_meas_"
+
+.PP
+Definition at line 187 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::cv_meas_"
+
+.PP
+Definition at line 186 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::init_meas_"
+
+.PP
+Definition at line 179 of file ukf\&.h\&.
+.SS "bool UKF::is_direction_ctrv_available_"
+
+.PP
+Definition at line 220 of file ukf\&.h\&.
+.SS "bool UKF::is_direction_cv_available_"
+
+.PP
+Definition at line 219 of file ukf\&.h\&.
+.SS "bool UKF::is_direction_rm_available_"
+
+.PP
+Definition at line 221 of file ukf\&.h\&.
+.SS "bool UKF::is_stable_"
+
+.PP
+Definition at line 173 of file ukf\&.h\&.
+.SS "bool UKF::is_static_"
+
+.PP
+Definition at line 170 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_ctrv_"
+
+.PP
+Definition at line 163 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_cv_"
+
+.PP
+Definition at line 162 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_lidar_direction_ctrv_"
+
+.PP
+Definition at line 236 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_lidar_direction_cv_"
+
+.PP
+Definition at line 235 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_lidar_direction_rm_"
+
+.PP
+Definition at line 237 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::k_rm_"
+
+.PP
+Definition at line 164 of file ukf\&.h\&.
+.SS "std::string UKF::label_"
+
+.PP
+Definition at line 175 of file ukf\&.h\&.
+.SS "double UKF::lambda_"
+
+.PP
+Definition at line 124 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::lidar_direction_ctrv_meas_"
+
+.PP
+Definition at line 239 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::lidar_direction_r_ctrv_"
+
+.PP
+Definition at line 224 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::lidar_direction_r_cv_"
+
+.PP
+Definition at line 223 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::lidar_direction_r_rm_"
+
+.PP
+Definition at line 225 of file ukf\&.h\&.
+.SS "int UKF::lifetime_"
+
+.PP
+Definition at line 169 of file ukf\&.h\&.
+.SS "double UKF::min_assiciation_distance_"
+
+.PP
+Definition at line 176 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_ctrv2ctrv_"
+
+.PP
+Definition at line 131 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_ctrv2cv_"
+
+.PP
+Definition at line 127 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_ctrv2rm_"
+
+.PP
+Definition at line 135 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_ctrv_"
+
+.PP
+Definition at line 140 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_cv2ctrv_"
+
+.PP
+Definition at line 130 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_cv2cv_"
+
+.PP
+Definition at line 126 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_cv2rm_"
+
+.PP
+Definition at line 134 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_cv_"
+
+.PP
+Definition at line 138 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_rm2ctrv_"
+
+.PP
+Definition at line 132 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_rm2cv_"
+
+.PP
+Definition at line 128 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_rm2rm_"
+
+.PP
+Definition at line 136 of file ukf\&.h\&.
+.SS "double UKF::mode_match_prob_rm_"
+
+.PP
+Definition at line 142 of file ukf\&.h\&.
+.SS "double UKF::mode_prob_ctrv_"
+
+.PP
+Definition at line 145 of file ukf\&.h\&.
+.SS "double UKF::mode_prob_cv_"
+
+.PP
+Definition at line 144 of file ukf\&.h\&.
+.SS "double UKF::mode_prob_rm_"
+
+.PP
+Definition at line 146 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_s_ctrv_"
+
+.PP
+Definition at line 215 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_s_cv_"
+
+.PP
+Definition at line 214 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_s_rm_"
+
+.PP
+Definition at line 216 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_x_sig_ctrv_"
+
+.PP
+Definition at line 203 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_x_sig_cv_"
+
+.PP
+Definition at line 202 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_x_sig_rm_"
+
+.PP
+Definition at line 204 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::new_z_pred_ctrv_"
+
+.PP
+Definition at line 211 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::new_z_pred_cv_"
+
+.PP
+Definition at line 210 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::new_z_pred_rm_"
+
+.PP
+Definition at line 212 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_z_sig_ctrv_"
+
+.PP
+Definition at line 207 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_z_sig_cv_"
+
+.PP
+Definition at line 206 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::new_z_sig_rm_"
+
+.PP
+Definition at line 208 of file ukf\&.h\&.
+.SS "double UKF::nis_ctrv_"
+
+.PP
+Definition at line 199 of file ukf\&.h\&.
+.SS "double UKF::nis_cv_"
+
+.PP
+Definition at line 198 of file ukf\&.h\&.
+.SS "double UKF::nis_rm_"
+
+.PP
+Definition at line 200 of file ukf\&.h\&.
+.SS "int UKF::num_lidar_direction_state_"
+
+.PP
+Definition at line 61 of file ukf\&.h\&.
+.SS "int UKF::num_lidar_state_"
+
+.PP
+Definition at line 59 of file ukf\&.h\&.
+.SS "int UKF::num_motion_model_"
+
+.PP
+Definition at line 63 of file ukf\&.h\&.
+.SS "int UKF::num_state_"
+
+.PP
+Definition at line 57 of file ukf\&.h\&.
+.SS "autoware_msgs::DetectedObject UKF::object_"
+
+.PP
+Definition at line 174 of file ukf\&.h\&.
+.SS "std::vector<double> UKF::p1_"
+
+.PP
+Definition at line 148 of file ukf\&.h\&.
+.SS "std::vector<double> UKF::p2_"
+
+.PP
+Definition at line 150 of file ukf\&.h\&.
+.SS "std::vector<double> UKF::p3_"
+
+.PP
+Definition at line 152 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::p_ctrv_"
+
+.PP
+Definition at line 84 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::p_cv_"
+
+.PP
+Definition at line 81 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::p_merge_"
+
+.PP
+Definition at line 78 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::p_rm_"
+
+.PP
+Definition at line 87 of file ukf\&.h\&.
+.SS "double UKF::pd_"
+
+.PP
+Definition at line 166 of file ukf\&.h\&.
+.SS "double UKF::pg_"
+
+.PP
+Definition at line 167 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::q_ctrv_"
+
+.PP
+Definition at line 191 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::q_cv_"
+
+.PP
+Definition at line 190 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::q_rm_"
+
+.PP
+Definition at line 192 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::r_ctrv_"
+
+.PP
+Definition at line 195 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::r_cv_"
+
+.PP
+Definition at line 194 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::r_rm_"
+
+.PP
+Definition at line 196 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::rm_meas_"
+
+.PP
+Definition at line 188 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_ctrv_"
+
+.PP
+Definition at line 159 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_cv_"
+
+.PP
+Definition at line 158 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_lidar_direction_ctrv_"
+
+.PP
+Definition at line 232 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_lidar_direction_cv_"
+
+.PP
+Definition at line 231 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_lidar_direction_rm_"
+
+.PP
+Definition at line 233 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::s_rm_"
+
+.PP
+Definition at line 160 of file ukf\&.h\&.
+.SS "double UKF::std_a_ctrv_"
+
+.PP
+Definition at line 103 of file ukf\&.h\&.
+.SS "double UKF::std_a_cv_"
+
+.PP
+Definition at line 102 of file ukf\&.h\&.
+.SS "double UKF::std_a_rm_"
+
+.PP
+Definition at line 104 of file ukf\&.h\&.
+.SS "double UKF::std_ctrv_yawdd_"
+
+.PP
+Definition at line 107 of file ukf\&.h\&.
+.SS "double UKF::std_cv_yawdd_"
+
+.PP
+Definition at line 109 of file ukf\&.h\&.
+.SS "double UKF::std_lane_direction_"
+
+.PP
+Definition at line 222 of file ukf\&.h\&.
+.SS "double UKF::std_laspx_"
+
+.PP
+Definition at line 114 of file ukf\&.h\&.
+.SS "double UKF::std_laspy_"
+
+.PP
+Definition at line 117 of file ukf\&.h\&.
+.SS "double UKF::std_rm_yawdd_"
+
+.PP
+Definition at line 111 of file ukf\&.h\&.
+.SS "long long UKF::time_"
+
+.PP
+Definition at line 99 of file ukf\&.h\&.
+.SS "int UKF::tracking_num_"
+
+.PP
+Definition at line 184 of file ukf\&.h\&.
+.SS "int UKF::ukf_id_"
+
+.PP
+Definition at line 55 of file ukf\&.h\&.
+.SS "std::vector<double> UKF::vel_history_"
+
+.PP
+Definition at line 180 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::weights_c_"
+
+.PP
+Definition at line 120 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::weights_s_"
+
+.PP
+Definition at line 121 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_ctrv_"
+
+.PP
+Definition at line 72 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_cv_"
+
+.PP
+Definition at line 69 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_merge_"
+
+.PP
+Definition at line 66 of file ukf\&.h\&.
+.SS "double UKF::x_merge_yaw_"
+
+.PP
+Definition at line 182 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_rm_"
+
+.PP
+Definition at line 75 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_sig_pred_ctrv_"
+
+.PP
+Definition at line 93 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_sig_pred_cv_"
+
+.PP
+Definition at line 90 of file ukf\&.h\&.
+.SS "Eigen::MatrixXd UKF::x_sig_pred_rm_"
+
+.PP
+Definition at line 96 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_ctrv_"
+
+.PP
+Definition at line 155 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_cv_"
+
+.PP
+Definition at line 154 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_lidar_direction_ctrv_"
+
+.PP
+Definition at line 228 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_lidar_direction_cv_"
+
+.PP
+Definition at line 227 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_lidar_direction_rm_"
+
+.PP
+Definition at line 229 of file ukf\&.h\&.
+.SS "Eigen::VectorXd UKF::z_pred_rm_"
+
+.PP
+Definition at line 156 of file ukf\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

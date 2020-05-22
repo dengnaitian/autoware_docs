@@ -1,0 +1,124 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/sopas/colaa.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/sopas/colaa.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'colaa\&.hpp'\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cassert>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include '\&.\&./tools/toolbox\&.hpp'\fP
+.br
+\fC#include '\&.\&./tools/errorhandler\&.hpp'\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <limits>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBcolaa\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::getValueOfChar\fP (\fBUINT8\fP \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBcolaa::nibbleToAscii\fP (\fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "void \fBcolaa::addFrameToBuffer\fP (\fBUINT8\fP *sendBuffer, \fBUINT8\fP *cmdBuffer, \fBUINT16\fP *len)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addUINT8ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addUINT16ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT16\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addINT8ToBuffer\fP (\fBUINT8\fP *buffer, \fBINT8\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addINT32ToBuffer\fP (\fBUINT8\fP *buffer, \fBINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addUINT32ToBuffer\fP (\fBUINT8\fP *buffer, \fBUINT32\fP value)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::addStringToBuffer\fP (\fBUINT8\fP *buffer, const std::string &text)"
+.br
+.ti -1c
+.RI "std::string \fBcolaa::getNextStringToken\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "std::string \fBcolaa::getNextStringToken\fP (\fBUINT8\fP *rxData)"
+.br
+.ti -1c
+.RI "bool \fBcolaa::GetNibble\fP (unsigned char \fBdata\fP, unsigned char &rNibble)"
+.br
+.ti -1c
+.RI "double \fBcolaa::decodeReal\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "double \fBcolaa::decodeReal\fP (const std::string &rxData)"
+.br
+.RI "\fIset of more efficient functions that do not copy strings (should be prefered in use together with the colaa::tokenizer) \fP"
+.ti -1c
+.RI "\fBUINT32\fP \fBcolaa::decodeUINT32\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBcolaa::decodeINT16\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBcolaa::decodeINT32\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBINT16\fP \fBcolaa::decodeINT16\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBcolaa::decodeINT32\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "std::string \fBcolaa::decodeString\fP (std::string *rxData, \fBUINT16\fP len)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::decodeUINT16\fP (\fBBYTE\fP *buffer)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::decodeUINT16\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBcolaa::decodeUINT8\fP (std::string *rxData)"
+.br
+.ti -1c
+.RI "\fBUINT16\fP \fBcolaa::decodeUINT16\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBcolaa::decodeUINT8\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBcolaa::decodeUINT32\fP (const std::string &rxData)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBcolaa::decodeXByte\fP (std::string *rxData, \fBUINT16\fP len)"
+.br
+.ti -1c
+.RI "std::string \fBcolaa::convertRxBufferToString\fP (\fBUINT8\fP *buffer, \fBUINT16\fP bufferLen)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

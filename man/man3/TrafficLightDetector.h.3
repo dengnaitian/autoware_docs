@@ -1,0 +1,199 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/region_tlr/TrafficLightDetector.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/region_tlr/TrafficLightDetector.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include <opencv2/imgproc/imgproc\&.hpp>\fP
+.br
+\fC#include <opencv2/features2d/features2d\&.hpp>\fP
+.br
+\fC#include 'Context\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBTrafficLightDetector\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMY_COLOR_PURPLE\fP   cv::Scalar(255,0,255)"
+.br
+.ti -1c
+.RI "#define \fBMY_COLOR_RED\fP   cv::Scalar(0,0,255)"
+.br
+.ti -1c
+.RI "#define \fBMY_COLOR_GREEN\fP   cv::Scalar(0,255,0)"
+.br
+.ti -1c
+.RI "#define \fBMY_COLOR_YELLOW\fP   cv::Scalar(60,255,255)"
+.br
+.ti -1c
+.RI "#define \fBMY_COLOR_BLUE\fP   cv::Scalar(255,0,0)"
+.br
+.ti -1c
+.RI "#define \fBMY_COLOR_WHITE\fP   cv::Scalar(255,255,255)"
+.br
+.ti -1c
+.RI "#define \fBDAYTIME_S_SIGNAL_THRESHOLD\fP   ((double)0\&.37)"
+.br
+.ti -1c
+.RI "#define \fBDAYTIME_V_SIGNAL_THRESHOLD\fP   ((double)140/255)"
+.br
+.ti -1c
+.RI "#define \fBNOISE_REDUCTION_TIME\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCIRCLE_LEVEL_THRESHOLD\fP   0\&.75"
+.br
+.ti -1c
+.RI "#define \fBCIRCLE_AREA_THRESHOLD\fP   0\&.5"
+.br
+.ti -1c
+.RI "#define \fBCHANGE_STATE_THRESHOLD\fP   10"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBdaytime_Hue_threshold\fP { \fBDAYTIME_RED_LOWER\fP = 340, \fBDAYTIME_RED_UPPER\fP = 50, \fBDAYTIME_YELLOW_LOWER\fP = 50, \fBDAYTIME_YELLOW_UPPER\fP = 70, \fBDAYTIME_GREEN_LOWER\fP = 80, \fBDAYTIME_GREEN_UPPER\fP = 190 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBgetBrightnessRatioInCircle\fP (const cv::Mat &input, const \fBcv::Point\fP center, const int radius)"
+.br
+.ti -1c
+.RI "int \fBgetCurrentLightsCode\fP (bool display_red, bool display_yellow, bool display_green)"
+.br
+.ti -1c
+.RI "\fBLightState\fP \fBdetermineState\fP (\fBLightState\fP previousState, int currentLightsCode, int *stateJudgeCount)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const \fBLightState\fP \fBSTATE_TRANSITION_MATRIX\fP [4][8]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CHANGE_STATE_THRESHOLD   10"
+
+.PP
+Definition at line 55 of file TrafficLightDetector\&.h\&.
+.SS "#define CIRCLE_AREA_THRESHOLD   0\&.5"
+
+.PP
+Definition at line 53 of file TrafficLightDetector\&.h\&.
+.SS "#define CIRCLE_LEVEL_THRESHOLD   0\&.75"
+
+.PP
+Definition at line 52 of file TrafficLightDetector\&.h\&.
+.SS "#define DAYTIME_S_SIGNAL_THRESHOLD   ((double)0\&.37)"
+
+.PP
+Definition at line 47 of file TrafficLightDetector\&.h\&.
+.SS "#define DAYTIME_V_SIGNAL_THRESHOLD   ((double)140/255)"
+
+.PP
+Definition at line 48 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_BLUE   cv::Scalar(255,0,0)"
+
+.PP
+Definition at line 15 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_GREEN   cv::Scalar(0,255,0)"
+
+.PP
+Definition at line 13 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_PURPLE   cv::Scalar(255,0,255)"
+
+.PP
+Definition at line 11 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_RED   cv::Scalar(0,0,255)"
+
+.PP
+Definition at line 12 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_WHITE   cv::Scalar(255,255,255)"
+
+.PP
+Definition at line 16 of file TrafficLightDetector\&.h\&.
+.SS "#define MY_COLOR_YELLOW   cv::Scalar(60,255,255)"
+
+.PP
+Definition at line 14 of file TrafficLightDetector\&.h\&.
+.SS "#define NOISE_REDUCTION_TIME   1"
+
+.PP
+Definition at line 50 of file TrafficLightDetector\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBdaytime_Hue_threshold\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDAYTIME_RED_LOWER \fP\fP
+.TP
+\fB\fIDAYTIME_RED_UPPER \fP\fP
+.TP
+\fB\fIDAYTIME_YELLOW_LOWER \fP\fP
+.TP
+\fB\fIDAYTIME_YELLOW_UPPER \fP\fP
+.TP
+\fB\fIDAYTIME_GREEN_LOWER \fP\fP
+.TP
+\fB\fIDAYTIME_GREEN_UPPER \fP\fP
+.PP
+Definition at line 38 of file TrafficLightDetector\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBLightState\fP determineState (\fBLightState\fP previousState, int currentLightsCode, int * stateJudgeCount)"
+
+.PP
+Definition at line 485 of file TrafficLightDetector\&.cpp\&.
+.SS "double getBrightnessRatioInCircle (const cv::Mat & input, const \fBcv::Point\fP center, const int radius)"
+
+.PP
+Definition at line 464 of file TrafficLightDetector\&.cpp\&.
+.SS "int getCurrentLightsCode (bool display_red, bool display_yellow, bool display_green)"
+
+.PP
+Definition at line 481 of file TrafficLightDetector\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const \fBLightState\fP STATE_TRANSITION_MATRIX[4][8]"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+    
+    { GREEN,     UNDEFINED, YELLOW,    YELLOW, GREEN,     GREEN,     YELLOW, UNDEFINED }, 
+    { YELLOW,    RED,       YELLOW,    RED,    UNDEFINED, UNDEFINED, YELLOW, UNDEFINED }, 
+    { RED,       RED,       UNDEFINED, RED,    GREEN,     RED,       GREEN,  UNDEFINED }, 
+    { UNDEFINED, RED,       YELLOW,    RED,    GREEN,     RED,       YELLOW, UNDEFINED }  
+}
+.fi
+.PP
+Definition at line 18 of file TrafficLightDetector\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

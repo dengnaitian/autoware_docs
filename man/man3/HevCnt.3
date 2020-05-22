@@ -1,0 +1,338 @@
+.TH "HevCnt" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HevCnt \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HevCnt\&.h>\fP
+.PP
+Inherits ChangeStateObserver\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHevCnt\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~HevCnt\fP ()"
+.br
+.ti -1c
+.RI "bool \fBInit\fP ()"
+.br
+.ti -1c
+.RI "bool \fBStart\fP ()"
+.br
+.ti -1c
+.RI "bool \fBProcess\fP ()"
+.br
+.ti -1c
+.RI "bool \fBStop\fP ()"
+.br
+.ti -1c
+.RI "bool \fBClose\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSetConfigCallback\fP (\fBChangeConfig\fP *\fBcallback\fP)"
+.br
+.ti -1c
+.RI "void \fBGetBattInf\fP (\fBBattInf\fP *batt)"
+.br
+.ti -1c
+.RI "void \fBGetBrakeInf\fP (\fBBrakeInf\fP *brake)"
+.br
+.ti -1c
+.RI "void \fBGetOtherInf\fP (\fBOtherInf\fP *other)"
+.br
+.ti -1c
+.RI "void \fBGetDrvInf\fP (\fBDrvInf\fP *drv)"
+.br
+.ti -1c
+.RI "void \fBGetStrInf\fP (\fBStrInf\fP *str)"
+.br
+.ti -1c
+.RI "void \fBGetErrCode\fP (int *leve, int *err)"
+.br
+.ti -1c
+.RI "void \fBGetFirmVersion\fP (char *firm_versin)"
+.br
+.ti -1c
+.RI "void \fBSetStrMode\fP (int mode)"
+.br
+.ti -1c
+.RI "void \fBSetStrCMode\fP (int cmode)"
+.br
+.ti -1c
+.RI "void \fBSetStrOMOde\fP (int omode)"
+.br
+.ti -1c
+.RI "void \fBSetStrTorque\fP (int torque)"
+.br
+.ti -1c
+.RI "void \fBSetStrAngle\fP (int angle)"
+.br
+.ti -1c
+.RI "void \fBSetStrServo\fP (int servo)"
+.br
+.ti -1c
+.RI "void \fBSetDrvMode\fP (int mode)"
+.br
+.ti -1c
+.RI "void \fBSetDrvCMode\fP (int cmode)"
+.br
+.ti -1c
+.RI "void \fBSetDrvOMode\fP (int omode)"
+.br
+.ti -1c
+.RI "void \fBSetDrvStroke\fP (int stroke)"
+.br
+.ti -1c
+.RI "void \fBSetDrvVeloc\fP (int veloc)"
+.br
+.ti -1c
+.RI "void \fBSetDrvShiftMode\fP (int shift)"
+.br
+.ti -1c
+.RI "void \fBSetDrvServo\fP (int servo)"
+.br
+.ti -1c
+.RI "void \fBSetBrakeStroke\fP (int stroke)"
+.br
+.ti -1c
+.RI "void \fBSetBrakeLamp\fP (unsigned char lamp)"
+.br
+.ti -1c
+.RI "void \fBSetBlinkerLeft\fP (unsigned char blink_left)"
+.br
+.ti -1c
+.RI "void \fBSetBlinkerRight\fP (unsigned char blink_right)"
+.br
+.ti -1c
+.RI "void \fBSetBrakeMode\fP (unsigned char mode)"
+.br
+.ti -1c
+.RI "void \fBSetControlGain\fP (int index, int gain)"
+.br
+.ti -1c
+.RI "void \fBSetDist\fP (float dist)"
+.br
+.ti -1c
+.RI "void \fBSetTargetAngle\fP (int target)"
+.br
+.ti -1c
+.RI "void \fBSndDiagReq\fP (HEV_ECU kind)"
+.br
+.ti -1c
+.RI "void \fBSndDiagClear\fP (HEV_ECU kind)"
+.br
+.ti -1c
+.RI "void \fBSndErrReq\fP ()"
+.br
+.ti -1c
+.RI "void \fBSndErrClear\fP ()"
+.br
+.ti -1c
+.RI "void \fBSndVersionReq\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetConfig\fP (HEV_CONFIG kind)"
+.br
+.ti -1c
+.RI "void \fBSetConfig\fP (HEV_CONFIG kind, int val)"
+.br
+.ti -1c
+.RI "void \fBSetConfig\fP (HEV_CONFIG kind, float val)"
+.br
+.ti -1c
+.RI "void \fBSaveConfig\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 162 of file HevCnt\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HevCnt::HevCnt ()"
+
+.PP
+Definition at line 5 of file HevCnt\&.cpp\&.
+.SS "HevCnt::~HevCnt ()\fC [virtual]\fP"
+
+.PP
+Definition at line 24 of file HevCnt\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool HevCnt::Close ()"
+
+.PP
+Definition at line 90 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetBattInf (\fBBattInf\fP * batt)"
+
+.PP
+Definition at line 96 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetBrakeInf (\fBBrakeInf\fP * brake)"
+
+.PP
+Definition at line 107 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetConfig (HEV_CONFIG kind)"
+
+.PP
+Definition at line 552 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetDrvInf (\fBDrvInf\fP * drv)"
+
+.PP
+Definition at line 160 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetErrCode (int * leve, int * err)"
+
+.PP
+Definition at line 546 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetFirmVersion (char * firm_versin)"
+
+.PP
+Definition at line 542 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetOtherInf (\fBOtherInf\fP * other)"
+
+.PP
+Definition at line 127 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::GetStrInf (\fBStrInf\fP * str)"
+
+.PP
+Definition at line 182 of file HevCnt\&.cpp\&.
+.SS "bool HevCnt::Init ()"
+
+.PP
+Definition at line 27 of file HevCnt\&.cpp\&.
+.SS "bool HevCnt::Process ()"
+
+.PP
+Definition at line 79 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SaveConfig ()"
+
+.PP
+Definition at line 567 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetBlinkerLeft (unsigned char blink_left)"
+
+.PP
+Definition at line 497 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetBlinkerRight (unsigned char blink_right)"
+
+.PP
+Definition at line 502 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetBrakeLamp (unsigned char lamp)"
+
+.PP
+Definition at line 492 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetBrakeMode (unsigned char mode)"
+
+.PP
+Definition at line 507 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetBrakeStroke (int stroke)"
+
+.PP
+Definition at line 487 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetConfig (HEV_CONFIG kind, int val)"
+
+.PP
+Definition at line 557 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetConfig (HEV_CONFIG kind, float val)"
+
+.PP
+Definition at line 562 of file HevCnt\&.cpp\&.
+.SS "bool HevCnt::SetConfigCallback (\fBChangeConfig\fP * callback)"
+
+.PP
+Definition at line 73 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetControlGain (int index, int gain)"
+
+.PP
+Definition at line 512 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDist (float dist)"
+
+.SS "void HevCnt::SetDrvCMode (int cmode)"
+
+.PP
+Definition at line 456 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvMode (int mode)"
+
+.PP
+Definition at line 451 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvOMode (int omode)"
+
+.PP
+Definition at line 461 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvServo (int servo)"
+
+.PP
+Definition at line 482 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvShiftMode (int shift)"
+
+.PP
+Definition at line 477 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvStroke (int stroke)"
+
+.PP
+Definition at line 466 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetDrvVeloc (int veloc)"
+
+.PP
+Definition at line 471 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrAngle (int angle)"
+
+.PP
+Definition at line 440 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrCMode (int cmode)"
+
+.PP
+Definition at line 424 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrMode (int mode)"
+
+.PP
+Definition at line 419 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrOMOde (int omode)"
+
+.PP
+Definition at line 429 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrServo (int servo)"
+
+.PP
+Definition at line 446 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetStrTorque (int torque)"
+
+.PP
+Definition at line 434 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SetTargetAngle (int target)"
+
+.SS "void HevCnt::SndDiagClear (HEV_ECU kind)"
+
+.PP
+Definition at line 522 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SndDiagReq (HEV_ECU kind)"
+
+.PP
+Definition at line 517 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SndErrClear ()"
+
+.PP
+Definition at line 532 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SndErrReq ()"
+
+.PP
+Definition at line 527 of file HevCnt\&.cpp\&.
+.SS "void HevCnt::SndVersionReq ()"
+
+.PP
+Definition at line 537 of file HevCnt\&.cpp\&.
+.SS "bool HevCnt::Start ()"
+
+.PP
+Definition at line 54 of file HevCnt\&.cpp\&.
+.SS "bool HevCnt::Stop ()"
+
+.PP
+Definition at line 84 of file HevCnt\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

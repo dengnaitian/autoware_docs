@@ -1,0 +1,120 @@
+.TH "libjavad_navsat_driver.parser" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libjavad_navsat_driver.parser \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBsafe_float\fP (field)"
+.br
+.ti -1c
+.RI "def \fBconvert_latitude\fP (field)"
+.br
+.ti -1c
+.RI "def \fBconvert_longitude\fP (field)"
+.br
+.ti -1c
+.RI "def \fBconvert_time\fP (nmea_utc)"
+.br
+.ti -1c
+.RI "def \fBconvert_status_flag\fP (status_flag)"
+.br
+.ti -1c
+.RI "def \fBconvert_knots_to_mps\fP (knots)"
+.br
+.ti -1c
+.RI "def \fBconvert_deg_to_rads\fP (degs)"
+.br
+.ti -1c
+.RI "def \fBparse_nmea_sentence\fP (nmea_sentence)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBlogger\fP = logging\&.getLogger('rosout')"
+.br
+.ti -1c
+.RI "dictionary \fBparse_maps\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def libjavad_navsat_driver\&.parser\&.convert_deg_to_rads ( degs)"
+
+.PP
+Definition at line 88 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.convert_knots_to_mps ( knots)"
+
+.PP
+Definition at line 83 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.convert_latitude ( field)"
+
+.PP
+Definition at line 48 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.convert_longitude ( field)"
+
+.PP
+Definition at line 52 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.convert_status_flag ( status_flag)"
+
+.PP
+Definition at line 74 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.convert_time ( nmea_utc)"
+
+.PP
+Definition at line 56 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.parse_nmea_sentence ( nmea_sentence)"
+
+.PP
+Definition at line 120 of file parser\&.py\&.
+.SS "def libjavad_navsat_driver\&.parser\&.safe_float ( field)"
+
+.PP
+Definition at line 41 of file parser\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "libjavad_navsat_driver\&.parser\&.logger = logging\&.getLogger('rosout')"
+
+.PP
+Definition at line 38 of file parser\&.py\&.
+.SS "dictionary libjavad_navsat_driver\&.parser\&.parse_maps"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     "GGA": [
+3         ("fix_type", int, 6),
+4         ("latitude", convert_latitude, 2),
+5         ("latitude_direction", str, 3),
+6         ("longitude", convert_longitude, 4),
+7         ("longitude_direction", str, 5),
+8         ("altitude", safe_float, 9),
+9         ("mean_sea_level", safe_float, 11),
+10         ("hdop", safe_float, 8),
+11         ("num_satellites", int, 7),
+12         ("utc_time", convert_time, 1),
+13         ],
+14     "RMC": [
+15         ("utc_time", convert_time, 1),
+16         ("fix_valid", convert_status_flag, 2),
+17         ("latitude", convert_latitude, 3),
+18         ("latitude_direction", str, 4),
+19         ("longitude", convert_longitude, 5),
+20         ("longitude_direction", str, 6),
+21         ("speed", convert_knots_to_mps, 7),
+22         ("true_course", convert_deg_to_rads, 8),
+23         ]
+24     }
+.fi
+.PP
+Definition at line 94 of file parser\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

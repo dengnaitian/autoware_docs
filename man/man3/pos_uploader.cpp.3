@@ -1,0 +1,106 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/nodes/pos_uploader/pos_uploader.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/data/packages/pos_db/nodes/pos_uploader/pos_uploader.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <std_msgs/String\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseArray\&.h>\fP
+.br
+\fC#include <geometry_msgs/Point\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBox\&.h>\fP
+.br
+\fC#include <jsk_recognition_msgs/BoundingBoxArray\&.h>\fP
+.br
+\fC#include <pos_db\&.h>\fP
+.br
+\fC#include 'autoware_msgs/ObjLabel\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMYNAME\fP   'pos_uploader'"
+.br
+.ti -1c
+.RI "#define \fBOWN_TOPIC_NAME\fP   'current_pose'"
+.br
+.ti -1c
+.RI "#define \fBCAR_TOPIC_NAME\fP   'obj_car/obj_pose'"
+.br
+.ti -1c
+.RI "#define \fBPERSON_TOPIC_NAME\fP   'obj_person/obj_pose'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "pthread_mutex_t \fBpose_lock_\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CAR_TOPIC_NAME   'obj_car/obj_pose'"
+
+.PP
+Definition at line 41 of file pos_uploader\&.cpp\&.
+.SS "#define MYNAME   'pos_uploader'"
+
+.PP
+Definition at line 39 of file pos_uploader\&.cpp\&.
+.SS "#define OWN_TOPIC_NAME   'current_pose'"
+
+.PP
+Definition at line 40 of file pos_uploader\&.cpp\&.
+.SS "#define PERSON_TOPIC_NAME   'obj_person/obj_pose'"
+
+.PP
+Definition at line 42 of file pos_uploader\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+NodeHandle is the main access point to communications with the ROS system\&. The first NodeHandle constructed will fully initialize this node, and the last NodeHandle destructed will close down the node\&.
+.PP
+Definition at line 304 of file pos_uploader\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "pthread_mutex_t pose_lock_"
+
+.PP
+Definition at line 68 of file pos_uploader\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

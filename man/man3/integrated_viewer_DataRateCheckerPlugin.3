@@ -1,0 +1,146 @@
+.TH "integrated_viewer::DataRateCheckerPlugin" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+integrated_viewer::DataRateCheckerPlugin \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <data_rate_checker_plugin\&.h>\fP
+.PP
+Inherits Panel\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDataRateCheckerPlugin\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "virtual void \fBresizeEvent\fP (QResizeEvent *)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateTopicList\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *object, QEvent *event)"
+.br
+.ti -1c
+.RI "void \fBMessageCallback\fP (const \fBDummyMsg\fP &msg)"
+.br
+.ti -1c
+.RI "void \fBTimerCallback\fP (const ros::WallTimerEvent &event)"
+.br
+.ti -1c
+.RI "virtual void \fBsave\fP (rviz::Config config) const "
+.br
+.ti -1c
+.RI "virtual void \fBload\fP (const rviz::Config &config)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::NodeHandle \fBnode_handle_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBtopic_sub_\fP"
+.br
+.ti -1c
+.RI "ros::WallTimer \fBtimer_\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBwindow_size_\fP = 10000"
+.br
+.ti -1c
+.RI "double \fBlast_message_time_\fP = \-1"
+.br
+.ti -1c
+.RI "std::deque< double > \fBtimes_\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const QString \fBkBlankTopic\fP = '\-\-\-\-\-'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 31 of file data_rate_checker_plugin\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "integrated_viewer::DataRateCheckerPlugin::DataRateCheckerPlugin (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 16 of file data_rate_checker_plugin\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool integrated_viewer::DataRateCheckerPlugin::eventFilter (QObject * object, QEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 191 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::load (const rviz::Config & config)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 205 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::MessageCallback (const \fBDummyMsg\fP & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::resizeEvent (QResizeEvent *)\fC [virtual]\fP"
+
+.PP
+Definition at line 188 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::save (rviz::Config config) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 199 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::TimerCallback (const ros::WallTimerEvent & event)\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file data_rate_checker_plugin\&.cpp\&.
+.SS "void integrated_viewer::DataRateCheckerPlugin::UpdateTopicList (void)\fC [protected]\fP"
+
+.PP
+Definition at line 35 of file data_rate_checker_plugin\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const QString integrated_viewer::DataRateCheckerPlugin::kBlankTopic = '\-\-\-\-\-'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 51 of file data_rate_checker_plugin\&.h\&.
+.SS "double integrated_viewer::DataRateCheckerPlugin::last_message_time_ = \-1\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file data_rate_checker_plugin\&.h\&.
+.SS "ros::NodeHandle integrated_viewer::DataRateCheckerPlugin::node_handle_\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file data_rate_checker_plugin\&.h\&.
+.SS "ros::WallTimer integrated_viewer::DataRateCheckerPlugin::timer_\fC [protected]\fP"
+
+.PP
+Definition at line 60 of file data_rate_checker_plugin\&.h\&.
+.SS "std::deque<double> integrated_viewer::DataRateCheckerPlugin::times_\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file data_rate_checker_plugin\&.h\&.
+.SS "ros::Subscriber integrated_viewer::DataRateCheckerPlugin::topic_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 57 of file data_rate_checker_plugin\&.h\&.
+.SS "unsigned int integrated_viewer::DataRateCheckerPlugin::window_size_ = 10000\fC [protected]\fP"
+
+.PP
+Definition at line 63 of file data_rate_checker_plugin\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

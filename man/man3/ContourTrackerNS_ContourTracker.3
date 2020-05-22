@@ -1,0 +1,599 @@
+.TH "ContourTrackerNS::ContourTracker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ContourTrackerNS::ContourTracker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lidar_kf_contour_track_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContourTracker\fP ()"
+.br
+.ti -1c
+.RI "\fB~ContourTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetCloudClusters\fP (const autoware_msgs::CloudClusterArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBVisualizeLocalTracking\fP ()"
+.br
+.ti -1c
+.RI "void \fBImportCloudClusters\fP (const autoware_msgs::CloudClusterArrayConstPtr &msg, std::vector< \fBPlannerHNS::DetectedObject\fP > &originalClusters)"
+.br
+.ti -1c
+.RI "bool \fBIsCar\fP (const \fBPlannerHNS::DetectedObject\fP &obj, const \fBPlannerHNS::WayPoint\fP &currState, \fBPlannerHNS::RoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "void \fBCalculateTTC\fP (const std::vector< \fBPlannerHNS::DetectedObject\fP > &objs, const \fBPlannerHNS::WayPoint\fP &currState, \fBPlannerHNS::RoadNetwork\fP &\fBmap\fP)"
+.br
+.ti -1c
+.RI "void \fBGetFrontTrajectories\fP (std::vector< \fBPlannerHNS::Lane\fP * > &lanes, const \fBPlannerHNS::WayPoint\fP &currState, const double &max_distance, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &trajectories)"
+.br
+.ti -1c
+.RI "void \fBReadNodeParams\fP ()"
+.br
+.ti -1c
+.RI "void \fBReadCommonParams\fP ()"
+.br
+.ti -1c
+.RI "void \fBLogAndSend\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::DetectedObject\fP > \fBm_OriginalClusters\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObjectArray \fBm_OutPutResults\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewClusters\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPerceptionParams\fP \fBm_Params\fP"
+.br
+.ti -1c
+.RI "\fBSimpleTracker\fP \fBm_ObstacleTracking\fP"
+.br
+.ti -1c
+.RI "int \fBm_nDummyObjPerRep\fP"
+.br
+.ti -1c
+.RI "int \fBm_nDetectedObjRepresentations\fP"
+.br
+.ti -1c
+.RI "std::vector< visualization_msgs::MarkerArray > \fBm_DetectedPolygonsDummy\fP"
+.br
+.ti -1c
+.RI "std::vector< visualization_msgs::MarkerArray > \fBm_DetectedPolygonsActual\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_DetectedPolygonsAllMarkers\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_DetectionCircles\fP"
+.br
+.ti -1c
+.RI "std::vector< visualization_msgs::MarkerArray > \fBm_MatchingInfoDummy\fP"
+.br
+.ti -1c
+.RI "std::vector< visualization_msgs::MarkerArray > \fBm_MatchingInfoActual\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::MarkerArray \fBm_TTC_Path\fP"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBm_TTC_Info\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::MAP_SOURCE_TYPE\fP \fBm_MapType\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_MapPath\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBbMap\fP"
+.br
+.ti -1c
+.RI "double \fBm_MapFilterDistance\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::Lane\fP * > \fBm_ClosestLanesList\fP"
+.br
+.ti -1c
+.RI "int \fBm_nOriginalPoints\fP"
+.br
+.ti -1c
+.RI "int \fBm_nContourPoints\fP"
+.br
+.ti -1c
+.RI "double \fBm_FilteringTime\fP"
+.br
+.ti -1c
+.RI "double \fBm_PolyEstimationTime\fP"
+.br
+.ti -1c
+.RI "double \fBm_tracking_time\fP"
+.br
+.ti -1c
+.RI "double \fBm_dt\fP"
+.br
+.ti -1c
+.RI "struct timespec \fBm_loop_timer\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_AllTrackedObjects\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_DetectedPolygonsRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TrackedObstaclesRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_TTC_PathRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cloud_clusters\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 86 of file lidar_kf_contour_track_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ContourTrackerNS::ContourTracker::ContourTracker ()"
+
+.PP
+Definition at line 25 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "ContourTrackerNS::ContourTracker::~ContourTracker ()"
+
+.PP
+Definition at line 88 of file lidar_kf_contour_track_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ContourTrackerNS::ContourTracker::CalculateTTC (const std::vector< \fBPlannerHNS::DetectedObject\fP > & objs, const \fBPlannerHNS::WayPoint\fP & currState, \fBPlannerHNS::RoadNetwork\fP & map)\fC [protected]\fP"
+
+.PP
+Definition at line 448 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetCloudClusters (const autoware_msgs::CloudClusterArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 152 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 306 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)"
+
+.PP
+Definition at line 612 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)"
+
+.PP
+Definition at line 668 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)"
+
+.PP
+Definition at line 647 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)"
+
+.PP
+Definition at line 598 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)"
+
+.PP
+Definition at line 605 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)"
+
+.PP
+Definition at line 584 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMLines (const vector_map_msgs::LineArray & msg)"
+
+.PP
+Definition at line 619 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)"
+
+.PP
+Definition at line 675 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)"
+
+.PP
+Definition at line 591 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)"
+
+.PP
+Definition at line 654 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)"
+
+.PP
+Definition at line 633 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)"
+
+.PP
+Definition at line 626 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)"
+
+.PP
+Definition at line 640 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)"
+
+.PP
+Definition at line 661 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::GetFrontTrajectories (std::vector< \fBPlannerHNS::Lane\fP * > & lanes, const \fBPlannerHNS::WayPoint\fP & currState, const double & max_distance, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & trajectories)\fC [protected]\fP"
+
+.PP
+Definition at line 422 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::ImportCloudClusters (const autoware_msgs::CloudClusterArrayConstPtr & msg, std::vector< \fBPlannerHNS::DetectedObject\fP > & originalClusters)\fC [protected]\fP"
+
+.PP
+Definition at line 179 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "bool ContourTrackerNS::ContourTracker::IsCar (const \fBPlannerHNS::DetectedObject\fP & obj, const \fBPlannerHNS::WayPoint\fP & currState, \fBPlannerHNS::RoadNetwork\fP & map)\fC [protected]\fP"
+
+.PP
+Definition at line 245 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::LogAndSend ()\fC [protected]\fP"
+
+.PP
+Definition at line 377 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::MainLoop ()"
+
+.PP
+Definition at line 515 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::ReadCommonParams ()\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::ReadNodeParams ()\fC [protected]\fP"
+
+.PP
+Definition at line 97 of file lidar_kf_contour_track_core\&.cpp\&.
+.SS "void ContourTrackerNS::ContourTracker::VisualizeLocalTracking ()\fC [protected]\fP"
+
+.PP
+Definition at line 314 of file lidar_kf_contour_track_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool ContourTrackerNS::ContourTracker::bMap\fC [protected]\fP"
+
+.PP
+Definition at line 116 of file lidar_kf_contour_track_core\&.h\&.
+.SS "bool ContourTrackerNS::ContourTracker::bNewClusters\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file lidar_kf_contour_track_core\&.h\&.
+.SS "bool ContourTrackerNS::ContourTracker::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::Lane\fP*> ContourTrackerNS::ContourTracker::m_ClosestLanesList\fC [protected]\fP"
+
+.PP
+Definition at line 119 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP ContourTrackerNS::ContourTracker::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 92 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<visualization_msgs::MarkerArray> ContourTrackerNS::ContourTracker::m_DetectedPolygonsActual\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file lidar_kf_contour_track_core\&.h\&.
+.SS "visualization_msgs::MarkerArray ContourTrackerNS::ContourTracker::m_DetectedPolygonsAllMarkers\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<visualization_msgs::MarkerArray> ContourTrackerNS::ContourTracker::m_DetectedPolygonsDummy\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file lidar_kf_contour_track_core\&.h\&.
+.SS "visualization_msgs::MarkerArray ContourTrackerNS::ContourTracker::m_DetectionCircles\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file lidar_kf_contour_track_core\&.h\&.
+.SS "double ContourTrackerNS::ContourTracker::m_dt\fC [protected]\fP"
+
+.PP
+Definition at line 126 of file lidar_kf_contour_track_core\&.h\&.
+.SS "double ContourTrackerNS::ContourTracker::m_FilteringTime\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<std::string> ContourTrackerNS::ContourTracker::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 112 of file lidar_kf_contour_track_core\&.h\&.
+.SS "struct timespec ContourTrackerNS::ContourTracker::m_loop_timer\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP ContourTrackerNS::ContourTracker::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 115 of file lidar_kf_contour_track_core\&.h\&.
+.SS "double ContourTrackerNS::ContourTracker::m_MapFilterDistance\fC [protected]\fP"
+
+.PP
+Definition at line 117 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::string ContourTrackerNS::ContourTracker::m_MapPath\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP ContourTrackerNS::ContourTracker::m_MapRaw"
+
+.PP
+Definition at line 165 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBPlannerHNS::MAP_SOURCE_TYPE\fP ContourTrackerNS::ContourTracker::m_MapType\fC [protected]\fP"
+
+.PP
+Definition at line 113 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<visualization_msgs::MarkerArray> ContourTrackerNS::ContourTracker::m_MatchingInfoActual\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<visualization_msgs::MarkerArray> ContourTrackerNS::ContourTracker::m_MatchingInfoDummy\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file lidar_kf_contour_track_core\&.h\&.
+.SS "int ContourTrackerNS::ContourTracker::m_nContourPoints\fC [protected]\fP"
+
+.PP
+Definition at line 122 of file lidar_kf_contour_track_core\&.h\&.
+.SS "int ContourTrackerNS::ContourTracker::m_nDetectedObjRepresentations\fC [protected]\fP"
+
+.PP
+Definition at line 99 of file lidar_kf_contour_track_core\&.h\&.
+.SS "int ContourTrackerNS::ContourTracker::m_nDummyObjPerRep\fC [protected]\fP"
+
+.PP
+Definition at line 98 of file lidar_kf_contour_track_core\&.h\&.
+.SS "int ContourTrackerNS::ContourTracker::m_nOriginalPoints\fC [protected]\fP"
+
+.PP
+Definition at line 121 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBSimpleTracker\fP ContourTrackerNS::ContourTracker::m_ObstacleTracking\fC [protected]\fP"
+
+.PP
+Definition at line 95 of file lidar_kf_contour_track_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::DetectedObject\fP> ContourTrackerNS::ContourTracker::m_OriginalClusters\fC [protected]\fP"
+
+.PP
+Definition at line 89 of file lidar_kf_contour_track_core\&.h\&.
+.SS "autoware_msgs::DetectedObjectArray ContourTrackerNS::ContourTracker::m_OutPutResults\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file lidar_kf_contour_track_core\&.h\&.
+.SS "\fBPerceptionParams\fP ContourTrackerNS::ContourTracker::m_Params\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file lidar_kf_contour_track_core\&.h\&.
+.SS "double ContourTrackerNS::ContourTracker::m_PolyEstimationTime\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file lidar_kf_contour_track_core\&.h\&.
+.SS "double ContourTrackerNS::ContourTracker::m_tracking_time\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file lidar_kf_contour_track_core\&.h\&.
+.SS "visualization_msgs::Marker ContourTrackerNS::ContourTracker::m_TTC_Info\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file lidar_kf_contour_track_core\&.h\&.
+.SS "visualization_msgs::MarkerArray ContourTrackerNS::ContourTracker::m_TTC_Path\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::NodeHandle ContourTrackerNS::ContourTracker::nh\fC [protected]\fP"
+
+.PP
+Definition at line 130 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Publisher ContourTrackerNS::ContourTracker::pub_AllTrackedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Publisher ContourTrackerNS::ContourTracker::pub_DetectedPolygonsRviz\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Publisher ContourTrackerNS::ContourTracker::pub_TrackedObstaclesRviz\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Publisher ContourTrackerNS::ContourTracker::pub_TTC_PathRviz\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_cloud_clusters\fC [protected]\fP"
+
+.PP
+Definition at line 140 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_cross_walk"
+
+.PP
+Definition at line 179 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_curbs"
+
+.PP
+Definition at line 176 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 141 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_dt_lanes"
+
+.PP
+Definition at line 169 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_edges"
+
+.PP
+Definition at line 177 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_intersect"
+
+.PP
+Definition at line 170 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_lanes"
+
+.PP
+Definition at line 167 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_lines"
+
+.PP
+Definition at line 172 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_nodes"
+
+.PP
+Definition at line 180 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_points"
+
+.PP
+Definition at line 168 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_signals"
+
+.PP
+Definition at line 174 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_stop_line"
+
+.PP
+Definition at line 173 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_vectors"
+
+.PP
+Definition at line 175 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sub_way_areas"
+
+.PP
+Definition at line 178 of file lidar_kf_contour_track_core\&.h\&.
+.SS "ros::Subscriber ContourTrackerNS::ContourTracker::sup_area"
+
+.PP
+Definition at line 171 of file lidar_kf_contour_track_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

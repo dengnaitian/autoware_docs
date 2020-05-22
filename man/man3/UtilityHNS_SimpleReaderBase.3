@@ -1,0 +1,72 @@
+.TH "UtilityHNS::SimpleReaderBase" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::SimpleReaderBase \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherited by \fBUtilityHNS::AisanAreasFileReader\fP, \fBUtilityHNS::AisanCenterLinesFileReader\fP, \fBUtilityHNS::AisanCrossWalkFileReader\fP, \fBUtilityHNS::AisanCurbFileReader\fP, \fBUtilityHNS::AisanDataConnFileReader\fP, \fBUtilityHNS::AisanIntersectionFileReader\fP, \fBUtilityHNS::AisanLanesFileReader\fP, \fBUtilityHNS::AisanLinesFileReader\fP, \fBUtilityHNS::AisanNodesFileReader\fP, \fBUtilityHNS::AisanPointsFileReader\fP, \fBUtilityHNS::AisanRoadEdgeFileReader\fP, \fBUtilityHNS::AisanRoadSignFileReader\fP, \fBUtilityHNS::AisanSignalFileReader\fP, \fBUtilityHNS::AisanStopLineFileReader\fP, \fBUtilityHNS::AisanVectorFileReader\fP, \fBUtilityHNS::AisanWayareaFileReader\fP, \fBUtilityHNS::AisanWhiteLinesFileReader\fP, \fBUtilityHNS::GPSDataReader\fP, \fBUtilityHNS::LocalizationPathReader\fP, and \fBUtilityHNS::SimulationFileReader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimpleReaderBase\fP (const std::string &fileName, const int &nHeaders=2, const char &separator= ',', const int &iDataTitles=1, const int &nVariablesForOneObject=0, const int &nLineHeaders=0, const std::string &headerRepeatKey='\&.\&.\&.')"
+.br
+.ti -1c
+.RI "\fB~SimpleReaderBase\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBReadAllData\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadSingleLine\fP (std::vector< std::vector< std::string > > &line)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 63 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::SimpleReaderBase::SimpleReaderBase (const std::string & fileName, const int & nHeaders = \fC2\fP, const char & separator = \fC','\fP, const int & iDataTitles = \fC1\fP, const int & nVariablesForOneObject = \fC0\fP, const int & nLineHeaders = \fC0\fP, const std::string & headerRepeatKey = \fC'\&.\&.\&.'\fP)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileName\fP log file name 
+.br
+\fInHeaders\fP number of data headers 
+.br
+\fIiDataTitles\fP which row contains the data titles 
+.br
+\fInVariablesForOneObject\fP 0 means each row represents one object 
+.RE
+.PP
+
+.PP
+Definition at line 214 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::SimpleReaderBase::~SimpleReaderBase ()"
+
+.PP
+Definition at line 239 of file DataRW\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int UtilityHNS::SimpleReaderBase::ReadAllData ()\fC [protected]\fP"
+
+.PP
+Definition at line 298 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::SimpleReaderBase::ReadSingleLine (std::vector< std::vector< std::string > > & line)\fC [protected]\fP"
+
+.PP
+Definition at line 245 of file DataRW\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

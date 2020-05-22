@@ -1,0 +1,113 @@
+.TH "Manager" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Manager \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <manager\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBManager\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fB~Manager\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "bool \fBaddApplication\fP (\fBSourcetype\fP appType, std::string appName, \fBUINT16\fP wantedId=0xFFFF)"
+.br
+.ti -1c
+.RI "bool \fBaddApplication\fP (\fBapplication::BasicApplication\fP *app, \fBUINT16\fP wantedId=0xFFFF)"
+.br
+.ti -1c
+.RI "bool \fBaddAndRunDevice\fP (\fBSourcetype\fP deviceType, std::string deviceName, \fBUINT16\fP wantedId=0xFFFF)"
+.br
+.ti -1c
+.RI "bool \fBaddAndRunDevice\fP (\fBdevices::BasicDevice\fP *device, std::string deviceName, \fBUINT16\fP wantedId=0xFFFF)"
+.br
+.ti -1c
+.RI "bool \fBimportApplications\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrunAllDevices\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopAllDevices\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDeviceData\fP (\fBBasicData\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBdevices::BasicDevice\fP * \fBgetDeviceById\fP (\fBUINT32\fP id)"
+.br
+.ti -1c
+.RI "\fBdevices::BasicDevice\fP * \fBgetFirstDeviceByType\fP (\fBSourcetype\fP type)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file manager\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Manager::Manager ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 25 of file manager\&.cpp\&.
+.SS "Manager::~Manager ()"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 41 of file manager\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Manager::addAndRunDevice (\fBSourcetype\fP deviceType, std::string deviceName, \fBUINT16\fP wantedId = \fC0xFFFF\fP)"
+
+.PP
+Definition at line 91 of file manager\&.cpp\&.
+.SS "bool Manager::addAndRunDevice (\fBdevices::BasicDevice\fP * device, std::string deviceName, \fBUINT16\fP wantedId = \fC0xFFFF\fP)"
+
+.PP
+Definition at line 114 of file manager\&.cpp\&.
+.SS "bool Manager::addApplication (\fBSourcetype\fP appType, std::string appName, \fBUINT16\fP wantedId = \fC0xFFFF\fP)"
+
+.PP
+Definition at line 178 of file manager\&.cpp\&.
+.SS "bool Manager::addApplication (\fBapplication::BasicApplication\fP * app, \fBUINT16\fP wantedId = \fC0xFFFF\fP)"
+
+.PP
+Definition at line 212 of file manager\&.cpp\&.
+.SS "\fBdevices::BasicDevice\fP * Manager::getDeviceById (\fBUINT32\fP id)"
+
+.PP
+Definition at line 392 of file manager\&.cpp\&.
+.SS "\fBdevices::BasicDevice\fP * Manager::getFirstDeviceByType (\fBSourcetype\fP type)"
+
+.PP
+Definition at line 412 of file manager\&.cpp\&.
+.SS "bool Manager::importApplications ()"
+
+.SS "bool Manager::runAllDevices ()"
+Kommando: Los\&.\&.\&. 
+.PP
+Definition at line 240 of file manager\&.cpp\&.
+.SS "void Manager::setDeviceData (\fBBasicData\fP * data)"
+
+.PP
+Definition at line 291 of file manager\&.cpp\&.
+.SS "void Manager::stopAllDevices ()"
+
+.PP
+Definition at line 268 of file manager\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,220 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_tracker/packages/vision_beyond_track/lib/clipper.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_tracker/packages/vision_beyond_track/lib/clipper.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <list>\fP
+.br
+\fC#include <set>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <ostream>\fP
+.br
+\fC#include <functional>\fP
+.br
+\fC#include <queue>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBClipperLib::IntPoint\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::DoublePoint\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::PolyNode\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::PolyTree\fP"
+.br
+.ti -1c
+.RI "struct \fBClipperLib::IntRect\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::ClipperBase\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::Clipper\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::ClipperOffset\fP"
+.br
+.ti -1c
+.RI "class \fBClipperLib::clipperException\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBClipperLib\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCLIPPER_VERSION\fP   '6\&.4\&.2'"
+.br
+.ti -1c
+.RI "#define \fBuse_lines\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef signed long long \fBClipperLib::cInt\fP"
+.br
+.ti -1c
+.RI "typedef signed long long \fBClipperLib::long64\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long long \fBClipperLib::ulong64\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< IntPoint > \fBClipperLib::Path\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< Path > \fBClipperLib::Paths\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< PolyNode * > \fBClipperLib::PolyNodes\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< OutRec * > \fBClipperLib::PolyOutList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< TEdge * > \fBClipperLib::EdgeList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< Join * > \fBClipperLib::JoinList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< IntersectNode * > \fBClipperLib::IntersectList\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBClipperLib::ClipType\fP { \fBClipperLib::ctIntersection\fP, \fBClipperLib::ctUnion\fP, \fBClipperLib::ctDifference\fP, \fBClipperLib::ctXor\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::PolyType\fP { \fBClipperLib::ptSubject\fP, \fBClipperLib::ptClip\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::PolyFillType\fP { \fBClipperLib::pftEvenOdd\fP, \fBClipperLib::pftNonZero\fP, \fBClipperLib::pftPositive\fP, \fBClipperLib::pftNegative\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::InitOptions\fP { \fBClipperLib::ioReverseSolution\fP = 1, \fBClipperLib::ioStrictlySimple\fP = 2, \fBClipperLib::ioPreserveCollinear\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::JoinType\fP { \fBClipperLib::jtSquare\fP, \fBClipperLib::jtRound\fP, \fBClipperLib::jtMiter\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::EndType\fP { \fBClipperLib::etClosedPolygon\fP, \fBClipperLib::etClosedLine\fP, \fBClipperLib::etOpenButt\fP, \fBClipperLib::etOpenSquare\fP, \fBClipperLib::etOpenRound\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipperLib::EdgeSide\fP { \fBClipperLib::esLeft\fP = 1, \fBClipperLib::esRight\fP = 2 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Path & \fBClipperLib::operator<<\fP (Path &poly, const IntPoint &\fBp\fP)"
+.br
+.ti -1c
+.RI "Paths & \fBClipperLib::operator<<\fP (Paths &polys, const Path &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const IntPoint &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const Path &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBClipperLib::operator<<\fP (std::ostream &s, const Paths &\fBp\fP)"
+.br
+.ti -1c
+.RI "bool \fBClipperLib::Orientation\fP (const Path &poly)"
+.br
+.ti -1c
+.RI "double \fBClipperLib::Area\fP (const Path &poly)"
+.br
+.ti -1c
+.RI "int \fBClipperLib::PointInPolygon\fP (const IntPoint &pt, const Path &path)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygon\fP (const Path &in_poly, Paths &out_polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygons\fP (const Paths &in_polys, Paths &out_polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::SimplifyPolygons\fP (Paths &polys, PolyFillType fillType)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygon\fP (const Path &in_poly, Path &out_poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygon\fP (Path &poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygons\fP (const Paths &in_polys, Paths &out_polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::CleanPolygons\fP (Paths &polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiSum\fP (const Path &pattern, const Path &path, Paths &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiSum\fP (const Path &pattern, const Paths &paths, Paths &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::MinkowskiDiff\fP (const Path &poly1, const Path &poly2, Paths &solution)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::PolyTreeToPaths\fP (const PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ClosedPathsFromPolyTree\fP (const PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::OpenPathsFromPolyTree\fP (PolyTree &polytree, Paths &paths)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReversePath\fP (Path &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBClipperLib::ReversePaths\fP (Paths &\fBp\fP)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CLIPPER_VERSION   '6\&.4\&.2'"
+
+.PP
+Definition at line 37 of file clipper\&.hpp\&.
+.SS "#define use_lines"
+
+.PP
+Definition at line 47 of file clipper\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

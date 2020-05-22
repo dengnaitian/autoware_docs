@@ -1,0 +1,46 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_fake_perception__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_lidar_detector_packages_lidar_fake_perception__r_e_a_d_m_e \- Lidar fake perception 
+This node generates fake object and pointcloud message based on the value given manually\&. At the sametime, real pointclouds and real detected objects can be merged as sources\&.
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing -> Detection -> lidar_detector -> lidar_fake_perception
+.PP
+.IP "\(bu" 2
+From CLI:
+.PP
+.PP
+\fC$ roslaunch lidar_fake_perception lidar_fake_perception\&.launch\fP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBParameters\fP can be set in both \fBLaunch\fP file and Runtime manager:
+.PP
+Parameter in RM Parameter in \fBLaunch\fP Type Description Default  \fCinitial pose\fP \fCinitial_pose_topic\fP \fIString\fP Initial fake object pose \fC/move_base_simple/goal\fP \fCinput objects\fP \fCreal_objects_topic\fP \fIString\fP Input objects \fC/detected_objects\fP \fCinput points\fP \fCreal_points_topic\fP \fIString\fP Input points \fC/points_raw\fP \fCinput twist\fP \fCfake_twist_topic\fP \fIString\fP Input twist command, controlling fake object \fC/fake_twist\fP \fCoutput objects\fP \fCfake_objects_topic\fP \fIString\fP Output objects, input and fake object are merged \fC/fake_objects\fP \fCoutput points\fP \fCfake_points_topic\fP \fIString\fP Output points, input and fake points are merged \fC/fake_points\fP \fCpublish object\fP \fCpublish_objects\fP \fIBool\fP Enable publishing fake objects \fCtrue\fP \fCpublish points\fP \fCpublish_points\fP \fIBool\fP Enable publishing fake points \fCtrue\fP \fCpublish rate\fP \fCpublish_rate\fP \fIDouble\fP Publish rate of fake objects/points [Hz] \fC10\&.0\fP \fCobject length\fP \fCobject_length\fP \fIDouble\fP Length [m] \fC4\&.8\fP \fCobject width\fP \fCobject_width\fP \fIDouble\fP Width [m] \fC1\&.8\fP \fCobject height\fP \fCobject_height\fP \fIDouble\fP Height [m] \fC1\&.8\fP \fCobject z offset\fP \fCobject_z_offset\fP \fIDouble\fP Z Offset from global frame [m] \fC0\&.0\fP \fCuse input twist\fP \fCuse_fake_twist\fP \fIBool\fP Using subscribed twist \fCfalse\fP \fCobject velocity\fP \fCobject_velocity\fP \fIDouble\fP Constant velocity instead of subscribed twist [m/s] \fC3\&.0\fP \fCobject angular velocity\fP \fCobject_angular_velocity\fP \fIDouble\fP Constant angular velocity instead of subscribed twist [rad/s] \fC0\&.0\fP \fCobject points intensity\fP \fCobject_intensity\fP \fIDouble\fP Constant intensity value of fake points, 0-255 [-] \fC100\&.0\fP \fCobject lifetime\fP \fCobject_lifetime\fP \fIDouble\fP Fake object lifetime (NOTE: when this is negative value, lifetime is inifinity) [s] \fC-1\fP \fCobject points space\fP \fCobject_points_space\fP \fIDouble\fP Fake points space [m] \fC0\&.2\fP \fCoutput label\fP \fCobject_label\fP \fIString\fP Fake object label (e\&.g\&. tracking state) \fCStable\fP \fCoutput frame\fP \fCobject_frame\fP \fIString\fP Fake object frame_id (NOTE: not affected to input object) \fCvelodyne\fP 
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Node [/lidar_fake_percetion]
+2 Publications:
+3  * /fake_objects [autoware_msgs/DetectedObjectArray]
+4  * /fake_points [sensor_msgs/PointCloud2]
+5 
+6 Subscriptions:
+7  * /move_base_simple/goal [geometry_msgs/PoseStamped]
+8  * /detected_objects [autoware_msgs/DetectedObjectArray]
+9  * /points_raw [sensor_msgs/PointCloud2]
+10  * /fake_twist [geometry_msgs/Twist]
+11  * /tf [tf2_msgs/TFMessage]
+.fi
+.PP
+.PP
+\fC\fP.PP
+\fC\fP 

@@ -1,0 +1,355 @@
+.TH "autoware_camera_calibration.calibrator.MonoCalibrator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.calibrator.MonoCalibrator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBautoware_camera_calibration\&.calibrator\&.Calibrator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, args, kwargs)"
+.br
+.ti -1c
+.RI "def \fBcal\fP (self, images)"
+.br
+.ti -1c
+.RI "def \fBcollect_corners\fP (self, images)"
+.br
+.ti -1c
+.RI "def \fBcal_fromcorners\fP (self, good)"
+.br
+.ti -1c
+.RI "def \fBset_alpha\fP (self, a)"
+.br
+.ti -1c
+.RI "def \fBremap\fP (self, src)"
+.br
+.ti -1c
+.RI "def \fBundistort_points\fP (self, src)"
+.br
+.ti -1c
+.RI "def \fBas_message\fP (self)"
+.br
+.ti -1c
+.RI "def \fBfrom_message\fP (self, msg, alpha=0\&.0)"
+.br
+.ti -1c
+.RI "def \fBreport\fP (self)"
+.br
+.ti -1c
+.RI "def \fBost\fP (self)"
+.br
+.ti -1c
+.RI "def \fByaml\fP (self)"
+.br
+.ti -1c
+.RI "def \fBlinear_error_from_image\fP (self, \fBimage\fP)"
+.br
+.ti -1c
+.RI "def \fBhandle_msg\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBdo_calibration\fP (self, dump=False)"
+.br
+.ti -1c
+.RI "def \fBdo_tarfile_save\fP (self, tf)"
+.br
+.ti -1c
+.RI "def \fBdo_autoware_cv_yaml\fP (self)"
+.br
+.ti -1c
+.RI "def \fBdo_tarfile_calibration\fP (self, filename)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBlinear_error\fP (corners, \fBb\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcalibrated\fP"
+.br
+.ti -1c
+.RI "\fBsize\fP"
+.br
+.ti -1c
+.RI "\fBintrinsics\fP"
+.br
+.ti -1c
+.RI "\fBdistortion\fP"
+.br
+.ti -1c
+.RI "\fBR\fP"
+.br
+.ti -1c
+.RI "\fBP\fP"
+.br
+.ti -1c
+.RI "\fBmapy\fP"
+.br
+.ti -1c
+.RI "\fBgood_corners\fP"
+.br
+.ti -1c
+.RI "\fBoutput\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBis_mono\fP = True"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Calibration class for monocular cameras::
+
+    images = [cv2.imread("mono%d.png") for i in range(8)]
+    mc = MonoCalibrator()
+    mc.cal(images)
+    print mc.as_message()
+
+.fi
+.PP
+ 
+.PP
+Definition at line 618 of file calibrator\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.__init__ ( self,  args,  kwargs)"
+
+.PP
+Definition at line 630 of file calibrator\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.as_message ( self)"
+
+.PP
+.nf
+Return the camera calibration as a CameraInfo message 
+.fi
+.PP
+ 
+.PP
+Definition at line 729 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.cal ( self,  images)"
+
+.PP
+.nf
+Calibrate camera from given images
+
+.fi
+.PP
+ 
+.PP
+Definition at line 635 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.cal_fromcorners ( self,  good)"
+
+.PP
+.nf
+:param good: Good corner positions and boards
+:type good: [(corners, ChessboardInfo)]
+.fi
+.PP
+ 
+.PP
+Definition at line 660 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.collect_corners ( self,  images)"
+
+.PP
+.nf
+:param images: source images containing chessboards
+:type images: list of :class:`cvMat`
+
+Find chessboards in all images.
+
+Return [ (corners, ChessboardInfo) ]
+
+.fi
+.PP
+ 
+.PP
+Definition at line 643 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.do_autoware_cv_yaml ( self)"
+
+.PP
+Definition at line 886 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.do_calibration ( self,  dump = \fCFalse\fP)"
+
+.PP
+Definition at line 847 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.do_tarfile_calibration ( self,  filename)"
+
+.PP
+Definition at line 907 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.do_tarfile_save ( self,  tf)"
+
+.PP
+.nf
+Write images and calibration solution to a tarfile object 
+.fi
+.PP
+ 
+.PP
+Definition at line 863 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.from_message ( self,  msg,  alpha = \fC0\&.0\fP)"
+
+.PP
+.nf
+Initialize the camera calibration from a CameraInfo message 
+.fi
+.PP
+ 
+.PP
+Definition at line 733 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.handle_msg ( self,  msg)"
+
+.PP
+.nf
+Detects the calibration target and, if found and provides enough new information,
+adds it to the sample database.
+
+Returns a MonoDrawable message with the display image and progress info.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 793 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.linear_error ( corners,  b)\fC [static]\fP"
+
+.PP
+.nf
+Returns the linear error for a set of corners detected in the unrectified image.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 766 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.linear_error_from_image ( self,  image)"
+
+.PP
+.nf
+Detect the checkerboard and compute the linear error.
+Mainly for use in tests.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 753 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.ost ( self)"
+
+.PP
+Definition at line 747 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.remap ( self,  src)"
+
+.PP
+.nf
+:param src: source image
+:type src: :class:`cvMat`
+
+Apply the post-calibration undistortion to the source image
+
+.fi
+.PP
+ 
+.PP
+Definition at line 710 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.report ( self)"
+
+.PP
+Definition at line 744 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.set_alpha ( self,  a)"
+
+.PP
+.nf
+Set the alpha value for the calibrated camera solution.  The alpha
+value is a zoom, and ranges from 0 (zoomed in, all pixels in
+calibrated image are valid) to 1 (zoomed out, all pixels in
+original image are in calibrated image).
+
+.fi
+.PP
+ 
+.PP
+Definition at line 692 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.undistort_points ( self,  src)"
+
+.PP
+.nf
+:param src: N source pixel points (u,v) as an Nx2 matrix
+:type src: :class:`cvMat`
+
+Apply the post-calibration undistortion to the source points
+
+.fi
+.PP
+ 
+.PP
+Definition at line 719 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.yaml ( self)"
+
+.PP
+Definition at line 750 of file calibrator\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.calibrated"
+
+.PP
+Definition at line 641 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.distortion"
+
+.PP
+Definition at line 674 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.good_corners"
+
+.PP
+Definition at line 851 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.intrinsics"
+
+.PP
+Definition at line 672 of file calibrator\&.py\&.
+.SS "bool autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.is_mono = True\fC [static]\fP"
+
+.PP
+Definition at line 628 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.mapy"
+
+.PP
+Definition at line 707 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.output"
+
+.PP
+Definition at line 880 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.P"
+
+.PP
+Definition at line 688 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.R"
+
+.PP
+Definition at line 687 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.MonoCalibrator\&.size"
+
+.PP
+Definition at line 652 of file calibrator\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

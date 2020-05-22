@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_autoware_health_checker_test_suite.html" title="AutowareHealthCheckerTest\lSuite" alt="" coords="101,5,292,47"/>
+<area shape="rect" id="node3" href="$classdecision__maker_1_1_test_suite.html" title="decision_maker::TestSuite" alt="" coords="108,71,285,98"/>
+<area shape="rect" id="node4" href="$classlane__planner_1_1_lane_select_test_suite.html" title="lane_planner::LaneSelect\lTestSuite" alt="" coords="113,123,281,164"/>
+<area shape="rect" id="node5" href="$class_roi_filter_test_suite.html" title="RoiFilterTestSuite" alt="" coords="133,189,260,215"/>
+<area shape="rect" id="node6" href="$class_shape_estimation_test_suite.html" title="ShapeEstimationTestSuite" alt="" coords="108,239,285,266"/>
+<area shape="rect" id="node7" href="$class_test_suite.html" title="TestSuite" alt="" coords="157,290,236,317"/>
+<area shape="rect" id="node8" href="$class_twist_gate_test_suite.html" title="TwistGateTestSuite" alt="" coords="127,341,266,367"/>
+</map>

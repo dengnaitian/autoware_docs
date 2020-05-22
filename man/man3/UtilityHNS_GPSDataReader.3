@@ -1,0 +1,63 @@
+.TH "UtilityHNS::GPSDataReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::GPSDataReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBGPSBasicData\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGPSDataReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fB~GPSDataReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBGPSBasicData\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBGPSBasicData\fP > &data_list)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 100 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::GPSDataReader::GPSDataReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 114 of file DataRW\&.h\&.
+.SS "UtilityHNS::GPSDataReader::~GPSDataReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 115 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int UtilityHNS::GPSDataReader::ReadAllData (std::vector< \fBGPSBasicData\fP > & data_list)"
+
+.PP
+Definition at line 364 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::GPSDataReader::ReadNextLine (\fBGPSBasicData\fP & data)"
+
+.PP
+Definition at line 344 of file DataRW\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

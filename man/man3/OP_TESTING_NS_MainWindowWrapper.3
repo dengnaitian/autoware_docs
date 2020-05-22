@@ -1,0 +1,139 @@
+.TH "OP_TESTING_NS::MainWindowWrapper" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OP_TESTING_NS::MainWindowWrapper \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MainWindowWrapper\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindowWrapper\fP (\fBDrawObjBase\fP *pDraw)"
+.br
+.ti -1c
+.RI "virtual \fB~MainWindowWrapper\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitOpenGLWindow\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "void \fBUpdateParams\fP (const \fBWindowParams\fP &params, const \fBDisplayParams\fP &display_params)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBMainReshape\fP (int width, int height)"
+.br
+.ti -1c
+.RI "static void \fBSimuReshape\fP (int width, int height)"
+.br
+.ti -1c
+.RI "static void \fBMainDisplay\fP ()"
+.br
+.ti -1c
+.RI "static void \fBSimuDisplay\fP ()"
+.br
+.ti -1c
+.RI "static void \fBKeyboardCommand\fP (unsigned char key, int x, int y)"
+.br
+.ti -1c
+.RI "static void \fBKeyboardExitCommand\fP (unsigned char key, int x, int y)"
+.br
+.ti -1c
+.RI "static void \fBKeyboardSpecialCommand\fP (int key, int x, int y)"
+.br
+.ti -1c
+.RI "static void \fBInitLighting\fP ()"
+.br
+.ti -1c
+.RI "static void \fBFromScreenToModelCoordinate\fP (int sx, int sy, double &modelX, double &modelY)"
+.br
+.ti -1c
+.RI "static void \fBFromModelToScreenCoordinate\fP (double modelX, double modelY, int &sx, int &sy)"
+.br
+.ti -1c
+.RI "static void \fBDrawGrid\fP (const double &x, const double &y, const double &w, const double &h, const double &cell_l)"
+.br
+.ti -1c
+.RI "static void \fBCleanUp\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 120 of file MainWindowWrapper\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OP_TESTING_NS::MainWindowWrapper::MainWindowWrapper (\fBDrawObjBase\fP * pDraw)"
+
+.PP
+Definition at line 110 of file MainWindowWrapper\&.cpp\&.
+.SS "OP_TESTING_NS::MainWindowWrapper::~MainWindowWrapper ()\fC [virtual]\fP"
+
+.PP
+Definition at line 115 of file MainWindowWrapper\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OP_TESTING_NS::MainWindowWrapper::CleanUp ()\fC [static]\fP"
+
+.PP
+Definition at line 117 of file MainWindowWrapper\&.cpp\&.
+.SS "static void OP_TESTING_NS::MainWindowWrapper::DrawGrid (const double & x, const double & y, const double & w, const double & h, const double & cell_l)\fC [static]\fP"
+
+.SS "void OP_TESTING_NS::MainWindowWrapper::FromModelToScreenCoordinate (double modelX, double modelY, int & sx, int & sy)\fC [static]\fP"
+
+.PP
+Definition at line 245 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::FromScreenToModelCoordinate (int sx, int sy, double & modelX, double & modelY)\fC [static]\fP"
+
+.PP
+Definition at line 236 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::InitLighting ()\fC [static]\fP"
+
+.PP
+Definition at line 155 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::InitOpenGLWindow (int argc, char ** argv)"
+
+.PP
+Definition at line 123 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::KeyboardCommand (unsigned char key, int x, int y)\fC [static]\fP"
+
+.PP
+Definition at line 299 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::KeyboardExitCommand (unsigned char key, int x, int y)\fC [static]\fP"
+
+.PP
+Definition at line 289 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::KeyboardSpecialCommand (int key, int x, int y)\fC [static]\fP"
+
+.PP
+Definition at line 313 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::MainDisplay ()\fC [static]\fP"
+
+.PP
+Definition at line 262 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::MainReshape (int width, int height)\fC [static]\fP"
+
+.PP
+Definition at line 182 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::SimuDisplay ()\fC [static]\fP"
+
+.PP
+Definition at line 253 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::SimuReshape (int width, int height)\fC [static]\fP"
+
+.PP
+Definition at line 197 of file MainWindowWrapper\&.cpp\&.
+.SS "void OP_TESTING_NS::MainWindowWrapper::UpdateParams (const \fBWindowParams\fP & params, const \fBDisplayParams\fP & display_params)"
+
+.PP
+Definition at line 174 of file MainWindowWrapper\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

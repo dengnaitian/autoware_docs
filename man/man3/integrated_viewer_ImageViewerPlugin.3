@@ -1,0 +1,188 @@
+.TH "integrated_viewer::ImageViewerPlugin" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+integrated_viewer::ImageViewerPlugin \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <image_viewer_plugin\&.h>\fP
+.PP
+Inherits Panel\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImageViewerPlugin\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "virtual void \fBresizeEvent\fP (QResizeEvent *)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateTopicList\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *object, QEvent *event)"
+.br
+.ti -1c
+.RI "void \fBImageCallback\fP (const sensor_msgs::Image::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBDetectedObjCallback\fP (const autoware_msgs::DetectedObjectArray::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBPointCallback\fP (const autoware_msgs::PointsImage::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBLaneCallback\fP (const autoware_msgs::ImageLaneObjects::ConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBShowImageOnUi\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBsave\fP (rviz::Config config) const "
+.br
+.ti -1c
+.RI "virtual void \fBload\fP (const rviz::Config &config)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::NodeHandle \fBnode_handle_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBimage_sub_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBrect_sub_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBpoint_sub_\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBlane_sub_\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const QString \fBkImageDataType\fP = 'sensor_msgs/Image'"
+.br
+.ti -1c
+.RI "static const QString \fBkDetectedObjectDataTypeBase\fP = 'autoware_msgs/DetectedObjectArray'"
+.br
+.ti -1c
+.RI "static const QString \fBkPointDataType\fP = 'autoware_msgs/PointsImage'"
+.br
+.ti -1c
+.RI "static const QString \fBkLaneDataType\fP = 'autoware_msgs/ImageLaneObjects'"
+.br
+.ti -1c
+.RI "static const QString \fBkBlankTopic\fP = '\-\-\-\-\-'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file image_viewer_plugin\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "integrated_viewer::ImageViewerPlugin::ImageViewerPlugin (QWidget * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 24 of file image_viewer_plugin\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void integrated_viewer::ImageViewerPlugin::DetectedObjCallback (const autoware_msgs::DetectedObjectArray::ConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 250 of file image_viewer_plugin\&.cpp\&.
+.SS "bool integrated_viewer::ImageViewerPlugin::eventFilter (QObject * object, QEvent * event)\fC [protected]\fP"
+
+.PP
+Definition at line 331 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::ImageCallback (const sensor_msgs::Image::ConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 221 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::LaneCallback (const autoware_msgs::ImageLaneObjects::ConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 296 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::load (const rviz::Config & config)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 349 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::PointCallback (const autoware_msgs::PointsImage::ConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 273 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::resizeEvent (QResizeEvent *)\fC [virtual]\fP"
+
+.PP
+Definition at line 326 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::save (rviz::Config config) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 340 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::ShowImageOnUi (void)\fC [protected]\fP"
+
+.PP
+Definition at line 300 of file image_viewer_plugin\&.cpp\&.
+.SS "void integrated_viewer::ImageViewerPlugin::UpdateTopicList (void)\fC [protected]\fP"
+
+.PP
+Definition at line 56 of file image_viewer_plugin\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "ros::Subscriber integrated_viewer::ImageViewerPlugin::image_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file image_viewer_plugin\&.h\&.
+.SS "const QString integrated_viewer::ImageViewerPlugin::kBlankTopic = '\-\-\-\-\-'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 66 of file image_viewer_plugin\&.h\&.
+.SS "const QString integrated_viewer::ImageViewerPlugin::kDetectedObjectDataTypeBase = 'autoware_msgs/DetectedObjectArray'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 61 of file image_viewer_plugin\&.h\&.
+.SS "const QString integrated_viewer::ImageViewerPlugin::kImageDataType = 'sensor_msgs/Image'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 60 of file image_viewer_plugin\&.h\&.
+.SS "const QString integrated_viewer::ImageViewerPlugin::kLaneDataType = 'autoware_msgs/ImageLaneObjects'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 63 of file image_viewer_plugin\&.h\&.
+.SS "const QString integrated_viewer::ImageViewerPlugin::kPointDataType = 'autoware_msgs/PointsImage'\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 62 of file image_viewer_plugin\&.h\&.
+.SS "ros::Subscriber integrated_viewer::ImageViewerPlugin::lane_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file image_viewer_plugin\&.h\&.
+.SS "ros::NodeHandle integrated_viewer::ImageViewerPlugin::node_handle_\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file image_viewer_plugin\&.h\&.
+.SS "ros::Subscriber integrated_viewer::ImageViewerPlugin::point_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file image_viewer_plugin\&.h\&.
+.SS "ros::Subscriber integrated_viewer::ImageViewerPlugin::rect_sub_\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file image_viewer_plugin\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

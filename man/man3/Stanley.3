@@ -1,0 +1,181 @@
+.TH "Stanley" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Stanley \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stanley\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStanley\fP ()"
+.br
+.ti -1c
+.RI "\fB~Stanley\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCurrentVelocity\fP (const double &cur_vel)"
+.br
+.ti -1c
+.RI "void \fBsetCommandVelocity\fP (const double &cmd_vel)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentWaypoints\fP (const std::vector< autoware_msgs::Waypoint > &wps)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "double \fBgetCurrentVelocity\fP ()"
+.br
+.ti -1c
+.RI "bool \fBstanleyControl\fP (double &wheelAngle, double \fBk\fP)"
+.br
+.ti -1c
+.RI "\fBStanley\fP ()"
+.br
+.ti -1c
+.RI "\fB~Stanley\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCurrentVelocity\fP (const double &cur_vel)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentWaypoints\fP (const std::vector< autoware_msgs::Waypoint > &wps)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "double \fBgetCurrentVelocity\fP ()"
+.br
+.ti -1c
+.RI "bool \fBstanleyControl\fP (double &wheelAngle, double \fBk\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "geometry_msgs::Pose \fBfrontWheelPose\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBnextTargetPoint\fP"
+.br
+.ti -1c
+.RI "double \fBcross_track_error_rvi\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+: hui huang :hui.huang1@siat.ac.cn 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file stanley\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Stanley::Stanley ()"
+
+.PP
+\fBAuthor:\fP
+.RS 4
+: hui huang : hui.huang1@siat.ac.cn 
+.RE
+.PP
+
+.PP
+Definition at line 8 of file stanley\&.cpp\&.
+.SS "Stanley::~Stanley ()"
+
+.PP
+Definition at line 12 of file stanley\&.cpp\&.
+.SS "Stanley::Stanley ()"
+
+.SS "Stanley::~Stanley ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double Stanley::getCurrentVelocity ()\fC [inline]\fP"
+getters 
+.PP
+Definition at line 37 of file stanley\&.h\&.
+.SS "double Stanley::getCurrentVelocity ()\fC [inline]\fP"
+getters 
+.PP
+Definition at line 41 of file stanley\&.h\&.
+.SS "void Stanley::setCommandVelocity (const double & cmd_vel)\fC [inline]\fP"
+
+.PP
+Definition at line 28 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [inline]\fP"
+
+.PP
+Definition at line 30 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [inline]\fP"
+
+.PP
+Definition at line 34 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentVelocity (const double & cur_vel)\fC [inline]\fP"
+setters 
+.PP
+Definition at line 24 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentVelocity (const double & cur_vel)\fC [inline]\fP"
+setters 
+.PP
+Definition at line 24 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentWaypoints (const std::vector< autoware_msgs::Waypoint > & wps)\fC [inline]\fP"
+
+.PP
+Definition at line 27 of file stanley\&.h\&.
+.SS "void Stanley::setCurrentWaypoints (const std::vector< autoware_msgs::Waypoint > & wps)\fC [inline]\fP"
+
+.PP
+Definition at line 31 of file stanley\&.h\&.
+.SS "bool Stanley::stanleyControl (double & wheelAngle, double k)"
+calcuate wheel angle using stanley method  [out], the output wheel angle 
+.PP
+\fBReturns:\fP
+.RS 4
+true for succeed 
+.RE
+.PP
+
+.SS "bool Stanley::stanleyControl (double & wheelAngle, double k)"
+calcuate wheel angle using stanley method  [out], the output wheel angle 
+.PP
+\fBReturns:\fP
+.RS 4
+true for succeed 
+.RE
+.PP
+log
+.PP
+Definition at line 96 of file stanley\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double Stanley::cross_track_error_rvi"
+
+.PP
+Definition at line 54 of file stanley\&.h\&.
+.SS "geometry_msgs::Pose Stanley::frontWheelPose"
+
+.PP
+Definition at line 52 of file stanley\&.h\&.
+.SS "geometry_msgs::Pose Stanley::nextTargetPoint"
+
+.PP
+Definition at line 53 of file stanley\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

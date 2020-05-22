@@ -1,0 +1,46 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/op_global_planner/nodes/op_global_planner.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/op_global_planner/nodes/op_global_planner.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include 'op_global_planner_core\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.RI "\fIglobal Planner represents the Global planning Module, to generate global plan (reference path) the nodes takes start position, goal position and return sequence of waypoints\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char ** argv)"
+
+.PP
+global Planner represents the Global planning Module, to generate global plan (reference path) the nodes takes start position, goal position and return sequence of waypoints\&. Once the node starts (depending on the mapping option) it will load the vector map (road network) and send it to be visualized by RViz\&. topic name '/vector_map_center_lines_rviz' 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIStart_Position\fP in simulation environment like rviz, this node require the user to select start position using '2D Pose Estimate' button and select starting position from the global path, // if localization node is working and ndt_pose or curr_pose messages are published the node will use localization as starting position instead of '2D Pose Estimate' 
+.br
+\fIGoal_Position\fP destination to generate global plan to\&. if 'replan' option selection used can choose multiple goal positions\&. goal positions are selected from Rviz using '2D Nav Goal' button\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+global , reference path as list of waypoints\&. data type is 'autoware_msgs::LaneArray' , and the topic name is 'lane_waypoints_array' 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file op_global_planner\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

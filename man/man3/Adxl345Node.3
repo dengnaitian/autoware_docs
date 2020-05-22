@@ -1,0 +1,112 @@
+.TH "Adxl345Node" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Adxl345Node \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAdxl345Node\fP (ros::NodeHandle nh)"
+.br
+.ti -1c
+.RI "\fB~Adxl345Node\fP ()"
+.br
+.ti -1c
+.RI "bool \fBis_opened\fP (void)"
+.br
+.RI "\fICheck if the device is opened\&. \fP"
+.ti -1c
+.RI "bool \fBopen\fP (void)"
+.br
+.RI "\fIOpen IMU device file\&. \fP"
+.ti -1c
+.RI "int \fBpublish_imu_data\fP ()"
+.br
+.ti -1c
+.RI "bool \fBspin\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBadxl345::Imu\fP \fBimu_\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnode_handle_\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBimu_data_pub_\fP"
+.br
+.ti -1c
+.RI "std::string \fBdevice_\fP"
+.br
+.ti -1c
+.RI "std::string \fBframe_id_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 38 of file adxl345_node\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Adxl345Node::Adxl345Node (ros::NodeHandle nh)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line 47 of file adxl345_node\&.cpp\&.
+.SS "Adxl345Node::~Adxl345Node ()\fC [inline]\fP"
+
+.PP
+Definition at line 56 of file adxl345_node\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Adxl345Node::is_opened (void)\fC [inline]\fP"
+
+.PP
+Check if the device is opened\&. 
+.PP
+Definition at line 64 of file adxl345_node\&.cpp\&.
+.SS "bool Adxl345Node::open (void)\fC [inline]\fP"
+
+.PP
+Open IMU device file\&. 
+.PP
+Definition at line 71 of file adxl345_node\&.cpp\&.
+.SS "int Adxl345Node::publish_imu_data ()\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file adxl345_node\&.cpp\&.
+.SS "bool Adxl345Node::spin ()\fC [inline]\fP"
+
+.PP
+Definition at line 103 of file adxl345_node\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string Adxl345Node::device_"
+
+.PP
+Definition at line 44 of file adxl345_node\&.cpp\&.
+.SS "std::string Adxl345Node::frame_id_"
+
+.PP
+Definition at line 45 of file adxl345_node\&.cpp\&.
+.SS "\fBadxl345::Imu\fP Adxl345Node::imu_"
+
+.PP
+Definition at line 41 of file adxl345_node\&.cpp\&.
+.SS "ros::Publisher Adxl345Node::imu_data_pub_"
+
+.PP
+Definition at line 43 of file adxl345_node\&.cpp\&.
+.SS "ros::NodeHandle Adxl345Node::node_handle_"
+
+.PP
+Definition at line 42 of file adxl345_node\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,70 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/errorhandler.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/tools/errorhandler.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./BasicDatatypes\&.hpp'\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBprintInfoMessage\fP(a,  \fBb\fP)   (\fBb\fP ? \fBinfoMessage\fP(a, \fBb\fP):\fBdoNothing\fP())"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdieWithError\fP (std::string errorMessage)"
+.br
+.ti -1c
+.RI "void \fBinfoMessage\fP (std::string message, bool print=true)"
+.br
+.ti -1c
+.RI "void \fBprintWarning\fP (std::string message)"
+.br
+.ti -1c
+.RI "void \fBprintError\fP (std::string message)"
+.br
+.ti -1c
+.RI "void \fBdoNothing\fP ()"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define printInfoMessage(a, \fBb\fP)   (\fBb\fP ? \fBinfoMessage\fP(a, \fBb\fP):\fBdoNothing\fP())"
+Fehler-Handler\&. 
+.PP
+Definition at line 13 of file errorhandler\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void dieWithError (std::string errorMessage)"
+Fehler-'behandlung': Schreibe die Fehlermeldung und beende das Programm\&. 
+.PP
+Definition at line 27 of file errorhandler\&.cpp\&.
+.SS "void doNothing ()"
+Der Name ist Programm\&.\&.\&. 
+.PP
+Definition at line 19 of file errorhandler\&.cpp\&.
+.SS "void infoMessage (std::string message, bool print)"
+Info-Text auf die Ausgabe schreiben\&. 
+.PP
+Definition at line 45 of file errorhandler\&.cpp\&.
+.SS "void printError (std::string message)"
+
+.PP
+Definition at line 87 of file errorhandler\&.cpp\&.
+.SS "void printWarning (std::string message)"
+
+.PP
+Definition at line 69 of file errorhandler\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

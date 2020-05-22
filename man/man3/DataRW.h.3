@@ -1,0 +1,221 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_utility/include/op_utility/DataRW.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_utility/include/op_utility/DataRW.h \- \fBFile\fP operations for loading vector map files, loading kml map files and writing log \&.csv files\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <limits>\fP
+.br
+\fC#include 'vector_map_msgs/PointArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/NodeArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/StopLineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/DTLaneArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/LineArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/AreaArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/WayAreaArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/SignalArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/VectorArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/CrossRoadArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/RoadSignArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/CurbArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/RoadEdgeArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/CrossWalkArray\&.h'\fP
+.br
+\fC#include 'vector_map_msgs/WhiteLineArray\&.h'\fP
+.br
+\fC#include 'UtilityH\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBUtilityHNS::DataRW\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::SimpleReaderBase\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::GPSDataReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::GPSDataReader::GPSBasicData\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::SimulationFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::SimulationFileReader::SimulationPoint\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::SimulationFileReader::SimulationData\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::LocalizationPathReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::LocalizationPathReader::LocalizationWayPoint\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanPointsFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanPointsFileReader::AisanPoints\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanNodesFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanNodesFileReader::AisanNode\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanLinesFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanLinesFileReader::AisanLine\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanCenterLinesFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanCenterLinesFileReader::AisanCenterLine\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanAreasFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanAreasFileReader::AisanArea\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanIntersectionFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanIntersectionFileReader::AisanIntersection\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanLanesFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanLanesFileReader::AisanLane\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanStopLineFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanStopLineFileReader::AisanStopLine\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanRoadSignFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanRoadSignFileReader::AisanRoadSign\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanSignalFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanSignalFileReader::AisanSignal\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanVectorFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanVectorFileReader::AisanVector\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanCurbFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanCurbFileReader::AisanCurb\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanRoadEdgeFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanRoadEdgeFileReader::AisanRoadEdge\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanCrossWalkFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanCrossWalkFileReader::AisanCrossWalk\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanWayareaFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanWayareaFileReader::AisanWayarea\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanDataConnFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanDataConnFileReader::DataConn\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::AisanWhiteLinesFileReader\fP"
+.br
+.ti -1c
+.RI "struct \fBUtilityHNS::AisanWhiteLinesFileReader::AisanWhiteLine\fP"
+.br
+.ti -1c
+.RI "class \fBUtilityHNS::MapRaw\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBUtilityHNS\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBFile\fP operations for loading vector map files, loading kml map files and writing log \&.csv files\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Hatem Darweesh 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Jun 23, 2016 
+.RE
+.PP
+
+.PP
+Definition in file \fBDataRW\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

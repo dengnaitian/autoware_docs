@@ -1,0 +1,60 @@
+.TH "ROIExtractor" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ROIExtractor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <roi_extractor\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROIExtractor\fP (int minimum_height, double similarity_threshold)"
+.br
+.ti -1c
+.RI "\fB~ROIExtractor\fP ()"
+.br
+.ti -1c
+.RI "void \fBImageRawCallback\fP (const sensor_msgs::Image &\fBimage\fP)"
+.br
+.ti -1c
+.RI "void \fBROISignalCallback\fP (const autoware_msgs::Signals::ConstPtr &extracted_pos)"
+.br
+.ti -1c
+.RI "void \fBCreateTargetDirectory\fP (std::string base_name)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file roi_extractor\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ROIExtractor::ROIExtractor (int minimum_height, double similarity_threshold)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line 17 of file roi_extractor\&.h\&.
+.SS "ROIExtractor::~ROIExtractor ()\fC [inline]\fP"
+
+.PP
+Definition at line 23 of file roi_extractor\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ROIExtractor::CreateTargetDirectory (std::string base_name)"
+
+.PP
+Definition at line 67 of file roi_extractor\&.cpp\&.
+.SS "void ROIExtractor::ImageRawCallback (const sensor_msgs::Image & image)"
+
+.PP
+Definition at line 20 of file roi_extractor\&.cpp\&.
+.SS "void ROIExtractor::ROISignalCallback (const autoware_msgs::Signals::ConstPtr & extracted_pos)"
+
+.PP
+Definition at line 30 of file roi_extractor\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

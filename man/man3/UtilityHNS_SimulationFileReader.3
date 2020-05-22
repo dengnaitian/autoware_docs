@@ -1,0 +1,66 @@
+.TH "UtilityHNS::SimulationFileReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::SimulationFileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSimulationData\fP"
+.br
+.ti -1c
+.RI "struct \fBSimulationPoint\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimulationFileReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fB~SimulationFileReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBSimulationPoint\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (\fBSimulationData\fP &data_list)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 121 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::SimulationFileReader::SimulationFileReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 142 of file DataRW\&.h\&.
+.SS "UtilityHNS::SimulationFileReader::~SimulationFileReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 143 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int UtilityHNS::SimulationFileReader::ReadAllData (\fBSimulationData\fP & data_list)"
+
+.PP
+Definition at line 400 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::SimulationFileReader::ReadNextLine (\fBSimulationPoint\fP & data)"
+
+.PP
+Definition at line 377 of file DataRW\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

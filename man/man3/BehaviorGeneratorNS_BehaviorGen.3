@@ -1,0 +1,961 @@
+.TH "BehaviorGeneratorNS::BehaviorGen" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BehaviorGeneratorNS::BehaviorGen \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_behavior_selector_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBehaviorGen\fP ()"
+.br
+.ti -1c
+.RI "\fB~BehaviorGen\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWhiteLines\fP (const vector_map_msgs::WhiteLineArray &msg)"
+.br
+.ti -1c
+.RI "autoware_msgs::LampCmd \fBdetermineLamp\fP (const autoware_msgs::Lane &msg, double diff_th, int searchDistance)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_white_line\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpubLampCmd\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVehicleStatus\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCANInfo\fP (const autoware_can_msgs::CANInfoConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRobotOdom\fP (const nav_msgs::OdometryConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetGlobalPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetLocalPlannerPath\fP (const autoware_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetLocalTrajectoryCost\fP (const autoware_msgs::LaneConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTrafficLightStatus\fP (const autoware_msgs::TrafficLight &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTrafficLightSignals\fP (const autoware_msgs::Signals &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTwistCMD\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTwistRaw\fP (const geometry_msgs::TwistStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetCommandCMD\fP (const autoware_msgs::ControlCommandConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetForceCMD\fP (const std_msgs::Int32 &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetEmergencyStopSignal\fP (const std_msgs::String &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetEmergencyCMD\fP ()"
+.br
+.ti -1c
+.RI "void \fBExtractNeighbourLanes\fP ()"
+.br
+.ti -1c
+.RI "bool \fBpubForceCMDGoal\fP ()"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBfindSubGoalForPark\fP (int \fBdistance\fP)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBfindSubGoalPoseForOvertake\fP (int \fBdistance\fP, int direct_type=3)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetTmpSpeedLimit\fP (const std_msgs::Int32 &msg)"
+.br
+.ti -1c
+.RI "void \fBUpdatePlanningParams\fP (ros::NodeHandle &_nh)"
+.br
+.ti -1c
+.RI "void \fBSendLocalPlanningTopics\fP ()"
+.br
+.ti -1c
+.RI "void \fBVisualizeLocalPlanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBLogLocalPlanningInfo\fP (double dt)"
+.br
+.ti -1c
+.RI "void \fBVisualizeNeighborLanes\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &left_lanes, std::vector< \fBPlannerHNS::WayPoint\fP > &right_lanes, bool bUpcomingLeft=false, bool bForwardLeft=false, bool bUpcomingRight=false, bool bForwardRight=false)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "geometry_msgs::Pose \fBm_OriginPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrentPos\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewCurrentPos\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBm_VehicleStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbVehicleStatus\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_temp_path\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPaths\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_GlobalPathsToUse\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayGlobalPath\fP"
+.br
+.ti -1c
+.RI "bool \fBbWayGlobalPathLogs\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_RollOuts\fP"
+.br
+.ti -1c
+.RI "bool \fBbRollOuts\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::MAP_SOURCE_TYPE\fP \fBm_MapType\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_MapPath\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::RoadNetwork\fP \fBm_Map\fP"
+.br
+.ti -1c
+.RI "bool \fBbMap\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::TrajectoryCost\fP \fBm_TrajectoryBestCost\fP"
+.br
+.ti -1c
+.RI "bool \fBbBestCost\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::DecisionMaker\fP \fBm_BehaviorGenerator\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_CurrentBehavior\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBm_LogData\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::PlanningParams\fP \fBm_PlanningParams\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::CAR_BASIC_INFO\fP \fBm_CarInfo\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::Lane \fBm_CurrentTrajectoryToSend\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewLightStatus\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewLightSignal\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::TrafficLightState\fP \fBm_CurrLightStatus\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::TrafficLight\fP > \fBm_CurrTrafficLight\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::TrafficLight\fP > \fBm_PrevTrafficLight\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::TwistStamped \fBm_Twist_raw\fP"
+.br
+.ti -1c
+.RI "geometry_msgs::TwistStamped \fBm_Twist_cmd\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::ControlCommand \fBm_Ctrl_cmd\fP"
+.br
+.ti -1c
+.RI "bool \fBbEmergencyStop\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ForceCmdTypes\fP \fBm_fcommand\fP"
+.br
+.ti -1c
+.RI "bool \fBbChangeLaneLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBbChangeLaneRight\fP"
+.br
+.ti -1c
+.RI "bool \fBbOvertake\fP"
+.br
+.ti -1c
+.RI "int \fBm_merge_planning_dist\fP = 100"
+.br
+.ti -1c
+.RI "int \fBm_overtake_planning_dist\fP = 30"
+.br
+.ti -1c
+.RI "int \fBm_park_planning_dist\fP = 200"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalPath\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LocalBasePath\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_ClosestIndex\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_BehaviorState\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SimuBoxPose\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_SelectedPathRviz\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_neighborLanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_pose\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_current_velocity\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_robot_odom\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_can_info\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_GlobalPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_LocalPlannerPaths\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_TrafficLightStatus\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_TrafficLightSignals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_Trajectory_Cost\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_BehaviorStateRviz\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_twist_cmd\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_twist_raw\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_ctrl_cmd\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_fcommand\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_LeftLane\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::WayPoint\fP > \fBm_RightLane\fP"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > \fBm_neighborLane\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_LeftLane\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_RightLane\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_fcmd_goal\fP"
+.br
+.ti -1c
+.RI "int \fBpre_roll_outs_gid\fP =0"
+.br
+.ti -1c
+.RI "int \fBtmp_speed_limit\fP = \-1"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_tmp_speed_limit\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 65 of file op_behavior_selector_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BehaviorGeneratorNS::BehaviorGen::BehaviorGen ()"
+
+.PP
+Definition at line 23 of file op_behavior_selector_core\&.cpp\&.
+.SS "BehaviorGeneratorNS::BehaviorGen::~BehaviorGen ()"
+
+.PP
+Definition at line 112 of file op_behavior_selector_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetCANInfo (const autoware_can_msgs::CANInfoConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 234 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetCommandCMD (const autoware_msgs::ControlCommandConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 205 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 217 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetEmergencyCMD ()\fC [protected]\fP"
+
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetEmergencyStopSignal (const std_msgs::String & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 941 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetForceCMD (const std_msgs::Int32 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 937 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetGlobalPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 253 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetLocalPlannerPath (const autoware_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 350 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetLocalTrajectoryCost (const autoware_msgs::LaneConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 334 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetRobotOdom (const nav_msgs::OdometryConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 243 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetTmpSpeedLimit (const std_msgs::Int32 & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 210 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetTrafficLightSignals (const autoware_msgs::Signals & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 434 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetTrafficLightStatus (const autoware_msgs::TrafficLight & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 424 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetTwistCMD (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 200 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetTwistRaw (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 195 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVehicleStatus (const geometry_msgs::TwistStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 224 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMAreas (const vector_map_msgs::AreaArray & msg)"
+
+.PP
+Definition at line 859 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArray & msg)"
+
+.PP
+Definition at line 915 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMCurbs (const vector_map_msgs::CurbArray & msg)"
+
+.PP
+Definition at line 894 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArray & msg)"
+
+.PP
+Definition at line 845 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArray & msg)"
+
+.PP
+Definition at line 852 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMLanes (const vector_map_msgs::LaneArray & msg)"
+
+.PP
+Definition at line 831 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMLines (const vector_map_msgs::LineArray & msg)"
+
+.PP
+Definition at line 866 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMNodes (const vector_map_msgs::NodeArray & msg)"
+
+.PP
+Definition at line 922 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMPoints (const vector_map_msgs::PointArray & msg)"
+
+.PP
+Definition at line 838 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArray & msg)"
+
+.PP
+Definition at line 901 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMSignal (const vector_map_msgs::SignalArray & msg)"
+
+.PP
+Definition at line 880 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMStopLines (const vector_map_msgs::StopLineArray & msg)"
+
+.PP
+Definition at line 873 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMVectors (const vector_map_msgs::VectorArray & msg)"
+
+.PP
+Definition at line 887 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArray & msg)"
+
+.PP
+Definition at line 908 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::callbackGetVMWhiteLines (const vector_map_msgs::WhiteLineArray & msg)"
+
+.PP
+Definition at line 929 of file op_behavior_selector_core\&.cpp\&.
+.SS "autoware_msgs::LampCmd BehaviorGeneratorNS::BehaviorGen::determineLamp (const autoware_msgs::Lane & msg, double diff_th, int searchDistance)"
+
+.PP
+Definition at line 1199 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::ExtractNeighbourLanes ()\fC [protected]\fP"
+
+.PP
+Definition at line 947 of file op_behavior_selector_core\&.cpp\&.
+.SS "\fBPlannerHNS::WayPoint\fP BehaviorGeneratorNS::BehaviorGen::findSubGoalForPark (int distance)\fC [protected]\fP"
+
+.PP
+Definition at line 1052 of file op_behavior_selector_core\&.cpp\&.
+.SS "\fBPlannerHNS::WayPoint\fP BehaviorGeneratorNS::BehaviorGen::findSubGoalPoseForOvertake (int distance, int direct_type = \fC3\fP)\fC [protected]\fP"
+
+.PP
+Definition at line 1074 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::LogLocalPlanningInfo (double dt)\fC [protected]\fP"
+
+.PP
+Definition at line 588 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::MainLoop ()"
+
+.PP
+Definition at line 628 of file op_behavior_selector_core\&.cpp\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::pubForceCMDGoal ()\fC [protected]\fP"
+
+.PP
+Definition at line 1039 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::SendLocalPlanningTopics ()\fC [protected]\fP"
+
+.PP
+Definition at line 517 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::UpdatePlanningParams (ros::NodeHandle & _nh)\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::VisualizeLocalPlanner ()\fC [protected]\fP"
+
+.PP
+Definition at line 482 of file op_behavior_selector_core\&.cpp\&.
+.SS "void BehaviorGeneratorNS::BehaviorGen::VisualizeNeighborLanes (std::vector< \fBPlannerHNS::WayPoint\fP > & left_lanes, std::vector< \fBPlannerHNS::WayPoint\fP > & right_lanes, bool bUpcomingLeft = \fCfalse\fP, bool bForwardLeft = \fCfalse\fP, bool bUpcomingRight = \fCfalse\fP, bool bForwardRight = \fCfalse\fP)\fC [protected]\fP"
+
+.PP
+Definition at line 1095 of file op_behavior_selector_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bBestCost\fC [protected]\fP"
+
+.PP
+Definition at line 91 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bChangeLaneLeft\fC [protected]\fP"
+
+.PP
+Definition at line 117 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bChangeLaneRight\fC [protected]\fP"
+
+.PP
+Definition at line 118 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bEmergencyStop\fC [protected]\fP"
+
+.PP
+Definition at line 113 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bMap\fC [protected]\fP"
+
+.PP
+Definition at line 88 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bNewCurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bNewLightSignal\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bNewLightStatus\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bOvertake\fC [protected]\fP"
+
+.PP
+Definition at line 120 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bRollOuts\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bVehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bWayGlobalPath\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_behavior_selector_core\&.h\&.
+.SS "bool BehaviorGeneratorNS::BehaviorGen::bWayGlobalPathLogs\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::DecisionMaker\fP BehaviorGeneratorNS::BehaviorGen::m_BehaviorGenerator\fC [protected]\fP"
+
+.PP
+Definition at line 93 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::CAR_BASIC_INFO\fP BehaviorGeneratorNS::BehaviorGen::m_CarInfo\fC [protected]\fP"
+
+.PP
+Definition at line 99 of file op_behavior_selector_core\&.h\&.
+.SS "autoware_msgs::ControlCommand BehaviorGeneratorNS::BehaviorGen::m_Ctrl_cmd\fC [protected]\fP"
+
+.PP
+Definition at line 110 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP BehaviorGeneratorNS::BehaviorGen::m_CurrentBehavior\fC [protected]\fP"
+
+.PP
+Definition at line 94 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP BehaviorGeneratorNS::BehaviorGen::m_CurrentPos\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_behavior_selector_core\&.h\&.
+.SS "autoware_msgs::Lane BehaviorGeneratorNS::BehaviorGen::m_CurrentTrajectoryToSend\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::TrafficLightState\fP BehaviorGeneratorNS::BehaviorGen::m_CurrLightStatus\fC [protected]\fP"
+
+.PP
+Definition at line 104 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::TrafficLight\fP> BehaviorGeneratorNS::BehaviorGen::m_CurrTrafficLight\fC [protected]\fP"
+
+.PP
+Definition at line 105 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::ForceCmdTypes\fP BehaviorGeneratorNS::BehaviorGen::m_fcommand\fC [protected]\fP"
+
+.PP
+Definition at line 115 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > BehaviorGeneratorNS::BehaviorGen::m_GlobalPaths\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > BehaviorGeneratorNS::BehaviorGen::m_GlobalPathsToUse\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> BehaviorGeneratorNS::BehaviorGen::m_LeftLane\fC [protected]\fP"
+
+.PP
+Definition at line 159 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<std::string> BehaviorGeneratorNS::BehaviorGen::m_LogData\fC [protected]\fP"
+
+.PP
+Definition at line 96 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::RoadNetwork\fP BehaviorGeneratorNS::BehaviorGen::m_Map\fC [protected]\fP"
+
+.PP
+Definition at line 87 of file op_behavior_selector_core\&.h\&.
+.SS "std::string BehaviorGeneratorNS::BehaviorGen::m_MapPath\fC [protected]\fP"
+
+.PP
+Definition at line 85 of file op_behavior_selector_core\&.h\&.
+.SS "\fBUtilityHNS::MapRaw\fP BehaviorGeneratorNS::BehaviorGen::m_MapRaw"
+
+.PP
+Definition at line 220 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::MAP_SOURCE_TYPE\fP BehaviorGeneratorNS::BehaviorGen::m_MapType\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file op_behavior_selector_core\&.h\&.
+.SS "int BehaviorGeneratorNS::BehaviorGen::m_merge_planning_dist = 100\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > BehaviorGeneratorNS::BehaviorGen::m_neighborLane\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file op_behavior_selector_core\&.h\&.
+.SS "geometry_msgs::Pose BehaviorGeneratorNS::BehaviorGen::m_OriginPos\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_behavior_selector_core\&.h\&.
+.SS "int BehaviorGeneratorNS::BehaviorGen::m_overtake_planning_dist = 30\fC [protected]\fP"
+
+.PP
+Definition at line 124 of file op_behavior_selector_core\&.h\&.
+.SS "int BehaviorGeneratorNS::BehaviorGen::m_park_planning_dist = 200\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::PlanningParams\fP BehaviorGeneratorNS::BehaviorGen::m_PlanningParams\fC [protected]\fP"
+
+.PP
+Definition at line 98 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::TrafficLight\fP> BehaviorGeneratorNS::BehaviorGen::m_PrevTrafficLight\fC [protected]\fP"
+
+.PP
+Definition at line 106 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> BehaviorGeneratorNS::BehaviorGen::m_RightLane\fC [protected]\fP"
+
+.PP
+Definition at line 160 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<std::vector<\fBPlannerHNS::WayPoint\fP> > BehaviorGeneratorNS::BehaviorGen::m_RollOuts\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file op_behavior_selector_core\&.h\&.
+.SS "std::vector<\fBPlannerHNS::WayPoint\fP> BehaviorGeneratorNS::BehaviorGen::m_temp_path\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::TrajectoryCost\fP BehaviorGeneratorNS::BehaviorGen::m_TrajectoryBestCost\fC [protected]\fP"
+
+.PP
+Definition at line 90 of file op_behavior_selector_core\&.h\&.
+.SS "geometry_msgs::TwistStamped BehaviorGeneratorNS::BehaviorGen::m_Twist_cmd\fC [protected]\fP"
+
+.PP
+Definition at line 109 of file op_behavior_selector_core\&.h\&.
+.SS "geometry_msgs::TwistStamped BehaviorGeneratorNS::BehaviorGen::m_Twist_raw\fC [protected]\fP"
+
+.PP
+Definition at line 108 of file op_behavior_selector_core\&.h\&.
+.SS "\fBPlannerHNS::VehicleState\fP BehaviorGeneratorNS::BehaviorGen::m_VehicleStatus\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_behavior_selector_core\&.h\&.
+.SS "ros::NodeHandle BehaviorGeneratorNS::BehaviorGen::nh\fC [protected]\fP"
+
+.PP
+Definition at line 129 of file op_behavior_selector_core\&.h\&.
+.SS "int BehaviorGeneratorNS::BehaviorGen::pre_roll_outs_gid =0\fC [protected]\fP"
+
+.PP
+Definition at line 169 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_BehaviorState\fC [protected]\fP"
+
+.PP
+Definition at line 135 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_BehaviorStateRviz\fC [protected]\fP"
+
+.PP
+Definition at line 151 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_ClosestIndex\fC [protected]\fP"
+
+.PP
+Definition at line 134 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_fcmd_goal\fC [protected]\fP"
+
+.PP
+Definition at line 166 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_LeftLane\fC [protected]\fP"
+
+.PP
+Definition at line 163 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_LocalBasePath\fC [protected]\fP"
+
+.PP
+Definition at line 133 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_LocalPath\fC [protected]\fP"
+
+.PP
+Definition at line 132 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_neighborLanes\fC [protected]\fP"
+
+.PP
+Definition at line 139 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_RightLane\fC [protected]\fP"
+
+.PP
+Definition at line 164 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_SelectedPathRviz\fC [protected]\fP"
+
+.PP
+Definition at line 137 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pub_SimuBoxPose\fC [protected]\fP"
+
+.PP
+Definition at line 136 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Publisher BehaviorGeneratorNS::BehaviorGen::pubLampCmd"
+
+.PP
+Definition at line 257 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_can_info\fC [protected]\fP"
+
+.PP
+Definition at line 145 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_cross_walk"
+
+.PP
+Definition at line 234 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_ctrl_cmd\fC [protected]\fP"
+
+.PP
+Definition at line 155 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_curbs"
+
+.PP
+Definition at line 231 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_current_pose\fC [protected]\fP"
+
+.PP
+Definition at line 142 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_current_velocity\fC [protected]\fP"
+
+.PP
+Definition at line 143 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_dt_lanes"
+
+.PP
+Definition at line 224 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_edges"
+
+.PP
+Definition at line 232 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_fcommand\fC [protected]\fP"
+
+.PP
+Definition at line 157 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_GlobalPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 146 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_intersect"
+
+.PP
+Definition at line 225 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_lanes"
+
+.PP
+Definition at line 222 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_lines"
+
+.PP
+Definition at line 227 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_LocalPlannerPaths\fC [protected]\fP"
+
+.PP
+Definition at line 147 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_nodes"
+
+.PP
+Definition at line 235 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_points"
+
+.PP
+Definition at line 223 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_robot_odom\fC [protected]\fP"
+
+.PP
+Definition at line 144 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_signals"
+
+.PP
+Definition at line 229 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_stop_line"
+
+.PP
+Definition at line 228 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_tmp_speed_limit\fC [protected]\fP"
+
+.PP
+Definition at line 202 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_TrafficLightSignals\fC [protected]\fP"
+
+.PP
+Definition at line 149 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_TrafficLightStatus\fC [protected]\fP"
+
+.PP
+Definition at line 148 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_Trajectory_Cost\fC [protected]\fP"
+
+.PP
+Definition at line 150 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_twist_cmd\fC [protected]\fP"
+
+.PP
+Definition at line 153 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_twist_raw\fC [protected]\fP"
+
+.PP
+Definition at line 154 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_vectors"
+
+.PP
+Definition at line 230 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_way_areas"
+
+.PP
+Definition at line 233 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sub_white_line"
+
+.PP
+Definition at line 236 of file op_behavior_selector_core\&.h\&.
+.SS "ros::Subscriber BehaviorGeneratorNS::BehaviorGen::sup_area"
+
+.PP
+Definition at line 226 of file op_behavior_selector_core\&.h\&.
+.SS "int BehaviorGeneratorNS::BehaviorGen::tmp_speed_limit = \-1\fC [protected]\fP"
+
+.PP
+Definition at line 201 of file op_behavior_selector_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,60 @@
+.TH "WayPlannerNS::HMISocketServer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WayPlannerNS::HMISocketServer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SocketServer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHMISocketServer\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~HMISocketServer\fP ()"
+.br
+.ti -1c
+.RI "int \fBInitSocket\fP (int port_send, int port_receive)"
+.br
+.ti -1c
+.RI "void \fBSendMSG\fP (\fBHMI_MSG\fP msg)"
+.br
+.ti -1c
+.RI "int \fBGetLatestMSG\fP (\fBHMI_MSG\fP &msg)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file SocketServer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WayPlannerNS::HMISocketServer::HMISocketServer ()"
+
+.PP
+Definition at line 12 of file SocketServer\&.cpp\&.
+.SS "WayPlannerNS::HMISocketServer::~HMISocketServer ()\fC [virtual]\fP"
+
+.PP
+Definition at line 27 of file SocketServer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int WayPlannerNS::HMISocketServer::GetLatestMSG (\fBHMI_MSG\fP & msg)"
+
+.PP
+Definition at line 254 of file SocketServer\&.cpp\&.
+.SS "int WayPlannerNS::HMISocketServer::InitSocket (int port_send, int port_receive)"
+
+.PP
+Definition at line 49 of file SocketServer\&.cpp\&.
+.SS "void WayPlannerNS::HMISocketServer::SendMSG (\fBHMI_MSG\fP msg)"
+
+.PP
+Definition at line 246 of file SocketServer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

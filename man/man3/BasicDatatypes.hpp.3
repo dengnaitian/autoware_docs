@@ -1,0 +1,207 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/BasicDatatypes.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/lidar/packages/sick/ldmrs/sick_ldmrs_driver/src/driver/src/BasicDatatypes.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBdatatypes::BasicData\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdatatypes\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPI\fP   3\&.141592653589793238462"
+.br
+.ti -1c
+.RI "#define \fBdeg2rad\fP   0\&.01745329251994329576923690768"
+.br
+.ti -1c
+.RI "#define \fBrad2deg\fP   57\&.29577951308232087679815481"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef uint64_t \fBUINT64\fP"
+.br
+.ti -1c
+.RI "typedef int32_t \fBINT32\fP"
+.br
+.ti -1c
+.RI "typedef uint32_t \fBUINT32\fP"
+.br
+.ti -1c
+.RI "typedef uint16_t \fBUINT16\fP"
+.br
+.ti -1c
+.RI "typedef int16_t \fBINT16\fP"
+.br
+.ti -1c
+.RI "typedef uint8_t \fBUINT8\fP"
+.br
+.ti -1c
+.RI "typedef int8_t \fBINT8\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBBYTE\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDatatypes\fP { \fBDatatype_Unknown\fP = 0x0000, \fBDatatype_MeasurementList\fP = 0x0001, \fBDatatype_Box2D\fP = 0x0002, \fBDatatype_Line2D\fP = 0x0003, \fBDatatype_Polygon2D\fP = 0x0004, \fBDatatype_Polygon3D\fP = 0x0005, \fBDatatype_Point2D\fP = 0x0006, \fBDatatype_Point3D\fP = 0x0007, \fBDatatype_Circle2D\fP = 0x0008, \fBDatatype_Ellipse2D\fP = 0x0009, \fBDatatype_Msg\fP = 0x000A, \fBDatatype_Scan\fP = 0x000B, \fBDatatype_Objects\fP = 0x000C, \fBDatatype_Scannerinfo\fP = 0x000D, \fBDatatype_Trigger\fP = 0x000E, \fBDatatype_EvalCaseResult\fP = 0x000F, \fBDatatype_EvalCaseResults\fP = 0x0010, \fBDatatype_EvalCase\fP = 0x0011, \fBDatatype_EvalCases\fP = 0x0012, \fBDatatype_FieldParameter\fP = 0x0013, \fBDatatype_FieldDescription\fP = 0x0014, \fBDatatype_Fields\fP = 0x0015, \fBDatatype_SensorStateInfo\fP = 0x0016 }"
+.br
+.ti -1c
+.RI "enum \fBSourcetype\fP { \fBSourcetype_Unknown\fP = 0x0000, \fBSourcetype_LDMRS\fP = 0x0003, \fBSourcetype_MrsApp\fP = 0x1002, \fBSourcetype_MrsChangeApp\fP = 0x1003, \fBSourcetype_MrsFieldApp\fP = 0x1004, \fBSourcetype_MrsNtpTimeApp\fP = 0x1005, \fBSourcetype_MrsScanpointCoordinateApp\fP = 0x1006 }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define deg2rad   0\&.01745329251994329576923690768"
+
+.PP
+Definition at line 37 of file BasicDatatypes\&.hpp\&.
+.SS "#define PI   3\&.141592653589793238462"
+
+.PP
+Definition at line 34 of file BasicDatatypes\&.hpp\&.
+.SS "#define rad2deg   57\&.29577951308232087679815481"
+
+.PP
+Definition at line 40 of file BasicDatatypes\&.hpp\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned char \fBBYTE\fP"
+
+.PP
+Definition at line 31 of file BasicDatatypes\&.hpp\&.
+.SS "typedef int16_t \fBINT16\fP"
+
+.PP
+Definition at line 28 of file BasicDatatypes\&.hpp\&.
+.SS "typedef int32_t \fBINT32\fP"
+
+.PP
+Definition at line 25 of file BasicDatatypes\&.hpp\&.
+.SS "typedef int8_t \fBINT8\fP"
+
+.PP
+Definition at line 30 of file BasicDatatypes\&.hpp\&.
+.SS "typedef uint16_t \fBUINT16\fP"
+
+.PP
+Definition at line 27 of file BasicDatatypes\&.hpp\&.
+.SS "typedef uint32_t \fBUINT32\fP"
+
+.PP
+Definition at line 26 of file BasicDatatypes\&.hpp\&.
+.SS "typedef uint64_t \fBUINT64\fP"
+
+.PP
+Definition at line 24 of file BasicDatatypes\&.hpp\&.
+.SS "typedef uint8_t \fBUINT8\fP"
+
+.PP
+Definition at line 29 of file BasicDatatypes\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDatatypes\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDatatype_Unknown \fP\fP
+.TP
+\fB\fIDatatype_MeasurementList \fP\fP
+.TP
+\fB\fIDatatype_Box2D \fP\fP
+.TP
+\fB\fIDatatype_Line2D \fP\fP
+.TP
+\fB\fIDatatype_Polygon2D \fP\fP
+.TP
+\fB\fIDatatype_Polygon3D \fP\fP
+.TP
+\fB\fIDatatype_Point2D \fP\fP
+.TP
+\fB\fIDatatype_Point3D \fP\fP
+.TP
+\fB\fIDatatype_Circle2D \fP\fP
+.TP
+\fB\fIDatatype_Ellipse2D \fP\fP
+.TP
+\fB\fIDatatype_Msg \fP\fP
+.TP
+\fB\fIDatatype_Scan \fP\fP
+.TP
+\fB\fIDatatype_Objects \fP\fP
+.TP
+\fB\fIDatatype_Scannerinfo \fP\fP
+.TP
+\fB\fIDatatype_Trigger \fP\fP
+.TP
+\fB\fIDatatype_EvalCaseResult \fP\fP
+.TP
+\fB\fIDatatype_EvalCaseResults \fP\fP
+.TP
+\fB\fIDatatype_EvalCase \fP\fP
+.TP
+\fB\fIDatatype_EvalCases \fP\fP
+.TP
+\fB\fIDatatype_FieldParameter \fP\fP
+.TP
+\fB\fIDatatype_FieldDescription \fP\fP
+.TP
+\fB\fIDatatype_Fields \fP\fP
+.TP
+\fB\fIDatatype_SensorStateInfo \fP\fP
+.PP
+Definition at line 45 of file BasicDatatypes\&.hpp\&.
+.SS "enum \fBSourcetype\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISourcetype_Unknown \fP\fP
+.TP
+\fB\fISourcetype_LDMRS \fP\fP
+.TP
+\fB\fISourcetype_MrsApp \fP\fP
+.TP
+\fB\fISourcetype_MrsChangeApp \fP\fP
+.TP
+\fB\fISourcetype_MrsFieldApp \fP\fP
+.TP
+\fB\fISourcetype_MrsNtpTimeApp \fP\fP
+.TP
+\fB\fISourcetype_MrsScanpointCoordinateApp \fP\fP
+.PP
+Definition at line 76 of file BasicDatatypes\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

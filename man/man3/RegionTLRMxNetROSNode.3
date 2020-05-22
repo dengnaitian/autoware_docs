@@ -1,0 +1,73 @@
+.TH "RegionTLRMxNetROSNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RegionTLRMxNetROSNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <region_tlr_mxnet\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegionTLRMxNetROSNode\fP ()"
+.br
+.ti -1c
+.RI "\fB~RegionTLRMxNetROSNode\fP ()"
+.br
+.ti -1c
+.RI "void \fBRunRecognition\fP ()"
+.br
+.ti -1c
+.RI "void \fBImageRawCallback\fP (const sensor_msgs::Image &\fBimage\fP)"
+.br
+.ti -1c
+.RI "void \fBROISignalCallback\fP (const autoware_msgs::Signals::ConstPtr &extracted_pos)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBContext\fP > \fBcontexts_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 62 of file region_tlr_mxnet\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RegionTLRMxNetROSNode::RegionTLRMxNetROSNode ()"
+
+.PP
+Definition at line 15 of file region_tlr_mxnet\&.cpp\&.
+.SS "RegionTLRMxNetROSNode::~RegionTLRMxNetROSNode ()"
+
+.PP
+Definition at line 33 of file region_tlr_mxnet\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RegionTLRMxNetROSNode::ImageRawCallback (const sensor_msgs::Image & image)"
+
+.PP
+Definition at line 65 of file region_tlr_mxnet\&.cpp\&.
+.SS "void RegionTLRMxNetROSNode::ROISignalCallback (const autoware_msgs::Signals::ConstPtr & extracted_pos)"
+
+.PP
+Definition at line 74 of file region_tlr_mxnet\&.cpp\&.
+.SS "void RegionTLRMxNetROSNode::RunRecognition ()"
+
+.PP
+Definition at line 38 of file region_tlr_mxnet\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBContext\fP> RegionTLRMxNetROSNode::contexts_"
+
+.PP
+Definition at line 76 of file region_tlr_mxnet\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

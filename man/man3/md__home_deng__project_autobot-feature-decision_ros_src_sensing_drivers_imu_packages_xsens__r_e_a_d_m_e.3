@@ -1,0 +1,162 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_imu_packages_xsens__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_sensing_drivers_imu_packages_xsens__r_e_a_d_m_e \- Prerequisites 
+
+.IP "\(bu" 2
+Install the MTi USB Serial Driver 
+.PP
+.nf
+1 $ git clone https://github\&.com/xsens/xsens_mt\&.git
+2 $ cd ~/xsens_mt
+3 $ make
+4 $ sudo modprobe usbserial
+5 $ sudo insmod \&./xsens_mt\&.ko
+
+.fi
+.PP
+
+.IP "\(bu" 2
+Install gps_common 
+.PP
+.nf
+1 $ sudo apt-get install ros-distro-gps-common
+
+.fi
+.PP
+
+.PP
+.PP
+.SH "Running the Xsens MTi ROS Node"
+.PP
+.PP
+.IP "1." 4
+Copy the contents of the src folder into your catkin workspace 'src' folder\&. Make sure the permissions are set to \fIo+rw\fP on your files and directories\&. For details on creating a catkin workspace environment refer to \fCCreating a catkin ws\fP
+.IP "2." 4
+in your catkin_ws ($CATKIN) folder, execute 
+.PP
+.nf
+1 $ catkin_make
+
+.fi
+.PP
+
+.IP "3." 4
+Source the environment for each terminal you work in\&. If necessary, add the line to your \&.bashrc 
+.PP
+.nf
+1 \&. $CATKIN/devel/setup\&.bash
+
+.fi
+.PP
+
+.IP "4." 4
+Initiate the ros core 
+.PP
+.nf
+1 $ roscore
+
+.fi
+.PP
+
+.IP "5." 4
+Open a new terminal, type 
+.PP
+.nf
+1 $ \&. $CATKIN/devel/setup\&.bash
+2 $ rosrun xsens_driver mtdevice\&.py -m $sm -f $fs # publish sensor data
+
+.fi
+.PP
+ where $fs can be 1,5,10,20,40,50,80,100,200 or 400Hz\&. This configures the MTi to output inertial data and magnetometer data at the set ODR\&. The maximum supported inertial update rate is 400Hz and for the magnetometer it is 100Hz\&. The $sm can be set to 1,2 or 3\&. This can be used to set the sensor to output sensor data or filter outputs\&.
+.IP "6." 4
+To run the node 
+.PP
+.nf
+1 $ rosrun xsens_driver mtnode\&.py _device:=/dev/ttyUSB0 _baudrate:=115200
+
+.fi
+.PP
+ or 
+.PP
+.nf
+1 $ rosrun xsens_driver mtnode\&.py 
+
+.fi
+.PP
+
+.IP "7." 4
+Open a new terminal (do not forget step 3) 
+.PP
+.nf
+1 $ \&. $CATKIN/devel/setup\&.bash
+2 $ rostopic echo /mti/sensor/sample
+
+.fi
+.PP
+ or 
+.PP
+.nf
+1 $ \&. $CATKIN/devel/setup\&.bash
+2 $ rostopic echo /mti/sensor/imu
+
+.fi
+.PP
+
+.PP
+.PP
+.SH "Troubleshooting"
+.PP
+.PP
+.IP "\(bu" 2
+The Mti1 (Motion Tracker Development Board) is not recognized\&. Support for the Development Board is present in recent kernels\&. (Since June 12, 2015)\&.If your kernel does not support the Board, you can add this manually
+.PP
+$ sudo /sbin/modprobe ftdi_sio $ echo 2639 0300 | sudo tee /sys/bus/usb-serial/drivers/ftdi_sio/new_id
+.IP "\(bu" 2
+The device is recognized, but I cannot ever access the device Make sure you are in the correct group (often dialout or uucp) in order to access the device\&. You can test this with 
+.PP
+.nf
+  $ ls -l /dev/ttyUSB0
+  crw-rw---- 1 root dialout 188, 0 May  6 16:21 /dev/ttyUSB0
+  $ groups
+  dialout audio video usb users plugdev
+
+.fi
+.PP
+.PP
+If you aren't in the correct group, you can fix this in two ways\&.
+.IP "  1." 6
+Add yourself to the correct group You can add yourself to it by using your distributions user management tool, or call 
+.PP
+.nf
+$ sudo usermod -G dialout -a $USER
+
+.fi
+.PP
+.PP
+Be sure to replace dialout with the actual group name if it is different\&. After adding yourself to the group, either relogin to your user, or call 
+.PP
+.nf
+$ newgrp dialout
+
+.fi
+.PP
+.PP
+to add the current terminal session to the group\&.
+.IP "  2." 6
+Use udev rules Alternatively, put the following rule into /etc/udev/rules\&.d/99-custom\&.rules 
+.PP
+.nf
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2639", ACTION=="add", GROUP="$GROUP", MODE="0660"
+
+.fi
+.PP
+.PP
+Change $GROUP into your desired group (e\&.g\&. adm, plugdev, or usb)\&.
+.PP
+
+.IP "\(bu" 2
+The device is inaccessible for a while after plugging it in When having problems with the device being busy the first 20 seconds after plugin, purge the modemmanager application\&. 
+.PP
+

@@ -1,0 +1,251 @@
+.TH "conf" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+conf \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBsetup\fP (app)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "dictionary \fBsource_parsers\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBsource_suffix\fP = ['\&.rst', '\&.md']"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBextensions\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBtemplates_path\fP = ['_templates']"
+.br
+.ti -1c
+.RI "string \fBmaster_doc\fP = 'index'"
+.br
+.ti -1c
+.RI "string \fBproject\fP = u'AdiDriver'"
+.br
+.ti -1c
+.RI "string \fBcopyright\fP = u'2017, Tokyo Opensource Robotics Kyokai Association'"
+.br
+.ti -1c
+.RI "string \fBauthor\fP = u'Tokyo Opensource Robotics Kyokai Association'"
+.br
+.ti -1c
+.RI "string \fBgithub_doc_root\fP = 'https://github\&.com/tork\-a/adi_driver/\fBtree\fP/master/doc/'"
+.br
+.ti -1c
+.RI "\fBroot\fP = ElementTree(None, os\&.path\&.join('\&.\&.', 'package\&.xml'))"
+.br
+.ti -1c
+.RI "\fBversion\fP = root\&.findtext('version')"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBauthor_names\fP = [a\&.text for a in root\&.findall('\fBauthor\fP')]"
+.br
+.ti -1c
+.RI "\fBrelease\fP = \fBversion\fP"
+.br
+.ti -1c
+.RI "\fBlanguage\fP = None"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBexclude_patterns\fP = ['_build']"
+.br
+.ti -1c
+.RI "string \fBpygments_style\fP = 'sphinx'"
+.br
+.ti -1c
+.RI "bool \fBtodo_include_todos\fP = False"
+.br
+.ti -1c
+.RI "string \fBhtml_theme\fP = 'sphinx_rtd_theme'"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBhtml_static_path\fP = ['_static']"
+.br
+.ti -1c
+.RI "string \fBhtmlhelp_basename\fP = 'AdiDriverdoc'"
+.br
+.ti -1c
+.RI "dictionary \fBlatex_elements\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBlatex_documents\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBman_pages\fP"
+.br
+.ti -1c
+.RI "\fBlist\fP \fBtexinfo_documents\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def conf\&.setup ( app)"
+
+.PP
+Definition at line 310 of file conf\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "string conf\&.author = u'Tokyo Opensource Robotics Kyokai Association'"
+
+.PP
+Definition at line 59 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.author_names = [a\&.text for a in root\&.findall('\fBauthor\fP')]"
+
+.PP
+Definition at line 76 of file conf\&.py\&.
+.SS "string conf\&.copyright = u'2017, Tokyo Opensource Robotics Kyokai Association'"
+
+.PP
+Definition at line 58 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.exclude_patterns = ['_build']"
+
+.PP
+Definition at line 99 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.extensions"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2     'sphinx\&.ext\&.autodoc',
+3     'sphinx\&.ext\&.napoleon',
+4     'sphinx\&.ext\&.mathjax',
+5 ]
+.fi
+.PP
+Definition at line 41 of file conf\&.py\&.
+.SS "string conf\&.github_doc_root = 'https://github\&.com/tork\-a/adi_driver/\fBtree\fP/master/doc/'"
+
+.PP
+Definition at line 61 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.html_static_path = ['_static']"
+
+.PP
+Definition at line 162 of file conf\&.py\&.
+.SS "string conf\&.html_theme = 'sphinx_rtd_theme'"
+
+.PP
+Definition at line 133 of file conf\&.py\&.
+.SS "string conf\&.htmlhelp_basename = 'AdiDriverdoc'"
+
+.PP
+Definition at line 225 of file conf\&.py\&.
+.SS "conf\&.language = None"
+
+.PP
+Definition at line 89 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.latex_documents"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2   (master_doc, 'adi_driver\&.tex', u'ADI Driver Documentation',
+3    u'Tokyo Opensource Robotics Kyokai Association', 'manual'),
+4 ]
+.fi
+.PP
+Definition at line 247 of file conf\&.py\&.
+.SS "dictionary conf\&.latex_elements"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2 # The paper size ('letterpaper' or 'a4paper')\&.
+3 #'papersize': 'a4paper,dvipdfmx', # for japanese doc
+4  'papersize': 'a4paper',
+5 
+6 # The font size ('10pt', '11pt' or '12pt')\&.
+7 #'pointsize': '10pt',
+8 
+9 # Additional stuff for the LaTeX preamble\&.
+10   'preamble': '\usepackage{ascmac}\usepackage{fancybox}\setcounter{chapter}{0}\setcounter{tocdepth}{3}',
+11 
+12 # Latex figure (float) alignment
+13 #'figure_align': 'htbp',
+14 }
+.fi
+.PP
+Definition at line 229 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.man_pages"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2     (master_doc, 'adi_driver', u'ADI Driver Documentation',
+3      [author], 1)
+4 ]
+.fi
+.PP
+Definition at line 277 of file conf\&.py\&.
+.SS "string conf\&.master_doc = 'index'"
+
+.PP
+Definition at line 54 of file conf\&.py\&.
+.SS "string conf\&.project = u'AdiDriver'"
+
+.PP
+Definition at line 57 of file conf\&.py\&.
+.SS "string conf\&.pygments_style = 'sphinx'"
+
+.PP
+Definition at line 117 of file conf\&.py\&.
+.SS "conf\&.release = \fBversion\fP"
+
+.PP
+Definition at line 82 of file conf\&.py\&.
+.SS "conf\&.root = ElementTree(None, os\&.path\&.join('\&.\&.', 'package\&.xml'))"
+
+.PP
+Definition at line 74 of file conf\&.py\&.
+.SS "dictionary conf\&.source_parsers"
+\fBInitial value:\fP
+.PP
+.nf
+1 = {
+2     '\&.md': CommonMarkParser
+3 }
+.fi
+.PP
+Definition at line 27 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.source_suffix = ['\&.rst', '\&.md']"
+
+.PP
+Definition at line 31 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.templates_path = ['_templates']"
+
+.PP
+Definition at line 48 of file conf\&.py\&.
+.SS "\fBlist\fP conf\&.texinfo_documents"
+\fBInitial value:\fP
+.PP
+.nf
+1 = [
+2   (master_doc, 'adi_driver', u'ADI Driver Documentation',
+3    author, 'adi_driver', 'ADI Driver',
+4    'Miscellaneous'),
+5 ]
+.fi
+.PP
+Definition at line 291 of file conf\&.py\&.
+.SS "bool conf\&.todo_include_todos = False"
+
+.PP
+Definition at line 126 of file conf\&.py\&.
+.SS "conf\&.version = root\&.findtext('version')"
+
+.PP
+Definition at line 75 of file conf\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

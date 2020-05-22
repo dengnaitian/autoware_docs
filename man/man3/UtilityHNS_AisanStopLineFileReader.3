@@ -1,0 +1,97 @@
+.TH "UtilityHNS::AisanStopLineFileReader" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::AisanStopLineFileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DataRW\&.h>\fP
+.PP
+Inherits \fBUtilityHNS::SimpleReaderBase\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAisanStopLine\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAisanStopLineFileReader\fP (const std::string &fileName)"
+.br
+.ti -1c
+.RI "\fBAisanStopLineFileReader\fP (const vector_map_msgs::StopLineArray &_stopLines)"
+.br
+.ti -1c
+.RI "\fB~AisanStopLineFileReader\fP ()"
+.br
+.ti -1c
+.RI "bool \fBReadNextLine\fP (\fBAisanStopLine\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBReadAllData\fP (std::vector< \fBAisanStopLine\fP > &data_list)"
+.br
+.ti -1c
+.RI "void \fBParseNextLine\fP (const vector_map_msgs::StopLine &_rec, \fBAisanStopLine\fP &\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBAisanStopLine\fP * \fBGetDataRowById\fP (int _lnid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBAisanStopLine\fP > \fBm_data_list\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 413 of file DataRW\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UtilityHNS::AisanStopLineFileReader::AisanStopLineFileReader (const std::string & fileName)\fC [inline]\fP"
+
+.PP
+Definition at line 426 of file DataRW\&.h\&.
+.SS "UtilityHNS::AisanStopLineFileReader::AisanStopLineFileReader (const vector_map_msgs::StopLineArray & _stopLines)"
+
+.PP
+Definition at line 1265 of file DataRW\&.cpp\&.
+.SS "UtilityHNS::AisanStopLineFileReader::~AisanStopLineFileReader ()\fC [inline]\fP"
+
+.PP
+Definition at line 431 of file DataRW\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAisanStopLineFileReader::AisanStopLine\fP * UtilityHNS::AisanStopLineFileReader::GetDataRowById (int _lnid)"
+
+.PP
+Definition at line 1303 of file DataRW\&.cpp\&.
+.SS "void UtilityHNS::AisanStopLineFileReader::ParseNextLine (const vector_map_msgs::StopLine & _rec, \fBAisanStopLine\fP & data)"
+
+.PP
+Definition at line 1294 of file DataRW\&.cpp\&.
+.SS "int UtilityHNS::AisanStopLineFileReader::ReadAllData (std::vector< \fBAisanStopLine\fP > & data_list)"
+
+.PP
+Definition at line 1347 of file DataRW\&.cpp\&.
+.SS "bool UtilityHNS::AisanStopLineFileReader::ReadNextLine (\fBAisanStopLine\fP & data)"
+
+.PP
+Definition at line 1326 of file DataRW\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBAisanStopLine\fP> UtilityHNS::AisanStopLineFileReader::m_data_list"
+
+.PP
+Definition at line 437 of file DataRW\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

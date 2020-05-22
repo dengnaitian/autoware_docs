@@ -1,0 +1,169 @@
+.TH "object_map" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+object_map \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGridMapFilter\fP"
+.br
+.ti -1c
+.RI "class \fBWayareaToGrid\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBTransformPoint\fP (const \fBgeometry_msgs::Point\fP &in_point, const tf::Transform &in_tf)"
+.br
+.ti -1c
+.RI "void \fBPublishGridMap\fP (const grid_map::GridMap &in_gridmap, const ros::Publisher &in_publisher)"
+.br
+.ti -1c
+.RI "void \fBPublishOccupancyGrid\fP (const grid_map::GridMap &in_gridmap, const ros::Publisher &in_publisher, const std::string &in_layer, double in_min_value, double in_max_value, double in_height)"
+.br
+.ti -1c
+.RI "tf::StampedTransform \fBFindTransform\fP (const std::string &in_target_frame, const std::string &in_source_frame, const tf::TransformListener &in_tf_listener)"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBSearchAreaPoints\fP (const vector_map::Area &in_area, const \fBvector_map::VectorMap\fP &in_vectormap)"
+.br
+.ti -1c
+.RI "void \fBFillPolygonAreas\fP (grid_map::GridMap &out_grid_map, const std::vector< std::vector< \fBgeometry_msgs::Point\fP >> &in_area_points, const std::string &in_grid_layer_name, const int in_layer_background_value, const int in_layer_min_value, const int in_fill_color, const int in_layer_max_value, const std::string &in_tf_target_frame, const std::string &in_tf_source_frame, const tf::TransformListener &in_tf_listener)"
+.br
+.ti -1c
+.RI "void \fBLoadRoadAreasFromVectorMap\fP (ros::NodeHandle &in_private_node_handle, std::vector< std::vector< \fBgeometry_msgs::Point\fP >> &out_area_points)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void object_map::FillPolygonAreas (grid_map::GridMap & out_grid_map, const std::vector< std::vector< \fBgeometry_msgs::Point\fP >> & in_area_points, const std::string & in_grid_layer_name, const int in_layer_background_value, const int in_fill_color, const int in_layer_min_value, const int in_layer_max_value, const std::string & in_tf_target_frame, const std::string & in_tf_source_frame, const tf::TransformListener & in_tf_listener)"
+Projects the in_area_points forming the road, stores the result in out_grid_map\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIout_grid_map\fP GridMap object to add the road grid 
+.br
+\fIin_area_points\fP Array of points containing the wayareas 
+.br
+\fIin_grid_layer_name\fP Name to assign to the layer 
+.br
+\fIin_layer_background_value\fP Empty state value 
+.br
+\fIin_fill_color\fP Value to fill on wayareas 
+.br
+\fIin_layer_min_value\fP Minimum value in the layer 
+.br
+\fIin_layer_max_value\fP Maximum value in the later 
+.br
+\fIin_tf_target_frame\fP Target frame to transform the wayarea points 
+.br
+\fIin_tf_source_frame\fP Source frame, where the points are located 
+.br
+\fIin_tf_listener\fP Valid listener to obtain the transformation 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file object_map_utils\&.cpp\&.
+.SS "tf::StampedTransform object_map::FindTransform (const std::string & in_target_frame, const std::string & in_source_frame, const tf::TransformListener & in_tf_listener)"
+Obtains the registered transform in the tf tree 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_target_frame\fP Target frame to obtain the transformation 
+.br
+\fIin_source_frame\fP Source Frame from which is desired to transform 
+.br
+\fIin_tf_listener\fP Valid Object Listener 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Current Transform from source to target, if available\&. Otherwise, it returns an identity transform\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file object_map_utils\&.cpp\&.
+.SS "void object_map::LoadRoadAreasFromVectorMap (ros::NodeHandle & in_private_node_handle, std::vector< std::vector< \fBgeometry_msgs::Point\fP >> & out_area_points)"
+Loads regions defined as road inside the vector map, according to the field named 'wayarea' 
+.PP
+Definition at line 173 of file object_map_utils\&.cpp\&.
+.SS "void object_map::PublishGridMap (const grid_map::GridMap & in_gridmap, const ros::Publisher & in_publisher)"
+Publishes in_gridmap using the specified in_publisher 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_gridmap\fP GridMap object to publish 
+.br
+\fIin_publisher\fP Valid Publisher object to use 
+.RE
+.PP
+
+.PP
+Definition at line 36 of file object_map_utils\&.cpp\&.
+.SS "void object_map::PublishOccupancyGrid (const grid_map::GridMap & in_gridmap, const ros::Publisher & in_publisher, const std::string & in_layer, double in_min_value, double in_max_value, double in_height)"
+Convert and publishes a GridMap layer to a standard Ros OccupancyGrid 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_gridmap\fP GridMap object to extract the layer 
+.br
+\fIin_publisher\fP ROS Publisher to use to publish the occupancy grid 
+.br
+\fIin_layer\fP Name of the layer to convert 
+.br
+\fIin_min_value\fP Minimum value in the layer 
+.br
+\fIin_max_value\fP Maximum value in the layer 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file object_map_utils\&.cpp\&.
+.SS "std::vector< \fBgeometry_msgs::Point\fP > object_map::SearchAreaPoints (const vector_map::Area & in_area, const \fBvector_map::VectorMap\fP & in_vectormap)"
+Extracts all the points forming in_area inside in_vectormap 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_area\fP \fBArea\fP to extract its points 
+.br
+\fIin_vectormap\fP \fBVectorMap\fP object to which in_area belongs 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Array of points forming in_area 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file object_map_utils\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP object_map::TransformPoint (const \fBgeometry_msgs::Point\fP & in_point, const tf::Transform & in_tf)"
+Transforms a point using the given transformation 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_point\fP \fBPoint\fP to transform 
+.br
+\fIin_tf\fP Transformation to apply 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Transformed point 
+.RE
+.PP
+
+.PP
+Definition at line 23 of file object_map_utils\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

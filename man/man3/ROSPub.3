@@ -1,0 +1,82 @@
+.TH "ROSPub< MSGTYPE >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ROSPub< MSGTYPE > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rosinterface\&.h>\fP
+.PP
+Inherits \fBROSInterfaceBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSPub\fP (QString Topic, u_int32_t QueueSize, QObject *parent=0)"
+.br
+.ti -1c
+.RI "\fB~ROSPub\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsendMessage\fP (MSGTYPE &msg)"
+.br
+.ti -1c
+.RI "QString \fBgetTopic\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetTopic\fP (QString Topic, u_int32_t QueueSize)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::Publisher \fBpub\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class MSGTYPE>
+.br
+class ROSPub< MSGTYPE >"
+
+.PP
+Definition at line 58 of file rosinterface\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class MSGTYPE > \fBROSPub\fP< MSGTYPE >::\fBROSPub\fP (QString Topic, u_int32_t QueueSize, QObject * parent = \fC0\fP)"
+
+.PP
+Definition at line 72 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > \fBROSPub\fP< MSGTYPE >::~\fBROSPub\fP ()"
+
+.PP
+Definition at line 79 of file rosinterface\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class MSGTYPE > QString \fBROSPub\fP< MSGTYPE >::getTopic ()"
+
+.PP
+Definition at line 99 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > void \fBROSPub\fP< MSGTYPE >::resetTopic (QString Topic, u_int32_t QueueSize)"
+
+.PP
+Definition at line 105 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE> bool \fBROSPub\fP< MSGTYPE >::sendMessage (MSGTYPE & msg)"
+
+.PP
+Definition at line 85 of file rosinterface\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class MSGTYPE> ros::Publisher \fBROSPub\fP< MSGTYPE >::pub\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file rosinterface\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

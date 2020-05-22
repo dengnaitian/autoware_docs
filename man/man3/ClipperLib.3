@@ -1,0 +1,874 @@
+.TH "ClipperLib" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClipper\fP"
+.br
+.ti -1c
+.RI "class \fBClipperBase\fP"
+.br
+.ti -1c
+.RI "class \fBclipperException\fP"
+.br
+.ti -1c
+.RI "class \fBClipperOffset\fP"
+.br
+.ti -1c
+.RI "struct \fBDoublePoint\fP"
+.br
+.ti -1c
+.RI "class \fBInt128\fP"
+.br
+.ti -1c
+.RI "struct \fBIntersectNode\fP"
+.br
+.ti -1c
+.RI "struct \fBIntPoint\fP"
+.br
+.ti -1c
+.RI "struct \fBIntRect\fP"
+.br
+.ti -1c
+.RI "struct \fBJoin\fP"
+.br
+.ti -1c
+.RI "struct \fBLocalMinimum\fP"
+.br
+.ti -1c
+.RI "struct \fBLocMinSorter\fP"
+.br
+.ti -1c
+.RI "struct \fBOutPt\fP"
+.br
+.ti -1c
+.RI "struct \fBOutRec\fP"
+.br
+.ti -1c
+.RI "class \fBPolyNode\fP"
+.br
+.ti -1c
+.RI "class \fBPolyTree\fP"
+.br
+.ti -1c
+.RI "struct \fBTEdge\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef signed long long \fBcInt\fP"
+.br
+.ti -1c
+.RI "typedef signed long long \fBlong64\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long long \fBulong64\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBIntPoint\fP > \fBPath\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBPath\fP > \fBPaths\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBPolyNode\fP * > \fBPolyNodes\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBOutRec\fP * > \fBPolyOutList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBTEdge\fP * > \fBEdgeList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBJoin\fP * > \fBJoinList\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBIntersectNode\fP * > \fBIntersectList\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDirection\fP { \fBdRightToLeft\fP, \fBdLeftToRight\fP }"
+.br
+.ti -1c
+.RI "enum \fBNodeType\fP { \fBntAny\fP, \fBntOpen\fP, \fBntClosed\fP }"
+.br
+.ti -1c
+.RI "enum \fBClipType\fP { \fBctIntersection\fP, \fBctUnion\fP, \fBctDifference\fP, \fBctXor\fP }"
+.br
+.ti -1c
+.RI "enum \fBPolyType\fP { \fBptSubject\fP, \fBptClip\fP }"
+.br
+.ti -1c
+.RI "enum \fBPolyFillType\fP { \fBpftEvenOdd\fP, \fBpftNonZero\fP, \fBpftPositive\fP, \fBpftNegative\fP }"
+.br
+.ti -1c
+.RI "enum \fBInitOptions\fP { \fBioReverseSolution\fP = 1, \fBioStrictlySimple\fP = 2, \fBioPreserveCollinear\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBJoinType\fP { \fBjtSquare\fP, \fBjtRound\fP, \fBjtMiter\fP }"
+.br
+.ti -1c
+.RI "enum \fBEndType\fP { \fBetClosedPolygon\fP, \fBetClosedLine\fP, \fBetOpenButt\fP, \fBetOpenSquare\fP, \fBetOpenRound\fP }"
+.br
+.ti -1c
+.RI "enum \fBEdgeSide\fP { \fBesLeft\fP = 1, \fBesRight\fP = 2 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcInt\fP \fBRound\fP (double val)"
+.br
+.ti -1c
+.RI "\fBcInt\fP \fBAbs\fP (\fBcInt\fP val)"
+.br
+.ti -1c
+.RI "\fBInt128\fP \fBInt128Mul\fP (\fBlong64\fP lhs, \fBlong64\fP rhs)"
+.br
+.ti -1c
+.RI "bool \fBOrientation\fP (const \fBPath\fP &poly)"
+.br
+.ti -1c
+.RI "double \fBArea\fP (const \fBPath\fP &poly)"
+.br
+.ti -1c
+.RI "double \fBArea\fP (const \fBOutPt\fP *op)"
+.br
+.ti -1c
+.RI "double \fBArea\fP (const \fBOutRec\fP &outRec)"
+.br
+.ti -1c
+.RI "bool \fBPointIsVertex\fP (const \fBIntPoint\fP &Pt, \fBOutPt\fP *pp)"
+.br
+.ti -1c
+.RI "int \fBPointInPolygon\fP (const \fBIntPoint\fP &pt, const \fBPath\fP &path)"
+.br
+.ti -1c
+.RI "int \fBPointInPolygon\fP (const \fBIntPoint\fP &pt, \fBOutPt\fP *op)"
+.br
+.ti -1c
+.RI "bool \fBPoly2ContainsPoly1\fP (\fBOutPt\fP *OutPt1, \fBOutPt\fP *OutPt2)"
+.br
+.ti -1c
+.RI "bool \fBSlopesEqual\fP (const \fBTEdge\fP &e1, const \fBTEdge\fP &e2, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBSlopesEqual\fP (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBSlopesEqual\fP (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3, const \fBIntPoint\fP pt4, bool UseFullInt64Range)"
+.br
+.ti -1c
+.RI "bool \fBIsHorizontal\fP (\fBTEdge\fP &e)"
+.br
+.ti -1c
+.RI "double \fBGetDx\fP (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2)"
+.br
+.ti -1c
+.RI "void \fBSetDx\fP (\fBTEdge\fP &e)"
+.br
+.ti -1c
+.RI "void \fBSwapSides\fP (\fBTEdge\fP &Edge1, \fBTEdge\fP &Edge2)"
+.br
+.ti -1c
+.RI "void \fBSwapPolyIndexes\fP (\fBTEdge\fP &Edge1, \fBTEdge\fP &Edge2)"
+.br
+.ti -1c
+.RI "\fBcInt\fP \fBTopX\fP (\fBTEdge\fP &edge, const \fBcInt\fP currentY)"
+.br
+.ti -1c
+.RI "void \fBIntersectPoint\fP (\fBTEdge\fP &Edge1, \fBTEdge\fP &Edge2, \fBIntPoint\fP &ip)"
+.br
+.ti -1c
+.RI "void \fBReversePolyPtLinks\fP (\fBOutPt\fP *pp)"
+.br
+.ti -1c
+.RI "void \fBDisposeOutPts\fP (\fBOutPt\fP *&pp)"
+.br
+.ti -1c
+.RI "void \fBInitEdge\fP (\fBTEdge\fP *e, \fBTEdge\fP *eNext, \fBTEdge\fP *ePrev, const \fBIntPoint\fP &Pt)"
+.br
+.ti -1c
+.RI "void \fBInitEdge2\fP (\fBTEdge\fP &e, \fBPolyType\fP Pt)"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBRemoveEdge\fP (\fBTEdge\fP *e)"
+.br
+.ti -1c
+.RI "void \fBReverseHorizontal\fP (\fBTEdge\fP &e)"
+.br
+.ti -1c
+.RI "void \fBSwapPoints\fP (\fBIntPoint\fP &pt1, \fBIntPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "bool \fBGetOverlapSegment\fP (\fBIntPoint\fP pt1a, \fBIntPoint\fP pt1b, \fBIntPoint\fP pt2a, \fBIntPoint\fP pt2b, \fBIntPoint\fP &pt1, \fBIntPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "bool \fBFirstIsBottomPt\fP (const \fBOutPt\fP *btmPt1, const \fBOutPt\fP *btmPt2)"
+.br
+.ti -1c
+.RI "\fBOutPt\fP * \fBGetBottomPt\fP (\fBOutPt\fP *pp)"
+.br
+.ti -1c
+.RI "bool \fBPt2IsBetweenPt1AndPt3\fP (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3)"
+.br
+.ti -1c
+.RI "bool \fBHorzSegmentsOverlap\fP (\fBcInt\fP seg1a, \fBcInt\fP seg1b, \fBcInt\fP seg2a, \fBcInt\fP seg2b)"
+.br
+.ti -1c
+.RI "void \fBRangeTest\fP (const \fBIntPoint\fP &Pt, bool &useFullRange)"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBFindNextLocMin\fP (\fBTEdge\fP *E)"
+.br
+.ti -1c
+.RI "\fBOutRec\fP * \fBGetLowermostRec\fP (\fBOutRec\fP *outRec1, \fBOutRec\fP *outRec2)"
+.br
+.ti -1c
+.RI "bool \fBOutRec1RightOfOutRec2\fP (\fBOutRec\fP *outRec1, \fBOutRec\fP *outRec2)"
+.br
+.ti -1c
+.RI "bool \fBIsMinima\fP (\fBTEdge\fP *e)"
+.br
+.ti -1c
+.RI "bool \fBIsMaxima\fP (\fBTEdge\fP *e, const \fBcInt\fP Y)"
+.br
+.ti -1c
+.RI "bool \fBIsIntermediate\fP (\fBTEdge\fP *e, const \fBcInt\fP Y)"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBGetMaximaPair\fP (\fBTEdge\fP *e)"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBGetMaximaPairEx\fP (\fBTEdge\fP *e)"
+.br
+.ti -1c
+.RI "\fBTEdge\fP * \fBGetNextInAEL\fP (\fBTEdge\fP *e, \fBDirection\fP dir)"
+.br
+.ti -1c
+.RI "void \fBGetHorzDirection\fP (\fBTEdge\fP &HorzEdge, \fBDirection\fP &Dir, \fBcInt\fP &Left, \fBcInt\fP &Right)"
+.br
+.ti -1c
+.RI "bool \fBIntersectListSort\fP (\fBIntersectNode\fP *node1, \fBIntersectNode\fP *node2)"
+.br
+.ti -1c
+.RI "bool \fBEdgesAdjacent\fP (const \fBIntersectNode\fP &inode)"
+.br
+.ti -1c
+.RI "int \fBPointCount\fP (\fBOutPt\fP *Pts)"
+.br
+.ti -1c
+.RI "void \fBSwapIntersectNodes\fP (\fBIntersectNode\fP &int1, \fBIntersectNode\fP &int2)"
+.br
+.ti -1c
+.RI "bool \fBE2InsertsBeforeE1\fP (\fBTEdge\fP &e1, \fBTEdge\fP &e2)"
+.br
+.ti -1c
+.RI "bool \fBGetOverlap\fP (const \fBcInt\fP a1, const \fBcInt\fP a2, const \fBcInt\fP b1, const \fBcInt\fP b2, \fBcInt\fP &Left, \fBcInt\fP &Right)"
+.br
+.ti -1c
+.RI "void \fBUpdateOutPtIdxs\fP (\fBOutRec\fP &outrec)"
+.br
+.ti -1c
+.RI "\fBOutPt\fP * \fBDupOutPt\fP (\fBOutPt\fP *outPt, bool InsertAfter)"
+.br
+.ti -1c
+.RI "bool \fBJoinHorz\fP (\fBOutPt\fP *op1, \fBOutPt\fP *op1b, \fBOutPt\fP *op2, \fBOutPt\fP *op2b, const \fBIntPoint\fP Pt, bool DiscardLeft)"
+.br
+.ti -1c
+.RI "\fBDoublePoint\fP \fBGetUnitNormal\fP (const \fBIntPoint\fP &pt1, const \fBIntPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "void \fBReversePath\fP (\fBPath\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBReversePaths\fP (\fBPaths\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBSimplifyPolygon\fP (const \fBPath\fP &in_poly, \fBPaths\fP &out_polys, \fBPolyFillType\fP fillType)"
+.br
+.ti -1c
+.RI "void \fBSimplifyPolygons\fP (const \fBPaths\fP &in_polys, \fBPaths\fP &out_polys, \fBPolyFillType\fP fillType)"
+.br
+.ti -1c
+.RI "void \fBSimplifyPolygons\fP (\fBPaths\fP &polys, \fBPolyFillType\fP fillType)"
+.br
+.ti -1c
+.RI "double \fBDistanceSqrd\fP (const \fBIntPoint\fP &pt1, const \fBIntPoint\fP &pt2)"
+.br
+.ti -1c
+.RI "double \fBDistanceFromLineSqrd\fP (const \fBIntPoint\fP &pt, const \fBIntPoint\fP &ln1, const \fBIntPoint\fP &ln2)"
+.br
+.ti -1c
+.RI "bool \fBSlopesNearCollinear\fP (const \fBIntPoint\fP &pt1, const \fBIntPoint\fP &pt2, const \fBIntPoint\fP &pt3, double distSqrd)"
+.br
+.ti -1c
+.RI "bool \fBPointsAreClose\fP (\fBIntPoint\fP pt1, \fBIntPoint\fP pt2, double distSqrd)"
+.br
+.ti -1c
+.RI "\fBOutPt\fP * \fBExcludeOp\fP (\fBOutPt\fP *op)"
+.br
+.ti -1c
+.RI "void \fBCleanPolygon\fP (const \fBPath\fP &in_poly, \fBPath\fP &out_poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBCleanPolygon\fP (\fBPath\fP &poly, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBCleanPolygons\fP (const \fBPaths\fP &in_polys, \fBPaths\fP &out_polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBCleanPolygons\fP (\fBPaths\fP &polys, double \fBdistance\fP)"
+.br
+.ti -1c
+.RI "void \fBMinkowski\fP (const \fBPath\fP &poly, const \fBPath\fP &path, \fBPaths\fP &solution, bool isSum, bool isClosed)"
+.br
+.ti -1c
+.RI "void \fBMinkowskiSum\fP (const \fBPath\fP &pattern, const \fBPath\fP &path, \fBPaths\fP &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBTranslatePath\fP (const \fBPath\fP &input, \fBPath\fP &output, const \fBIntPoint\fP delta)"
+.br
+.ti -1c
+.RI "void \fBMinkowskiSum\fP (const \fBPath\fP &pattern, const \fBPaths\fP &paths, \fBPaths\fP &solution, bool pathIsClosed)"
+.br
+.ti -1c
+.RI "void \fBMinkowskiDiff\fP (const \fBPath\fP &poly1, const \fBPath\fP &poly2, \fBPaths\fP &solution)"
+.br
+.ti -1c
+.RI "void \fBAddPolyNodeToPaths\fP (const \fBPolyNode\fP &polynode, \fBNodeType\fP nodetype, \fBPaths\fP &paths)"
+.br
+.ti -1c
+.RI "void \fBPolyTreeToPaths\fP (const \fBPolyTree\fP &polytree, \fBPaths\fP &paths)"
+.br
+.ti -1c
+.RI "void \fBClosedPathsFromPolyTree\fP (const \fBPolyTree\fP &polytree, \fBPaths\fP &paths)"
+.br
+.ti -1c
+.RI "void \fBOpenPathsFromPolyTree\fP (\fBPolyTree\fP &polytree, \fBPaths\fP &paths)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBIntPoint\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBPath\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &s, const \fBPaths\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "\fBPath\fP & \fBoperator<<\fP (\fBPath\fP &poly, const \fBIntPoint\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "\fBPaths\fP & \fBoperator<<\fP (\fBPaths\fP &polys, const \fBPath\fP &\fBp\fP)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef signed long long \fBClipperLib::cInt\fP"
+
+.PP
+Definition at line 87 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBTEdge\fP *> \fBClipperLib::EdgeList\fP"
+
+.PP
+Definition at line 293 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBIntersectNode\fP *> \fBClipperLib::IntersectList\fP"
+
+.PP
+Definition at line 295 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBJoin\fP *> \fBClipperLib::JoinList\fP"
+
+.PP
+Definition at line 294 of file clipper\&.hpp\&.
+.SS "typedef signed long long \fBClipperLib::long64\fP"
+
+.PP
+Definition at line 90 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBIntPoint\fP> \fBClipperLib::Path\fP"
+
+.PP
+Definition at line 121 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBPath\fP> \fBClipperLib::Paths\fP"
+
+.PP
+Definition at line 122 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBPolyNode\fP *> \fBClipperLib::PolyNodes\fP"
+
+.PP
+Definition at line 174 of file clipper\&.hpp\&.
+.SS "typedef std::vector<\fBOutRec\fP *> \fBClipperLib::PolyOutList\fP"
+
+.PP
+Definition at line 290 of file clipper\&.hpp\&.
+.SS "typedef unsigned long long \fBClipperLib::ulong64\fP"
+
+.PP
+Definition at line 91 of file clipper\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBClipperLib::ClipType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIctIntersection \fP\fP
+.TP
+\fB\fIctUnion \fP\fP
+.TP
+\fB\fIctDifference \fP\fP
+.TP
+\fB\fIctXor \fP\fP
+.PP
+Definition at line 65 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::Direction\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIdRightToLeft \fP\fP
+.TP
+\fB\fIdLeftToRight \fP\fP
+.PP
+Definition at line 58 of file clipper\&.cpp\&.
+.SS "enum \fBClipperLib::EdgeSide\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIesLeft \fP\fP
+.TP
+\fB\fIesRight \fP\fP
+.PP
+Definition at line 279 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::EndType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIetClosedPolygon \fP\fP
+.TP
+\fB\fIetClosedLine \fP\fP
+.TP
+\fB\fIetOpenButt \fP\fP
+.TP
+\fB\fIetOpenSquare \fP\fP
+.TP
+\fB\fIetOpenRound \fP\fP
+.PP
+Definition at line 169 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::InitOptions\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIioReverseSolution \fP\fP
+.TP
+\fB\fIioStrictlySimple \fP\fP
+.TP
+\fB\fIioPreserveCollinear \fP\fP
+.PP
+Definition at line 161 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::JoinType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIjtSquare \fP\fP
+.TP
+\fB\fIjtRound \fP\fP
+.TP
+\fB\fIjtMiter \fP\fP
+.PP
+Definition at line 165 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::NodeType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIntAny \fP\fP
+.TP
+\fB\fIntOpen \fP\fP
+.TP
+\fB\fIntClosed \fP\fP
+.PP
+Definition at line 4839 of file clipper\&.cpp\&.
+.SS "enum \fBClipperLib::PolyFillType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIpftEvenOdd \fP\fP
+.TP
+\fB\fIpftNonZero \fP\fP
+.TP
+\fB\fIpftPositive \fP\fP
+.TP
+\fB\fIpftNegative \fP\fP
+.PP
+Definition at line 77 of file clipper\&.hpp\&.
+.SS "enum \fBClipperLib::PolyType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIptSubject \fP\fP
+.TP
+\fB\fIptClip \fP\fP
+.PP
+Definition at line 69 of file clipper\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBcInt\fP ClipperLib::Abs (\fBcInt\fP val)\fC [inline]\fP"
+
+.PP
+Definition at line 155 of file clipper\&.cpp\&.
+.SS "void ClipperLib::AddPolyNodeToPaths (const \fBPolyNode\fP & polynode, \fBNodeType\fP nodetype, \fBPaths\fP & paths)"
+
+.PP
+Definition at line 4844 of file clipper\&.cpp\&.
+.SS "double ClipperLib::Area (const \fBPath\fP & poly)"
+
+.PP
+Definition at line 428 of file clipper\&.cpp\&.
+.SS "double ClipperLib::Area (const \fBOutPt\fP * op)"
+
+.PP
+Definition at line 444 of file clipper\&.cpp\&.
+.SS "double ClipperLib::Area (const \fBOutRec\fP & outRec)"
+
+.PP
+Definition at line 459 of file clipper\&.cpp\&.
+.SS "void ClipperLib::CleanPolygon (const \fBPath\fP & in_poly, \fBPath\fP & out_poly, double distance)"
+
+.PP
+Definition at line 4670 of file clipper\&.cpp\&.
+.SS "void ClipperLib::CleanPolygon (\fBPath\fP & poly, double distance)"
+
+.PP
+Definition at line 4728 of file clipper\&.cpp\&.
+.SS "void ClipperLib::CleanPolygons (const \fBPaths\fP & in_polys, \fBPaths\fP & out_polys, double distance)"
+
+.PP
+Definition at line 4734 of file clipper\&.cpp\&.
+.SS "void ClipperLib::CleanPolygons (\fBPaths\fP & polys, double distance)"
+
+.PP
+Definition at line 4742 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClosedPathsFromPolyTree (const \fBPolyTree\fP & polytree, \fBPaths\fP & paths)"
+
+.PP
+Definition at line 4867 of file clipper\&.cpp\&.
+.SS "void ClipperLib::DisposeOutPts (\fBOutPt\fP *& pp)"
+
+.PP
+Definition at line 762 of file clipper\&.cpp\&.
+.SS "double ClipperLib::DistanceFromLineSqrd (const \fBIntPoint\fP & pt, const \fBIntPoint\fP & ln1, const \fBIntPoint\fP & ln2)"
+
+.PP
+Definition at line 4609 of file clipper\&.cpp\&.
+.SS "double ClipperLib::DistanceSqrd (const \fBIntPoint\fP & pt1, const \fBIntPoint\fP & pt2)\fC [inline]\fP"
+
+.PP
+Definition at line 4601 of file clipper\&.cpp\&.
+.SS "\fBOutPt\fP* ClipperLib::DupOutPt (\fBOutPt\fP * outPt, bool InsertAfter)"
+
+.PP
+Definition at line 3591 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::E2InsertsBeforeE1 (\fBTEdge\fP & e1, \fBTEdge\fP & e2)\fC [inline]\fP"
+
+.PP
+Definition at line 3508 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::EdgesAdjacent (const \fBIntersectNode\fP & inode)\fC [inline]\fP"
+
+.PP
+Definition at line 3149 of file clipper\&.cpp\&.
+.SS "\fBOutPt\fP* ClipperLib::ExcludeOp (\fBOutPt\fP * op)"
+
+.PP
+Definition at line 4660 of file clipper\&.cpp\&.
+.SS "\fBTEdge\fP* ClipperLib::FindNextLocMin (\fBTEdge\fP * E)"
+
+.PP
+Definition at line 991 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::FirstIsBottomPt (const \fBOutPt\fP * btmPt1, const \fBOutPt\fP * btmPt2)"
+
+.PP
+Definition at line 871 of file clipper\&.cpp\&.
+.SS "\fBOutPt\fP* ClipperLib::GetBottomPt (\fBOutPt\fP * pp)"
+
+.PP
+Definition at line 899 of file clipper\&.cpp\&.
+.SS "double ClipperLib::GetDx (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2)\fC [inline]\fP"
+
+.PP
+Definition at line 638 of file clipper\&.cpp\&.
+.SS "void ClipperLib::GetHorzDirection (\fBTEdge\fP & HorzEdge, \fBDirection\fP & Dir, \fBcInt\fP & Left, \fBcInt\fP & Right)"
+
+.PP
+Definition at line 2823 of file clipper\&.cpp\&.
+.SS "\fBOutRec\fP* ClipperLib::GetLowermostRec (\fBOutRec\fP * outRec1, \fBOutRec\fP * outRec2)"
+
+.PP
+Definition at line 2516 of file clipper\&.cpp\&.
+.SS "\fBTEdge\fP* ClipperLib::GetMaximaPair (\fBTEdge\fP * e)"
+
+.PP
+Definition at line 2739 of file clipper\&.cpp\&.
+.SS "\fBTEdge\fP* ClipperLib::GetMaximaPairEx (\fBTEdge\fP * e)"
+
+.PP
+Definition at line 2750 of file clipper\&.cpp\&.
+.SS "\fBTEdge\fP* ClipperLib::GetNextInAEL (\fBTEdge\fP * e, \fBDirection\fP dir)"
+
+.PP
+Definition at line 2817 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::GetOverlap (const \fBcInt\fP a1, const \fBcInt\fP a2, const \fBcInt\fP b1, const \fBcInt\fP b2, \fBcInt\fP & Left, \fBcInt\fP & Right)"
+
+.PP
+Definition at line 3521 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::GetOverlapSegment (\fBIntPoint\fP pt1a, \fBIntPoint\fP pt1b, \fBIntPoint\fP pt2a, \fBIntPoint\fP pt2b, \fBIntPoint\fP & pt1, \fBIntPoint\fP & pt2)"
+
+.PP
+Definition at line 833 of file clipper\&.cpp\&.
+.SS "\fBDoublePoint\fP ClipperLib::GetUnitNormal (const \fBIntPoint\fP & pt1, const \fBIntPoint\fP & pt2)"
+
+.PP
+Definition at line 4037 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::HorzSegmentsOverlap (\fBcInt\fP seg1a, \fBcInt\fP seg1b, \fBcInt\fP seg2a, \fBcInt\fP seg2b)"
+
+.PP
+Definition at line 951 of file clipper\&.cpp\&.
+.SS "void ClipperLib::InitEdge (\fBTEdge\fP * e, \fBTEdge\fP * eNext, \fBTEdge\fP * ePrev, const \fBIntPoint\fP & Pt)\fC [inline]\fP"
+
+.PP
+Definition at line 776 of file clipper\&.cpp\&.
+.SS "void ClipperLib::InitEdge2 (\fBTEdge\fP & e, \fBPolyType\fP Pt)"
+
+.PP
+Definition at line 786 of file clipper\&.cpp\&.
+.SS "\fBInt128\fP ClipperLib::Int128Mul (\fBlong64\fP lhs, \fBlong64\fP rhs)"
+
+.PP
+Definition at line 387 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::IntersectListSort (\fBIntersectNode\fP * node1, \fBIntersectNode\fP * node2)"
+
+.PP
+Definition at line 3143 of file clipper\&.cpp\&.
+.SS "void ClipperLib::IntersectPoint (\fBTEdge\fP & Edge1, \fBTEdge\fP & Edge2, \fBIntPoint\fP & ip)"
+
+.PP
+Definition at line 678 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::IsHorizontal (\fBTEdge\fP & e)\fC [inline]\fP"
+
+.PP
+Definition at line 632 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::IsIntermediate (\fBTEdge\fP * e, const \fBcInt\fP Y)\fC [inline]\fP"
+
+.PP
+Definition at line 2733 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::IsMaxima (\fBTEdge\fP * e, const \fBcInt\fP Y)\fC [inline]\fP"
+
+.PP
+Definition at line 2727 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::IsMinima (\fBTEdge\fP * e)\fC [inline]\fP"
+
+.PP
+Definition at line 2721 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::JoinHorz (\fBOutPt\fP * op1, \fBOutPt\fP * op1b, \fBOutPt\fP * op2, \fBOutPt\fP * op2b, const \fBIntPoint\fP Pt, bool DiscardLeft)"
+
+.PP
+Definition at line 3613 of file clipper\&.cpp\&.
+.SS "void ClipperLib::Minkowski (const \fBPath\fP & poly, const \fBPath\fP & path, \fBPaths\fP & solution, bool isSum, bool isClosed)"
+
+.PP
+Definition at line 4748 of file clipper\&.cpp\&.
+.SS "void ClipperLib::MinkowskiDiff (const \fBPath\fP & poly1, const \fBPath\fP & poly2, \fBPaths\fP & solution)"
+
+.PP
+Definition at line 4830 of file clipper\&.cpp\&.
+.SS "void ClipperLib::MinkowskiSum (const \fBPath\fP & pattern, const \fBPath\fP & path, \fBPaths\fP & solution, bool pathIsClosed)"
+
+.PP
+Definition at line 4793 of file clipper\&.cpp\&.
+.SS "void ClipperLib::MinkowskiSum (const \fBPath\fP & pattern, const \fBPaths\fP & paths, \fBPaths\fP & solution, bool pathIsClosed)"
+
+.PP
+Definition at line 4811 of file clipper\&.cpp\&.
+.SS "void ClipperLib::OpenPathsFromPolyTree (\fBPolyTree\fP & polytree, \fBPaths\fP & paths)"
+
+.PP
+Definition at line 4875 of file clipper\&.cpp\&.
+.SS "\fBPath\fP& ClipperLib::operator<< (\fBPath\fP & poly, const \fBIntPoint\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 124 of file clipper\&.hpp\&.
+.SS "\fBPaths\fP& ClipperLib::operator<< (\fBPaths\fP & polys, const \fBPath\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 130 of file clipper\&.hpp\&.
+.SS "std::ostream & ClipperLib::operator<< (std::ostream & s, const \fBIntPoint\fP & p)"
+
+.PP
+Definition at line 4886 of file clipper\&.cpp\&.
+.SS "std::ostream & ClipperLib::operator<< (std::ostream & s, const \fBPath\fP & p)"
+
+.PP
+Definition at line 4893 of file clipper\&.cpp\&.
+.SS "std::ostream & ClipperLib::operator<< (std::ostream & s, const \fBPaths\fP & p)"
+
+.PP
+Definition at line 4905 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Orientation (const \fBPath\fP & poly)"
+
+.PP
+Definition at line 422 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::OutRec1RightOfOutRec2 (\fBOutRec\fP * outRec1, \fBOutRec\fP * outRec2)"
+
+.PP
+Definition at line 2544 of file clipper\&.cpp\&.
+.SS "int ClipperLib::PointCount (\fBOutPt\fP * Pts)"
+
+.PP
+Definition at line 3411 of file clipper\&.cpp\&.
+.SS "int ClipperLib::PointInPolygon (const \fBIntPoint\fP & pt, const \fBPath\fP & path)"
+
+.PP
+Definition at line 480 of file clipper\&.cpp\&.
+.SS "int ClipperLib::PointInPolygon (const \fBIntPoint\fP & pt, \fBOutPt\fP * op)"
+
+.PP
+Definition at line 531 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::PointIsVertex (const \fBIntPoint\fP & Pt, \fBOutPt\fP * pp)"
+
+.PP
+Definition at line 465 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::PointsAreClose (\fBIntPoint\fP pt1, \fBIntPoint\fP pt2, double distSqrd)"
+
+.PP
+Definition at line 4652 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Poly2ContainsPoly1 (\fBOutPt\fP * OutPt1, \fBOutPt\fP * OutPt2)"
+
+.PP
+Definition at line 580 of file clipper\&.cpp\&.
+.SS "void ClipperLib::PolyTreeToPaths (const \fBPolyTree\fP & polytree, \fBPaths\fP & paths)"
+
+.PP
+Definition at line 4859 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::Pt2IsBetweenPt1AndPt3 (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3)"
+
+.PP
+Definition at line 939 of file clipper\&.cpp\&.
+.SS "void ClipperLib::RangeTest (const \fBIntPoint\fP & Pt, bool & useFullRange)"
+
+.PP
+Definition at line 977 of file clipper\&.cpp\&.
+.SS "\fBTEdge\fP* ClipperLib::RemoveEdge (\fBTEdge\fP * e)"
+
+.PP
+Definition at line 802 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ReverseHorizontal (\fBTEdge\fP & e)\fC [inline]\fP"
+
+.PP
+Definition at line 813 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ReversePath (\fBPath\fP & p)"
+
+.PP
+Definition at line 4564 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ReversePaths (\fBPaths\fP & p)"
+
+.PP
+Definition at line 4570 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ReversePolyPtLinks (\fBOutPt\fP * pp)"
+
+.PP
+Definition at line 746 of file clipper\&.cpp\&.
+.SS "\fBcInt\fP ClipperLib::Round (double val)\fC [inline]\fP"
+
+.PP
+Definition at line 146 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SetDx (\fBTEdge\fP & e)\fC [inline]\fP"
+
+.PP
+Definition at line 645 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SimplifyPolygon (const \fBPath\fP & in_poly, \fBPaths\fP & out_polys, \fBPolyFillType\fP fillType)"
+
+.PP
+Definition at line 4577 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SimplifyPolygons (const \fBPaths\fP & in_polys, \fBPaths\fP & out_polys, \fBPolyFillType\fP fillType)"
+
+.PP
+Definition at line 4586 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SimplifyPolygons (\fBPaths\fP & polys, \fBPolyFillType\fP fillType)"
+
+.PP
+Definition at line 4595 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::SlopesEqual (const \fBTEdge\fP & e1, const \fBTEdge\fP & e2, bool UseFullInt64Range)"
+
+.PP
+Definition at line 595 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::SlopesEqual (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3, bool UseFullInt64Range)"
+
+.PP
+Definition at line 608 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::SlopesEqual (const \fBIntPoint\fP pt1, const \fBIntPoint\fP pt2, const \fBIntPoint\fP pt3, const \fBIntPoint\fP pt4, bool UseFullInt64Range)"
+
+.PP
+Definition at line 620 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::SlopesNearCollinear (const \fBIntPoint\fP & pt1, const \fBIntPoint\fP & pt2, const \fBIntPoint\fP & pt3, double distSqrd)"
+
+.PP
+Definition at line 4626 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SwapIntersectNodes (\fBIntersectNode\fP & int1, \fBIntersectNode\fP & int2)"
+
+.PP
+Definition at line 3495 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SwapPoints (\fBIntPoint\fP & pt1, \fBIntPoint\fP & pt2)"
+
+.PP
+Definition at line 825 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SwapPolyIndexes (\fBTEdge\fP & Edge1, \fBTEdge\fP & Edge2)\fC [inline]\fP"
+
+.PP
+Definition at line 663 of file clipper\&.cpp\&.
+.SS "void ClipperLib::SwapSides (\fBTEdge\fP & Edge1, \fBTEdge\fP & Edge2)\fC [inline]\fP"
+
+.PP
+Definition at line 655 of file clipper\&.cpp\&.
+.SS "\fBcInt\fP ClipperLib::TopX (\fBTEdge\fP & edge, const \fBcInt\fP currentY)\fC [inline]\fP"
+
+.PP
+Definition at line 671 of file clipper\&.cpp\&.
+.SS "void ClipperLib::TranslatePath (const \fBPath\fP & input, \fBPath\fP & output, const \fBIntPoint\fP delta)"
+
+.PP
+Definition at line 4802 of file clipper\&.cpp\&.
+.SS "void ClipperLib::UpdateOutPtIdxs (\fBOutRec\fP & outrec)\fC [inline]\fP"
+
+.PP
+Definition at line 3551 of file clipper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

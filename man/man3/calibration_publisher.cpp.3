@@ -1,0 +1,62 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/fusion/packages/calibration_publisher/src/calibration_publisher.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/fusion/packages/calibration_publisher/src/calibration_publisher.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/CameraInfo\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include <sensor_msgs/Image\&.h>\fP
+.br
+\fC#include 'autoware_msgs/ProjectionMatrix\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBtfRegistration\fP (const cv::Mat &camExtMat, const ros::Time &timeStamp)"
+.br
+.ti -1c
+.RI "void \fBprojectionMatrix_sender\fP (const cv::Mat &projMat, const ros::Time &timeStamp)"
+.br
+.ti -1c
+.RI "void \fBcameraInfo_sender\fP (const cv::Mat &camMat, const cv::Mat &distCoeff, const \fBcv::Size\fP &imgSize, const std::string &distModel, const ros::Time &timeStamp)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void cameraInfo_sender (const cv::Mat & camMat, const cv::Mat & distCoeff, const \fBcv::Size\fP & imgSize, const std::string & distModel, const ros::Time & timeStamp)"
+
+.PP
+Definition at line 91 of file calibration_publisher\&.cpp\&.
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 162 of file calibration_publisher\&.cpp\&.
+.SS "void projectionMatrix_sender (const cv::Mat & projMat, const ros::Time & timeStamp)"
+
+.PP
+Definition at line 73 of file calibration_publisher\&.cpp\&.
+.SS "void tfRegistration (const cv::Mat & camExtMat, const ros::Time & timeStamp)"
+
+.PP
+Definition at line 49 of file calibration_publisher\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

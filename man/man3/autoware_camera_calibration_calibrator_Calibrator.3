@@ -1,0 +1,277 @@
+.TH "autoware_camera_calibration.calibrator.Calibrator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.calibrator.Calibrator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBautoware_camera_calibration\&.calibrator\&.MonoCalibrator\fP, and \fBautoware_camera_calibration\&.calibrator\&.StereoCalibrator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, boards, flags=0, \fBpattern\fP=\fBPatterns\&.Chessboard\fP, \fBname\fP='', \fBdetection\fP='cv2', \fBoutput\fP='yaml', \fBcheckerboard_flags\fP=cv2\&.CALIB_CB_FAST_CHECK, \fBmin_good_enough\fP=40)"
+.br
+.ti -1c
+.RI "def \fBmkgray\fP (self, msg)"
+.br
+.ti -1c
+.RI "def \fBget_parameters\fP (self, corners, board, size)"
+.br
+.ti -1c
+.RI "def \fBis_good_sample\fP (self, params)"
+.br
+.ti -1c
+.RI "def \fBcompute_goodenough\fP (self)"
+.br
+.ti -1c
+.RI "def \fBmk_object_points\fP (self, boards, use_board_size=False)"
+.br
+.ti -1c
+.RI "def \fBget_corners\fP (self, img, refine=True)"
+.br
+.ti -1c
+.RI "def \fBdownsample_and_detect\fP (self, img)"
+.br
+.ti -1c
+.RI "def \fBlrmsg\fP (self, d, \fBk\fP, r, \fBp\fP)"
+.br
+.ti -1c
+.RI "def \fBlrreport\fP (self, d, \fBk\fP, r, \fBp\fP)"
+.br
+.ti -1c
+.RI "def \fBlrost\fP (self, \fBname\fP, d, \fBk\fP, r, \fBp\fP)"
+.br
+.ti -1c
+.RI "def \fBlryaml\fP (self, \fBname\fP, d, \fBk\fP, r, \fBp\fP)"
+.br
+.ti -1c
+.RI "def \fBdo_save\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcalibrated\fP"
+.br
+.ti -1c
+.RI "\fBcalib_flags\fP"
+.br
+.ti -1c
+.RI "\fBcheckerboard_flags\fP"
+.br
+.ti -1c
+.RI "\fBpattern\fP"
+.br
+.ti -1c
+.RI "\fBbr\fP"
+.br
+.ti -1c
+.RI "\fBmin_good_enough\fP"
+.br
+.ti -1c
+.RI "\fBdb\fP"
+.br
+.ti -1c
+.RI "\fBgood_corners\fP"
+.br
+.ti -1c
+.RI "\fBgoodenough\fP"
+.br
+.ti -1c
+.RI "\fBparam_ranges\fP"
+.br
+.ti -1c
+.RI "\fBname\fP"
+.br
+.ti -1c
+.RI "\fBdetection\fP"
+.br
+.ti -1c
+.RI "\fBoutput\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Base class for calibration system
+
+.fi
+.PP
+ 
+.PP
+Definition at line 269 of file calibrator\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.__init__ ( self,  boards,  flags = \fC0\fP,  pattern = \fC\fBPatterns\&.Chessboard\fP\fP,  name = \fC''\fP,  detection = \fC'cv2'\fP,  output = \fC'yaml'\fP,  checkerboard_flags = \fCcv2\&.CALIB_CB_FAST_CHECK\fP,  min_good_enough = \fC40\fP)"
+
+.PP
+Definition at line 275 of file calibrator\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.compute_goodenough ( self)"
+
+.PP
+Definition at line 371 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.do_save ( self)"
+
+.PP
+Definition at line 571 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.downsample_and_detect ( self,  img)"
+
+.PP
+.nf
+Downsample the input image to approximately VGA resolution and detect the
+calibration target corners in the full-size image.
+
+Combines these apparently orthogonal duties as an optimization. Checkerboard
+detection is too expensive on large images, so it's better to do detection on
+the smaller display image and scale the corners back up to the correct size.
+
+Returns (scrib, corners, downsampled_corners, board, (x_scale, y_scale)).
+
+.fi
+.PP
+ 
+.PP
+Definition at line 429 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.get_corners ( self,  img,  refine = \fCTrue\fP)"
+
+.PP
+.nf
+Use cvFindChessboardCorners to find corners of chessboard in image.
+
+Check all boards. Return corners for first chessboard that it detects
+if given multiple size chessboards.
+
+Returns (ok, corners, board)
+
+.fi
+.PP
+ 
+.PP
+Definition at line 410 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.get_parameters ( self,  corners,  board,  size)"
+
+.PP
+.nf
+Return list of parameters [X, Y, size, skew] describing the checkerboard view.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 335 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.is_good_sample ( self,  params)"
+
+.PP
+.nf
+Returns true if the checkerboard detection described by params should be added to the database.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 353 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.lrmsg ( self,  d,  k,  r,  p)"
+
+.PP
+.nf
+Used by :meth:`as_message`.  Return a CameraInfo message for the given calibration matrices 
+.fi
+.PP
+ 
+.PP
+Definition at line 490 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.lrost ( self,  name,  d,  k,  r,  p)"
+
+.PP
+Definition at line 510 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.lrreport ( self,  d,  k,  r,  p)"
+
+.PP
+Definition at line 504 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.lryaml ( self,  name,  d,  k,  r,  p)"
+
+.PP
+Definition at line 546 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.mk_object_points ( self,  boards,  use_board_size = \fCFalse\fP)"
+
+.PP
+Definition at line 393 of file calibrator\&.py\&.
+.SS "def autoware_camera_calibration\&.calibrator\&.Calibrator\&.mkgray ( self,  msg)"
+
+.PP
+.nf
+Convert a message into a 8-bit 1 channel monochrome OpenCV image
+
+.fi
+.PP
+ 
+.PP
+Definition at line 312 of file calibrator\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.br"
+
+.PP
+Definition at line 292 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.calib_flags"
+
+.PP
+Definition at line 289 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.calibrated"
+
+.PP
+Definition at line 288 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.checkerboard_flags"
+
+.PP
+Definition at line 290 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.db"
+
+.PP
+Definition at line 298 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.detection"
+
+.PP
+Definition at line 305 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.good_corners"
+
+.PP
+Definition at line 300 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.goodenough"
+
+.PP
+Definition at line 302 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.min_good_enough"
+
+.PP
+Definition at line 293 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.name"
+
+.PP
+Definition at line 304 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.output"
+
+.PP
+Definition at line 310 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.param_ranges"
+
+.PP
+Definition at line 303 of file calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.calibrator\&.Calibrator\&.pattern"
+
+.PP
+Definition at line 291 of file calibrator\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

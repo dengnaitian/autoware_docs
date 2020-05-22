@@ -1,0 +1,136 @@
+.TH "cpu::NormalDistributionsTransform< PointSourceType, PointTargetType >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cpu::NormalDistributionsTransform< PointSourceType, PointTargetType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NormalDistributionsTransform\&.h>\fP
+.PP
+Inherits \fBcpu::Registration< PointSourceType, PointTargetType >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNormalDistributionsTransform\fP ()"
+.br
+.ti -1c
+.RI "\fBNormalDistributionsTransform\fP (const \fBNormalDistributionsTransform\fP &other)"
+.br
+.ti -1c
+.RI "void \fBsetStepSize\fP (double \fBstep_size\fP)"
+.br
+.ti -1c
+.RI "void \fBsetResolution\fP (float resolution)"
+.br
+.ti -1c
+.RI "void \fBsetOutlierRatio\fP (double olr)"
+.br
+.ti -1c
+.RI "double \fBgetStepSize\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetResolution\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetOutlierRatio\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetTransformationProbability\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetRealIterations\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInputTarget\fP (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr input)"
+.br
+.ti -1c
+.RI "double \fBgetFitnessScore\fP (double max_range=DBL_MAX)"
+.br
+.ti -1c
+.RI "void \fBupdateVoxelGrid\fP (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr new_cloud)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcomputeTransformation\fP (const Eigen::Matrix< float, 4, 4 > &guess)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename PointSourceType, typename PointTargetType>
+.br
+class cpu::NormalDistributionsTransform< PointSourceType, PointTargetType >"
+
+.PP
+Definition at line 11 of file NormalDistributionsTransform\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename PointSourceType , typename PointTargetType > \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::\fBNormalDistributionsTransform\fP ()"
+
+.PP
+Definition at line 12 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType, typename PointTargetType> \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::\fBNormalDistributionsTransform\fP (const \fBNormalDistributionsTransform\fP< PointSourceType, PointTargetType > & other)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::computeTransformation (const Eigen::Matrix< float, 4, 4 > & guess)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBcpu::Registration< PointSourceType, PointTargetType >\fP\&.
+.PP
+Definition at line 107 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getFitnessScore (double max_range = \fCDBL_MAX\fP)"
+
+.PP
+Definition at line 720 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getOutlierRatio () const"
+
+.PP
+Definition at line 65 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > int \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getRealIterations ()"
+
+.PP
+Definition at line 77 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > float \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getResolution () const"
+
+.PP
+Definition at line 59 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getStepSize () const"
+
+.PP
+Definition at line 53 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > double \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::getTransformationProbability () const"
+
+.PP
+Definition at line 71 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::setInputTarget (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr input)"
+
+.PP
+Definition at line 95 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::setOutlierRatio (double olr)"
+
+.PP
+Definition at line 47 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::setResolution (float resolution)"
+
+.PP
+Definition at line 41 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::setStepSize (double step_size)"
+
+.PP
+Definition at line 35 of file NormalDistributionsTransform\&.cpp\&.
+.SS "template<typename PointSourceType , typename PointTargetType > void \fBcpu::NormalDistributionsTransform\fP< PointSourceType, PointTargetType >::updateVoxelGrid (typename \fBpcl::PointCloud\fP< PointTargetType >::Ptr new_cloud)"
+
+.PP
+Definition at line 751 of file NormalDistributionsTransform\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

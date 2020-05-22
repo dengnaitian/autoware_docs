@@ -1,0 +1,4 @@
+<map id="autoware_launcher.gui.plugins.basic.AwFileFrame" name="autoware_launcher.gui.plugins.basic.AwFileFrame">
+<area shape="rect" id="node2" href="$classautoware__launcher_1_1gui_1_1plugins_1_1basic_1_1_aw_text_frame.html" title="autoware_launcher.gui.plugins.basic.\lAwTextFrame" alt="" coords="5,169,241,211"/>
+<area shape="rect" id="node3" href="$classautoware__launcher_1_1gui_1_1widgets_1_1_aw_abstruct_frame.html" title="autoware_launcher.gui.widgets.\lAwAbstructFrame" alt="" coords="21,80,226,121"/>
+</map>

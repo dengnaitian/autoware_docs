@@ -1,0 +1,176 @@
+.TH "Cluster" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Cluster \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cluster\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetCloud\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr in_origin_cloud_ptr, const std::vector< int > &in_cluster_indices, std_msgs::Header in_ros_header, int in_id, int in_r, int in_g, int in_b, std::string in_label, bool in_estimate_pose)"
+.br
+.ti -1c
+.RI "void \fBToROSMessage\fP (std_msgs::Header in_ros_header, autoware_msgs::CloudCluster &out_cluster_message)"
+.br
+.ti -1c
+.RI "\fBCluster\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Cluster\fP ()"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZRGB >::Ptr \fBGetCloud\fP ()"
+.br
+.ti -1c
+.RI "pcl::PointXYZ \fBGetMinPoint\fP ()"
+.br
+.ti -1c
+.RI "pcl::PointXYZ \fBGetMaxPoint\fP ()"
+.br
+.ti -1c
+.RI "pcl::PointXYZ \fBGetAveragePoint\fP ()"
+.br
+.ti -1c
+.RI "pcl::PointXYZ \fBGetCentroid\fP ()"
+.br
+.ti -1c
+.RI "jsk_recognition_msgs::BoundingBox \fBGetBoundingBox\fP ()"
+.br
+.ti -1c
+.RI "geometry_msgs::PolygonStamped \fBGetPolygon\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetOrientationAngle\fP ()"
+.br
+.ti -1c
+.RI "float \fBGetLenght\fP ()"
+.br
+.ti -1c
+.RI "float \fBGetWidth\fP ()"
+.br
+.ti -1c
+.RI "float \fBGetHeight\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetId\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBGetLabel\fP ()"
+.br
+.ti -1c
+.RI "Eigen::Matrix3f \fBGetEigenVectors\fP ()"
+.br
+.ti -1c
+.RI "Eigen::Vector3f \fBGetEigenValues\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsValid\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetValidity\fP (bool in_valid)"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr \fBJoinCloud\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr in_cloud_ptr)"
+.br
+.ti -1c
+.RI "std::vector< float > \fBGetFpfhDescriptor\fP (const unsigned int &in_ompnum_threads, const double &in_normal_search_radius, const double &in_fpfh_search_radius)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 57 of file cluster\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Cluster::Cluster ()"
+
+.PP
+Definition at line 10 of file cluster\&.cpp\&.
+.SS "Cluster::~Cluster ()\fC [virtual]\fP"
+
+.PP
+Definition at line 354 of file cluster\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "pcl::PointXYZ Cluster::GetAveragePoint ()"
+
+.PP
+Definition at line 45 of file cluster\&.cpp\&.
+.SS "jsk_recognition_msgs::BoundingBox Cluster::GetBoundingBox ()"
+
+.PP
+Definition at line 20 of file cluster\&.cpp\&.
+.SS "pcl::PointXYZ Cluster::GetCentroid ()"
+
+.PP
+Definition at line 40 of file cluster\&.cpp\&.
+.SS "\fBpcl::PointCloud\fP< pcl::PointXYZRGB >::Ptr Cluster::GetCloud ()"
+
+.PP
+Definition at line 25 of file cluster\&.cpp\&.
+.SS "Eigen::Vector3f Cluster::GetEigenValues ()"
+
+.PP
+Definition at line 60 of file cluster\&.cpp\&.
+.SS "Eigen::Matrix3f Cluster::GetEigenVectors ()"
+
+.PP
+Definition at line 55 of file cluster\&.cpp\&.
+.SS "std::vector< float > Cluster::GetFpfhDescriptor (const unsigned int & in_ompnum_threads, const double & in_normal_search_radius, const double & in_fpfh_search_radius)"
+
+.PP
+Definition at line 283 of file cluster\&.cpp\&.
+.SS "float Cluster::GetHeight ()"
+
+.SS "int Cluster::GetId ()"
+
+.PP
+Definition at line 349 of file cluster\&.cpp\&.
+.SS "std::string Cluster::GetLabel ()"
+
+.SS "float Cluster::GetLenght ()"
+
+.SS "pcl::PointXYZ Cluster::GetMaxPoint ()"
+
+.PP
+Definition at line 35 of file cluster\&.cpp\&.
+.SS "pcl::PointXYZ Cluster::GetMinPoint ()"
+
+.PP
+Definition at line 30 of file cluster\&.cpp\&.
+.SS "double Cluster::GetOrientationAngle ()"
+
+.PP
+Definition at line 50 of file cluster\&.cpp\&.
+.SS "geometry_msgs::PolygonStamped Cluster::GetPolygon ()"
+
+.PP
+Definition at line 15 of file cluster\&.cpp\&.
+.SS "float Cluster::GetWidth ()"
+
+.SS "bool Cluster::IsValid ()"
+
+.PP
+Definition at line 339 of file cluster\&.cpp\&.
+.SS "\fBpcl::PointCloud\fP<pcl::PointXYZ>::Ptr Cluster::JoinCloud (const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr in_cloud_ptr)"
+
+.SS "void Cluster::SetCloud (const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr in_origin_cloud_ptr, const std::vector< int > & in_cluster_indices, std_msgs::Header in_ros_header, int in_id, int in_r, int in_g, int in_b, std::string in_label, bool in_estimate_pose)"
+
+.PP
+Definition at line 122 of file cluster\&.cpp\&.
+.SS "void Cluster::SetValidity (bool in_valid)"
+
+.PP
+Definition at line 344 of file cluster\&.cpp\&.
+.SS "void Cluster::ToROSMessage (std_msgs::Header in_ros_header, autoware_msgs::CloudCluster & out_cluster_message)"
+
+.PP
+Definition at line 65 of file cluster\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

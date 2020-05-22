@@ -1,0 +1,84 @@
+.TH "datatypes::FieldSegmented" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::FieldSegmented \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Fields\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::FieldDescription\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFieldSegmented\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~FieldSegmented\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddPoint\fP (const \fBFieldSegmentedPoint\fP &point)"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetNumberOfPoints\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputePolygon\fP ()"
+.br
+.RI "\fIfills the polygon clockwise \fP"
+.ti -1c
+.RI "\fBFieldSegmentedPoints\fP \fBgetPoints\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 97 of file Fields\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::FieldSegmented::FieldSegmented ()\fC [inline]\fP"
+
+.PP
+Definition at line 100 of file Fields\&.hpp\&.
+.SS "virtual datatypes::FieldSegmented::~FieldSegmented ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 105 of file Fields\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::FieldSegmented::addPoint (const \fBFieldSegmentedPoint\fP & point)\fC [inline]\fP"
+
+.PP
+Definition at line 107 of file Fields\&.hpp\&.
+.SS "void datatypes::FieldSegmented::computePolygon ()\fC [virtual]\fP"
+
+.PP
+fills the polygon clockwise 
+.PP
+Implements \fBdatatypes::FieldDescription\fP\&.
+.PP
+Definition at line 20 of file Fields\&.cpp\&.
+.SS "\fBUINT32\fP datatypes::FieldSegmented::getNumberOfPoints ()"
+
+.PP
+Definition at line 63 of file Fields\&.cpp\&.
+.SS "\fBFieldSegmentedPoints\fP datatypes::FieldSegmented::getPoints ()"
+
+.PP
+Definition at line 71 of file Fields\&.cpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::FieldSegmented::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 112 of file Fields\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

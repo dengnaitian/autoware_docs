@@ -1,0 +1,101 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_utilities__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_op_utilities__r_e_a_d_m_e \- OpenPlanner - Utilities 
+
+.SS "op_bag_player"
+.PP
+OpeGL based rosbag file player, it enable frame by frame playing, but only supports 3 types of topics (lidar data point cloud, current pose, image)
+.PP
+.SS "Outputs"
+.PP
+publish topics for points_raw, ndt_pose, and image_raw
+.PP
+.SS "Options"
+.PP
+.IP "\(bu" 2
+play data forward (space)
+.IP "\(bu" 2
+pause (space)
+.IP "\(bu" 2
+step forward by one frame (up button)
+.IP "\(bu" 2
+step backwards by one frame (down button)
+.IP "\(bu" 2
+exit (Esc button)
+.PP
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+rosbag path with /pose, /lidar and /image topics recorded
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_utilities op_bag_player\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Utilities -> op_bag_player
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+rosbag file path
+.PP
+.PP
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Publications: 
+2  * /points_raw [sensor_msgs::PointCloud2]
+3  * /ndt_pose [geometry_msgs::PoseStamped]
+4  * /image_raw [sensor_msgs::Image]
+5 
+6 Subscriptions: 
+.fi
+.PP
+.PP
+.SS "op_pose2tf"
+.PP
+This node recieve ndt_pose and publish current pose TF to the autoware system\&. so we don't need to run ndt_matching again\&.
+.PP
+.SS "Outputs"
+.PP
+pose TF
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+ndt_pose topic is published
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch op_utilities op_pose2tf\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Motion Planning -> OpenPlanner - Utilities -> op_pose2tf
+.PP
+.SS "\fBParameters\fP"
+.PP
+.IP "\(bu" 2
+ndt_pose topic name 
+.PP
+

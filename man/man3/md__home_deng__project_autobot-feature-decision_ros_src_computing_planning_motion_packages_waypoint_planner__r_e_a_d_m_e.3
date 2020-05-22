@@ -1,0 +1,74 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_waypoint_planner__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_waypoint_planner__r_e_a_d_m_e \- Waypoint Planner 
+Waypoint planner package provides the local planner nodes that dynamically plan avoidance behavior, velocity on waypoints, and so on\&.
+.PP
+.SS "Waypoint Planner - Astar Avoid"
+.PP
+\fCastar_avoid\fP node has two mode, Relay mode and Avoidance mode\&. You can switch these modes by \fCenable_avoidance\fP parameter\&.
+.PP
+.IP "\(bu" 2
+Relay mode: Not avoid planning and just publishing waypoints from self pose\&.
+.IP "\(bu" 2
+Avoidance mode: Avoiding obstacles by Hybrid-A* search algorithm in \fCastar_search\fP package with internal state transition
+.PP
+.PP
+\fINOTE\fP : If you have \fCwayarea\fP in your ADAS map, it's possible to limit search area and realize more safety planning by enabling \fCUse Wayarea\fP in \fCcostmap_generator\fP node\&. Please see the results in below demo videos\&.
+.PP
+Please see also: \fBmission/packages/freespace_planner/README\&.md\fP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing -> Motion Planning -> waypoint_planner -> astar_avoid
+.PP
+.IP "\(bu" 2
+From CLI:
+.PP
+.PP
+\fC$ roslaunch waypoint_planner astar_avoid\&.launch\fP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBParameters\fP can be set in both \fBLaunch\fP file and Runtime manager:
+.PP
+Parameter in RM Parameter in \fBLaunch\fP Type Description Default  \fCEnable Avoidance\fP \fCenable_avoidance\fP \fIBool\fP Enable avoidance mode \fCfalse\fP \fCCostmap Topic\fP \fCcostmap_topic\fP \fIString\fP Costmap topic for Hybrid-A* search \fCsemantics/costmap_generator/occupancy_grid\fP \fCWaypoint Velocity\fP \fCavoid_waypoints_velocity\fP \fIDouble\fP Constant velocity on planned waypoints [km/h] \fC10\&.0\fP \fCAvoidance Start Velocity\fP \fCavoid_start_velocity\fP \fIDouble\fP Self velocity for staring avoidance behavior [km/h] \fC5\&.0\fP \fCReplan Interval\fP \fCreplan_interval\fP \fIDouble\fP Replan interval for avoidance planning [Hz] \fC2\&.0\fP - \fCsafety_waypoints_size\fP \fIInt\fP Output waypoint size [-] \fC100\fP - \fCupdate_rate\fP \fIDouble\fP Publishing rate [Hz] \fC10\&.0\fP - \fCsearch_waypoints_size\fP \fIInt\fP Range of waypoints for incremental search [-] \fC50\fP - \fCsearch_waypoints_delta\fP \fIInt\fP Skipped waypoints for incremental search [-] \fC2\fP 
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Node [/astar_avoid]
+2 Publications:
+3  * /safety_waypoints [autoware_msgs/Lane]
+4 
+5 Subscriptions:
+6  * /base_waypoints [autoware_msgs/Lane]
+7  * /closest_waypoint [std_msgs/Int32]
+8  * /current_pose [geometry_msgs/PoseStamped]
+9  * /current_velocity [geometry_msgs/TwistStamped]
+10  * /semantics/costmap_generator/occupancy_grid [nav_msgs/OccupancyGrid]
+11  * /obstacle_waypoint [std_msgs/Int32]
+12  * /tf [tf2_msgs/TFMessage]
+13  * /tf_static [tf2_msgs/TFMessage]
+.fi
+.PP
+.PP
+.SS "Demo videos"
+.PP
+.SS "Dynamically avoiding (senario 1)"
+.PP
+\fC\fP.PP
+.SS "Dynamically avoiding (senario 2)"
+.PP
+\fC\fP.PP
+.SS "Statically avoiding by big re-routing"
+.PP
+\fC\fP.PP
+.SS "Waypoint Planner - Velocity Set"
+.PP
+// TODO 

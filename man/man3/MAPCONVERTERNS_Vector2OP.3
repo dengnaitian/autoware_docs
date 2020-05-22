@@ -1,0 +1,232 @@
+.TH "MAPCONVERTERNS::Vector2OP" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAPCONVERTERNS::Vector2OP \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_map_converter_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVector2OP\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Vector2OP\fP ()"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetVMLanes\fP (const vector_map_msgs::LaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMPoints\fP (const vector_map_msgs::PointArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMdtLanes\fP (const vector_map_msgs::DTLaneArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMIntersections\fP (const vector_map_msgs::CrossRoadArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMAreas\fP (const vector_map_msgs::AreaArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMLines\fP (const vector_map_msgs::LineArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMStopLines\fP (const vector_map_msgs::StopLineArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMSignal\fP (const vector_map_msgs::SignalArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMVectors\fP (const vector_map_msgs::VectorArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCurbs\fP (const vector_map_msgs::CurbArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMRoadEdges\fP (const vector_map_msgs::RoadEdgeArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMWayAreas\fP (const vector_map_msgs::WayAreaArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMCrossWalks\fP (const vector_map_msgs::CrossWalkArrayConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetVMNodes\fP (const vector_map_msgs::NodeArrayConstPtr &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUtilityHNS::MapRaw\fP \fBm_MapRaw\fP"
+.br
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_points\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_dt_lanes\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_intersect\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsup_area\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_lines\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_stop_line\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_signals\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_vectors\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_curbs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_edges\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_way_areas\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_cross_walk\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_nodes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 47 of file op_map_converter_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MAPCONVERTERNS::Vector2OP::Vector2OP ()"
+
+.SS "virtual MAPCONVERTERNS::Vector2OP::~Vector2OP ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMAreas (const vector_map_msgs::AreaArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMCrossWalks (const vector_map_msgs::CrossWalkArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMCurbs (const vector_map_msgs::CurbArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMdtLanes (const vector_map_msgs::DTLaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMIntersections (const vector_map_msgs::CrossRoadArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMLanes (const vector_map_msgs::LaneArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMLines (const vector_map_msgs::LineArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMNodes (const vector_map_msgs::NodeArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMPoints (const vector_map_msgs::PointArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMRoadEdges (const vector_map_msgs::RoadEdgeArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMSignal (const vector_map_msgs::SignalArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMStopLines (const vector_map_msgs::StopLineArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMVectors (const vector_map_msgs::VectorArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::callbackGetVMWayAreas (const vector_map_msgs::WayAreaArrayConstPtr & msg)\fC [protected]\fP"
+
+.SS "void MAPCONVERTERNS::Vector2OP::MainLoop ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUtilityHNS::MapRaw\fP MAPCONVERTERNS::Vector2OP::m_MapRaw\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file op_map_converter_core\&.h\&.
+.SS "ros::NodeHandle MAPCONVERTERNS::Vector2OP::nh\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_cross_walk\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_curbs\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_dt_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_edges\fC [protected]\fP"
+
+.PP
+Definition at line 81 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_intersect\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_lanes\fC [protected]\fP"
+
+.PP
+Definition at line 71 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_lines\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_nodes\fC [protected]\fP"
+
+.PP
+Definition at line 84 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_points\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_signals\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_stop_line\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_vectors\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sub_way_areas\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_map_converter_core\&.h\&.
+.SS "ros::Subscriber MAPCONVERTERNS::Vector2OP::sup_area\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file op_map_converter_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

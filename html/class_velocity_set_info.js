@@ -1,0 +1,27 @@
+var class_velocity_set_info =
+[
+    [ "VelocitySetInfo", "class_velocity_set_info.html#a91e41b0516d6cbb9ea08c47c52571072", null ],
+    [ "~VelocitySetInfo", "class_velocity_set_info.html#a232d87989ff239e3b333f5ae2a4c1dfc", null ],
+    [ "clearPoints", "class_velocity_set_info.html#ae9be949ea3f6b03643262133ceae0ec2", null ],
+    [ "configCallback", "class_velocity_set_info.html#a850293e7d5eec35c6e3237ac01f2f504", null ],
+    [ "controlPoseCallback", "class_velocity_set_info.html#a818bd90585a8c2cae04d360bdfb630b1", null ],
+    [ "detectionCallback", "class_velocity_set_info.html#a0b4da44773bf2e91926b1c0c011e05d0", null ],
+    [ "getControlPose", "class_velocity_set_info.html#a751926748cc0004c4ff278c696de8801", null ],
+    [ "getDecelerationObstacle", "class_velocity_set_info.html#ae84a05c6bacfab02fd619dec69258523", null ],
+    [ "getDecelerationRange", "class_velocity_set_info.html#ad3abec76f827da44e490961b5a8a60f2", null ],
+    [ "getDecelerationStopline", "class_velocity_set_info.html#a6a9878f25e9298eb02ac905efd2721f6", null ],
+    [ "getDetectionHeightBottom", "class_velocity_set_info.html#ad5cb80d9d807c224246d76fce3bcb410", null ],
+    [ "getDetectionHeightTop", "class_velocity_set_info.html#a83424b5cac9871cec1360bf491ebc176", null ],
+    [ "getDetectionResultByOtherNodes", "class_velocity_set_info.html#ab9775150531a5368e2584fe8eb110a2b", null ],
+    [ "getLocalizerPose", "class_velocity_set_info.html#ae09f66627d3f355344e203d8f3102f3a", null ],
+    [ "getPoints", "class_velocity_set_info.html#a451069140bff642bd4d272ba7967cef0", null ],
+    [ "getPointsThreshold", "class_velocity_set_info.html#a29fdb576ade4acc9b44cc0764bf6be56", null ],
+    [ "getSetPose", "class_velocity_set_info.html#aaafb447889fb831ae5e3635990644a00", null ],
+    [ "getStopDistanceObstacle", "class_velocity_set_info.html#a3b9b94c3e2ab0f0fe7343f60b2193942", null ],
+    [ "getStopDistanceStopline", "class_velocity_set_info.html#a8aa25e2bdf1a892cd63865feb6451c1e", null ],
+    [ "getStopRange", "class_velocity_set_info.html#a228cbfc8ec7deec0397e92f09ab32556", null ],
+    [ "getTemporalWaypointsSize", "class_velocity_set_info.html#a99fbd2ebac58fefb6a15e7b02d2dc7e2", null ],
+    [ "getVelocityChangeLimit", "class_velocity_set_info.html#aeb2ad543fb931665323209c34f37de81", null ],
+    [ "localizerPoseCallback", "class_velocity_set_info.html#acb678f5ca03fa3a367ee16b11ba068ce", null ],
+    [ "pointsCallback", "class_velocity_set_info.html#acf6caa5ff56d7184d3e84db9e64c7947", null ]
+];

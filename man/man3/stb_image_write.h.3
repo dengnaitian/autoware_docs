@@ -1,0 +1,132 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image_write.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/stb_image_write.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTBIWDEF\fP   extern"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef void \fBstbi_write_func\fP(void *context, void *\fBdata\fP, int size)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_png\fP (char const *filename, int w, int h, int comp, const void *\fBdata\fP, int stride_in_bytes)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_bmp\fP (char const *filename, int w, int h, int comp, const void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_tga\fP (char const *filename, int w, int h, int comp, const void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_hdr\fP (char const *filename, int w, int h, int comp, const float *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_jpg\fP (char const *filename, int x, int y, int comp, const void *\fBdata\fP, int quality)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_png_to_func\fP (\fBstbi_write_func\fP *func, void *context, int w, int h, int comp, const void *\fBdata\fP, int stride_in_bytes)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_bmp_to_func\fP (\fBstbi_write_func\fP *func, void *context, int w, int h, int comp, const void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_tga_to_func\fP (\fBstbi_write_func\fP *func, void *context, int w, int h, int comp, const void *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_hdr_to_func\fP (\fBstbi_write_func\fP *func, void *context, int w, int h, int comp, const float *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP int \fBstbi_write_jpg_to_func\fP (\fBstbi_write_func\fP *func, void *context, int x, int y, int comp, const void *\fBdata\fP, int quality)"
+.br
+.ti -1c
+.RI "\fBSTBIWDEF\fP void \fBstbi_flip_vertically_on_write\fP (int flip_boolean)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBstbi_write_tga_with_rle\fP"
+.br
+.ti -1c
+.RI "int \fBstbi_write_png_compression_level\fP"
+.br
+.ti -1c
+.RI "int \fBstbi_write_force_png_filter\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define STBIWDEF   extern"
+
+.PP
+Definition at line 159 of file stb_image_write\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef void stbi_write_func(void *context, void *\fBdata\fP, int size)"
+
+.PP
+Definition at line 178 of file stb_image_write\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBSTBIWDEF\fP void stbi_flip_vertically_on_write (int flip_boolean)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_bmp (char const * filename, int w, int h, int comp, const void * data)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_bmp_to_func (\fBstbi_write_func\fP * func, void * context, int w, int h, int comp, const void * data)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_hdr (char const * filename, int w, int h, int comp, const float * data)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_hdr_to_func (\fBstbi_write_func\fP * func, void * context, int w, int h, int comp, const float * data)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_jpg (char const * filename, int x, int y, int comp, const void * data, int quality)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_jpg_to_func (\fBstbi_write_func\fP * func, void * context, int x, int y, int comp, const void * data, int quality)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_png (char const * filename, int w, int h, int comp, const void * data, int stride_in_bytes)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_png_to_func (\fBstbi_write_func\fP * func, void * context, int w, int h, int comp, const void * data, int stride_in_bytes)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_tga (char const * filename, int w, int h, int comp, const void * data)"
+
+.SS "\fBSTBIWDEF\fP int stbi_write_tga_to_func (\fBstbi_write_func\fP * func, void * context, int w, int h, int comp, const void * data)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "int stbi_write_force_png_filter"
+
+.SS "int stbi_write_png_compression_level"
+
+.SS "int stbi_write_tga_with_rle"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

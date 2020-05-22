@@ -1,0 +1,6 @@
+<map id="/home/deng/Project/autobot&#45;feature&#45;decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickLMS5xxBufferMonitor.hh" name="/home/deng/Project/autobot&#45;feature&#45;decision/ros/src/sensing/drivers/lidar/packages/sick/lms5xx/nodes/lms511/include/lms511/SickLMS5xxBufferMonitor.hh">
+<area shape="rect" id="node2" href="$_sick_l_m_s5xx_message_8hh.html" title="SickLMS5xxMessage.hh" alt="" coords="123,153,289,180"/>
+<area shape="rect" id="node8" href="$_sick_exception_8hh.html" title="Contains some simple exception classes. " alt="" coords="289,228,413,255"/>
+<area shape="rect" id="node11" href="$_sick_buffer_monitor_8hh.html" title="Defines an abstract class for interfacing with a Sick LIDAR. " alt="" coords="399,153,543,180"/>
+<area shape="rect" id="node5" href="$_sick_message_8hh.html" title="Defines the abstract parent class for all Sick messages. " alt="" coords="147,228,265,255"/>
+</map>

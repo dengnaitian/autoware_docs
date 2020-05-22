@@ -1,0 +1,93 @@
+.TH "_ring_buffer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_ring_buffer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ring_buffer\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBu8\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP * \fBentries\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBmax_entries\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBentry_size\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP volatile \fBposition\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP volatile \fBcurrent_count\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP volatile \fBtotal_entries_written\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP volatile \fBtotal_entries_read\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP volatile \fBtotal_overruns\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 74 of file ring_buffer\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBu32\fP volatile _ring_buffer::current_count"
+
+.PP
+Definition at line 86 of file ring_buffer\&.h\&.
+.SS "\fBu8\fP* _ring_buffer::entries"
+
+.PP
+Definition at line 81 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP _ring_buffer::entry_size"
+
+.PP
+Definition at line 83 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP _ring_buffer::max_entries"
+
+.PP
+Definition at line 82 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP volatile _ring_buffer::position"
+
+.PP
+Definition at line 85 of file ring_buffer\&.h\&.
+.SS "\fBu8\fP _ring_buffer::state"
+
+.PP
+Definition at line 77 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP volatile _ring_buffer::total_entries_read"
+
+.PP
+Definition at line 90 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP volatile _ring_buffer::total_entries_written"
+
+.PP
+Definition at line 89 of file ring_buffer\&.h\&.
+.SS "\fBu32\fP volatile _ring_buffer::total_overruns"
+
+.PP
+Definition at line 91 of file ring_buffer\&.h\&.
+.SS "\fBu8\fP _ring_buffer::type"
+
+.PP
+Definition at line 78 of file ring_buffer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

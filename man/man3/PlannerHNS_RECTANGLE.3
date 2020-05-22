@@ -1,0 +1,101 @@
+.TH "PlannerHNS::RECTANGLE" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::RECTANGLE \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBPointInRect\fP (\fBGPSPoint\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "bool \fBPointInsideRect\fP (\fBGPSPoint\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "bool \fBHitTest\fP (\fBGPSPoint\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "\fBRECTANGLE\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~RECTANGLE\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGPSPoint\fP \fBbottom_left\fP"
+.br
+.ti -1c
+.RI "\fBGPSPoint\fP \fBtop_right\fP"
+.br
+.ti -1c
+.RI "double \fBwidth\fP"
+.br
+.ti -1c
+.RI "double \fBlength\fP"
+.br
+.ti -1c
+.RI "bool \fBbObstacle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 134 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::RECTANGLE::RECTANGLE ()\fC [inline]\fP"
+
+.PP
+Definition at line 160 of file RoadNetwork\&.h\&.
+.SS "virtual PlannerHNS::RECTANGLE::~RECTANGLE ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 167 of file RoadNetwork\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool PlannerHNS::RECTANGLE::HitTest (\fBGPSPoint\fP p)\fC [inline]\fP"
+
+.PP
+Definition at line 155 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::RECTANGLE::PointInRect (\fBGPSPoint\fP p)\fC [inline]\fP"
+
+.PP
+Definition at line 145 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::RECTANGLE::PointInsideRect (\fBGPSPoint\fP p)\fC [inline]\fP"
+
+.PP
+Definition at line 150 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlannerHNS::RECTANGLE::bObstacle"
+
+.PP
+Definition at line 142 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::RECTANGLE::bottom_left"
+
+.PP
+Definition at line 138 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::RECTANGLE::length"
+
+.PP
+Definition at line 141 of file RoadNetwork\&.h\&.
+.SS "\fBGPSPoint\fP PlannerHNS::RECTANGLE::top_right"
+
+.PP
+Definition at line 139 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::RECTANGLE::width"
+
+.PP
+Definition at line 140 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

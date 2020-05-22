@@ -1,0 +1,153 @@
+.TH "PreprocessPoints" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PreprocessPoints \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <preprocess_points\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPreprocessPoints\fP (const int MAX_NUM_PILLARS, const int MAX_POINTS_PER_PILLAR, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_INDS_FOR_SCAN, const int NUM_BOX_CORNERS)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "void \fBpreprocess\fP (const float *in_points_array, int in_num_points, int *x_coors, int *y_coors, float *num_points_per_pillar, float *pillar_x, float *pillar_y, float *pillar_z, float *pillar_i, float *x_coors_for_sub_shaped, float *y_coors_for_sub_shaped, float *pillar_feature_mask, float *sparse_pillar_map, int *host_pillar_count)"
+.br
+.RI "\fICPU preprocessing for input pointcloud\&. \fP"
+.ti -1c
+.RI "void \fBinitializeVariables\fP (int *coor_to_pillaridx, float *sparse_pillar_map, float *pillar_x, float *pillar_y, float *pillar_z, float *pillar_i, float *x_coors_for_sub_shaped, float *y_coors_for_sub_shaped)"
+.br
+.RI "\fIInitializing variables for preprocessing\&. \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file preprocess_points\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PreprocessPoints::PreprocessPoints (const int MAX_NUM_PILLARS, const int MAX_POINTS_PER_PILLAR, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_INDS_FOR_SCAN, const int NUM_BOX_CORNERS)"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIMAX_NUM_PILLARS\fP Maximum number of pillars 
+.br
+\fIMAX_POINTS_PER_PILLAR\fP Maximum number of points per pillar 
+.br
+\fIGRID_X_SIZE\fP Number of pillars in x-coordinate 
+.br
+\fIGRID_Y_SIZE\fP Number of pillars in y-coordinate 
+.br
+\fIGRID_Z_SIZE\fP Number of pillars in z-coordinate 
+.br
+\fIPILLAR_X_SIZE\fP Size of x-dimension for a pillar 
+.br
+\fIPILLAR_Y_SIZE\fP Size of y-dimension for a pillar 
+.br
+\fIPILLAR_Z_SIZE\fP Size of z-dimension for a pillar 
+.br
+\fIMIN_X_RANGE\fP Minimum x value for pointcloud 
+.br
+\fIMIN_Y_RANGE\fP Minimum y value for pointcloud 
+.br
+\fIMIN_Z_RANGE\fP Minimum z value for pointcloud 
+.br
+\fINUM_INDS_FOR_SCAN\fP Number of indexes for scan(cumsum) 
+.br
+\fINUM_BOX_CORNERS\fP Number of box's corner
+.RE
+.PP
+Captital variables never change after the compile 
+.PP
+Definition at line 24 of file preprocess_points\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PreprocessPoints::initializeVariables (int * coor_to_pillaridx, float * sparse_pillar_map, float * pillar_x, float * pillar_y, float * pillar_z, float * pillar_i, float * x_coors_for_sub_shaped, float * y_coors_for_sub_shaped)"
+
+.PP
+Initializing variables for preprocessing\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcoor_to_pillaridx\fP Map for converting one set of coordinate to a pillar 
+.br
+\fIsparse_pillar_map\fP Grid map representation for pillar-occupancy 
+.br
+\fIpillar_x\fP X-coordinate values for points in each pillar 
+.br
+\fIpillar_y\fP Y-coordinate values for points in each pillar 
+.br
+\fIpillar_z\fP Z-coordinate values for points in each pillar 
+.br
+\fIpillar_i\fP Intensity values for points in each pillar 
+.br
+\fIx_coors_for_sub_shaped\fP Array for x substraction in the network 
+.br
+\fIy_coors_for_sub_shaped\fP Array for y substraction in the network
+.RE
+.PP
+Initializeing input arguments with certain values 
+.PP
+Definition at line 45 of file preprocess_points\&.cpp\&.
+.SS "void PreprocessPoints::preprocess (const float * in_points_array, int in_num_points, int * x_coors, int * y_coors, float * num_points_per_pillar, float * pillar_x, float * pillar_y, float * pillar_z, float * pillar_i, float * x_coors_for_sub_shaped, float * y_coors_for_sub_shaped, float * pillar_feature_mask, float * sparse_pillar_map, int * host_pillar_count)"
+
+.PP
+CPU preprocessing for input pointcloud\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_points_array\fP Pointcloud array 
+.br
+\fIin_num_points\fP The number of points 
+.br
+\fIx_coors\fP X-coordinate indexes for corresponding pillars 
+.br
+\fIy_coors\fP Y-coordinate indexes for corresponding pillars 
+.br
+\fInum_points_per_pillar\fP Number of points in corresponding pillars 
+.br
+\fIpillar_x\fP X-coordinate values for points in each pillar 
+.br
+\fIpillar_y\fP Y-coordinate values for points in each pillar 
+.br
+\fIpillar_z\fP Z-coordinate values for points in each pillar 
+.br
+\fIpillar_i\fP Intensity values for points in each pillar 
+.br
+\fIx_coors_for_sub_shaped\fP Array for x substraction in the network 
+.br
+\fIy_coors_for_sub_shaped\fP Array for y substraction in the network 
+.br
+\fIpillar_feature_mask\fP Mask to make pillars' feature zero where no points in the pillars 
+.br
+\fIsparse_pillar_map\fP Grid map representation for pillar-occupancy 
+.br
+\fIhost_pillar_count\fP The numnber of valid pillars for the input pointcloud
+.RE
+.PP
+Convert pointcloud to pillar representation 
+.PP
+Definition at line 76 of file preprocess_points\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 30 of file preprocess_points\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,145 @@
+.TH "Timer" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Timer \- A timer object to measure elapsed time\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Timer\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTimer\fP ()"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "virtual \fB~Timer\fP ()"
+.br
+.RI "\fIDestructor\&. \fP"
+.ti -1c
+.RI "void \fBrestart\fP ()"
+.br
+.RI "\fIRestarts the timer\&. \fP"
+.ti -1c
+.RI "void \fBstartWatchdog\fP (\fBTimeDuration\fP watchdogTime)"
+.br
+.ti -1c
+.RI "bool \fBisElapsed\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "\fBTimeDuration\fP \fBelapsed\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBelapsedMilliseconds\fP () const "
+.br
+.RI "\fIReturns the elapsed time in milliseconds since the timer was started or restarted\&. \fP"
+.ti -1c
+.RI "\fBUINT32\fP \fBelapsedMicroseconds\fP () const "
+.br
+.RI "\fIReturns the elapsed time in microseconds since the timer was started or restarted\&. \fP"
+.ti -1c
+.RI "\fBUINT32\fP \fBelapsedMillisecondsSinceLastCall\fP ()"
+.br
+.RI "\fIElapsed ms since the last call of this function\&. \fP"
+.ti -1c
+.RI "\fBUINT32\fP \fBelapsedMicrosecondsSinceLastCall\fP ()"
+.br
+.RI "\fIElapsed us since the last call of this function\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A timer object to measure elapsed time\&. 
+
+This class is intended for simple timing diagnostics during debug phase\&. For a more accurate profiling of your code use a profiler like \fIvalgrind\fP or similar\&.
+.PP
+Due to accuracy differences on various platforms for Windows PCs and Linux PCs implementations and accuracy may differ\&. 
+.PP
+Definition at line 24 of file Timer\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Timer::Timer ()"
+
+.PP
+Constructor\&. The timer is started, with the construction of an instance\&. 
+.PP
+Definition at line 11 of file Timer\&.cpp\&.
+.SS "Timer::~Timer ()\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.PP
+Definition at line 16 of file Timer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBTimeDuration\fP Timer::elapsed () const"
+'Jetzt' Elapsed time since last start or restart, in [s]\&. 
+.PP
+Definition at line 78 of file Timer\&.cpp\&.
+.SS "\fBUINT32\fP Timer::elapsedMicroseconds () const"
+
+.PP
+Returns the elapsed time in microseconds since the timer was started or restarted\&. Elapsed time since last restart, in [us] 
+.PP
+Definition at line 105 of file Timer\&.cpp\&.
+.SS "\fBUINT32\fP Timer::elapsedMicrosecondsSinceLastCall ()"
+
+.PP
+Elapsed us since the last call of this function\&. Documentation see 'elapsedMillisecondsSinceLastCall()', but it measures microseconds instead\&. 
+.PP
+Definition at line 141 of file Timer\&.cpp\&.
+.SS "\fBUINT32\fP Timer::elapsedMilliseconds () const"
+
+.PP
+Returns the elapsed time in milliseconds since the timer was started or restarted\&. Elapsed time since last restart, in [ms] 
+.PP
+Definition at line 95 of file Timer\&.cpp\&.
+.SS "\fBUINT32\fP Timer::elapsedMillisecondsSinceLastCall ()"
+
+.PP
+Elapsed ms since the last call of this function\&. Elapsed time since last call to this function, in [ms]\&. This function may be called without restarts as it measures the time between consecutive calls to this function\&. Usage: 
+.PP
+.nf
+t;
+// ...
+t.elapsedMillisecondsSinceLastCall();
+// ... functions to be timed ...
+UINT32 time1 = t.elapsedMillisecondsSinceLastCall();
+// ... next functions to be timed ...
+UINT32 time2 = t.elapsedMillisecondsSinceLastCall();
+ // ...
+
+.fi
+.PP
+.PP
+Thats it! 
+.PP
+Definition at line 130 of file Timer\&.cpp\&.
+.SS "bool Timer::isElapsed ()"
+
+.PP
+Definition at line 32 of file Timer\&.cpp\&.
+.SS "void Timer::reset ()"
+
+.PP
+Definition at line 48 of file Timer\&.cpp\&.
+.SS "void Timer::restart ()"
+
+.PP
+Restarts the timer\&. 
+.PP
+Definition at line 56 of file Timer\&.cpp\&.
+.SS "void Timer::startWatchdog (\fBTimeDuration\fP watchdogTime)"
+
+.PP
+Definition at line 23 of file Timer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

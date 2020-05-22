@@ -1,0 +1,229 @@
+.TH "waypoint_follower::PurePursuit" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+waypoint_follower::PurePursuit \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pure_pursuit\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPurePursuit\fP ()"
+.br
+.ti -1c
+.RI "\fB~PurePursuit\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLookaheadDistance\fP (const double &ld)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumLookaheadDistance\fP (const double &minld)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentVelocity\fP (const double &cur_vel)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentWaypoints\fP (const std::vector< autoware_msgs::Waypoint > &wps)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBsetLinearInterpolationParameter\fP (const bool &param)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoseOfNextWaypoint\fP () const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoseOfNextTarget\fP () const "
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBgetCurrentPose\fP () const "
+.br
+.ti -1c
+.RI "std::vector< autoware_msgs::Waypoint > \fBgetCurrentWaypoints\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetLookaheadDistance\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetMinimumLookaheadDistance\fP () const "
+.br
+.ti -1c
+.RI "bool \fBcanGetCurvature\fP (double *output_kappa)"
+.br
+.ti -1c
+.RI "\fBPurePursuit\fP ()"
+.br
+.ti -1c
+.RI "\fB~PurePursuit\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLookaheadDistance\fP (const double &ld)"
+.br
+.ti -1c
+.RI "void \fBsetMinimumLookaheadDistance\fP (const double &minld)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentVelocity\fP (const double &cur_vel)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentWaypoints\fP (const std::vector< autoware_msgs::Waypoint > &wps)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentPose\fP (const geometry_msgs::PoseStampedConstPtr &msg)"
+.br
+.ti -1c
+.RI "void \fBsetLinearInterpolationParameter\fP (const bool &param)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoseOfNextWaypoint\fP () const "
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBgetPoseOfNextTarget\fP () const "
+.br
+.ti -1c
+.RI "geometry_msgs::Pose \fBgetCurrentPose\fP () const "
+.br
+.ti -1c
+.RI "std::vector< autoware_msgs::Waypoint > \fBgetCurrentWaypoints\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetLookaheadDistance\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetMinimumLookaheadDistance\fP () const "
+.br
+.ti -1c
+.RI "bool \fBcanGetCurvature\fP (double *output_kappa)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file pure_pursuit\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "waypoint_follower::PurePursuit::PurePursuit ()"
+
+.PP
+Definition at line 22 of file pure_pursuit\&.cpp\&.
+.SS "waypoint_follower::PurePursuit::~PurePursuit ()"
+
+.PP
+Definition at line 35 of file pure_pursuit\&.cpp\&.
+.SS "waypoint_follower::PurePursuit::PurePursuit ()"
+
+.SS "waypoint_follower::PurePursuit::~PurePursuit ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool waypoint_follower::PurePursuit::canGetCurvature (double * output_kappa)"
+comments by hui calculate the curvature of the arc formed by the current pose and the target pose @ output_kappa: the curvature of the next target waypoint @ return true for success 
+.PP
+Definition at line 238 of file pure_pursuit\&.cpp\&.
+.SS "bool waypoint_follower::PurePursuit::canGetCurvature (double * output_kappa)"
+
+.SS "geometry_msgs::Pose waypoint_follower::PurePursuit::getCurrentPose () const\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file pure_pursuit\&.h\&.
+.SS "geometry_msgs::Pose waypoint_follower::PurePursuit::getCurrentPose () const\fC [inline]\fP"
+
+.PP
+Definition at line 73 of file pure_pursuit\&.h\&.
+.SS "std::vector<autoware_msgs::Waypoint> waypoint_follower::PurePursuit::getCurrentWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file pure_pursuit\&.h\&.
+.SS "std::vector<autoware_msgs::Waypoint> waypoint_follower::PurePursuit::getCurrentWaypoints () const\fC [inline]\fP"
+
+.PP
+Definition at line 77 of file pure_pursuit\&.h\&.
+.SS "double waypoint_follower::PurePursuit::getLookaheadDistance () const\fC [inline]\fP"
+
+.PP
+Definition at line 81 of file pure_pursuit\&.h\&.
+.SS "double waypoint_follower::PurePursuit::getLookaheadDistance () const\fC [inline]\fP"
+
+.PP
+Definition at line 81 of file pure_pursuit\&.h\&.
+.SS "double waypoint_follower::PurePursuit::getMinimumLookaheadDistance () const\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file pure_pursuit\&.h\&.
+.SS "double waypoint_follower::PurePursuit::getMinimumLookaheadDistance () const\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file pure_pursuit\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP waypoint_follower::PurePursuit::getPoseOfNextTarget () const\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file pure_pursuit\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP waypoint_follower::PurePursuit::getPoseOfNextTarget () const\fC [inline]\fP"
+
+.PP
+Definition at line 69 of file pure_pursuit\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP waypoint_follower::PurePursuit::getPoseOfNextWaypoint () const\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file pure_pursuit\&.h\&.
+.SS "\fBgeometry_msgs::Point\fP waypoint_follower::PurePursuit::getPoseOfNextWaypoint () const\fC [inline]\fP"
+
+.PP
+Definition at line 65 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [inline]\fP"
+
+.PP
+Definition at line 55 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentPose (const geometry_msgs::PoseStampedConstPtr & msg)\fC [inline]\fP"
+
+.PP
+Definition at line 55 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentVelocity (const double & cur_vel)\fC [inline]\fP"
+
+.PP
+Definition at line 47 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentVelocity (const double & cur_vel)\fC [inline]\fP"
+
+.PP
+Definition at line 47 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentWaypoints (const std::vector< autoware_msgs::Waypoint > & wps)\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setCurrentWaypoints (const std::vector< autoware_msgs::Waypoint > & wps)\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setLinearInterpolationParameter (const bool & param)\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setLinearInterpolationParameter (const bool & param)\fC [inline]\fP"
+
+.PP
+Definition at line 59 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setLookaheadDistance (const double & ld)\fC [inline]\fP"
+
+.PP
+Definition at line 39 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setLookaheadDistance (const double & ld)\fC [inline]\fP"
+
+.PP
+Definition at line 39 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setMinimumLookaheadDistance (const double & minld)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file pure_pursuit\&.h\&.
+.SS "void waypoint_follower::PurePursuit::setMinimumLookaheadDistance (const double & minld)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file pure_pursuit\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

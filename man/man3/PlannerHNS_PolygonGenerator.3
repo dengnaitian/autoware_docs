@@ -1,0 +1,80 @@
+.TH "PlannerHNS::PolygonGenerator" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::PolygonGenerator \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolygonGenerator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygonGenerator\fP (int nQuarters)"
+.br
+.ti -1c
+.RI "virtual \fB~PolygonGenerator\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBQuarterView\fP > \fBCreateQuarterViews\fP (const int &nResolution)"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBEstimateClusterPolygon\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZ > &cluster, const \fBGPSPoint\fP &original_centroid, \fBGPSPoint\fP &new_centroid, const double &polygon_resolution=1\&.0)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGPSPoint\fP \fBm_Centroid\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBQuarterView\fP > \fBm_Quarters\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBGPSPoint\fP > \fBm_Polygon\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 77 of file PolygonGenerator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::PolygonGenerator::PolygonGenerator (int nQuarters)"
+
+.PP
+Definition at line 12 of file PolygonGenerator\&.cpp\&.
+.SS "PlannerXNS::PolygonGenerator::~PolygonGenerator ()\fC [virtual]\fP"
+
+.PP
+Definition at line 17 of file PolygonGenerator\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< \fBQuarterView\fP > PlannerXNS::PolygonGenerator::CreateQuarterViews (const int & nResolution)"
+
+.PP
+Definition at line 94 of file PolygonGenerator\&.cpp\&.
+.SS "std::vector< \fBGPSPoint\fP > PlannerHNS::PolygonGenerator::EstimateClusterPolygon (const \fBpcl::PointCloud\fP< pcl::PointXYZ > & cluster, const \fBGPSPoint\fP & original_centroid, \fBGPSPoint\fP & new_centroid, const double & polygon_resolution = \fC1\&.0\fP)"
+
+.PP
+Definition at line 21 of file PolygonGenerator\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBGPSPoint\fP PlannerHNS::PolygonGenerator::m_Centroid"
+
+.PP
+Definition at line 82 of file PolygonGenerator\&.h\&.
+.SS "std::vector<\fBGPSPoint\fP> PlannerHNS::PolygonGenerator::m_Polygon"
+
+.PP
+Definition at line 84 of file PolygonGenerator\&.h\&.
+.SS "std::vector<\fBQuarterView\fP> PlannerHNS::PolygonGenerator::m_Quarters"
+
+.PP
+Definition at line 83 of file PolygonGenerator\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

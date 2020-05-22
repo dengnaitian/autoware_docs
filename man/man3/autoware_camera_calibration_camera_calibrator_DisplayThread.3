@@ -1,0 +1,71 @@
+.TH "autoware_camera_calibration.camera_calibrator.DisplayThread" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+autoware_camera_calibration.camera_calibrator.DisplayThread \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Thread\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBqueue\fP, \fBopencv_calibration_node\fP)"
+.br
+.ti -1c
+.RI "def \fBrun\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBqueue\fP"
+.br
+.ti -1c
+.RI "\fBopencv_calibration_node\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Thread that displays the current images
+It is its own thread so that all display can be done
+in one thread to overcome imshow limitations and
+https://github.com/ros-perception/image_pipeline/issues/85
+
+.fi
+.PP
+ 
+.PP
+Definition at line 68 of file camera_calibrator\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.DisplayThread\&.__init__ ( self,  queue,  opencv_calibration_node)"
+
+.PP
+Definition at line 75 of file camera_calibrator\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def autoware_camera_calibration\&.camera_calibrator\&.DisplayThread\&.run ( self)"
+
+.PP
+Definition at line 80 of file camera_calibrator\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_camera_calibration\&.camera_calibrator\&.DisplayThread\&.opencv_calibration_node"
+
+.PP
+Definition at line 78 of file camera_calibrator\&.py\&.
+.SS "autoware_camera_calibration\&.camera_calibrator\&.DisplayThread\&.queue"
+
+.PP
+Definition at line 77 of file camera_calibrator\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,214 @@
+.TH "PlannerHNS::SimuDecisionMaker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::SimuDecisionMaker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimuDecisionMaker\&.h>\fP
+.PP
+Inherits \fBPlannerHNS::DecisionMaker\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimuDecisionMaker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SimuDecisionMaker\fP ()"
+.br
+.ti -1c
+.RI "void \fBDoOneStepSim\fP (const double &dt, const \fBPlannerHNS::VehicleState\fP &vehicleState, const int &goalID, const std::vector< \fBTrafficLight\fP > &trafficLight, const std::vector< \fBPlannerHNS::DetectedObject\fP > &objects, const bool &bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP &forceCMD, \fBPlannerHNS::BehaviorState\fP &\fBbeh\fP)"
+.br
+.ti -1c
+.RI "void \fBReInitializePlanner\fP (const \fBWayPoint\fP &start_pose)"
+.br
+.ti -1c
+.RI "void \fBInitPolygons\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetSimulatedTargetOdometryReadings\fP (const double &velocity_d, const double &steering_d, const \fBSHIFT_POS\fP &shift_d)"
+.br
+.ti -1c
+.RI "void \fBFirstLocalizeMe\fP (const \fBPlannerHNS::WayPoint\fP &initCarPos)"
+.br
+.ti -1c
+.RI "void \fBLocalizeMe\fP (const double &dt)"
+.br
+.ti -1c
+.RI "void \fBUpdateState\fP (const \fBPlannerHNS::VehicleState\fP &\fBstate\fP, const bool &bUseDelay=false)"
+.br
+.ti -1c
+.RI "void \fBGenerateLocalRollOuts\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSelectSafeTrajectory\fP ()"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBLocalizeStep\fP (const double &dt, const \fBPlannerHNS::VehicleState\fP &desiredStatus)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBDoOneStep\fP (const double &dt, const \fBPlannerHNS::VehicleState\fP &vehicleState, const int &goalID, const std::vector< \fBTrafficLight\fP > &trafficLight, const std::vector< \fBPlannerHNS::DetectedObject\fP > &objects, const bool &bEmergencyStop)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPlannerHNS::GPSPoint\fP > \fBm_CarShapePolygon\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_OdometryState\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentVelocity\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentVelocityD\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentSteering\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentSteeringD\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::SHIFT_POS\fP \fBm_CurrentShift\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::SHIFT_POS\fP \fBm_CurrentShiftD\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentAccSteerAngle\fP"
+.br
+.ti -1c
+.RI "double \fBm_CurrentAccVelocity\fP"
+.br
+.ti -1c
+.RI "double \fBm_SimulationSteeringDelayFactor\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_SteerDelayTimer\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::TrajectoryDynamicCosts\fP \fBm_TrajectoryCostsCalculator\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file SimuDecisionMaker\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::SimuDecisionMaker::SimuDecisionMaker ()"
+
+.PP
+Definition at line 17 of file SimuDecisionMaker\&.cpp\&.
+.SS "PlannerHNS::SimuDecisionMaker::~SimuDecisionMaker ()\fC [virtual]\fP"
+
+.PP
+Definition at line 28 of file SimuDecisionMaker\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerHNS::SimuDecisionMaker::DoOneStep (const double & dt, const \fBPlannerHNS::VehicleState\fP & vehicleState, const int & goalID, const std::vector< \fBTrafficLight\fP > & trafficLight, const std::vector< \fBPlannerHNS::DetectedObject\fP > & objects, const bool & bEmergencyStop)"
+
+.PP
+Definition at line 213 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::DoOneStepSim (const double & dt, const \fBPlannerHNS::VehicleState\fP & vehicleState, const int & goalID, const std::vector< \fBTrafficLight\fP > & trafficLight, const std::vector< \fBPlannerHNS::DetectedObject\fP > & objects, const bool & bEmergencyStop, \fBPlannerHNS::ForceCmdTypes\fP & forceCMD, \fBPlannerHNS::BehaviorState\fP & beh)"
+
+.PP
+Definition at line 251 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::FirstLocalizeMe (const \fBPlannerHNS::WayPoint\fP & initCarPos)"
+
+.PP
+Definition at line 66 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::GenerateLocalRollOuts ()"
+
+.PP
+Definition at line 133 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::InitPolygons ()"
+
+.SS "void PlannerHNS::SimuDecisionMaker::LocalizeMe (const double & dt)"
+
+.PP
+Definition at line 75 of file SimuDecisionMaker\&.cpp\&.
+.SS "\fBPlannerHNS::VehicleState\fP PlannerHNS::SimuDecisionMaker::LocalizeStep (const double & dt, const \fBPlannerHNS::VehicleState\fP & desiredStatus)"
+
+.PP
+Definition at line 201 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::ReInitializePlanner (const \fBWayPoint\fP & start_pose)"
+
+.PP
+Definition at line 32 of file SimuDecisionMaker\&.cpp\&.
+.SS "bool PlannerHNS::SimuDecisionMaker::SelectSafeTrajectory ()"
+
+.PP
+Definition at line 170 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::SetSimulatedTargetOdometryReadings (const double & velocity_d, const double & steering_d, const \fBSHIFT_POS\fP & shift_d)"
+
+.PP
+Definition at line 59 of file SimuDecisionMaker\&.cpp\&.
+.SS "void PlannerHNS::SimuDecisionMaker::UpdateState (const \fBPlannerHNS::VehicleState\fP & state, const bool & bUseDelay = \fCfalse\fP)"
+
+.PP
+Definition at line 102 of file SimuDecisionMaker\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBPlannerHNS::GPSPoint\fP> PlannerHNS::SimuDecisionMaker::m_CarShapePolygon"
+
+.PP
+Definition at line 24 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentAccSteerAngle"
+
+.PP
+Definition at line 39 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentAccVelocity"
+
+.PP
+Definition at line 40 of file SimuDecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::SHIFT_POS\fP PlannerHNS::SimuDecisionMaker::m_CurrentShift"
+
+.PP
+Definition at line 28 of file SimuDecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::SHIFT_POS\fP PlannerHNS::SimuDecisionMaker::m_CurrentShiftD"
+
+.PP
+Definition at line 28 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentSteering"
+
+.PP
+Definition at line 27 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentSteeringD"
+
+.PP
+Definition at line 27 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentVelocity"
+
+.PP
+Definition at line 26 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_CurrentVelocityD"
+
+.PP
+Definition at line 26 of file SimuDecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP PlannerHNS::SimuDecisionMaker::m_OdometryState"
+
+.PP
+Definition at line 25 of file SimuDecisionMaker\&.h\&.
+.SS "double PlannerHNS::SimuDecisionMaker::m_SimulationSteeringDelayFactor"
+
+.PP
+Definition at line 41 of file SimuDecisionMaker\&.h\&.
+.SS "timespec PlannerHNS::SimuDecisionMaker::m_SteerDelayTimer"
+
+.PP
+Definition at line 42 of file SimuDecisionMaker\&.h\&.
+.SS "\fBPlannerHNS::TrajectoryDynamicCosts\fP PlannerHNS::SimuDecisionMaker::m_TrajectoryCostsCalculator"
+
+.PP
+Definition at line 43 of file SimuDecisionMaker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,116 @@
+.TH "ClipperLib::PolyNode" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib::PolyNode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clipper\&.hpp>\fP
+.PP
+Inherited by \fBClipperLib::PolyTree\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolyNode\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PolyNode\fP ()"
+.br
+.ti -1c
+.RI "\fBPolyNode\fP * \fBGetNext\fP () const "
+.br
+.ti -1c
+.RI "bool \fBIsHole\fP () const "
+.br
+.ti -1c
+.RI "bool \fBIsOpen\fP () const "
+.br
+.ti -1c
+.RI "int \fBChildCount\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPath\fP \fBContour\fP"
+.br
+.ti -1c
+.RI "\fBPolyNodes\fP \fBChilds\fP"
+.br
+.ti -1c
+.RI "\fBPolyNode\fP * \fBParent\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBClipper\fP"
+.br
+.ti -1c
+.RI "class \fBClipperOffset\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 178 of file clipper\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClipperLib::PolyNode::PolyNode ()"
+
+.PP
+Definition at line 195 of file clipper\&.cpp\&.
+.SS "virtual ClipperLib::PolyNode::~PolyNode ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 183 of file clipper\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int ClipperLib::PolyNode::ChildCount () const"
+
+.PP
+Definition at line 200 of file clipper\&.cpp\&.
+.SS "\fBPolyNode\fP * ClipperLib::PolyNode::GetNext () const"
+
+.PP
+Definition at line 215 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::PolyNode::IsHole () const"
+
+.PP
+Definition at line 235 of file clipper\&.cpp\&.
+.SS "bool ClipperLib::PolyNode::IsOpen () const"
+
+.PP
+Definition at line 248 of file clipper\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBClipper\fP\fC [friend]\fP"
+
+.PP
+Definition at line 209 of file clipper\&.hpp\&.
+.SS "friend class \fBClipperOffset\fP\fC [friend]\fP"
+
+.PP
+Definition at line 210 of file clipper\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPolyNodes\fP ClipperLib::PolyNode::Childs"
+
+.PP
+Definition at line 187 of file clipper\&.hpp\&.
+.SS "\fBPath\fP ClipperLib::PolyNode::Contour"
+
+.PP
+Definition at line 185 of file clipper\&.hpp\&.
+.SS "\fBPolyNode\fP* ClipperLib::PolyNode::Parent"
+
+.PP
+Definition at line 188 of file clipper\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

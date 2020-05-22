@@ -1,0 +1,37 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_visualizers_packages_detected_objects_visualizer__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_visualizers_packages_detected_objects_visualizer__r_e_a_d_m_e \- Detected Object Visualizer 
+This node interprets the output of each of the perception nodes and creates the corresponding rviz visualization\&.
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescription  \fCmarker_display_duration\fP*Double*\fBTime\fP in ms to display the marker\&. Default \fC0\&.1\fP\&. \fCobject_speed_threshold\fP*Double* Speed threshold to display\&. Default \fC0\&.1\fP\&. \fCarrow_speed_threshold\fP*Double*Arrow speed threshold to display\&. Default \fC0\&.25\fP\&. \fClabel_color\fP*Array*Four double values (RGBA), representing the color of the object\&. Default \fC[255,255,255,1]\fP\&. \fCarrow_color\fP*Array*Four double values (RGBA), representing the color of the object\&. Default \fC[0,255,0,1,0\&.8]\fP\&. \fChull_color\fP*Array*Four double values (RGBA), representing the color of the object\&. Default \fC[51,204,51,0\&.8]\fP\&. \fCbox_color\fP*Array*Four double values (RGBA), representing the color of the object\&. Default \fC[51,128,204,0\&.8]\fP\&. \fCcentroid_color\fP*Array*Four double values (RGBA), representing the color of the object\&. Default \fC[77,121,255,0\&.8]\fP\&. 
+.PP
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fCROS_NAMESPACE/objects\fP\fCautoware_msgs/DetectedObjectArray\fPObjects Array topic to visualize 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fCROS_NAMESPACE/objects_markers\fPvisualization_msgs::MarkerArray<td>A Label indicating the class and info of the object The message includes each of the following namespaces:
+.PP
+NamespaceObjective  \fCROS_NAMESPACE/objects_arrows\fPAn arrow indicating the direction (\fCMarker::ARROW\fP) \fCROS_NAMESPACE/objects_hulls\fPConvex Hull, the containing polygon (\fCMarker::LINE_STRIP\fP) \fCROS_NAMESPACE/objects_boxes\fPBounding box containing the object (\fCMarker::CUBE\fP) \fCROS_NAMESPACE/objects_centroids\fPSphere representing the centroid of the object in space (\fCMarker::SPHERE\fP) \fCROS_NAMESPACE/objects_mdoels\fPModel representing the object in space (\fCMarker::MESH_RESOURCE\fP) 
+.SS "Notes"
+.PP
+This node is already included in the perception nodes' launch file\&.
+.PP
+If you need to use it manually, be sure to add the \fCROS_NAMESPACE\fP if using \fCrosrun\fP\&.
+.PP
+For launch files, add the following line to your launch file: 
+.PP
+.nf
+1 <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="AN_INSTANCENAME_01"
+2           output="screen" ns="ROS_NAMESPACE"/>
+
+.fi
+.PP
+.PP
+i\&.e\&. to visualize the output of the \fClidar tracker\fP use \fCROS_NAMESPACE=/detection/lidar_tracker\fP in rosrun or \fCns='/detection/lidar_tracker'\fP in the launch file\&. 

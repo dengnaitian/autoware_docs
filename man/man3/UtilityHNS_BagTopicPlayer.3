@@ -1,0 +1,73 @@
+.TH "UtilityHNS::BagTopicPlayer< T >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UtilityHNS::BagTopicPlayer< T > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BagTopicPlayer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitPlayer\fP (const rosbag::Bag &_bag, const std::string &topic_name)"
+.br
+.ti -1c
+.RI "bool \fBReadNext\fP (boost::shared_ptr< T > &msg, ros::Time *pSyncTime)"
+.br
+.ti -1c
+.RI "bool \fBReadPrev\fP (boost::shared_ptr< T > &msg, ros::Time *pSyncTime)"
+.br
+.ti -1c
+.RI "void \fBGetReadingInfo\fP (int &_t_sec, int &_t_nsec, int &iFrame, int &nTotalFrames)"
+.br
+.ti -1c
+.RI "\fBBagTopicPlayer\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~BagTopicPlayer\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T>
+.br
+class UtilityHNS::BagTopicPlayer< T >"
+
+.PP
+Definition at line 36 of file BagTopicPlayer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> \fBUtilityHNS::BagTopicPlayer\fP< T >::\fBBagTopicPlayer\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 192 of file BagTopicPlayer\&.h\&.
+.SS "template<class T> virtual \fBUtilityHNS::BagTopicPlayer\fP< T >::~\fBBagTopicPlayer\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 199 of file BagTopicPlayer\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> void \fBUtilityHNS::BagTopicPlayer\fP< T >::GetReadingInfo (int & _t_sec, int & _t_nsec, int & iFrame, int & nTotalFrames)\fC [inline]\fP"
+
+.PP
+Definition at line 178 of file BagTopicPlayer\&.h\&.
+.SS "template<class T> void \fBUtilityHNS::BagTopicPlayer\fP< T >::InitPlayer (const rosbag::Bag & _bag, const std::string & topic_name)\fC [inline]\fP"
+
+.PP
+Definition at line 39 of file BagTopicPlayer\&.h\&.
+.SS "template<class T> bool \fBUtilityHNS::BagTopicPlayer\fP< T >::ReadNext (boost::shared_ptr< T > & msg, ros::Time * pSyncTime)\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file BagTopicPlayer\&.h\&.
+.SS "template<class T> bool \fBUtilityHNS::BagTopicPlayer\fP< T >::ReadPrev (boost::shared_ptr< T > & msg, ros::Time * pSyncTime)\fC [inline]\fP"
+
+.PP
+Definition at line 142 of file BagTopicPlayer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

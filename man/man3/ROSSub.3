@@ -1,0 +1,116 @@
+.TH "ROSSub< MSGTYPE >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ROSSub< MSGTYPE > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rosinterface\&.h>\fP
+.PP
+Inherits \fBROSSubBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBROSSub\fP (QString Topic, u_int32_t QueueSize, int QueryInterval, QObject *parent=0)"
+.br
+.ti -1c
+.RI "\fB~ROSSub\fP ()"
+.br
+.ti -1c
+.RI "void \fBreceiveMessageCallback\fP (const MSGTYPE &msg)"
+.br
+.ti -1c
+.RI "MSGTYPE \fBgetMessage\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetTopic\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetTopic\fP (QString Topic, u_int32_t QueueSize)"
+.br
+.ti -1c
+.RI "void \fBresetQueryInterval\fP (int QueryInterval)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBclearMessage\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::Subscriber \fBsub\fP"
+.br
+.ti -1c
+.RI "QQueue< MSGTYPE > \fBmsgs\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class MSGTYPE>
+.br
+class ROSSub< MSGTYPE >"
+
+.PP
+Definition at line 138 of file rosinterface\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class MSGTYPE > \fBROSSub\fP< MSGTYPE >::\fBROSSub\fP (QString Topic, u_int32_t QueueSize, int QueryInterval, QObject * parent = \fC0\fP)"
+
+.PP
+Definition at line 158 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > \fBROSSub\fP< MSGTYPE >::~\fBROSSub\fP ()"
+
+.PP
+Definition at line 165 of file rosinterface\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class MSGTYPE > void \fBROSSub\fP< MSGTYPE >::clearMessage ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBROSSubBase\fP\&.
+.PP
+Definition at line 182 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > MSGTYPE \fBROSSub\fP< MSGTYPE >::getMessage ()"
+
+.PP
+Definition at line 188 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > QString \fBROSSub\fP< MSGTYPE >::getTopic ()"
+
+.PP
+Definition at line 202 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE> void \fBROSSub\fP< MSGTYPE >::receiveMessageCallback (const MSGTYPE & msg)"
+
+.PP
+Definition at line 171 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > void \fBROSSub\fP< MSGTYPE >::resetQueryInterval (int QueryInterval)"
+
+.PP
+Definition at line 217 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE > void \fBROSSub\fP< MSGTYPE >::resetTopic (QString Topic, u_int32_t QueueSize)"
+
+.PP
+Definition at line 208 of file rosinterface\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class MSGTYPE> QQueue<MSGTYPE> \fBROSSub\fP< MSGTYPE >::msgs\fC [protected]\fP"
+
+.PP
+Definition at line 147 of file rosinterface\&.h\&.
+.SS "template<class MSGTYPE> ros::Subscriber \fBROSSub\fP< MSGTYPE >::sub\fC [protected]\fP"
+
+.PP
+Definition at line 146 of file rosinterface\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

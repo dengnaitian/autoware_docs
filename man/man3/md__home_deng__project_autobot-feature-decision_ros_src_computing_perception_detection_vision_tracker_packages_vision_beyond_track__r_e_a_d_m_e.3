@@ -1,0 +1,47 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_tracker_packages_vision_beyond_track__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_vision_tracker_packages_vision_beyond_track__r_e_a_d_m_e \- Beyond Pixels based tracker 
+This node is based on the work depicted by Beyond Pixels: \fBLeveraging Geometry and Shape Cues for Online Multi-Object Tracking\fP\&. Published on the \fIProceedings of the IEEE International Conference on Robotics and Automation\fP\&.
+.PP
+.SS "How to launch"
+.PP
+Example, supposing default topic values\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP CameraInfo publisher (Sensing Tab -> Calibration Publisher)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP the Image rectifier (\fCroslaunch image_processor image_rectifier\&.launch\fP)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP an image based object detector (yolo3, ssd, etc)\&.
+.PP
+.IP "1." 4
+From a sourced terminal:
+.IP "  \(bu" 4
+\fCroslaunch vision_beyond_track vision_beyond_track\&.launch\fP
+.PP
+
+.PP
+.PP
+or from Runtime \fBManager\fP:
+.PP
+Computing Tab -> Detection/ vision_tracker -> \fCvision_beyond_track\fP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescription  \fCcamera_info_src\fP*String* Camera intrinsics\&. Default \fC/camera_info\fP\&. \fCobjects_topic_src\fP*String*Image detections to track\&. Default \fC/detection/vision_objects\fP\&. \fCcamera_height\fP*Double*Camera Height in meters\&. Default \fC1\&.2\fP\&. 
+.SS "Subscribed topics"
+.PP
+TopicTypeObjective  \fC/camera_info\fP\fCsensor_msgs/CameraInfo\fPCamera intrinsics\&. \fC/detection/vision_objects\fP\fCautoware_msgs/DetectedObjectArray\fPObtain the rectangles of the detected objects on image\&. 
+.SS "Published topics"
+.PP
+TopicTypeObjective  \fC/detection/tracked_objects\fP\fCautoware_msgs::DetectedObjectArray\fPContains the coordinates of the bounding boxes in image coordinates for the successfully tracked objects\&. 
+.PP
+.SS "Video"
+.PP
+\fC\fP 

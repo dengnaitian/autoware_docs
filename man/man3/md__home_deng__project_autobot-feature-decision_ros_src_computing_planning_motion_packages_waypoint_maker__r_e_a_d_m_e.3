@@ -1,0 +1,373 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_waypoint_maker__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_planning_motion_packages_waypoint_maker__r_e_a_d_m_e \- \fBwaypoint_maker\fP 
+
+.SS "Overview"
+.PP
+.IP "\(bu" 2
+This package has following nodes\&.
+.IP "  \(bu" 4
+waypoint_clicker
+.IP "  \(bu" 4
+waypoint_saver
+.IP "  \(bu" 4
+waypoint_extractor
+.IP "  \(bu" 4
+waypoint_marker_publisher
+.IP "  \(bu" 4
+waypoint_loader
+.IP "  \(bu" 4
+waypoint_replanner
+.IP "  \(bu" 4
+waypoint_velocity_visualizer
+.PP
+
+.IP "\(bu" 2
+3-formats of waypoints\&.csv handled by \fBwaypoint_maker\fP
+.IP "  \(bu" 4
+ver1： consist of x, y, z, velocity（no velocity in the first line）
+.PP
+.PP
+ex)
+.PP
+> 3699\&.6206,-99426\&.6719,85\&.8506 
+.br
+ > 3700\&.6453,-99426\&.6562,85\&.8224,3\&.1646 
+.br
+ > 3701\&.7373,-99426\&.6250,85\&.8017,4\&.4036 
+.br
+ > 3702\&.7729,-99426\&.6094,85\&.7969,4\&.7972 
+.br
+ > 3703\&.9048,-99426\&.6094,85\&.7766,4\&.7954 
+.br
+ > 3704\&.9192,-99426\&.5938,85\&.7504,4\&.5168 
+.br
+ > 3705\&.9497,-99426\&.6094,85\&.7181,3\&.6313 
+.br
+ > 3706\&.9897,-99426\&.5859,85\&.6877,4\&.0757 
+.br
+ > 3708\&.0266,-99426\&.4453,85\&.6608,4\&.9097 
+.br
+ > \&.\&.\&. 
+.br
+.IP "  \(bu" 4
+ver2： consist of x, y, z, yaw, velocity（no velocity in the first line）
+.PP
+.PP
+ex)
+.PP
+> 3804\&.5657,-99443\&.0156,85\&.6206,3\&.1251 
+.br
+ > 3803\&.5195,-99443\&.0078,85\&.6004,3\&.1258,4\&.8800 
+.br
+ > 3802\&.3425,-99442\&.9766,85\&.5950,3\&.1279,7\&.2200 
+.br
+ > 3801\&.2092,-99442\&.9844,85\&.5920,3\&.1293,8\&.8600 
+.br
+ > 3800\&.1633,-99442\&.9688,85\&.5619,3\&.1308,10\&.6000 
+.br
+ > 3798\&.9702,-99442\&.9609,85\&.5814,3\&.1326,10\&.5200 
+.br
+ > 3796\&.5706,-99442\&.9375,85\&.6056,3\&.1359,10\&.2200 
+.br
+ > 3795\&.3232,-99442\&.9453,85\&.6082,3\&.1357,11\&.0900 
+.br
+ > 3794\&.0771,-99442\&.9375,85\&.6148,3\&.1367,11\&.2300 
+.br
+ > \&.\&.\&. 
+.br
+.IP "  \(bu" 4
+ver3： category names are on the first line
+.PP
+.PP
+ex） consist of x,y,z,yaw,velocity,change_flag
+.PP
+> x,y,z,yaw,velocity,change_flag 
+.br
+ > 3742\&.216,-99411\&.311,85\&.728,3\&.141593,0,0 
+.br
+ > 3741\&.725,-99411\&.311,85\&.728,3\&.141593,10,0 
+.br
+ > 3740\&.725,-99411\&.311,85\&.733,3\&.141593,10,0 
+.br
+ > 3739\&.725,-99411\&.311,85\&.723,3\&.141593,10,0 
+.br
+ > 3738\&.725,-99411\&.311,85\&.719,3\&.141593,10,0 
+.br
+ > 3737\&.725,-99411\&.311,85\&.695,3\&.141593,10,0 
+.br
+ > 3736\&.725,-99411\&.311,85\&.667,3\&.141593,10,0 
+.br
+ > 3735\&.725,-99411\&.311,85\&.654,3\&.141593,10,0 
+.br
+ > \&.\&.\&. 
+.br
+
+.PP
+.PP
+.SS "Nodes"
+.PP
+.SS "waypoint_loader"
+.PP
+.IP "1." 4
+Overview
+.IP "  \(bu" 4
+waypoint_loader
+.IP "    \(bu" 6
+Convert waypoints\&.csv to ROS message type\&.
+.IP "    \(bu" 6
+Correspond to the above 3 types of csv\&.
+.PP
+
+.IP "  \(bu" 4
+waypoint_replanner
+.IP "    \(bu" 6
+Adjust waypoints offline (resample and replan velocity)
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+How to use
+.IP "  \(bu" 4
+How to start
+.IP "    \(bu" 6
+At \fCComputing\fP->\fCwaypoint_loader\fP:
+.IP "      \(bu" 8
+Check app->\fCload csv\fP\&. If you want to load csv_files, switch to true\&. Otherwise switch to false\&.
+.IP "      \(bu" 8
+Check \fCwaypoint_loader\fP and start\&.
+.PP
+
+.PP
+
+.IP "  \(bu" 4
+Idea of velocity replanning
+.IP "    \(bu" 6
+The velocity plan is based on the following idea\&.
+.IP "      \(bu" 8
+On a straight line, it accelerates to the maximum speed\&.
+.IP "      \(bu" 8
+At one curve:
+.IP "        \(bu" 10
+Finish decelerating before entering the curve\&. If the curve is sharper, the more deceleration is required\&.
+.IP "        \(bu" 10
+Maintain a constant speed in the curve\&.
+.IP "        \(bu" 10
+Start to accelerate after getting out of the curve\&.
+.PP
+
+.PP
+
+.PP
+
+.IP "  \(bu" 4
+Detail of app tab
+.IP "    \(bu" 6
+On \fCmulti_lane\fP, please select multiple input files\&. If you want lane change with \fClane_select\fP, prepare ver3 type\&.
+.IP "    \(bu" 6
+Check \fCreplanning_mode\fP if you want to replan velocity\&.
+.IP "      \(bu" 8
+On replanning mode:
+.IP "        \(bu" 10
+Check \fCrealtime_tuning_mode\fP if you want to tune waypoint\&.
+.IP "        \(bu" 10
+Check \fCresample_mode\fP if you want to resample waypoints\&. On resample mode, please set \fCresample_interval\fP\&.
+.IP "        \(bu" 10
+Velocity replanning parameter
+.IP "          \(bu" 12
+Check \fCreplan curve mode\fP if you want to decelerate on curve\&.
+.IP "          \(bu" 12
+Check \fCoverwrite vmax mode\fP if you want to overwrite velocity of all waypoint\&.
+.IP "          \(bu" 12
+Check \fCreplan endpoint mode\fP if you want to decelerate on endpoint\&.
+.IP "          \(bu" 12
+\fCVmax\fP is max velocity\&.
+.IP "          \(bu" 12
+\fCRth\fP is radius threshold for extracting curve in waypoints\&. Increasing this, you can extract curves more sensitively\&.
+.IP "          \(bu" 12
+\fCRmin\fP and \fCVmin\fP are pairs of values used for velocity replanning\&. Designed velocity plan that minimizes velocity in the assumed sharpest curve\&. In the \fIi\fP-th curve, the minimum radius \fIr\*<i\*> \fP and the velocity \fIv\*<i\*> \fP are expressed by the following expressions\&. \fIv\*<i\*> \fP = \fIVmax\fP - _(Vmax - Vmin)/(Rth - Rmin)_ * _(Rth - r\*<i\*> )_
+.IP "          \(bu" 12
+\fCAccel limit\fP is acceleration value for limitting velocity\&.
+.IP "          \(bu" 12
+\fCDecel limit\fP is deceleration value for limitting velocity\&.
+.IP "          \(bu" 12
+\fCVelocity Offset\fP is offset amount preceding the velocity plan\&.
+.IP "          \(bu" 12
+\fCBraking Distance\fP is the number of minimum velocity before end point offset\&.
+.IP "          \(bu" 12
+\fCEnd \fBPoint\fP Offset\fP is the number of 0 velocity points at the end of waypoints\&.
+.PP
+
+.PP
+
+.PP
+
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+Subscribed Topics
+.IP "  \(bu" 4
+waypoint_replanner
+.IP "    \(bu" 6
+/based/lane_waypoints_raw (autoware_msgs/LaneArray)
+.IP "    \(bu" 6
+/config/waypoint_replanner (autoware_config_msgs/ConfigWaypointReplanner)
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+Published Topics
+.IP "  \(bu" 4
+waypoint_loader
+.IP "    \(bu" 6
+/based/lane_waypoints_raw (autoware_msgs/LaneArray)
+.PP
+
+.IP "  \(bu" 4
+waypoint_replanner
+.IP "    \(bu" 6
+/based/lane_waypoints_array (autoware_msgs/LaneArray)
+.IP "    \(bu" 6
+/lane_waypoints_array (autoware_msgs/LaneArray)
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+\fBParameters\fP
+.IP "  \(bu" 4
+waypoint_loader
+.IP "    \(bu" 6
+~multi_lane_csv
+.PP
+
+.PP
+
+.PP
+.PP
+.SS "waypoint_saver"
+.PP
+.IP "1." 4
+Overview
+.IP "  \(bu" 4
+waypoint_saver
+.IP "    \(bu" 6
+When activated, subscribe \fC/current_pose\fP, \fC/current_velocity\fP(option) and save waypoint in the file at specified intervals\&.
+.PP
+
+.IP "  \(bu" 4
+waypoint_extractor
+.IP "    \(bu" 6
+When activated, subscribe autoware_msgs/LaneArray and save waypoint in the file\&. Input topic name is selectable\&.
+.PP
+
+.IP "  \(bu" 4
+common
+.IP "    \(bu" 6
+\fCchange_flag\fP is basically stored as 0 (straight ahead), so if you want to change the lane, edit by yourself\&. (1 turn right, 2 turn left)
+.IP "    \(bu" 6
+This node corresponds to preservation of ver3 format\&.
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+How to use
+.PP
+On app:
+.IP "  \(bu" 4
+common
+.IP "    \(bu" 6
+Ref on the \fCSave \fBFile\fP\fP and specify the save file name\&.
+.IP "    \(bu" 6
+Select the function you want to use from the \fCInput Type\fP\&.
+.PP
+
+.IP "  \(bu" 4
+if \fCInput Type\fP == VehicleFootprint (\fCwaypoint_saver\fP)
+.IP "    \(bu" 6
+Check \fCSave/current_velocity\fP if you want to save velocity\&. In otherwise, saved as 0 velocity\&.
+.IP "    \(bu" 6
+Using \fCInterval\fP, it is set how many meters to store waypoint\&.
+.PP
+
+.IP "  \(bu" 4
+if \fCInput Type\fP == LaneArrayTopic (\fCwaypoint_extractor\fP)
+.IP "    \(bu" 6
+Set lane_array topic name you want to save\&.
+.IP "    \(bu" 6
+Cache starts at the same time as the node starts up\&.
+.IP "    \(bu" 6
+The cache is always overwritten while the node is running\&.
+.IP "    \(bu" 6
+The cache is flushed when the node is closed\&.
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+Subscribed Topics
+.IP "  \(bu" 4
+waypoint_saver
+.IP "    \(bu" 6
+/current_pose (geometry_msgs/PoseStamped) : default
+.IP "    \(bu" 6
+/current_velocity (geometry_msgs/TwistStamped) : default
+.PP
+
+.IP "  \(bu" 4
+waypoint_extractor
+.IP "    \(bu" 6
+/lane_waypoints_array (autoware_msgs/LaneArray) : default
+.PP
+
+.PP
+
+.PP
+.IP "1." 4
+Published Topics
+.IP "  \(bu" 4
+nothing
+.PP
+
+.PP
+.IP "1." 4
+\fBParameters\fP
+.IP "  \(bu" 4
+waypoints_saver
+.IP "    \(bu" 6
+~save_filename
+.IP "    \(bu" 6
+~interval
+.IP "    \(bu" 6
+~velocity_topic
+.IP "    \(bu" 6
+~pose_topic
+.IP "    \(bu" 6
+~save_velocity
+.PP
+
+.IP "  \(bu" 4
+waypoints_extractor
+.IP "    \(bu" 6
+~lane_csv
+.IP "    \(bu" 6
+~lane_topic 
+.PP
+
+.PP
+
+.PP
+

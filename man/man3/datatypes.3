@@ -1,0 +1,455 @@
+.TH "datatypes" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBasicData\fP"
+.br
+.ti -1c
+.RI "class \fBBox2D\fP"
+.br
+.RI "\fIA rotated 2-dimensional box in the plane\&. \fP"
+.ti -1c
+.RI "class \fBCircle2D\fP"
+.br
+.RI "\fIA circle in the plane\&. \fP"
+.ti -1c
+.RI "class \fBEllipse2D\fP"
+.br
+.RI "\fIA rotated 2-dimensional ellipse in the plane\&. \fP"
+.ti -1c
+.RI "class \fBEvalCase\fP"
+.br
+.ti -1c
+.RI "class \fBEvalCaseResult\fP"
+.br
+.ti -1c
+.RI "class \fBEvalCaseResults\fP"
+.br
+.ti -1c
+.RI "class \fBEvalCases\fP"
+.br
+.ti -1c
+.RI "class \fBFieldDescription\fP"
+.br
+.ti -1c
+.RI "class \fBFieldDynamic\fP"
+.br
+.ti -1c
+.RI "class \fBFieldParameter\fP"
+.br
+.ti -1c
+.RI "class \fBFieldRadial\fP"
+.br
+.ti -1c
+.RI "class \fBFieldRectangle\fP"
+.br
+.ti -1c
+.RI "class \fBFields\fP"
+.br
+.ti -1c
+.RI "class \fBFieldSegmented\fP"
+.br
+.ti -1c
+.RI "class \fBFieldSegmentedPoint\fP"
+.br
+.ti -1c
+.RI "class \fBLine2D\fP"
+.br
+.RI "\fIA line in the two-dimensional plane, composed out of two points\&. \fP"
+.ti -1c
+.RI "class \fBMatrix\fP"
+.br
+.ti -1c
+.RI "class \fBMeasurement\fP"
+.br
+.ti -1c
+.RI "class \fBMeasurementList\fP"
+.br
+.ti -1c
+.RI "class \fBMsg\fP"
+.br
+.ti -1c
+.RI "class \fBObject\fP"
+.br
+.ti -1c
+.RI "class \fBObjectList\fP"
+.br
+.ti -1c
+.RI "class \fBPoint2D\fP"
+.br
+.ti -1c
+.RI "class \fBPoint3D\fP"
+.br
+.RI "\fIThis class defines a point in the three-dimensional plane\&. \fP"
+.ti -1c
+.RI "class \fBPolygon2D\fP"
+.br
+.RI "\fIA polygon of 2D-points\&. \fP"
+.ti -1c
+.RI "class \fBPolygon3D\fP"
+.br
+.ti -1c
+.RI "class \fBPosition3D\fP"
+.br
+.RI "\fIA Position with orientation\&. \fP"
+.ti -1c
+.RI "class \fBPositionWGS84\fP"
+.br
+.ti -1c
+.RI "class \fBScan\fP"
+.br
+.ti -1c
+.RI "class \fBScannerInfo\fP"
+.br
+.ti -1c
+.RI "class \fBScanPoint\fP"
+.br
+.ti -1c
+.RI "class \fBSensorStateInfo\fP"
+.br
+.ti -1c
+.RI "class \fBTrigger\fP"
+.br
+.RI "\fIClass for a simple serializable trigger signal\&. \fP"
+.ti -1c
+.RI "class \fBVector\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBEvalCase\fP * \fBEvalCase_ptr\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBEvalCase_ptr\fP > \fBEvalCaseVector\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBFieldSegmentedPoint\fP > \fBFieldSegmentedPoints\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBScannerType\fP { \fBScannertype_UNKNOWN\fP = 0, \fBScannertype_LMS1xx\fP = 1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBBox2D\fP &b1, const \fBBox2D\fP &b2)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBBox2D\fP &b1, const \fBBox2D\fP &b2)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEllipse2D\fP &b1, const \fBEllipse2D\fP &b2)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBEllipse2D\fP &b1, const \fBEllipse2D\fP &b2)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBEvalCaseResult\fP &result)"
+.br
+.ti -1c
+.RI "double \fBdot_product\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBLine2D\fP &l)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBMsg\fP &msg)"
+.br
+.RI "\fIText output for debugging\&. \fP"
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPoint2D\fP &point)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator+\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator\-\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator*\fP (const \fBPoint2D\fP &\fBp\fP, \fBPoint2D::value_type\fP factor)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator*\fP (\fBPoint2D::value_type\fP factor, const \fBPoint2D\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBoperator*\fP (const \fBPoint2D\fP &p1, const \fBPoint2D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator\-\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "const \fBPoint2D\fP \fBoperator/\fP (const \fBPoint2D\fP &\fBp\fP, \fBPoint2D::value_type\fP divisor)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPoint3D\fP &point)"
+.br
+.RI "\fIText output for debugging\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint3D\fP &p1, const \fBPoint3D\fP &p2)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPoint3D\fP &p1, const \fBPoint3D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator+\fP (const \fBPoint3D\fP &p1, const \fBPoint3D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator\-\fP (const \fBPoint3D\fP &p1, const \fBPoint3D\fP &p2)"
+.br
+.ti -1c
+.RI "double \fBoperator*\fP (const \fBPoint3D\fP &p1, const \fBPoint3D\fP &p2)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator*\fP (const \fBPoint3D\fP &\fBp\fP, double factor)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator*\fP (double factor, const \fBPoint3D\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator\-\fP (const \fBPoint3D\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator/\fP (const \fBPoint3D\fP &\fBp\fP, double divisor)"
+.br
+.ti -1c
+.RI "void \fBprojectOntoAxis\fP (const \fBPoint2D\fP &axis, const \fBPolygon2D\fP &polygon, \fBPolygon2D::floatingpoint_type\fP &min, \fBPolygon2D::floatingpoint_type\fP &max)"
+.br
+.ti -1c
+.RI "\fBPolygon2D::floatingpoint_type\fP \fBintervalDistance\fP (const \fBPolygon2D::floatingpoint_type\fP minA, const \fBPolygon2D::floatingpoint_type\fP maxA, const \fBPolygon2D::floatingpoint_type\fP minB, const \fBPolygon2D::floatingpoint_type\fP maxB)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPolygon2D\fP &point)"
+.br
+.RI "\fIText output for debugging\&. \fP"
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBPolygon3D\fP &poly)"
+.br
+.RI "\fIText output for debugging\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP (const \fBPositionWGS84::PositionWGS84SourceType\fP &type)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, const \fBScanPoint\fP &point)"
+.br
+.RI "\fIText output for debugging\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBScanPoint\fP &p1, const \fBScanPoint\fP &p2)"
+.br
+.RI "\fIEquality predicate\&. \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBScanPoint\fP &p1, const \fBScanPoint\fP &p2)"
+.br
+.RI "\fIInequality predicate\&. \fP"
+.ti -1c
+.RI "\fBFieldParameter::CaseResult\fP \fBisFieldInfringed\fP (const \fBSensorStateInfo\fP &sensorStateInfo, const \fBFieldParameter\fP &field, const \fBEvalCaseResults\fP &results)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBEvalCase\fP* \fBdatatypes::EvalCase_ptr\fP"
+
+.PP
+Definition at line 18 of file EvalCases\&.hpp\&.
+.SS "typedef std::vector<\fBEvalCase_ptr\fP> \fBdatatypes::EvalCaseVector\fP"
+
+.PP
+Definition at line 19 of file EvalCases\&.hpp\&.
+.SS "typedef std::vector<\fBFieldSegmentedPoint\fP> \fBdatatypes::FieldSegmentedPoints\fP"
+
+.PP
+Definition at line 90 of file Fields\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBdatatypes::ScannerType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIScannertype_UNKNOWN \fP\fP
+.TP
+\fB\fIScannertype_LMS1xx \fP\fP
+.PP
+Definition at line 16 of file ScannerInfo\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "double datatypes::dot_product (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)"
+
+.PP
+Definition at line 87 of file Line2D\&.cpp\&.
+.SS "\fBPolygon2D::floatingpoint_type\fP datatypes::intervalDistance (const \fBPolygon2D::floatingpoint_type\fP minA, const \fBPolygon2D::floatingpoint_type\fP maxA, const \fBPolygon2D::floatingpoint_type\fP minB, const \fBPolygon2D::floatingpoint_type\fP maxB)"
+
+.PP
+Definition at line 479 of file Polygon2D\&.cpp\&.
+.SS "\fBFieldParameter::CaseResult\fP datatypes::isFieldInfringed (const \fBSensorStateInfo\fP & sensorStateInfo, const \fBFieldParameter\fP & field, const \fBEvalCaseResults\fP & results)"
+
+.PP
+Definition at line 200 of file SensorStateInfo\&.cpp\&.
+.SS "bool datatypes::operator!= (const \fBEllipse2D\fP & b1, const \fBEllipse2D\fP & b2)\fC [inline]\fP"
+
+.PP
+Definition at line 170 of file Ellipse2D\&.hpp\&.
+.SS "bool datatypes::operator!= (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 182 of file Point3D\&.hpp\&.
+.SS "bool datatypes::operator!= (const \fBScanPoint\fP & p1, const \fBScanPoint\fP & p2)"
+
+.PP
+Inequality predicate\&. 
+.PP
+Definition at line 273 of file ScanPoint\&.cpp\&.
+.SS "bool datatypes::operator!= (const \fBBox2D\fP & b1, const \fBBox2D\fP & b2)\fC [inline]\fP"
+
+.PP
+Definition at line 277 of file Box2D\&.hpp\&.
+.SS "bool datatypes::operator!= (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 311 of file Point2D\&.hpp\&.
+.SS "double datatypes::operator* (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 199 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator* (const \fBPoint3D\fP & p, double factor)\fC [inline]\fP"
+
+.PP
+Definition at line 205 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator* (double factor, const \fBPoint3D\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 210 of file Point3D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator* (const \fBPoint2D\fP & p, \fBPoint2D::value_type\fP factor)\fC [inline]\fP"
+
+.PP
+Definition at line 326 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator* (\fBPoint2D::value_type\fP factor, const \fBPoint2D\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 331 of file Point2D\&.hpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::operator* (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 336 of file Point2D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator+ (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 187 of file Point3D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator+ (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 316 of file Point2D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator\- (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 193 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator\- (const \fBPoint3D\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 216 of file Point3D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator\- (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 321 of file Point2D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator\- (const \fBPoint2D\fP & p)\fC [inline]\fP"
+
+.PP
+Definition at line 341 of file Point2D\&.hpp\&.
+.SS "const \fBPoint3D\fP datatypes::operator/ (const \fBPoint3D\fP & p, double divisor)\fC [inline]\fP"
+
+.PP
+Definition at line 221 of file Point3D\&.hpp\&.
+.SS "const \fBPoint2D\fP datatypes::operator/ (const \fBPoint2D\fP & p, \fBPoint2D::value_type\fP divisor)\fC [inline]\fP"
+
+.PP
+Definition at line 346 of file Point2D\&.hpp\&.
+.SS "std::ostream & datatypes::operator<< (std::ostream & os, const \fBMsg\fP & msg)"
+
+.PP
+Text output for debugging\&. 
+.PP
+Definition at line 45 of file Msg\&.cpp\&.
+.SS "std::ostream & datatypes::operator<< (std::ostream & os, const \fBEvalCaseResult\fP & result)"
+
+.PP
+Definition at line 72 of file EvalCaseResult\&.cpp\&.
+.SS "std::ostream & datatypes::operator<< (std::ostream & os, const \fBPolygon3D\fP & poly)"
+
+.PP
+Text output for debugging\&. 
+.PP
+Definition at line 99 of file Polygon3D\&.cpp\&.
+.SS "std::ostream& datatypes::operator<< (std::ostream & os, const \fBLine2D\fP & l)"
+
+.SS "std::ostream & datatypes::operator<< (std::ostream & os, const \fBScanPoint\fP & point)"
+
+.PP
+Text output for debugging\&. 
+.PP
+Definition at line 251 of file ScanPoint\&.cpp\&.
+.SS "std::ostream& datatypes::operator<< (std::ostream & os, const \fBPoint2D\fP & point)"
+
+.SS "std::ostream & datatypes::operator<< (std::ostream & os, const \fBPoint3D\fP & point)"
+
+.PP
+Text output for debugging\&. Text output for debugging 
+.PP
+Definition at line 273 of file Point3D\&.cpp\&.
+.SS "std::ostream& datatypes::operator<< (std::ostream & os, const \fBPolygon2D\fP & point)"
+
+.PP
+Text output for debugging\&. 
+.SS "bool datatypes::operator== (const \fBEllipse2D\fP & b1, const \fBEllipse2D\fP & b2)\fC [inline]\fP"
+
+.PP
+Definition at line 161 of file Ellipse2D\&.hpp\&.
+.SS "bool datatypes::operator== (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 173 of file Point3D\&.hpp\&.
+.SS "bool datatypes::operator== (const \fBScanPoint\fP & p1, const \fBScanPoint\fP & p2)"
+
+.PP
+Equality predicate\&. 
+.PP
+Definition at line 262 of file ScanPoint\&.cpp\&.
+.SS "bool datatypes::operator== (const \fBBox2D\fP & b1, const \fBBox2D\fP & b2)\fC [inline]\fP"
+
+.PP
+Definition at line 269 of file Box2D\&.hpp\&.
+.SS "bool datatypes::operator== (const \fBPoint2D\fP & p1, const \fBPoint2D\fP & p2)\fC [inline]\fP"
+
+.PP
+Definition at line 303 of file Point2D\&.hpp\&.
+.SS "void datatypes::projectOntoAxis (const \fBPoint2D\fP & axis, const \fBPolygon2D\fP & polygon, \fBPolygon2D::floatingpoint_type\fP & min, \fBPolygon2D::floatingpoint_type\fP & max)"
+
+.PP
+Definition at line 466 of file Polygon2D\&.cpp\&.
+.SS "std::string datatypes::toString (const \fBPositionWGS84::PositionWGS84SourceType\fP & type)"
+
+.PP
+Definition at line 408 of file PositionWGS84\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,8 @@
+<map id="SickToolbox::SickException" name="SickToolbox::SickException">
+<area shape="rect" id="node3" href="$class_sick_toolbox_1_1_sick_bad_checksum_exception.html" title="Thrown when a received message has an invalid checksum. " alt="" coords="398,5,613,47"/>
+<area shape="rect" id="node4" href="$class_sick_toolbox_1_1_sick_config_exception.html" title="Thrown when the driver detects (or the Sick reports) an invalid config. " alt="" coords="393,71,617,98"/>
+<area shape="rect" id="node5" href="$class_sick_toolbox_1_1_sick_error_exception.html" title="Thrown when Sick returns an error code or an unexpected response. " alt="" coords="398,122,613,149"/>
+<area shape="rect" id="node6" href="$class_sick_toolbox_1_1_sick_i_o_exception.html" title="Thrown instance where the driver can&#39;t read,write,drain,flush,... the buffers. " alt="" coords="405,173,605,199"/>
+<area shape="rect" id="node7" href="$class_sick_toolbox_1_1_sick_thread_exception.html" title="Thrown when error occurs during thread initialization, and uninitialization. " alt="" coords="392,223,619,250"/>
+<area shape="rect" id="node8" href="$class_sick_toolbox_1_1_sick_timeout_exception.html" title="Makes handling timeouts much easier. " alt="" coords="418,275,593,316"/>
+</map>

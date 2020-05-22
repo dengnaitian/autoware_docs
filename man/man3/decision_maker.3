@@ -1,0 +1,176 @@
+.TH "decision_maker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+decision_maker \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAutowareStatus\fP"
+.br
+.ti -1c
+.RI "class \fBCrossRoadArea\fP"
+.br
+.ti -1c
+.RI "class \fBDecisionMakerNode\fP"
+.br
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.ti -1c
+.RI "class \fBTestSuite\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBcstring_t\fP = const std::string"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBE_Lamp\fP : int32_t { \fBE_Lamp::LAMP_EMPTY\fP = -1, \fBE_Lamp::LAMP_CLEAR\fP = 0, \fBE_Lamp::LAMP_RIGHT\fP = 1, \fBE_Lamp::LAMP_LEFT\fP = 2, \fBE_Lamp::LAMP_HAZARD\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBE_Control\fP : int32_t { \fBE_Control::KEEP\fP = -1, \fBE_Control::STOP\fP = 1, \fBE_Control::DECELERATE\fP = 2, \fBE_Control::ACCELERATE\fP = 3, \fBE_Control::OTHERS\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBE_ChangeFlags\fP : int32_t { \fBE_ChangeFlags::STRAIGHT\fP, \fBE_ChangeFlags::RIGHT\fP, \fBE_ChangeFlags::LEFT\fP, \fBE_ChangeFlags::UNKNOWN\fP = -1 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBhasvMap\fP (void)"
+.br
+.ti -1c
+.RI "template<class T > std::underlying_type< T >::type \fBenumToInteger\fP (T \fBt\fP)"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBconvhull\fP (const \fBCrossRoadArea\fP *_TargetArea)"
+.br
+.ti -1c
+.RI "jsk_rviz_plugins::OverlayText \fBcreateOverlayText\fP (\fBcstring_t\fP &\fBdata\fP, const int column)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBTestSuite\fP, isLocalizationConvergence)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBTestSuite\fP, isArrivedGoal)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBTestSuite\fP, getSteeringStateFromWaypoint)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBTestSuite\fP, getEventStateFromWaypoint)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBTestSuite\fP, getStopSignStateFromWaypoint)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBdecision_maker::cstring_t\fP = typedef const std::string"
+
+.PP
+Definition at line 48 of file decision_maker_node\&.hpp\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBdecision_maker::E_ChangeFlags\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISTRAIGHT \fP\fP
+.TP
+\fB\fIRIGHT \fP\fP
+.TP
+\fB\fILEFT \fP\fP
+.TP
+\fB\fIUNKNOWN \fP\fP
+.PP
+Definition at line 67 of file decision_maker_node\&.hpp\&.
+.SS "enum \fBdecision_maker::E_Control\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIKEEP \fP\fP
+.TP
+\fB\fISTOP \fP\fP
+.TP
+\fB\fIDECELERATE \fP\fP
+.TP
+\fB\fIACCELERATE \fP\fP
+.TP
+\fB\fIOTHERS \fP\fP
+.PP
+Definition at line 58 of file decision_maker_node\&.hpp\&.
+.SS "enum \fBdecision_maker::E_Lamp\fP : int32_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILAMP_EMPTY \fP\fP
+.TP
+\fB\fILAMP_CLEAR \fP\fP
+.TP
+\fB\fILAMP_RIGHT \fP\fP
+.TP
+\fB\fILAMP_LEFT \fP\fP
+.TP
+\fB\fILAMP_HAZARD \fP\fP
+.PP
+Definition at line 50 of file decision_maker_node\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "std::vector<\fBgeometry_msgs::Point\fP> decision_maker::convhull (const \fBCrossRoadArea\fP * _TargetArea)"
+
+.PP
+Definition at line 45 of file cross_road_area\&.cpp\&.
+.SS "jsk_rviz_plugins::OverlayText decision_maker::createOverlayText (\fBcstring_t\fP & data, const int column)"
+
+.PP
+Definition at line 33 of file decision_maker_node_publish\&.cpp\&.
+.SS "template<class T > std::underlying_type<T>::type decision_maker::enumToInteger (T t)"
+
+.PP
+Definition at line 82 of file decision_maker_node\&.hpp\&.
+.SS "bool decision_maker::hasvMap (void)\fC [inline]\fP"
+
+.PP
+Definition at line 76 of file decision_maker_node\&.hpp\&.
+.SS "decision_maker::TEST_F (\fBTestSuite\fP, isLocalizationConvergence)"
+
+.PP
+Definition at line 43 of file test_node_decision\&.cpp\&.
+.SS "decision_maker::TEST_F (\fBTestSuite\fP, getSteeringStateFromWaypoint)"
+
+.PP
+Definition at line 43 of file test_node_state_drive\&.cpp\&.
+.SS "decision_maker::TEST_F (\fBTestSuite\fP, getEventStateFromWaypoint)"
+
+.PP
+Definition at line 63 of file test_node_state_drive\&.cpp\&.
+.SS "decision_maker::TEST_F (\fBTestSuite\fP, isArrivedGoal)"
+
+.PP
+Definition at line 69 of file test_node_decision\&.cpp\&.
+.SS "decision_maker::TEST_F (\fBTestSuite\fP, getStopSignStateFromWaypoint)"
+
+.PP
+Definition at line 105 of file test_node_state_drive\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

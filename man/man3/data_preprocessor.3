@@ -1,0 +1,538 @@
+.TH "data_preprocessor" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+data_preprocessor \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBBarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBCheckboxes\fP"
+.br
+.ti -1c
+.RI "class \fBColorLabel\fP"
+.br
+.ti -1c
+.RI "class \fBDetailDialog\fP"
+.br
+.ti -1c
+.RI "class \fBFinal\fP"
+.br
+.ti -1c
+.RI "class \fBInfoBarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBMyApp\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogCarPedestrian\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogDPM\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogLaneStop\fP"
+.br
+.ti -1c
+.RI "class \fBMyDialogParam\fP"
+.br
+.ti -1c
+.RI "class \fBParamPanel\fP"
+.br
+.ti -1c
+.RI "class \fBStrValObj\fP"
+.br
+.ti -1c
+.RI "class \fBVarPanel\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgdic_dialog_type_chk\fP (gdic, name)"
+.br
+.ti -1c
+.RI "def \fBgdic_dialog_name_get\fP (gdic)"
+.br
+.ti -1c
+.RI "def \fBfile_dialog\fP (parent, tc, path_inf_dic={})"
+.br
+.ti -1c
+.RI "def \fBbutton_color_change\fP (btn, v=None)"
+.br
+.ti -1c
+.RI "def \fBOnButtonColorHdr\fP (event)"
+.br
+.ti -1c
+.RI "def \fBis_btn_null_bgcol\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBbutton_color_hdr_setup\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBbuttons_color_hdr_setup\fP (frm_obj)"
+.br
+.ti -1c
+.RI "def \fBshow_modal\fP (dlg)"
+.br
+.ti -1c
+.RI "def \fBload_yaml\fP (filename, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBterminate_children\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBterminate\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBth_start\fP (target, kwargs={})"
+.br
+.ti -1c
+.RI "def \fBth_end\fP (th, ev)"
+.br
+.ti -1c
+.RI "def \fBque_clear\fP (que)"
+.br
+.ti -1c
+.RI "def \fBappend_tc_limit\fP (tc, s, rm_chars=0)"
+.br
+.ti -1c
+.RI "def \fBcut_esc\fP (s)"
+.br
+.ti -1c
+.RI "def \fBchange_font_point_by_rate\fP (obj, rate=1\&.0)"
+.br
+.ti -1c
+.RI "def \fBfix_link_color\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBget_tooltip\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBget_tooltips\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBset_tooltip\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBset_tooltip_str\fP (obj, s)"
+.br
+.ti -1c
+.RI "def \fBset_tooltips\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBget_tooltip_obj\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBscaled_bitmap\fP (bm, scale)"
+.br
+.ti -1c
+.RI "def \fBsizer_wrap\fP (add_objs, orient=\fBwx\&.VERTICAL\fP, prop=0, flag=0, border=0, parent=None)"
+.br
+.ti -1c
+.RI "def \fBstatic_box_sizer\fP (parent, s, orient=\fBwx\&.VERTICAL\fP)"
+.br
+.ti -1c
+.RI "def \fBwx_flag_get\fP (flags)"
+.br
+.ti -1c
+.RI "def \fBmsg_path_to_obj_attr\fP (msg, path)"
+.br
+.ti -1c
+.RI "def \fBstr_to_rosval\fP (s, type_str, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBstr_to_float\fP (s)"
+.br
+.ti -1c
+.RI "def \fBset_path\fP (tc, v)"
+.br
+.ti -1c
+.RI "def \fBset_val\fP (obj, v)"
+.br
+.ti -1c
+.RI "def \fBenables_set\fP (obj, \fBk\fP, en)"
+.br
+.ti -1c
+.RI "def \fBenables_get\fP (obj, \fBk\fP, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBenables_get_last\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBobj_refresh\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdic_list_push\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBdic_list_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBdic_list_get\fP (dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_push\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBbak_stk_set\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBattr_getset\fP (obj, name, def_ret)"
+.br
+.ti -1c
+.RI "def \fBdic_getset\fP (dic, key, def_ret)"
+.br
+.ti -1c
+.RI "def \fBlst_append_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBlst_remove_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBget_top\fP (lst, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBadjust_num_str\fP (s)"
+.br
+.ti -1c
+.RI "def \fBrtmgr_src_dir\fP ()"
+.br
+.ti -1c
+.RI "def \fBpath_expand_cmd\fP (path)"
+.br
+.ti -1c
+.RI "def \fBeval_if_str\fP (self, v)"
+.br
+.ti -1c
+.RI "def \fBdic_eval_if_str\fP (self, dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBprn_dict\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBsend_to_proc_manager\fP (order)"
+.br
+.ti -1c
+.RI "def \fBset_process_nice\fP (proc, value)"
+.br
+.ti -1c
+.RI "def \fBset_process_cpu_affinity\fP (proc, cpus)"
+.br
+.ti -1c
+.RI "def \fBshutdown_proc_manager\fP ()"
+.br
+.ti -1c
+.RI "def \fBset_scheduling_policy\fP (proc, policy, priority)"
+.br
+.ti -1c
+.RI "def \fBget_cpu_count\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBSCHED_OTHER\fP = 0"
+.br
+.ti -1c
+.RI "int \fBSCHED_FIFO\fP = 1"
+.br
+.ti -1c
+.RI "int \fBSCHED_RR\fP = 2"
+.br
+.ti -1c
+.RI "string \fBPROC_MANAGER_SOCK\fP = '/tmp/autoware_proc_manager'"
+.br
+.ti -1c
+.RI "\fBbtn_null_bgcol\fP = None"
+.br
+.ti -1c
+.RI "\fBapp\fP = \fBMyApp\fP(0)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def data_preprocessor\&.adjust_num_str ( s)"
+
+.PP
+Definition at line 3394 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.append_tc_limit ( tc,  s,  rm_chars = \fC0\fP)"
+
+.PP
+Definition at line 3200 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.attr_getset ( obj,  name,  def_ret)"
+
+.PP
+Definition at line 3369 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.bak_stk_pop ( dic,  key)"
+
+.PP
+Definition at line 3356 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.bak_stk_push ( dic,  key)"
+
+.PP
+Definition at line 3351 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.bak_stk_set ( dic,  key,  v)"
+
+.PP
+Definition at line 3364 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.button_color_change ( btn,  v = \fCNone\fP)"
+
+.PP
+Definition at line 3113 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.button_color_hdr_setup ( btn)"
+
+.PP
+Definition at line 3144 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.buttons_color_hdr_setup ( frm_obj)"
+
+.PP
+Definition at line 3152 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.change_font_point_by_rate ( obj,  rate = \fC1\&.0\fP)"
+
+.PP
+Definition at line 3216 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.cut_esc ( s)"
+
+.PP
+Definition at line 3205 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.dic_eval_if_str ( self,  dic,  key,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3417 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.dic_getset ( dic,  key,  def_ret)"
+
+.PP
+Definition at line 3374 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.dic_list_get ( dic,  key,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3348 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.dic_list_pop ( dic,  key)"
+
+.PP
+Definition at line 3345 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.dic_list_push ( dic,  key,  v)"
+
+.PP
+Definition at line 3342 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.enables_get ( obj,  k,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3327 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.enables_get_last ( obj)"
+
+.PP
+Definition at line 3330 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.enables_set ( obj,  k,  en)"
+
+.PP
+Definition at line 3315 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.eval_if_str ( self,  v)"
+
+.PP
+Definition at line 3414 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.file_dialog ( parent,  tc,  path_inf_dic = \fC{}\fP)"
+
+.PP
+Definition at line 3087 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.fix_link_color ( obj)"
+
+.PP
+Definition at line 3223 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.gdic_dialog_name_get ( gdic)"
+
+.PP
+Definition at line 2428 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.gdic_dialog_type_chk ( gdic,  name)"
+
+.PP
+Definition at line 2415 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.get_cpu_count ()"
+
+.PP
+Definition at line 3469 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.get_tooltip ( dic)"
+
+.PP
+Definition at line 3230 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.get_tooltip_obj ( obj)"
+
+.PP
+Definition at line 3249 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.get_tooltips ( dic)"
+
+.PP
+Definition at line 3233 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.get_top ( lst,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3391 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.is_btn_null_bgcol ( btn)"
+
+.PP
+Definition at line 3134 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.load_yaml ( filename,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3162 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.lst_append_once ( lst,  v)"
+
+.PP
+Definition at line 3379 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.lst_remove_once ( lst,  v)"
+
+.PP
+Definition at line 3385 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.msg_path_to_obj_attr ( msg,  path)"
+
+.PP
+Definition at line 3282 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.obj_refresh ( obj)"
+
+.PP
+Definition at line 3334 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.OnButtonColorHdr ( event)"
+
+.PP
+Definition at line 3122 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.path_expand_cmd ( path)"
+
+.PP
+Definition at line 3405 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.prn_dict ( dic)"
+
+.PP
+Definition at line 3420 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.que_clear ( que)"
+
+.PP
+Definition at line 3196 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.rtmgr_src_dir ()"
+
+.PP
+Definition at line 3402 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.scaled_bitmap ( bm,  scale)"
+
+.PP
+Definition at line 3255 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.send_to_proc_manager ( order)"
+
+.PP
+Definition at line 3424 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_path ( tc,  v)"
+
+.PP
+Definition at line 3303 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_process_cpu_affinity ( proc,  cpus)"
+
+.PP
+Definition at line 3446 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_process_nice ( proc,  value)"
+
+.PP
+Definition at line 3438 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_scheduling_policy ( proc,  policy,  priority)"
+
+.PP
+Definition at line 3460 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_tooltip ( obj,  dic)"
+
+.PP
+Definition at line 3236 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_tooltip_str ( obj,  s)"
+
+.PP
+Definition at line 3239 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_tooltips ( obj,  dic)"
+
+.PP
+Definition at line 3243 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.set_val ( obj,  v)"
+
+.PP
+Definition at line 3307 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.show_modal ( dlg)"
+
+.PP
+Definition at line 3158 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.shutdown_proc_manager ()"
+
+.PP
+Definition at line 3454 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.sizer_wrap ( add_objs,  orient = \fC\fBwx\&.VERTICAL\fP\fP,  prop = \fC0\fP,  flag = \fC0\fP,  border = \fC0\fP,  parent = \fCNone\fP)"
+
+.PP
+Definition at line 3261 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.static_box_sizer ( parent,  s,  orient = \fC\fBwx\&.VERTICAL\fP\fP)"
+
+.PP
+Definition at line 3269 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.str_to_float ( s)"
+
+.PP
+Definition at line 3300 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.str_to_rosval ( s,  type_str,  def_ret = \fCNone\fP)"
+
+.PP
+Definition at line 3289 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.terminate ( proc,  sigint = \fCFalse\fP)"
+
+.PP
+Definition at line 3178 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.terminate_children ( proc,  sigint = \fCFalse\fP)"
+
+.PP
+Definition at line 3173 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.th_end ( th,  ev)"
+
+.PP
+Definition at line 3192 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.th_start ( target,  kwargs = \fC{}\fP)"
+
+.PP
+Definition at line 3184 of file data_preprocessor\&.py\&.
+.SS "def data_preprocessor\&.wx_flag_get ( flags)"
+
+.PP
+Definition at line 3274 of file data_preprocessor\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "data_preprocessor\&.app = \fBMyApp\fP(0)"
+
+.PP
+Definition at line 3585 of file data_preprocessor\&.py\&.
+.SS "data_preprocessor\&.btn_null_bgcol = None"
+
+.PP
+Definition at line 3132 of file data_preprocessor\&.py\&.
+.SS "string data_preprocessor\&.PROC_MANAGER_SOCK = '/tmp/autoware_proc_manager'"
+
+.PP
+Definition at line 35 of file data_preprocessor\&.py\&.
+.SS "int data_preprocessor\&.SCHED_FIFO = 1"
+
+.PP
+Definition at line 33 of file data_preprocessor\&.py\&.
+.SS "int data_preprocessor\&.SCHED_OTHER = 0"
+
+.PP
+Definition at line 32 of file data_preprocessor\&.py\&.
+.SS "int data_preprocessor\&.SCHED_RR = 2"
+
+.PP
+Definition at line 34 of file data_preprocessor\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

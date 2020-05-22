@@ -1,0 +1,58 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_fusion_tools_packages_pixel_cloud_fusion__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_fusion_tools_packages_pixel_cloud_fusion__r_e_a_d_m_e \- LiDAR-Camera Fusion 
+
+.SS "Pixel-Cloud fusion node"
+.PP
+This node projects PointCloud to Image space, extracts RGB information from the Image, back-projects it to LiDAR space, and finally publishes a Colored PointCloud\&.
+.PP
+.SS "Requirements"
+.PP
+.IP "1." 4
+Camera intrinsics
+.PP
+.IP "1." 4
+Camera-LiDAR extrinsics
+.PP
+.IP "1." 4
+Image rectified being published
+.PP
+.PP
+.SS "How to launch"
+.PP
+.IP "\(bu" 2
+From a sourced terminal:
+.PP
+.PP
+\fCroslaunch pixel_cloud_fusion pixel_cloud_fusion\&.launch\fP
+.PP
+.IP "\(bu" 2
+From Runtime \fBManager\fP:
+.PP
+.PP
+Computing Tab -> Fusion -> pixel_cloud_fusion
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescriptionDefault  \fCpoints_src\fP*String* Name of the PointCloud topic to subscribe\&.Default \fCpoints_raw\fP \fCimage_src\fP*String*Name of the Image topic to subscribe \fBNOTE: Must be a previously rectified image (check Autoware's \fCimage_processor\fP or ROS \fCimage_proc\fP\&.\fPDefault: \fCimage_rectified\fP \fCcamera_info_src\fP*String*Name of the CameraInfo topic that contains the intrinsic matrix for the Image\&.\fCcamera_info\fP 
+.SS "Subscriptions/Publications"
+.PP
+.PP
+.nf
+1 Node [/pixel_cloud_fusion]
+2 Publications: 
+3  * /points_fused [sensor_msgs/PointCloud2]
+4 
+5 Subscriptions: 
+6  * /image_raw [sensor_msgs/Image]
+7  * /points_raw [sensor_msgs/PointCloud2]
+8  * /camera_info [sensor_msgs/CameraInfo]
+9  * /tf [tf2_msgs/TFMessage]
+.fi
+.PP
+.PP
+\fC\fP 

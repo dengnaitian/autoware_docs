@@ -1,0 +1,77 @@
+.TH "Cluster2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Cluster2D \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cluster2d\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCluster2D\fP ()=default"
+.br
+.ti -1c
+.RI "\fB~Cluster2D\fP ()=default"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (int rows, int cols, float range)"
+.br
+.ti -1c
+.RI "void \fBcluster\fP (const caffe::Blob< float > &category_pt_blob, const caffe::Blob< float > &instance_pt_blob, const \fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr &pc_ptr, const pcl::PointIndices &valid_indices, float objectness_thresh, bool use_all_grids_for_clustering)"
+.br
+.ti -1c
+.RI "void \fBfilter\fP (const caffe::Blob< float > &confidence_pt_blob, const caffe::Blob< float > &height_pt_blob)"
+.br
+.ti -1c
+.RI "void \fBclassify\fP (const caffe::Blob< float > &classify_pt_blob)"
+.br
+.ti -1c
+.RI "void \fBgetObjects\fP (const float confidence_thresh, const float height_thresh, const int min_pts_num, autoware_msgs::DetectedObjectArray &objects, const std_msgs::Header &in_header)"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObject \fBobstacleToObject\fP (const \fBObstacle\fP &in_obstacle, const std_msgs::Header &in_header)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 110 of file cluster2d\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Cluster2D::Cluster2D ()\fC [default]\fP"
+
+.SS "Cluster2D::~Cluster2D ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Cluster2D::classify (const caffe::Blob< float > & classify_pt_blob)"
+
+.PP
+Definition at line 209 of file cluster2d\&.cpp\&.
+.SS "void Cluster2D::cluster (const caffe::Blob< float > & category_pt_blob, const caffe::Blob< float > & instance_pt_blob, const \fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr & pc_ptr, const pcl::PointIndices & valid_indices, float objectness_thresh, bool use_all_grids_for_clustering)"
+
+.PP
+Definition at line 61 of file cluster2d\&.cpp\&.
+.SS "void Cluster2D::filter (const caffe::Blob< float > & confidence_pt_blob, const caffe::Blob< float > & height_pt_blob)"
+
+.PP
+Definition at line 186 of file cluster2d\&.cpp\&.
+.SS "void Cluster2D::getObjects (const float confidence_thresh, const float height_thresh, const int min_pts_num, autoware_msgs::DetectedObjectArray & objects, const std_msgs::Header & in_header)"
+
+.PP
+Definition at line 328 of file cluster2d\&.cpp\&.
+.SS "bool Cluster2D::init (int rows, int cols, float range)"
+
+.PP
+Definition at line 18 of file cluster2d\&.cpp\&.
+.SS "autoware_msgs::DetectedObject Cluster2D::obstacleToObject (const \fBObstacle\fP & in_obstacle, const std_msgs::Header & in_header)"
+
+.PP
+Definition at line 239 of file cluster2d\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

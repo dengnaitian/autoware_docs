@@ -1,0 +1,376 @@
+.TH "datatypes::Box2D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Box2D \- A rotated 2-dimensional box in the plane\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Box2D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBPoint2D::value_type\fP \fBvalue_type\fP"
+.br
+.RI "\fIThe type of the stored x, y coordinates, and the rotation\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBox2D\fP ()"
+.br
+.RI "\fIConstructor for an all-zero \fBBox2D\fP\&. \fP"
+.ti -1c
+.RI "\fBBox2D\fP (const \fBPoint2D\fP &center, const \fBPoint2D\fP &size, \fBvalue_type\fP rotation=0\&.0)"
+.br
+.RI "\fIConstructor with specified center point, size, and rotation\&. \fP"
+.ti -1c
+.RI "\fBBox2D\fP (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP x_size, \fBvalue_type\fP y_size, \fBvalue_type\fP rotation=0\&.0)"
+.br
+.RI "\fIConstructor with all values given\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this box\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetCenter\fP () const "
+.br
+.RI "\fIReturns the center point of this Box\&. \fP"
+.ti -1c
+.RI "const \fBPoint2D\fP & \fBgetSize\fP () const "
+.br
+.RI "\fIReturns the size of this Box\&. \fP"
+.ti -1c
+.RI "\fBvalue_type\fP \fBgetRotation\fP () const "
+.br
+.ti -1c
+.RI "\fBPolygon2D\fP \fBtoPolygon\fP () const "
+.br
+.RI "\fIConverts this \fBBox2D\fP to a closed polygon\&. \fP"
+.ti -1c
+.RI "\fBBox2D\fP \fBtoBoundingBox\fP () const "
+.br
+.RI "\fIReturns a Box in parallel to the coordinate system that bounds this box\&. \fP"
+.ti -1c
+.RI "std::pair< \fBvalue_type\fP, \fBvalue_type\fP > \fBgetBoundingAngles\fP () const "
+.br
+.RI "\fIReturns boundary angles for this box\&. \fP"
+.ti -1c
+.RI "\fBBox2D\fP \fBmovedBy\fP (const \fBPoint2D\fP &centerMovement) const "
+.br
+.RI "\fIReturns a Box that is copied from this one but with its center point moved\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBSetter methods for changing this box\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetCenter\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.RI "\fISets the center point of this \fBBox2D\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetCenter\fP (\fBvalue_type\fP x, \fBvalue_type\fP y)"
+.br
+.RI "\fISets the center point of this \fBBox2D\fP\&. \fP"
+.ti -1c
+.RI "void \fBsetSize\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.RI "\fISets the size of this Box\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "void \fBsetSize\fP (\fBvalue_type\fP x_length, \fBvalue_type\fP y_width)"
+.br
+.RI "\fISets the size of this \fBBox2D\fP\&. Must be non-negative\&. \fP"
+.ti -1c
+.RI "void \fBsetRotation\fP (\fBvalue_type\fP r)"
+.br
+.RI "\fISets the rotation angle of this Box in [radians], counter clock wise\&. \fP"
+.ti -1c
+.RI "void \fBmoveBy\fP (const \fBPoint2D\fP &centerMovement)"
+.br
+.RI "\fIMove the center point of this box by the given point values\&. \fP"
+.in -1c
+.in -1c
+.SS "Geometrical relations to other objects"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcontainsPoint\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns true if the given \fBPoint2D\fP is inside this box or on its outline\&. \fP"
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBdistanceFromOutline\fP (const \fBPoint2D\fP &point) const "
+.br
+.RI "\fIReturns the distance from the outline of this \fBBox2D\fP to the given point\&. \fP"
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBdistanceFromOutline\fP (const std::vector< \fBPoint2D\fP > &points) const "
+.br
+.RI "\fIReturns the mean distance from the outline of this \fBBox2D\fP to all points of the point vector\&. \fP"
+.ti -1c
+.RI "\fBPoint2D::value_type\fP \fBdistanceFromOutline\fP (const std::vector< \fBPoint2D\fP >::const_iterator &begin, const std::vector< \fBPoint2D\fP >::const_iterator &end) const "
+.br
+.RI "\fIReturns the mean distance from the outline of this \fBBox2D\fP to all points of the given point iterator range\&. \fP"
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "static \fBBox2D\fP \fBorientatedBox\fP (\fBvalue_type\fP orientation_rad, const \fBPolygon2D\fP &poly)"
+.br
+.RI "\fIReturns an orientated bounding box for the given list of points\&. \fP"
+.ti -1c
+.RI "static \fBBox2D\fP \fBorientatedBox\fP (\fBvalue_type\fP orientation_rad, const std::vector< \fBPoint2D\fP > &points)"
+.br
+.RI "\fIReturns an orientated bounding box for the given list of points\&. \fP"
+.ti -1c
+.RI "static \fBBox2D\fP \fBorientatedBox\fP (\fBvalue_type\fP orientation_rad, const std::vector< \fBPoint2D\fP >::const_iterator &begin, const std::vector< \fBPoint2D\fP >::const_iterator &end)"
+.br
+.RI "\fIReturns an orientated bounding box for the given list of points\&. \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBBox2D\fP &, const \fBBox2D\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBBox2D\fP &, const \fBBox2D\fP &)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A rotated 2-dimensional box in the plane\&. 
+
+This box (rectangle) is defined by its center point, its size in x- and y-direction, and its rotation\&.
+.PP
+The rotation denotes the rotation of this box' x-axis compared to the original x-axis\&. The size denotes the total length and width of this box in the box' coordinate system, i\&.e\&. the distance from the center point to each outline is half that size\&.
+.PP
+The size argument must be non-negative\&. The rotation argument must be in the range [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.PP
+Definition at line 34 of file Box2D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef \fBPoint2D::value_type\fP \fBdatatypes::Box2D::value_type\fP"
+
+.PP
+The type of the stored x, y coordinates, and the rotation\&. 
+.PP
+Definition at line 38 of file Box2D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Box2D::Box2D ()"
+
+.PP
+Constructor for an all-zero \fBBox2D\fP\&. 
+.PP
+Definition at line 23 of file Box2D\&.cpp\&.
+.SS "datatypes::Box2D::Box2D (const \fBPoint2D\fP & center, const \fBPoint2D\fP & size, \fBvalue_type\fP rotation = \fC0\&.0\fP)"
+
+.PP
+Constructor with specified center point, size, and rotation\&. 
+.PP
+\fBNote:\fP
+.RS 4
+The size components must be non-negative, otherwise an assertion will fail\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcenter\fP The center point 
+.br
+\fIsize\fP The size of the box in the box' coordinate system\&. Must be non-negative\&.
+.br
+\fIrotation\fP The rotation of the box' coordinate system around its center point in [radians]\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file Box2D\&.cpp\&.
+.SS "datatypes::Box2D::Box2D (\fBvalue_type\fP x_center, \fBvalue_type\fP y_center, \fBvalue_type\fP x_size, \fBvalue_type\fP y_size, \fBvalue_type\fP rotation = \fC0\&.0\fP)"
+
+.PP
+Constructor with all values given\&. Constructor with all values given: x/y of center point, x/y of size (where the x coordinate of the size is in the same direction as the x axis of the coordinate system, rotated by the rotation argument; the y coordinate accordingly), and rotation\&.
+.PP
+\fBNote:\fP
+.RS 4
+The x_size and y_size must be non-negative\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx_center\fP X-coordinate of center point 
+.br
+\fIy_center\fP Y-coordinate of center point
+.br
+\fIx_size\fP The size of the box in X-direction in the box' coordinate system\&. Must be non-negative\&. 
+.br
+\fIy_size\fP The size of the box in Y-direction in the box' coordinate system\&. Must be non-negative\&.
+.br
+\fIrotation\fP The rotation of the box' coordinate system around its center point in [radians]\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file Box2D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool datatypes::Box2D::containsPoint (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns true if the given \fBPoint2D\fP is inside this box or on its outline\&. (Note: This function is relatively cheap - it needs two sinus operations, four multiplications and a bunch of comparisons\&.) 
+.PP
+Definition at line 173 of file Box2D\&.cpp\&.
+.SS "\fBPoint2D::value_type\fP datatypes::Box2D::distanceFromOutline (const \fBPoint2D\fP & point) const"
+
+.PP
+Returns the distance from the outline of this \fBBox2D\fP to the given point\&. This function calculates the minimum distance over the distances from the given point to each of the four outside lines of this \fBBox2D\fP\&.
+.PP
+Internally, this might be implemented using \fBPolygon2D::distanceToPoint\fP and \fBLine2D::distanceFromLineSegment()\fP, but maybe the implementation will be optimized to work in some other way\&. 
+.SS "\fBPoint2D::value_type\fP datatypes::Box2D::distanceFromOutline (const std::vector< \fBPoint2D\fP > & points) const"
+
+.PP
+Returns the mean distance from the outline of this \fBBox2D\fP to all points of the point vector\&. For each given point, this function calculates the minimum distance over the distances from the given point to each of the four outside lines of this \fBBox2D\fP and returns that minimum distance\&. The returned value is the mean value of all distances\&.
+.PP
+This is an overloaded version of distanceFromOutline(const \fBPoint2D\fP&) for your convenience\&. 
+.SS "\fBPoint2D::value_type\fP datatypes::Box2D::distanceFromOutline (const std::vector< \fBPoint2D\fP >::const_iterator & begin, const std::vector< \fBPoint2D\fP >::const_iterator & end) const"
+
+.PP
+Returns the mean distance from the outline of this \fBBox2D\fP to all points of the given point iterator range\&. For each given point, this function calculates the minimum distance over the distances from the given point to each of the four outside lines of this \fBBox2D\fP and returns that minimum distance\&. The returned value is the mean value of all distances\&.
+.PP
+This is an overloaded version of distanceFromOutline(const \fBPoint2D\fP&) for your convenience\&. 
+.SS "std::pair< \fBBox2D::value_type\fP, \fBBox2D::value_type\fP > datatypes::Box2D::getBoundingAngles () const"
+
+.PP
+Returns boundary angles for this box\&. This function calculates a low and a high boundary angle for all edges of the given (rotated) \fBBox2D\fP\&. The returned FloatPair has the component 'first' for the lower bounding angle, and 'second' for the upper bounding angle\&.
+.PP
+(Note: This ordering is swapped compared to the scan point ordering!) 
+.PP
+Definition at line 138 of file Box2D\&.cpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Box2D::getCenter () const\fC [inline]\fP"
+
+.PP
+Returns the center point of this Box\&. 
+.PP
+Definition at line 92 of file Box2D\&.hpp\&.
+.SS "\fBvalue_type\fP datatypes::Box2D::getRotation () const\fC [inline]\fP"
+Returns the rotation angle of this \fBBox2D\fP in [radians], counter clock wise\&.
+.PP
+The rotation of the box' coordinate system around its center point\&. Must be in the interval [-pi,pi] 
+.PP
+Definition at line 108 of file Box2D\&.hpp\&.
+.SS "const \fBPoint2D\fP& datatypes::Box2D::getSize () const\fC [inline]\fP"
+
+.PP
+Returns the size of this Box\&. The returned size denotes the size of the box in x-direction \fBPoint2D::getX()\fP and y-direction \fBPoint2D::getY()\fP, where the x-direction is rotated against the original x-axis by \fBgetRotation()\fP\&. 
+.PP
+Definition at line 101 of file Box2D\&.hpp\&.
+.SS "virtual const \fBUINT32\fP datatypes::Box2D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 85 of file Box2D\&.hpp\&.
+.SS "void datatypes::Box2D::moveBy (const \fBPoint2D\fP & centerMovement)"
+
+.PP
+Move the center point of this box by the given point values\&. 
+.PP
+Definition at line 79 of file Box2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Box2D::movedBy (const \fBPoint2D\fP & centerMovement) const"
+
+.PP
+Returns a Box that is copied from this one but with its center point moved\&. 
+.PP
+Definition at line 84 of file Box2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Box2D::orientatedBox (\fBvalue_type\fP orientation_rad, const \fBPolygon2D\fP & poly)\fC [static]\fP"
+
+.PP
+Returns an orientated bounding box for the given list of points\&. Given a list of points and a fixed orientation, this function will calculate a bounding box for the points that has the given orientation\&. 
+.PP
+Definition at line 379 of file Box2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Box2D::orientatedBox (\fBvalue_type\fP orientation_rad, const std::vector< \fBPoint2D\fP > & points)\fC [static]\fP"
+
+.PP
+Returns an orientated bounding box for the given list of points\&. Given a list of points and a fixed orientation, this function will calculate a bounding box for the points that has the given orientation\&.
+.PP
+This is an overloaded version of orientatedBox(const \fBPolygon2D\fP&) for your convenience\&. 
+.PP
+Definition at line 393 of file Box2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Box2D::orientatedBox (\fBvalue_type\fP orientation_rad, const std::vector< \fBPoint2D\fP >::const_iterator & begin, const std::vector< \fBPoint2D\fP >::const_iterator & end)\fC [static]\fP"
+
+.PP
+Returns an orientated bounding box for the given list of points\&. Given a list of points and a fixed orientation, this function will calculate a bounding box for the points that has the given orientation\&.
+.PP
+This is an overloaded version of orientatedBox(const \fBPolygon2D\fP&) for your convenience\&. 
+.PP
+Definition at line 385 of file Box2D\&.cpp\&.
+.SS "void datatypes::Box2D::setCenter (const \fBPoint2D\fP & p)\fC [inline]\fP"
+
+.PP
+Sets the center point of this \fBBox2D\fP\&. 
+.PP
+Definition at line 148 of file Box2D\&.hpp\&.
+.SS "void datatypes::Box2D::setCenter (\fBvalue_type\fP x, \fBvalue_type\fP y)\fC [inline]\fP"
+
+.PP
+Sets the center point of this \fBBox2D\fP\&. 
+.PP
+Definition at line 151 of file Box2D\&.hpp\&.
+.SS "void datatypes::Box2D::setRotation (\fBvalue_type\fP r)"
+
+.PP
+Sets the rotation angle of this Box in [radians], counter clock wise\&. The rotation of the box' coordinate system around its center point\&. Must be in the interval [-pi,pi], which can be obtained by using \fBnormalizeRadians()\fP\&. 
+.PP
+Definition at line 71 of file Box2D\&.cpp\&.
+.SS "void datatypes::Box2D::setSize (const \fBPoint2D\fP & p)"
+
+.PP
+Sets the size of this Box\&. Must be non-negative\&. 
+.PP
+Definition at line 58 of file Box2D\&.cpp\&.
+.SS "void datatypes::Box2D::setSize (\fBvalue_type\fP x_length, \fBvalue_type\fP y_width)"
+
+.PP
+Sets the size of this \fBBox2D\fP\&. Must be non-negative\&. 
+.PP
+Definition at line 63 of file Box2D\&.cpp\&.
+.SS "\fBBox2D\fP datatypes::Box2D::toBoundingBox () const"
+
+.PP
+Returns a Box in parallel to the coordinate system that bounds this box\&. This function calculates a bounding box to the given box, because the given one might be rotated into some other direction\&. In contrast to this, the returned box will have zero rotation and will be in parallel to the coordinate system\&. 
+.PP
+Definition at line 115 of file Box2D\&.cpp\&.
+.SS "\fBPolygon2D\fP datatypes::Box2D::toPolygon () const"
+
+.PP
+Converts this \fBBox2D\fP to a closed polygon\&. Converts this \fBBox2D\fP to a closed polygon with 5 points, where the last point is identical to the first one to make it closed\&. 
+.PP
+Definition at line 89 of file Box2D\&.cpp\&.
+.SS "std::string datatypes::Box2D::toString () const"
+
+.PP
+Definition at line 471 of file Box2D\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBBox2D\fP & b1, const \fBBox2D\fP & b2)\fC [friend]\fP"
+
+.PP
+Definition at line 277 of file Box2D\&.hpp\&.
+.SS "bool operator== (const \fBBox2D\fP & b1, const \fBBox2D\fP & b2)\fC [friend]\fP"
+
+.PP
+Definition at line 269 of file Box2D\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

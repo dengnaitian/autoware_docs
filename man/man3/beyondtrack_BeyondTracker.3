@@ -1,0 +1,81 @@
+.TH "beyondtrack::BeyondTracker" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+beyondtrack::BeyondTracker \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vision_beyond_track\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBeyondTracker\fP ()"
+.br
+.ti -1c
+.RI "\fBBeyondTracker\fP (cv::Mat k_)"
+.br
+.ti -1c
+.RI "\fB~BeyondTracker\fP ()"
+.br
+.ti -1c
+.RI "void \fBprocess\fP (std::vector< \fBDetection\fP > in_detections, cv::Mat in_pose, cv::Mat in_angle, double in_height)"
+.br
+.ti -1c
+.RI "std::vector< \fBDetection\fP > \fBget_results\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_intrinsic\fP (cv::Mat k_)"
+.br
+.ti -1c
+.RI "double \fBget_3d2d_score\fP (\fBDetection\fP cd, \fBDetection\fP pd)"
+.br
+.ti -1c
+.RI "double \fBget_3d3d_score\fP (\fBDetection\fP cd, \fBDetection\fP pd)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 62 of file vision_beyond_track\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "beyondtrack::BeyondTracker::BeyondTracker ()\fC [inline]\fP"
+
+.PP
+Definition at line 88 of file vision_beyond_track\&.h\&.
+.SS "beyondtrack::BeyondTracker::BeyondTracker (cv::Mat k_)"
+
+.PP
+Definition at line 120 of file vision_beyond_track\&.cpp\&.
+.SS "beyondtrack::BeyondTracker::~BeyondTracker ()\fC [inline]\fP"
+
+.PP
+Definition at line 94 of file vision_beyond_track\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double beyondtrack::BeyondTracker::get_3d2d_score (\fBDetection\fP cd, \fBDetection\fP pd)"
+
+.PP
+Definition at line 206 of file vision_beyond_track\&.cpp\&.
+.SS "double beyondtrack::BeyondTracker::get_3d3d_score (\fBDetection\fP cd, \fBDetection\fP pd)"
+
+.PP
+Definition at line 225 of file vision_beyond_track\&.cpp\&.
+.SS "std::vector< \fBDetection\fP > beyondtrack::BeyondTracker::get_results ()"
+
+.PP
+Definition at line 195 of file vision_beyond_track\&.cpp\&.
+.SS "void beyondtrack::BeyondTracker::process (std::vector< \fBDetection\fP > in_detections, cv::Mat in_pose, cv::Mat in_angle, double in_height)"
+
+.PP
+Definition at line 126 of file vision_beyond_track\&.cpp\&.
+.SS "void beyondtrack::BeyondTracker::set_intrinsic (cv::Mat k_)"
+
+.PP
+Definition at line 200 of file vision_beyond_track\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

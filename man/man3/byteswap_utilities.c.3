@@ -1,0 +1,83 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Utilities/Source/byteswap_utilities.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Utilities/Source/byteswap_utilities.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbyteswap\fP (void *in, void *out, \fBu16\fP size)"
+.br
+.ti -1c
+.RI "void \fBbyteswap_inplace\fP (void *\fBdata\fP, \fBu16\fP size)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBbyteswap_utilities\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void byteswap (void * in, void * out, \fBu16\fP size)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap data \fCin\fP and store it in location \fCout\fP\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *in - byte pointer to the data to be byteswapped\&. 
+.br
+\fIvoid\fP *out - byte pointer to the memory to store the result\&. 
+.br
+\fIu16\fP size - the size of the data to byteswap in bytes\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 60 of file byteswap_utilities\&.c\&.
+.SS "void byteswap_inplace (void * data, \fBu16\fP size)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a memory location in place\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *data - byte pointer to the data to byteswap\&. 
+.br
+\fIu16\fP size - the size of the data to byteswap in bytes\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 101 of file byteswap_utilities\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

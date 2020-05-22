@@ -1,0 +1,161 @@
+.TH "PerceptionSimulatorNS::OpenPlannerSimulatorPerception" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PerceptionSimulatorNS::OpenPlannerSimulatorPerception \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <op_perception_simulator_core\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOpenPlannerSimulatorPerception\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~OpenPlannerSimulatorPerception\fP ()"
+.br
+.ti -1c
+.RI "autoware_msgs::CloudCluster \fBGenerateSimulatedObstacleCluster\fP (const double &x_rand, const double &y_rand, const double &z_rand, const int &nPoints, const geometry_msgs::Pose &centerPose)"
+.br
+.ti -1c
+.RI "void \fBMainLoop\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcallbackGetSimuData\fP (const geometry_msgs::PoseArray &msg)"
+.br
+.ti -1c
+.RI "void \fBcallbackGetRvizPoint\fP (const geometry_msgs::PointStampedConstPtr &msg)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "ros::NodeHandle \fBnh\fP"
+.br
+.ti -1c
+.RI "timespec \fBm_Timer\fP"
+.br
+.ti -1c
+.RI "\fBDetectionCommandParams\fP \fBm_DecParams\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::CloudCluster \fBm_SimulatedCluter\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::CloudClusterArray \fBm_ObjClustersArray\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::CloudClusterArray \fBm_AllObjClustersArray\fP"
+.br
+.ti -1c
+.RI "bool \fBm_bSetSimulatedObj\fP"
+.br
+.ti -1c
+.RI "std::vector< std::pair< int, double > > \fBm_keepTime\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_DetectedObjects\fP"
+.br
+.ti -1c
+.RI "ros::Publisher \fBpub_PointClouds\fP"
+.br
+.ti -1c
+.RI "std::vector< ros::Subscriber > \fBsub_objs\fP"
+.br
+.ti -1c
+.RI "ros::Subscriber \fBsub_simulated_obstacle_pose_rviz\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 63 of file op_perception_simulator_core\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PerceptionSimulatorNS::OpenPlannerSimulatorPerception::OpenPlannerSimulatorPerception ()"
+
+.PP
+Definition at line 44 of file op_perception_simulator_core\&.cpp\&.
+.SS "PerceptionSimulatorNS::OpenPlannerSimulatorPerception::~OpenPlannerSimulatorPerception ()\fC [virtual]\fP"
+
+.PP
+Definition at line 77 of file op_perception_simulator_core\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PerceptionSimulatorNS::OpenPlannerSimulatorPerception::callbackGetRvizPoint (const geometry_msgs::PointStampedConstPtr & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_perception_simulator_core\&.cpp\&.
+.SS "void PerceptionSimulatorNS::OpenPlannerSimulatorPerception::callbackGetSimuData (const geometry_msgs::PoseArray & msg)\fC [protected]\fP"
+
+.PP
+Definition at line 103 of file op_perception_simulator_core\&.cpp\&.
+.SS "autoware_msgs::CloudCluster PerceptionSimulatorNS::OpenPlannerSimulatorPerception::GenerateSimulatedObstacleCluster (const double & x_rand, const double & y_rand, const double & z_rand, const int & nPoints, const geometry_msgs::Pose & centerPose)"
+
+.PP
+Definition at line 158 of file op_perception_simulator_core\&.cpp\&.
+.SS "void PerceptionSimulatorNS::OpenPlannerSimulatorPerception::MainLoop ()"
+
+.PP
+Definition at line 221 of file op_perception_simulator_core\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "autoware_msgs::CloudClusterArray PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_AllObjClustersArray\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file op_perception_simulator_core\&.h\&.
+.SS "bool PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_bSetSimulatedObj\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file op_perception_simulator_core\&.h\&.
+.SS "\fBDetectionCommandParams\fP PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_DecParams\fC [protected]\fP"
+
+.PP
+Definition at line 68 of file op_perception_simulator_core\&.h\&.
+.SS "std::vector<std::pair<int, double> > PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_keepTime\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file op_perception_simulator_core\&.h\&.
+.SS "autoware_msgs::CloudClusterArray PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_ObjClustersArray\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file op_perception_simulator_core\&.h\&.
+.SS "autoware_msgs::CloudCluster PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_SimulatedCluter\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file op_perception_simulator_core\&.h\&.
+.SS "timespec PerceptionSimulatorNS::OpenPlannerSimulatorPerception::m_Timer\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file op_perception_simulator_core\&.h\&.
+.SS "ros::NodeHandle PerceptionSimulatorNS::OpenPlannerSimulatorPerception::nh\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file op_perception_simulator_core\&.h\&.
+.SS "ros::Publisher PerceptionSimulatorNS::OpenPlannerSimulatorPerception::pub_DetectedObjects\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file op_perception_simulator_core\&.h\&.
+.SS "ros::Publisher PerceptionSimulatorNS::OpenPlannerSimulatorPerception::pub_PointClouds\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file op_perception_simulator_core\&.h\&.
+.SS "std::vector<ros::Subscriber> PerceptionSimulatorNS::OpenPlannerSimulatorPerception::sub_objs\fC [protected]\fP"
+
+.PP
+Definition at line 82 of file op_perception_simulator_core\&.h\&.
+.SS "ros::Subscriber PerceptionSimulatorNS::OpenPlannerSimulatorPerception::sub_simulated_obstacle_pose_rviz\fC [protected]\fP"
+
+.PP
+Definition at line 83 of file op_perception_simulator_core\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

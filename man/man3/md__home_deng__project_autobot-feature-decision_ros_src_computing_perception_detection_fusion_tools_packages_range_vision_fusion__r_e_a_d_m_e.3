@@ -1,0 +1,64 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_fusion_tools_packages_range_vision_fusion__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_fusion_tools_packages_range_vision_fusion__r_e_a_d_m_e \- Range Vision Fusion 
+The Range Vision Fusion node will try match the objects detected on a range sensor, with the ones obtained from a vision detector\&. A match will be considered found if the 3D projection of the object overlaps at least 50% (configurable) over the 2D object detection\&. The label from the 2D Image detector will be attached to the corresponding 3D Object\&. All the matched results will be published\&.
+.PP
+.SS "Requirements"
+.PP
+.SS "Input Topics"
+.PP
+.IP "1." 4
+Camera intrinsics (\fCsensor_msgs/CameraInfo\fP)
+.PP
+.IP "1." 4
+Camera-LiDAR extrinsics (\fCtf\fP)
+.PP
+.IP "1." 4
+Object Detections results from a Vision Detector (\fCautoware_msgs/DetectedObjectArray\fP)
+.PP
+.IP "1." 4
+Object Detections results from a Range Detector (\fCautoware_msgs/DetectedObjectArray\fP)
+.PP
+.PP
+.SS "Output Topics"
+.PP
+.IP "1." 4
+Fused Detected Objects (\fCautoware_msgs/DetectedObjectArray\fP) on the \fC/detection/fusion_tools/objects\fP topic\&.
+.PP
+.PP
+.SS "\fBParameters\fP"
+.PP
+\fBLaunch\fP file available parameters:
+.PP
+ParameterTypeDescriptionDefault  \fCdetected_objects_range\fP*String* Name of the \fCDetectedObjectArray\fP topic to subscribe containing the detections on 3D space\&.\fC/detection/lidar_objects\fP \fCdetected_objects_vision\fP*String*Name of the \fCDetectedObjectArray\fP topic to subscribe containing the detections on 2D space\&.\fC/detection/vision_objects\fP \fCcamera_info_src\fP*String*Name of the CameraInfo topic that contains the intrinsic matrix for the Image\&.\fC/camera_info\fP \fCsync_topics\fP*Bool*Sync detection topics\&.\fCfalse\fP \fCmin_car_dimensions\fP*Array*Sets the minimum dimensions for a car bounding \fBbox(width, height, depth)\fP in meters\&.\fC[2,2,4]\fP \fCmin_person_dimensions\fP*Array*Sets the minimum dimensions for a person bounding box (width, height, depth) in meters\&.\fC[1,2,1]\fP \fCmin_truck_dimensions\fP*Array*Sets the minimum dimensions for a truck/bus bounding box (width, height, depth) in meters\&.\fC[2,2,4\&.5]\fP \fCoverlap_threshold\fP*float*A number between 0\&.1 and 1\&.0 representing the area of overlap between the detections\&.\fC0\&.5\fP 
+.SS "Example of usage"
+.PP
+.IP "1." 4
+\fBLaunch\fP a ground filter algorithm from the \fCPoints Preprocessor\fP in the \fBSensing\fP tab\&. (adjust the parameters to your vehicle setup)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP Calibration Publisher with the intrinsic and extrinsic calibration between the camera and the range sensor\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP a Vision Detector from the Computing tab (this should be publishing by default \fC/detectoion/vision_objects\fP)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP a Lidar Detector from the Computing tab (this should be publishing by default \fC/detectoion/lidar_objects\fP)\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP this node\&.
+.PP
+.IP "1." 4
+\fBLaunch\fP \fCrviz\fP, and add the topics shown above in the Output section\&.
+.PP
+.PP
+.SS "Notes"
+.PP
+.IP "\(bu" 2
+Detection on Image space should be performed on a \fBRectified\fP Image, otherwise projection will be incorrect\&.
+.IP "\(bu" 2
+The names of the classes are defined as in the COCO dataset\&. 
+.PP
+

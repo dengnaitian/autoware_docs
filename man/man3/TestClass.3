@@ -1,0 +1,470 @@
+.TH "TestClass" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TestClass \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <test_costmap_generator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTestClass\fP (const int MAX_NUM_PILLARS, const int MAX_NUM_POINTS_PER_PILLAR, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_INDS_FOR_SCAN, const int NUM_BOX_CORNERS)"
+.br
+.ti -1c
+.RI "void \fBmakePointsForTest\fP (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr in_pcl_pc_ptr)"
+.br
+.ti -1c
+.RI "void \fBpclToArray\fP (const \fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr &in_pcl_pc_ptr, float *out_points_array)"
+.br
+.ti -1c
+.RI "void \fBpreprocess\fP (const float *in_points_array, int in_num_points, int *x_coors, int *y_coors, float *num_points_per_pillar, float *pillar_x, float *pillar_y, float *pillar_z, float *pillar_i, float *x_coors_for_sub_shaped, float *y_coors_for_sub_shaped, float *pillar_feature_mask, float *sparse_pillar_map, int *host_pillar_count)"
+.br
+.ti -1c
+.RI "void \fBgenerateAnchors\fP (float *anchors_px, float *anchors_py, float *anchors_pz, float *anchors_dx, float *anchors_dy, float *anchors_dz, float *anchors_ro)"
+.br
+.ti -1c
+.RI "void \fBconvertAnchors2BoxAnchors\fP (float *anchors_px, float *anchors_py, float *anchors_dx, float *anchors_dy, float *box_anchors_min_x, float *box_anchors_min_y, float *box_anchors_max_x, float *box_anchors_max_y)"
+.br
+.ti -1c
+.RI "\fBTestClass\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillDummyObjectParam\fP (autoware_msgs::DetectedObject *dummy_object)"
+.br
+.ti -1c
+.RI "void \fBfillDummyObjectsArrayParam\fP (autoware_msgs::DetectedObjectArray::Ptr dummy_objects_array)"
+.br
+.ti -1c
+.RI "void \fBfillDummyCostmapParam\fP (grid_map::GridMap *dummy_costmap)"
+.br
+.ti -1c
+.RI "void \fBinitDummy3DVecParam\fP ()"
+.br
+.ti -1c
+.RI "std::vector< std::vector< std::vector< double > > > \fBassignPoints2GridCell\fP (const grid_map::GridMap &gridmap, const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr &in_sensor_points)"
+.br
+.ti -1c
+.RI "grid_map::Index \fBfetchGridIndexFromPoint\fP (const grid_map::GridMap &gridmap, const pcl::PointXYZ &point)"
+.br
+.ti -1c
+.RI "bool \fBisValidInd\fP (const grid_map::GridMap &gridmap, const grid_map::Index &grid_ind)"
+.br
+.ti -1c
+.RI "grid_map::Matrix \fBcalculateCostmap\fP (const double maximum_height_thres, const double minimum_lidar_height_thres, const double grid_min_value, const double grid_max_value, const grid_map::GridMap &gridmap, const std::string &gridmap_layer_name, const std::vector< std::vector< std::vector< double >>> grid_vec)"
+.br
+.ti -1c
+.RI "Eigen::MatrixXd \fBmakeRectanglePoints\fP (const autoware_msgs::DetectedObject &in_object, const double expand_rectangle_size)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBmakeExpandedPoint\fP (const \fBgeometry_msgs::Point\fP &in_centroid, const geometry_msgs::Point32 &in_corner_point, const double expand_polygon_size)"
+.br
+.ti -1c
+.RI "\fBgrid_map::Polygon\fP \fBmakePolygonFromObjectConvexHull\fP (const autoware_msgs::DetectedObject &in_object, const double expand_polygon_size)"
+.br
+.ti -1c
+.RI "void \fBsetCostInPolygon\fP (const \fBgrid_map::Polygon\fP &polygon, const std::string &gridmap_layer_name, const float score, grid_map::GridMap &objects_costmap)"
+.br
+.ti -1c
+.RI "grid_map::Matrix \fBmakeCostmapFromObjects\fP (const grid_map::GridMap &costmap, const double expand_polygon_size, const double size_of_expansion_kernel, const autoware_msgs::DetectedObjectArray::ConstPtr &in_objects, const bool use_objects_convex_hull)"
+.br
+.ti -1c
+.RI "\fBTestClass\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateStateUpdateTable\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsearch\fP ()"
+.br
+.ti -1c
+.RI "void \fBposeToIndex\fP (const geometry_msgs::Pose &\fBpose\fP, int *index_x, int *index_y, int *index_theta)"
+.br
+.ti -1c
+.RI "void \fBpointToIndex\fP (const \fBgeometry_msgs::Point\fP &point, int *index_x, int *index_y)"
+.br
+.ti -1c
+.RI "bool \fBisOutOfRange\fP (int index_x, int index_y)"
+.br
+.ti -1c
+.RI "void \fBsetPath\fP (const \fBSimpleNode\fP &goal)"
+.br
+.ti -1c
+.RI "bool \fBsetStartNode\fP (const geometry_msgs::Pose &start_pose)"
+.br
+.ti -1c
+.RI "bool \fBsetGoalNode\fP (const geometry_msgs::Pose &goal_pose)"
+.br
+.ti -1c
+.RI "bool \fBisGoal\fP (double x, double y, double theta)"
+.br
+.ti -1c
+.RI "bool \fBisObs\fP (int index_x, int index_y)"
+.br
+.ti -1c
+.RI "bool \fBdetectCollision\fP (const \fBSimpleNode\fP &sn)"
+.br
+.ti -1c
+.RI "bool \fBcalcWaveFrontHeuristic\fP (const \fBSimpleNode\fP &sn)"
+.br
+.ti -1c
+.RI "bool \fBdetectCollisionWaveFront\fP (const \fBWaveFrontNode\fP &sn)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBMAX_NUM_PILLARS_\fP"
+.br
+.ti -1c
+.RI "const int \fBMAX_NUM_POINTS_PER_PILLAR_\fP"
+.br
+.ti -1c
+.RI "const int \fBGRID_X_SIZE_\fP"
+.br
+.ti -1c
+.RI "const int \fBGRID_Y_SIZE_\fP"
+.br
+.ti -1c
+.RI "const int \fBGRID_Z_SIZE_\fP"
+.br
+.ti -1c
+.RI "const float \fBPILLAR_X_SIZE_\fP"
+.br
+.ti -1c
+.RI "const float \fBPILLAR_Y_SIZE_\fP"
+.br
+.ti -1c
+.RI "const float \fBPILLAR_Z_SIZE_\fP"
+.br
+.ti -1c
+.RI "const float \fBMIN_X_RANGE_\fP"
+.br
+.ti -1c
+.RI "const float \fBMIN_Y_RANGE_\fP"
+.br
+.ti -1c
+.RI "const float \fBMIN_Z_RANGE_\fP"
+.br
+.ti -1c
+.RI "const int \fBNUM_INDS_FOR_SCAN_\fP"
+.br
+.ti -1c
+.RI "const int \fBNUM_BOX_CORNERS_\fP"
+.br
+.ti -1c
+.RI "const double \fBdummy_maximum_lidar_height_thres_\fP"
+.br
+.ti -1c
+.RI "const double \fBdummy_minimum_lidar_height_thres_\fP"
+.br
+.ti -1c
+.RI "const double \fBdummy_grid_min_value_\fP"
+.br
+.ti -1c
+.RI "const double \fBdummy_grid_max_value_\fP"
+.br
+.ti -1c
+.RI "const std::string \fBdummy_layer_name_\fP"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP * \fBdummy_point_\fP"
+.br
+.ti -1c
+.RI "pcl::PointXYZ * \fBdummy_pcl_point_\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObject * \fBdummy_object_\fP"
+.br
+.ti -1c
+.RI "autoware_msgs::DetectedObjectArray::Ptr \fBdummy_objects_array_\fP"
+.br
+.ti -1c
+.RI "grid_map::GridMap * \fBdummy_costmap_\fP"
+.br
+.ti -1c
+.RI "\fBPointsToCostmap\fP * \fBpoints2costmap_\fP"
+.br
+.ti -1c
+.RI "std::unique_ptr< std::vector< std::vector< std::vector< double > > > > \fBdummy_3d_vec_\fP"
+.br
+.ti -1c
+.RI "\fBObjectsToCostmap\fP * \fBobjects2costmap_\fP"
+.br
+.ti -1c
+.RI "\fBAstarSearch\fP \fBastar_search_obj\fP"
+.br
+.ti -1c
+.RI "nav_msgs::OccupancyGrid \fBcostmap_\fP"
+.br
+.ti -1c
+.RI "std::vector< std::pair< int, int > > \fBobstacle_indexes_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 50 of file test_point_pillars\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TestClass::TestClass (const int MAX_NUM_PILLARS, const int MAX_NUM_POINTS_PER_PILLAR, const int GRID_X_SIZE, const int GRID_Y_SIZE, const int GRID_Z_SIZE, const float PILLAR_X_SIZE, const float PILLAR_Y_SIZE, const float PILLAR_Z_SIZE, const float MIN_X_RANGE, const float MIN_Y_RANGE, const float MIN_Z_RANGE, const int NUM_INDS_FOR_SCAN, const int NUM_BOX_CORNERS)"
+
+.PP
+Definition at line 89 of file test_point_pillars\&.cpp\&.
+.SS "TestClass::TestClass ()"
+
+.PP
+Definition at line 109 of file test_costmap_generator\&.hpp\&.
+.SS "TestClass::TestClass ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::vector< std::vector< double > > > TestClass::assignPoints2GridCell (const grid_map::GridMap & gridmap, const \fBpcl::PointCloud\fP< pcl::PointXYZ >::Ptr & in_sensor_points)"
+
+.PP
+Definition at line 194 of file test_costmap_generator\&.hpp\&.
+.SS "grid_map::Matrix TestClass::calculateCostmap (const double maximum_height_thres, const double minimum_lidar_height_thres, const double grid_min_value, const double grid_max_value, const grid_map::GridMap & gridmap, const std::string & gridmap_layer_name, const std::vector< std::vector< std::vector< double >>> grid_vec)"
+
+.PP
+Definition at line 225 of file test_costmap_generator\&.hpp\&.
+.SS "bool TestClass::calcWaveFrontHeuristic (const \fBSimpleNode\fP & sn)"
+
+.PP
+Definition at line 123 of file test_class\&.cpp\&.
+.SS "void TestClass::convertAnchors2BoxAnchors (float * anchors_px, float * anchors_py, float * anchors_dx, float * anchors_dy, float * box_anchors_min_x, float * box_anchors_min_y, float * box_anchors_max_x, float * box_anchors_max_y)"
+
+.PP
+Definition at line 198 of file test_point_pillars\&.cpp\&.
+.SS "void TestClass::createStateUpdateTable ()"
+
+.PP
+Definition at line 79 of file test_class\&.cpp\&.
+.SS "bool TestClass::detectCollision (const \fBSimpleNode\fP & sn)"
+
+.PP
+Definition at line 119 of file test_class\&.cpp\&.
+.SS "bool TestClass::detectCollisionWaveFront (const \fBWaveFrontNode\fP & sn)"
+
+.PP
+Definition at line 127 of file test_class\&.cpp\&.
+.SS "grid_map::Index TestClass::fetchGridIndexFromPoint (const grid_map::GridMap & gridmap, const pcl::PointXYZ & point)"
+
+.PP
+Definition at line 205 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::fillDummyCostmapParam (grid_map::GridMap * dummy_costmap)"
+
+.PP
+Definition at line 125 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::fillDummyObjectParam (autoware_msgs::DetectedObject * dummy_object)"
+
+.PP
+Definition at line 133 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::fillDummyObjectsArrayParam (autoware_msgs::DetectedObjectArray::Ptr dummy_objects_array)"
+
+.PP
+Definition at line 149 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::generateAnchors (float * anchors_px, float * anchors_py, float * anchors_pz, float * anchors_dx, float * anchors_dy, float * anchors_dz, float * anchors_ro)"
+
+.PP
+Definition at line 191 of file test_point_pillars\&.cpp\&.
+.SS "void TestClass::initDummy3DVecParam ()"
+
+.PP
+Definition at line 177 of file test_costmap_generator\&.hpp\&.
+.SS "bool TestClass::isGoal (double x, double y, double theta)"
+
+.PP
+Definition at line 111 of file test_class\&.cpp\&.
+.SS "bool TestClass::isObs (int index_x, int index_y)"
+
+.PP
+Definition at line 115 of file test_class\&.cpp\&.
+.SS "bool TestClass::isOutOfRange (int index_x, int index_y)"
+
+.PP
+Definition at line 95 of file test_class\&.cpp\&.
+.SS "bool TestClass::isValidInd (const grid_map::GridMap & gridmap, const grid_map::Index & grid_ind)"
+
+.PP
+Definition at line 215 of file test_costmap_generator\&.hpp\&.
+.SS "grid_map::Matrix TestClass::makeCostmapFromObjects (const grid_map::GridMap & costmap, const double expand_polygon_size, const double size_of_expansion_kernel, const autoware_msgs::DetectedObjectArray::ConstPtr & in_objects, const bool use_objects_convex_hull)"
+
+.PP
+Definition at line 255 of file test_costmap_generator\&.hpp\&.
+.SS "\fBgeometry_msgs::Point\fP TestClass::makeExpandedPoint (const \fBgeometry_msgs::Point\fP & in_centroid, const geometry_msgs::Point32 & in_corner_point, const double expand_polygon_size)"
+
+.PP
+Definition at line 236 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::makePointsForTest (\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr in_pcl_pc_ptr)"
+
+.PP
+Definition at line 146 of file test_point_pillars\&.cpp\&.
+.SS "\fBgrid_map::Polygon\fP TestClass::makePolygonFromObjectConvexHull (const autoware_msgs::DetectedObject & in_object, const double expand_polygon_size)"
+
+.PP
+Definition at line 243 of file test_costmap_generator\&.hpp\&.
+.SS "Eigen::MatrixXd TestClass::makeRectanglePoints (const autoware_msgs::DetectedObject & in_object, const double expand_rectangle_size)"
+
+.PP
+Definition at line 188 of file test_costmap_generator\&.hpp\&.
+.SS "void TestClass::pclToArray (const \fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr & in_pcl_pc_ptr, float * out_points_array)"
+
+.PP
+Definition at line 134 of file test_point_pillars\&.cpp\&.
+.SS "void TestClass::pointToIndex (const \fBgeometry_msgs::Point\fP & point, int * index_x, int * index_y)"
+
+.PP
+Definition at line 91 of file test_class\&.cpp\&.
+.SS "void TestClass::poseToIndex (const geometry_msgs::Pose & pose, int * index_x, int * index_y, int * index_theta)"
+
+.PP
+Definition at line 87 of file test_class\&.cpp\&.
+.SS "void TestClass::preprocess (const float * in_points_array, int in_num_points, int * x_coors, int * y_coors, float * num_points_per_pillar, float * pillar_x, float * pillar_y, float * pillar_z, float * pillar_i, float * x_coors_for_sub_shaped, float * y_coors_for_sub_shaped, float * pillar_feature_mask, float * sparse_pillar_map, int * host_pillar_count)"
+
+.PP
+Definition at line 124 of file test_point_pillars\&.cpp\&.
+.SS "bool TestClass::search ()"
+
+.PP
+Definition at line 83 of file test_class\&.cpp\&.
+.SS "void TestClass::setCostInPolygon (const \fBgrid_map::Polygon\fP & polygon, const std::string & gridmap_layer_name, const float score, grid_map::GridMap & objects_costmap)"
+
+.PP
+Definition at line 249 of file test_costmap_generator\&.hpp\&.
+.SS "bool TestClass::setGoalNode (const geometry_msgs::Pose & goal_pose)"
+
+.PP
+Definition at line 107 of file test_class\&.cpp\&.
+.SS "void TestClass::setPath (const \fBSimpleNode\fP & goal)"
+
+.PP
+Definition at line 99 of file test_class\&.cpp\&.
+.SS "bool TestClass::setStartNode (const geometry_msgs::Pose & start_pose)"
+
+.PP
+Definition at line 103 of file test_class\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAstarSearch\fP TestClass::astar_search_obj"
+
+.PP
+Definition at line 26 of file test_class\&.h\&.
+.SS "nav_msgs::OccupancyGrid TestClass::costmap_"
+
+.PP
+Definition at line 42 of file test_class\&.h\&.
+.SS "std::unique_ptr<std::vector<std::vector<std::vector<double> > > > TestClass::dummy_3d_vec_"
+
+.PP
+Definition at line 64 of file test_costmap_generator\&.hpp\&.
+.SS "grid_map::GridMap* TestClass::dummy_costmap_"
+
+.PP
+Definition at line 60 of file test_costmap_generator\&.hpp\&.
+.SS "const double TestClass::dummy_grid_max_value_"
+
+.PP
+Definition at line 49 of file test_costmap_generator\&.hpp\&.
+.SS "const double TestClass::dummy_grid_min_value_"
+
+.PP
+Definition at line 48 of file test_costmap_generator\&.hpp\&.
+.SS "const std::string TestClass::dummy_layer_name_"
+
+.PP
+Definition at line 50 of file test_costmap_generator\&.hpp\&.
+.SS "const double TestClass::dummy_maximum_lidar_height_thres_"
+
+.PP
+Definition at line 46 of file test_costmap_generator\&.hpp\&.
+.SS "const double TestClass::dummy_minimum_lidar_height_thres_"
+
+.PP
+Definition at line 47 of file test_costmap_generator\&.hpp\&.
+.SS "autoware_msgs::DetectedObject* TestClass::dummy_object_"
+
+.PP
+Definition at line 56 of file test_costmap_generator\&.hpp\&.
+.SS "autoware_msgs::DetectedObjectArray::Ptr TestClass::dummy_objects_array_"
+
+.PP
+Definition at line 58 of file test_costmap_generator\&.hpp\&.
+.SS "pcl::PointXYZ* TestClass::dummy_pcl_point_"
+
+.PP
+Definition at line 54 of file test_costmap_generator\&.hpp\&.
+.SS "\fBgeometry_msgs::Point\fP* TestClass::dummy_point_"
+
+.PP
+Definition at line 52 of file test_costmap_generator\&.hpp\&.
+.SS "const int TestClass::GRID_X_SIZE_"
+
+.PP
+Definition at line 59 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::GRID_Y_SIZE_"
+
+.PP
+Definition at line 60 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::GRID_Z_SIZE_"
+
+.PP
+Definition at line 61 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::MAX_NUM_PILLARS_"
+
+.PP
+Definition at line 57 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::MAX_NUM_POINTS_PER_PILLAR_"
+
+.PP
+Definition at line 58 of file test_point_pillars\&.cpp\&.
+.SS "const float TestClass::MIN_X_RANGE_"
+
+.PP
+Definition at line 65 of file test_point_pillars\&.cpp\&.
+.SS "const float TestClass::MIN_Y_RANGE_"
+
+.PP
+Definition at line 66 of file test_point_pillars\&.cpp\&.
+.SS "const float TestClass::MIN_Z_RANGE_"
+
+.PP
+Definition at line 67 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::NUM_BOX_CORNERS_"
+
+.PP
+Definition at line 69 of file test_point_pillars\&.cpp\&.
+.SS "const int TestClass::NUM_INDS_FOR_SCAN_"
+
+.PP
+Definition at line 68 of file test_point_pillars\&.cpp\&.
+.SS "\fBObjectsToCostmap\fP* TestClass::objects2costmap_"
+
+.PP
+Definition at line 89 of file test_costmap_generator\&.hpp\&.
+.SS "std::vector<std::pair<int, int> > TestClass::obstacle_indexes_"
+
+.PP
+Definition at line 44 of file test_class\&.h\&.
+.SS "const float TestClass::PILLAR_X_SIZE_"
+
+.PP
+Definition at line 62 of file test_point_pillars\&.cpp\&.
+.SS "const float TestClass::PILLAR_Y_SIZE_"
+
+.PP
+Definition at line 63 of file test_point_pillars\&.cpp\&.
+.SS "const float TestClass::PILLAR_Z_SIZE_"
+
+.PP
+Definition at line 64 of file test_point_pillars\&.cpp\&.
+.SS "\fBPointsToCostmap\fP* TestClass::points2costmap_"
+
+.PP
+Definition at line 62 of file test_costmap_generator\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

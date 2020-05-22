@@ -1,0 +1,79 @@
+.TH "SickThread< T, M >" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickThread< T, M > \- Wrapper class for posix threads\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickThread\&.hpp>\fP
+.PP
+Inherits \fBThreadWrapperBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBjoin\fP ()"
+.br
+.ti -1c
+.RI "\fBSickThread\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SickThread\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBm_threadShouldRun\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T, void(T::*)(bool &, UINT16 &) M>
+.br
+class SickThread< T, M >"
+Wrapper class for posix threads\&. 
+
+Usage: Using object must create an instance of this class, and then call start() with its callback function as argument (see start() for more details)\&. To stop the thread execution, call stop()\&.
+.PP
+Setting the parameter m_beVerbose to true (e\&.g\&. via enableVerboseDebugOutput in function start()) will turn on \fIvery\fP verbose output that should be useful for debugging\&.
+.PP
+The thread callback function itself has 2 parameters:
+.PP
+endThisThread: A bool flag that may be set by the callback function to 'false' in case the thread function decides this thread needs to end\&.
+.PP
+sleepTimeMs: The sleep time, in ms, that will be spent between subsequent calls to the callback function\&. Default is 10 ms, but other times may be set\&. Note that not all operating systems may be able to schedule very short sleep times\&. 
+.PP
+Definition at line 80 of file SickThread\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T, void(T::*)(bool &, UINT16 &) M> \fBSickThread\fP< T, M >::\fBSickThread\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 105 of file SickThread\&.hpp\&.
+.SS "template<typename T, void(T::*)(bool &, UINT16 &) M> virtual \fBSickThread\fP< T, M >::~\fBSickThread\fP ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 106 of file SickThread\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T, void(T::*)(bool &, UINT16 &) M> void \fBSickThread\fP< T, M >::join ()\fC [inline]\fP"
+
+.PP
+Definition at line 99 of file SickThread\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T, void(T::*)(bool &, UINT16 &) M> bool \fBSickThread\fP< T, M >::m_threadShouldRun"
+
+.PP
+Definition at line 106 of file SickThread\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

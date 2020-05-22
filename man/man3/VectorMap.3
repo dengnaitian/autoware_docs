@@ -1,0 +1,150 @@
+.TH "VectorMap" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VectorMap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <vector_map\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBload_points\fP (const vector_map::PointArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_lines\fP (const vector_map::LineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_lanes\fP (const vector_map::LaneArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_vectors\fP (const vector_map::VectorArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_signals\fP (const vector_map::SignalArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_whitelines\fP (const vector_map::WhiteLineArray &msg)"
+.br
+.ti -1c
+.RI "void \fBload_dtlanes\fP (const vector_map::DTLaneArray &msg)"
+.br
+.ti -1c
+.RI "\fBVectorMap\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint3\fP \fBgetPoint\fP (const int idx)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBloaded\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBPoint\fP > \fBpoints\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBLine\fP > \fBlines\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBWhiteLine\fP > \fBwhitelines\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBLane\fP > \fBlanes\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBDTLane\fP > \fBdtlanes\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBVector\fP > \fBvectors\fP"
+.br
+.ti -1c
+.RI "\fBstd::map\fP< int, \fBSignal\fP > \fBsignals\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 101 of file vector_map\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VectorMap::VectorMap ()\fC [inline]\fP"
+
+.PP
+Definition at line 122 of file vector_map\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPoint3\fP VectorMap::getPoint (const int idx)\fC [inline]\fP"
+
+.PP
+Definition at line 125 of file vector_map\&.h\&.
+.SS "void VectorMap::load_dtlanes (const vector_map::DTLaneArray & msg)"
+
+.PP
+Definition at line 126 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_lanes (const vector_map::LaneArray & msg)"
+
+.PP
+Definition at line 46 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_lines (const vector_map::LineArray & msg)"
+
+.PP
+Definition at line 29 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_points (const vector_map::PointArray & msg)"
+
+.PP
+Definition at line 8 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_signals (const vector_map::SignalArray & msg)"
+
+.PP
+Definition at line 91 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_vectors (const vector_map::VectorArray & msg)"
+
+.PP
+Definition at line 75 of file vector_map\&.cpp\&.
+.SS "void VectorMap::load_whitelines (const vector_map::WhiteLineArray & msg)"
+
+.PP
+Definition at line 108 of file vector_map\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBstd::map\fP<int, \fBDTLane\fP > VectorMap::dtlanes"
+
+.PP
+Definition at line 109 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBLane\fP > VectorMap::lanes"
+
+.PP
+Definition at line 108 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBLine\fP > VectorMap::lines"
+
+.PP
+Definition at line 106 of file vector_map\&.h\&.
+.SS "bool VectorMap::loaded"
+
+.PP
+Definition at line 104 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBPoint\fP > VectorMap::points"
+
+.PP
+Definition at line 105 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBSignal\fP > VectorMap::signals"
+
+.PP
+Definition at line 111 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBVector\fP > VectorMap::vectors"
+
+.PP
+Definition at line 110 of file vector_map\&.h\&.
+.SS "\fBstd::map\fP<int, \fBWhiteLine\fP > VectorMap::whitelines"
+
+.PP
+Definition at line 107 of file vector_map\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

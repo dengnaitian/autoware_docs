@@ -1,0 +1,115 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/yolo_layer.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/yolo_layer.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'yolo_layer\&.h'\fP
+.br
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'box\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlayer\fP \fBmake_yolo_layer\fP (int batch, int w, int h, int n, int total, int *mask, int classes)"
+.br
+.ti -1c
+.RI "void \fBresize_yolo_layer\fP (\fBlayer\fP *l, int w, int h)"
+.br
+.ti -1c
+.RI "\fBbox\fP \fBget_yolo_box\fP (float *x, float *biases, int n, int index, int \fBi\fP, int j, int lw, int lh, int w, int h, int stride)"
+.br
+.ti -1c
+.RI "float \fBdelta_yolo_box\fP (\fBbox\fP truth, float *x, float *biases, int n, int index, int \fBi\fP, int j, int lw, int lh, int w, int h, float *delta, float scale, int stride)"
+.br
+.ti -1c
+.RI "void \fBdelta_yolo_class\fP (float *output, float *delta, int index, int class, int classes, int stride, float *avg_cat)"
+.br
+.ti -1c
+.RI "void \fBforward_yolo_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_yolo_layer\fP (const \fBlayer\fP l, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBcorrect_yolo_boxes\fP (\fBdetection\fP *dets, int n, int w, int h, int netw, int neth, int relative)"
+.br
+.ti -1c
+.RI "int \fByolo_num_detections\fP (\fBlayer\fP l, float thresh)"
+.br
+.ti -1c
+.RI "void \fBavg_flipped_yolo\fP (\fBlayer\fP l)"
+.br
+.ti -1c
+.RI "int \fBget_yolo_detections\fP (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int *\fBmap\fP, int relative, \fBdetection\fP *dets)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void avg_flipped_yolo (\fBlayer\fP l)"
+
+.PP
+Definition at line 290 of file yolo_layer\&.c\&.
+.SS "void backward_yolo_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 242 of file yolo_layer\&.c\&.
+.SS "void correct_yolo_boxes (\fBdetection\fP * dets, int n, int w, int h, int netw, int neth, int relative)"
+
+.PP
+Definition at line 247 of file yolo_layer\&.c\&.
+.SS "float delta_yolo_box (\fBbox\fP truth, float * x, float * biases, int n, int index, int i, int j, int lw, int lh, int w, int h, float * delta, float scale, int stride)"
+
+.PP
+Definition at line 93 of file yolo_layer\&.c\&.
+.SS "void delta_yolo_class (float * output, float * delta, int index, int class, int classes, int stride, float * avg_cat)"
+
+.PP
+Definition at line 111 of file yolo_layer\&.c\&.
+.SS "void forward_yolo_layer (const \fBlayer\fP l, \fBnetwork\fP net)"
+
+.PP
+Definition at line 132 of file yolo_layer\&.c\&.
+.SS "\fBbox\fP get_yolo_box (float * x, float * biases, int n, int index, int i, int j, int lw, int lh, int w, int h, int stride)"
+
+.PP
+Definition at line 83 of file yolo_layer\&.c\&.
+.SS "int get_yolo_detections (\fBlayer\fP l, int w, int h, int netw, int neth, float thresh, int * map, int relative, \fBdetection\fP * dets)"
+
+.PP
+Definition at line 316 of file yolo_layer\&.c\&.
+.SS "\fBlayer\fP make_yolo_layer (int batch, int w, int h, int n, int total, int * mask, int classes)"
+
+.PP
+Definition at line 13 of file yolo_layer\&.c\&.
+.SS "void resize_yolo_layer (\fBlayer\fP * l, int w, int h)"
+
+.PP
+Definition at line 63 of file yolo_layer\&.c\&.
+.SS "int yolo_num_detections (\fBlayer\fP l, float thresh)"
+
+.PP
+Definition at line 275 of file yolo_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

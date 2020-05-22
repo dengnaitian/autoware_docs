@@ -1,0 +1,248 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/BehaviorPrediction.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_planner/include/op_planner/BehaviorPrediction.h \- Predict detected vehicles's possible trajectories, these trajectories extracted from the vector map\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <boost/random\&.hpp>\fP
+.br
+\fC#include <boost/math/distributions/normal\&.hpp>\fP
+.br
+\fC#include 'PlannerH\&.h'\fP
+.br
+\fC#include 'op_utility/UtilityH\&.h'\fP
+.br
+\fC#include 'PassiveDecisionMaker\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPlannerHNS::Particle\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::TrajectoryTracker\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::ObjParticles\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::ObjParticles::LLP\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerHNS::BehaviorPrediction\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBPlannerHNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMOTION_POSE_ERROR\fP   0\&.2"
+.br
+.ti -1c
+.RI "#define \fBMOTION_ANGLE_ERROR\fP   0\&.01"
+.br
+.ti -1c
+.RI "#define \fBMOTION_VEL_ERROR\fP   0\&.2"
+.br
+.ti -1c
+.RI "#define \fBMEASURE_POSE_ERROR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBMEASURE_ANGLE_ERROR\fP   0\&.01"
+.br
+.ti -1c
+.RI "#define \fBMEASURE_VEL_ERROR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBMEASURE_IND_ERROR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBPREDICTION_DISTANCE_PERCENTAGE\fP   0\&.25"
+.br
+.ti -1c
+.RI "#define \fBBEH_PARTICLES_NUM\fP   25"
+.br
+.ti -1c
+.RI "#define \fBBEH_MIN_PARTICLE_NUM\fP   0"
+.br
+.ti -1c
+.RI "#define \fBKEEP_PERCENTAGE\fP   0\&.85"
+.br
+.ti -1c
+.RI "#define \fBMAX_PREDICTION_SPEED\fP   10\&.0"
+.br
+.ti -1c
+.RI "#define \fBPOSE_FACTOR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBDIRECTION_FACTOR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBVELOCITY_FACTOR\fP   0\&.2"
+.br
+.ti -1c
+.RI "#define \fBACCELERATE_FACTOR\fP   0\&.1"
+.br
+.ti -1c
+.RI "#define \fBINDICATOR_FACTOR\fP   0\&.5"
+.br
+.ti -1c
+.RI "#define \fBFIXED_PLANNING_DISTANCE\fP   10"
+.br
+.ti -1c
+.RI "#define \fBMIN_PREDICTION_TIME\fP   5"
+.br
+.ti -1c
+.RI "#define \fBUSE_OPEN_PLANNER_MOVE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBACCELERATION_CALC_TIME\fP   0\&.25"
+.br
+.ti -1c
+.RI "#define \fBACCELERATION_DECISION_VALUE\fP   0\&.5"
+.br
+.ti -1c
+.RI "#define \fBENABLE_STOP_BEHAVIOR_GEN\fP   1"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::mt19937 \fBPlannerHNS::ENG\fP"
+.br
+.ti -1c
+.RI "typedef boost::normal_distribution< double > \fBPlannerHNS::NormalDIST\fP"
+.br
+.ti -1c
+.RI "typedef boost::variate_generator< ENG, NormalDIST > \fBPlannerHNS::VariatGEN\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Predict detected vehicles's possible trajectories, these trajectories extracted from the vector map\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Hatem Darweesh 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+Jul 6, 2017 
+.RE
+.PP
+
+.PP
+Definition in file \fBBehaviorPrediction\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ACCELERATE_FACTOR   0\&.1"
+
+.PP
+Definition at line 40 of file BehaviorPrediction\&.h\&.
+.SS "#define ACCELERATION_CALC_TIME   0\&.25"
+
+.PP
+Definition at line 49 of file BehaviorPrediction\&.h\&.
+.SS "#define ACCELERATION_DECISION_VALUE   0\&.5"
+
+.PP
+Definition at line 50 of file BehaviorPrediction\&.h\&.
+.SS "#define BEH_MIN_PARTICLE_NUM   0"
+
+.PP
+Definition at line 32 of file BehaviorPrediction\&.h\&.
+.SS "#define BEH_PARTICLES_NUM   25"
+
+.PP
+Definition at line 31 of file BehaviorPrediction\&.h\&.
+.SS "#define DIRECTION_FACTOR   0\&.1"
+
+.PP
+Definition at line 38 of file BehaviorPrediction\&.h\&.
+.SS "#define ENABLE_STOP_BEHAVIOR_GEN   1"
+
+.PP
+Definition at line 52 of file BehaviorPrediction\&.h\&.
+.SS "#define FIXED_PLANNING_DISTANCE   10"
+
+.PP
+Definition at line 43 of file BehaviorPrediction\&.h\&.
+.SS "#define INDICATOR_FACTOR   0\&.5"
+
+.PP
+Definition at line 41 of file BehaviorPrediction\&.h\&.
+.SS "#define KEEP_PERCENTAGE   0\&.85"
+
+.PP
+Definition at line 33 of file BehaviorPrediction\&.h\&.
+.SS "#define MAX_PREDICTION_SPEED   10\&.0"
+
+.PP
+Definition at line 35 of file BehaviorPrediction\&.h\&.
+.SS "#define MEASURE_ANGLE_ERROR   0\&.01"
+
+.PP
+Definition at line 25 of file BehaviorPrediction\&.h\&.
+.SS "#define MEASURE_IND_ERROR   0\&.1"
+
+.PP
+Definition at line 27 of file BehaviorPrediction\&.h\&.
+.SS "#define MEASURE_POSE_ERROR   0\&.1"
+
+.PP
+Definition at line 24 of file BehaviorPrediction\&.h\&.
+.SS "#define MEASURE_VEL_ERROR   0\&.1"
+
+.PP
+Definition at line 26 of file BehaviorPrediction\&.h\&.
+.SS "#define MIN_PREDICTION_TIME   5"
+
+.PP
+Definition at line 45 of file BehaviorPrediction\&.h\&.
+.SS "#define MOTION_ANGLE_ERROR   0\&.01"
+
+.PP
+Definition at line 22 of file BehaviorPrediction\&.h\&.
+.SS "#define MOTION_POSE_ERROR   0\&.2"
+
+.PP
+Definition at line 21 of file BehaviorPrediction\&.h\&.
+.SS "#define MOTION_VEL_ERROR   0\&.2"
+
+.PP
+Definition at line 23 of file BehaviorPrediction\&.h\&.
+.SS "#define POSE_FACTOR   0\&.1"
+
+.PP
+Definition at line 37 of file BehaviorPrediction\&.h\&.
+.SS "#define PREDICTION_DISTANCE_PERCENTAGE   0\&.25"
+
+.PP
+Definition at line 29 of file BehaviorPrediction\&.h\&.
+.SS "#define USE_OPEN_PLANNER_MOVE   0"
+
+.PP
+Definition at line 46 of file BehaviorPrediction\&.h\&.
+.SS "#define VELOCITY_FACTOR   0\&.2"
+
+.PP
+Definition at line 39 of file BehaviorPrediction\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,82 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_simu/include/op_simu/SimpleTracker.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/common/lib/openplanner/op_simu/include/op_simu/SimpleTracker.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'op_planner/RoadNetwork\&.h'\fP
+.br
+\fC#include 'op_planner/PlanningHelpers\&.h'\fP
+.br
+\fC#include 'opencv2/video/tracking\&.hpp'\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'op_utility/UtilityH\&.h'\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSimulationNS::Kalman1dState\fP"
+.br
+.ti -1c
+.RI "class \fBSimulationNS::kalmanFilter1D\fP"
+.br
+.ti -1c
+.RI "class \fBSimulationNS::KFTrackV\fP"
+.br
+.ti -1c
+.RI "class \fBSimulationNS::InterestCircle\fP"
+.br
+.ti -1c
+.RI "class \fBSimulationNS::CostRecordSet\fP"
+.br
+.ti -1c
+.RI "class \fBSimulationNS::SimpleTracker\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBSimulationNS\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEBUG_TRACKER\fP   0"
+.br
+.ti -1c
+.RI "#define \fBNEVER_GORGET_TIME\fP   \-1000"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSimulationNS::TRACKING_TYPE\fP { \fBSimulationNS::ASSOCIATE_ONLY\fP = 0, \fBSimulationNS::SIMPLE_TRACKER\fP = 1, \fBSimulationNS::CONTOUR_TRACKER\fP = 2 }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEBUG_TRACKER   0"
+
+.PP
+Definition at line 21 of file SimpleTracker\&.h\&.
+.SS "#define NEVER_GORGET_TIME   \-1000"
+
+.PP
+Definition at line 22 of file SimpleTracker\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

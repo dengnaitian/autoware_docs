@@ -1,0 +1,273 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/util/packages/data_preprocessor/scripts/data_preprocessor.py" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/util/packages/data_preprocessor/scripts/data_preprocessor.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBdata_preprocessor\&.Final\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.ParamPanel\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.VarPanel\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.MyDialogParam\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.MyDialogDPM\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.MyDialogCarPedestrian\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.MyDialogLaneStop\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.InfoBarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.Checkboxes\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.BarLabel\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.ColorLabel\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.StrValObj\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.MyApp\fP"
+.br
+.ti -1c
+.RI "class \fBdata_preprocessor\&.DetailDialog\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBdata_preprocessor\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBdata_preprocessor\&.gdic_dialog_type_chk\fP (gdic, name)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.gdic_dialog_name_get\fP (gdic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.file_dialog\fP (parent, tc, path_inf_dic={})"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.button_color_change\fP (btn, v=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.OnButtonColorHdr\fP (event)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.is_btn_null_bgcol\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.button_color_hdr_setup\fP (btn)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.buttons_color_hdr_setup\fP (frm_obj)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.show_modal\fP (dlg)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.load_yaml\fP (filename, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.terminate_children\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.terminate\fP (proc, sigint=False)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.th_start\fP (target, kwargs={})"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.th_end\fP (th, ev)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.que_clear\fP (que)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.append_tc_limit\fP (tc, s, rm_chars=0)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.cut_esc\fP (s)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.change_font_point_by_rate\fP (obj, rate=1\&.0)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.fix_link_color\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.get_tooltip\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.get_tooltips\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_tooltip\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_tooltip_str\fP (obj, s)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_tooltips\fP (obj, dic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.get_tooltip_obj\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.scaled_bitmap\fP (bm, scale)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.sizer_wrap\fP (add_objs, orient=\fBwx\&.VERTICAL\fP, prop=0, flag=0, border=0, parent=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.static_box_sizer\fP (parent, s, orient=\fBwx\&.VERTICAL\fP)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.wx_flag_get\fP (flags)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.msg_path_to_obj_attr\fP (msg, path)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.str_to_rosval\fP (s, type_str, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.str_to_float\fP (s)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_path\fP (tc, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_val\fP (obj, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.enables_set\fP (obj, \fBk\fP, en)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.enables_get\fP (obj, \fBk\fP, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.enables_get_last\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.obj_refresh\fP (obj)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.dic_list_push\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.dic_list_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.dic_list_get\fP (dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.bak_stk_push\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.bak_stk_pop\fP (dic, key)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.bak_stk_set\fP (dic, key, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.attr_getset\fP (obj, name, def_ret)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.dic_getset\fP (dic, key, def_ret)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.lst_append_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.lst_remove_once\fP (lst, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.get_top\fP (lst, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.adjust_num_str\fP (s)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.rtmgr_src_dir\fP ()"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.path_expand_cmd\fP (path)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.eval_if_str\fP (self, v)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.dic_eval_if_str\fP (self, dic, key, def_ret=None)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.prn_dict\fP (dic)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.send_to_proc_manager\fP (order)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_process_nice\fP (proc, value)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_process_cpu_affinity\fP (proc, cpus)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.shutdown_proc_manager\fP ()"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.set_scheduling_policy\fP (proc, policy, priority)"
+.br
+.ti -1c
+.RI "def \fBdata_preprocessor\&.get_cpu_count\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBdata_preprocessor\&.SCHED_OTHER\fP = 0"
+.br
+.ti -1c
+.RI "int \fBdata_preprocessor\&.SCHED_FIFO\fP = 1"
+.br
+.ti -1c
+.RI "int \fBdata_preprocessor\&.SCHED_RR\fP = 2"
+.br
+.ti -1c
+.RI "string \fBdata_preprocessor\&.PROC_MANAGER_SOCK\fP = '/tmp/autoware_proc_manager'"
+.br
+.ti -1c
+.RI "\fBdata_preprocessor\&.btn_null_bgcol\fP = None"
+.br
+.ti -1c
+.RI "\fBdata_preprocessor\&.app\fP = MyApp(0)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

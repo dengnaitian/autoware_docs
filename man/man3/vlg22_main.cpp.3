@@ -1,0 +1,100 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/baumer/nodes/vlg22/src/vlg22_main.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/baumer/nodes/vlg22/src/vlg22_main.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <bgapidef\&.hpp>\fP
+.br
+\fC#include 'bgapi\&.hpp'\fP
+.br
+\fC#include 'bgapi_init\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbaumer_startup\fP (std::vector< BGAPI::System * > &ppSystem, std::vector< BGAPI::System * >::iterator &systemIter, BGAPI_RESULT &res, std::vector< BGAPI::Camera * > &cameraPointers, std::vector< BGAPI::Image * > &imagePointers, int &camera_num, int &system_count, BGAPI::Image *pImage)"
+.br
+.ti -1c
+.RI "float \fBget_image_brightness_percent\fP (cv::Mat &in_image)"
+.br
+.ti -1c
+.RI "void \fBbaumer_change_exposure\fP (BGAPI::Camera *camera_pointer, int exposure)"
+.br
+.ti -1c
+.RI "void \fBget_ros_params\fP (ros::NodeHandle &node_handle, int &fps, double &scale, double &brightness)"
+.br
+.ti -1c
+.RI "void \fBros_init_publishers\fP (ros::NodeHandle node_handle, ros::Publisher publishers[], int camera_num)"
+.br
+.ti -1c
+.RI "sensor_msgs::Image \fBros_prepare_image\fP (int count, cv::Mat \fBimage\fP, size_t camera_id)"
+.br
+.ti -1c
+.RI "void \fBadjust_exposure\fP (BGAPI::Camera *camera_pointer, cv::Mat &bayer_image, float &current_brightness, float threshold_brightness, int &prev_exposure, int &exposure, int exposure_delta)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void adjust_exposure (BGAPI::Camera * camera_pointer, cv::Mat & bayer_image, float & current_brightness, float threshold_brightness, int & prev_exposure, int & exposure, int exposure_delta)"
+
+.PP
+Definition at line 252 of file vlg22_main\&.cpp\&.
+.SS "void baumer_change_exposure (BGAPI::Camera * camera_pointer, int exposure)"
+Changes, if possible, the camera time exposure\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcamera_pointer\fP Valid pointer of the camera to change\&. 
+.br
+\fIexposure\fP New exposure 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file vlg22_main\&.cpp\&.
+.SS "bool baumer_startup (std::vector< BGAPI::System * > & ppSystem, std::vector< BGAPI::System * >::iterator & systemIter, BGAPI_RESULT & res, std::vector< BGAPI::Camera * > & cameraPointers, std::vector< BGAPI::Image * > & imagePointers, int & camera_num, int & system_count, BGAPI::Image * pImage)"
+
+.PP
+Definition at line 9 of file vlg22_main\&.cpp\&.
+.SS "float get_image_brightness_percent (cv::Mat & in_image)"
+brightness in this program is defined as the ratio between the pixels with higher values over the lowest ones\&. Ratio is calculated splitting the histogram in half, and dividing the number of pixels in the seconf (higher) part of the histogram (brightness higher than 128) over the total number of pixels\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin_image\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 81 of file vlg22_main\&.cpp\&.
+.SS "void get_ros_params (ros::NodeHandle & node_handle, int & fps, double & scale, double & brightness)"
+
+.PP
+Definition at line 175 of file vlg22_main\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 284 of file vlg22_main\&.cpp\&.
+.SS "void ros_init_publishers (ros::NodeHandle node_handle, ros::Publisher publishers[], int camera_num)"
+
+.PP
+Definition at line 216 of file vlg22_main\&.cpp\&.
+.SS "sensor_msgs::Image ros_prepare_image (int count, cv::Mat image, size_t camera_id)"
+
+.PP
+Definition at line 229 of file vlg22_main\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

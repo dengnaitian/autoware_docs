@@ -1,0 +1,268 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/image.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/image.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <float\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'box\&.h'\fP
+.br
+\fC#include 'darknet\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBget_color\fP (int \fBc\fP, int x, int max)"
+.br
+.ti -1c
+.RI "void \fBdraw_box\fP (\fBimage\fP a, int x1, int y1, int x2, int y2, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBdraw_bbox\fP (\fBimage\fP a, \fBbox\fP bbox, int w, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBwrite_label\fP (\fBimage\fP a, int r, int \fBc\fP, \fBimage\fP *characters, char *string, float *rgb)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBimage_distance\fP (\fBimage\fP a, \fBimage\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBscale_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrotate_crop_image\fP (\fBimage\fP im, float rad, float s, int w, int h, float dx, float dy, float aspect)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrandom_crop_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrandom_augment_image\fP (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+.br
+.ti -1c
+.RI "\fBaugment_args\fP \fBrandom_augment_args\fP (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBletterbox_image_into\fP (\fBimage\fP im, int w, int h, \fBimage\fP boxed)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_max\fP (\fBimage\fP im, int max)"
+.br
+.ti -1c
+.RI "void \fBtranslate_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "void \fBembed_image\fP (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+.br
+.ti -1c
+.RI "void \fBplace_image\fP (\fBimage\fP im, int w, int h, int dx, int dy, \fBimage\fP canvas)"
+.br
+.ti -1c
+.RI "void \fBsaturate_image\fP (\fBimage\fP im, float sat)"
+.br
+.ti -1c
+.RI "void \fBexposure_image\fP (\fBimage\fP im, float sat)"
+.br
+.ti -1c
+.RI "void \fBdistort_image\fP (\fBimage\fP im, float hue, float sat, float val)"
+.br
+.ti -1c
+.RI "void \fBsaturate_exposure_image\fP (\fBimage\fP im, float sat, float exposure)"
+.br
+.ti -1c
+.RI "void \fBrgb_to_hsv\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBhsv_to_rgb\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fByuv_to_rgb\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBrgb_to_yuv\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_image_layers\fP (\fBimage\fP source, int border)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_images_horz\fP (\fBimage\fP *ims, int n)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_images_vert\fP (\fBimage\fP *ims, int n)"
+.br
+.ti -1c
+.RI "void \fBshow_image_normalized\fP (\fBimage\fP im, const char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_images\fP (\fBimage\fP *ims, int n, char *window)"
+.br
+.ti -1c
+.RI "void \fBshow_image_layers\fP (\fBimage\fP \fBp\fP, char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_image_collapsed\fP (\fBimage\fP \fBp\fP, char *name)"
+.br
+.ti -1c
+.RI "void \fBprint_image\fP (\fBimage\fP m)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_empty_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fBcopy_image_into\fP (\fBimage\fP src, \fBimage\fP dest)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_image_layer\fP (\fBimage\fP m, int l)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBimage\fP collapse_image_layers (\fBimage\fP source, int border)"
+
+.PP
+Definition at line 441 of file image\&.c\&.
+.SS "\fBimage\fP collapse_images_horz (\fBimage\fP * ims, int n)"
+
+.PP
+Definition at line 1548 of file image\&.c\&.
+.SS "\fBimage\fP collapse_images_vert (\fBimage\fP * ims, int n)"
+
+.PP
+Definition at line 1513 of file image\&.c\&.
+.SS "void copy_image_into (\fBimage\fP src, \fBimage\fP dest)"
+
+.PP
+Definition at line 514 of file image\&.c\&.
+.SS "void distort_image (\fBimage\fP im, float hue, float sat, float val)"
+
+.PP
+Definition at line 1315 of file image\&.c\&.
+.SS "void draw_bbox (\fBimage\fP a, \fBbox\fP bbox, int w, float r, float g, float b)"
+
+.PP
+Definition at line 210 of file image\&.c\&.
+.SS "void draw_box (\fBimage\fP a, int x1, int y1, int x2, int y2, float r, float g, float b)"
+
+.PP
+Definition at line 166 of file image\&.c\&.
+.SS "void embed_image (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+
+.PP
+Definition at line 428 of file image\&.c\&.
+.SS "void exposure_image (\fBimage\fP im, float sat)"
+
+.PP
+Definition at line 1307 of file image\&.c\&.
+.SS "float get_color (int c, int x, int max)"
+
+.PP
+Definition at line 17 of file image\&.c\&.
+.SS "\fBimage\fP get_image_layer (\fBimage\fP m, int l)"
+
+.PP
+Definition at line 1487 of file image\&.c\&.
+.SS "void hsv_to_rgb (\fBimage\fP im)"
+
+.PP
+Definition at line 1149 of file image\&.c\&.
+.SS "\fBimage\fP image_distance (\fBimage\fP a, \fBimage\fP b)"
+
+.PP
+Definition at line 365 of file image\&.c\&.
+.SS "void letterbox_image_into (\fBimage\fP im, int w, int h, \fBimage\fP boxed)"
+
+.PP
+Definition at line 944 of file image\&.c\&.
+.SS "\fBimage\fP make_empty_image (int w, int h, int c)"
+
+.PP
+Definition at line 742 of file image\&.c\&.
+.SS "void place_image (\fBimage\fP im, int w, int h, int dx, int dy, \fBimage\fP canvas)"
+
+.PP
+Definition at line 777 of file image\&.c\&.
+.SS "void print_image (\fBimage\fP m)"
+
+.PP
+Definition at line 1496 of file image\&.c\&.
+.SS "\fBaugment_args\fP random_augment_args (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+
+.PP
+Definition at line 1021 of file image\&.c\&.
+.SS "\fBimage\fP random_augment_image (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+
+.PP
+Definition at line 1048 of file image\&.c\&.
+.SS "\fBimage\fP random_crop_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 1013 of file image\&.c\&.
+.SS "\fBimage\fP resize_max (\fBimage\fP im, int max)"
+
+.PP
+Definition at line 981 of file image\&.c\&.
+.SS "void rgb_to_hsv (\fBimage\fP im)"
+
+.PP
+Definition at line 1112 of file image\&.c\&.
+.SS "void rgb_to_yuv (\fBimage\fP im)"
+
+.PP
+Definition at line 1088 of file image\&.c\&.
+.SS "\fBimage\fP rotate_crop_image (\fBimage\fP im, float rad, float s, int w, int h, float dx, float dy, float aspect)"
+
+.PP
+Definition at line 801 of file image\&.c\&.
+.SS "void saturate_exposure_image (\fBimage\fP im, float sat, float exposure)"
+
+.PP
+Definition at line 1338 of file image\&.c\&.
+.SS "void saturate_image (\fBimage\fP im, float sat)"
+
+.PP
+Definition at line 1286 of file image\&.c\&.
+.SS "void scale_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 851 of file image\&.c\&.
+.SS "void show_image_collapsed (\fBimage\fP p, char * name)"
+
+.PP
+Definition at line 735 of file image\&.c\&.
+.SS "void show_image_layers (\fBimage\fP p, char * name)"
+
+.PP
+Definition at line 723 of file image\&.c\&.
+.SS "void show_image_normalized (\fBimage\fP im, const char * name)"
+
+.PP
+Definition at line 1584 of file image\&.c\&.
+.SS "void show_images (\fBimage\fP * ims, int n, char * window)"
+
+.PP
+Definition at line 1592 of file image\&.c\&.
+.SS "void translate_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 845 of file image\&.c\&.
+.SS "void write_label (\fBimage\fP a, int r, int c, \fBimage\fP * characters, char * string, float * rgb)"
+
+.SS "void yuv_to_rgb (\fBimage\fP im)"
+
+.PP
+Definition at line 1065 of file image\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

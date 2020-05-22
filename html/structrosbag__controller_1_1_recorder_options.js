@@ -1,0 +1,27 @@
+var structrosbag__controller_1_1_recorder_options =
+[
+    [ "RecorderOptions", "structrosbag__controller_1_1_recorder_options.html#a4c059909edd9288b4cb737dbf89afa12", null ],
+    [ "append_date", "structrosbag__controller_1_1_recorder_options.html#a056f5dbe62a49ed888ad1c1866769c39", null ],
+    [ "buffer_size", "structrosbag__controller_1_1_recorder_options.html#ab505caa1eba09681fa411144d3dc3658", null ],
+    [ "chunk_size", "structrosbag__controller_1_1_recorder_options.html#ada3f984fe0ebafc9a20ecc8473a51cb7", null ],
+    [ "compression", "structrosbag__controller_1_1_recorder_options.html#a7b895bbd28767eb16f4ad9cc58893681", null ],
+    [ "do_exclude", "structrosbag__controller_1_1_recorder_options.html#ae71f159c86f219b10110b941b7e55ece", null ],
+    [ "exclude_regex", "structrosbag__controller_1_1_recorder_options.html#a7ac4916e97c0670058dd83e3b2d6c72b", null ],
+    [ "limit", "structrosbag__controller_1_1_recorder_options.html#a43ef9c1af3a8c34c79e3b0ad5dc63b00", null ],
+    [ "max_duration", "structrosbag__controller_1_1_recorder_options.html#a9974c40027ee4eee35b1d3023471d3b7", null ],
+    [ "max_size", "structrosbag__controller_1_1_recorder_options.html#ad662e6ca689255edcca1d9d3413904d8", null ],
+    [ "max_splits", "structrosbag__controller_1_1_recorder_options.html#a6cd4eb4f280eb3a4a8aadf2a2de7ecce", null ],
+    [ "min_space", "structrosbag__controller_1_1_recorder_options.html#a365b1e8b4833233d4286e8c83a9df539", null ],
+    [ "min_space_str", "structrosbag__controller_1_1_recorder_options.html#ae031ce0cf81b9a07038a76fd0e848481", null ],
+    [ "name", "structrosbag__controller_1_1_recorder_options.html#a3d8a13195172b9231164a234d5253ad8", null ],
+    [ "node", "structrosbag__controller_1_1_recorder_options.html#a8a2110826a66e6ab46b3e23b8b83d15d", null ],
+    [ "prefix", "structrosbag__controller_1_1_recorder_options.html#a4432d6b3b6fb7324982ea0d434d550ac", null ],
+    [ "quiet", "structrosbag__controller_1_1_recorder_options.html#a7660bebb693c46e5becd4d3e6c9f3b7c", null ],
+    [ "record_all", "structrosbag__controller_1_1_recorder_options.html#ad47189337baf5c3fef54bc64ca12eb63", null ],
+    [ "regex", "structrosbag__controller_1_1_recorder_options.html#a50f78283684950249a451f3b043c6076", null ],
+    [ "snapshot", "structrosbag__controller_1_1_recorder_options.html#aa7efc5c2f71f8c4f7bcf35c0844d0bed", null ],
+    [ "split", "structrosbag__controller_1_1_recorder_options.html#ad4120839541b4bb7db6e6decc90d81e9", null ],
+    [ "topics", "structrosbag__controller_1_1_recorder_options.html#a047710a471f30d7392cae68811d30e7b", null ],
+    [ "trigger", "structrosbag__controller_1_1_recorder_options.html#aa320cd92feea8cb78044a260d2a72a18", null ],
+    [ "verbose", "structrosbag__controller_1_1_recorder_options.html#a06a7060e3a7debf4a0806fe6b78a660e", null ]
+];

@@ -1,0 +1,93 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/include/microstrain_driver/microstrain.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/include/microstrain_driver/microstrain.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+\fC#include 'mip_gx4_imu\&.h'\fP
+.br
+\fC#include 'mip_gx4_45\&.h'\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'ros/ros\&.h'\fP
+.br
+\fC#include 'sensor_msgs/NavSatFix\&.h'\fP
+.br
+\fC#include 'sensor_msgs/Imu\&.h'\fP
+.br
+\fC#include 'geometry_msgs/PoseWithCovarianceStamped\&.h'\fP
+.br
+\fC#include 'nav_msgs/Odometry\&.h'\fP
+.br
+\fC#include 'std_msgs/Int16MultiArray\&.h'\fP
+.br
+\fC#include 'std_msgs/MultiArrayLayout\&.h'\fP
+.br
+\fC#include 'std_srvs/Empty\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMIP_SDK_GX4_45_IMU_STANDARD_MODE\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBMIP_SDK_GX4_45_IMU_DIRECT_MODE\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBNUM_COMMAND_LINE_ARGUMENTS\fP   3"
+.br
+.ti -1c
+.RI "#define \fBDEFAULT_PACKET_TIMEOUT_MS\fP   1000"
+.br
+.ti -1c
+.RI "#define \fBSleep\fP(x)   usleep(x*1000\&.0)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULT_PACKET_TIMEOUT_MS   1000"
+
+.PP
+Definition at line 56 of file microstrain\&.h\&.
+.SS "#define MIP_SDK_GX4_45_IMU_DIRECT_MODE   0x02"
+
+.PP
+Definition at line 52 of file microstrain\&.h\&.
+.SS "#define MIP_SDK_GX4_45_IMU_STANDARD_MODE   0x01"
+ROS node
+.PP
+/*
+.PP
+Copyright (c) 2017, Brian Bingham All rights reserved
+.PP
+This file is part of the microstrain_3dm_gx5_45 package\&.
+.PP
+microstrain_3dm_gx5_45 is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version\&.
+.PP
+microstrain_3dm_gx5_45 is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with Foobar\&. If not, see http://www.gnu.org/licenses/\&. 
+.PP
+Definition at line 51 of file microstrain\&.h\&.
+.SS "#define NUM_COMMAND_LINE_ARGUMENTS   3"
+
+.PP
+Definition at line 54 of file microstrain\&.h\&.
+.SS "#define Sleep(x)   usleep(x*1000\&.0)"
+
+.PP
+Definition at line 59 of file microstrain\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,126 @@
+.TH "adxl345::Imu" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+adxl345::Imu \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <adxl345\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImu\fP ()"
+.br
+.ti -1c
+.RI "char \fBread_address\fP (char address)"
+.br
+.ti -1c
+.RI "int16_t \fBread_short\fP (char address)"
+.br
+.ti -1c
+.RI "char \fBwrite_address\fP (char address, char \fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBopen_device\fP (const std::string device)"
+.br
+.ti -1c
+.RI "void \fBclose_device\fP ()"
+.br
+.ti -1c
+.RI "int \fBget_product_id\fP (unsigned char &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBget_seq_count\fP (int16_t &\fBdata\fP)"
+.br
+.ti -1c
+.RI "int \fBupdate\fP (void)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBfd_\fP"
+.br
+.RI "\fI\fBFile\fP descripter for USB-ISS\&. \fP"
+.ti -1c
+.RI "struct termios \fBdefaults_\fP"
+.br
+.RI "\fISaved terminal config\&. \fP"
+.ti -1c
+.RI "double \fBaccl\fP [3]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file adxl345\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "adxl345::Imu::Imu ()"
+
+.PP
+Definition at line 45 of file adxl345\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void adxl345::Imu::close_device ()"
+
+.PP
+Definition at line 100 of file adxl345\&.cpp\&.
+.SS "int adxl345::Imu::get_product_id (unsigned char & data)"
+
+.PP
+\fBReturns:\fP
+.RS 4
+0: Success, 1: Failed 
+.RE
+.PP
+
+.PP
+Definition at line 112 of file adxl345\&.cpp\&.
+.SS "int adxl345::Imu::get_seq_count (int16_t & data)"
+
+.SS "int adxl345::Imu::open_device (const std::string device)"
+
+.PP
+Definition at line 50 of file adxl345\&.cpp\&.
+.SS "char adxl345::Imu::read_address (char address)"
+
+.PP
+Definition at line 118 of file adxl345\&.cpp\&.
+.SS "int16_t adxl345::Imu::read_short (char address)"
+
+.PP
+Definition at line 140 of file adxl345\&.cpp\&.
+.SS "int adxl345::Imu::update (void)"
+
+.PP
+Definition at line 187 of file adxl345\&.cpp\&.
+.SS "char adxl345::Imu::write_address (char address, char data)"
+
+.PP
+Definition at line 165 of file adxl345\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double adxl345::Imu::accl[3]"
+
+.PP
+Definition at line 49 of file adxl345\&.h\&.
+.SS "struct termios adxl345::Imu::defaults_"
+
+.PP
+Saved terminal config\&. 
+.PP
+Definition at line 47 of file adxl345\&.h\&.
+.SS "int adxl345::Imu::fd_"
+
+.PP
+\fBFile\fP descripter for USB-ISS\&. 
+.PP
+Definition at line 45 of file adxl345\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

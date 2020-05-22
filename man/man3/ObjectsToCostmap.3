@@ -1,0 +1,77 @@
+.TH "ObjectsToCostmap" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ObjectsToCostmap \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objects_to_costmap\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectsToCostmap\fP ()"
+.br
+.ti -1c
+.RI "\fB~ObjectsToCostmap\fP ()"
+.br
+.ti -1c
+.RI "grid_map::Matrix \fBmakeCostmapFromObjects\fP (const grid_map::GridMap &costmap, const double expand_polygon_size, const double size_of_expansion_kernel, const autoware_msgs::DetectedObjectArray::ConstPtr &in_objects, const bool use_objects_convex_hull)"
+.br
+.RI "\fIcalculate cost from DetectedObjectArray \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTestClass\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file objects_to_costmap\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ObjectsToCostmap::ObjectsToCostmap ()"
+
+.PP
+Definition at line 41 of file objects_to_costmap\&.cpp\&.
+.SS "ObjectsToCostmap::~ObjectsToCostmap ()"
+
+.PP
+Definition at line 49 of file objects_to_costmap\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "grid_map::Matrix ObjectsToCostmap::makeCostmapFromObjects (const grid_map::GridMap & costmap, const double expand_polygon_size, const double size_of_expansion_kernel, const autoware_msgs::DetectedObjectArray::ConstPtr & in_objects, const bool use_objects_convex_hull)"
+
+.PP
+calculate cost from DetectedObjectArray 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcostmap\fP initialized gridmap 
+.br
+\fIexpand_polygon_size\fP expand object's costmap polygon 
+.br
+\fIsize_of_expansion_kernel\fP kernel size for blurring cost 
+.br
+\fIin_objects\fP subscribed DetectedObjectArray 
+.br
+\fIcalculated\fP cost in grid_map::Matrix format 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file objects_to_costmap\&.cpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBTestClass\fP\fC [friend]\fP"
+
+.PP
+Definition at line 59 of file objects_to_costmap\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

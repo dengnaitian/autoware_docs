@@ -1,0 +1,58 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/stanley_tracker/stanley_tracker_viz.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/nodes/stanley_tracker/stanley_tracker_viz.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <visualization_msgs/Marker\&.h>\fP
+.br
+\fC#include <memory>\fP
+.br
+\fC#include 'waypoint_follower/libwaypoint_follower\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayFrontWheelPosition\fP (\fBgeometry_msgs::Point\fP position)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayNextTarget\fP (\fBgeometry_msgs::Point\fP position)"
+.br
+.ti -1c
+.RI "visualization_msgs::Marker \fBdisplayCrossTrackError\fP (\fBgeometry_msgs::Point\fP current_pose, double crossTrackError)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "visualization_msgs::Marker displayCrossTrackError (\fBgeometry_msgs::Point\fP current_pose, double crossTrackError)"
+
+.PP
+Definition at line 52 of file stanley_tracker_viz\&.cpp\&.
+.SS "visualization_msgs::Marker displayFrontWheelPosition (\fBgeometry_msgs::Point\fP position)"
+
+.PP
+\fBAuthor:\fP
+.RS 4
+hui huang  hui.huang1@siat.ac.cn 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file stanley_tracker_viz\&.cpp\&.
+.SS "visualization_msgs::Marker displayNextTarget (\fBgeometry_msgs::Point\fP position)"
+
+.PP
+Definition at line 45 of file pure_pursuit_viz\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

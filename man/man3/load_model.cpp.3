@@ -1,0 +1,103 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/load_model.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/load_model.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include 'MODEL_info\&.h'\fP
+.br
+\fC#include 'common\&.hpp'\fP
+.br
+\fC#include 'for_use_GPU\&.h'\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+\fC#include 'switch_release\&.h'\fP
+.br
+\fC#include 'load_model\&.hpp'\fP
+.br
+\fC#include <cuda_util\&.hpp>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFLOAT_SCAN_FMT\fP   '%f,'"
+.br
+.ti -1c
+.RI "#define \fBFLOAT_SCAN_FMT2\fP   \fBFLOAT_SCAN_FMT\fP \fBFLOAT_SCAN_FMT\fP"
+.br
+.ti -1c
+.RI "#define \fBFLOAT_SCAN_FMT3\fP   \fBFLOAT_SCAN_FMT2\fP \fBFLOAT_SCAN_FMT\fP"
+.br
+.ti -1c
+.RI "#define \fBFLOAT_SCAN_FMT4\fP   \fBFLOAT_SCAN_FMT3\fP \fBFLOAT_SCAN_FMT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGPUModel\fP * \fBdpm_ttic_gpu_load_model\fP (\fBFLOAT\fP ratio, const char *com_csv, const char *root_csv, const char *part_csv)"
+.br
+.ti -1c
+.RI "void \fBdpm_ttic_gpu_free_model\fP (\fBGPUModel\fP *MO)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBsum_size_def_array\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FLOAT_SCAN_FMT   '%f,'"
+
+.PP
+Definition at line 25 of file load_model\&.cpp\&.
+.SS "#define FLOAT_SCAN_FMT2   \fBFLOAT_SCAN_FMT\fP \fBFLOAT_SCAN_FMT\fP"
+
+.PP
+Definition at line 30 of file load_model\&.cpp\&.
+.SS "#define FLOAT_SCAN_FMT3   \fBFLOAT_SCAN_FMT2\fP \fBFLOAT_SCAN_FMT\fP"
+
+.PP
+Definition at line 31 of file load_model\&.cpp\&.
+.SS "#define FLOAT_SCAN_FMT4   \fBFLOAT_SCAN_FMT3\fP \fBFLOAT_SCAN_FMT\fP"
+
+.PP
+Definition at line 32 of file load_model\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void dpm_ttic_gpu_free_model (\fBGPUModel\fP * MO)"
+
+.PP
+Definition at line 396 of file load_model\&.cpp\&.
+.SS "\fBGPUModel\fP* dpm_ttic_gpu_load_model (\fBFLOAT\fP ratio, const char * com_csv, const char * root_csv, const char * part_csv)"
+
+.PP
+Definition at line 377 of file load_model\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int sum_size_def_array"
+
+.PP
+Definition at line 34 of file load_model\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

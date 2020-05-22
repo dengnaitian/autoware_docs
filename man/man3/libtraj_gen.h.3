@@ -1,0 +1,361 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/include/libtraj_gen.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/lattice_planner/include/libtraj_gen.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "union \fBState\fP"
+.br
+.ti -1c
+.RI "union \fBParameters\fP"
+.br
+.ti -1c
+.RI "union \fBSpline\fP"
+.br
+.ti -1c
+.RI "union \fBCommand\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUSE_HEURISTIC_INIT\fP"
+.br
+.ti -1c
+.RI "#define \fBCUBIC_STABLE\fP"
+.br
+.ti -1c
+.RI "#define \fBTRUE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBFALSE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBkmax\fP   (0\&.1900)"
+.br
+.ti -1c
+.RI "#define \fBkmin\fP   (\-0\&.1900)"
+.br
+.ti -1c
+.RI "#define \fBdkmax\fP   (0\&.1021)"
+.br
+.ti -1c
+.RI "#define \fBdkmin\fP   (\-0\&.1021)"
+.br
+.ti -1c
+.RI "#define \fBdvmax\fP   (2\&.000)"
+.br
+.ti -1c
+.RI "#define \fBdvmin\fP   (\-6\&.000)"
+.br
+.ti -1c
+.RI "#define \fBtdelay\fP   (0\&.0800)"
+.br
+.ti -1c
+.RI "#define \fBascl\fP   (0\&.1681)"
+.br
+.ti -1c
+.RI "#define \fBbscl\fP   (\-0\&.0049)"
+.br
+.ti -1c
+.RI "#define \fBvscl\fP   (4\&.000)"
+.br
+.ti -1c
+.RI "#define \fBkvmax\fP   (0\&.1485)"
+.br
+.ti -1c
+.RI "#define \fBsf\fP   (1\&.000)"
+.br
+.ti -1c
+.RI "#define \fBcrosstrack_e\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBinline_e\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBheading_e\fP   (0\&.1)"
+.br
+.ti -1c
+.RI "#define \fBcurvature_e\fP   (0\&.005)"
+.br
+.ti -1c
+.RI "#define \fBgeneral_e\fP   (0\&.05)"
+.br
+.ti -1c
+.RI "#define \fBh_sx\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBh_sy\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBh_theta\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBh_k\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBh_global\fP   (0\&.001)"
+.br
+.ti -1c
+.RI "#define \fBstep_size\fP   (0\&.0001)"
+.br
+.ti -1c
+.RI "#define \fBplot_step_size\fP   (0\&.1)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "union \fBSpline\fP \fBinitParams\fP (union \fBState\fP \fBveh\fP, union \fBState\fP goal)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBspeedControlLogic\fP (union \fBState\fP veh_next)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBresponseToControlInputs\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, double dt)"
+.br
+.ti -1c
+.RI "double \fBgetCurvatureCommand\fP (union \fBSpline\fP \fBcurvature\fP, double dt, double v, double \fBt\fP)"
+.br
+.ti -1c
+.RI "double \fBgetVelocityCommand\fP (double v_goal, double v)"
+.br
+.RI "\fIWill update to include ramp\&.\&.\&. \fP"
+.ti -1c
+.RI "union \fBState\fP \fBmotionModel\fP (union \fBState\fP \fBveh\fP, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, double dt, double horizon, int flag)"
+.br
+.ti -1c
+.RI "bool \fBcheckConvergence\fP (union \fBState\fP veh_next, union \fBState\fP goal)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBpDerivEstimate\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, int p_id, double h, double dt, double horizon, int stateIndex)"
+.br
+.ti -1c
+.RI "union \fBSpline\fP \fBgenerateCorrection\fP (union \fBState\fP \fBveh\fP, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP \fBcurvature\fP, double dt, double horizon)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBnextState\fP (union \fBState\fP \fBveh\fP, union \fBSpline\fP \fBcurvature\fP, double vdes, double dt, double elapsedTime)"
+.br
+.ti -1c
+.RI "union \fBSpline\fP \fBtrajectoryGenerator\fP (double sx, double sy, double theta, double v, double kappa)"
+.br
+.ti -1c
+.RI "union \fBState\fP \fBgenLineStrip\fP (union \fBState\fP \fBveh\fP, union \fBSpline\fP \fBcurvature\fP, double vdes, double \fBt\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "ofstream \fBfmm_sx\fP"
+.br
+.ti -1c
+.RI "ofstream \fBfmm_sy\fP"
+.br
+.ti -1c
+.RI "ofstream \fBfmm_v\fP"
+.br
+.ti -1c
+.RI "ofstream \fBfmm_theta\fP"
+.br
+.ti -1c
+.RI "ofstream \fBfmm_kappa\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ascl   (0\&.1681)"
+
+.PP
+Definition at line 78 of file libtraj_gen\&.h\&.
+.SS "#define bscl   (\-0\&.0049)"
+
+.PP
+Definition at line 80 of file libtraj_gen\&.h\&.
+.SS "#define crosstrack_e   (0\&.001)"
+
+.PP
+Definition at line 91 of file libtraj_gen\&.h\&.
+.SS "#define CUBIC_STABLE"
+
+.PP
+Definition at line 49 of file libtraj_gen\&.h\&.
+.SS "#define curvature_e   (0\&.005)"
+
+.PP
+Definition at line 97 of file libtraj_gen\&.h\&.
+.SS "#define dkmax   (0\&.1021)"
+
+.PP
+Definition at line 67 of file libtraj_gen\&.h\&.
+.SS "#define dkmin   (\-0\&.1021)"
+
+.PP
+Definition at line 69 of file libtraj_gen\&.h\&.
+.SS "#define dvmax   (2\&.000)"
+
+.PP
+Definition at line 71 of file libtraj_gen\&.h\&.
+.SS "#define dvmin   (\-6\&.000)"
+
+.PP
+Definition at line 73 of file libtraj_gen\&.h\&.
+.SS "#define FALSE   0"
+
+.PP
+Definition at line 58 of file libtraj_gen\&.h\&.
+.SS "#define general_e   (0\&.05)"
+
+.PP
+Definition at line 99 of file libtraj_gen\&.h\&.
+.SS "#define h_global   (0\&.001)"
+
+.PP
+Definition at line 112 of file libtraj_gen\&.h\&.
+.SS "#define h_k   (0\&.001)"
+
+.PP
+Definition at line 110 of file libtraj_gen\&.h\&.
+.SS "#define h_sx   (0\&.001)"
+
+.PP
+Definition at line 104 of file libtraj_gen\&.h\&.
+.SS "#define h_sy   (0\&.001)"
+
+.PP
+Definition at line 106 of file libtraj_gen\&.h\&.
+.SS "#define h_theta   (0\&.001)"
+
+.PP
+Definition at line 108 of file libtraj_gen\&.h\&.
+.SS "#define heading_e   (0\&.1)"
+
+.PP
+Definition at line 95 of file libtraj_gen\&.h\&.
+.SS "#define inline_e   (0\&.001)"
+
+.PP
+Definition at line 93 of file libtraj_gen\&.h\&.
+.SS "#define kmax   (0\&.1900)"
+
+.PP
+Definition at line 63 of file libtraj_gen\&.h\&.
+.SS "#define kmin   (\-0\&.1900)"
+
+.PP
+Definition at line 65 of file libtraj_gen\&.h\&.
+.SS "#define kvmax   (0\&.1485)"
+
+.PP
+Definition at line 84 of file libtraj_gen\&.h\&.
+.SS "#define plot_step_size   (0\&.1)"
+
+.PP
+Definition at line 118 of file libtraj_gen\&.h\&.
+.SS "#define sf   (1\&.000)"
+
+.PP
+Definition at line 86 of file libtraj_gen\&.h\&.
+.SS "#define step_size   (0\&.0001)"
+
+.PP
+Definition at line 116 of file libtraj_gen\&.h\&.
+.SS "#define tdelay   (0\&.0800)"
+
+.PP
+Definition at line 75 of file libtraj_gen\&.h\&.
+.SS "#define TRUE   1"
+
+.PP
+Definition at line 57 of file libtraj_gen\&.h\&.
+.SS "#define USE_HEURISTIC_INIT"
+
+.PP
+Definition at line 48 of file libtraj_gen\&.h\&.
+.SS "#define vscl   (4\&.000)"
+
+.PP
+Definition at line 82 of file libtraj_gen\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "bool checkConvergence (union \fBState\fP veh_next, union \fBState\fP goal)"
+
+.PP
+Definition at line 417 of file libtraj_gen\&.cpp\&.
+.SS "union \fBSpline\fP generateCorrection (union \fBState\fP veh, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP curvature, double dt, double horizon)"
+
+.PP
+Definition at line 521 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP genLineStrip (union \fBState\fP veh, union \fBSpline\fP curvature, double vdes, double t)"
+
+.PP
+Definition at line 671 of file libtraj_gen\&.cpp\&.
+.SS "double getCurvatureCommand (union \fBSpline\fP curvature, double dt, double v, double t)"
+
+.PP
+Definition at line 244 of file libtraj_gen\&.cpp\&.
+.SS "double getVelocityCommand (double v_goal, double v)"
+
+.PP
+Will update to include ramp\&.\&.\&. 
+.PP
+Definition at line 305 of file libtraj_gen\&.cpp\&.
+.SS "union \fBSpline\fP initParams (union \fBState\fP veh, union \fBState\fP goal)"
+
+.PP
+Definition at line 87 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP motionModel (union \fBState\fP veh, union \fBState\fP goal, union \fBSpline\fP curvature, double dt, double horizon, int flag)"
+
+.PP
+Definition at line 321 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP nextState (union \fBState\fP veh, union \fBSpline\fP curvature, double vdes, double dt, double elapsedTime)"
+
+.PP
+Definition at line 601 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP pDerivEstimate (union \fBState\fP veh, union \fBState\fP veh_next, union \fBState\fP goal, union \fBSpline\fP curvature, int p_id, double h, double dt, double horizon, int stateIndex)"
+
+.PP
+Definition at line 467 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP responseToControlInputs (union \fBState\fP veh, union \fBState\fP veh_next, double dt)"
+
+.PP
+Definition at line 194 of file libtraj_gen\&.cpp\&.
+.SS "union \fBState\fP speedControlLogic (union \fBState\fP veh_next)"
+
+.PP
+Definition at line 158 of file libtraj_gen\&.cpp\&.
+.SS "union \fBSpline\fP trajectoryGenerator (double sx, double sy, double theta, double v, double kappa)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "ofstream fmm_kappa"
+
+.PP
+Definition at line 129 of file libtraj_gen\&.h\&.
+.SS "ofstream fmm_sx"
+
+.PP
+Definition at line 125 of file libtraj_gen\&.h\&.
+.SS "ofstream fmm_sy"
+
+.PP
+Definition at line 126 of file libtraj_gen\&.h\&.
+.SS "ofstream fmm_theta"
+
+.PP
+Definition at line 128 of file libtraj_gen\&.h\&.
+.SS "ofstream fmm_v"
+
+.PP
+Definition at line 127 of file libtraj_gen\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

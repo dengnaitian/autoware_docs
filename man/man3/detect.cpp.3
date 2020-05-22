@@ -1,0 +1,66 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/detect.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/libs/dpm_ttic/gpu/detect.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv/cv\&.h>\fP
+.br
+\fC#include <opencv/highgui\&.h>\fP
+.br
+\fC#include <opencv/cxcore\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include 'MODEL_info\&.h'\fP
+.br
+\fC#include 'featurepyramid\&.hpp'\fP
+.br
+\fC#include 'detect\&.hpp'\fP
+.br
+\fC#include 'nms\&.hpp'\fP
+.br
+\fC#include 'get_boxes\&.hpp'\fP
+.br
+\fC#include 'tracking\&.hpp'\fP
+.br
+\fC#include 'switch_float\&.h'\fP
+.br
+\fC#include 'switch_release\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRESULT\fP * \fBdpm_ttic_gpu_car_detection\fP (IplImage *IM, \fBGPUModel\fP *MO, \fBFLOAT\fP thresh, int *D_NUMS, \fBFLOAT\fP *A_SCORE, \fBFLOAT\fP \fBoverlap\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBgpu_size_A_SCORE\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBRESULT\fP* dpm_ttic_gpu_car_detection (IplImage * IM, \fBGPUModel\fP * MO, \fBFLOAT\fP thresh, int * D_NUMS, \fBFLOAT\fP * A_SCORE, \fBFLOAT\fP overlap)"
+
+.PP
+Definition at line 67 of file detect\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "size_t gpu_size_A_SCORE"
+
+.PP
+Definition at line 28 of file detect\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

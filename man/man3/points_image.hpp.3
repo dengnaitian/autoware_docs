@@ -1,0 +1,38 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/fusion/packages/points2image/include/points_image/points_image.hpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/fusion/packages/points2image/include/points_image/points_image.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv2/opencv\&.hpp>\fP
+.br
+\fC#include <sensor_msgs/PointCloud2\&.h>\fP
+.br
+\fC#include 'autoware_msgs/PointsImage\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBresetMatrix\fP ()"
+.br
+.ti -1c
+.RI "autoware_msgs::PointsImage \fBpointcloud2_to_image\fP (const sensor_msgs::PointCloud2ConstPtr &pointclound2, const cv::Mat &cameraExtrinsicMat, const cv::Mat &cameraMat, const cv::Mat &distCoeff, const \fBcv::Size\fP &imageSize)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "autoware_msgs::PointsImage pointcloud2_to_image (const sensor_msgs::PointCloud2ConstPtr & pointclound2, const cv::Mat & cameraExtrinsicMat, const cv::Mat & cameraMat, const cv::Mat & distCoeff, const \fBcv::Size\fP & imageSize)"
+
+.PP
+Definition at line 38 of file points_image\&.cpp\&.
+.SS "void resetMatrix ()"
+
+.PP
+Definition at line 25 of file points_image\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

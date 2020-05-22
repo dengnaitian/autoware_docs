@@ -1,0 +1,37 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/nodes/lane_select/hermite_curve.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/mission/packages/lane_planner/nodes/lane_select/hermite_curve.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'hermite_curve\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBlane_planner\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBlane_planner::createVectorFromPose\fP (const geometry_msgs::Pose &\fBp\fP, \fBtf::Vector3\fP *v)"
+.br
+.ti -1c
+.RI "void \fBlane_planner::getPointAndVectorFromPose\fP (const geometry_msgs::Pose &\fBpose\fP, Element2D *point, Element2D *vector)"
+.br
+.ti -1c
+.RI "std::vector< autoware_msgs::Waypoint > \fBlane_planner::generateHermiteCurveForROS\fP (const geometry_msgs::Pose &start, const geometry_msgs::Pose &end, const double velocity, const double vlength)"
+.br
+.ti -1c
+.RI "std::vector< Element2D > \fBlane_planner::generateHermiteCurve\fP (const Element2D &p0, const Element2D &v0, const Element2D &p1, const Element2D &v1, const double vlength=20)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

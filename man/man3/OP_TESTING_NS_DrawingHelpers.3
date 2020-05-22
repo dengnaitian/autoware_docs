@@ -1,0 +1,148 @@
+.TH "OP_TESTING_NS::DrawingHelpers" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OP_TESTING_NS::DrawingHelpers \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DrawingHelpers\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDrawingHelpers\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DrawingHelpers\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBDrawString\fP (float x, float y, GLvoid *font_style, char *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "static void \fBDrawGrid\fP (const double &x, const double &y, const double &w, const double &h, const double &cell_l)"
+.br
+.ti -1c
+.RI "static void \fBDrawCustomOrigin\fP (const double &x, const double &y, const double &z, const int &\fByaw\fP, const int &\fBroll\fP, const int &\fBpitch\fP, const double &length)"
+.br
+.ti -1c
+.RI "static void \fBDrawArrow\fP (const double &x, const double &y, const double &a)"
+.br
+.ti -1c
+.RI "static std::vector< std::vector< float > > \fBPreparePathForDrawing\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &redyForDraw, double w, double resolution=1)"
+.br
+.ti -1c
+.RI "static void \fBDrawPrePreparedPolygons\fP (std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > &path, double z, float color[3], int nSkipPoints=1, const std::vector< std::vector< float > > *colorProfile=0)"
+.br
+.ti -1c
+.RI "static void \fBDrawWidePath\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path_points, const double &z, const double &width, float color[3], bool bGadient=true)"
+.br
+.ti -1c
+.RI "static void \fBDrawCostPath\fP (const std::vector< \fBPlannerHNS::WayPoint\fP * > &path_points, const double &z, const double &width)"
+.br
+.ti -1c
+.RI "static void \fBDrawLinePoygonFromCenterX\fP (const \fBPlannerHNS::WayPoint\fP &p1, const double &z, const \fBPlannerHNS::WayPoint\fP &p2, const double &z2, const double &w, const double &h, \fBPlannerHNS::WayPoint\fP &prev_point)"
+.br
+.ti -1c
+.RI "static void \fBDrawLinePoygonline\fP (const \fBPlannerHNS::GPSPoint\fP &p1, const \fBPlannerHNS::GPSPoint\fP &p2, const double &w)"
+.br
+.ti -1c
+.RI "static void \fBDrawCustomCarModel\fP (const \fBPlannerHNS::WayPoint\fP &\fBpose\fP, const double &steeringAngle, const std::vector< \fBPlannerHNS::GPSPoint\fP > &carPoints, float color[3], const double &angleFix)"
+.br
+.ti -1c
+.RI "static void \fBDrawFilledEllipse\fP (float x, float y, float z, float width, float height)"
+.br
+.ti -1c
+.RI "static void \fBDrawWideEllipse\fP (float x, float y, float z, float outer_width, float outer_height, float inner_width, float color[3])"
+.br
+.ti -1c
+.RI "static void \fBDrawSimpleEllipse\fP (float x, float y, float z, float outer_width, float outer_height)"
+.br
+.ti -1c
+.RI "static void \fBDrawPedal\fP (float x, float y, float z, float width, float height, float inner_height, float color[3])"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file DrawingHelpers\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OP_TESTING_NS::DrawingHelpers::DrawingHelpers ()"
+
+.PP
+Definition at line 32 of file DrawingHelpers\&.cpp\&.
+.SS "OP_TESTING_NS::DrawingHelpers::~DrawingHelpers ()\fC [virtual]\fP"
+
+.PP
+Definition at line 36 of file DrawingHelpers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawArrow (const double & x, const double & y, const double & a)\fC [static]\fP"
+
+.PP
+Definition at line 105 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawCostPath (const std::vector< \fBPlannerHNS::WayPoint\fP * > & path_points, const double & z, const double & width)\fC [static]\fP"
+
+.PP
+Definition at line 292 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawCustomCarModel (const \fBPlannerHNS::WayPoint\fP & pose, const double & steeringAngle, const std::vector< \fBPlannerHNS::GPSPoint\fP > & carPoints, float color[3], const double & angleFix)\fC [static]\fP"
+
+.PP
+Definition at line 445 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawCustomOrigin (const double & x, const double & y, const double & z, const int & yaw, const int & roll, const int & pitch, const double & length)\fC [static]\fP"
+
+.PP
+Definition at line 130 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawFilledEllipse (float x, float y, float z, float width, float height)\fC [static]\fP"
+
+.PP
+Definition at line 546 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawGrid (const double & x, const double & y, const double & w, const double & h, const double & cell_l)\fC [static]\fP"
+
+.PP
+Definition at line 75 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawLinePoygonFromCenterX (const \fBPlannerHNS::WayPoint\fP & p1, const double & z, const \fBPlannerHNS::WayPoint\fP & p2, const double & z2, const double & w, const double & h, \fBPlannerHNS::WayPoint\fP & prev_point)\fC [static]\fP"
+
+.PP
+Definition at line 397 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawLinePoygonline (const \fBPlannerHNS::GPSPoint\fP & p1, const \fBPlannerHNS::GPSPoint\fP & p2, const double & w)\fC [static]\fP"
+
+.PP
+Definition at line 365 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawPedal (float x, float y, float z, float width, float height, float inner_height, float color[3])\fC [static]\fP"
+
+.PP
+Definition at line 592 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawPrePreparedPolygons (std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & path, double z, float color[3], int nSkipPoints = \fC1\fP, const std::vector< std::vector< float > > * colorProfile = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 255 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawSimpleEllipse (float x, float y, float z, float outer_width, float outer_height)\fC [static]\fP"
+
+.PP
+Definition at line 582 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawString (float x, float y, GLvoid * font_style, char * format,  \&.\&.\&.)\fC [static]\fP"
+
+.PP
+Definition at line 40 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawWideEllipse (float x, float y, float z, float outer_width, float outer_height, float inner_width, float color[3])\fC [static]\fP"
+
+.PP
+Definition at line 560 of file DrawingHelpers\&.cpp\&.
+.SS "void OP_TESTING_NS::DrawingHelpers::DrawWidePath (const std::vector< \fBPlannerHNS::WayPoint\fP > & path_points, const double & z, const double & width, float color[3], bool bGadient = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 330 of file DrawingHelpers\&.cpp\&.
+.SS "vector< vector< float > > OP_TESTING_NS::DrawingHelpers::PreparePathForDrawing (const std::vector< \fBPlannerHNS::WayPoint\fP > & path, std::vector< std::vector< \fBPlannerHNS::WayPoint\fP > > & redyForDraw, double w, double resolution = \fC1\fP)\fC [static]\fP"
+
+.PP
+Definition at line 178 of file DrawingHelpers\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

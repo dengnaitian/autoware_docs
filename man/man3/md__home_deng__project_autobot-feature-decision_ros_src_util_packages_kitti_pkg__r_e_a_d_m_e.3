@@ -1,0 +1,62 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_util_packages_kitti_pkg__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_util_packages_kitti_pkg__r_e_a_d_m_e \- How to use KITTI Player in Autoware 
+
+.IP "1." 4
+Download any of the KITTI dataset RAW rectified sets and its tracklets (http://www.cvlibs.net/datasets/kitti/raw_data.php)\&. You should have a directory structure that looks like this: 
+.PP
+.nf
+1 kitti_download_dir/2011_09_26/2011_09_26_drive_0001_sync
+2 ├── image_00
+3 │   └── data
+4 ├── image_01
+5 │   └── data
+6 ├── image_02
+7 │   └── data
+8 ├── image_03
+9 │   └── data
+10 ├── oxts
+11 │   └── data
+12 └── velodyne_points
+13     └── data
+
+.fi
+.PP
+
+.IP "2." 4
+Create a symlink under \fCsrc/util/packages/kitti_pkg/kitti_player\fP with the name \fCdataset\fP that points to your \fCkitti_download_dir\fP\&.
+.PP
+.PP
+2a\&. Instead of creating a symlink you can also use the \fCdirectory\fP parameter in the launch file, i\&.e\&. \fCroslaunch kitti_launch kittiplayer\&.launch directory:=/PATH_TO_KITTI_DATASET/2011_09_26/2011_09_26_drive_0093_sync/\fP\&.
+.PP
+.IP "3." 4
+Modify the \fCsrc/util/packages/kitti_pkg/kitti_launch/launch/kittiplayer\&.launch\fP file to choose the set you wish to reproduce (lines 5 and 16)\&.
+.IP "4." 4
+Select the frame rate you wish to reproduce by changing the fps argument from the launch file: 
+.PP
+.nf
+1 roslaunch kitti_launch kittiplayer\&.launch fps:=10
+
+.fi
+.PP
+ In the above example, the player will reproduce the set at 10 fps\&.
+.IP "5." 4
+The launch file will run \fCcalibration_publisher\fP and \fC\fBkitti_box_publisher\fP\fP nodes and publish: 
+.PP
+.nf
+1 /projection_matrix
+2 /camera/camera_info (sensor_msgs/CameraInfo)
+3 /image_raw (sensor_msgs/Image)
+4 /points_raw (sensor_msgs/PointCloud2)
+5 /kitti_3d_labels (jsk_rviz_plugins/PictogramArray)
+6 /kitti_box (jsk_recognition_msgs/BoundingBoxArray)
+7 /kitti_player/oxts/gps (sensor_msgs/NavSatFix)
+8 /kitti_player/oxts/imu (sensor_msgs/Imu)
+
+.fi
+.PP
+ 
+.PP
+

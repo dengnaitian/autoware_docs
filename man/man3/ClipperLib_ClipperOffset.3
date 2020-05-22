@@ -1,0 +1,94 @@
+.TH "ClipperLib::ClipperOffset" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClipperLib::ClipperOffset \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <clipper\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClipperOffset\fP (double miterLimit=2\&.0, double roundPrecision=0\&.25)"
+.br
+.ti -1c
+.RI "\fB~ClipperOffset\fP ()"
+.br
+.ti -1c
+.RI "void \fBAddPath\fP (const \fBPath\fP &path, \fBJoinType\fP joinType, \fBEndType\fP endType)"
+.br
+.ti -1c
+.RI "void \fBAddPaths\fP (const \fBPaths\fP &paths, \fBJoinType\fP joinType, \fBEndType\fP endType)"
+.br
+.ti -1c
+.RI "void \fBExecute\fP (\fBPaths\fP &solution, double delta)"
+.br
+.ti -1c
+.RI "void \fBExecute\fP (\fBPolyTree\fP &solution, double delta)"
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMiterLimit\fP"
+.br
+.ti -1c
+.RI "double \fBArcTolerance\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 536 of file clipper\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClipperLib::ClipperOffset::ClipperOffset (double miterLimit = \fC2\&.0\fP, double roundPrecision = \fC0\&.25\fP)"
+
+.PP
+Definition at line 4054 of file clipper\&.cpp\&.
+.SS "ClipperLib::ClipperOffset::~ClipperOffset ()"
+
+.PP
+Definition at line 4062 of file clipper\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ClipperLib::ClipperOffset::AddPath (const \fBPath\fP & path, \fBJoinType\fP joinType, \fBEndType\fP endType)"
+
+.PP
+Definition at line 4077 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperOffset::AddPaths (const \fBPaths\fP & paths, \fBJoinType\fP joinType, \fBEndType\fP endType)"
+
+.PP
+Definition at line 4126 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperOffset::Clear ()"
+
+.PP
+Definition at line 4068 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperOffset::Execute (\fBPaths\fP & solution, double delta)"
+
+.PP
+Definition at line 4159 of file clipper\&.cpp\&.
+.SS "void ClipperLib::ClipperOffset::Execute (\fBPolyTree\fP & solution, double delta)"
+
+.PP
+Definition at line 4189 of file clipper\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double ClipperLib::ClipperOffset::ArcTolerance"
+
+.PP
+Definition at line 554 of file clipper\&.hpp\&.
+.SS "double ClipperLib::ClipperOffset::MiterLimit"
+
+.PP
+Definition at line 553 of file clipper\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

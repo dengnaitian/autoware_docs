@@ -1,0 +1,155 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/src/manage_ND.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/localization/lib/ndt_tku/src/manage_ND.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include 'algebra\&.h'\fP
+.br
+\fC#include 'ndt\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBadd_point_covariance\fP (\fBNDPtr\fP nd, \fBPointPtr\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "int \fBinv_check\fP (double inv[3][3])"
+.br
+.ti -1c
+.RI "int \fBupdate_covariance\fP (\fBNDPtr\fP nd)"
+.br
+.ti -1c
+.RI "int \fBadd_point_map\fP (\fBNDMapPtr\fP ndmap, \fBPointPtr\fP point)"
+.br
+.ti -1c
+.RI "int \fBget_ND\fP (\fBNDMapPtr\fP ndmap, \fBPointPtr\fP point, \fBNDPtr\fP *nd, int ndmode)"
+.br
+.ti -1c
+.RI "\fBNDPtr\fP \fBadd_ND\fP (void)"
+.br
+.ti -1c
+.RI "\fBNDMapPtr\fP \fBinitialize_NDmap_layer\fP (int \fBlayer\fP, \fBNDMapPtr\fP child)"
+.br
+.ti -1c
+.RI "\fBNDMapPtr\fP \fBinitialize_NDmap\fP (void)"
+.br
+.ti -1c
+.RI "int \fBround_covariance\fP (\fBNDPtr\fP nd)"
+.br
+.ti -1c
+.RI "double \fBprobability_on_ND\fP (\fBNDPtr\fP nd, double xp, double yp, double zp)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBNDMapPtr\fP \fBNDmap\fP"
+.br
+.ti -1c
+.RI "\fBNDPtr\fP \fBNDs\fP"
+.br
+.ti -1c
+.RI "int \fBNDs_num\fP"
+.br
+.ti -1c
+.RI "int \fBg_map_x\fP"
+.br
+.ti -1c
+.RI "int \fBg_map_y\fP"
+.br
+.ti -1c
+.RI "int \fBg_map_z\fP"
+.br
+.ti -1c
+.RI "double \fBg_map_cellsize\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBNDPtr\fP add_ND (void)"
+
+.PP
+Definition at line 189 of file manage_ND\&.cpp\&.
+.SS "int add_point_covariance (\fBNDPtr\fP nd, \fBPointPtr\fP p)"
+
+.PP
+Definition at line 17 of file manage_ND\&.cpp\&.
+.SS "int add_point_map (\fBNDMapPtr\fP ndmap, \fBPointPtr\fP point)"
+
+.PP
+Definition at line 87 of file manage_ND\&.cpp\&.
+.SS "int get_ND (\fBNDMapPtr\fP ndmap, \fBPointPtr\fP point, \fBNDPtr\fP * nd, int ndmode)"
+
+.PP
+Definition at line 133 of file manage_ND\&.cpp\&.
+.SS "\fBNDMapPtr\fP initialize_NDmap (void)"
+
+.PP
+Definition at line 263 of file manage_ND\&.cpp\&.
+.SS "\fBNDMapPtr\fP initialize_NDmap_layer (int layer, \fBNDMapPtr\fP child)"
+
+.PP
+Definition at line 221 of file manage_ND\&.cpp\&.
+.SS "int inv_check (double inv[3][3])"
+
+.PP
+Definition at line 40 of file manage_ND\&.cpp\&.
+.SS "double probability_on_ND (\fBNDPtr\fP nd, double xp, double yp, double zp)"
+
+.PP
+Definition at line 313 of file manage_ND\&.cpp\&.
+.SS "int round_covariance (\fBNDPtr\fP nd)"
+
+.PP
+Definition at line 290 of file manage_ND\&.cpp\&.
+.SS "int update_covariance (\fBNDPtr\fP nd)"
+
+.PP
+Definition at line 56 of file manage_ND\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "double g_map_cellsize"
+
+.PP
+Definition at line 14 of file manage_ND\&.cpp\&.
+.SS "int g_map_x"
+
+.PP
+Definition at line 13 of file manage_ND\&.cpp\&.
+.SS "int g_map_y"
+
+.PP
+Definition at line 13 of file manage_ND\&.cpp\&.
+.SS "int g_map_z"
+
+.PP
+Definition at line 13 of file manage_ND\&.cpp\&.
+.SS "\fBNDMapPtr\fP NDmap"
+
+.PP
+Definition at line 9 of file manage_ND\&.cpp\&.
+.SS "\fBNDPtr\fP NDs"
+
+.PP
+Definition at line 10 of file manage_ND\&.cpp\&.
+.SS "int NDs_num"
+
+.PP
+Definition at line 11 of file manage_ND\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,2539 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_filter.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/MIPSDK/C/Library/Source/mip_sdk_filter.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk_filter\&.h'\fP
+.br
+\fC#include 'mip_sdk_system\&.h'\fP
+.br
+\fC#include 'mip_sdk_user_functions\&.h'\fP
+.br
+\fC#include 'byteswap_utilities\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmip_filter_llh_pos_byteswap\fP (\fBmip_filter_llh_pos\fP *llh_pos)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_ned_velocity_byteswap\fP (\fBmip_filter_ned_velocity\fP *ned_velocity)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_attitude_quaternion_byteswap\fP (\fBmip_filter_attitude_quaternion\fP *attitude_quaternion)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_attitude_dcm_byteswap\fP (\fBmip_filter_attitude_dcm\fP *attitude_dcm)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_attitude_euler_angles_byteswap\fP (\fBmip_filter_attitude_euler_angles\fP *attitude_euler_angles)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_gyro_bias_byteswap\fP (\fBmip_filter_gyro_bias\fP *gyro_bias)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_accel_bias_byteswap\fP (\fBmip_filter_accel_bias\fP *accel_bias)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_llh_pos_uncertainty_byteswap\fP (\fBmip_filter_llh_pos_uncertainty\fP *llh_pos_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_ned_vel_uncertainty_byteswap\fP (\fBmip_filter_ned_vel_uncertainty\fP *ned_vel_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_euler_attitude_uncertainty_byteswap\fP (\fBmip_filter_euler_attitude_uncertainty\fP *euler_attitude_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_gyro_bias_uncertainty_byteswap\fP (\fBmip_filter_gyro_bias_uncertainty\fP *gyro_bias_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_accel_bias_uncertainty_byteswap\fP (\fBmip_filter_accel_bias_uncertainty\fP *accel_bias_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_timestamp_byteswap\fP (\fBmip_filter_timestamp\fP *timestamp)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_status_byteswap\fP (\fBmip_filter_status\fP *status)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_linear_acceleration_byteswap\fP (\fBmip_filter_linear_acceleration\fP *acceleration)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_compensated_acceleration_byteswap\fP (\fBmip_filter_compensated_acceleration\fP *acceleration)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_gravity_vector_byteswap\fP (\fBmip_filter_gravity_vector\fP *gravity_vector)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_compensated_angular_rate_byteswap\fP (\fBmip_filter_compensated_angular_rate\fP *angular_rate)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_quaternion_attitude_uncertainty_byteswap\fP (\fBmip_filter_quaternion_attitude_uncertainty\fP *quaternion_attitude_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_wgs84_gravity_mag_byteswap\fP (\fBmip_filter_wgs84_gravity_mag\fP *wgs84_gravity_mag)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_heading_update_state_byteswap\fP (\fBmip_filter_heading_update_state\fP *heading_update_state)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_magnetic_model_byteswap\fP (\fBmip_filter_magnetic_model\fP *magnetic_model)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_external_heading_update_with_time_byteswap\fP (\fBmip_filter_external_heading_with_time_command\fP *external_heading_command)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_accel_scale_factor_byteswap\fP (\fBmip_filter_accel_scale_factor_mip_field\fP *accel_scale_factor)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_accel_scale_factor_uncertainty_byteswap\fP (\fBmip_filter_accel_scale_factor_uncertainty_mip_field\fP *accel_scale_factor_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_gyro_scale_factor_byteswap\fP (\fBmip_filter_gyro_scale_factor_mip_field\fP *gyro_scale_factor)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_gyro_scale_factor_uncertainty_byteswap\fP (\fBmip_filter_gyro_scale_factor_uncertainty_mip_field\fP *gyro_scale_factor_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_mag_bias_byteswap\fP (\fBmip_filter_mag_bias_mip_field\fP *mag_bias)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_mag_bias_uncertainty_byteswap\fP (\fBmip_filter_mag_bias_uncertainty_mip_field\fP *mag_bias_uncertainty)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_compensated_mag_vector_byteswap\fP (\fBmip_filter_compensated_mag_vector_mip_field\fP *compensated_mag_vector)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_standard_atmosphere_byteswap\fP (\fBmip_filter_standard_atmosphere_mip_field\fP *standard_atmosphere)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_pressure_altitude_byteswap\fP (\fBmip_filter_pressure_altitude_mip_field\fP *pressure_altitude)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_density_altitude_byteswap\fP (\fBmip_filter_density_altitude_mip_field\fP *density_altitude)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_antenna_offset_correction_byteswap\fP (\fBmip_filter_antenna_offset_correction_mip_field\fP *antenna_offset_correction)"
+.br
+.ti -1c
+.RI "void \fBmip_filter_antenna_offset_correction_uncertainty_byteswap\fP (\fBmip_filter_antenna_offset_correction_uncertainty_mip_field\fP *antenna_offset_correction_uncertainty)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_reset_filter\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_set_init_attitude\fP (\fBmip_interface\fP *device_interface, float euler_angles[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_set_init_heading\fP (\fBmip_interface\fP *device_interface, float heading)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_set_init_attitude_from_ahrs\fP (\fBmip_interface\fP *device_interface, float declination)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_vehicle_dynamics_mode\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *dynamics_mode)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_sensor2vehicle_tranformation\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float euler_angles[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_sensor2vehicle_offset\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float offset[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_antenna_offset\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float offset[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_gps_source\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *gps_source)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_external_gps_update\fP (\fBmip_interface\fP *device_interface, \fBmip_filter_external_gps_update_command\fP *command)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_external_heading_update\fP (\fBmip_interface\fP *device_interface, \fBmip_filter_external_heading_update_command\fP *command)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_heading_source\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *heading_source)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_auto_initialization\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *enable)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_accel_noise\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_gyro_noise\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_gyro_bias_model\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float bias_beta[3], float bias_noise_1sigma[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_accel_bias_model\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float bias_beta[3], float bias_noise_1sigma[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_zero_velocity_update_control\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_filter_zero_update_command\fP *zero_velocity_control)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_zero_angular_rate_update_control\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_filter_zero_update_command\fP *zero_angular_rate_control)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_tare_orientation\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP tare_bitfield)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_commanded_zero_velocity_update\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_commanded_zero_angular_rate_update\fP (\fBmip_interface\fP *device_interface)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_external_heading_update_with_time\fP (\fBmip_interface\fP *device_interface, \fBmip_filter_external_heading_with_time_command\fP *heading_with_time_command)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_mag_noise\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_reference_position\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *reference_enable, double reference_position[3])"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_estimation_control\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu16\fP *estimation_control)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_enable_measurement\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu16\fP *measurement_enable)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_declination_source\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBu8\fP *declination_source)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_accel_magnitude_error_adaptive_measurement\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_filter_accel_magnitude_error_adaptive_measurement_command\fP *params)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_mag_magnitude_error_adaptive_measurement\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_filter_magnetometer_magnitude_error_adaptive_measurement_command\fP *params)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_filter_mag_dip_angle_error_adaptive_measurement\fP (\fBmip_interface\fP *device_interface, \fBu8\fP function_selector, \fBmip_filter_magnetometer_dip_angle_error_adaptive_measurement_command\fP *params)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Nathan Miller 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+
+.PP
+Definition in file \fBmip_sdk_filter\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void mip_filter_accel_bias_byteswap (\fBmip_filter_accel_bias\fP * accel_bias)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Accel Bias Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_accel_bias\fP *accel_bias - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 233 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_accel_bias_model (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float bias_beta[3], float bias_noise_1sigma[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's accelerometer Guass-Markov bias model values\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP bias_beta[3] - The accelerometer bias model time constants in 1/sec\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIfloat\fP bias_noise_1sigma[3] - The accelerometer bias model 1-sigma white noise values in rad/sec\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The accelerometer Gauss-Markov bias model time constant values are ordered [x, y, z] in the
+.br
+sensor frame in units of 1/sec\&. The accel Gauss-Markov bias model 1-sigma white noise values are ordered [x, y, z] in the
+.br
+sensor frame in units of rad/sec\&. These values are used as process noise to the accel bias model and allow the user to tune
+.br
+the behavior of the Kalman filter for their particular application\&. 
+.PP
+Definition at line 2183 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_accel_bias_uncertainty_byteswap (\fBmip_filter_accel_bias_uncertainty\fP * accel_bias_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Accel Bias Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_accel_bias_uncertainty\fP *accel_bias_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 368 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_accel_magnitude_error_adaptive_measurement (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_filter_accel_magnitude_error_adaptive_measurement_command\fP * params)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's accelerometer magnitude error adaptive measurement settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fImip_filter_accel_magnitude_error_adaptive_measurement_command\fP *params - The accelerometer magnitude error adaptive measurement settings\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Set or read the accelerometer magnitude error adaptive measurement settings\&. 
+.PP
+Definition at line 3113 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_accel_noise (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's accelerometer process/measurement noise values\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP noise_1sigma[3] - The accelerometer 1-sigma process/measurement noise values in m/(s^2)\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The accelerometer 1-sigma process/measurement noise values are ordered [x, y, z] in the
+.br
+sensor frame in m/(s^2)\&. These values are used as process/measurement noise and allow the user to tune
+.br
+the behavior of the Kalman filter for their particular application\&. 
+.PP
+Definition at line 1882 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_accel_scale_factor_byteswap (\fBmip_filter_accel_scale_factor_mip_field\fP * accel_scale_factor)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Accel Scale Factor Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_accel_scale_factor_mip_field\fP *accel_scale_factor - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 691 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_accel_scale_factor_uncertainty_byteswap (\fBmip_filter_accel_scale_factor_uncertainty_mip_field\fP * accel_scale_factor_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Accel Scale Factor Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_accel_scale_factor_uncertainty_mip_field\fP *accel_scale_factor_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 718 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_antenna_offset (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float offset[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's antenna offset settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP offset - The offset of the antenna with-respect-to the sensor in meters\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The offset is [x, y, z] in meters from the sensor to the antenna, expressed in the sensor frame\&. 
+.PP
+Definition at line 1462 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_antenna_offset_correction_byteswap (\fBmip_filter_antenna_offset_correction_mip_field\fP * antenna_offset_correction)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Antenna Offset Correction Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_antenna_offset_correction_mip_field\fP *antenna_offset_correction - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 959 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_antenna_offset_correction_uncertainty_byteswap (\fBmip_filter_antenna_offset_correction_uncertainty_mip_field\fP * antenna_offset_correction_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Antenna Offset Correction Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_antenna_offset_correction_uncertainty_mip_field\fP *antenna_offset_correction_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 986 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_attitude_dcm_byteswap (\fBmip_filter_attitude_dcm\fP * attitude_dcm)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Direction Cosine Matrix (DCM) Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_attitude_dcm\fP *attitude_dcm - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 147 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_attitude_euler_angles_byteswap (\fBmip_filter_attitude_euler_angles\fP * attitude_euler_angles)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Euler \fBAngle\fP Attitude Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_attitude_euler_angles\fP *attitude_euler_angles - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 179 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_attitude_quaternion_byteswap (\fBmip_filter_attitude_quaternion\fP * attitude_quaternion)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Quaternion Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_attitude_quaternion\fP *attitude_quaternion - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 118 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_auto_initialization (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * enable)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's auto-initialization setting\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *enable - The auto-initialization setting\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid auto-initialization values\&. 
+.PP
+Definition at line 1804 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_commanded_zero_angular_rate_update (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.PP
+Definition at line 2555 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_commanded_zero_velocity_update (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.PP
+Definition at line 2525 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_compensated_acceleration_byteswap (\fBmip_filter_compensated_acceleration\fP * acceleration)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Acceleration Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_compensated_acceleration\fP *acceleration - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 474 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_compensated_angular_rate_byteswap (\fBmip_filter_compensated_angular_rate\fP * angular_rate)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Angular \fBRate\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_angular_rate\fP *angular_rate - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 528 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_compensated_mag_vector_byteswap (\fBmip_filter_compensated_mag_vector_mip_field\fP * compensated_mag_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Compensated Mag Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_compensated_mag_vector_mip_field\fP *compensated_mag_vector - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 853 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_declination_source (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * declination_source)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's declination source settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *declination_source - The source of declination provided to the filter\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid declination source values\&. 
+.PP
+Definition at line 3037 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_density_altitude_byteswap (\fBmip_filter_density_altitude_mip_field\fP * density_altitude)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Density Altitude Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_density_altitude_mip_field\fP *density_altitude - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 934 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_enable_measurement (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu16\fP * measurement_enable)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's measurement enable flags\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu16\fP *measurement_enable - The measurement enable value\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid measurement enable values 
+.PP
+Definition at line 2948 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_estimation_control (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu16\fP * estimation_control)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's estimation control flags\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu16\fP *estimation_control - The estimation control value\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid estimation control values 
+.PP
+Definition at line 2860 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_euler_attitude_uncertainty_byteswap (\fBmip_filter_euler_attitude_uncertainty\fP * euler_attitude_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Euler Attitude Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_euler_attitude_uncertainty\fP *euler_attitude_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 314 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_external_gps_update (\fBmip_interface\fP * device_interface, \fBmip_filter_external_gps_update_command\fP * command)"
+
+.SH "DESCRIPTION"
+.PP
+Provide an external GPS update to the filter\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fImip_filter_external_gps_update_command\fP *command - The external GPS update command\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The device will only accept this command when external GPS is selected
+.br
+as the GPS source\&. Please consult the device DCP for how to configure this setting\&. 
+.PP
+Definition at line 1619 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_external_heading_update (\fBmip_interface\fP * device_interface, \fBmip_filter_external_heading_update_command\fP * command)"
+
+.SH "DESCRIPTION"
+.PP
+Provide an external heading update to the filter\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fImip_filter_external_heading_update_command\fP *command - The external heading update command\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The device will only accept this command when external heading is selected
+.br
+as the heading update source\&. Please consult the device DCP for how to configure this setting\&. 
+.PP
+Definition at line 1672 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_external_heading_update_with_time (\fBmip_interface\fP * device_interface, \fBmip_filter_external_heading_with_time_command\fP * heading_with_time_command)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the AHRS signal conditioning settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fImip_filter_external_heading_with_time_command\fP *heading_with_time_command - The external heading update with timestamp command structure\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+This function only affects inertial and orientation values on the AHRS datastream\&. If the FILTER datastream is available, the values remain unaffected\&. Please reference the device DCP for further information\&. 
+.PP
+Definition at line 2604 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_external_heading_update_with_time_byteswap (\fBmip_filter_external_heading_with_time_command\fP * external_heading_command)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER External Heading Update With Timestamp \fBCommand\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_magnetic_model\fP *magnetic_model - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 664 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_gps_source (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * gps_source)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's GPS source settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *gps_source - The source of GPS updates to the filter\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid GPS source values\&. 
+.PP
+Definition at line 1556 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_gravity_vector_byteswap (\fBmip_filter_gravity_vector\fP * gravity_vector)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Gravity \fBVector\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_gravity_vector\fP *gravity_vector - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 501 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_gyro_bias_byteswap (\fBmip_filter_gyro_bias\fP * gyro_bias)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Gyro Bias Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_gyro_bias\fP *gyro_bias - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 206 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_gyro_bias_model (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float bias_beta[3], float bias_noise_1sigma[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's gyroscope Guass-Markov bias model values\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP bias_beta[3] - The gyroscope bias model time constants in 1/sec\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIfloat\fP bias_noise_1sigma[3] - The gyroscope bias model 1-sigma white noise values in rad/sec\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The gyroscope Gauss-Markov bias model time constant values are ordered [x, y, z] in the
+.br
+sensor frame in units of 1/sec\&. The gyro Gauss-Markov bias model 1-sigma white noise values are ordered [x, y, z] in the
+.br
+sensor frame in units of rad/sec\&. These values are used as process noise to the gyro bias model and allow the user to tune
+.br
+the behavior of the Kalman filter for their particular application\&. 
+.PP
+Definition at line 2077 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_gyro_bias_uncertainty_byteswap (\fBmip_filter_gyro_bias_uncertainty\fP * gyro_bias_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Gyro Bias Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_gyro_bias_uncertainty\fP *gyro_bias_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 341 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_gyro_noise (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's gyroscope process noise values\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP noise_1sigma[3] - The gyroscope 1-sigma process noise values in rad/sec\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The gyroscope 1-sigma process noise values are ordered [x, y, z] in the
+.br
+sensor frame in rad/sec\&. These values are used as process noise and allow the user to tune
+.br
+the behavior of the Kalman filter for their particular application\&. 
+.PP
+Definition at line 1979 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_gyro_scale_factor_byteswap (\fBmip_filter_gyro_scale_factor_mip_field\fP * gyro_scale_factor)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Gyro Scale Factor Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_gyro_scale_factor_mip_field\fP *gyro_scale_factor - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 745 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_gyro_scale_factor_uncertainty_byteswap (\fBmip_filter_gyro_scale_factor_uncertainty_mip_field\fP * gyro_scale_factor_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Gyro Scale Factor Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_gyro_scale_factor_uncertainty_mip_field\fP *gyro_scale_factor_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 772 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_heading_source (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * heading_source)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's heading update source settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *heading_source - The source of heading updates to the filter\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please consult the device DCP for valid heading update source values\&. 
+.PP
+Definition at line 1729 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_heading_update_state_byteswap (\fBmip_filter_heading_update_state\fP * heading_update_state)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Heading Update \fBState\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_heading_update_state\fP *heading_update_state - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 608 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_linear_acceleration_byteswap (\fBmip_filter_linear_acceleration\fP * acceleration)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Acceleration Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_linear_acceleration\fP *acceleration - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 447 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_llh_pos_byteswap (\fBmip_filter_llh_pos\fP * llh_pos)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER LLH Position Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_llh_pos\fP *llh_pos - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 64 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_llh_pos_uncertainty_byteswap (\fBmip_filter_llh_pos_uncertainty\fP * llh_pos_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER LLH Position Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_llh_pos_uncertainty\fP *llh_pos_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 260 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_mag_bias_byteswap (\fBmip_filter_mag_bias_mip_field\fP * mag_bias)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Mag Bias Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_mag_bias_mip_field\fP *mag_bias - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 799 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_mag_bias_uncertainty_byteswap (\fBmip_filter_mag_bias_uncertainty_mip_field\fP * mag_bias_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Mag Bias Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_mag_bias_uncertainty_mip_field\fP *mag_bias_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 826 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_mag_dip_angle_error_adaptive_measurement (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_filter_magnetometer_dip_angle_error_adaptive_measurement_command\fP * params)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's magnetometer dip angle error adaptive measurement settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fImip_filter_magnetometer_dip_angle_error_adaptive_measurement_command\fP *params - The magnetometer dip angle error adaptive measurement settings\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Set or read the magnetometer dip angle error adaptive measurement settings\&. 
+.PP
+Definition at line 3319 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_mag_magnitude_error_adaptive_measurement (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_filter_magnetometer_magnitude_error_adaptive_measurement_command\fP * params)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's magnetometer magnitude error adaptive measurement settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fImip_filter_magnetometer_magnitude_error_adaptive_measurement_command\fP *params - The magnetometer magnitude error adaptive measurement settings\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Set or read the magnetometer magnitude error adaptive measurement settings\&. 
+.PP
+Definition at line 3216 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_mag_noise (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float noise_1sigma[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's magnetometer measurement noise values\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP noise_1sigma[3] - The magnetometer 1-sigma measurement noise values in Gauss\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The magnetometer 1-sigma measurement noise values are ordered [x, y, z] in the
+.br
+sensor frame in Gauss\&. These values are used as measurement noise and allow the user to tune
+.br
+the behavior of the Kalman filter for their particular application\&. 
+.PP
+Definition at line 2664 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_magnetic_model_byteswap (\fBmip_filter_magnetic_model\fP * magnetic_model)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Magnetic Model Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_magnetic_model\fP *magnetic_model - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 635 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_ned_vel_uncertainty_byteswap (\fBmip_filter_ned_vel_uncertainty\fP * ned_vel_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER NED Velocity Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_ned_vel_uncertainty\fP *ned_vel_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 287 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_ned_velocity_byteswap (\fBmip_filter_ned_velocity\fP * ned_velocity)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER NED Velocity Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_ned_velocity\fP *ned_velocity - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 91 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_pressure_altitude_byteswap (\fBmip_filter_pressure_altitude_mip_field\fP * pressure_altitude)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Pressure Altitude Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_pressure_altitude_mip_field\fP *pressure_altitude - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 909 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_quaternion_attitude_uncertainty_byteswap (\fBmip_filter_quaternion_attitude_uncertainty\fP * quaternion_attitude_uncertainty)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Quaternion Attitude Uncertainty Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_quaternion_attitude_uncertainty\fP *quaternion_attitude_uncertainty - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 555 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_reference_position (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * reference_enable, double reference_position[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's reference position [Latitude (deg), Longitude (deg), and Height (m)] 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *reference_enable - Pointer to the enable reference position flag\&. (used to set or get depending on \fCfunction_selector\fP) 
+.br
+\fIdouble\fP reference_position[3] - The reference position [Latitude (deg), Longitude (deg), and Height (m)]\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The reference position is used by AHRS devices to determine the WMM solution (declination angle)
+.br
+and WGS84 gravity magnitude\&. GPS/INS devices will NACK this command\&. 
+.PP
+Definition at line 2761 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_reset_filter (\fBmip_interface\fP * device_interface)"
+
+.SH "DESCRIPTION"
+.PP
+Reset the Kalman Filter\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 1018 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_sensor2vehicle_offset (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float offset[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's sensor to vehicle frame offset settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP offset - The sensor to vehicle frame offset in meters\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The offset is [x, y, z] in meters from the sensor frame to the vehicle frame, expressed in the sensor frame\&. 
+.PP
+Definition at line 1367 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_sensor2vehicle_tranformation (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, float euler_angles[3])"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's sensor to vehicle transformation settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIfloat\fP euler_angles[3] - The sensor to vehicle transformation expressed as Euler angles
+.br
+ in radians\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+The angles are [roll, pitch, yaw] in radians from the sensor frame to the vehicle frame\&. 
+.PP
+Definition at line 1271 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_set_init_attitude (\fBmip_interface\fP * device_interface, float euler_angles[3])"
+
+.SH "DESCRIPTION"
+.PP
+Initialize the Kalman Filter with the provided Euler angles\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIfloat\fP euler_angles[3] - The Euler angles in radians\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Order of angles is [roll, pitch, yaw] in radians\&. 
+.PP
+Definition at line 1049 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_set_init_attitude_from_ahrs (\fBmip_interface\fP * device_interface, float declination)"
+
+.SH "DESCRIPTION"
+.PP
+Initialize the Kalman Filter from the AHRS algorithm output, taking into account the magnetic declination angle povided\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIfloat\fP declination - The local magnetic declination angle in radians\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The output of the internal AHRS orientation algorithm will be used to initialize
+.br
+the filter, taking into account the user-provided magnetic declination angle\&. 
+.PP
+Definition at line 1138 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_set_init_heading (\fBmip_interface\fP * device_interface, float heading)"
+
+.SH "DESCRIPTION"
+.PP
+Initialize the Kalman Filter with the provided true heading angle\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIfloat\fP heading - The true heading angle in radians\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+Roll and Pitch will be calculated by the device using the accelerometers\&. 
+.PP
+Definition at line 1094 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_standard_atmosphere_byteswap (\fBmip_filter_standard_atmosphere_mip_field\fP * standard_atmosphere)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Standard Atmosphere Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_standard_atmosphere_mip_field\fP *standard_atmosphere - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 880 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_status_byteswap (\fBmip_filter_status\fP * status)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER \fBStatus\fP Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_status\fP *status - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 421 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_tare_orientation (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP tare_bitfield)"
+
+.SH "DESCRIPTION"
+.PP
+Set orientation relative to NED frame as the current sensor to vehicle frame\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP tare_bitfield - Tare bitfield (where 0x01 bit represents the roll axis, 0x02 represents the pitch axis, 0x04 represents the yaw axis)\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCThe\fP tare_bitfield value is ignored for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+
+.br
+ Possible \fCtare_bitfield\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Tare the roll axis 
+.IP "\(bu" 2
+0x02 - Tare the pitch axis 
+.IP "\(bu" 2
+0x03 - Tare the roll and pitch axes 
+.IP "\(bu" 2
+0x04 - Tare the yaw axis 
+.IP "\(bu" 2
+0x05 - Tare the roll and yaw axes 
+.IP "\(bu" 2
+0x06 - Tare the pitch and yaw axes 
+.IP "\(bu" 2
+0x07 - Tare the roll, pitch and yaw axes 
+.PP
+
+.PP
+Definition at line 2484 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_timestamp_byteswap (\fBmip_filter_timestamp\fP * timestamp)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER Timestamp Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_timestamp\fP *timestamp - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 395 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_vehicle_dynamics_mode (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBu8\fP * dynamics_mode)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's vehicle dynamics mode settings\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP *dynamics_mode - The vehicle dynamics mode\&. (used to set or get depending on \fCfunction_selector\fP) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Please reference the device DCP for valid \fCdynamics_mode\fP values\&. 
+.PP
+Definition at line 1195 of file mip_sdk_filter\&.c\&.
+.SS "void mip_filter_wgs84_gravity_mag_byteswap (\fBmip_filter_wgs84_gravity_mag\fP * wgs84_gravity_mag)"
+
+.SH "DESCRIPTION"
+.PP
+Byteswap a FILTER WGS84 Gravity Magnitude Structure\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_filter_wgs84_gravity_mag\fP *wgs84_gravity_mag - The structure to be byteswapped\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+None 
+.PP
+Definition at line 583 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_zero_angular_rate_update_control (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_filter_zero_update_command\fP * zero_angular_rate_control)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's gyro zero-angular_rate update threshold\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP enable - Writes/Reads enable bit state\&. 
+.br
+\fIfloat\fP threshold - The gyro magnitude below which the device is considered to be stationary\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Set or read the scalar magnitude of the gyro below which the device is considered to be stationary\&. 
+.PP
+Definition at line 2384 of file mip_sdk_filter\&.c\&.
+.SS "\fBu16\fP mip_filter_zero_velocity_update_control (\fBmip_interface\fP * device_interface, \fBu8\fP function_selector, \fBmip_filter_zero_update_command\fP * zero_velocity_control)"
+
+.SH "DESCRIPTION"
+.PP
+Set or read the filter's zero-velocity update threshold\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fImip_interface\fP *device_interface - The device interface\&. 
+.br
+\fIu8\fP function_selector - Selects which function to perform\&. 
+.br
+\fIu8\fP enable - Writes/Reads enable bit state\&. 
+.br
+\fIfloat\fP threshold - The GPS velocity magnitude below which the device is considered to be stationary\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_INTERFACE_ERROR\fP When there is a problem with the command format or the
+.br
+ the device communications failed\&.
+.br
+.br
+\fIMIP_INTERFACE_OK\fP The command was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+
+.br
+ Possible \fCfunction_selector\fP values:
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+0x01 - Use New Settings 
+.IP "\(bu" 2
+0x02 - Read Current Settings 
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+\fCsettings\fP may be NULL for the following \fCfunction_selector\fP values:
+.PP
+.PD 0
+.IP "\(bu" 2
+0x03 - Save Current Settings as Startup Settings 
+.IP "\(bu" 2
+0x04 - Load Saved Settings 
+.IP "\(bu" 2
+0x05 - Load Factory Default Settings
+.PP
+Set or read the scalar magnitude of the GPS velocity below which the device is considered to be stationary\&. 
+.PP
+Definition at line 2286 of file mip_sdk_filter\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

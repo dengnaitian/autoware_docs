@@ -1,0 +1,153 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/feat_proj/feat_proj.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/trafficlight_recognizer/nodes/feat_proj/feat_proj.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include 'Rate\&.h'\fP
+.br
+\fC#include 'libvectormap/vector_map\&.h'\fP
+.br
+\fC#include <tf/tf\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include <sensor_msgs/CameraInfo\&.h>\fP
+.br
+\fC#include <geometry_msgs/TwistStamped\&.h>\fP
+.br
+\fC#include <geometry_msgs/Pose\&.h>\fP
+.br
+\fC#include <geometry_msgs/PoseStamped\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include 'libvectormap/Math\&.h'\fP
+.br
+\fC#include <Eigen/Eigen>\fP
+.br
+\fC#include <autoware_msgs/Signals\&.h>\fP
+.br
+\fC#include <autoware_msgs/AdjustXY\&.h>\fP
+.br
+\fC#include <vector_map/vector_map\&.h>\fP
+.br
+\fC#include <vector_map_server/GetSignal\&.h>\fP
+.br
+\fC#include <autoware_msgs/Lane\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAngle\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSignalLampRadius\fP   0\&.3"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBadjust_xyCallback\fP (const autoware_msgs::AdjustXY::ConstPtr &config_msg)"
+.br
+.ti -1c
+.RI "void \fBcameraInfoCallback\fP (const sensor_msgs::CameraInfo::ConstPtr camInfoMsg)"
+.br
+.ti -1c
+.RI "void \fBgetTransform\fP (Eigen::Quaternionf &ori, \fBPoint3\fP &pos)"
+.br
+.ti -1c
+.RI "\fBPoint3\fP \fBtransform\fP (const \fBPoint3\fP &psrc, tf::StampedTransform &tfsource)"
+.br
+.ti -1c
+.RI "bool \fBproject2\fP (const \fBPoint3\fP &pt, int &u, int &v, bool useOpenGLCoord=false)"
+.br
+.ti -1c
+.RI "double \fBConvertDegreeToRadian\fP (double degree)"
+.br
+.ti -1c
+.RI "double \fBConvertRadianToDegree\fP (double radian)"
+.br
+.ti -1c
+.RI "double \fBGetSignalAngleInCameraSystem\fP (double hang, double vang)"
+.br
+.ti -1c
+.RI "void \fBechoSignals2\fP (ros::Publisher &\fBpub\fP, bool useOpenGLCoord=false)"
+.br
+.ti -1c
+.RI "void \fBinterrupt\fP (int s)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SignalLampRadius   0\&.3"
+
+.PP
+Definition at line 59 of file feat_proj\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void adjust_xyCallback (const autoware_msgs::AdjustXY::ConstPtr & config_msg)"
+
+.PP
+Definition at line 104 of file feat_proj\&.cpp\&.
+.SS "void cameraInfoCallback (const sensor_msgs::CameraInfo::ConstPtr camInfoMsg)"
+
+.PP
+Definition at line 110 of file feat_proj\&.cpp\&.
+.SS "double ConvertDegreeToRadian (double degree)"
+
+.PP
+Definition at line 241 of file feat_proj\&.cpp\&.
+.SS "double ConvertRadianToDegree (double radian)"
+
+.PP
+Definition at line 247 of file feat_proj\&.cpp\&.
+.SS "void echoSignals2 (ros::Publisher & pub, bool useOpenGLCoord = \fCfalse\fP)"
+
+.PP
+Definition at line 274 of file feat_proj\&.cpp\&.
+.SS "double GetSignalAngleInCameraSystem (double hang, double vang)"
+
+.PP
+Definition at line 253 of file feat_proj\&.cpp\&.
+.SS "void getTransform (Eigen::Quaternionf & ori, \fBPoint3\fP & pos)"
+
+.PP
+Definition at line 185 of file feat_proj\&.cpp\&.
+.SS "void interrupt (int s)"
+
+.PP
+Definition at line 362 of file feat_proj\&.cpp\&.
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 369 of file feat_proj\&.cpp\&.
+.SS "bool project2 (const \fBPoint3\fP & pt, int & u, int & v, bool useOpenGLCoord = \fCfalse\fP)"
+
+.PP
+Definition at line 217 of file feat_proj\&.cpp\&.
+.SS "\fBPoint3\fP transform (const \fBPoint3\fP & psrc, tf::StampedTransform & tfsource)"
+
+.PP
+Definition at line 206 of file feat_proj\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

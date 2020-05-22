@@ -1,0 +1,381 @@
+.TH "PlannerHNS::PreCalculatedConditions" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::PreCalculatedConditions \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBdistanceToStop\fP ()"
+.br
+.ti -1c
+.RI "\fBPreCalculatedConditions\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PreCalculatedConditions\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBToStringHeader\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBToString\fP (\fBSTATE_TYPE\fP beh)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBcurrentGoalID\fP"
+.br
+.ti -1c
+.RI "int \fBprevGoalID\fP"
+.br
+.ti -1c
+.RI "double \fBdistanceToNext\fP"
+.br
+.ti -1c
+.RI "double \fBvelocityOfNext\fP"
+.br
+.ti -1c
+.RI "int \fBiPrevSafeLane\fP"
+.br
+.ti -1c
+.RI "int \fBiCurrSafeLane\fP"
+.br
+.ti -1c
+.RI "double \fBdistanceToGoBack\fP"
+.br
+.ti -1c
+.RI "double \fBtimeToGoBack\fP"
+.br
+.ti -1c
+.RI "double \fBdistanceToChangeLane\fP"
+.br
+.ti -1c
+.RI "double \fBtimeToChangeLane\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentLaneID\fP"
+.br
+.ti -1c
+.RI "int \fBoriginalLaneID\fP"
+.br
+.ti -1c
+.RI "int \fBtargetLaneID\fP"
+.br
+.ti -1c
+.RI "bool \fBbUpcomingLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBbUpcomingRight\fP"
+.br
+.ti -1c
+.RI "bool \fBbForwardLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBbForwardRight\fP"
+.br
+.ti -1c
+.RI "bool \fBbCanChangeLane\fP"
+.br
+.ti -1c
+.RI "bool \fBbTargetLaneSafe\fP"
+.br
+.ti -1c
+.RI "bool \fBbOvertake\fP"
+.br
+.ti -1c
+.RI "bool \fBbChangeLaneLeft\fP"
+.br
+.ti -1c
+.RI "bool \fBbChangeLaneRight\fP"
+.br
+.ti -1c
+.RI "bool \fBbSubGoalPoseSet\fP"
+.br
+.ti -1c
+.RI "bool \fBbSubGoalAchieved\fP"
+.br
+.ti -1c
+.RI "\fBWayPoint\fP * \fBSubGoalPose\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentStopSignID\fP"
+.br
+.ti -1c
+.RI "int \fBprevStopSignID\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentTrafficLightID\fP"
+.br
+.ti -1c
+.RI "int \fBprevTrafficLightID\fP"
+.br
+.ti -1c
+.RI "bool \fBbTrafficIsRed\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentStopLineID\fP"
+.br
+.ti -1c
+.RI "int \fBprevStopLineID\fP"
+.br
+.ti -1c
+.RI "int \fBiPrevSafeTrajectory\fP"
+.br
+.ti -1c
+.RI "int \fBiCurrSafeTrajectory\fP"
+.br
+.ti -1c
+.RI "int \fBiCentralTrajectory\fP"
+.br
+.ti -1c
+.RI "bool \fBbFullyBlock\fP"
+.br
+.ti -1c
+.RI "\fBLIGHT_INDICATOR\fP \fBindicator\fP"
+.br
+.ti -1c
+.RI "bool \fBbNewGlobalPath\fP"
+.br
+.ti -1c
+.RI "bool \fBbRePlan\fP"
+.br
+.ti -1c
+.RI "double \fBcurrentVelocity\fP"
+.br
+.ti -1c
+.RI "double \fBminStoppingDistance\fP"
+.br
+.ti -1c
+.RI "int \fBbOutsideControl\fP"
+.br
+.ti -1c
+.RI "bool \fBbGreenOutsideControl\fP"
+.br
+.ti -1c
+.RI "std::vector< double > \fBstoppingDistances\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::ForceCmdTypes\fP \fBforceCMD\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1034 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::PreCalculatedConditions::PreCalculatedConditions ()\fC [inline]\fP"
+
+.PP
+Definition at line 1113 of file RoadNetwork\&.h\&.
+.SS "virtual PlannerHNS::PreCalculatedConditions::~PreCalculatedConditions ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 1167 of file RoadNetwork\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double PlannerHNS::PreCalculatedConditions::distanceToStop ()\fC [inline]\fP"
+
+.PP
+Definition at line 1101 of file RoadNetwork\&.h\&.
+.SS "std::string PlannerHNS::PreCalculatedConditions::ToString (\fBSTATE_TYPE\fP beh)\fC [inline]\fP"
+
+.PP
+Definition at line 1177 of file RoadNetwork\&.h\&.
+.SS "std::string PlannerHNS::PreCalculatedConditions::ToStringHeader ()\fC [inline]\fP"
+
+.PP
+Definition at line 1169 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlannerHNS::PreCalculatedConditions::bCanChangeLane"
+
+.PP
+Definition at line 1060 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bChangeLaneLeft"
+
+.PP
+Definition at line 1064 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bChangeLaneRight"
+
+.PP
+Definition at line 1065 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bForwardLeft"
+
+.PP
+Definition at line 1058 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bForwardRight"
+
+.PP
+Definition at line 1059 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bFullyBlock"
+
+.PP
+Definition at line 1084 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bGreenOutsideControl"
+
+.PP
+Definition at line 1094 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bNewGlobalPath"
+
+.PP
+Definition at line 1089 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::bOutsideControl"
+
+.PP
+Definition at line 1093 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bOvertake"
+
+.PP
+Definition at line 1063 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bRePlan"
+
+.PP
+Definition at line 1090 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bSubGoalAchieved"
+
+.PP
+Definition at line 1067 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bSubGoalPoseSet"
+
+.PP
+Definition at line 1066 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bTargetLaneSafe"
+
+.PP
+Definition at line 1061 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bTrafficIsRed"
+
+.PP
+Definition at line 1075 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bUpcomingLeft"
+
+.PP
+Definition at line 1056 of file RoadNetwork\&.h\&.
+.SS "bool PlannerHNS::PreCalculatedConditions::bUpcomingRight"
+
+.PP
+Definition at line 1057 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::currentGoalID"
+
+.PP
+Definition at line 1039 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::currentLaneID"
+
+.PP
+Definition at line 1053 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::currentStopLineID"
+
+.PP
+Definition at line 1077 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::currentStopSignID"
+
+.PP
+Definition at line 1071 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::currentTrafficLightID"
+
+.PP
+Definition at line 1073 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::currentVelocity"
+
+.PP
+Definition at line 1091 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::distanceToChangeLane"
+
+.PP
+Definition at line 1051 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::distanceToGoBack"
+
+.PP
+Definition at line 1049 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::distanceToNext"
+
+.PP
+Definition at line 1043 of file RoadNetwork\&.h\&.
+.SS "\fBPlannerHNS::ForceCmdTypes\fP PlannerHNS::PreCalculatedConditions::forceCMD"
+
+.PP
+Definition at line 1096 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::iCentralTrajectory"
+
+.PP
+Definition at line 1083 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::iCurrSafeLane"
+
+.PP
+Definition at line 1048 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::iCurrSafeTrajectory"
+
+.PP
+Definition at line 1082 of file RoadNetwork\&.h\&.
+.SS "\fBLIGHT_INDICATOR\fP PlannerHNS::PreCalculatedConditions::indicator"
+
+.PP
+Definition at line 1085 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::iPrevSafeLane"
+
+.PP
+Definition at line 1047 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::iPrevSafeTrajectory"
+
+.PP
+Definition at line 1081 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::minStoppingDistance"
+
+.PP
+Definition at line 1092 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::originalLaneID"
+
+.PP
+Definition at line 1054 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::prevGoalID"
+
+.PP
+Definition at line 1040 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::prevStopLineID"
+
+.PP
+Definition at line 1078 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::prevStopSignID"
+
+.PP
+Definition at line 1072 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::prevTrafficLightID"
+
+.PP
+Definition at line 1074 of file RoadNetwork\&.h\&.
+.SS "std::vector<double> PlannerHNS::PreCalculatedConditions::stoppingDistances"
+
+.PP
+Definition at line 1095 of file RoadNetwork\&.h\&.
+.SS "\fBWayPoint\fP* PlannerHNS::PreCalculatedConditions::SubGoalPose"
+
+.PP
+Definition at line 1068 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::PreCalculatedConditions::targetLaneID"
+
+.PP
+Definition at line 1055 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::timeToChangeLane"
+
+.PP
+Definition at line 1052 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::timeToGoBack"
+
+.PP
+Definition at line 1050 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::PreCalculatedConditions::velocityOfNext"
+
+.PP
+Definition at line 1044 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

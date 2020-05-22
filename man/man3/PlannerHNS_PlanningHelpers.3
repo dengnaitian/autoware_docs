@@ -1,0 +1,525 @@
+.TH "PlannerHNS::PlanningHelpers" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::PlanningHelpers \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlanningHelpers\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlanningHelpers\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PlanningHelpers\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBGetRelativeInfo\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, \fBRelativeInfo\fP &info, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static bool \fBGetRelativeInfoRange\fP (const std::vector< std::vector< \fBWayPoint\fP > > &trajectories, const \fBWayPoint\fP &\fBp\fP, const double &searchDistance, \fBRelativeInfo\fP &info)"
+.br
+.ti -1c
+.RI "static bool \fBGetRelativeInfoLimited\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, \fBRelativeInfo\fP &info, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBGetFollowPointOnTrajectory\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBRelativeInfo\fP &init_p, const double &\fBdistance\fP, unsigned int &point_index)"
+.br
+.ti -1c
+.RI "static double \fBGetExactDistanceOnTrajectory\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBRelativeInfo\fP &p1, const \fBRelativeInfo\fP &p2)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestNextPointIndex_obsolete\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestNextPointIndexFast\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestNextPointIndexFastV2\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestNextPointIndexDirectionFast\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestNextPointIndexDirectionFastV2\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static int \fBGetClosestPointIndex_obsolete\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBGetPerpendicularOnTrajectory_obsolete\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, double &\fBdistance\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static double \fBGetPerpDistanceToTrajectorySimple_obsolete\fP (const std::vector< \fBWayPoint\fP > &trajectory, const \fBWayPoint\fP &\fBp\fP, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static double \fBGetPerpDistanceToVectorSimple_obsolete\fP (const \fBWayPoint\fP &p1, const \fBWayPoint\fP &p2, const \fBWayPoint\fP &\fBpose\fP)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP \fBGetNextPointOnTrajectory_obsolete\fP (const std::vector< \fBWayPoint\fP > &trajectory, const double &\fBdistance\fP, const int &currIndex=0)"
+.br
+.ti -1c
+.RI "static double \fBGetDistanceOnTrajectory_obsolete\fP (const std::vector< \fBWayPoint\fP > &path, const int &start_index, const \fBWayPoint\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "static void \fBCreateManualBranch\fP (std::vector< \fBWayPoint\fP > &path, const int &degree, const \fBDIRECTION_TYPE\fP &direction)"
+.br
+.ti -1c
+.RI "static void \fBCreateManualBranchFromTwoPoints\fP (\fBWayPoint\fP &p1, \fBWayPoint\fP &p2, const double &\fBdistance\fP, const \fBDIRECTION_TYPE\fP &direction, std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static void \fBFixPathDensity\fP (std::vector< \fBWayPoint\fP > &path, const double &distanceDensity)"
+.br
+.ti -1c
+.RI "static void \fBSmoothPath\fP (std::vector< \fBWayPoint\fP > &path, double weight_data=0\&.25, double weight_smooth=0\&.25, double tolerance=0\&.01)"
+.br
+.ti -1c
+.RI "static double \fBCalcCircle\fP (const \fBGPSPoint\fP &pt1, const \fBGPSPoint\fP &pt2, const \fBGPSPoint\fP &pt3, \fBGPSPoint\fP &center)"
+.br
+.ti -1c
+.RI "static void \fBFixAngleOnly\fP (std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static double \fBCalcAngleAndCost\fP (std::vector< \fBWayPoint\fP > &path, const double &lastCost=0, const bool &bSmooth=true)"
+.br
+.ti -1c
+.RI "static double \fBCalcAngleAndCostAndCurvatureAnd2D\fP (std::vector< \fBWayPoint\fP > &path, const double &lastCost=0)"
+.br
+.ti -1c
+.RI "static void \fBPredictConstantTimeCostForTrajectory\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &path, const \fBPlannerHNS::WayPoint\fP &currPose, const double &minVelocity, const double &minDist)"
+.br
+.ti -1c
+.RI "static double \fBGetAccurateDistanceOnTrajectory\fP (std::vector< \fBWayPoint\fP > &path, const int &start_index, const \fBWayPoint\fP &\fBp\fP)"
+.br
+.ti -1c
+.RI "static void \fBExtractPartFromPointToDistance\fP (const std::vector< \fBWayPoint\fP > &originalPath, const \fBWayPoint\fP &pos, const double &minDistance, const double &pathDensity, std::vector< \fBWayPoint\fP > &extractedPath, const double &SmoothDataWeight, const double &SmoothWeight, const double &SmoothTolerance)"
+.br
+.ti -1c
+.RI "static void \fBExtractPartFromPointToDistanceFast\fP (const std::vector< \fBWayPoint\fP > &originalPath, const \fBWayPoint\fP &pos, const double &minDistance, const double &pathDensity, std::vector< \fBWayPoint\fP > &extractedPath, const double &SmoothDataWeight, const double &SmoothWeight, const double &SmoothTolerance)"
+.br
+.ti -1c
+.RI "static void \fBExtractPartFromPointToDistanceDirectionFast\fP (const std::vector< \fBWayPoint\fP > &originalPath, const \fBWayPoint\fP &pos, const double &minDistance, const double &pathDensity, std::vector< \fBWayPoint\fP > &extractedPath)"
+.br
+.ti -1c
+.RI "static void \fBCalculateRollInTrajectories\fP (const \fBWayPoint\fP &carPos, const double &speed, const std::vector< \fBWayPoint\fP > &originalCenter, int &start_index, int &end_index, std::vector< double > &end_laterals, std::vector< std::vector< \fBWayPoint\fP > > &rollInPaths, const double &max_roll_distance, const double &maxSpeed, const double &carTipMargin, const double &rollInMargin, const double &rollInSpeedFactor, const double &pathDensity, const double &rollOutDensity, const int &rollOutNumber, const double &SmoothDataWeight, const double &SmoothWeight, const double &SmoothTolerance, const bool &bHeadingSmooth, std::vector< \fBWayPoint\fP > &sampledPoints)"
+.br
+.ti -1c
+.RI "static void \fBSmoothSpeedProfiles\fP (std::vector< \fBWayPoint\fP > &path_in, double weight_data, double weight_smooth, double tolerance=0\&.1)"
+.br
+.ti -1c
+.RI "static void \fBSmoothSpeedSigmoid\fP (std::vector< \fBWayPoint\fP > &path_in, unsigned int threshold, unsigned int interval)"
+.br
+.ti -1c
+.RI "static void \fBSmoothCurvatureProfiles\fP (std::vector< \fBWayPoint\fP > &path_in, double weight_data, double weight_smooth, double tolerance=0\&.1)"
+.br
+.ti -1c
+.RI "static void \fBSmoothWayPointsDirections\fP (std::vector< \fBWayPoint\fP > &path_in, double weight_data, double weight_smooth, double tolerance=0\&.1)"
+.br
+.ti -1c
+.RI "static void \fBSmoothGlobalPathSpeed\fP (std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static void \fBGenerateRecommendedSpeed\fP (std::vector< \fBWayPoint\fP > &path, const double &max_speed, const double &speedProfileFactor)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBBuildPlanningSearchTreeV2\fP (\fBWayPoint\fP *pStart, const \fBWayPoint\fP &goalPos, const std::vector< int > &globalPath, const double &DistanceLimit, const bool &bEnableLaneChange, std::vector< \fBWayPoint\fP * > &all_cells_to_delete)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBBuildPlanningSearchTreeStraight\fP (\fBWayPoint\fP *pStart, const double &DistanceLimit, std::vector< \fBWayPoint\fP * > &all_cells_to_delete)"
+.br
+.ti -1c
+.RI "static int \fBPredictiveDP\fP (\fBWayPoint\fP *pStart, const double &DistanceLimit, std::vector< \fBWayPoint\fP * > &all_cells_to_delete, std::vector< \fBWayPoint\fP * > &end_waypoints)"
+.br
+.ti -1c
+.RI "static int \fBPredictiveIgnorIdsDP\fP (\fBWayPoint\fP *pStart, const double &DistanceLimit, std::vector< \fBWayPoint\fP * > &all_cells_to_delete, std::vector< \fBWayPoint\fP * > &end_waypoints, std::vector< int > &lanes_ids)"
+.br
+.ti -1c
+.RI "static bool \fBCheckLaneIdExits\fP (const std::vector< int > &lanes, const \fBLane\fP *pL)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBCheckLaneExits\fP (const std::vector< \fBWayPoint\fP * > &nodes, const \fBLane\fP *pL)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBCheckNodeExits\fP (const std::vector< \fBWayPoint\fP * > &nodes, const \fBWayPoint\fP *pL)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBCreateLaneHeadCell\fP (\fBLane\fP *pLane, \fBWayPoint\fP *pLeft, \fBWayPoint\fP *pRight, \fBWayPoint\fP *pBack)"
+.br
+.ti -1c
+.RI "static double \fBGetLanePoints\fP (\fBLane\fP *l, const \fBWayPoint\fP &prevWayPointIndex, const double &minDistance, const double &prevCost, std::vector< \fBWayPoint\fP > &points)"
+.br
+.ti -1c
+.RI "static \fBWayPoint\fP * \fBGetMinCostCell\fP (const std::vector< \fBWayPoint\fP * > &cells, const std::vector< int > &globalPathIds)"
+.br
+.ti -1c
+.RI "static void \fBTraversePathTreeBackwards\fP (\fBWayPoint\fP *pHead, \fBWayPoint\fP *pStartWP, const std::vector< int > &globalPathIds, std::vector< \fBWayPoint\fP > &localPath, std::vector< std::vector< \fBWayPoint\fP > > &localPaths)"
+.br
+.ti -1c
+.RI "static void \fBExtractPlanAlernatives\fP (const std::vector< \fBWayPoint\fP > &singlePath, std::vector< std::vector< \fBWayPoint\fP > > &allPaths)"
+.br
+.ti -1c
+.RI "static std::vector< int > \fBGetUniqueLeftRightIds\fP (const std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static bool \fBFindInList\fP (const std::vector< int > &\fBlist\fP, const int &x)"
+.br
+.ti -1c
+.RI "static void \fBRemoveWithValue\fP (std::vector< int > &\fBlist\fP, const int &x)"
+.br
+.ti -1c
+.RI "static \fBACTION_TYPE\fP \fBGetBranchingDirection\fP (\fBWayPoint\fP &currWP, \fBWayPoint\fP &nextWP)"
+.br
+.ti -1c
+.RI "static void \fBCalcContourPointsForDetectedObjects\fP (const \fBWayPoint\fP &currPose, std::vector< \fBDetectedObject\fP > &obj_list, const double &filterDistance=100)"
+.br
+.ti -1c
+.RI "static double \fBGetVelocityAhead\fP (const std::vector< \fBWayPoint\fP > &path, const \fBRelativeInfo\fP &info, int &prev_index, const double &reasonable_brake_distance)"
+.br
+.ti -1c
+.RI "static bool \fBCompareTrajectories\fP (const std::vector< \fBWayPoint\fP > &path1, const std::vector< \fBWayPoint\fP > &path2)"
+.br
+.ti -1c
+.RI "static double \fBGetDistanceToClosestStopLineAndCheck\fP (const std::vector< \fBWayPoint\fP > &path, const \fBWayPoint\fP &\fBp\fP, const double &giveUpDistance, int &stopLineID, int &stopSignID, int &trafficLightID, const int &prevIndex=0)"
+.br
+.ti -1c
+.RI "static bool \fBGetThreePointsInfo\fP (const \fBWayPoint\fP &p0, const \fBWayPoint\fP &p1, const \fBWayPoint\fP &p2, \fBWayPoint\fP &perp_p, double &long_d, double lat_d)"
+.br
+.ti -1c
+.RI "static void \fBWritePathToFile\fP (const std::string &fileName, const std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static \fBLIGHT_INDICATOR\fP \fBGetIndicatorsFromPath\fP (const std::vector< \fBWayPoint\fP > &path, const \fBWayPoint\fP &\fBpose\fP, const double &seachDistance)"
+.br
+.ti -1c
+.RI "static \fBPlannerHNS::WayPoint\fP \fBGetRealCenter\fP (const \fBPlannerHNS::WayPoint\fP &currState, const double &wheel_base)"
+.br
+.ti -1c
+.RI "static void \fBTestQuadraticSpline\fP (const std::vector< \fBWayPoint\fP > &center_line, std::vector< \fBWayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "static double \fBfrunge\fP (double x)"
+.br
+.ti -1c
+.RI "static double \fBfprunge\fP (double x)"
+.br
+.ti -1c
+.RI "static double \fBfpprunge\fP (double x)"
+.br
+.ti -1c
+.RI "static int \fBGetForwardWayPointIndexInDistanceFromCurrent\fP (const std::vector< \fBWayPoint\fP > &trajectory, const double &\fBdistance\fP, const int &currIndex)"
+.br
+.ti -1c
+.RI "static int \fBGetBackwardWayPointIndexInDistanceFromCurrent\fP (const std::vector< \fBWayPoint\fP > &trajectory, const double &\fBdistance\fP, const int &currIndex)"
+.br
+.ti -1c
+.RI "static std::vector< \fBWayPoint\fP > \fBExtractLaneSegmentBetweenIndexes\fP (const std::vector< \fBWayPoint\fP > &trajectory, const int &start, const int &end)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::vector< std::pair< \fBGPSPoint\fP, \fBGPSPoint\fP > > \fBm_TestingClosestPoint\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 29 of file PlanningHelpers\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::PlanningHelpers::PlanningHelpers ()"
+
+.PP
+Definition at line 21 of file PlanningHelpers\&.cpp\&.
+.SS "PlannerHNS::PlanningHelpers::~PlanningHelpers ()\fC [virtual]\fP"
+
+.PP
+Definition at line 25 of file PlanningHelpers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::BuildPlanningSearchTreeStraight (\fBWayPoint\fP * pStart, const double & DistanceLimit, std::vector< \fBWayPoint\fP * > & all_cells_to_delete)\fC [static]\fP"
+
+.PP
+Definition at line 2144 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::BuildPlanningSearchTreeV2 (\fBWayPoint\fP * pStart, const \fBWayPoint\fP & goalPos, const std::vector< int > & globalPath, const double & DistanceLimit, const bool & bEnableLaneChange, std::vector< \fBWayPoint\fP * > & all_cells_to_delete)\fC [static]\fP"
+
+.PP
+Definition at line 1999 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::CalcAngleAndCost (std::vector< \fBWayPoint\fP > & path, const double & lastCost = \fC0\fP, const bool & bSmooth = \fCtrue\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1291 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::CalcAngleAndCostAndCurvatureAnd2D (std::vector< \fBWayPoint\fP > & path, const double & lastCost = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1326 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::CalcCircle (const \fBGPSPoint\fP & pt1, const \fBGPSPoint\fP & pt2, const \fBGPSPoint\fP & pt3, \fBGPSPoint\fP & center)\fC [static]\fP"
+
+.PP
+Definition at line 1359 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::CalcContourPointsForDetectedObjects (const \fBWayPoint\fP & currPose, std::vector< \fBDetectedObject\fP > & obj_list, const double & filterDistance = \fC100\fP)\fC [static]\fP"
+
+.PP
+Definition at line 2680 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::CalculateRollInTrajectories (const \fBWayPoint\fP & carPos, const double & speed, const std::vector< \fBWayPoint\fP > & originalCenter, int & start_index, int & end_index, std::vector< double > & end_laterals, std::vector< std::vector< \fBWayPoint\fP > > & rollInPaths, const double & max_roll_distance, const double & maxSpeed, const double & carTipMargin, const double & rollInMargin, const double & rollInSpeedFactor, const double & pathDensity, const double & rollOutDensity, const int & rollOutNumber, const double & SmoothDataWeight, const double & SmoothWeight, const double & SmoothTolerance, const bool & bHeadingSmooth, std::vector< \fBWayPoint\fP > & sampledPoints)\fC [static]\fP"
+*** Smoothing From Car Heading Section ***///
+.PP
+*** -------------------------------- ***///
+.PP
+*** Smoothing From Car Heading Section ***///
+.PP
+*** -------------------------------- ***/// 
+.PP
+Definition at line 1508 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::CheckLaneExits (const std::vector< \fBWayPoint\fP * > & nodes, const \fBLane\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 2411 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::CheckLaneIdExits (const std::vector< int > & lanes, const \fBLane\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 2398 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::CheckNodeExits (const std::vector< \fBWayPoint\fP * > & nodes, const \fBWayPoint\fP * pL)\fC [static]\fP"
+
+.PP
+Definition at line 2424 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::CompareTrajectories (const std::vector< \fBWayPoint\fP > & path1, const std::vector< \fBWayPoint\fP > & path2)\fC [static]\fP"
+
+.PP
+Definition at line 983 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::CreateLaneHeadCell (\fBLane\fP * pLane, \fBWayPoint\fP * pLeft, \fBWayPoint\fP * pRight, \fBWayPoint\fP * pBack)\fC [static]\fP"
+
+.PP
+Definition at line 2437 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::CreateManualBranch (std::vector< \fBWayPoint\fP > & path, const int & degree, const \fBDIRECTION_TYPE\fP & direction)\fC [static]\fP"
+
+.PP
+Definition at line 1087 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::CreateManualBranchFromTwoPoints (\fBWayPoint\fP & p1, \fBWayPoint\fP & p2, const double & distance, const \fBDIRECTION_TYPE\fP & direction, std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.PP
+Definition at line 1038 of file PlanningHelpers\&.cpp\&.
+.SS "std::vector< \fBWayPoint\fP > PlannerHNS::PlanningHelpers::ExtractLaneSegmentBetweenIndexes (const std::vector< \fBWayPoint\fP > & trajectory, const int & start, const int & end)\fC [static]\fP"
+
+.PP
+Definition at line 2910 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::ExtractPartFromPointToDistance (const std::vector< \fBWayPoint\fP > & originalPath, const \fBWayPoint\fP & pos, const double & minDistance, const double & pathDensity, std::vector< \fBWayPoint\fP > & extractedPath, const double & SmoothDataWeight, const double & SmoothWeight, const double & SmoothTolerance)\fC [static]\fP"
+
+.PP
+Definition at line 1386 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::ExtractPartFromPointToDistanceDirectionFast (const std::vector< \fBWayPoint\fP > & originalPath, const \fBWayPoint\fP & pos, const double & minDistance, const double & pathDensity, std::vector< \fBWayPoint\fP > & extractedPath)\fC [static]\fP"
+
+.PP
+Definition at line 1425 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::ExtractPartFromPointToDistanceFast (const std::vector< \fBWayPoint\fP > & originalPath, const \fBWayPoint\fP & pos, const double & minDistance, const double & pathDensity, std::vector< \fBWayPoint\fP > & extractedPath, const double & SmoothDataWeight, const double & SmoothWeight, const double & SmoothTolerance)\fC [static]\fP"
+
+.PP
+Definition at line 1468 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::ExtractPlanAlernatives (const std::vector< \fBWayPoint\fP > & singlePath, std::vector< std::vector< \fBWayPoint\fP > > & allPaths)\fC [static]\fP"
+
+.PP
+Definition at line 2540 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::FindInList (const std::vector< int > & list, const int & x)\fC [static]\fP"
+
+.PP
+Definition at line 1770 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::FixAngleOnly (std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.PP
+Definition at line 1271 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::FixPathDensity (std::vector< \fBWayPoint\fP > & path, const double & distanceDensity)\fC [static]\fP"
+
+.PP
+Definition at line 1144 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::fpprunge (double x)\fC [static]\fP"
+
+.PP
+Definition at line 2847 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::fprunge (double x)\fC [static]\fP"
+
+.PP
+Definition at line 2836 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::frunge (double x)\fC [static]\fP"
+
+.PP
+Definition at line 2827 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::GenerateRecommendedSpeed (std::vector< \fBWayPoint\fP > & path, const double & max_speed, const double & speedProfileFactor)\fC [static]\fP"
+
+.PP
+Definition at line 1966 of file PlanningHelpers\&.cpp\&.
+.SS "static double PlannerHNS::PlanningHelpers::GetAccurateDistanceOnTrajectory (std::vector< \fBWayPoint\fP > & path, const int & start_index, const \fBWayPoint\fP & p)\fC [static]\fP"
+
+.SS "int PlannerHNS::PlanningHelpers::GetBackwardWayPointIndexInDistanceFromCurrent (const std::vector< \fBWayPoint\fP > & trajectory, const double & distance, const int & currIndex)\fC [static]\fP"
+
+.PP
+Definition at line 2860 of file PlanningHelpers\&.cpp\&.
+.SS "\fBACTION_TYPE\fP PlannerHNS::PlanningHelpers::GetBranchingDirection (\fBWayPoint\fP & currWP, \fBWayPoint\fP & nextWP)\fC [static]\fP"
+
+.PP
+Definition at line 2645 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::GetClosestNextPointIndex_obsolete (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 448 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::GetClosestNextPointIndexDirectionFast (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 691 of file PlanningHelpers\&.cpp\&.
+.SS "static int PlannerHNS::PlanningHelpers::GetClosestNextPointIndexDirectionFastV2 (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.SS "int PlannerHNS::PlanningHelpers::GetClosestNextPointIndexFast (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 608 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::GetClosestNextPointIndexFastV2 (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 489 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::GetClosestPointIndex_obsolete (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 730 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetDistanceOnTrajectory_obsolete (const std::vector< \fBWayPoint\fP > & path, const int & start_index, const \fBWayPoint\fP & p)\fC [static]\fP"
+
+.PP
+Definition at line 957 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetDistanceToClosestStopLineAndCheck (const std::vector< \fBWayPoint\fP > & path, const \fBWayPoint\fP & p, const double & giveUpDistance, int & stopLineID, int & stopSignID, int & trafficLightID, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1000 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetExactDistanceOnTrajectory (const std::vector< \fBWayPoint\fP > & trajectory, const \fBRelativeInfo\fP & p1, const \fBRelativeInfo\fP & p2)\fC [static]\fP"
+
+.PP
+Definition at line 418 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::PlanningHelpers::GetFollowPointOnTrajectory (const std::vector< \fBWayPoint\fP > & trajectory, const \fBRelativeInfo\fP & init_p, const double & distance, unsigned int & point_index)\fC [static]\fP"
+
+.PP
+Definition at line 375 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::GetForwardWayPointIndexInDistanceFromCurrent (const std::vector< \fBWayPoint\fP > & trajectory, const double & distance, const int & currIndex)\fC [static]\fP"
+
+.PP
+Definition at line 2885 of file PlanningHelpers\&.cpp\&.
+.SS "\fBLIGHT_INDICATOR\fP PlannerHNS::PlanningHelpers::GetIndicatorsFromPath (const std::vector< \fBWayPoint\fP > & path, const \fBWayPoint\fP & pose, const double & seachDistance)\fC [static]\fP"
+
+.PP
+Definition at line 2770 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetLanePoints (\fBLane\fP * l, const \fBWayPoint\fP & prevWayPointIndex, const double & minDistance, const double & prevCost, std::vector< \fBWayPoint\fP > & points)\fC [static]\fP"
+
+.PP
+Definition at line 2471 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP * PlannerHNS::PlanningHelpers::GetMinCostCell (const std::vector< \fBWayPoint\fP * > & cells, const std::vector< int > & globalPathIds)\fC [static]\fP"
+
+.PP
+Definition at line 2502 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::PlanningHelpers::GetNextPointOnTrajectory_obsolete (const std::vector< \fBWayPoint\fP > & trajectory, const double & distance, const int & currIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 907 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetPerpDistanceToTrajectorySimple_obsolete (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 817 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetPerpDistanceToVectorSimple_obsolete (const \fBWayPoint\fP & p1, const \fBWayPoint\fP & p2, const \fBWayPoint\fP & pose)\fC [static]\fP"
+
+.PP
+Definition at line 883 of file PlanningHelpers\&.cpp\&.
+.SS "\fBWayPoint\fP PlannerHNS::PlanningHelpers::GetPerpendicularOnTrajectory_obsolete (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, double & distance, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 750 of file PlanningHelpers\&.cpp\&.
+.SS "\fBPlannerHNS::WayPoint\fP PlannerHNS::PlanningHelpers::GetRealCenter (const \fBPlannerHNS::WayPoint\fP & currState, const double & wheel_base)\fC [static]\fP"
+
+.PP
+Definition at line 2807 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::GetRelativeInfo (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, \fBRelativeInfo\fP & info, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 84 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::GetRelativeInfoLimited (const std::vector< \fBWayPoint\fP > & trajectory, const \fBWayPoint\fP & p, \fBRelativeInfo\fP & info, const int & prevIndex = \fC0\fP)\fC [static]\fP"
+
+.PP
+Definition at line 162 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::GetRelativeInfoRange (const std::vector< std::vector< \fBWayPoint\fP > > & trajectories, const \fBWayPoint\fP & p, const double & searchDistance, \fBRelativeInfo\fP & info)\fC [static]\fP"
+
+.PP
+Definition at line 29 of file PlanningHelpers\&.cpp\&.
+.SS "bool PlannerHNS::PlanningHelpers::GetThreePointsInfo (const \fBWayPoint\fP & p0, const \fBWayPoint\fP & p1, const \fBWayPoint\fP & p2, \fBWayPoint\fP & perp_p, double & long_d, double lat_d)\fC [static]\fP"
+
+.PP
+Definition at line 332 of file PlanningHelpers\&.cpp\&.
+.SS "std::vector< int > PlannerHNS::PlanningHelpers::GetUniqueLeftRightIds (const std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.PP
+Definition at line 1791 of file PlanningHelpers\&.cpp\&.
+.SS "double PlannerHNS::PlanningHelpers::GetVelocityAhead (const std::vector< \fBWayPoint\fP > & path, const \fBRelativeInfo\fP & info, int & prev_index, const double & reasonable_brake_distance)\fC [static]\fP"
+
+.PP
+Definition at line 2726 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::PredictConstantTimeCostForTrajectory (std::vector< \fBPlannerHNS::WayPoint\fP > & path, const \fBPlannerHNS::WayPoint\fP & currPose, const double & minVelocity, const double & minDist)\fC [static]\fP"
+
+.PP
+Definition at line 1245 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::PredictiveDP (\fBWayPoint\fP * pStart, const double & DistanceLimit, std::vector< \fBWayPoint\fP * > & all_cells_to_delete, std::vector< \fBWayPoint\fP * > & end_waypoints)\fC [static]\fP"
+
+.PP
+Definition at line 2335 of file PlanningHelpers\&.cpp\&.
+.SS "int PlannerHNS::PlanningHelpers::PredictiveIgnorIdsDP (\fBWayPoint\fP * pStart, const double & DistanceLimit, std::vector< \fBWayPoint\fP * > & all_cells_to_delete, std::vector< \fBWayPoint\fP * > & end_waypoints, std::vector< int > & lanes_ids)\fC [static]\fP"
+
+.PP
+Definition at line 2260 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::RemoveWithValue (std::vector< int > & list, const int & x)\fC [static]\fP"
+
+.PP
+Definition at line 1780 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothCurvatureProfiles (std::vector< \fBWayPoint\fP > & path_in, double weight_data, double weight_smooth, double tolerance = \fC0\&.1\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1904 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothGlobalPathSpeed (std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.PP
+Definition at line 1960 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothPath (std::vector< \fBWayPoint\fP > & path, double weight_data = \fC0\&.25\fP, double weight_smooth = \fC0\&.25\fP, double tolerance = \fC0\&.01\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1193 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothSpeedProfiles (std::vector< \fBWayPoint\fP > & path_in, double weight_data, double weight_smooth, double tolerance = \fC0\&.1\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1875 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothSpeedSigmoid (std::vector< \fBWayPoint\fP > & path_in, unsigned int threshold, unsigned int interval)\fC [static]\fP"
+
+.PP
+Definition at line 1833 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::SmoothWayPointsDirections (std::vector< \fBWayPoint\fP > & path_in, double weight_data, double weight_smooth, double tolerance = \fC0\&.1\fP)\fC [static]\fP"
+
+.PP
+Definition at line 1931 of file PlanningHelpers\&.cpp\&.
+.SS "static void PlannerHNS::PlanningHelpers::TestQuadraticSpline (const std::vector< \fBWayPoint\fP > & center_line, std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.SS "void PlannerHNS::PlanningHelpers::TraversePathTreeBackwards (\fBWayPoint\fP * pHead, \fBWayPoint\fP * pStartWP, const std::vector< int > & globalPathIds, std::vector< \fBWayPoint\fP > & localPath, std::vector< std::vector< \fBWayPoint\fP > > & localPaths)\fC [static]\fP"
+
+.PP
+Definition at line 2599 of file PlanningHelpers\&.cpp\&.
+.SS "void PlannerHNS::PlanningHelpers::WritePathToFile (const std::string & fileName, const std::vector< \fBWayPoint\fP > & path)\fC [static]\fP"
+
+.PP
+Definition at line 2753 of file PlanningHelpers\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector< std::pair< \fBGPSPoint\fP, \fBGPSPoint\fP > > PlannerHNS::PlanningHelpers::m_TestingClosestPoint\fC [static]\fP"
+
+.PP
+Definition at line 33 of file PlanningHelpers\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

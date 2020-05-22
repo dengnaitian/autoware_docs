@@ -1,0 +1,669 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/image.c" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/image.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'blas\&.h'\fP
+.br
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include 'stb_image\&.h'\fP
+.br
+\fC#include 'stb_image_write\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTB_IMAGE_IMPLEMENTATION\fP"
+.br
+.ti -1c
+.RI "#define \fBSTB_IMAGE_WRITE_IMPLEMENTATION\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBget_color\fP (int \fBc\fP, int x, int max)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmask_to_rgb\fP (\fBimage\fP mask)"
+.br
+.ti -1c
+.RI "void \fBcomposite_image\fP (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBborder_image\fP (\fBimage\fP a, int border)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBtile_images\fP (\fBimage\fP a, \fBimage\fP \fBb\fP, int dx)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_label\fP (\fBimage\fP **characters, char *string, int size)"
+.br
+.ti -1c
+.RI "void \fBdraw_label\fP (\fBimage\fP a, int r, int \fBc\fP, \fBimage\fP label, const float *rgb)"
+.br
+.ti -1c
+.RI "void \fBdraw_box\fP (\fBimage\fP a, int x1, int y1, int x2, int y2, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBdraw_box_width\fP (\fBimage\fP a, int x1, int y1, int x2, int y2, int w, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBdraw_bbox\fP (\fBimage\fP a, \fBbox\fP bbox, int w, float r, float g, float \fBb\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP ** \fBload_alphabet\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw_detections\fP (\fBimage\fP im, \fBdetection\fP *dets, int num, float thresh, char **names, \fBimage\fP **alphabet, int classes)"
+.br
+.ti -1c
+.RI "void \fBtranspose_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBrotate_image_cw\fP (\fBimage\fP im, int times)"
+.br
+.ti -1c
+.RI "void \fBflip_image\fP (\fBimage\fP a)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBimage_distance\fP (\fBimage\fP a, \fBimage\fP \fBb\fP)"
+.br
+.ti -1c
+.RI "void \fBghost_image\fP (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+.br
+.ti -1c
+.RI "void \fBblocky_image\fP (\fBimage\fP im, int s)"
+.br
+.ti -1c
+.RI "void \fBcensor_image\fP (\fBimage\fP im, int dx, int dy, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBembed_image\fP (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_image_layers\fP (\fBimage\fP source, int border)"
+.br
+.ti -1c
+.RI "void \fBconstrain_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBnormalize_image\fP (\fBimage\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBnormalize_image2\fP (\fBimage\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBcopy_image_into\fP (\fBimage\fP src, \fBimage\fP dest)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcopy_image\fP (\fBimage\fP \fBp\fP)"
+.br
+.ti -1c
+.RI "void \fBrgbgr_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBshow_image\fP (\fBimage\fP \fBp\fP, const char *name)"
+.br
+.ti -1c
+.RI "void \fBsave_image_png\fP (\fBimage\fP im, const char *name)"
+.br
+.ti -1c
+.RI "void \fBsave_image\fP (\fBimage\fP im, const char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_image_layers\fP (\fBimage\fP \fBp\fP, char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_image_collapsed\fP (\fBimage\fP \fBp\fP, char *name)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_empty_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBmake_random_image\fP (int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBfloat_to_image\fP (int w, int h, int \fBc\fP, float *\fBdata\fP)"
+.br
+.ti -1c
+.RI "void \fBplace_image\fP (\fBimage\fP im, int w, int h, int dx, int dy, \fBimage\fP canvas)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcenter_crop_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrotate_crop_image\fP (\fBimage\fP im, float rad, float s, int w, int h, float dx, float dy, float aspect)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrotate_image\fP (\fBimage\fP im, float rad)"
+.br
+.ti -1c
+.RI "void \fBfill_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "void \fBtranslate_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "void \fBscale_image\fP (\fBimage\fP m, float s)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcrop_image\fP (\fBimage\fP im, int dx, int dy, int w, int h)"
+.br
+.ti -1c
+.RI "int \fBbest_3d_shift_r\fP (\fBimage\fP a, \fBimage\fP \fBb\fP, int min, int max)"
+.br
+.ti -1c
+.RI "int \fBbest_3d_shift\fP (\fBimage\fP a, \fBimage\fP \fBb\fP, int min, int max)"
+.br
+.ti -1c
+.RI "void \fBcomposite_3d\fP (char *f1, char *f2, char *out, int delta)"
+.br
+.ti -1c
+.RI "void \fBletterbox_image_into\fP (\fBimage\fP im, int w, int h, \fBimage\fP boxed)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBletterbox_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_max\fP (\fBimage\fP im, int max)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_min\fP (\fBimage\fP im, int min)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrandom_crop_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "\fBaugment_args\fP \fBrandom_augment_args\fP (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBrandom_augment_image\fP (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+.br
+.ti -1c
+.RI "float \fBthree_way_max\fP (float a, float \fBb\fP, float \fBc\fP)"
+.br
+.ti -1c
+.RI "float \fBthree_way_min\fP (float a, float \fBb\fP, float \fBc\fP)"
+.br
+.ti -1c
+.RI "void \fByuv_to_rgb\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBrgb_to_yuv\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBrgb_to_hsv\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBhsv_to_rgb\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBgrayscale_image_3c\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBgrayscale_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBthreshold_image\fP (\fBimage\fP im, float thresh)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBblend_image\fP (\fBimage\fP fore, \fBimage\fP back, float alpha)"
+.br
+.ti -1c
+.RI "void \fBscale_image_channel\fP (\fBimage\fP im, int \fBc\fP, float v)"
+.br
+.ti -1c
+.RI "void \fBtranslate_image_channel\fP (\fBimage\fP im, int \fBc\fP, float v)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBbinarize_image\fP (\fBimage\fP im)"
+.br
+.ti -1c
+.RI "void \fBsaturate_image\fP (\fBimage\fP im, float sat)"
+.br
+.ti -1c
+.RI "void \fBhue_image\fP (\fBimage\fP im, float hue)"
+.br
+.ti -1c
+.RI "void \fBexposure_image\fP (\fBimage\fP im, float sat)"
+.br
+.ti -1c
+.RI "void \fBdistort_image\fP (\fBimage\fP im, float hue, float sat, float val)"
+.br
+.ti -1c
+.RI "void \fBrandom_distort_image\fP (\fBimage\fP im, float hue, float saturation, float exposure)"
+.br
+.ti -1c
+.RI "void \fBsaturate_exposure_image\fP (\fBimage\fP im, float sat, float exposure)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBresize_image\fP (\fBimage\fP im, int w, int h)"
+.br
+.ti -1c
+.RI "void \fBtest_resize\fP (char *filename)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBload_image_stb\fP (char *filename, int channels)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBload_image\fP (char *filename, int w, int h, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBload_image_color\fP (char *filename, int w, int h)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBget_image_layer\fP (\fBimage\fP m, int l)"
+.br
+.ti -1c
+.RI "void \fBprint_image\fP (\fBimage\fP m)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_images_vert\fP (\fBimage\fP *ims, int n)"
+.br
+.ti -1c
+.RI "\fBimage\fP \fBcollapse_images_horz\fP (\fBimage\fP *ims, int n)"
+.br
+.ti -1c
+.RI "void \fBshow_image_normalized\fP (\fBimage\fP im, const char *name)"
+.br
+.ti -1c
+.RI "void \fBshow_images\fP (\fBimage\fP *ims, int n, char *window)"
+.br
+.ti -1c
+.RI "void \fBfree_image\fP (\fBimage\fP m)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBwindows\fP = 0"
+.br
+.ti -1c
+.RI "float \fBcolors\fP [6][3] = { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define STB_IMAGE_IMPLEMENTATION"
+
+.PP
+Definition at line 8 of file image\&.c\&.
+.SS "#define STB_IMAGE_WRITE_IMPLEMENTATION"
+
+.PP
+Definition at line 10 of file image\&.c\&.
+.SH "Function Documentation"
+.PP 
+.SS "int best_3d_shift (\fBimage\fP a, \fBimage\fP b, int min, int max)"
+
+.PP
+Definition at line 891 of file image\&.c\&.
+.SS "int best_3d_shift_r (\fBimage\fP a, \fBimage\fP b, int min, int max)"
+
+.PP
+Definition at line 877 of file image\&.c\&.
+.SS "\fBimage\fP binarize_image (\fBimage\fP im)"
+
+.PP
+Definition at line 1275 of file image\&.c\&.
+.SS "\fBimage\fP blend_image (\fBimage\fP fore, \fBimage\fP back, float alpha)"
+
+.PP
+Definition at line 1234 of file image\&.c\&.
+.SS "void blocky_image (\fBimage\fP im, int s)"
+
+.PP
+Definition at line 399 of file image\&.c\&.
+.SS "\fBimage\fP border_image (\fBimage\fP a, int border)"
+
+.PP
+Definition at line 106 of file image\&.c\&.
+.SS "void censor_image (\fBimage\fP im, int dx, int dy, int w, int h)"
+
+.PP
+Definition at line 411 of file image\&.c\&.
+.SS "\fBimage\fP center_crop_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 792 of file image\&.c\&.
+.SS "\fBimage\fP collapse_image_layers (\fBimage\fP source, int border)"
+
+.PP
+Definition at line 441 of file image\&.c\&.
+.SS "\fBimage\fP collapse_images_horz (\fBimage\fP * ims, int n)"
+
+.PP
+Definition at line 1548 of file image\&.c\&.
+.SS "\fBimage\fP collapse_images_vert (\fBimage\fP * ims, int n)"
+
+.PP
+Definition at line 1513 of file image\&.c\&.
+.SS "void composite_3d (char * f1, char * f2, char * out, int delta)"
+
+.PP
+Definition at line 909 of file image\&.c\&.
+.SS "void composite_image (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+
+.PP
+Definition at line 92 of file image\&.c\&.
+.SS "void constrain_image (\fBimage\fP im)"
+
+.PP
+Definition at line 456 of file image\&.c\&.
+.SS "\fBimage\fP copy_image (\fBimage\fP p)"
+
+.PP
+Definition at line 519 of file image\&.c\&.
+.SS "void copy_image_into (\fBimage\fP src, \fBimage\fP dest)"
+
+.PP
+Definition at line 514 of file image\&.c\&.
+.SS "\fBimage\fP crop_image (\fBimage\fP im, int dx, int dy, int w, int h)"
+
+.PP
+Definition at line 857 of file image\&.c\&.
+.SS "void distort_image (\fBimage\fP im, float hue, float sat, float val)"
+
+.PP
+Definition at line 1315 of file image\&.c\&.
+.SS "void draw_bbox (\fBimage\fP a, \fBbox\fP bbox, int w, float r, float g, float b)"
+
+.PP
+Definition at line 210 of file image\&.c\&.
+.SS "void draw_box (\fBimage\fP a, int x1, int y1, int x2, int y2, float r, float g, float b)"
+
+.PP
+Definition at line 166 of file image\&.c\&.
+.SS "void draw_box_width (\fBimage\fP a, int x1, int y1, int x2, int y2, int w, float r, float g, float b)"
+
+.PP
+Definition at line 202 of file image\&.c\&.
+.SS "void draw_detections (\fBimage\fP im, \fBdetection\fP * dets, int num, float thresh, char ** names, \fBimage\fP ** alphabet, int classes)"
+
+.PP
+Definition at line 239 of file image\&.c\&.
+.SS "void draw_label (\fBimage\fP a, int r, int c, \fBimage\fP label, const float * rgb)"
+
+.PP
+Definition at line 149 of file image\&.c\&.
+.SS "void embed_image (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+
+.PP
+Definition at line 428 of file image\&.c\&.
+.SS "void exposure_image (\fBimage\fP im, float sat)"
+
+.PP
+Definition at line 1307 of file image\&.c\&.
+.SS "void fill_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 839 of file image\&.c\&.
+.SS "void flip_image (\fBimage\fP a)"
+
+.PP
+Definition at line 349 of file image\&.c\&.
+.SS "\fBimage\fP float_to_image (int w, int h, int c, float * data)"
+
+.PP
+Definition at line 770 of file image\&.c\&.
+.SS "void free_image (\fBimage\fP m)"
+
+.PP
+Definition at line 1610 of file image\&.c\&.
+.SS "float get_color (int c, int x, int max)"
+
+.PP
+Definition at line 17 of file image\&.c\&.
+.SS "\fBimage\fP get_image_layer (\fBimage\fP m, int l)"
+
+.PP
+Definition at line 1487 of file image\&.c\&.
+.SS "\fBimage\fP get_label (\fBimage\fP ** characters, char * string, int size)"
+
+.PP
+Definition at line 132 of file image\&.c\&.
+.SS "void ghost_image (\fBimage\fP source, \fBimage\fP dest, int dx, int dy)"
+
+.PP
+Definition at line 380 of file image\&.c\&.
+.SS "\fBimage\fP grayscale_image (\fBimage\fP im)"
+
+.PP
+Definition at line 1208 of file image\&.c\&.
+.SS "void grayscale_image_3c (\fBimage\fP im)"
+
+.PP
+Definition at line 1190 of file image\&.c\&.
+.SS "void hsv_to_rgb (\fBimage\fP im)"
+
+.PP
+Definition at line 1149 of file image\&.c\&.
+.SS "void hue_image (\fBimage\fP im, float hue)"
+
+.PP
+Definition at line 1294 of file image\&.c\&.
+.SS "\fBimage\fP image_distance (\fBimage\fP a, \fBimage\fP b)"
+
+.PP
+Definition at line 365 of file image\&.c\&.
+.SS "\fBimage\fP letterbox_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 960 of file image\&.c\&.
+.SS "void letterbox_image_into (\fBimage\fP im, int w, int h, \fBimage\fP boxed)"
+
+.PP
+Definition at line 944 of file image\&.c\&.
+.SS "\fBimage\fP** load_alphabet ()"
+
+.PP
+Definition at line 223 of file image\&.c\&.
+.SS "\fBimage\fP load_image (char * filename, int w, int h, int c)"
+
+.PP
+Definition at line 1466 of file image\&.c\&.
+.SS "\fBimage\fP load_image_color (char * filename, int w, int h)"
+
+.PP
+Definition at line 1482 of file image\&.c\&.
+.SS "\fBimage\fP load_image_stb (char * filename, int channels)"
+
+.PP
+Definition at line 1442 of file image\&.c\&.
+.SS "\fBimage\fP make_empty_image (int w, int h, int c)"
+
+.PP
+Definition at line 742 of file image\&.c\&.
+.SS "\fBimage\fP make_image (int w, int h, int c)"
+
+.PP
+Definition at line 752 of file image\&.c\&.
+.SS "\fBimage\fP make_random_image (int w, int h, int c)"
+
+.PP
+Definition at line 759 of file image\&.c\&.
+.SS "\fBimage\fP mask_to_rgb (\fBimage\fP mask)"
+
+.PP
+Definition at line 28 of file image\&.c\&.
+.SS "void normalize_image (\fBimage\fP p)"
+
+.PP
+Definition at line 465 of file image\&.c\&.
+.SS "void normalize_image2 (\fBimage\fP p)"
+
+.PP
+Definition at line 485 of file image\&.c\&.
+.SS "void place_image (\fBimage\fP im, int w, int h, int dx, int dy, \fBimage\fP canvas)"
+
+.PP
+Definition at line 777 of file image\&.c\&.
+.SS "void print_image (\fBimage\fP m)"
+
+.PP
+Definition at line 1496 of file image\&.c\&.
+.SS "\fBaugment_args\fP random_augment_args (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+
+.PP
+Definition at line 1021 of file image\&.c\&.
+.SS "\fBimage\fP random_augment_image (\fBimage\fP im, float angle, float aspect, int low, int high, int w, int h)"
+
+.PP
+Definition at line 1048 of file image\&.c\&.
+.SS "\fBimage\fP random_crop_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 1013 of file image\&.c\&.
+.SS "void random_distort_image (\fBimage\fP im, float hue, float saturation, float exposure)"
+
+.PP
+Definition at line 1330 of file image\&.c\&.
+.SS "\fBimage\fP resize_image (\fBimage\fP im, int w, int h)"
+
+.PP
+Definition at line 1347 of file image\&.c\&.
+.SS "\fBimage\fP resize_max (\fBimage\fP im, int max)"
+
+.PP
+Definition at line 981 of file image\&.c\&.
+.SS "\fBimage\fP resize_min (\fBimage\fP im, int min)"
+
+.PP
+Definition at line 997 of file image\&.c\&.
+.SS "void rgb_to_hsv (\fBimage\fP im)"
+
+.PP
+Definition at line 1112 of file image\&.c\&.
+.SS "void rgb_to_yuv (\fBimage\fP im)"
+
+.PP
+Definition at line 1088 of file image\&.c\&.
+.SS "void rgbgr_image (\fBimage\fP im)"
+
+.PP
+Definition at line 527 of file image\&.c\&.
+.SS "\fBimage\fP rotate_crop_image (\fBimage\fP im, float rad, float s, int w, int h, float dx, float dy, float aspect)"
+
+.PP
+Definition at line 801 of file image\&.c\&.
+.SS "\fBimage\fP rotate_image (\fBimage\fP im, float rad)"
+
+.PP
+Definition at line 820 of file image\&.c\&.
+.SS "void rotate_image_cw (\fBimage\fP im, int times)"
+
+.PP
+Definition at line 328 of file image\&.c\&.
+.SS "void saturate_exposure_image (\fBimage\fP im, float sat, float exposure)"
+
+.PP
+Definition at line 1338 of file image\&.c\&.
+.SS "void saturate_image (\fBimage\fP im, float sat)"
+
+.PP
+Definition at line 1286 of file image\&.c\&.
+.SS "void save_image (\fBimage\fP im, const char * name)"
+
+.PP
+Definition at line 713 of file image\&.c\&.
+.SS "void save_image_png (\fBimage\fP im, const char * name)"
+
+.PP
+Definition at line 696 of file image\&.c\&.
+.SS "void scale_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 851 of file image\&.c\&.
+.SS "void scale_image_channel (\fBimage\fP im, int c, float v)"
+
+.PP
+Definition at line 1251 of file image\&.c\&.
+.SS "void show_image (\fBimage\fP p, const char * name)"
+
+.PP
+Definition at line 575 of file image\&.c\&.
+.SS "void show_image_collapsed (\fBimage\fP p, char * name)"
+
+.PP
+Definition at line 735 of file image\&.c\&.
+.SS "void show_image_layers (\fBimage\fP p, char * name)"
+
+.PP
+Definition at line 723 of file image\&.c\&.
+.SS "void show_image_normalized (\fBimage\fP im, const char * name)"
+
+.PP
+Definition at line 1584 of file image\&.c\&.
+.SS "void show_images (\fBimage\fP * ims, int n, char * window)"
+
+.PP
+Definition at line 1592 of file image\&.c\&.
+.SS "void test_resize (char * filename)"
+
+.PP
+Definition at line 1392 of file image\&.c\&.
+.SS "float three_way_max (float a, float b, float c)"
+
+.PP
+Definition at line 1055 of file image\&.c\&.
+.SS "float three_way_min (float a, float b, float c)"
+
+.PP
+Definition at line 1060 of file image\&.c\&.
+.SS "\fBimage\fP threshold_image (\fBimage\fP im, float thresh)"
+
+.PP
+Definition at line 1224 of file image\&.c\&.
+.SS "\fBimage\fP tile_images (\fBimage\fP a, \fBimage\fP b, int dx)"
+
+.PP
+Definition at line 122 of file image\&.c\&.
+.SS "void translate_image (\fBimage\fP m, float s)"
+
+.PP
+Definition at line 845 of file image\&.c\&.
+.SS "void translate_image_channel (\fBimage\fP im, int c, float v)"
+
+.PP
+Definition at line 1263 of file image\&.c\&.
+.SS "void transpose_image (\fBimage\fP im)"
+
+.PP
+Definition at line 312 of file image\&.c\&.
+.SS "void yuv_to_rgb (\fBimage\fP im)"
+
+.PP
+Definition at line 1065 of file image\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "float colors[6][3] = { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} }"
+
+.PP
+Definition at line 15 of file image\&.c\&.
+.SS "int windows = 0"
+
+.PP
+Definition at line 13 of file image\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

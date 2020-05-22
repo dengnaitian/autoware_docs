@@ -1,0 +1,105 @@
+.TH "decision_maker::CrossRoadArea" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+decision_maker::CrossRoadArea \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cross_road_area\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCrossRoadArea\fP (void)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBCrossRoadArea\fP * \fBfindClosestCrossRoad\fP (const autoware_msgs::Lane &_finalwaypoints, std::vector< \fBCrossRoadArea\fP > &intersects)"
+.br
+.ti -1c
+.RI "static bool \fBisInsideArea\fP (const \fBCrossRoadArea\fP *_TargetArea, \fBgeometry_msgs::Point\fP pt)"
+.br
+.ti -1c
+.RI "static \fBCrossRoadArea\fP * \fBgetCrossRoadArea\fP (std::vector< \fBCrossRoadArea\fP > &areas, int aid)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBarea_id\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBpoints\fP"
+.br
+.ti -1c
+.RI "jsk_recognition_msgs::BoundingBox \fBbbox\fP"
+.br
+.ti -1c
+.RI "std::vector< autoware_msgs::Lane > \fBinsideLanes\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBgeometry_msgs::Point\fP > \fBinsideWaypoint_points\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file cross_road_area\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "decision_maker::CrossRoadArea::CrossRoadArea (void)\fC [inline]\fP"
+
+.PP
+Definition at line 24 of file cross_road_area\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCrossRoadArea\fP * decision_maker::CrossRoadArea::findClosestCrossRoad (const autoware_msgs::Lane & _finalwaypoints, std::vector< \fBCrossRoadArea\fP > & intersects)\fC [static]\fP"
+
+.PP
+Definition at line 8 of file cross_road_area\&.cpp\&.
+.SS "static \fBCrossRoadArea\fP* decision_maker::CrossRoadArea::getCrossRoadArea (std::vector< \fBCrossRoadArea\fP > & areas, int aid)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 37 of file cross_road_area\&.hpp\&.
+.SS "bool decision_maker::CrossRoadArea::isInsideArea (const \fBCrossRoadArea\fP * _TargetArea, \fBgeometry_msgs::Point\fP pt)\fC [static]\fP"
+
+.PP
+Definition at line 96 of file cross_road_area\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int decision_maker::CrossRoadArea::area_id"
+
+.PP
+Definition at line 17 of file cross_road_area\&.hpp\&.
+.SS "jsk_recognition_msgs::BoundingBox decision_maker::CrossRoadArea::bbox"
+
+.PP
+Definition at line 19 of file cross_road_area\&.hpp\&.
+.SS "int decision_maker::CrossRoadArea::id"
+
+.PP
+Definition at line 16 of file cross_road_area\&.hpp\&.
+.SS "std::vector<autoware_msgs::Lane> decision_maker::CrossRoadArea::insideLanes"
+
+.PP
+Definition at line 21 of file cross_road_area\&.hpp\&.
+.SS "std::vector<\fBgeometry_msgs::Point\fP> decision_maker::CrossRoadArea::insideWaypoint_points"
+
+.PP
+Definition at line 22 of file cross_road_area\&.hpp\&.
+.SS "std::vector<\fBgeometry_msgs::Point\fP> decision_maker::CrossRoadArea::points"
+
+.PP
+Definition at line 18 of file cross_road_area\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

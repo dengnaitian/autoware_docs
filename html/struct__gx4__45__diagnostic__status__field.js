@@ -1,0 +1,27 @@
+var struct__gx4__45__diagnostic__status__field =
+[
+    [ "com1_port_bytes_read", "struct__gx4__45__diagnostic__status__field.html#ae25a51d5b189b9ffec7a15880ec3dfb9", null ],
+    [ "com1_port_bytes_written", "struct__gx4__45__diagnostic__status__field.html#ab32aff6b023d06d38c21ec3c3fe92e1b", null ],
+    [ "com1_port_read_overruns", "struct__gx4__45__diagnostic__status__field.html#a730245b302eb5485e002bb8280cdb9b9", null ],
+    [ "com1_port_write_overruns", "struct__gx4__45__diagnostic__status__field.html#a3c90076e430eb8d7f79ece40b72cf570", null ],
+    [ "device_model", "struct__gx4__45__diagnostic__status__field.html#a70e4bc8c53a53522a3ff98b4509eda97", null ],
+    [ "filter_dropped_packets", "struct__gx4__45__diagnostic__status__field.html#afbd2c7db187b6decd933abd8ab7e0aaa", null ],
+    [ "filter_stream_enabled", "struct__gx4__45__diagnostic__status__field.html#a38876033a8da539edd1f192bc7754a1f", null ],
+    [ "gps_dropped_packets", "struct__gx4__45__diagnostic__status__field.html#acf6cb5b6bf6f8415d308581f3fccc6ae", null ],
+    [ "gps_last_message_ms", "struct__gx4__45__diagnostic__status__field.html#abe36ae40604b4042e35d04267de8f139", null ],
+    [ "gps_message_count", "struct__gx4__45__diagnostic__status__field.html#a8f66ce6f5a1afc5588776deda3cd967b", null ],
+    [ "gps_parser_errors", "struct__gx4__45__diagnostic__status__field.html#a3d3756c435fdb3fb50ab4242961258f6", null ],
+    [ "gps_power_on", "struct__gx4__45__diagnostic__status__field.html#a0246df7989e0e0a91f73a91246d9569b", null ],
+    [ "gps_stream_enabled", "struct__gx4__45__diagnostic__status__field.html#aa9b06e0f1e470eec5df4c06c487afdae", null ],
+    [ "imu_dropped_packets", "struct__gx4__45__diagnostic__status__field.html#a1c80423ef85fa76869dff17fb091c92e", null ],
+    [ "imu_last_message_ms", "struct__gx4__45__diagnostic__status__field.html#ac327b8052ed849dc242960d3fcb305a8", null ],
+    [ "imu_message_count", "struct__gx4__45__diagnostic__status__field.html#a5bb242f04c808b69d2fd56952be01c8d", null ],
+    [ "imu_parser_errors", "struct__gx4__45__diagnostic__status__field.html#a892d21599674b16816a6e6cdb798d6a9", null ],
+    [ "imu_stream_enabled", "struct__gx4__45__diagnostic__status__field.html#afd2526fa361b537d842d95d87429b58c", null ],
+    [ "last_gps_pps_trigger_ms", "struct__gx4__45__diagnostic__status__field.html#a1439b42d66272fc6357f8f8927aae4b4", null ],
+    [ "num_gps_pps_triggers", "struct__gx4__45__diagnostic__status__field.html#a7404477e86ae791022353a6e22095731", null ],
+    [ "status_flags", "struct__gx4__45__diagnostic__status__field.html#aeb73891e1e741205f16727af3472eb53", null ],
+    [ "status_selector", "struct__gx4__45__diagnostic__status__field.html#a0e89d5a018308dcb7c64b38d920aaca7", null ],
+    [ "system_state", "struct__gx4__45__diagnostic__status__field.html#adb394fa8cc65cb60a71e0f0ba534417b", null ],
+    [ "system_timer_ms", "struct__gx4__45__diagnostic__status__field.html#af37822a63008c6d758180d7fbdb17ad9", null ]
+];

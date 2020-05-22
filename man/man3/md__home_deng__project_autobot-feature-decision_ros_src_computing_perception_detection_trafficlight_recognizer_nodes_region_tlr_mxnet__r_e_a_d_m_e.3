@@ -1,0 +1,60 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_region_tlr_mxnet__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_detection_trafficlight_recognizer_nodes_region_tlr_mxnet__r_e_a_d_m_e \- Setup Traffic Light recognition based on MxNet 
+
+.IP "1." 4
+Clone the MxNet \fCv1\&.0\&.0\fP branch from the Apacher MxNet project GitHub onto your Home directory:
+.PP
+.PP
+.PP
+.nf
+1 $ cd
+2 $ git clone -b v1\&.0\&.0 --recursive https://github\&.com/apache/incubator-mxnet\&.git mxnet
+.fi
+.PP
+.PP
+.IP "2." 4
+Install CUDA 8\&.0 and CUDNN v5\&.x for CUDA 8\&.0 as recommended on the GitHub project\&.
+.IP "3." 4
+Install OpenBLAS
+.PP
+.PP
+\fC$ sudo apt-get install libopenblas-dev\fP
+.PP
+.IP "3." 4
+We recommend to update line 276 from the \fCMakefile\fP to only compile the code for your GPU architecture\&.
+.PP
+.PP
+\fCKNOWN_CUDA_ARCHS := 30 35 50 52 60 61 70\fP
+.PP
+i\&.e\&. if you own a Pascal card (1060, 1070, 1080, Titan X/Xp)
+.PP
+change it to \fCKNOWN_CUDA_ARCHS := 61\fP
+.PP
+For a complete list check https://developer.nvidia.com/cuda-gpus, or execute \fCdeviceQuery\fP from the CUDA samples to find yours\&.
+.PP
+.IP "4." 4
+Compile MxNet with C++, OpenCV, OpenBLAS, CUDA and CUDNN support
+.PP
+.PP
+\fC$ make -j1 USE_BLAS=openblas USE_CUDA=1 USE_CUDA_PATH=/usr/local/cuda USE_CUDNN=1 USE_CPP_PACKAGE=1\fP
+.PP
+.IP "5." 4
+Compile Autoware
+.IP "6." 4
+Put your trained data in \fC/tmp\fP\&.
+.PP
+.PP
+.PP
+.nf
+1 /tmp
+2 ├── mxnet-network\&.json
+3 └── mxnet-network\&.params
+.fi
+.PP
+ Specify your files name in \fCAutoware/ros/src/computing/perception/detection/packages/trafficlight_recognizer/launch/traffic_recognition_mxnet\&.launch\fP, if you use your own\&. 
+.PP
+.PP
+For a complete reference on the compilation follow the project's documentation: https://mxnet.incubator.apache.org/get_started/build_from_source.html 

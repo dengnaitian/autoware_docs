@@ -1,0 +1,190 @@
+.TH "PlannerHNS::Lane" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::Lane \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RoadNetwork\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLane\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBroadId\fP"
+.br
+.ti -1c
+.RI "int \fBareaId\fP"
+.br
+.ti -1c
+.RI "int \fBfromAreaId\fP"
+.br
+.ti -1c
+.RI "int \fBtoAreaId\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBfromIds\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBtoIds\fP"
+.br
+.ti -1c
+.RI "int \fBnum\fP"
+.br
+.ti -1c
+.RI "double \fBspeed\fP"
+.br
+.ti -1c
+.RI "double \fBlength\fP"
+.br
+.ti -1c
+.RI "double \fBdir\fP"
+.br
+.ti -1c
+.RI "\fBLaneType\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "double \fBwidth\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBWayPoint\fP > \fBpoints\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBTrafficLight\fP > \fBtrafficlights\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBStopLine\fP > \fBstopLines\fP"
+.br
+.ti -1c
+.RI "\fBWaitingLine\fP \fBwaitingLine\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBLane\fP * > \fBfromLanes\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBLane\fP * > \fBtoLanes\fP"
+.br
+.ti -1c
+.RI "\fBLane\fP * \fBpLeftLane\fP"
+.br
+.ti -1c
+.RI "\fBLane\fP * \fBpRightLane\fP"
+.br
+.ti -1c
+.RI "\fBRoadSegment\fP * \fBpRoad\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 750 of file RoadNetwork\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlannerHNS::Lane::Lane ()\fC [inline]\fP"
+
+.PP
+Definition at line 778 of file RoadNetwork\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int PlannerHNS::Lane::areaId"
+
+.PP
+Definition at line 755 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::Lane::dir"
+
+.PP
+Definition at line 763 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::Lane::fromAreaId"
+
+.PP
+Definition at line 756 of file RoadNetwork\&.h\&.
+.SS "std::vector<int> PlannerHNS::Lane::fromIds"
+
+.PP
+Definition at line 758 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBLane\fP*> PlannerHNS::Lane::fromLanes"
+
+.PP
+Definition at line 771 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::Lane::id"
+
+.PP
+Definition at line 753 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::Lane::length"
+
+.PP
+Definition at line 762 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::Lane::num"
+
+.PP
+Definition at line 760 of file RoadNetwork\&.h\&.
+.SS "\fBLane\fP* PlannerHNS::Lane::pLeftLane"
+
+.PP
+Definition at line 773 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBWayPoint\fP> PlannerHNS::Lane::points"
+
+.PP
+Definition at line 766 of file RoadNetwork\&.h\&.
+.SS "\fBLane\fP* PlannerHNS::Lane::pRightLane"
+
+.PP
+Definition at line 774 of file RoadNetwork\&.h\&.
+.SS "\fBRoadSegment\fP* PlannerHNS::Lane::pRoad"
+
+.PP
+Definition at line 776 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::Lane::roadId"
+
+.PP
+Definition at line 754 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::Lane::speed"
+
+.PP
+Definition at line 761 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBStopLine\fP> PlannerHNS::Lane::stopLines"
+
+.PP
+Definition at line 768 of file RoadNetwork\&.h\&.
+.SS "int PlannerHNS::Lane::toAreaId"
+
+.PP
+Definition at line 757 of file RoadNetwork\&.h\&.
+.SS "std::vector<int> PlannerHNS::Lane::toIds"
+
+.PP
+Definition at line 759 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBLane\fP*> PlannerHNS::Lane::toLanes"
+
+.PP
+Definition at line 772 of file RoadNetwork\&.h\&.
+.SS "std::vector<\fBTrafficLight\fP> PlannerHNS::Lane::trafficlights"
+
+.PP
+Definition at line 767 of file RoadNetwork\&.h\&.
+.SS "\fBLaneType\fP PlannerHNS::Lane::type"
+
+.PP
+Definition at line 764 of file RoadNetwork\&.h\&.
+.SS "\fBWaitingLine\fP PlannerHNS::Lane::waitingLine"
+
+.PP
+Definition at line 769 of file RoadNetwork\&.h\&.
+.SS "double PlannerHNS::Lane::width"
+
+.PP
+Definition at line 765 of file RoadNetwork\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

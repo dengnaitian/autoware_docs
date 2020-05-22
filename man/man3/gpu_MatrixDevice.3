@@ -1,0 +1,87 @@
+.TH "gpu::MatrixDevice" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::MatrixDevice \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MatrixDevice\&.h>\fP
+.PP
+Inherits \fBgpu::Matrix\fP\&.
+.PP
+Inherited by \fBgpu::SquareMatrixDevice\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrixDevice\fP ()"
+.br
+.ti -1c
+.RI "\fBMatrixDevice\fP (int \fBrows\fP, int \fBcols\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrixDevice\fP (int \fBrows\fP, int \fBcols\fP, int \fBoffset\fP, double *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP bool \fBisEmpty\fP ()"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrixDevice\fP \fBcol\fP (int index)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP \fBMatrixDevice\fP \fBrow\fP (int index)"
+.br
+.ti -1c
+.RI "\fBCUDAH\fP void \fBsetBuffer\fP (double *\fBbuffer\fP)"
+.br
+.ti -1c
+.RI "void \fBmemAlloc\fP ()"
+.br
+.ti -1c
+.RI "void \fBmemFree\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 7 of file MatrixDevice\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBCUDAH\fP gpu::MatrixDevice::MatrixDevice ()"
+
+.PP
+Definition at line 31 of file MatrixDevice\&.h\&.
+.SS "gpu::MatrixDevice::MatrixDevice (int rows, int cols)"
+
+.SS "\fBCUDAH\fP gpu::MatrixDevice::MatrixDevice (int rows, int cols, int offset, double * buffer)"
+
+.PP
+Definition at line 38 of file MatrixDevice\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCUDAH\fP \fBMatrixDevice\fP gpu::MatrixDevice::col (int index)"
+
+.PP
+Definition at line 52 of file MatrixDevice\&.h\&.
+.SS "\fBCUDAH\fP bool gpu::MatrixDevice::isEmpty ()"
+
+.PP
+Definition at line 47 of file MatrixDevice\&.h\&.
+.SS "void gpu::MatrixDevice::memAlloc ()"
+
+.SS "void gpu::MatrixDevice::memFree ()"
+
+.SS "\fBCUDAH\fP \fBMatrixDevice\fP gpu::MatrixDevice::row (int index)"
+
+.PP
+Definition at line 57 of file MatrixDevice\&.h\&.
+.SS "\fBCUDAH\fP void gpu::MatrixDevice::setBuffer (double * buffer)"
+
+.PP
+Definition at line 62 of file MatrixDevice\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

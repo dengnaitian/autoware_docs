@@ -1,0 +1,180 @@
+.TH "gpu::GVoxelGrid" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gpu::GVoxelGrid \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <VoxelGrid\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGVoxelGrid\fP ()"
+.br
+.ti -1c
+.RI "\fBGVoxelGrid\fP (const \fBGVoxelGrid\fP &other)"
+.br
+.ti -1c
+.RI "void \fBsetInput\fP (float *x, float *y, float *z, int points_num)"
+.br
+.ti -1c
+.RI "void \fBsetMinVoxelSize\fP (int size)"
+.br
+.ti -1c
+.RI "void \fBradiusSearch\fP (float *qx, float *qy, float *qz, int points_num, float radius, int max_nn, int **valid_points, int **starting_voxel_id, int **voxel_id, int *valid_voxel_num, int *valid_points_num)"
+.br
+.ti -1c
+.RI "int \fBgetVoxelNum\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMaxZ\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetMinZ\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelX\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelY\fP () const "
+.br
+.ti -1c
+.RI "float \fBgetVoxelZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMaxBZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetMinBZ\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridX\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridY\fP () const "
+.br
+.ti -1c
+.RI "int \fBgetVgridZ\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLeafSize\fP (float voxel_x, float voxel_y, float voxel_z)"
+.br
+.ti -1c
+.RI "double * \fBgetCentroidList\fP () const "
+.br
+.ti -1c
+.RI "double * \fBgetCovarianceList\fP () const "
+.br
+.ti -1c
+.RI "double * \fBgetInverseCovarianceList\fP () const "
+.br
+.ti -1c
+.RI "int * \fBgetPointsPerVoxelList\fP () const "
+.br
+.ti -1c
+.RI "void \fBnearestNeighborSearch\fP (float *trans_x, float *trans_y, float *trans_z, int \fBpoint_num\fP, int *valid_distance, double *min_distance, float max_range)"
+.br
+.ti -1c
+.RI "\fB~GVoxelGrid\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file VoxelGrid\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "gpu::GVoxelGrid::GVoxelGrid ()"
+
+.SS "gpu::GVoxelGrid::GVoxelGrid (const \fBGVoxelGrid\fP & other)"
+
+.SS "gpu::GVoxelGrid::~GVoxelGrid ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double* gpu::GVoxelGrid::getCentroidList () const"
+
+.SS "double* gpu::GVoxelGrid::getCovarianceList () const"
+
+.SS "double* gpu::GVoxelGrid::getInverseCovarianceList () const"
+
+.SS "int gpu::GVoxelGrid::getMaxBX () const"
+
+.SS "int gpu::GVoxelGrid::getMaxBY () const"
+
+.SS "int gpu::GVoxelGrid::getMaxBZ () const"
+
+.SS "float gpu::GVoxelGrid::getMaxX () const"
+
+.SS "float gpu::GVoxelGrid::getMaxY () const"
+
+.SS "float gpu::GVoxelGrid::getMaxZ () const"
+
+.SS "int gpu::GVoxelGrid::getMinBX () const"
+
+.SS "int gpu::GVoxelGrid::getMinBY () const"
+
+.SS "int gpu::GVoxelGrid::getMinBZ () const"
+
+.SS "float gpu::GVoxelGrid::getMinX () const"
+
+.SS "float gpu::GVoxelGrid::getMinY () const"
+
+.SS "float gpu::GVoxelGrid::getMinZ () const"
+
+.SS "int* gpu::GVoxelGrid::getPointsPerVoxelList () const"
+
+.SS "int gpu::GVoxelGrid::getVgridX () const"
+
+.SS "int gpu::GVoxelGrid::getVgridY () const"
+
+.SS "int gpu::GVoxelGrid::getVgridZ () const"
+
+.SS "int gpu::GVoxelGrid::getVoxelNum () const"
+
+.SS "float gpu::GVoxelGrid::getVoxelX () const"
+
+.SS "float gpu::GVoxelGrid::getVoxelY () const"
+
+.SS "float gpu::GVoxelGrid::getVoxelZ () const"
+
+.SS "void gpu::GVoxelGrid::nearestNeighborSearch (float * trans_x, float * trans_y, float * trans_z, int point_num, int * valid_distance, double * min_distance, float max_range)"
+
+.SS "void gpu::GVoxelGrid::radiusSearch (float * qx, float * qy, float * qz, int points_num, float radius, int max_nn, int ** valid_points, int ** starting_voxel_id, int ** voxel_id, int * valid_voxel_num, int * valid_points_num)"
+
+.SS "void gpu::GVoxelGrid::setInput (float * x, float * y, float * z, int points_num)"
+
+.SS "void gpu::GVoxelGrid::setLeafSize (float voxel_x, float voxel_y, float voxel_z)"
+
+.SS "void gpu::GVoxelGrid::setMinVoxelSize (int size)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

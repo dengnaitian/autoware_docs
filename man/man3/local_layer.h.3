@@ -1,0 +1,81 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/local_layer.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/perception/detection/vision_detector/packages/vision_darknet_detect/darknet/src/local_layer.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'cuda\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'activations\&.h'\fP
+.br
+\fC#include 'layer\&.h'\fP
+.br
+\fC#include 'network\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBlayer\fP \fBlocal_layer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlocal_layer\fP \fBmake_local_layer\fP (int batch, int h, int w, int \fBc\fP, int n, int size, int stride, int pad, \fBACTIVATION\fP activation)"
+.br
+.ti -1c
+.RI "void \fBforward_local_layer\fP (const \fBlocal_layer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBbackward_local_layer\fP (\fBlocal_layer\fP \fBlayer\fP, \fBnetwork\fP net)"
+.br
+.ti -1c
+.RI "void \fBupdate_local_layer\fP (\fBlocal_layer\fP \fBlayer\fP, \fBupdate_args\fP a)"
+.br
+.ti -1c
+.RI "void \fBbias_output\fP (float *output, float *biases, int batch, int n, int size)"
+.br
+.ti -1c
+.RI "void \fBbackward_bias\fP (float *bias_updates, float *delta, int batch, int n, int size)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBlayer\fP \fBlocal_layer\fP"
+
+.PP
+Definition at line 10 of file local_layer\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void backward_bias (float * bias_updates, float * delta, int batch, int n, int size)"
+
+.PP
+Definition at line 435 of file convolutional_layer\&.c\&.
+.SS "void backward_local_layer (\fBlocal_layer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 122 of file local_layer\&.c\&.
+.SS "void bias_output (float * output, float * biases, int batch, int n, int size)"
+
+.SS "void forward_local_layer (const \fBlocal_layer\fP layer, \fBnetwork\fP net)"
+
+.PP
+Definition at line 91 of file local_layer\&.c\&.
+.SS "\fBlocal_layer\fP make_local_layer (int batch, int h, int w, int c, int n, int size, int stride, int pad, \fBACTIVATION\fP activation)"
+
+.PP
+Definition at line 26 of file local_layer\&.c\&.
+.SS "void update_local_layer (\fBlocal_layer\fP layer, \fBupdate_args\fP a)"
+
+.PP
+Definition at line 167 of file local_layer\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

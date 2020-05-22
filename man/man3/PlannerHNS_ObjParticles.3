@@ -1,0 +1,350 @@
+.TH "PlannerHNS::ObjParticles" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerHNS::ObjParticles \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BehaviorPrediction\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBLLP\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~ObjParticles\fP ()"
+.br
+.ti -1c
+.RI "\fBObjParticles\fP ()"
+.br
+.ti -1c
+.RI "void \fBDeleteFromList\fP (std::vector< \fBTrajectoryTracker\fP * > &delete_me_track, const \fBTrajectoryTracker\fP *track)"
+.br
+.ti -1c
+.RI "void \fBDeleteTheRest\fP (std::vector< \fBTrajectoryTracker\fP * > &delete_me_track)"
+.br
+.ti -1c
+.RI "void \fBMatchWithMax\fP (std::vector< \fBLLP\fP > &matching_list, std::vector< \fBTrajectoryTracker\fP * > &delete_me_track, std::vector< \fBTrajectoryTracker\fP * > &check_list)"
+.br
+.ti -1c
+.RI "void \fBMatchTrajectories\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBIsBeggerPercentage\fP (const \fBLLP\fP &p1, const \fBLLP\fP &p2)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectedObject\fP \fBobj\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBTrajectoryTracker\fP * > \fBm_TrajectoryTracker\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBTrajectoryTracker\fP * > \fBm_TrajectoryTracker_temp\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBParticle\fP * > \fBm_AllParticles\fP"
+.br
+.ti -1c
+.RI "\fBTrajectoryTracker\fP * \fBbest_beh_track\fP"
+.br
+.ti -1c
+.RI "int \fBi_best_track\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::BehaviorState\fP \fBm_beh\fP"
+.br
+.ti -1c
+.RI "double \fBm_PredictionTime\fP"
+.br
+.ti -1c
+.RI "double \fBall_w\fP"
+.br
+.ti -1c
+.RI "double \fBmax_w\fP"
+.br
+.ti -1c
+.RI "double \fBmin_w\fP"
+.br
+.ti -1c
+.RI "double \fBmax_w_raw\fP"
+.br
+.ti -1c
+.RI "double \fBmin_w_raw\fP"
+.br
+.ti -1c
+.RI "double \fBavg_w\fP"
+.br
+.ti -1c
+.RI "double \fBpose_w_t\fP"
+.br
+.ti -1c
+.RI "double \fBdir_w_t\fP"
+.br
+.ti -1c
+.RI "double \fBvel_w_t\fP"
+.br
+.ti -1c
+.RI "double \fBacl_w_t\fP"
+.br
+.ti -1c
+.RI "double \fBind_w_t\fP"
+.br
+.ti -1c
+.RI "double \fBpose_w_max\fP"
+.br
+.ti -1c
+.RI "double \fBdir_w_max\fP"
+.br
+.ti -1c
+.RI "double \fBvel_w_max\fP"
+.br
+.ti -1c
+.RI "double \fBacl_w_max\fP"
+.br
+.ti -1c
+.RI "double \fBind_w_max\fP"
+.br
+.ti -1c
+.RI "double \fBpose_w_min\fP"
+.br
+.ti -1c
+.RI "double \fBdir_w_min\fP"
+.br
+.ti -1c
+.RI "double \fBvel_w_min\fP"
+.br
+.ti -1c
+.RI "double \fBacl_w_min\fP"
+.br
+.ti -1c
+.RI "double \fBind_w_min\fP"
+.br
+.ti -1c
+.RI "int \fBn_stop\fP"
+.br
+.ti -1c
+.RI "int \fBn_yield\fP"
+.br
+.ti -1c
+.RI "int \fBn_left_branch\fP"
+.br
+.ti -1c
+.RI "int \fBn_right_branch\fP"
+.br
+.ti -1c
+.RI "double \fBp_stop\fP"
+.br
+.ti -1c
+.RI "double \fBp_yield\fP"
+.br
+.ti -1c
+.RI "double \fBp_left_branch\fP"
+.br
+.ti -1c
+.RI "double \fBp_right_branch\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 515 of file BehaviorPrediction\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual PlannerHNS::ObjParticles::~ObjParticles ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 564 of file BehaviorPrediction\&.h\&.
+.SS "PlannerHNS::ObjParticles::ObjParticles ()\fC [inline]\fP"
+
+.PP
+Definition at line 570 of file BehaviorPrediction\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlannerHNS::ObjParticles::DeleteFromList (std::vector< \fBTrajectoryTracker\fP * > & delete_me_track, const \fBTrajectoryTracker\fP * track)\fC [inline]\fP"
+
+.PP
+Definition at line 649 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::ObjParticles::DeleteTheRest (std::vector< \fBTrajectoryTracker\fP * > & delete_me_track)\fC [inline]\fP"
+
+.PP
+Definition at line 661 of file BehaviorPrediction\&.h\&.
+.SS "static bool PlannerHNS::ObjParticles::IsBeggerPercentage (const \fBLLP\fP & p1, const \fBLLP\fP & p2)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 671 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::ObjParticles::MatchTrajectories ()\fC [inline]\fP"
+
+.PP
+Definition at line 712 of file BehaviorPrediction\&.h\&.
+.SS "void PlannerHNS::ObjParticles::MatchWithMax (std::vector< \fBLLP\fP > & matching_list, std::vector< \fBTrajectoryTracker\fP * > & delete_me_track, std::vector< \fBTrajectoryTracker\fP * > & check_list)\fC [inline]\fP"
+
+.PP
+Definition at line 676 of file BehaviorPrediction\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double PlannerHNS::ObjParticles::acl_w_max"
+
+.PP
+Definition at line 545 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::acl_w_min"
+
+.PP
+Definition at line 551 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::acl_w_t"
+
+.PP
+Definition at line 539 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::all_w"
+
+.PP
+Definition at line 530 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::avg_w"
+
+.PP
+Definition at line 535 of file BehaviorPrediction\&.h\&.
+.SS "\fBTrajectoryTracker\fP* PlannerHNS::ObjParticles::best_beh_track"
+
+.PP
+Definition at line 524 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::dir_w_max"
+
+.PP
+Definition at line 543 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::dir_w_min"
+
+.PP
+Definition at line 549 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::dir_w_t"
+
+.PP
+Definition at line 537 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::ObjParticles::i_best_track"
+
+.PP
+Definition at line 525 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::ind_w_max"
+
+.PP
+Definition at line 546 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::ind_w_min"
+
+.PP
+Definition at line 552 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::ind_w_t"
+
+.PP
+Definition at line 540 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBParticle\fP*> PlannerHNS::ObjParticles::m_AllParticles"
+
+.PP
+Definition at line 522 of file BehaviorPrediction\&.h\&.
+.SS "\fBPlannerHNS::BehaviorState\fP PlannerHNS::ObjParticles::m_beh"
+
+.PP
+Definition at line 527 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::m_PredictionTime"
+
+.PP
+Definition at line 528 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBTrajectoryTracker\fP*> PlannerHNS::ObjParticles::m_TrajectoryTracker"
+
+.PP
+Definition at line 519 of file BehaviorPrediction\&.h\&.
+.SS "std::vector<\fBTrajectoryTracker\fP*> PlannerHNS::ObjParticles::m_TrajectoryTracker_temp"
+
+.PP
+Definition at line 520 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::max_w"
+
+.PP
+Definition at line 531 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::max_w_raw"
+
+.PP
+Definition at line 533 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::min_w"
+
+.PP
+Definition at line 532 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::min_w_raw"
+
+.PP
+Definition at line 534 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::ObjParticles::n_left_branch"
+
+.PP
+Definition at line 556 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::ObjParticles::n_right_branch"
+
+.PP
+Definition at line 557 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::ObjParticles::n_stop"
+
+.PP
+Definition at line 554 of file BehaviorPrediction\&.h\&.
+.SS "int PlannerHNS::ObjParticles::n_yield"
+
+.PP
+Definition at line 555 of file BehaviorPrediction\&.h\&.
+.SS "\fBDetectedObject\fP PlannerHNS::ObjParticles::obj"
+
+.PP
+Definition at line 518 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::p_left_branch"
+
+.PP
+Definition at line 561 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::p_right_branch"
+
+.PP
+Definition at line 562 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::p_stop"
+
+.PP
+Definition at line 559 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::p_yield"
+
+.PP
+Definition at line 560 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::pose_w_max"
+
+.PP
+Definition at line 542 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::pose_w_min"
+
+.PP
+Definition at line 548 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::pose_w_t"
+
+.PP
+Definition at line 536 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::vel_w_max"
+
+.PP
+Definition at line 544 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::vel_w_min"
+
+.PP
+Definition at line 550 of file BehaviorPrediction\&.h\&.
+.SS "double PlannerHNS::ObjParticles::vel_w_t"
+
+.PP
+Definition at line 538 of file BehaviorPrediction\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

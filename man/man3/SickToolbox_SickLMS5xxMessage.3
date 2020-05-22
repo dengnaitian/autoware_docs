@@ -1,0 +1,160 @@
+.TH "SickToolbox::SickLMS5xxMessage" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SickToolbox::SickLMS5xxMessage \- A class to represent all messages sent to and from the Sick LMS 5xx unit\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SickLMS5xxMessage\&.hh>\fP
+.PP
+Inherits \fBSickToolbox::SickMessage< SICK_LMS_5xx_MSG_HEADER_LEN, SICK_LMS_5xx_MSG_PAYLOAD_MAX_LEN, SICK_LMS_5xx_MSG_TRAILER_LEN >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSickLMS5xxMessage\fP ()"
+.br
+.RI "\fIA default constructor\&. \fP"
+.ti -1c
+.RI "\fBSickLMS5xxMessage\fP (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+.br
+.RI "\fIAnother constructor\&. \fP"
+.ti -1c
+.RI "\fBSickLMS5xxMessage\fP (const uint8_t *const message_buffer)"
+.br
+.RI "\fIAnother constructor\&. \fP"
+.ti -1c
+.RI "void \fBBuildMessage\fP (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+.br
+.RI "\fIConstructs a well-formed Sick LMS 5xx message\&. \fP"
+.ti -1c
+.RI "void \fBParseMessage\fP (const uint8_t *const message_buffer)  throw ( SickIOException )"
+.br
+.RI "\fIParses a sequence of bytes into a \fBSickLMS5xxMessage\fP object\&. \fP"
+.ti -1c
+.RI "std::string \fBGetCommandType\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBGetCommand\fP () const "
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.RI "\fIReset all internal fields and buffers associated with the object\&. \fP"
+.ti -1c
+.RI "void \fBPrint\fP () const "
+.br
+.RI "\fIPrint the message contents\&. \fP"
+.ti -1c
+.RI "\fB~SickLMS5xxMessage\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A class to represent all messages sent to and from the Sick LMS 5xx unit\&. 
+.PP
+Definition at line 37 of file SickLMS5xxMessage\&.hh\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SickToolbox::SickLMS5xxMessage::SickLMS5xxMessage ()"
+
+.PP
+A default constructor\&. A standard constructor 
+.PP
+Definition at line 33 of file SickLMS5xxMessage\&.cc\&.
+.SS "SickToolbox::SickLMS5xxMessage::SickLMS5xxMessage (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+
+.PP
+Another constructor\&. Constructs a packet by using BuildMessage
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*payload_buffer\fP The payload for the packet as an array of bytes (including the header) 
+.br
+\fIpayload_length\fP The length of the payload array in bytes 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file SickLMS5xxMessage\&.cc\&.
+.SS "SickToolbox::SickLMS5xxMessage::SickLMS5xxMessage (const uint8_t *const message_buffer)"
+
+.PP
+Another constructor\&. Constructs a packet using \fBParseMessage()\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*message_buffer\fP A well-formed message to be parsed into the class' fields 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file SickLMS5xxMessage\&.cc\&.
+.SS "SickToolbox::SickLMS5xxMessage::~SickLMS5xxMessage ()"
+Destructor 
+.PP
+Definition at line 199 of file SickLMS5xxMessage\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void SickToolbox::SickLMS5xxMessage::BuildMessage (const uint8_t *const payload_buffer, const unsigned int payload_length)"
+
+.PP
+Constructs a well-formed Sick LMS 5xx message\&. Construct a well-formed raw packet
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*payload_buffer\fP An address of the first byte to be copied into the message's payload 
+.br
+\fIpayload_length\fP The number of bytes to be copied into the message buffer 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file SickLMS5xxMessage\&.cc\&.
+.SS "void SickToolbox::SickLMS5xxMessage::Clear ()\fC [virtual]\fP"
+
+.PP
+Reset all internal fields and buffers associated with the object\&. Reset the data associated with this message (for initialization purposes) 
+.PP
+Reimplemented from \fBSickToolbox::SickMessage< SICK_LMS_5xx_MSG_HEADER_LEN, SICK_LMS_5xx_MSG_PAYLOAD_MAX_LEN, SICK_LMS_5xx_MSG_TRAILER_LEN >\fP\&.
+.PP
+Definition at line 173 of file SickLMS5xxMessage\&.cc\&.
+.SS "std::string SickToolbox::SickLMS5xxMessage::GetCommand () const\fC [inline]\fP"
+Get the service sub-code associated with the message 
+.PP
+Definition at line 60 of file SickLMS5xxMessage\&.hh\&.
+.SS "std::string SickToolbox::SickLMS5xxMessage::GetCommandType () const\fC [inline]\fP"
+Get the length of the service code associated with the message 
+.PP
+Definition at line 57 of file SickLMS5xxMessage\&.hh\&.
+.SS "void SickToolbox::SickLMS5xxMessage::ParseMessage (const uint8_t *const message_buffer)\fBSickIOException\fP\fC [virtual]\fP"
+
+.PP
+Parses a sequence of bytes into a \fBSickLMS5xxMessage\fP object\&. Populates fields from a (well-formed) raw packet
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*message_buffer\fP A well-formed message to be parsed into the class' fields 
+.RE
+.PP
+
+.PP
+Implements \fBSickToolbox::SickMessage< SICK_LMS_5xx_MSG_HEADER_LEN, SICK_LMS_5xx_MSG_PAYLOAD_MAX_LEN, SICK_LMS_5xx_MSG_TRAILER_LEN >\fP\&.
+.PP
+Definition at line 122 of file SickLMS5xxMessage\&.cc\&.
+.SS "void SickToolbox::SickLMS5xxMessage::Print () const\fC [virtual]\fP"
+
+.PP
+Print the message contents\&. A debugging function that prints the contents of the frame\&. 
+.PP
+Reimplemented from \fBSickToolbox::SickMessage< SICK_LMS_5xx_MSG_HEADER_LEN, SICK_LMS_5xx_MSG_PAYLOAD_MAX_LEN, SICK_LMS_5xx_MSG_TRAILER_LEN >\fP\&.
+.PP
+Definition at line 187 of file SickLMS5xxMessage\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

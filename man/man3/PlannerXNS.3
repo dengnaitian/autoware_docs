@@ -1,0 +1,162 @@
+.TH "PlannerXNS" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlannerXNS \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAutowareBehaviorState\fP"
+.br
+.ti -1c
+.RI "class \fBAutowarePlanningParams\fP"
+.br
+.ti -1c
+.RI "class \fBAutowareRoadNetwork\fP"
+.br
+.ti -1c
+.RI "class \fBAutowareVehicleState\fP"
+.br
+.ti -1c
+.RI "class \fBPlannerX\fP"
+.br
+.ti -1c
+.RI "class \fBPolygonGenerator\fP"
+.br
+.ti -1c
+.RI "class \fBQuarterView\fP"
+.br
+.ti -1c
+.RI "class \fBROSHelpers\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSIGNAL_TYPE\fP { \fBSIMULATION_SIGNAL\fP, \fBROBOT_SIGNAL\fP }"
+.br
+.ti -1c
+.RI "enum \fBMAP_SOURCE_TYPE\fP { \fBMAP_AUTOWARE\fP, \fBMAP_FOLDER\fP, \fBMAP_KML_FILE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_STATE_TYPE\fP { \fBAW_INITIAL_STATE\fP, \fBAW_WAITING_STATE\fP, \fBAW_FORWARD_STATE\fP, \fBAW_STOPPING_STATE\fP, \fBAW_EMERGENCY_STATE\fP, \fBAW_TRAFFIC_LIGHT_STOP_STATE\fP, \fBAW_STOP_SIGN_STOP_STATE\fP, \fBAW_FOLLOW_STATE\fP, \fBAW_LANE_CHANGE_STATE\fP, \fBAW_OBSTACLE_AVOIDANCE_STATE\fP, \fBAW_FINISH_STATE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_LIGHT_INDICATOR\fP { \fBAW_INDICATOR_LEFT\fP, \fBAW_INDICATOR_RIGHT\fP, \fBAW_INDICATOR_BOTH\fP, \fBAW_INDICATOR_NONE\fP }"
+.br
+.ti -1c
+.RI "enum \fBAUTOWARE_SHIFT_POS\fP { \fBAW_SHIFT_POS_PP\fP = 0x60, \fBAW_SHIFT_POS_RR\fP = 0x40, \fBAW_SHIFT_POS_NN\fP = 0x20, \fBAW_SHIFT_POS_DD\fP = 0x10, \fBAW_SHIFT_POS_BB\fP = 0xA0, \fBAW_SHIFT_POS_SS\fP = 0x0f, \fBAW_SHIFT_POS_UU\fP = 0xff }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCheckConvexPoligon\fP (std::vector< \fBPlannerHNS::WayPoint\fP > &polygon)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBPlannerXNS::AUTOWARE_LIGHT_INDICATOR\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_INDICATOR_LEFT \fP\fP
+.TP
+\fB\fIAW_INDICATOR_RIGHT \fP\fP
+.TP
+\fB\fIAW_INDICATOR_BOTH \fP\fP
+.TP
+\fB\fIAW_INDICATOR_NONE \fP\fP
+.PP
+Definition at line 78 of file ROSHelpers\&.h\&.
+.SS "enum \fBPlannerXNS::AUTOWARE_SHIFT_POS\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_SHIFT_POS_PP \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_RR \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_NN \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_DD \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_BB \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_SS \fP\fP
+.TP
+\fB\fIAW_SHIFT_POS_UU \fP\fP
+.PP
+Definition at line 79 of file ROSHelpers\&.h\&.
+.SS "enum \fBPlannerXNS::AUTOWARE_STATE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAW_INITIAL_STATE \fP\fP
+.TP
+\fB\fIAW_WAITING_STATE \fP\fP
+.TP
+\fB\fIAW_FORWARD_STATE \fP\fP
+.TP
+\fB\fIAW_STOPPING_STATE \fP\fP
+.TP
+\fB\fIAW_EMERGENCY_STATE \fP\fP
+.TP
+\fB\fIAW_TRAFFIC_LIGHT_STOP_STATE \fP\fP
+.TP
+\fB\fIAW_STOP_SIGN_STOP_STATE \fP\fP
+.TP
+\fB\fIAW_FOLLOW_STATE \fP\fP
+.TP
+\fB\fIAW_LANE_CHANGE_STATE \fP\fP
+.TP
+\fB\fIAW_OBSTACLE_AVOIDANCE_STATE \fP\fP
+.TP
+\fB\fIAW_FINISH_STATE \fP\fP
+.PP
+Definition at line 76 of file ROSHelpers\&.h\&.
+.SS "enum \fBPlannerXNS::MAP_SOURCE_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMAP_AUTOWARE \fP\fP
+.TP
+\fB\fIMAP_FOLDER \fP\fP
+.TP
+\fB\fIMAP_KML_FILE \fP\fP
+.PP
+Definition at line 72 of file dp_planner_core\&.h\&.
+.SS "enum \fBPlannerXNS::SIGNAL_TYPE\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISIMULATION_SIGNAL \fP\fP
+.TP
+\fB\fIROBOT_SIGNAL \fP\fP
+.PP
+Definition at line 71 of file dp_planner_core\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void PlannerXNS::CheckConvexPoligon (std::vector< \fBPlannerHNS::WayPoint\fP > & polygon)"
+
+.PP
+Definition at line 121 of file PolygonGenerator\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

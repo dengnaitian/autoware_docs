@@ -1,0 +1,196 @@
+.TH "mtnode.XSensDriver" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mtnode.XSensDriver \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "def \fBspin\fP (self)"
+.br
+.ti -1c
+.RI "def \fBspin_once\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmt\fP"
+.br
+.ti -1c
+.RI "\fBframe_id\fP"
+.br
+.ti -1c
+.RI "\fBR\fP"
+.br
+.ti -1c
+.RI "\fBdiag_pub\fP"
+.br
+.ti -1c
+.RI "\fBdiag_msg\fP"
+.br
+.ti -1c
+.RI "\fBstest_stat\fP"
+.br
+.ti -1c
+.RI "\fBxkf_stat\fP"
+.br
+.ti -1c
+.RI "\fBgps_stat\fP"
+.br
+.ti -1c
+.RI "\fBimu_pub\fP"
+.br
+.ti -1c
+.RI "\fBss_pub\fP"
+.br
+.ti -1c
+.RI "\fBmag_pub\fP"
+.br
+.ti -1c
+.RI "\fBbaro_pub\fP"
+.br
+.ti -1c
+.RI "\fBgnssPvt_pub\fP"
+.br
+.ti -1c
+.RI "\fBori_pub\fP"
+.br
+.ti -1c
+.RI "\fBvel_pub\fP"
+.br
+.ti -1c
+.RI "\fBpos_pub\fP"
+.br
+.ti -1c
+.RI "\fBtemp_pub\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBENU\fP = numpy\&.identity(3)"
+.br
+.ti -1c
+.RI "\fBNED\fP = numpy\&.array([[0, 1, 0], [ 1, 0, 0], [0, 0, \-1]])"
+.br
+.ti -1c
+.RI "\fBNWU\fP = numpy\&.array([[0, 1, 0], [\-1, 0, 0], [0, 0, 1]])"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file mtnode\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def mtnode\&.XSensDriver\&.__init__ ( self)"
+
+.PP
+Definition at line 39 of file mtnode\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def mtnode\&.XSensDriver\&.spin ( self)"
+
+.PP
+Definition at line 110 of file mtnode\&.py\&.
+.SS "def mtnode\&.XSensDriver\&.spin_once ( self)"
+
+.PP
+Definition at line 119 of file mtnode\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "mtnode\&.XSensDriver\&.baro_pub"
+
+.PP
+Definition at line 98 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.diag_msg"
+
+.PP
+Definition at line 85 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.diag_pub"
+
+.PP
+Definition at line 84 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.ENU = numpy\&.identity(3)\fC [static]\fP"
+
+.PP
+Definition at line 35 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.frame_id"
+
+.PP
+Definition at line 63 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.gnssPvt_pub"
+
+.PP
+Definition at line 99 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.gps_stat"
+
+.PP
+Definition at line 90 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.imu_pub"
+
+.PP
+Definition at line 95 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.mag_pub"
+
+.PP
+Definition at line 97 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.mt"
+
+.PP
+Definition at line 61 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.NED = numpy\&.array([[0, 1, 0], [ 1, 0, 0], [0, 0, \-1]])\fC [static]\fP"
+
+.PP
+Definition at line 36 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.NWU = numpy\&.array([[0, 1, 0], [\-1, 0, 0], [0, 0, 1]])\fC [static]\fP"
+
+.PP
+Definition at line 37 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.ori_pub"
+
+.PP
+Definition at line 101 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.pos_pub"
+
+.PP
+Definition at line 103 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.R"
+
+.PP
+Definition at line 82 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.ss_pub"
+
+.PP
+Definition at line 96 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.stest_stat"
+
+.PP
+Definition at line 86 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.temp_pub"
+
+.PP
+Definition at line 105 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.vel_pub"
+
+.PP
+Definition at line 102 of file mtnode\&.py\&.
+.SS "mtnode\&.XSensDriver\&.xkf_stat"
+
+.PP
+Definition at line 88 of file mtnode\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

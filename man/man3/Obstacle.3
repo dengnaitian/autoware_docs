@@ -1,0 +1,87 @@
+.TH "Obstacle" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Obstacle \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cluster2d\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObstacle\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBGetTypeString\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< int > \fBgrids\fP"
+.br
+.ti -1c
+.RI "\fBpcl::PointCloud\fP< pcl::PointXYZI >::Ptr \fBcloud_ptr\fP"
+.br
+.ti -1c
+.RI "float \fBscore\fP"
+.br
+.ti -1c
+.RI "float \fBheight\fP"
+.br
+.ti -1c
+.RI "\fBMetaType\fP \fBmeta_type\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBmeta_type_probs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 75 of file cluster2d\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Obstacle::Obstacle ()\fC [inline]\fP"
+
+.PP
+Definition at line 84 of file cluster2d\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string Obstacle::GetTypeString () const\fC [inline]\fP"
+
+.PP
+Definition at line 90 of file cluster2d\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBpcl::PointCloud\fP<pcl::PointXYZI>::Ptr Obstacle::cloud_ptr"
+
+.PP
+Definition at line 78 of file cluster2d\&.h\&.
+.SS "std::vector<int> Obstacle::grids"
+
+.PP
+Definition at line 77 of file cluster2d\&.h\&.
+.SS "float Obstacle::height"
+
+.PP
+Definition at line 80 of file cluster2d\&.h\&.
+.SS "\fBMetaType\fP Obstacle::meta_type"
+
+.PP
+Definition at line 81 of file cluster2d\&.h\&.
+.SS "std::vector<float> Obstacle::meta_type_probs"
+
+.PP
+Definition at line 82 of file cluster2d\&.h\&.
+.SS "float Obstacle::score"
+
+.PP
+Definition at line 79 of file cluster2d\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

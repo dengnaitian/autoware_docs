@@ -1,0 +1,201 @@
+.TH "beyondtrack::Detection" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+beyondtrack::Detection \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <detection\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetection\fP (int x, int y, int width, int height, std::string class_type)"
+.br
+.ti -1c
+.RI "\fBDetection\fP (std::vector< double > det, std::string class_type)"
+.br
+.ti -1c
+.RI "void \fBpropagate_prev_det\fP (cv::Mat \fBk\fP, cv::Mat motion)"
+.br
+.ti -1c
+.RI "void \fBpropagate_cur_det\fP (cv::Mat cuboid, double h, cv::Mat \fBk\fP, cv::Mat inv_k, cv::Mat n)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBobject_id_\fP"
+.br
+.ti -1c
+.RI "double \fBbbox_\fP [4]"
+.br
+.ti -1c
+.RI "double \fByaw_\fP"
+.br
+.ti -1c
+.RI "std::string \fBclass_type_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBsigma_3D\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBB1Q\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBorigin_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBbvolume_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBbvolume_proj_\fP"
+.br
+.ti -1c
+.RI "double \fBcd_area_\fP"
+.br
+.ti -1c
+.RI "cv::Mat \fBcd_2d_\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcv::Point\fP > \fBpd_2d_convhull_\fP"
+.br
+.ti -1c
+.RI "\fBPaths\fP \fBpd_2d_convhull_clip_\fP"
+.br
+.ti -1c
+.RI "\fBPaths\fP \fBcd_2d_convhull_clip_\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcv::Point\fP > \fBpd_3d_convhull_\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBcv::Point\fP > \fBcd_3d_convhull_\fP"
+.br
+.ti -1c
+.RI "\fBPaths\fP \fBpd_3d_convhull_clip_\fP"
+.br
+.ti -1c
+.RI "\fBPaths\fP \fBcd_3d_convhull_clip_\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBObjectCuboid\fP \fBparams_car_cuboid_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 74 of file detection\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "beyondtrack::Detection::Detection (int x, int y, int width, int height, std::string class_type)\fC [inline]\fP"
+
+.PP
+Definition at line 103 of file detection\&.h\&.
+.SS "beyondtrack::Detection::Detection (std::vector< double > det, std::string class_type)\fC [inline]\fP"
+
+.PP
+Definition at line 117 of file detection\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void beyondtrack::Detection::propagate_cur_det (cv::Mat cuboid, double h, cv::Mat k, cv::Mat inv_k, cv::Mat n)\fC [inline]\fP"
+
+.PP
+Definition at line 173 of file detection\&.h\&.
+.SS "void beyondtrack::Detection::propagate_prev_det (cv::Mat k, cv::Mat motion)\fC [inline]\fP"
+
+.PP
+Definition at line 130 of file detection\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "cv::Mat beyondtrack::Detection::B1Q"
+
+.PP
+Definition at line 87 of file detection\&.h\&.
+.SS "double beyondtrack::Detection::bbox_[4]"
+
+.PP
+Definition at line 83 of file detection\&.h\&.
+.SS "cv::Mat beyondtrack::Detection::bvolume_"
+
+.PP
+Definition at line 89 of file detection\&.h\&.
+.SS "cv::Mat beyondtrack::Detection::bvolume_proj_"
+
+.PP
+Definition at line 90 of file detection\&.h\&.
+.SS "cv::Mat beyondtrack::Detection::cd_2d_"
+
+.PP
+Definition at line 93 of file detection\&.h\&.
+.SS "\fBPaths\fP beyondtrack::Detection::cd_2d_convhull_clip_"
+
+.PP
+Definition at line 96 of file detection\&.h\&.
+.SS "std::vector<\fBcv::Point\fP> beyondtrack::Detection::cd_3d_convhull_"
+
+.PP
+Definition at line 99 of file detection\&.h\&.
+.SS "\fBPaths\fP beyondtrack::Detection::cd_3d_convhull_clip_"
+
+.PP
+Definition at line 101 of file detection\&.h\&.
+.SS "double beyondtrack::Detection::cd_area_"
+
+.PP
+Definition at line 92 of file detection\&.h\&.
+.SS "std::string beyondtrack::Detection::class_type_"
+
+.PP
+Definition at line 85 of file detection\&.h\&.
+.SS "int beyondtrack::Detection::object_id_"
+
+.PP
+Definition at line 82 of file detection\&.h\&.
+.SS "cv::Mat beyondtrack::Detection::origin_"
+
+.PP
+Definition at line 88 of file detection\&.h\&.
+.SS "\fBbeyondtrack::ObjectCuboid\fP beyondtrack::Detection::params_car_cuboid_\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= beyondtrack::ObjectCuboid(avg_car_sz, sz_ub,
+                                                                                                 sz_lb)
+.fi
+.PP
+Definition at line 79 of file detection\&.h\&.
+.SS "std::vector<\fBcv::Point\fP> beyondtrack::Detection::pd_2d_convhull_"
+
+.PP
+Definition at line 94 of file detection\&.h\&.
+.SS "\fBPaths\fP beyondtrack::Detection::pd_2d_convhull_clip_"
+
+.PP
+Definition at line 95 of file detection\&.h\&.
+.SS "std::vector<\fBcv::Point\fP> beyondtrack::Detection::pd_3d_convhull_"
+
+.PP
+Definition at line 98 of file detection\&.h\&.
+.SS "\fBPaths\fP beyondtrack::Detection::pd_3d_convhull_clip_"
+
+.PP
+Definition at line 100 of file detection\&.h\&.
+.SS "cv::Mat beyondtrack::Detection::sigma_3D"
+
+.PP
+Definition at line 86 of file detection\&.h\&.
+.SS "double beyondtrack::Detection::yaw_"
+
+.PP
+Definition at line 84 of file detection\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

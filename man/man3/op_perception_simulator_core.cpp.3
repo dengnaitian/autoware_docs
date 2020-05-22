@@ -1,0 +1,73 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/op_simulation_package/nodes/op_perception_simulator/op_perception_simulator_core.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/op_simulation_package/nodes/op_perception_simulator/op_perception_simulator_core.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'op_perception_simulator_core\&.h'\fP
+.br
+\fC#include <pcl_conversions/pcl_conversions\&.h>\fP
+.br
+\fC#include <pcl/io/io\&.h>\fP
+.br
+\fC#include <pcl/io/pcd_io\&.h>\fP
+.br
+\fC#include <pcl/point_types\&.h>\fP
+.br
+\fC#include <boost/random\&.hpp>\fP
+.br
+\fC#include <boost/math/distributions/normal\&.hpp>\fP
+.br
+\fC#include 'op_ros_helpers/op_ROSHelpers\&.h'\fP
+.br
+\fC#include 'op_utility/UtilityH\&.h'\fP
+.br
+\fC#include 'math\&.h'\fP
+.br
+\fC#include 'op_planner/MatrixOperations\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBPerceptionSimulatorNS\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::mt19937 \fBPerceptionSimulatorNS::ENG\fP"
+.br
+.ti -1c
+.RI "typedef boost::normal_distribution< double > \fBPerceptionSimulatorNS::NormalDIST\fP"
+.br
+.ti -1c
+.RI "typedef boost::variate_generator< ENG, NormalDIST > \fBPerceptionSimulatorNS::VariatGEN\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr double \fBPerceptionSimulatorNS::SIMU_OBSTACLE_WIDTH\fP = 1\&.5"
+.br
+.ti -1c
+.RI "constexpr double \fBPerceptionSimulatorNS::SIMU_OBSTACLE_LENGTH\fP = 1\&.5"
+.br
+.ti -1c
+.RI "constexpr double \fBPerceptionSimulatorNS::SIMU_OBSTACLE_HEIGHT\fP = 1\&.4"
+.br
+.ti -1c
+.RI "constexpr double \fBPerceptionSimulatorNS::SIMU_OBSTACLE_POINTS_NUM\fP = 50"
+.br
+.ti -1c
+.RI "constexpr int \fBPerceptionSimulatorNS::SIMU_OBSTACLE_ID\fP = 100001"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

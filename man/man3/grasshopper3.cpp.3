@@ -1,0 +1,155 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/pointgrey/nodes/grasshopper3/grasshopper3.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/camera/packages/pointgrey/nodes/grasshopper3/grasshopper3.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <FlyCapture2\&.h>\fP
+.br
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <sensor_msgs/image_encodings\&.h>\fP
+.br
+\fC#include <sensor_msgs/Image\&.h>\fP
+.br
+\fC#include <sensor_msgs/CameraInfo\&.h>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_datatypes\&.h>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBparse_camera_info\fP (const cv::Mat &camMat, const cv::Mat &disCoeff, const \fBcv::Size\fP &imgSize, sensor_msgs::CameraInfo &msg)"
+.br
+.ti -1c
+.RI "void \fBprint_camera_info\fP (FlyCapture2::CameraInfo *info)"
+.br
+.ti -1c
+.RI "void \fBprint_image_settings\fP (const FlyCapture2::Format7ImageSettings &image_settings, const unsigned int &packet_size, const float &percentage)"
+.br
+.ti -1c
+.RI "void \fBprint_format7_info\fP (const FlyCapture2::Format7Info &info, bool supported)"
+.br
+.ti -1c
+.RI "void \fBinitialize_cameras\fP (std::vector< FlyCapture2::Camera * > &cameras, FlyCapture2::BusManager *bus_manger, int camera_num, FlyCapture2::Mode desired_mode, FlyCapture2::PixelFormat desired_pixel_format, int timeout_ms)"
+.br
+.ti -1c
+.RI "unsigned int \fBget_num_cameras\fP (FlyCapture2::BusManager *bus_manager)"
+.br
+.ti -1c
+.RI "void \fBstart_capture\fP (std::vector< FlyCapture2::Camera * > &cameras)"
+.br
+.ti -1c
+.RI "void \fBgetMatricesFromFile\fP (const ros::NodeHandle &nh, sensor_msgs::CameraInfo &camerainfo_msg)"
+.br
+.ti -1c
+.RI "void \fBros_get_params\fP (const ros::NodeHandle &private_nh, int &fps, int &mode, std::string &format, int &timeout)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "unsigned int get_num_cameras (FlyCapture2::BusManager * bus_manager)"
+Get the number of cameras connected to the system 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus_manager\fP Valid pointer to the BusManager 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of detected cameras 
+.RE
+.PP
+
+.PP
+Definition at line 289 of file grasshopper3\&.cpp\&.
+.SS "void getMatricesFromFile (const ros::NodeHandle & nh, sensor_msgs::CameraInfo & camerainfo_msg)"
+Reads and parses the Autoware calibration file format 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInh\fP ros node handle 
+.br
+\fIcamerainfo_msg\fP CameraInfo message to fill 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file grasshopper3\&.cpp\&.
+.SS "void initialize_cameras (std::vector< FlyCapture2::Camera * > & cameras, FlyCapture2::BusManager * bus_manger, int camera_num, FlyCapture2::Mode desired_mode, FlyCapture2::PixelFormat desired_pixel_format, int timeout_ms)"
+
+.PP
+Definition at line 131 of file grasshopper3\&.cpp\&.
+.SS "int main (int argc, char ** argv)"
+
+.PP
+Definition at line 410 of file grasshopper3\&.cpp\&.
+.SS "void parse_camera_info (const cv::Mat & camMat, const cv::Mat & disCoeff, const \fBcv::Size\fP & imgSize, sensor_msgs::CameraInfo & msg)"
+
+.PP
+Definition at line 48 of file grasshopper3\&.cpp\&.
+.SS "void print_camera_info (FlyCapture2::CameraInfo * info)"
+
+.PP
+Definition at line 91 of file grasshopper3\&.cpp\&.
+.SS "void print_format7_info (const FlyCapture2::Format7Info & info, bool supported)"
+
+.PP
+Definition at line 120 of file grasshopper3\&.cpp\&.
+.SS "void print_image_settings (const FlyCapture2::Format7ImageSettings & image_settings, const unsigned int & packet_size, const float & percentage)"
+
+.PP
+Definition at line 104 of file grasshopper3\&.cpp\&.
+.SS "void ros_get_params (const ros::NodeHandle & private_nh, int & fps, int & mode, std::string & format, int & timeout)"
+Reads the params from the console 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprivate_nh[in]\fP Private ROS node handle 
+.br
+\fIfps[out]\fP Read value from the console double 
+.br
+\fImode[out]\fP Read value from the console integer 
+.br
+\fIformat[out]\fP Read value from the console raw or rgb 
+.br
+\fItimeout[out]\fP Read value from the console timeout in ms 
+.RE
+.PP
+
+.PP
+Definition at line 374 of file grasshopper3\&.cpp\&.
+.SS "void start_capture (std::vector< FlyCapture2::Camera * > & cameras)"
+Initialize the capture on all the cameras 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcameras\fP An array of valid pointers to the camera objects 
+.RE
+.PP
+
+.PP
+Definition at line 313 of file grasshopper3\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,89 @@
+.TH "PerceptionSimulatorNS" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PerceptionSimulatorNS \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDetectionCommandParams\fP"
+.br
+.ti -1c
+.RI "class \fBOpenPlannerSimulatorPerception\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::mt19937 \fBENG\fP"
+.br
+.ti -1c
+.RI "typedef boost::normal_distribution< double > \fBNormalDIST\fP"
+.br
+.ti -1c
+.RI "typedef boost::variate_generator< \fBENG\fP, \fBNormalDIST\fP > \fBVariatGEN\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr double \fBSIMU_OBSTACLE_WIDTH\fP = 1\&.5"
+.br
+.ti -1c
+.RI "constexpr double \fBSIMU_OBSTACLE_LENGTH\fP = 1\&.5"
+.br
+.ti -1c
+.RI "constexpr double \fBSIMU_OBSTACLE_HEIGHT\fP = 1\&.4"
+.br
+.ti -1c
+.RI "constexpr double \fBSIMU_OBSTACLE_POINTS_NUM\fP = 50"
+.br
+.ti -1c
+.RI "constexpr int \fBSIMU_OBSTACLE_ID\fP = 100001"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::mt19937 \fBPerceptionSimulatorNS::ENG\fP"
+
+.PP
+Definition at line 34 of file op_perception_simulator_core\&.cpp\&.
+.SS "typedef boost::normal_distribution<double> \fBPerceptionSimulatorNS::NormalDIST\fP"
+
+.PP
+Definition at line 35 of file op_perception_simulator_core\&.cpp\&.
+.SS "typedef boost::variate_generator<\fBENG\fP, \fBNormalDIST\fP> \fBPerceptionSimulatorNS::VariatGEN\fP"
+
+.PP
+Definition at line 36 of file op_perception_simulator_core\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr double PerceptionSimulatorNS::SIMU_OBSTACLE_HEIGHT = 1\&.4"
+
+.PP
+Definition at line 40 of file op_perception_simulator_core\&.cpp\&.
+.SS "constexpr int PerceptionSimulatorNS::SIMU_OBSTACLE_ID = 100001"
+
+.PP
+Definition at line 42 of file op_perception_simulator_core\&.cpp\&.
+.SS "constexpr double PerceptionSimulatorNS::SIMU_OBSTACLE_LENGTH = 1\&.5"
+
+.PP
+Definition at line 39 of file op_perception_simulator_core\&.cpp\&.
+.SS "constexpr double PerceptionSimulatorNS::SIMU_OBSTACLE_POINTS_NUM = 50"
+
+.PP
+Definition at line 41 of file op_perception_simulator_core\&.cpp\&.
+.SS "constexpr double PerceptionSimulatorNS::SIMU_OBSTACLE_WIDTH = 1\&.5"
+
+.PP
+Definition at line 38 of file op_perception_simulator_core\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

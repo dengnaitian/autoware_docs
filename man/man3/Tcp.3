@@ -1,0 +1,135 @@
+.TH "Tcp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Tcp \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tcp\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBReadFunction\fP) (void *obj, \fBUINT8\fP *inputBuffer, \fBUINT32\fP &numBytes)"
+.br
+.ti -1c
+.RI "typedef void(* \fBDisconnectFunction\fP) (void *obj)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTcp\fP ()"
+.br
+.ti -1c
+.RI "\fB~Tcp\fP ()"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (std::string ipAddress, \fBUINT16\fP port, bool enableVerboseDebugOutput=false)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBUINT32\fP ipAddress, \fBUINT16\fP port, bool enableVerboseDebugOutput=false)"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP ()"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (\fBUINT8\fP *buffer, \fBUINT32\fP numberOfBytes)"
+.br
+.ti -1c
+.RI "std::string \fBreadString\fP (\fBUINT8\fP delimiter)"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetNumReadableBytes\fP ()"
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBread\fP (\fBUINT8\fP *buffer, \fBUINT32\fP bufferLen)"
+.br
+.ti -1c
+.RI "void \fBsetReadCallbackFunction\fP (\fBReadFunction\fP readFunction, void *obj)"
+.br
+.ti -1c
+.RI "void \fBsetDisconnectCallbackFunction\fP (\fBDisconnectFunction\fP discFunction, void *obj)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file tcp\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef void(* Tcp::DisconnectFunction) (void *obj)"
+
+.PP
+Definition at line 53 of file tcp\&.hpp\&.
+.SS "typedef void(* Tcp::ReadFunction) (void *obj, \fBUINT8\fP *inputBuffer, \fBUINT32\fP &numBytes)"
+
+.PP
+Definition at line 49 of file tcp\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Tcp::Tcp ()"
+
+.PP
+Definition at line 18 of file tcp\&.cpp\&.
+.SS "Tcp::~Tcp (void)"
+
+.PP
+Definition at line 36 of file tcp\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Tcp::close ()"
+
+.PP
+Definition at line 285 of file tcp\&.cpp\&.
+.SS "\fBUINT32\fP Tcp::getNumReadableBytes ()"
+Auslesen der Anzahl zum Lesen verfuegbarer Bytes\&.
+.PP
+Rueckgabe: Anzahl der Bytes im Lese-Puffer\&. 
+.PP
+Definition at line 332 of file tcp\&.cpp\&.
+.SS "bool Tcp::isOpen ()"
+True = offen
+.PP
+-- Wir sind der Client und mit einem Server verbunden -- 
+.PP
+Definition at line 88 of file tcp\&.cpp\&.
+.SS "bool Tcp::open (std::string ipAddress, \fBUINT16\fP port, bool enableVerboseDebugOutput = \fCfalse\fP)"
+
+.PP
+Definition at line 129 of file tcp\&.cpp\&.
+.SS "bool Tcp::open (\fBUINT32\fP ipAddress, \fBUINT16\fP port, bool enableVerboseDebugOutput = \fCfalse\fP)"
+
+.PP
+Definition at line 112 of file tcp\&.cpp\&.
+.SS "\fBUINT32\fP Tcp::read (\fBUINT8\fP * buffer, \fBUINT32\fP bufferLen)"
+
+.PP
+Definition at line 346 of file tcp\&.cpp\&.
+.SS "std::string Tcp::readString (\fBUINT8\fP delimiter)"
+Lese einen String, bis zum Trennzeichen\&.
+.PP
+** DO NOT INTERMIX WITH CALLS TO READ() ** 
+.PP
+Definition at line 367 of file tcp\&.cpp\&.
+.SS "void Tcp::setDisconnectCallbackFunction (\fBDisconnectFunction\fP discFunction, void * obj)"
+
+.PP
+Definition at line 75 of file tcp\&.cpp\&.
+.SS "void Tcp::setReadCallbackFunction (\fBTcp::ReadFunction\fP readFunction, void * obj)"
+
+.PP
+Definition at line 103 of file tcp\&.cpp\&.
+.SS "bool Tcp::write (\fBUINT8\fP * buffer, \fBUINT32\fP numberOfBytes)"
+
+.PP
+Definition at line 47 of file tcp\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

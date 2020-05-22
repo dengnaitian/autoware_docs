@@ -1,0 +1,121 @@
+.TH "CustomGraphicsView" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CustomGraphicsView \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <custom_graphics_view\&.h>\fP
+.PP
+Inherits QGraphicsView\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCustomGraphicsView\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~CustomGraphicsView\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetPixmap\fP (const QImage &\fBimage\fP)"
+.br
+.ti -1c
+.RI "void \fBSetText\fP (const QString &text)"
+.br
+.ti -1c
+.RI "bool \fBGetSelectedArea\fP (QPoint *left_upper, QPoint *right_bottom)"
+.br
+.ti -1c
+.RI "void \fBResetSelectedArea\fP ()"
+.br
+.ti -1c
+.RI "QSize \fBGetImageSize\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *event)"
+.br
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (QMouseEvent *mouse_event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (QMouseEvent *mouse_event)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseReleaseEvent\fP (QMouseEvent *mouse_event)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBscheduled_scalings_\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file custom_graphics_view\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CustomGraphicsView::CustomGraphicsView (QWidget * parent = \fC0\fP)"
+
+.PP
+Definition at line 7 of file custom_graphics_view\&.cpp\&.
+.SS "CustomGraphicsView::~CustomGraphicsView ()"
+
+.PP
+Definition at line 20 of file custom_graphics_view\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QSize CustomGraphicsView::GetImageSize ()"
+
+.PP
+Definition at line 207 of file custom_graphics_view\&.cpp\&.
+.SS "bool CustomGraphicsView::GetSelectedArea (QPoint * left_upper, QPoint * right_bottom)"
+
+.PP
+Definition at line 165 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::mouseMoveEvent (QMouseEvent * mouse_event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 111 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::mousePressEvent (QMouseEvent * mouse_event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 102 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::mouseReleaseEvent (QMouseEvent * mouse_event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 131 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::ResetSelectedArea ()"
+
+.PP
+Definition at line 193 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::SetPixmap (const QImage & image)"
+
+.PP
+Definition at line 77 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::SetText (const QString & text)"
+
+.PP
+Definition at line 90 of file custom_graphics_view\&.cpp\&.
+.SS "void CustomGraphicsView::wheelEvent (QWheelEvent * event)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 26 of file custom_graphics_view\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int CustomGraphicsView::scheduled_scalings_\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file custom_graphics_view\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

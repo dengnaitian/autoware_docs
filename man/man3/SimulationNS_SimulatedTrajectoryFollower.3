@@ -1,0 +1,129 @@
+.TH "SimulationNS::SimulatedTrajectoryFollower" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SimulationNS::SimulatedTrajectoryFollower \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimulatedTrajectoryFollower\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimulatedTrajectoryFollower\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SimulatedTrajectoryFollower\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrepareNextWaypoint\fP (const \fBPlannerHNS::WayPoint\fP &CurPos, const double &currVelocity, const double &currSteering)"
+.br
+.ti -1c
+.RI "void \fBUpdateCurrentPath\fP (const std::vector< \fBPlannerHNS::WayPoint\fP > &path)"
+.br
+.ti -1c
+.RI "int \fBSteerControllerUpdate\fP (const \fBPlannerHNS::VehicleState\fP &CurrStatus, const \fBPlannerHNS::BehaviorState\fP &CurrBehavior, double &desiredSteerAngle)"
+.br
+.ti -1c
+.RI "int \fBVeclocityControllerUpdate\fP (const double &dt, const \fBPlannerHNS::VehicleState\fP &CurrStatus, const \fBPlannerHNS::BehaviorState\fP &CurrBehavior, double &desiredVelocity)"
+.br
+.ti -1c
+.RI "void \fBInit\fP (const \fBPlannerHNS::ControllerParams\fP &params, const \fBPlannerHNS::CAR_BASIC_INFO\fP &vehicleInfo)"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::VehicleState\fP \fBDoOneStep\fP (const double &dt, const \fBPlannerHNS::BehaviorState\fP &behavior, const std::vector< \fBPlannerHNS::WayPoint\fP > &path, const \fBPlannerHNS::WayPoint\fP &currPose, const \fBPlannerHNS::VehicleState\fP &vehicleState, const bool &bNewTrajectory)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_PerpendicularPoint\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_FollowMePoint\fP"
+.br
+.ti -1c
+.RI "double \fBm_LateralError\fP"
+.br
+.ti -1c
+.RI "double \fBm_FollowingDistance\fP"
+.br
+.ti -1c
+.RI "\fBPlannerHNS::WayPoint\fP \fBm_CurrPos\fP"
+.br
+.ti -1c
+.RI "int \fBm_iCalculatedIndex\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file SimulatedTrajectoryFollower\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SimulationNS::SimulatedTrajectoryFollower::SimulatedTrajectoryFollower ()"
+
+.PP
+Definition at line 22 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "SimulationNS::SimulatedTrajectoryFollower::~SimulatedTrajectoryFollower ()\fC [virtual]\fP"
+
+.PP
+Definition at line 47 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPlannerHNS::VehicleState\fP SimulationNS::SimulatedTrajectoryFollower::DoOneStep (const double & dt, const \fBPlannerHNS::BehaviorState\fP & behavior, const std::vector< \fBPlannerHNS::WayPoint\fP > & path, const \fBPlannerHNS::WayPoint\fP & currPose, const \fBPlannerHNS::VehicleState\fP & vehicleState, const bool & bNewTrajectory)"
+
+.PP
+Definition at line 138 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "void SimulationNS::SimulatedTrajectoryFollower::Init (const \fBPlannerHNS::ControllerParams\fP & params, const \fBPlannerHNS::CAR_BASIC_INFO\fP & vehicleInfo)"
+
+.PP
+Definition at line 38 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "void SimulationNS::SimulatedTrajectoryFollower::PrepareNextWaypoint (const \fBPlannerHNS::WayPoint\fP & CurPos, const double & currVelocity, const double & currSteering)"
+
+.PP
+Definition at line 52 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "int SimulationNS::SimulatedTrajectoryFollower::SteerControllerUpdate (const \fBPlannerHNS::VehicleState\fP & CurrStatus, const \fBPlannerHNS::BehaviorState\fP & CurrBehavior, double & desiredSteerAngle)"
+
+.PP
+Definition at line 90 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "void SimulationNS::SimulatedTrajectoryFollower::UpdateCurrentPath (const std::vector< \fBPlannerHNS::WayPoint\fP > & path)"
+
+.PP
+Definition at line 58 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SS "int SimulationNS::SimulatedTrajectoryFollower::VeclocityControllerUpdate (const double & dt, const \fBPlannerHNS::VehicleState\fP & CurrStatus, const \fBPlannerHNS::BehaviorState\fP & CurrBehavior, double & desiredVelocity)"
+
+.PP
+Definition at line 121 of file SimulatedTrajectoryFollower\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBPlannerHNS::WayPoint\fP SimulationNS::SimulatedTrajectoryFollower::m_CurrPos"
+
+.PP
+Definition at line 43 of file SimulatedTrajectoryFollower\&.h\&.
+.SS "double SimulationNS::SimulatedTrajectoryFollower::m_FollowingDistance"
+
+.PP
+Definition at line 42 of file SimulatedTrajectoryFollower\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP SimulationNS::SimulatedTrajectoryFollower::m_FollowMePoint"
+
+.PP
+Definition at line 40 of file SimulatedTrajectoryFollower\&.h\&.
+.SS "int SimulationNS::SimulatedTrajectoryFollower::m_iCalculatedIndex"
+
+.PP
+Definition at line 44 of file SimulatedTrajectoryFollower\&.h\&.
+.SS "double SimulationNS::SimulatedTrajectoryFollower::m_LateralError"
+
+.PP
+Definition at line 41 of file SimulatedTrajectoryFollower\&.h\&.
+.SS "\fBPlannerHNS::WayPoint\fP SimulationNS::SimulatedTrajectoryFollower::m_PerpendicularPoint"
+
+.PP
+Definition at line 39 of file SimulatedTrajectoryFollower\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

@@ -1,0 +1,317 @@
+.TH "datatypes::FieldParameter" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::FieldParameter \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FieldParameter\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCaseResult\fP { \fBECR_DONT_CARE\fP = 0, \fBECR_LOW\fP = 1, \fBECR_HIGH\fP = 2, \fBECR_DETECTING\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBFieldTypeIntern\fP { \fBFieldTypeIntern_RADIAL\fP = 0, \fBFieldTypeIntern_RECTANGLE\fP = 1, \fBFieldTypeIntern_SEGMENTED\fP = 2, \fBFieldTypeintern_DYNAMIC\fP = 3 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFieldParameter\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~FieldParameter\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "\fBUINT32\fP \fBgetAngleScaleFactor\fP () const "
+.br
+.ti -1c
+.RI "\fBINT32\fP \fBgetAngleScaleOffset\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDistScaleFactor\fP () const "
+.br
+.ti -1c
+.RI "double \fBgetDistScaleOffset\fP () const "
+.br
+.ti -1c
+.RI "\fBFieldDescription\fP * \fBgetField\fP () const "
+.br
+.ti -1c
+.RI "\fBFieldTypeIntern\fP \fBgetFieldTypeIntern\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBgetFieldTypeInternAsString\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetAngleScaleFactor\fP (\fBUINT32\fP angleScaleFactor)"
+.br
+.ti -1c
+.RI "void \fBsetAngleScaleOffset\fP (\fBINT32\fP angleScaleOffset)"
+.br
+.ti -1c
+.RI "void \fBsetDistScaleFactor\fP (double distScaleFactor)"
+.br
+.ti -1c
+.RI "void \fBsetDistScaleOffset\fP (double distScaleOffset)"
+.br
+.ti -1c
+.RI "void \fBsetField\fP (\fBFieldDescription\fP *field)"
+.br
+.ti -1c
+.RI "void \fBsetFieldNumber\fP (\fBUINT16\fP m_fieldNumber)"
+.br
+.ti -1c
+.RI "const \fBUINT16\fP \fBgetFieldNumber\fP () const "
+.br
+.ti -1c
+.RI "const bool \fBisValid\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetFieldTypeIntern\fP (\fBUINT8\fP fieldTypeIntern)"
+.br
+.ti -1c
+.RI "void \fBsetFieldTypeIntern\fP (\fBFieldTypeIntern\fP m_fieldTypeIntern)"
+.br
+.ti -1c
+.RI "const std::string & \fBgetComment\fP () const "
+.br
+.ti -1c
+.RI "const std::string & \fBgetFieldName\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetComment\fP (const std::string &comment)"
+.br
+.ti -1c
+.RI "void \fBsetFieldName\fP (const std::string &fieldName)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetVersionNumber\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetVersionNumber\fP (\fBUINT8\fP m_versionNumber)"
+.br
+.ti -1c
+.RI "\fBCaseResult\fP \fBgetLastKnownInfringementState\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLastKnownInfringementState\fP (\fBCaseResult\fP lastKnownInfringementState)"
+.br
+.ti -1c
+.RI "bool \fBisLayerFilterEnabled\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetEnableLayerFilter\fP (bool enableLayerFilter)"
+.br
+.ti -1c
+.RI "\fBUINT8\fP \fBgetLayerFilterBitmap\fP () const "
+.br
+.ti -1c
+.RI "void \fBsetLayerFilterBitmap\fP (\fBUINT8\fP layerFilterBitmap)"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const "
+.br
+.ti -1c
+.RI "const \fBPolygon2D\fP & \fBgetPolygon\fP () const "
+.br
+.ti -1c
+.RI "const \fBFieldDescription::FieldType\fP \fBgetFieldType\fP () const "
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file FieldParameter\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBdatatypes::FieldParameter::CaseResult\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIECR_DONT_CARE \fP\fP
+.TP
+\fB\fIECR_LOW \fP\fP
+.TP
+\fB\fIECR_HIGH \fP\fP
+.TP
+\fB\fIECR_DETECTING \fP\fP
+.PP
+Definition at line 27 of file FieldParameter\&.hpp\&.
+.SS "enum \fBdatatypes::FieldParameter::FieldTypeIntern\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFieldTypeIntern_RADIAL \fP\fP
+.TP
+\fB\fIFieldTypeIntern_RECTANGLE \fP\fP
+.TP
+\fB\fIFieldTypeIntern_SEGMENTED \fP\fP
+.TP
+\fB\fIFieldTypeintern_DYNAMIC \fP\fP
+.PP
+Definition at line 36 of file FieldParameter\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::FieldParameter::FieldParameter ()"
+
+.PP
+Definition at line 15 of file FieldParameter\&.cpp\&.
+.SS "datatypes::FieldParameter::~FieldParameter ()\fC [virtual]\fP"
+
+.PP
+Definition at line 26 of file FieldParameter\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool datatypes::FieldParameter::empty () const\fC [inline]\fP"
+
+.PP
+Definition at line 80 of file FieldParameter\&.hpp\&.
+.SS "\fBUINT32\fP datatypes::FieldParameter::getAngleScaleFactor () const"
+
+.PP
+Definition at line 57 of file FieldParameter\&.cpp\&.
+.SS "\fBINT32\fP datatypes::FieldParameter::getAngleScaleOffset () const"
+
+.PP
+Definition at line 62 of file FieldParameter\&.cpp\&.
+.SS "const std::string & datatypes::FieldParameter::getComment () const"
+
+.PP
+Definition at line 169 of file FieldParameter\&.cpp\&.
+.SS "double datatypes::FieldParameter::getDistScaleFactor () const"
+
+.PP
+Definition at line 67 of file FieldParameter\&.cpp\&.
+.SS "double datatypes::FieldParameter::getDistScaleOffset () const"
+
+.PP
+Definition at line 72 of file FieldParameter\&.cpp\&.
+.SS "\fBFieldDescription\fP * datatypes::FieldParameter::getField () const"
+
+.PP
+Definition at line 77 of file FieldParameter\&.cpp\&.
+.SS "const std::string & datatypes::FieldParameter::getFieldName () const"
+
+.PP
+Definition at line 174 of file FieldParameter\&.cpp\&.
+.SS "const \fBUINT16\fP datatypes::FieldParameter::getFieldNumber () const"
+
+.PP
+Definition at line 277 of file FieldParameter\&.cpp\&.
+.SS "const \fBFieldDescription::FieldType\fP datatypes::FieldParameter::getFieldType () const"
+
+.PP
+Definition at line 249 of file FieldParameter\&.cpp\&.
+.SS "\fBFieldParameter::FieldTypeIntern\fP datatypes::FieldParameter::getFieldTypeIntern () const"
+
+.PP
+Definition at line 82 of file FieldParameter\&.cpp\&.
+.SS "std::string datatypes::FieldParameter::getFieldTypeInternAsString () const"
+
+.PP
+Definition at line 90 of file FieldParameter\&.cpp\&.
+.SS "\fBFieldParameter::CaseResult\fP datatypes::FieldParameter::getLastKnownInfringementState () const"
+
+.PP
+Definition at line 215 of file FieldParameter\&.cpp\&.
+.SS "\fBUINT8\fP datatypes::FieldParameter::getLayerFilterBitmap () const"
+
+.PP
+Definition at line 225 of file FieldParameter\&.cpp\&.
+.SS "const \fBPolygon2D\fP& datatypes::FieldParameter::getPolygon () const\fC [inline]\fP"
+
+.PP
+Definition at line 85 of file FieldParameter\&.hpp\&.
+.SS "const \fBUINT32\fP datatypes::FieldParameter::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 30 of file FieldParameter\&.cpp\&.
+.SS "\fBUINT8\fP datatypes::FieldParameter::getVersionNumber () const"
+
+.PP
+Definition at line 204 of file FieldParameter\&.cpp\&.
+.SS "bool datatypes::FieldParameter::isLayerFilterEnabled () const"
+
+.PP
+Definition at line 230 of file FieldParameter\&.cpp\&.
+.SS "const bool datatypes::FieldParameter::isValid () const"
+
+.PP
+Definition at line 45 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setAngleScaleFactor (\fBUINT32\fP angleScaleFactor)"
+
+.PP
+Definition at line 110 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setAngleScaleOffset (\fBINT32\fP angleScaleOffset)"
+
+.PP
+Definition at line 115 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setComment (const std::string & comment)"
+
+.PP
+Definition at line 182 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setDistScaleFactor (double distScaleFactor)"
+
+.PP
+Definition at line 120 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setDistScaleOffset (double distScaleOffset)"
+
+.PP
+Definition at line 125 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setEnableLayerFilter (bool enableLayerFilter)"
+
+.PP
+Definition at line 235 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setField (\fBFieldDescription\fP * field)"
+
+.PP
+Definition at line 130 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setFieldName (const std::string & fieldName)"
+
+.PP
+Definition at line 194 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setFieldNumber (\fBUINT16\fP m_fieldNumber)"
+
+.PP
+Definition at line 135 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setFieldTypeIntern (\fBUINT8\fP fieldTypeIntern)"
+
+.PP
+Definition at line 163 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setFieldTypeIntern (\fBFieldTypeIntern\fP m_fieldTypeIntern)"
+
+.PP
+Definition at line 149 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setLastKnownInfringementState (\fBFieldParameter::CaseResult\fP m_lastKnownInfringementState)"
+
+.PP
+Definition at line 220 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setLayerFilterBitmap (\fBUINT8\fP layerFilterBitmap)"
+
+.PP
+Definition at line 240 of file FieldParameter\&.cpp\&.
+.SS "void datatypes::FieldParameter::setVersionNumber (\fBUINT8\fP m_versionNumber)"
+
+.PP
+Definition at line 209 of file FieldParameter\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

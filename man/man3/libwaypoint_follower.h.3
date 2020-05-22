@@ -1,0 +1,142 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/include/waypoint_follower/libwaypoint_follower.h" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/computing/planning/motion/packages/waypoint_follower/include/waypoint_follower/libwaypoint_follower.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <tf/transform_broadcaster\&.h>\fP
+.br
+\fC#include <tf/transform_listener\&.h>\fP
+.br
+\fC#include 'autoware_msgs/Lane\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBWayPoints\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBkmph2mps\fP (double velocity_kmph)"
+.br
+.ti -1c
+.RI "double \fBmps2kmph\fP (double velocity_mps)"
+.br
+.ti -1c
+.RI "double \fBdeg2rad\fP (double deg)"
+.br
+.ti -1c
+.RI "\fBtf::Vector3\fP \fBpoint2vector\fP (\fBgeometry_msgs::Point\fP point)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBvector2point\fP (\fBtf::Vector3\fP vector)"
+.br
+.ti -1c
+.RI "\fBtf::Vector3\fP \fBrotateUnitVector\fP (\fBtf::Vector3\fP unit_vector, double degree)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBrotatePoint\fP (\fBgeometry_msgs::Point\fP point, double degree)"
+.br
+.ti -1c
+.RI "double \fBDecelerateVelocity\fP (double \fBdistance\fP, double prev_velocity)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcalcRelativeCoordinate\fP (\fBgeometry_msgs::Point\fP point, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "\fBgeometry_msgs::Point\fP \fBcalcAbsoluteCoordinate\fP (\fBgeometry_msgs::Point\fP point, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "double \fBgetPlaneDistance\fP (\fBgeometry_msgs::Point\fP target1, \fBgeometry_msgs::Point\fP target2)"
+.br
+.ti -1c
+.RI "int \fBgetClosestWaypoint\fP (const autoware_msgs::Lane &current_path, geometry_msgs::Pose current_pose)"
+.br
+.ti -1c
+.RI "bool \fBgetLinearEquation\fP (\fBgeometry_msgs::Point\fP start, \fBgeometry_msgs::Point\fP end, double *a, double *\fBb\fP, double *\fBc\fP)"
+.br
+.ti -1c
+.RI "double \fBgetDistanceBetweenLineAndPoint\fP (\fBgeometry_msgs::Point\fP point, double sa, double \fBb\fP, double \fBc\fP)"
+.br
+.ti -1c
+.RI "double \fBgetRelativeAngle\fP (geometry_msgs::Pose waypoint_pose, geometry_msgs::Pose vehicle_pose)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBgeometry_msgs::Point\fP calcAbsoluteCoordinate (\fBgeometry_msgs::Point\fP point, geometry_msgs::Pose current_pose)"
+
+.PP
+Definition at line 121 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP calcRelativeCoordinate (\fBgeometry_msgs::Point\fP point, geometry_msgs::Pose current_pose)"
+
+.PP
+Definition at line 105 of file libwaypoint_follower\&.cpp\&.
+.SS "double DecelerateVelocity (double distance, double prev_velocity)"
+
+.PP
+Definition at line 88 of file libwaypoint_follower\&.cpp\&.
+.SS "double deg2rad (double deg)\fC [inline]\fP"
+
+.PP
+Definition at line 66 of file libwaypoint_follower\&.h\&.
+.SS "int getClosestWaypoint (const autoware_msgs::Lane & current_path, geometry_msgs::Pose current_pose)"
+
+.PP
+Definition at line 161 of file libwaypoint_follower\&.cpp\&.
+.SS "double getDistanceBetweenLineAndPoint (\fBgeometry_msgs::Point\fP point, double sa, double b, double c)"
+
+.PP
+Definition at line 856 of file lane_select_core\&.cpp\&.
+.SS "bool getLinearEquation (\fBgeometry_msgs::Point\fP start, \fBgeometry_msgs::Point\fP end, double * a, double * b, double * c)"
+
+.PP
+Definition at line 837 of file lane_select_core\&.cpp\&.
+.SS "double getPlaneDistance (\fBgeometry_msgs::Point\fP target1, \fBgeometry_msgs::Point\fP target2)"
+
+.PP
+Definition at line 135 of file libwaypoint_follower\&.cpp\&.
+.SS "double getRelativeAngle (geometry_msgs::Pose waypoint_pose, geometry_msgs::Pose vehicle_pose)"
+
+.PP
+Definition at line 144 of file libwaypoint_follower\&.cpp\&.
+.SS "double kmph2mps (double velocity_kmph)\fC [inline]\fP"
+
+.PP
+Definition at line 58 of file libwaypoint_follower\&.h\&.
+.SS "double mps2kmph (double velocity_mps)\fC [inline]\fP"
+
+.PP
+Definition at line 62 of file libwaypoint_follower\&.h\&.
+.SS "\fBtf::Vector3\fP point2vector (\fBgeometry_msgs::Point\fP point)"
+
+.PP
+Definition at line 257 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP rotatePoint (\fBgeometry_msgs::Point\fP point, double degree)"
+
+.PP
+Definition at line 281 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBtf::Vector3\fP rotateUnitVector (\fBtf::Vector3\fP unit_vector, double degree)"
+
+.PP
+Definition at line 272 of file libwaypoint_follower\&.cpp\&.
+.SS "\fBgeometry_msgs::Point\fP vector2point (\fBtf::Vector3\fP vector)"
+
+.PP
+Definition at line 263 of file libwaypoint_follower\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

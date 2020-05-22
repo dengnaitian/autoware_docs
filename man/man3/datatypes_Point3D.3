@@ -1,0 +1,513 @@
+.TH "datatypes::Point3D" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::Point3D \- This class defines a point in the three-dimensional plane\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Point3D\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef double \fBfloatingpoint_type\fP"
+.br
+.RI "\fIThe type of the stored x and y coordinates\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint3D\fP (double x, double y, double z)"
+.br
+.ti -1c
+.RI "\fBPoint3D\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint3D\fP (const \fBPoint2D\fP &\fBp\fP)"
+.br
+.RI "\fIConstructs a point from the given \fBPoint2D\fP\&. Z-component will be zero\&. \fP"
+.ti -1c
+.RI "virtual const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.in -1c
+.PP
+.RI "\fBAccessor methods for information about this point\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "bool \fBisZero\fP () const "
+.br
+.RI "\fICheck against (near-)zero\&. \fP"
+.ti -1c
+.RI "double \fBgetX\fP () const "
+.br
+.RI "\fIReturns the x-coordinate of this point\&. \fP"
+.ti -1c
+.RI "double \fBgetY\fP () const "
+.br
+.RI "\fIReturns the y-coordinate of this point\&. \fP"
+.ti -1c
+.RI "double \fBgetZ\fP () const "
+.br
+.RI "\fIReturns the z-coordinate of this point\&. \fP"
+.ti -1c
+.RI "double \fBlength\fP () const "
+.br
+.RI "\fILength of the vector (identical to \fBdistFromOrigin()\fP) \fP"
+.ti -1c
+.RI "double \fBdistFromOrigin\fP () const "
+.br
+.RI "\fIDist from the point (0,0,0) to this point\&. \fP"
+.ti -1c
+.RI "double \fBgetAngleAroundX\fP () const "
+.br
+.RI "\fIReturns the rotation angle around x (in the z-y-plane) \fP"
+.ti -1c
+.RI "double \fBgetAngleAroundY\fP () const "
+.br
+.RI "\fIReturns the rotation angle around y (in the z-x-plane) \fP"
+.ti -1c
+.RI "double \fBgetAngleAroundZ\fP () const "
+.br
+.RI "\fIReturns the rotation angle around z (in the x-y-plane) \fP"
+.ti -1c
+.RI "\fBPoint2D\fP \fBtoPoint2D\fP () const "
+.br
+.RI "\fIReturns the x/y components of this class, converted into a \fBPoint2D\fP object\&. \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fBSetter methods for changing this point\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBsetX\fP (double x)"
+.br
+.RI "\fISets the x-coordinate of this point to the given value\&. \fP"
+.ti -1c
+.RI "void \fBsetY\fP (double y)"
+.br
+.RI "\fISets the y-coordinate of this point to the given value\&. \fP"
+.ti -1c
+.RI "void \fBsetZ\fP (double z)"
+.br
+.RI "\fISets the z-coordinate of this point to the given value\&. \fP"
+.ti -1c
+.RI "void \fBsetXYZ\fP (double x, double y, double z)"
+.br
+.RI "\fISets the coordinates of this point to the given values\&. \fP"
+.ti -1c
+.RI "void \fBrotateAroundX\fP (double rollAngle)"
+.br
+.RI "\fIRotate the point around the X-axis ('Roll angle') \fP"
+.ti -1c
+.RI "void \fBrotateAroundY\fP (double pitchAngle)"
+.br
+.RI "\fIRotate the point around the Y-axis ('Pitch angle') \fP"
+.ti -1c
+.RI "void \fBrotateAroundZ\fP (double dYawAngle)"
+.br
+.RI "\fIRotate the point around the Z-axis ('Yaw angle') \fP"
+.ti -1c
+.RI "void \fBnormalize\fP ()"
+.br
+.RI "\fINormalizes this vector (point) to length 1\&.0\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP & \fBoperator+=\fP (const \fBPoint3D\fP &point)"
+.br
+.RI "\fIAdds the given point to this point and returns a reference to this point\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP & \fBoperator\-=\fP (const \fBPoint3D\fP &point)"
+.br
+.RI "\fISubtracts the given point to this point and returns a reference to this point\&. \fP"
+.ti -1c
+.RI "\fBPoint3D\fP & \fBoperator/=\fP (double divisor)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBSerialization\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "std::istream & \fBread\fP (std::istream &is)"
+.br
+.RI "\fIReads a \fBPoint3D\fP from an input stream\&. \fP"
+.ti -1c
+.RI "void \fBread\fP (const \fBBYTE\fP *&buf)"
+.br
+.ti -1c
+.RI "std::ostream & \fBwrite\fP (std::ostream &os) const "
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBBYTE\fP *&buf) const "
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.RI "\fIText output for debugging\&. \fP"
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::streamsize \fBgetSerializedSize\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator+\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator\-\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "double \fBoperator*\fP (const \fBPoint3D\fP &, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator*\fP (double, const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator*\fP (const \fBPoint3D\fP &, double)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator\-\fP (const \fBPoint3D\fP &)"
+.br
+.ti -1c
+.RI "const \fBPoint3D\fP \fBoperator/\fP (const \fBPoint3D\fP &, double)"
+.br
+.in -1c
+.SS "Geometrical relations to other objects"
+
+.in +1c
+.ti -1c
+.RI "double \fBdist\fP (const \fBPoint3D\fP &point) const "
+.br
+.RI "\fICalculates the distance to the given point\&. \fP"
+.ti -1c
+.RI "static \fBPoint3D\fP \fBvectorProduct\fP (const \fBPoint3D\fP &v1, const \fBPoint3D\fP &v2)"
+.br
+.RI "\fIReturns the vector product ('Kreuzprodukt') of the two vectors\&. \fP"
+.ti -1c
+.RI "static \fBPoint3D\fP \fBcalcIntersectionPointOfVectorWithPlane\fP (const \fBPoint3D\fP &PlaneStartpoint, const \fBPoint3D\fP &PlaneNormal, const \fBPoint3D\fP &VectorStartpoint, const \fBPoint3D\fP &VectorDirection)"
+.br
+.ti -1c
+.RI "static double \fBgetDistanceBetweenPoints\fP (const \fBPoint3D\fP &pt1, const \fBPoint3D\fP &pt2)"
+.br
+.RI "\fIReturns the distance between the two point coordinates\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class defines a point in the three-dimensional plane\&. 
+.PP
+Definition at line 25 of file Point3D\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef double \fBdatatypes::Point3D::floatingpoint_type\fP"
+
+.PP
+The type of the stored x and y coordinates\&. 
+.PP
+Definition at line 29 of file Point3D\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::Point3D::Point3D (double x, double y, double z)\fC [inline]\fP"
+Constructs a point with the given coordinates (x, y, z)\&. 
+.PP
+Definition at line 38 of file Point3D\&.hpp\&.
+.SS "datatypes::Point3D::Point3D ()\fC [inline]\fP"
+Constructs a null point, i\&.e\&. with coordinates (0\&.0, 0\&.0, 0\&.0) 
+.PP
+Definition at line 45 of file Point3D\&.hpp\&.
+.SS "datatypes::Point3D::Point3D (const \fBPoint2D\fP & p)\fC [explicit]\fP"
+
+.PP
+Constructs a point from the given \fBPoint2D\fP\&. Z-component will be zero\&. 
+.PP
+Definition at line 21 of file Point3D\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPoint3D\fP datatypes::Point3D::calcIntersectionPointOfVectorWithPlane (const \fBPoint3D\fP & PlaneStartpoint, const \fBPoint3D\fP & PlaneNormal, const \fBPoint3D\fP & VectorStartpoint, const \fBPoint3D\fP & VectorDirection)\fC [static]\fP"
+Calculates the intersection point between a plane and a vector\&. The vector is given with a start point (Deutsch: Aufpunkt) and a direction vector (Deutsch: Richtungsvektor)\&. The plane is given as a start point (Deutsch: Aufpunkt) and a normal vector (Deutsch: Normalenvektor)\&.
+.PP
+Note that the plane has infinite size, so the intersection point may not be where you expect it to be, e\&.g\&. 'behind' the vector start point, that is, in negative vector direction\&. Note also that there may not be an intersection point\&. In this case, the resulting point will be NaN in all components\&.
+.PP
+Is this function better located in geom3D? 
+.PP
+Definition at line 293 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::dist (const \fBPoint3D\fP & point) const"
+
+.PP
+Calculates the distance to the given point\&. 
+.PP
+Definition at line 43 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::distFromOrigin () const"
+
+.PP
+Dist from the point (0,0,0) to this point\&. Calculates the dist from the origin (0,0,0) to the point\&. Assuming the point is a vector, this is the length of the vector (see also \fBlength()\fP)\&. 
+.PP
+Definition at line 146 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::getAngleAroundX () const"
+
+.PP
+Returns the rotation angle around x (in the z-y-plane) Returns the angle that the projection of the point onto the z-y-plane has\&. This angle is measured against the 0-degree-direction (y axis)\&. Note that the z-coordinate has no effect here\&. 
+.PP
+.nf
+      ^ y
+      |
+      |
+      |
+
+.fi
+.PP
+ <--------+--------- z | | (x points upwards) |
+.PP
+The given angle is measured against the y axis, positive angles are counterclockwise ('to the left')\&. 
+.PP
+Definition at line 235 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::getAngleAroundY () const"
+
+.PP
+Returns the rotation angle around y (in the z-x-plane) Returns the angle that the projection of the point onto the x-z-plane has\&. This angle is measured against the 0-degree-direction (z axis)\&. Note that the y-coordinate has no effect here\&. 
+.PP
+.nf
+      ^ z
+      |
+      |
+      |
+
+.fi
+.PP
+ <--------+--------- x | | (y points upwards) |
+.PP
+The given angle is measured against the z axis, positive angles are counterclockwise ('to the left')\&. 
+.PP
+Definition at line 207 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::getAngleAroundZ () const"
+
+.PP
+Returns the rotation angle around z (in the x-y-plane) Returns the angle that the projection of the point onto the x-y-plane has\&. This angle is measured against the 0-degree-direction (x axis)\&. Note that the z-coordinate has no effect here\&. 
+.PP
+.nf
+      ^ x
+      |
+      |
+      |
+
+.fi
+.PP
+ <--------+--------- y | | (z points upwards) |
+.PP
+The given angle is measured against the x axis, positive angles are counterclockwise ('to the left')\&. 
+.PP
+Definition at line 179 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::getDistanceBetweenPoints (const \fBPoint3D\fP & pt1, const \fBPoint3D\fP & pt2)\fC [static]\fP"
+
+.PP
+Returns the distance between the two point coordinates\&. Returns the distance between the two 3d-point coordinates\&. 
+.PP
+Definition at line 250 of file Point3D\&.cpp\&.
+.SS "static std::streamsize datatypes::Point3D::getSerializedSize ()\fC [static]\fP"
+
+.SS "virtual const \fBUINT32\fP datatypes::Point3D::getUsedMemory () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 55 of file Point3D\&.hpp\&.
+.SS "double datatypes::Point3D::getX () const\fC [inline]\fP"
+
+.PP
+Returns the x-coordinate of this point\&. 
+.PP
+Definition at line 63 of file Point3D\&.hpp\&.
+.SS "double datatypes::Point3D::getY () const\fC [inline]\fP"
+
+.PP
+Returns the y-coordinate of this point\&. 
+.PP
+Definition at line 64 of file Point3D\&.hpp\&.
+.SS "double datatypes::Point3D::getZ () const\fC [inline]\fP"
+
+.PP
+Returns the z-coordinate of this point\&. 
+.PP
+Definition at line 65 of file Point3D\&.hpp\&.
+.SS "bool datatypes::Point3D::isZero () const"
+
+.PP
+Check against (near-)zero\&. Returns true if this point is zero in terms of the machine precision, that is, its value is exactly zero or 'almost
+zero'\&. 
+.PP
+Definition at line 35 of file Point3D\&.cpp\&.
+.SS "double datatypes::Point3D::length () const"
+
+.PP
+Length of the vector (identical to \fBdistFromOrigin()\fP) Calculates the dist from the origin (0,0,0) to the point\&. Assuming the point is a vector, this is the length of the vector\&. 
+.PP
+Definition at line 155 of file Point3D\&.cpp\&.
+.SS "void datatypes::Point3D::normalize ()"
+
+.PP
+Normalizes this vector (point) to length 1\&.0\&. Normalizes this vector (point is treated as a vector here) to length 1\&.0\&.
+.PP
+If the vector has zero length (\fBisZero()\fP returns true), it will be left unchanged\&. 
+.PP
+Definition at line 74 of file Point3D\&.cpp\&.
+.SS "\fBPoint3D\fP & datatypes::Point3D::operator+= (const \fBPoint3D\fP & point)\fC [inline]\fP"
+
+.PP
+Adds the given point to this point and returns a reference to this point\&. 
+.PP
+Definition at line 147 of file Point3D\&.hpp\&.
+.SS "\fBPoint3D\fP & datatypes::Point3D::operator\-= (const \fBPoint3D\fP & point)\fC [inline]\fP"
+
+.PP
+Subtracts the given point to this point and returns a reference to this point\&. 
+.PP
+Definition at line 155 of file Point3D\&.hpp\&.
+.SS "\fBPoint3D\fP & datatypes::Point3D::operator/= (double divisor)\fC [inline]\fP"
+
+.PP
+Definition at line 163 of file Point3D\&.hpp\&.
+.SS "std::istream& datatypes::Point3D::read (std::istream & is)"
+
+.PP
+Reads a \fBPoint3D\fP from an input stream\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP The input stream 
+.RE
+.PP
+
+.SS "void datatypes::Point3D::read (const \fBBYTE\fP *& buf)"
+
+.SS "void datatypes::Point3D::rotateAroundX (double rollAngle)"
+
+.PP
+Rotate the point around the X-axis ('Roll angle') Rotate the point around the X axis (with a roll angle)\&. The input is an angle in [rad]\&. Positive angles rotate clockwise (seen from the origin)\&. 
+.PP
+Definition at line 113 of file Point3D\&.cpp\&.
+.SS "void datatypes::Point3D::rotateAroundY (double pitchAngle)"
+
+.PP
+Rotate the point around the Y-axis ('Pitch angle') Rotate the point around the Y axis (with a pitch angle)\&. The input is an angle in [rad]\&. Positive angles rotate clockwise (seen from the origin)\&. 
+.PP
+Definition at line 129 of file Point3D\&.cpp\&.
+.SS "void datatypes::Point3D::rotateAroundZ (double yawAngle)"
+
+.PP
+Rotate the point around the Z-axis ('Yaw angle') Rotate the point around the Z axis (with a yaw angle)\&. The input is an angle in [rad]\&. Positive angles rotate counterclockwise\&. 
+.PP
+Definition at line 96 of file Point3D\&.cpp\&.
+.SS "void datatypes::Point3D::setX (double x)\fC [inline]\fP"
+
+.PP
+Sets the x-coordinate of this point to the given value\&. 
+.PP
+Definition at line 81 of file Point3D\&.hpp\&.
+.SS "void datatypes::Point3D::setXYZ (double x, double y, double z)\fC [inline]\fP"
+
+.PP
+Sets the coordinates of this point to the given values\&. 
+.PP
+Definition at line 84 of file Point3D\&.hpp\&.
+.SS "void datatypes::Point3D::setY (double y)\fC [inline]\fP"
+
+.PP
+Sets the y-coordinate of this point to the given value\&. 
+.PP
+Definition at line 82 of file Point3D\&.hpp\&.
+.SS "void datatypes::Point3D::setZ (double z)\fC [inline]\fP"
+
+.PP
+Sets the z-coordinate of this point to the given value\&. 
+.PP
+Definition at line 83 of file Point3D\&.hpp\&.
+.SS "\fBPoint2D\fP datatypes::Point3D::toPoint2D () const"
+
+.PP
+Returns the x/y components of this class, converted into a \fBPoint2D\fP object\&. 
+.PP
+Definition at line 48 of file Point3D\&.cpp\&.
+.SS "std::string datatypes::Point3D::toString () const"
+
+.PP
+Text output for debugging\&. Convert point to text string for debugging 
+.PP
+Definition at line 262 of file Point3D\&.cpp\&.
+.SS "\fBPoint3D\fP datatypes::Point3D::vectorProduct (const \fBPoint3D\fP & v1, const \fBPoint3D\fP & v2)\fC [static]\fP"
+
+.PP
+Returns the vector product ('Kreuzprodukt') of the two vectors\&. Returns the vector product ('Kreuzprodukt') of the two vectors\&. Note that the returned vector product is not normalized (Hint: use \fBnormalize()\fP to do this)\&. 
+.PP
+Definition at line 58 of file Point3D\&.cpp\&.
+.SS "std::ostream& datatypes::Point3D::write (std::ostream & os) const"
+
+.SS "void datatypes::Point3D::write (\fBBYTE\fP *& buf) const"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "bool operator!= (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 182 of file Point3D\&.hpp\&.
+.SS "double operator* (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 199 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator* (double factor, const \fBPoint3D\fP & p)\fC [friend]\fP"
+
+.PP
+Definition at line 210 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator* (const \fBPoint3D\fP & p, double factor)\fC [friend]\fP"
+
+.PP
+Definition at line 205 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator+ (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 187 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator\- (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 193 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator\- (const \fBPoint3D\fP & p)\fC [friend]\fP"
+
+.PP
+Definition at line 216 of file Point3D\&.hpp\&.
+.SS "const \fBPoint3D\fP operator/ (const \fBPoint3D\fP & p, double divisor)\fC [friend]\fP"
+
+.PP
+Definition at line 221 of file Point3D\&.hpp\&.
+.SS "bool operator== (const \fBPoint3D\fP & p1, const \fBPoint3D\fP & p2)\fC [friend]\fP"
+
+.PP
+Definition at line 173 of file Point3D\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

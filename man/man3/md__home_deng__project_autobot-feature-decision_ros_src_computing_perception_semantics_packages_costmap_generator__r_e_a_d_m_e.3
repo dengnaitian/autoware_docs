@@ -1,0 +1,80 @@
+.TH "md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_costmap_generator__r_e_a_d_m_e" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__home_deng__project_autobot-feature-decision_ros_src_computing_perception_semantics_packages_costmap_generator__r_e_a_d_m_e \- The `costmap_generator` Package 
+
+.SS "costmap_generator"
+.PP
+This node reads \fCPointCloud\fP and/or \fCDetectedObjectArray\fP and creates an \fCOccupancyGrid\fP and \fCGridMap\fP\&. \fC\fBVectorMap\fP\fP is optional\&.
+.PP
+\fBYou need to subscribe at least one of \fCPointCloud\fP or \fCDetectedObjectArray\fP to generate costmap\&.\fP
+.PP
+.SS "Input topics"
+.PP
+\fC/points_no_ground\fP (sensor_msgs::PointCloud2) : from ray_ground_filter or compare map filter\&. It contains filtered points with the ground removed\&.
+.PP
+\fC/prediction/moving_predictor/objects\fP (autoware_msgs::DetectedObjectArray): predicted objects from naive_motion_predict\&.
+.PP
+\fC/vector_map\fP: from the \fBVectorMap\fP publisher\&. \fC/tf\fP to obtain the transform between the vector map(map_frame) and the sensor(sensor_frame) \&.
+.PP
+.SS "Output topics"
+.PP
+\fC/semantics/costmap\fP (grid_map::GridMap) is the output costmap, with values ranging from 0\&.0-1\&.0\&.
+.PP
+\fC/semantics/costmap_generator/occupancy_grid\fP (nav_msgs::OccupancyGrid) is the output OccupancyGrid, with values ranging from 0-100\&.
+.PP
+.SS "How to launch"
+.PP
+It can be launched as follows:
+.IP "1." 4
+Using the Runtime \fBManager\fP by clicking the \fCcostmap_generator\fP checkbox under the \fISemantics\fP section in the Computing tab\&.
+.IP "2." 4
+From a sourced terminal executing: \fCroslaunch costmap_generator costmap_generator\&.launch\fP\&.
+.PP
+.PP
+.SS "\fBParameters\fP available in roslaunch and rosrun"
+.PP
+.IP "\(bu" 2
+\fCuse_objects\fP Whether if using \fCDetectedObjectArray\fP or not (default value: true)\&.
+.IP "\(bu" 2
+\fCuse_points\fP Whether if using \fCPointCloud\fP or not (default value: true)\&.
+.IP "\(bu" 2
+\fCuse_wayarea\fP Whether if using \fCWayarea\fP from \fC\fBVectorMap\fP\fP or not (default value: true)\&.
+.IP "\(bu" 2
+\fCobjects_input\fP Input topic for \fCautoware_msgs::DetectedObjectArray\fP (default value: /prediction/moving_predictor/objects)\&.
+.IP "\(bu" 2
+\fCpoints_input\fP Input topic for sensor_msgs::PointCloud2 (default value: points_no_ground)\&.
+.IP "\(bu" 2
+\fClidar_frame\fP Lidar sensor coordinate\&. Cost is calculated based on this coordinate (default value: velodyne)\&.
+.IP "\(bu" 2
+\fCmap_frame\fP \fBVectorMap\fP's coordinate\&. (default value: map)\&.
+.IP "\(bu" 2
+\fCgrid_min_value\fP Minimum cost for gridmap (default value: 0\&.0)\&.
+.IP "\(bu" 2
+\fCgrid_max_value\fP Maximum cost for gridmap (default value: 1\&.0)\&.
+.IP "\(bu" 2
+\fCgrid_resolution\fP Resolution for gridmap (default value: 0\&.2)\&.
+.IP "\(bu" 2
+\fCgrid_length_x\fP Size of gridmap for x direction (default value: 50)\&.
+.IP "\(bu" 2
+\fCgrid_length_y\fP Size of gridmap for y direction (default value: 30)\&.
+.IP "\(bu" 2
+\fCgrid_position_x\fP Offset from coordinate in x direction (default value: 20)\&.
+.IP "\(bu" 2
+\fCgrid_position_y\fP Offset from coordinate in y direction (default value: 0)\&.
+.IP "\(bu" 2
+\fCmaximum_lidar_height_thres\fP Maximum height threshold for pointcloud data (default value: 0\&.3)\&.
+.IP "\(bu" 2
+\fCminimum_lidar_height_thres\fP Minimum height threshold for pointcloud data (default value: -2\&.2)\&.
+.IP "\(bu" 2
+\fCexpand_rectangle_size\fP Expand object's rectangle with this value (default value: 1)\&.
+.IP "\(bu" 2
+\fCsize_of_expansion_kernel\fP Kernel size for blurring effect on object's costmap (default value: 9)\&. 
+.PP
+
+.PP
+.PP
+.SS "Instruction Videos"
+.PP
+\fC\fP 

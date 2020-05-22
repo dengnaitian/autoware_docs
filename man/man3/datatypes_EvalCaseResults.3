@@ -1,0 +1,139 @@
+.TH "datatypes::EvalCaseResults" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+datatypes::EvalCaseResults \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EvalCaseResults\&.hpp>\fP
+.PP
+Inherits \fBdatatypes::BasicData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEvalCaseResults\fP ()"
+.br
+.ti -1c
+.RI "\fBEvalCaseResults\fP (\fBUINT8\fP deviceID)"
+.br
+.ti -1c
+.RI "\fB~EvalCaseResults\fP ()"
+.br
+.ti -1c
+.RI "const \fBUINT32\fP \fBgetUsedMemory\fP () const "
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const "
+.br
+.ti -1c
+.RI "size_t \fBsize\fP () const "
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const "
+.br
+.ti -1c
+.RI "void \fBadd\fP (const \fBEvalCaseResult\fP &newCase)"
+.br
+.ti -1c
+.RI "const \fBEvalCaseResult\fP & \fBat\fP (\fBUINT8\fP n) const "
+.br
+.ti -1c
+.RI "const \fBEvalCaseResult\fP & \fBoperator[]\fP (\fBUINT32\fP n) const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBEvalCaseResults\fP &other)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBEvalCaseResults\fP &other)"
+.br
+.in -1c
+.SS "Protected Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBEvalCaseResult\fP > \fBEvalCaseResultVector\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEvalCaseResultVector\fP \fBm_evalCases\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file EvalCaseResults\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::vector<\fBEvalCaseResult\fP> \fBdatatypes::EvalCaseResults::EvalCaseResultVector\fP\fC [protected]\fP"
+
+.PP
+Definition at line 26 of file EvalCaseResults\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "datatypes::EvalCaseResults::EvalCaseResults ()"
+
+.PP
+Definition at line 13 of file EvalCaseResults\&.cpp\&.
+.SS "datatypes::EvalCaseResults::EvalCaseResults (\fBUINT8\fP deviceID)"
+
+.PP
+Definition at line 20 of file EvalCaseResults\&.cpp\&.
+.SS "datatypes::EvalCaseResults::~EvalCaseResults ()"
+
+.PP
+Definition at line 29 of file EvalCaseResults\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void datatypes::EvalCaseResults::add (const \fBEvalCaseResult\fP & newCase)\fC [inline]\fP"
+
+.PP
+Definition at line 48 of file EvalCaseResults\&.hpp\&.
+.SS "const \fBEvalCaseResult\fP& datatypes::EvalCaseResults::at (\fBUINT8\fP n) const\fC [inline]\fP"
+
+.PP
+Definition at line 52 of file EvalCaseResults\&.hpp\&.
+.SS "bool datatypes::EvalCaseResults::empty () const\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file EvalCaseResults\&.hpp\&.
+.SS "const \fBUINT32\fP datatypes::EvalCaseResults::getUsedMemory () const\fC [virtual]\fP"
+
+.PP
+Implements \fBdatatypes::BasicData\fP\&.
+.PP
+Definition at line 34 of file EvalCaseResults\&.cpp\&.
+.SS "bool datatypes::EvalCaseResults::operator!= (const \fBEvalCaseResults\fP & other)"
+
+.PP
+Definition at line 86 of file EvalCaseResults\&.cpp\&.
+.SS "bool datatypes::EvalCaseResults::operator== (const \fBEvalCaseResults\fP & other)"
+
+.PP
+Definition at line 61 of file EvalCaseResults\&.cpp\&.
+.SS "const \fBEvalCaseResult\fP& datatypes::EvalCaseResults::operator[] (\fBUINT32\fP n) const\fC [inline]\fP"
+
+.PP
+Definition at line 54 of file EvalCaseResults\&.hpp\&.
+.SS "size_t datatypes::EvalCaseResults::size () const\fC [inline]\fP"
+
+.PP
+Definition at line 40 of file EvalCaseResults\&.hpp\&.
+.SS "std::string datatypes::EvalCaseResults::toString () const"
+
+.PP
+Definition at line 46 of file EvalCaseResults\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEvalCaseResultVector\fP datatypes::EvalCaseResults::m_evalCases\fC [protected]\fP"
+
+.PP
+Definition at line 29 of file EvalCaseResults\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

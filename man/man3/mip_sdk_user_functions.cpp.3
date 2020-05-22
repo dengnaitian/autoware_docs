@@ -1,0 +1,242 @@
+.TH "/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/src/mip_sdk_user_functions.cpp" 3 "Fri May 22 2020" "Autoware_Doxygen" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/deng/Project/autobot-feature-decision/ros/src/sensing/drivers/imu/packages/microstrain/src/mip_sdk_user_functions.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'mip_sdk_user_functions\&.h'\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include 'serial/serial\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBu16\fP \fBmip_sdk_port_open\fP (void **port_handle, int port_num, int baudrate)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_sdk_port_close\fP (void *port_handle)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_sdk_port_write\fP (void *port_handle, \fBu8\fP *buffer, \fBu32\fP num_bytes, \fBu32\fP *bytes_written, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu16\fP \fBmip_sdk_port_read\fP (void *port_handle, \fBu8\fP *buffer, \fBu32\fP num_bytes, \fBu32\fP *bytes_read, \fBu32\fP timeout_ms)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBmip_sdk_port_read_count\fP (void *port_handle)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBmip_sdk_get_time_ms\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBu32\fP mip_sdk_get_time_ms ()"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific Call to get the current time in milliseconds\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Current time in milliseconds\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+1) This value should no roll-over in short periods of time (e\&.g\&. minutes)
+.br
+ 2) Most systems have a millisecond counter that rolls-over every 32 bits
+.br
+ (e\&.g\&. 49\&.71 days roll-over period, with 1 millisecond LSB)
+.br
+ 3) An absolute reference is not required since this function is
+.br
+ used for relative time-outs\&.
+.br
+ 4) The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+ edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 234 of file mip_sdk_user_functions\&.cpp\&.
+.SS "\fBu16\fP mip_sdk_port_close (void * port_handle)"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific port close function 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this) 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_USER_FUNCTION_ERROR\fP When there is a problem closing the port\&.
+.br
+.br
+\fIMIP_USER_FUNCTION_OK\fP The close was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 102 of file mip_sdk_user_functions\&.cpp\&.
+.SS "\fBu16\fP mip_sdk_port_open (void ** port_handle, int port_num, int baudrate)"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific communications port open\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this) 
+.br
+\fIint\fP port_num - port number (as recognized by the operating system\&.) 
+.br
+\fIint\fP baudrate - baudrate of the com port\&. 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_USER_FUNCTION_ERROR\fP When there is a problem opening the port\&.
+.br
+.br
+\fIMIP_USER_FUNCTION_OK\fP The open was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 72 of file mip_sdk_user_functions\&.cpp\&.
+.SS "\fBu16\fP mip_sdk_port_read (void * port_handle, \fBu8\fP * buffer, \fBu32\fP num_bytes, \fBu32\fP * bytes_read, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific Port Write Function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this) 
+.br
+\fIu8\fP *buffer - buffer containing num_bytes of data 
+.br
+\fIu32\fP num_bytes - the number of bytes to write to the port 
+.br
+\fIu32\fP *bytes_read - the number of bytes actually read from the device 
+.br
+\fIu32\fP timeout_ms - the read timeout 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_USER_FUNCTION_ERROR\fP When there is a problem communicating with the port\&.
+.br
+.br
+\fIMIP_USER_FUNCTION_OK\fP The read was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 170 of file mip_sdk_user_functions\&.cpp\&.
+.SS "\fBu32\fP mip_sdk_port_read_count (void * port_handle)"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific Function to Get the Number of Bytes Waiting on the Port\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of bytes waiting on the port,
+.br
+ 0, if there is an error\&. 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 200 of file mip_sdk_user_functions\&.cpp\&.
+.SS "\fBu16\fP mip_sdk_port_write (void * port_handle, \fBu8\fP * buffer, \fBu32\fP num_bytes, \fBu32\fP * bytes_written, \fBu32\fP timeout_ms)"
+
+.SH "DESCRIPTION"
+.PP
+Target-Specific Port Write Function\&. 
+.SH "DETAILS"
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvoid\fP *port_handle - target-specific port handle pointer (user needs to allocate memory for this) 
+.br
+\fIu8\fP *buffer - buffer containing num_bytes of data 
+.br
+\fIu32\fP num_bytes - the number of bytes to write to the port 
+.br
+\fIu32\fP *bytes_written - the number of bytes actually written to the port 
+.br
+\fIu32\fP timeout_ms - the write timeout 
+.RE
+.PP
+\fBReturn values:\fP
+.RS 4
+\fIMIP_USER_FUNCTION_ERROR\fP When there is a problem communicating with the port\&.
+.br
+.br
+\fIMIP_USER_FUNCTION_OK\fP The write was successful\&.
+.br
+ 
+.RE
+.PP
+.SH "NOTES"
+.PP
+The user should copy the \fCmip_sdk_user_functions\&.c\fP file to their project directory and
+.br
+edit it as needed to support their target operating system\&. 
+.PP
+Definition at line 136 of file mip_sdk_user_functions\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Autoware_Doxygen from the source code\&.

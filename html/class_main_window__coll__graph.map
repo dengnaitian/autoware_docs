@@ -1,0 +1,8 @@
+<map id="MainWindow" name="MainWindow">
+<area shape="rect" id="node3" href="$class_fast_virtual_scan.html" title="FastVirtualScan" alt="" coords="648,56,763,83"/>
+<area shape="rect" id="node4" href="$class_r_o_s_pub.html" title="ROSPub\&lt; sensor_msgs\l::LaserScan \&gt;" alt="" coords="435,106,599,147"/>
+<area shape="rect" id="node5" href="$class_r_o_s_interface_base.html" title="ROSInterfaceBase" alt="" coords="125,177,257,204"/>
+<area shape="rect" id="node8" href="$class_r_o_s_sub_base.html" title="ROSSubBase" alt="" coords="307,177,411,204"/>
+<area shape="rect" id="node9" href="$class_r_o_s_pub.html" title="ROSPub\&lt; sensor_msgs\l::PointCloud2 \&gt;" alt="" coords="435,227,599,269"/>
+<area shape="rect" id="node7" href="$class_r_o_s_sub.html" title="ROSSub\&lt; sensor_msgs\l::PointCloud2ConstPtr \&gt;" alt="" coords="623,170,788,211"/>
+</map>
